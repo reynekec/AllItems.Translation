@@ -30,12 +30,16 @@ public class StaticCurriculumCatalogTests
         Assert.NotEmpty(_catalog.GetUnits(CefrLevel.B2));
     }
 
-    [Theory]
-    [InlineData(CefrLevel.C1)]
-    [InlineData(CefrLevel.C2)]
-    public void GetUnits_NotYetAuthoredLevels_AreEmpty(CefrLevel level)
+    [Fact]
+    public void GetUnits_C1_ReturnsAuthoredContent()
     {
-        Assert.Empty(_catalog.GetUnits(level));
+        Assert.NotEmpty(_catalog.GetUnits(CefrLevel.C1));
+    }
+
+    [Fact]
+    public void GetUnits_C2_IsNotYetAuthored()
+    {
+        Assert.Empty(_catalog.GetUnits(CefrLevel.C2));
     }
 
     [Fact]
