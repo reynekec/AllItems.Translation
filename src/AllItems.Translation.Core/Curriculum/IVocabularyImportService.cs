@@ -4,4 +4,7 @@ namespace AllItems.Translation.Core.Curriculum;
 public interface IVocabularyImportService
 {
     Task EnsureLevelImportedAsync(CefrLevel level, CancellationToken cancellationToken = default);
+
+    /// <summary>Imports every CEFR level's bulk vocabulary right away, ignoring the normal unlock gating.</summary>
+    Task ImportAllLevelsAsync(CancellationToken cancellationToken = default);
 }

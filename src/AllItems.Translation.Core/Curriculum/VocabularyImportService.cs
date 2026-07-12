@@ -23,4 +23,12 @@ public sealed class VocabularyImportService(
 
         await importRepository.MarkLevelImportedAsync(level, cancellationToken);
     }
+
+    public async Task ImportAllLevelsAsync(CancellationToken cancellationToken = default)
+    {
+        foreach (var level in Enum.GetValues<CefrLevel>())
+        {
+            await EnsureLevelImportedAsync(level, cancellationToken);
+        }
+    }
 }
