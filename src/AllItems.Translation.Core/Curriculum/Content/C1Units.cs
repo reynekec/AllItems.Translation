@@ -443,6 +443,277 @@ public static class C1Units
                     CorrectOptionIndex = 0
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c1-u11-weitere-redewendungen",
+            Level = CefrLevel.C1,
+            SortOrder = 11,
+            Title = "Weitere Redewendungen",
+            Description = "More idioms with meanings well beyond their literal words.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u11-weitere-redewendungen-e1",
+                    Instruction = "Choose the correct meaning.",
+                    Explanation = "Literally \"to buy the cat in the bag\" - to buy something without inspecting it first.",
+                    Question = "\"die Katze im Sack kaufen\" means?",
+                    Options = ["to buy something sight unseen / a pig in a poke", "to adopt a pet", "to go shopping for groceries", "to negotiate a good price"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u11-weitere-redewendungen-e2",
+                    Instruction = "Choose the correct meaning.",
+                    Explanation = "Literally \"to step into the little fat pot\" - to make an embarrassing social mistake.",
+                    Question = "\"ins Fettnäpfchen treten\" means?",
+                    Options = ["to make an embarrassing social gaffe", "to slip and fall", "to cook a meal badly", "to gain weight"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u11-weitere-redewendungen-e3",
+                    Instruction = "Choose the correct meaning.",
+                    Explanation = "Literally \"to have pig\" - an old idiom for being lucky.",
+                    Question = "\"Schwein haben\" means?",
+                    Options = ["to be lucky", "to eat too much", "to be dirty", "to own a farm"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u11-weitere-redewendungen-e4",
+                    Instruction = "Choose the correct meaning.",
+                    Explanation = "Literally \"to leave the church in the village\" - don't blow things out of proportion.",
+                    Question = "\"die Kirche im Dorf lassen\" means?",
+                    Options = ["to keep things in proportion / not overreact", "to go to church regularly", "to stay in one's hometown", "to respect religious traditions"],
+                    CorrectOptionIndex = 0
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c1-u12-fachsprache-recht",
+            Level = CefrLevel.C1,
+            SortOrder = 12,
+            Title = "Fachsprache: Recht",
+            Description = "Legal terminology.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u12-fachsprache-recht-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Klage' means lawsuit.",
+                    Question = "\"lawsuit\" in German?",
+                    Options = ["die Klage", "das Urteil", "die Berufung", "der Vertrag"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u12-fachsprache-recht-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Urteil' means verdict/judgment.",
+                    Question = "\"verdict/judgment\" in German?",
+                    Options = ["das Urteil", "die Klage", "das Gericht", "die Haftung"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u12-fachsprache-recht-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Berufung' means (legal) appeal.",
+                    Question = "\"(legal) appeal\" in German?",
+                    Options = ["die Berufung", "die Klage", "das Urteil", "der Vertrag"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u12-fachsprache-recht-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Haftung' means liability.",
+                    Question = "\"liability\" in German?",
+                    Options = ["die Haftung", "das Gericht", "die Klage", "die Berufung"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u12-fachsprache-recht-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Er reicht eine Klage ein\" = \"He is filing a lawsuit\".",
+                    TextBefore = "Er reicht eine ",
+                    TextAfter = " ein.",
+                    CorrectAnswer = "Klage"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c1-u13-fachsprache-wirtschaft",
+            Level = CefrLevel.C1,
+            SortOrder = 13,
+            Title = "Fachsprache: Wirtschaft",
+            Description = "Advanced business and finance terminology.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u13-fachsprache-wirtschaft-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Fusion' means (corporate) merger.",
+                    Question = "\"merger\" (of companies) in German?",
+                    Options = ["die Fusion", "die Insolvenz", "die Rendite", "die Investition"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u13-fachsprache-wirtschaft-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Insolvenz' means insolvency/bankruptcy.",
+                    Question = "\"insolvency/bankruptcy\" in German?",
+                    Options = ["die Insolvenz", "die Fusion", "der Aktienmarkt", "das Kapital"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u13-fachsprache-wirtschaft-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Rendite' means (financial) return/yield.",
+                    Question = "\"return/yield\" (on an investment) in German?",
+                    Options = ["die Rendite", "das Kapital", "die Investition", "der Wettbewerb"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u13-fachsprache-wirtschaft-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Wettbewerb' means competition.",
+                    Question = "\"competition\" in German?",
+                    Options = ["der Wettbewerb", "die Rendite", "die Fusion", "die Effizienz"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u13-fachsprache-wirtschaft-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Das Unternehmen meldete Insolvenz an\" = \"The company filed for bankruptcy\".",
+                    TextBefore = "Das Unternehmen meldete ",
+                    TextAfter = " an.",
+                    CorrectAnswer = "Insolvenz"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c1-u14-abstrakte-konzepte",
+            Level = CefrLevel.C1,
+            SortOrder = 14,
+            Title = "Abstrakte Konzepte",
+            Description = "Abstract concepts used in philosophical and analytical discussion.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u14-abstrakte-konzepte-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Verantwortung' means responsibility.",
+                    Question = "\"responsibility\" in German?",
+                    Options = ["die Verantwortung", "die Freiheit", "die Identität", "die Moral"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u14-abstrakte-konzepte-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Bewusstsein' means consciousness/awareness.",
+                    Question = "\"consciousness/awareness\" in German?",
+                    Options = ["das Bewusstsein", "die Wahrnehmung", "die Autonomie", "das Dilemma"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u14-abstrakte-konzepte-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Wahrnehmung' means perception.",
+                    Question = "\"perception\" in German?",
+                    Options = ["die Wahrnehmung", "das Bewusstsein", "die Identität", "die Verantwortung"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u14-abstrakte-konzepte-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Dilemma' means dilemma.",
+                    Question = "\"dilemma\" in German?",
+                    Options = ["das Dilemma", "die Autonomie", "die Moral", "die Freiheit"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u14-abstrakte-konzepte-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Er trägt die Verantwortung für die Entscheidung\" = \"He bears the responsibility for the decision\".",
+                    TextBefore = "Er trägt die ",
+                    TextAfter = " für die Entscheidung.",
+                    CorrectAnswer = "Verantwortung"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c1-u15-emotionale-nuancen",
+            Level = CefrLevel.C1,
+            SortOrder = 15,
+            Title = "Feine emotionale Nuancen",
+            Description = "Subtle emotional vocabulary beyond basic feelings.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u15-emotionale-nuancen-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Wehmut' means wistfulness/melancholy - a bittersweet longing.",
+                    Question = "\"wistfulness/melancholy\" in German?",
+                    Options = ["die Wehmut", "die Gelassenheit", "die Ehrfurcht", "die Demut"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u15-emotionale-nuancen-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Zerrissenheit' means a state of inner conflict, being torn between two things.",
+                    Question = "\"inner conflict / being torn\" in German?",
+                    Options = ["die Zerrissenheit", "die Gelassenheit", "die Verbitterung", "die Wehmut"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u15-emotionale-nuancen-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Gelassenheit' means composure/calmness.",
+                    Question = "\"composure/calmness\" in German?",
+                    Options = ["die Gelassenheit", "die Zerrissenheit", "die Verbitterung", "die Ehrfurcht"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c1-u15-emotionale-nuancen-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Ehrfurcht' means awe/reverence.",
+                    Question = "\"awe/reverence\" in German?",
+                    Options = ["die Ehrfurcht", "die Demut", "die Wehmut", "die Gelassenheit"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u15-emotionale-nuancen-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Sie blickte mit Wehmut zurück\" = \"She looked back with wistfulness\".",
+                    TextBefore = "Sie blickte mit ",
+                    TextAfter = " zurück.",
+                    CorrectAnswer = "Wehmut"
+                }
+            ]
         }
     ];
 }

@@ -416,6 +416,250 @@ public static class C2Units
                     CorrectOptionIndex = 0
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c2-u11-literarischer-wortschatz",
+            Level = CefrLevel.C2,
+            SortOrder = 11,
+            Title = "Literarischer Wortschatz",
+            Description = "Vocabulary for naming literary forms and devices precisely.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u11-literarischer-wortschatz-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Novelle' means novella - a work shorter than a novel but longer than a short story.",
+                    Question = "\"novella\" in German?",
+                    Options = ["die Novelle", "der Roman", "das Epos", "die Elegie"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u11-literarischer-wortschatz-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Satire' means satire.",
+                    Question = "\"satire\" in German?",
+                    Options = ["die Satire", "die Parodie", "die Allegorie", "die Elegie"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u11-literarischer-wortschatz-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Allegorie' means allegory - a story with a symbolic second meaning.",
+                    Question = "\"allegory\" in German?",
+                    Options = ["die Allegorie", "die Satire", "die Parodie", "das Epos"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u11-literarischer-wortschatz-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Protagonist' means protagonist/main character.",
+                    Question = "\"protagonist/main character\" in German?",
+                    Options = ["der Protagonist", "der Erzähler", "der Antagonist", "der Autor"],
+                    CorrectOptionIndex = 0
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c2-u12-philosophische-begriffe",
+            Level = CefrLevel.C2,
+            SortOrder = 12,
+            Title = "Philosophische Begriffe",
+            Description = "Terminology for discussing philosophy.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u12-philosophische-begriffe-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Ethik' means ethics.",
+                    Question = "\"ethics\" in German?",
+                    Options = ["die Ethik", "die Metaphysik", "die Existenz", "die Vernunft"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u12-philosophische-begriffe-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Metaphysik' means metaphysics.",
+                    Question = "\"metaphysics\" in German?",
+                    Options = ["die Metaphysik", "die Ethik", "die Erkenntnistheorie", "der Determinismus"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u12-philosophische-begriffe-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Vernunft' means reason (the faculty of rational thought).",
+                    Question = "\"reason\" (rational thought) in German?",
+                    Options = ["die Vernunft", "die Existenz", "die Weltanschauung", "die Ethik"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u12-philosophische-begriffe-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Weltanschauung' means worldview.",
+                    Question = "\"worldview\" in German?",
+                    Options = ["die Weltanschauung", "die Vernunft", "die Metaphysik", "der Determinismus"],
+                    CorrectOptionIndex = 0
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c2-u13-historische-kulturelle-begriffe",
+            Level = CefrLevel.C2,
+            SortOrder = 13,
+            Title = "Historische und kulturelle Begriffe",
+            Description = "Vocabulary for discussing history and cultural change.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u13-historische-kulturelle-begriffe-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Zeitalter' means era/age.",
+                    Question = "\"era/age\" in German?",
+                    Options = ["das Zeitalter", "die Epoche", "der Umbruch", "der Brauch"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u13-historische-kulturelle-begriffe-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Umbruch' means upheaval/radical change.",
+                    Question = "\"upheaval/radical change\" in German?",
+                    Options = ["der Umbruch", "das Zeitalter", "der Brauch", "der Zeitgeist"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u13-historische-kulturelle-begriffe-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Brauch' means custom.",
+                    Question = "\"custom\" (cultural practice) in German?",
+                    Options = ["der Brauch", "die Epoche", "der Umbruch", "das Zeitalter"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u13-historische-kulturelle-begriffe-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Zeitgeist' means \"spirit of the age\" - the defining mood/ideas of a period.",
+                    Question = "\"zeitgeist / spirit of the age\" in German?",
+                    Options = ["der Zeitgeist", "die Epoche", "der Brauch", "das Zeitalter"],
+                    CorrectOptionIndex = 0
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c2-u14-wissenschaftliche-terminologie",
+            Level = CefrLevel.C2,
+            SortOrder = 14,
+            Title = "Wissenschaftliche Terminologie",
+            Description = "Advanced scientific terminology.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u14-wissenschaftliche-terminologie-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Quantenmechanik' means quantum mechanics.",
+                    Question = "\"quantum mechanics\" in German?",
+                    Options = ["die Quantenmechanik", "die Genetik", "die Evolution", "die Synthese"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u14-wissenschaftliche-terminologie-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Molekül' means molecule.",
+                    Question = "\"molecule\" in German?",
+                    Options = ["das Molekül", "der Organismus", "das Phänomen", "die Synthese"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u14-wissenschaftliche-terminologie-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Organismus' means organism.",
+                    Question = "\"organism\" in German?",
+                    Options = ["der Organismus", "das Molekül", "die Genetik", "das Phänomen"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u14-wissenschaftliche-terminologie-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Wechselwirkung' means interaction (between forces, particles, systems, etc.).",
+                    Question = "\"interaction\" (between systems/forces) in German?",
+                    Options = ["die Wechselwirkung", "die Synthese", "das Phänomen", "die Genetik"],
+                    CorrectOptionIndex = 0
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c2-u15-gehobene-woerter",
+            Level = CefrLevel.C2,
+            SortOrder = 15,
+            Title = "Seltene und gehobene Wörter",
+            Description = "Rare, elevated vocabulary found in literary and formal writing.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u15-gehobene-woerter-e1",
+                    Instruction = "Choose the correct meaning.",
+                    Explanation = "'die Muße' is an elevated word for leisure - unhurried, contemplative free time.",
+                    Question = "\"die Muße\" means?",
+                    Options = ["leisure (unhurried, contemplative free time)", "exhaustion", "boredom", "haste"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u15-gehobene-woerter-e2",
+                    Instruction = "Choose the correct meaning.",
+                    Explanation = "'die Zwietracht' means discord/strife between people.",
+                    Question = "\"die Zwietracht\" means?",
+                    Options = ["discord/strife", "harmony", "friendship", "silence"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u15-gehobene-woerter-e3",
+                    Instruction = "Choose the correct meaning.",
+                    Explanation = "'erhaben' means sublime/exalted - inspiring awe through greatness.",
+                    Question = "\"erhaben\" means?",
+                    Options = ["sublime/exalted", "ordinary", "hidden", "broken"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u15-gehobene-woerter-e4",
+                    Instruction = "Choose the correct meaning.",
+                    Explanation = "'unergründlich' means unfathomable - impossible to fully understand or measure.",
+                    Question = "\"unergründlich\" means?",
+                    Options = ["unfathomable", "shallow", "obvious", "temporary"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "c2-u15-gehobene-woerter-e5",
+                    Instruction = "Choose the correct meaning.",
+                    Explanation = "'die Anmut' means grace/gracefulness.",
+                    Question = "\"die Anmut\" means?",
+                    Options = ["grace/gracefulness", "clumsiness", "strength", "speed"],
+                    CorrectOptionIndex = 0
+                }
+            ]
         }
     ];
 }

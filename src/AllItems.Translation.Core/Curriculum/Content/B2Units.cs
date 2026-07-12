@@ -468,6 +468,331 @@ public static class B2Units
                     CorrectOptionIndex = 0
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b2-u11-politik-gesellschaft",
+            Level = CefrLevel.B2,
+            SortOrder = 11,
+            Title = "Politik und Gesellschaft",
+            Description = "Vocabulary: politics and society.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u11-politik-gesellschaft-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Regierung' means government.",
+                    Question = "\"government\" in German?",
+                    Options = ["die Regierung", "die Wahl", "das Gesetz", "die Gesellschaft"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u11-politik-gesellschaft-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Wahl' means election.",
+                    Question = "\"election\" in German?",
+                    Options = ["die Wahl", "die Regierung", "der Bürger", "die Demokratie"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u11-politik-gesellschaft-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Bürger' means citizen.",
+                    Question = "\"citizen\" in German?",
+                    Options = ["der Bürger", "der Politiker", "der Wähler", "der Beamte"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u11-politik-gesellschaft-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Gerechtigkeit' means justice.",
+                    Question = "\"justice\" in German?",
+                    Options = ["die Gerechtigkeit", "die Ungleichheit", "das Gesetz", "die Freiheit"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u11-politik-gesellschaft-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Ungleichheit' means inequality.",
+                    Question = "\"inequality\" in German?",
+                    Options = ["die Ungleichheit", "die Gerechtigkeit", "die Demokratie", "die Wahl"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u11-politik-gesellschaft-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Die Regierung hat ein neues Gesetz beschlossen\" = \"The government passed a new law\".",
+                    TextBefore = "Die ",
+                    TextAfter = " hat ein neues Gesetz beschlossen.",
+                    CorrectAnswer = "Regierung"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b2-u12-wirtschaft",
+            Level = CefrLevel.B2,
+            SortOrder = 12,
+            Title = "Wirtschaft",
+            Description = "Vocabulary: the economy.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u12-wirtschaft-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Unternehmen' means company/enterprise.",
+                    Question = "\"company/enterprise\" in German?",
+                    Options = ["das Unternehmen", "der Gewinn", "die Steuer", "der Markt"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u12-wirtschaft-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Gewinn' means profit.",
+                    Question = "\"profit\" in German?",
+                    Options = ["der Gewinn", "der Verlust", "die Steuer", "das Angebot"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u12-wirtschaft-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Inflation' means inflation.",
+                    Question = "\"inflation\" in German?",
+                    Options = ["die Inflation", "die Steuer", "die Nachfrage", "der Markt"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u12-wirtschaft-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Nachfrage' means demand.",
+                    Question = "\"demand\" (economic) in German?",
+                    Options = ["die Nachfrage", "das Angebot", "der Gewinn", "die Steuer"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u12-wirtschaft-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Angebot' means supply.",
+                    Question = "\"supply\" (economic) in German?",
+                    Options = ["das Angebot", "die Nachfrage", "der Gewinn", "die Inflation"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u12-wirtschaft-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Angebot und Nachfrage bestimmen den Preis\" = \"Supply and demand determine the price\".",
+                    TextBefore = "",
+                    TextAfter = " und Nachfrage bestimmen den Preis.",
+                    CorrectAnswer = "Angebot"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b2-u13-wissenschaft-forschung",
+            Level = CefrLevel.B2,
+            SortOrder = 13,
+            Title = "Wissenschaft und Forschung",
+            Description = "Vocabulary: science and research.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u13-wissenschaft-forschung-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Forschung' means research.",
+                    Question = "\"research\" in German?",
+                    Options = ["die Forschung", "das Experiment", "die Hypothese", "das Ergebnis"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u13-wissenschaft-forschung-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Hypothese' means hypothesis.",
+                    Question = "\"hypothesis\" in German?",
+                    Options = ["die Hypothese", "die Theorie", "das Ergebnis", "der Beweis"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u13-wissenschaft-forschung-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'beweisen' means to prove.",
+                    Question = "\"to prove\" in German?",
+                    Options = ["beweisen", "vermuten", "messen", "analysieren"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u13-wissenschaft-forschung-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Erkenntnis' means insight/finding.",
+                    Question = "\"insight/finding\" in German?",
+                    Options = ["die Erkenntnis", "das Experiment", "die Hypothese", "die Forschung"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u13-wissenschaft-forschung-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'analysieren' means to analyze.",
+                    Question = "\"to analyze\" in German?",
+                    Options = ["analysieren", "beweisen", "messen", "vermuten"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u13-wissenschaft-forschung-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Die Forschung zeigt neue Ergebnisse\" = \"The research shows new results\".",
+                    TextBefore = "Die ",
+                    TextAfter = " zeigt neue Ergebnisse.",
+                    CorrectAnswer = "Forschung"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b2-u14-kunst-kultur",
+            Level = CefrLevel.B2,
+            SortOrder = 14,
+            Title = "Kunst und Kultur",
+            Description = "Vocabulary: art and culture.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u14-kunst-kultur-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Gemälde' means painting.",
+                    Question = "\"painting\" in German?",
+                    Options = ["das Gemälde", "die Skulptur", "die Ausstellung", "das Meisterwerk"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u14-kunst-kultur-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Ausstellung' means exhibition.",
+                    Question = "\"exhibition\" in German?",
+                    Options = ["die Ausstellung", "das Gemälde", "der Künstler", "die Skulptur"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u14-kunst-kultur-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Skulptur' means sculpture.",
+                    Question = "\"sculpture\" in German?",
+                    Options = ["die Skulptur", "das Gemälde", "das Meisterwerk", "die Ausstellung"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u14-kunst-kultur-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Erbe' means heritage/legacy.",
+                    Question = "\"heritage/legacy\" in German?",
+                    Options = ["das Erbe", "die Tradition", "das Meisterwerk", "die Kultur"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u14-kunst-kultur-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'zeitgenössisch' means contemporary.",
+                    Question = "\"contemporary\" in German?",
+                    Options = ["zeitgenössisch", "traditionell", "historisch", "altmodisch"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u14-kunst-kultur-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Der Künstler stellt seine Werke aus\" = \"The artist is exhibiting his works\".",
+                    TextBefore = "Der ",
+                    TextAfter = " stellt seine Werke aus.",
+                    CorrectAnswer = "Künstler"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b2-u15-gesundheit-medizin",
+            Level = CefrLevel.B2,
+            SortOrder = 15,
+            Title = "Gesundheit und Medizin",
+            Description = "Vocabulary: advanced health and medicine.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u15-gesundheit-medizin-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Diagnose' means diagnosis.",
+                    Question = "\"diagnosis\" in German?",
+                    Options = ["die Diagnose", "die Behandlung", "die Therapie", "die Genesung"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u15-gesundheit-medizin-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Behandlung' means treatment.",
+                    Question = "\"treatment\" in German?",
+                    Options = ["die Behandlung", "die Diagnose", "die Impfung", "das Medikament"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u15-gesundheit-medizin-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Medikament' means medication.",
+                    Question = "\"medication\" in German?",
+                    Options = ["das Medikament", "die Impfung", "die Diagnose", "die Therapie"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u15-gesundheit-medizin-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'chronisch' means chronic.",
+                    Question = "\"chronic\" in German?",
+                    Options = ["chronisch", "akut", "ansteckend", "harmlos"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b2-u15-gesundheit-medizin-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Genesung' means recovery.",
+                    Question = "\"recovery\" (from illness) in German?",
+                    Options = ["die Genesung", "die Diagnose", "die Impfung", "die Behandlung"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u15-gesundheit-medizin-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich wünsche dir gute Genesung\" = \"I wish you a good recovery\".",
+                    TextBefore = "Ich wünsche dir gute ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Genesung"
+                }
+            ]
         }
     ];
 }
