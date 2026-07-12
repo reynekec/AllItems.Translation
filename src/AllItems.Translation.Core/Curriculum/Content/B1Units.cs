@@ -1,3 +1,5 @@
+using AllItems.Translation.Core.Domain;
+
 namespace AllItems.Translation.Core.Curriculum.Content;
 
 /// <summary>
@@ -533,7 +535,7 @@ public static class B1Units
                     Question = "\"climate change\" in German?",
                     Options = ["der Klimawandel", "die Erderwärmung", "der Müll", "der Naturschutz"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Klimawandel", "climate change")
+                    Teaches = new VocabularyTeaching("Klimawandel", "climate change", Article: "der", ExampleSentence: "Der Klimawandel bedroht unsere Zukunft.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -543,7 +545,7 @@ public static class B1Units
                     Question = "\"to recycle\" in German?",
                     Options = ["recyceln", "verschmutzen", "verbrauchen", "wegwerfen"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("recyceln", "to recycle")
+                    Teaches = new VocabularyTeaching("recyceln", "to recycle", Article: null, ExampleSentence: "Wir recyceln jede Woche Plastik.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -553,7 +555,7 @@ public static class B1Units
                     Question = "\"sustainable\" in German?",
                     Options = ["nachhaltig", "schädlich", "künstlich", "gefährlich"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("nachhaltig", "sustainable")
+                    Teaches = new VocabularyTeaching("nachhaltig", "sustainable", Article: null, ExampleSentence: "Diese Firma produziert sehr nachhaltig.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -563,7 +565,7 @@ public static class B1Units
                     Question = "\"trash/waste\" in German?",
                     Options = ["der Müll", "der Naturschutz", "die Erderwärmung", "der Klimawandel"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Müll", "trash")
+                    Teaches = new VocabularyTeaching("Müll", "trash", Article: "der", ExampleSentence: "Der Müll stinkt heute sehr.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -573,7 +575,7 @@ public static class B1Units
                     Question = "\"renewable energy\" in German?",
                     Options = ["erneuerbare Energie", "künstliche Energie", "billige Energie", "alte Energie"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("erneuerbare Energie", "renewable energy")
+                    Teaches = new VocabularyTeaching("erneuerbare Energie", "renewable energy", Article: "die", ExampleSentence: "Erneuerbare Energie schützt unser Klima.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -583,7 +585,7 @@ public static class B1Units
                     TextBefore = "Wir müssen die ",
                     TextAfter = " schützen.",
                     CorrectAnswer = "Umwelt",
-                    Teaches = new VocabularyTeaching("Umwelt", "environment")
+                    Teaches = new VocabularyTeaching("Umwelt", "environment", Article: "die", ExampleSentence: "Wir schützen die Umwelt gemeinsam.", Highlights: [])
                 }
             ]
         },
@@ -604,7 +606,7 @@ public static class B1Units
                     Question = "\"job application\" in German?",
                     Options = ["die Bewerbung", "der Lebenslauf", "das Gehalt", "die Kündigung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Bewerbung", "job application")
+                    Teaches = new VocabularyTeaching("Bewerbung", "job application", Article: "die", ExampleSentence: "Sie schreibt eine neue Bewerbung.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -614,7 +616,7 @@ public static class B1Units
                     Question = "\"resume/CV\" in German?",
                     Options = ["der Lebenslauf", "die Bewerbung", "das Vorstellungsgespräch", "das Gehalt"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Lebenslauf", "resume/CV")
+                    Teaches = new VocabularyTeaching("Lebenslauf", "resume/CV", Article: "der", ExampleSentence: "Mein Lebenslauf ist sehr aktuell.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -624,7 +626,7 @@ public static class B1Units
                     Question = "\"job interview\" in German?",
                     Options = ["das Vorstellungsgespräch", "die Bewerbung", "die Kündigung", "das Gehalt"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Vorstellungsgespräch", "job interview")
+                    Teaches = new VocabularyTeaching("Vorstellungsgespräch", "job interview", Article: "das", ExampleSentence: "Das Vorstellungsgespräch findet morgen statt.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -634,7 +636,7 @@ public static class B1Units
                     Question = "\"salary\" in German?",
                     Options = ["das Gehalt", "die Kündigung", "der Lebenslauf", "die Teilzeit"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Gehalt", "salary")
+                    Teaches = new VocabularyTeaching("Gehalt", "salary", Article: "das", ExampleSentence: "Mein Gehalt steigt nächstes Jahr.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -644,7 +646,7 @@ public static class B1Units
                     Question = "\"termination/resignation notice\" in German?",
                     Options = ["die Kündigung", "die Bewerbung", "das Gehalt", "die Vollzeit"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Kündigung", "termination notice")
+                    Teaches = new VocabularyTeaching("Kündigung", "termination notice", Article: "die", ExampleSentence: "Er erhält morgen seine Kündigung.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -674,7 +676,7 @@ public static class B1Units
                     Question = "\"rent\" in German?",
                     Options = ["die Miete", "die Kaution", "der Vermieter", "der Mietvertrag"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Miete", "rent")
+                    Teaches = new VocabularyTeaching("Miete", "rent", Article: "die", ExampleSentence: "Die Miete steigt jedes Jahr.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -684,7 +686,7 @@ public static class B1Units
                     Question = "\"landlord\" in German?",
                     Options = ["der Vermieter", "der Nachbar", "der Mieter", "der Makler"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Vermieter", "landlord")
+                    Teaches = new VocabularyTeaching("Vermieter", "landlord", Article: "der", ExampleSentence: "Der Vermieter repariert die Heizung.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -694,7 +696,7 @@ public static class B1Units
                     Question = "\"to move/relocate\" in German?",
                     Options = ["umziehen", "renovieren", "wohnen", "mieten"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("umziehen", "to move")
+                    Teaches = new VocabularyTeaching("umziehen", "to move", Article: null, ExampleSentence: "Wir ziehen nächste Woche um.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -704,7 +706,7 @@ public static class B1Units
                     Question = "\"security deposit\" in German?",
                     Options = ["die Kaution", "die Miete", "das Gehalt", "die Rechnung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Kaution", "security deposit")
+                    Teaches = new VocabularyTeaching("Kaution", "security deposit", Article: "die", ExampleSentence: "Die Kaution beträgt zwei Monatsmieten.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -714,7 +716,7 @@ public static class B1Units
                     Question = "\"to renovate\" in German?",
                     Options = ["renovieren", "umziehen", "mieten", "bauen"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("renovieren", "to renovate")
+                    Teaches = new VocabularyTeaching("renovieren", "to renovate", Article: null, ExampleSentence: "Wir renovieren gerade die Küche.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -744,7 +746,7 @@ public static class B1Units
                     Question = "\"jealousy\" in German?",
                     Options = ["die Eifersucht", "die Wut", "die Enttäuschung", "die Sehnsucht"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Eifersucht", "jealousy")
+                    Teaches = new VocabularyTeaching("Eifersucht", "jealousy", Article: "die", ExampleSentence: "Eifersucht zerstört oft die Liebe.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -754,7 +756,7 @@ public static class B1Units
                     Question = "\"disappointment\" in German?",
                     Options = ["die Enttäuschung", "die Erleichterung", "die Eifersucht", "die Wut"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Enttäuschung", "disappointment")
+                    Teaches = new VocabularyTeaching("Enttäuschung", "disappointment", Article: "die", ExampleSentence: "Seine Enttäuschung ist sehr groß.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -764,7 +766,7 @@ public static class B1Units
                     Question = "\"relief\" in German?",
                     Options = ["die Erleichterung", "die Sehnsucht", "die Enttäuschung", "die Wut"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Erleichterung", "relief")
+                    Teaches = new VocabularyTeaching("Erleichterung", "relief", Article: "die", ExampleSentence: "Die Erleichterung ist deutlich spürbar.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -774,7 +776,7 @@ public static class B1Units
                     Question = "\"longing/yearning\" in German?",
                     Options = ["die Sehnsucht", "die Wut", "die Eifersucht", "die Erleichterung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Sehnsucht", "longing")
+                    Teaches = new VocabularyTeaching("Sehnsucht", "longing", Article: "die", ExampleSentence: "Ihre Sehnsucht nach Hause wächst.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -784,7 +786,7 @@ public static class B1Units
                     Question = "\"proud\" in German?",
                     Options = ["stolz", "neidisch", "gerührt", "wütend"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("stolz", "proud")
+                    Teaches = new VocabularyTeaching("stolz", "proud", Article: null, ExampleSentence: "Ich bin sehr stolz darauf.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -814,7 +816,7 @@ public static class B1Units
                     Question = "\"screen/display\" in German?",
                     Options = ["der Bildschirm", "das Netzwerk", "das Passwort", "die Anwendung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Bildschirm", "screen")
+                    Teaches = new VocabularyTeaching("Bildschirm", "screen", Article: "der", ExampleSentence: "Der Bildschirm ist ziemlich groß.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -824,7 +826,7 @@ public static class B1Units
                     Question = "\"to download\" in German?",
                     Options = ["herunterladen", "hochladen", "speichern", "löschen"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("herunterladen", "to download")
+                    Teaches = new VocabularyTeaching("herunterladen", "to download", Article: null, ExampleSentence: "Ich lade die Datei herunter.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -834,7 +836,7 @@ public static class B1Units
                     Question = "\"to upload\" in German?",
                     Options = ["hochladen", "herunterladen", "installieren", "aktualisieren"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("hochladen", "to upload")
+                    Teaches = new VocabularyTeaching("hochladen", "to upload", Article: null, ExampleSentence: "Sie lädt das Foto hoch.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -844,7 +846,7 @@ public static class B1Units
                     Question = "\"password\" in German?",
                     Options = ["das Passwort", "der Benutzername", "das Netzwerk", "die Datei"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Passwort", "password")
+                    Teaches = new VocabularyTeaching("Passwort", "password", Article: "das", ExampleSentence: "Das Passwort ist zu einfach.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -854,7 +856,7 @@ public static class B1Units
                     Question = "\"to save\" (a file) in German?",
                     Options = ["speichern", "löschen", "öffnen", "drucken"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("speichern", "to save")
+                    Teaches = new VocabularyTeaching("speichern", "to save", Article: null, ExampleSentence: "Ich speichere die Datei jetzt.", Highlights: [])
                 },
                 new ClozeExercise
                 {

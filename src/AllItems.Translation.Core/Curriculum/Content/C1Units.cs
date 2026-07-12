@@ -1,3 +1,5 @@
+using AllItems.Translation.Core.Domain;
+
 namespace AllItems.Translation.Core.Curriculum.Content;
 
 /// <summary>
@@ -508,7 +510,7 @@ public static class C1Units
                     Question = "\"lawsuit\" in German?",
                     Options = ["die Klage", "das Urteil", "die Berufung", "der Vertrag"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Klage", "lawsuit")
+                    Teaches = new VocabularyTeaching("Klage", "lawsuit", Article: "die", ExampleSentence: "Die Klage ist noch offen.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -518,7 +520,7 @@ public static class C1Units
                     Question = "\"verdict/judgment\" in German?",
                     Options = ["das Urteil", "die Klage", "das Gericht", "die Haftung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Urteil", "verdict")
+                    Teaches = new VocabularyTeaching("Urteil", "verdict", Article: "das", ExampleSentence: "Das Urteil steht noch aus.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -528,7 +530,7 @@ public static class C1Units
                     Question = "\"(legal) appeal\" in German?",
                     Options = ["die Berufung", "die Klage", "das Urteil", "der Vertrag"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Berufung", "appeal")
+                    Teaches = new VocabularyTeaching("Berufung", "appeal", Article: "die", ExampleSentence: "Sie legt Berufung ein.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -538,7 +540,7 @@ public static class C1Units
                     Question = "\"liability\" in German?",
                     Options = ["die Haftung", "das Gericht", "die Klage", "die Berufung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Haftung", "liability")
+                    Teaches = new VocabularyTeaching("Haftung", "liability", Article: "die", ExampleSentence: "Die Firma übernimmt die Haftung.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -568,7 +570,7 @@ public static class C1Units
                     Question = "\"merger\" (of companies) in German?",
                     Options = ["die Fusion", "die Insolvenz", "die Rendite", "die Investition"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Fusion", "merger")
+                    Teaches = new VocabularyTeaching("Fusion", "merger", Article: "die", ExampleSentence: "Die Fusion verändert den Markt.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -578,7 +580,7 @@ public static class C1Units
                     Question = "\"insolvency/bankruptcy\" in German?",
                     Options = ["die Insolvenz", "die Fusion", "der Aktienmarkt", "das Kapital"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Insolvenz", "insolvency")
+                    Teaches = new VocabularyTeaching("Insolvenz", "insolvency", Article: "die", ExampleSentence: "Die Firma meldet Insolvenz an.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -588,7 +590,7 @@ public static class C1Units
                     Question = "\"return/yield\" (on an investment) in German?",
                     Options = ["die Rendite", "das Kapital", "die Investition", "der Wettbewerb"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Rendite", "return/yield")
+                    Teaches = new VocabularyTeaching("Rendite", "return/yield", Article: "die", ExampleSentence: "Die Rendite steigt stetig.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -598,7 +600,7 @@ public static class C1Units
                     Question = "\"competition\" in German?",
                     Options = ["der Wettbewerb", "die Rendite", "die Fusion", "die Effizienz"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Wettbewerb", "competition")
+                    Teaches = new VocabularyTeaching("Wettbewerb", "competition", Article: "der", ExampleSentence: "Der Wettbewerb beginnt morgen.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -628,7 +630,7 @@ public static class C1Units
                     Question = "\"responsibility\" in German?",
                     Options = ["die Verantwortung", "die Freiheit", "die Identität", "die Moral"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Verantwortung", "responsibility")
+                    Teaches = new VocabularyTeaching("Verantwortung", "responsibility", Article: "die", ExampleSentence: "Er übernimmt die Verantwortung.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -638,7 +640,7 @@ public static class C1Units
                     Question = "\"consciousness/awareness\" in German?",
                     Options = ["das Bewusstsein", "die Wahrnehmung", "die Autonomie", "das Dilemma"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Bewusstsein", "consciousness")
+                    Teaches = new VocabularyTeaching("Bewusstsein", "consciousness", Article: "das", ExampleSentence: "Das Bewusstsein kehrt zurück.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -648,7 +650,7 @@ public static class C1Units
                     Question = "\"perception\" in German?",
                     Options = ["die Wahrnehmung", "das Bewusstsein", "die Identität", "die Verantwortung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Wahrnehmung", "perception")
+                    Teaches = new VocabularyTeaching("Wahrnehmung", "perception", Article: "die", ExampleSentence: "Die Wahrnehmung täuscht manchmal.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -658,7 +660,7 @@ public static class C1Units
                     Question = "\"dilemma\" in German?",
                     Options = ["das Dilemma", "die Autonomie", "die Moral", "die Freiheit"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Dilemma", "dilemma")
+                    Teaches = new VocabularyTeaching("Dilemma", "dilemma", Article: "das", ExampleSentence: "Das Dilemma bleibt ungelöst.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -688,7 +690,7 @@ public static class C1Units
                     Question = "\"wistfulness/melancholy\" in German?",
                     Options = ["die Wehmut", "die Gelassenheit", "die Ehrfurcht", "die Demut"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Wehmut", "wistfulness")
+                    Teaches = new VocabularyTeaching("Wehmut", "wistfulness", Article: "die", ExampleSentence: "Wehmut erfüllt ihr Herz.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -698,7 +700,7 @@ public static class C1Units
                     Question = "\"inner conflict / being torn\" in German?",
                     Options = ["die Zerrissenheit", "die Gelassenheit", "die Verbitterung", "die Wehmut"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Zerrissenheit", "inner conflict")
+                    Teaches = new VocabularyTeaching("Zerrissenheit", "inner conflict", Article: "die", ExampleSentence: "Innere Zerrissenheit plagt ihn.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -708,7 +710,7 @@ public static class C1Units
                     Question = "\"composure/calmness\" in German?",
                     Options = ["die Gelassenheit", "die Zerrissenheit", "die Verbitterung", "die Ehrfurcht"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Gelassenheit", "composure")
+                    Teaches = new VocabularyTeaching("Gelassenheit", "composure", Article: "die", ExampleSentence: "Gelassenheit hilft in Krisen.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -718,7 +720,7 @@ public static class C1Units
                     Question = "\"awe/reverence\" in German?",
                     Options = ["die Ehrfurcht", "die Demut", "die Wehmut", "die Gelassenheit"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Ehrfurcht", "awe")
+                    Teaches = new VocabularyTeaching("Ehrfurcht", "awe", Article: "die", ExampleSentence: "Ehrfurcht erfüllt die Besucher.", Highlights: [])
                 },
                 new ClozeExercise
                 {

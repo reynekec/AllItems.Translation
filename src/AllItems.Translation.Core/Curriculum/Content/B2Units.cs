@@ -1,3 +1,5 @@
+using AllItems.Translation.Core.Domain;
+
 namespace AllItems.Translation.Core.Curriculum.Content;
 
 /// <summary>
@@ -486,7 +488,7 @@ public static class B2Units
                     Question = "\"government\" in German?",
                     Options = ["die Regierung", "die Wahl", "das Gesetz", "die Gesellschaft"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Regierung", "government")
+                    Teaches = new VocabularyTeaching("Regierung", "government", Article: "die", ExampleSentence: "Die Regierung plant neue Gesetze.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -496,7 +498,7 @@ public static class B2Units
                     Question = "\"election\" in German?",
                     Options = ["die Wahl", "die Regierung", "der Bürger", "die Demokratie"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Wahl", "election")
+                    Teaches = new VocabularyTeaching("Wahl", "election", Article: "die", ExampleSentence: "Die nächste Wahl beginnt bald.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -506,7 +508,7 @@ public static class B2Units
                     Question = "\"citizen\" in German?",
                     Options = ["der Bürger", "der Politiker", "der Wähler", "der Beamte"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Bürger", "citizen")
+                    Teaches = new VocabularyTeaching("Bürger", "citizen", Article: "der", ExampleSentence: "Jeder Bürger hat gleiche Rechte.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -516,7 +518,7 @@ public static class B2Units
                     Question = "\"justice\" in German?",
                     Options = ["die Gerechtigkeit", "die Ungleichheit", "das Gesetz", "die Freiheit"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Gerechtigkeit", "justice")
+                    Teaches = new VocabularyTeaching("Gerechtigkeit", "justice", Article: "die", ExampleSentence: "Gerechtigkeit ist ein wichtiger Wert.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -526,7 +528,7 @@ public static class B2Units
                     Question = "\"inequality\" in German?",
                     Options = ["die Ungleichheit", "die Gerechtigkeit", "die Demokratie", "die Wahl"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Ungleichheit", "inequality")
+                    Teaches = new VocabularyTeaching("Ungleichheit", "inequality", Article: "die", ExampleSentence: "Ungleichheit betrifft viele arme Länder.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -556,7 +558,7 @@ public static class B2Units
                     Question = "\"company/enterprise\" in German?",
                     Options = ["das Unternehmen", "der Gewinn", "die Steuer", "der Markt"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Unternehmen", "company")
+                    Teaches = new VocabularyTeaching("Unternehmen", "company", Article: "das", ExampleSentence: "Das Unternehmen wächst sehr schnell.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -566,7 +568,7 @@ public static class B2Units
                     Question = "\"profit\" in German?",
                     Options = ["der Gewinn", "der Verlust", "die Steuer", "das Angebot"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Gewinn", "profit")
+                    Teaches = new VocabularyTeaching("Gewinn", "profit", Article: "der", ExampleSentence: "Der Gewinn steigt dieses Jahr.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -576,7 +578,7 @@ public static class B2Units
                     Question = "\"inflation\" in German?",
                     Options = ["die Inflation", "die Steuer", "die Nachfrage", "der Markt"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Inflation", "inflation")
+                    Teaches = new VocabularyTeaching("Inflation", "inflation", Article: "die", ExampleSentence: "Die Inflation steigt jeden Monat.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -586,7 +588,7 @@ public static class B2Units
                     Question = "\"demand\" (economic) in German?",
                     Options = ["die Nachfrage", "das Angebot", "der Gewinn", "die Steuer"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Nachfrage", "demand")
+                    Teaches = new VocabularyTeaching("Nachfrage", "demand", Article: "die", ExampleSentence: "Die Nachfrage sinkt im Winter.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -596,7 +598,7 @@ public static class B2Units
                     Question = "\"supply\" (economic) in German?",
                     Options = ["das Angebot", "die Nachfrage", "der Gewinn", "die Inflation"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Angebot", "supply")
+                    Teaches = new VocabularyTeaching("Angebot", "supply", Article: "das", ExampleSentence: "Das Angebot übersteigt die Nachfrage.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -626,7 +628,7 @@ public static class B2Units
                     Question = "\"research\" in German?",
                     Options = ["die Forschung", "das Experiment", "die Hypothese", "das Ergebnis"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Forschung", "research")
+                    Teaches = new VocabularyTeaching("Forschung", "research", Article: "die", ExampleSentence: "Die Forschung braucht mehr Geld.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -636,7 +638,7 @@ public static class B2Units
                     Question = "\"hypothesis\" in German?",
                     Options = ["die Hypothese", "die Theorie", "das Ergebnis", "der Beweis"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Hypothese", "hypothesis")
+                    Teaches = new VocabularyTeaching("Hypothese", "hypothesis", Article: "die", ExampleSentence: "Diese Hypothese klingt sehr plausibel.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -646,7 +648,7 @@ public static class B2Units
                     Question = "\"to prove\" in German?",
                     Options = ["beweisen", "vermuten", "messen", "analysieren"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("beweisen", "to prove")
+                    Teaches = new VocabularyTeaching("beweisen", "to prove", Article: null, ExampleSentence: "Er beweist seine Theorie heute.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -656,7 +658,7 @@ public static class B2Units
                     Question = "\"insight/finding\" in German?",
                     Options = ["die Erkenntnis", "das Experiment", "die Hypothese", "die Forschung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Erkenntnis", "insight")
+                    Teaches = new VocabularyTeaching("Erkenntnis", "insight", Article: "die", ExampleSentence: "Diese Erkenntnis überrascht die Forscher.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -666,7 +668,7 @@ public static class B2Units
                     Question = "\"to analyze\" in German?",
                     Options = ["analysieren", "beweisen", "messen", "vermuten"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("analysieren", "to analyze")
+                    Teaches = new VocabularyTeaching("analysieren", "to analyze", Article: null, ExampleSentence: "Wir analysieren die neuen Daten.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -696,7 +698,7 @@ public static class B2Units
                     Question = "\"painting\" in German?",
                     Options = ["das Gemälde", "die Skulptur", "die Ausstellung", "das Meisterwerk"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Gemälde", "painting")
+                    Teaches = new VocabularyTeaching("Gemälde", "painting", Article: "das", ExampleSentence: "Das Gemälde hängt im Museum.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -706,7 +708,7 @@ public static class B2Units
                     Question = "\"exhibition\" in German?",
                     Options = ["die Ausstellung", "das Gemälde", "der Künstler", "die Skulptur"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Ausstellung", "exhibition")
+                    Teaches = new VocabularyTeaching("Ausstellung", "exhibition", Article: "die", ExampleSentence: "Die Ausstellung öffnet nächste Woche.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -716,7 +718,7 @@ public static class B2Units
                     Question = "\"sculpture\" in German?",
                     Options = ["die Skulptur", "das Gemälde", "das Meisterwerk", "die Ausstellung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Skulptur", "sculpture")
+                    Teaches = new VocabularyTeaching("Skulptur", "sculpture", Article: "die", ExampleSentence: "Die Skulptur steht im Park.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -726,7 +728,7 @@ public static class B2Units
                     Question = "\"heritage/legacy\" in German?",
                     Options = ["das Erbe", "die Tradition", "das Meisterwerk", "die Kultur"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Erbe", "heritage")
+                    Teaches = new VocabularyTeaching("Erbe", "heritage", Article: "das", ExampleSentence: "Dieses Erbe prägt unsere Kultur.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -736,7 +738,7 @@ public static class B2Units
                     Question = "\"contemporary\" in German?",
                     Options = ["zeitgenössisch", "traditionell", "historisch", "altmodisch"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("zeitgenössisch", "contemporary")
+                    Teaches = new VocabularyTeaching("zeitgenössisch", "contemporary", Article: null, ExampleSentence: "Diese Kunst wirkt sehr zeitgenössisch.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -746,7 +748,7 @@ public static class B2Units
                     TextBefore = "Der ",
                     TextAfter = " stellt seine Werke aus.",
                     CorrectAnswer = "Künstler",
-                    Teaches = new VocabularyTeaching("Künstler", "artist")
+                    Teaches = new VocabularyTeaching("Künstler", "artist", Article: "der", ExampleSentence: "Der Künstler malt ein Porträt.", Highlights: [])
                 }
             ]
         },
@@ -767,7 +769,7 @@ public static class B2Units
                     Question = "\"diagnosis\" in German?",
                     Options = ["die Diagnose", "die Behandlung", "die Therapie", "die Genesung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Diagnose", "diagnosis")
+                    Teaches = new VocabularyTeaching("Diagnose", "diagnosis", Article: "die", ExampleSentence: "Die Diagnose bestätigt seine Befürchtung.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -777,7 +779,7 @@ public static class B2Units
                     Question = "\"treatment\" in German?",
                     Options = ["die Behandlung", "die Diagnose", "die Impfung", "das Medikament"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Behandlung", "treatment")
+                    Teaches = new VocabularyTeaching("Behandlung", "treatment", Article: "die", ExampleSentence: "Die Behandlung dauert mehrere Wochen.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -787,7 +789,7 @@ public static class B2Units
                     Question = "\"medication\" in German?",
                     Options = ["das Medikament", "die Impfung", "die Diagnose", "die Therapie"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Medikament", "medication")
+                    Teaches = new VocabularyTeaching("Medikament", "medication", Article: "das", ExampleSentence: "Dieses Medikament wirkt sehr schnell.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -797,7 +799,7 @@ public static class B2Units
                     Question = "\"chronic\" in German?",
                     Options = ["chronisch", "akut", "ansteckend", "harmlos"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("chronisch", "chronic")
+                    Teaches = new VocabularyTeaching("chronisch", "chronic", Article: null, ExampleSentence: "Diese Krankheit bleibt leider chronisch.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -807,7 +809,7 @@ public static class B2Units
                     Question = "\"recovery\" (from illness) in German?",
                     Options = ["die Genesung", "die Diagnose", "die Impfung", "die Behandlung"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Genesung", "recovery")
+                    Teaches = new VocabularyTeaching("Genesung", "recovery", Article: "die", ExampleSentence: "Die Genesung dauert noch lange.", Highlights: [])
                 },
                 new ClozeExercise
                 {

@@ -1,3 +1,5 @@
+using AllItems.Translation.Core.Domain;
+
 namespace AllItems.Translation.Core.Curriculum.Content;
 
 /// <summary>
@@ -434,7 +436,7 @@ public static class C2Units
                     Question = "\"novella\" in German?",
                     Options = ["die Novelle", "der Roman", "das Epos", "die Elegie"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Novelle", "novella")
+                    Teaches = new VocabularyTeaching("Novelle", "novella", Article: "die", ExampleSentence: "Die Novelle beschreibt eine Reise.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -444,7 +446,7 @@ public static class C2Units
                     Question = "\"satire\" in German?",
                     Options = ["die Satire", "die Parodie", "die Allegorie", "die Elegie"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Satire", "satire")
+                    Teaches = new VocabularyTeaching("Satire", "satire", Article: "die", ExampleSentence: "Die Satire kritisiert die Politik.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -454,7 +456,7 @@ public static class C2Units
                     Question = "\"allegory\" in German?",
                     Options = ["die Allegorie", "die Satire", "die Parodie", "das Epos"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Allegorie", "allegory")
+                    Teaches = new VocabularyTeaching("Allegorie", "allegory", Article: "die", ExampleSentence: "Die Allegorie symbolisiert das Leben.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -464,7 +466,7 @@ public static class C2Units
                     Question = "\"protagonist/main character\" in German?",
                     Options = ["der Protagonist", "der Erzähler", "der Antagonist", "der Autor"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Protagonist", "protagonist")
+                    Teaches = new VocabularyTeaching("Protagonist", "protagonist", Article: "der", ExampleSentence: "Der Protagonist kämpft für Freiheit.", Highlights: [])
                 }
             ]
         },
@@ -485,7 +487,7 @@ public static class C2Units
                     Question = "\"ethics\" in German?",
                     Options = ["die Ethik", "die Metaphysik", "die Existenz", "die Vernunft"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Ethik", "ethics")
+                    Teaches = new VocabularyTeaching("Ethik", "ethics", Article: "die", ExampleSentence: "Die Ethik hinterfragt unser Handeln.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -495,7 +497,7 @@ public static class C2Units
                     Question = "\"metaphysics\" in German?",
                     Options = ["die Metaphysik", "die Ethik", "die Erkenntnistheorie", "der Determinismus"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Metaphysik", "metaphysics")
+                    Teaches = new VocabularyTeaching("Metaphysik", "metaphysics", Article: "die", ExampleSentence: "Die Metaphysik erforscht das Sein.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -505,7 +507,7 @@ public static class C2Units
                     Question = "\"reason\" (rational thought) in German?",
                     Options = ["die Vernunft", "die Existenz", "die Weltanschauung", "die Ethik"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Vernunft", "reason")
+                    Teaches = new VocabularyTeaching("Vernunft", "reason", Article: "die", ExampleSentence: "Die Vernunft siegt am Ende.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -515,7 +517,7 @@ public static class C2Units
                     Question = "\"worldview\" in German?",
                     Options = ["die Weltanschauung", "die Vernunft", "die Metaphysik", "der Determinismus"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Weltanschauung", "worldview")
+                    Teaches = new VocabularyTeaching("Weltanschauung", "worldview", Article: "die", ExampleSentence: "Seine Weltanschauung prägt sein Handeln.", Highlights: [])
                 }
             ]
         },
@@ -536,7 +538,7 @@ public static class C2Units
                     Question = "\"era/age\" in German?",
                     Options = ["das Zeitalter", "die Epoche", "der Umbruch", "der Brauch"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Zeitalter", "era")
+                    Teaches = new VocabularyTeaching("Zeitalter", "era", Article: "das", ExampleSentence: "Ein neues Zeitalter beginnt.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -546,7 +548,7 @@ public static class C2Units
                     Question = "\"upheaval/radical change\" in German?",
                     Options = ["der Umbruch", "das Zeitalter", "der Brauch", "der Zeitgeist"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Umbruch", "upheaval")
+                    Teaches = new VocabularyTeaching("Umbruch", "upheaval", Article: "der", ExampleSentence: "Ein tiefer Umbruch beginnt.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -556,7 +558,7 @@ public static class C2Units
                     Question = "\"custom\" (cultural practice) in German?",
                     Options = ["der Brauch", "die Epoche", "der Umbruch", "das Zeitalter"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Brauch", "custom")
+                    Teaches = new VocabularyTeaching("Brauch", "custom", Article: "der", ExampleSentence: "Dieser Brauch ist sehr alt.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -566,7 +568,7 @@ public static class C2Units
                     Question = "\"zeitgeist / spirit of the age\" in German?",
                     Options = ["der Zeitgeist", "die Epoche", "der Brauch", "das Zeitalter"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Zeitgeist", "zeitgeist")
+                    Teaches = new VocabularyTeaching("Zeitgeist", "zeitgeist", Article: "der", ExampleSentence: "Der Zeitgeist verändert sich schnell.", Highlights: [])
                 }
             ]
         },
@@ -587,7 +589,7 @@ public static class C2Units
                     Question = "\"quantum mechanics\" in German?",
                     Options = ["die Quantenmechanik", "die Genetik", "die Evolution", "die Synthese"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Quantenmechanik", "quantum mechanics")
+                    Teaches = new VocabularyTeaching("Quantenmechanik", "quantum mechanics", Article: "die", ExampleSentence: "Die Quantenmechanik erklärt kleinste Teilchen.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -597,7 +599,7 @@ public static class C2Units
                     Question = "\"molecule\" in German?",
                     Options = ["das Molekül", "der Organismus", "das Phänomen", "die Synthese"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Molekül", "molecule")
+                    Teaches = new VocabularyTeaching("Molekül", "molecule", Article: "das", ExampleSentence: "Das Molekül besteht aus Atomen.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -607,7 +609,7 @@ public static class C2Units
                     Question = "\"organism\" in German?",
                     Options = ["der Organismus", "das Molekül", "die Genetik", "das Phänomen"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Organismus", "organism")
+                    Teaches = new VocabularyTeaching("Organismus", "organism", Article: "der", ExampleSentence: "Der Organismus passt sich an.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -617,7 +619,7 @@ public static class C2Units
                     Question = "\"interaction\" (between systems/forces) in German?",
                     Options = ["die Wechselwirkung", "die Synthese", "das Phänomen", "die Genetik"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Wechselwirkung", "interaction")
+                    Teaches = new VocabularyTeaching("Wechselwirkung", "interaction", Article: "die", ExampleSentence: "Die Wechselwirkung beeinflusst das Ergebnis.", Highlights: [])
                 }
             ]
         },
@@ -638,7 +640,7 @@ public static class C2Units
                     Question = "\"die Muße\" means?",
                     Options = ["leisure (unhurried, contemplative free time)", "exhaustion", "boredom", "haste"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Muße", "leisure")
+                    Teaches = new VocabularyTeaching("Muße", "leisure", Article: "die", ExampleSentence: "Er genießt seine Muße.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -648,7 +650,7 @@ public static class C2Units
                     Question = "\"die Zwietracht\" means?",
                     Options = ["discord/strife", "harmony", "friendship", "silence"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Zwietracht", "discord")
+                    Teaches = new VocabularyTeaching("Zwietracht", "discord", Article: "die", ExampleSentence: "Zwietracht spaltet die Familie.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -658,7 +660,7 @@ public static class C2Units
                     Question = "\"erhaben\" means?",
                     Options = ["sublime/exalted", "ordinary", "hidden", "broken"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("erhaben", "sublime")
+                    Teaches = new VocabularyTeaching("erhaben", "sublime", Article: null, ExampleSentence: "Der Berg wirkt sehr erhaben.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -668,7 +670,7 @@ public static class C2Units
                     Question = "\"unergründlich\" means?",
                     Options = ["unfathomable", "shallow", "obvious", "temporary"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("unergründlich", "unfathomable")
+                    Teaches = new VocabularyTeaching("unergründlich", "unfathomable", Article: null, ExampleSentence: "Ihre Motive bleiben unergründlich.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -678,7 +680,7 @@ public static class C2Units
                     Question = "\"die Anmut\" means?",
                     Options = ["grace/gracefulness", "clumsiness", "strength", "speed"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Anmut", "grace")
+                    Teaches = new VocabularyTeaching("Anmut", "grace", Article: "die", ExampleSentence: "Sie tanzt mit großer Anmut.", Highlights: [new SentenceHighlight("großer", "Dative case adjective ending after the preposition 'mit', modifying feminine 'Anmut'")])
                 }
             ]
         }

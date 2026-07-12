@@ -1,3 +1,5 @@
+using AllItems.Translation.Core.Domain;
+
 namespace AllItems.Translation.Core.Curriculum.Content;
 
 /// <summary>
@@ -589,7 +591,7 @@ public static class A1Units
                     Question = "\"red\" in German?",
                     Options = ["rot", "blau", "grün", "gelb"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("rot", "red")
+                    Teaches = new VocabularyTeaching("rot", "red", Article: null, ExampleSentence: "Die Rose ist rot.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -599,7 +601,7 @@ public static class A1Units
                     Question = "\"blue\" in German?",
                     Options = ["blau", "rot", "schwarz", "weiß"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("blau", "blue")
+                    Teaches = new VocabularyTeaching("blau", "blue", Article: null, ExampleSentence: "Der Himmel ist blau.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -609,7 +611,7 @@ public static class A1Units
                     Question = "\"green\" in German?",
                     Options = ["grün", "gelb", "orange", "lila"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("grün", "green")
+                    Teaches = new VocabularyTeaching("grün", "green", Article: null, ExampleSentence: "Das Gras ist grün.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -619,7 +621,7 @@ public static class A1Units
                     Question = "\"yellow\" in German?",
                     Options = ["gelb", "grün", "rot", "blau"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("gelb", "yellow")
+                    Teaches = new VocabularyTeaching("gelb", "yellow", Article: null, ExampleSentence: "Die Sonne ist gelb.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -629,7 +631,7 @@ public static class A1Units
                     Question = "\"black\" in German?",
                     Options = ["schwarz", "weiß", "grau", "braun"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("schwarz", "black")
+                    Teaches = new VocabularyTeaching("schwarz", "black", Article: null, ExampleSentence: "Die Katze ist schwarz.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -639,7 +641,7 @@ public static class A1Units
                     Question = "\"white\" in German?",
                     Options = ["weiß", "schwarz", "grau", "gelb"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("weiß", "white")
+                    Teaches = new VocabularyTeaching("weiß", "white", Article: null, ExampleSentence: "Der Schnee ist weiß.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -678,7 +680,7 @@ public static class A1Units
                     Question = "\"pants/trousers\" in German?",
                     Options = ["die Hose", "das Hemd", "der Rock", "die Jacke"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Hose", "pants/trousers")
+                    Teaches = new VocabularyTeaching("Hose", "pants/trousers", Article: "die", ExampleSentence: "Die Hose ist blau.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -688,7 +690,7 @@ public static class A1Units
                     Question = "\"shirt\" in German?",
                     Options = ["das Hemd", "die Hose", "die Schuhe", "der Hut"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Hemd", "shirt")
+                    Teaches = new VocabularyTeaching("Hemd", "shirt", Article: "das", ExampleSentence: "Das Hemd ist weiß.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -698,7 +700,7 @@ public static class A1Units
                     Question = "\"shoes\" in German?",
                     Options = ["die Schuhe", "die Socken", "der Hut", "das Kleid"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Schuhe", "shoes")
+                    Teaches = new VocabularyTeaching("Schuhe", "shoes", Article: "die", ExampleSentence: "Die Schuhe sind neu.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -708,7 +710,7 @@ public static class A1Units
                     Question = "\"jacket\" in German?",
                     Options = ["die Jacke", "das Kleid", "der Rock", "die Hose"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Jacke", "jacket")
+                    Teaches = new VocabularyTeaching("Jacke", "jacket", Article: "die", ExampleSentence: "Die Jacke ist warm.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -718,7 +720,7 @@ public static class A1Units
                     Question = "\"dress\" in German?",
                     Options = ["das Kleid", "der Rock", "das Hemd", "die Socken"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Kleid", "dress")
+                    Teaches = new VocabularyTeaching("Kleid", "dress", Article: "das", ExampleSentence: "Das Kleid ist rot.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -728,7 +730,7 @@ public static class A1Units
                     Question = "\"hat\" in German?",
                     Options = ["der Hut", "die Jacke", "die Hose", "das Hemd"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Hut", "hat")
+                    Teaches = new VocabularyTeaching("Hut", "hat", Article: "der", ExampleSentence: "Der Hut ist schwarz.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -767,7 +769,7 @@ public static class A1Units
                     Question = "\"apple\" in German?",
                     Options = ["der Apfel", "die Banane", "das Gemüse", "der Reis"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Apfel", "apple")
+                    Teaches = new VocabularyTeaching("Apfel", "apple", Article: "der", ExampleSentence: "Der Apfel ist süß.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -777,7 +779,7 @@ public static class A1Units
                     Question = "\"banana\" in German?",
                     Options = ["die Banane", "der Apfel", "die Suppe", "das Fleisch"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Banane", "banana")
+                    Teaches = new VocabularyTeaching("Banane", "banana", Article: "die", ExampleSentence: "Die Banane ist gelb.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -787,7 +789,7 @@ public static class A1Units
                     Question = "\"vegetables\" in German?",
                     Options = ["das Gemüse", "das Obst", "der Reis", "der Käse"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Gemüse", "vegetables")
+                    Teaches = new VocabularyTeaching("Gemüse", "vegetables", Article: "das", ExampleSentence: "Das Gemüse ist frisch.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -797,7 +799,7 @@ public static class A1Units
                     Question = "\"soup\" in German?",
                     Options = ["die Suppe", "das Fleisch", "der Saft", "das Wasser"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Suppe", "soup")
+                    Teaches = new VocabularyTeaching("Suppe", "soup", Article: "die", ExampleSentence: "Die Suppe schmeckt gut.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -807,7 +809,7 @@ public static class A1Units
                     Question = "\"meat\" in German?",
                     Options = ["das Fleisch", "der Käse", "das Gemüse", "der Apfel"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Fleisch", "meat")
+                    Teaches = new VocabularyTeaching("Fleisch", "meat", Article: "das", ExampleSentence: "Das Fleisch ist teuer.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -817,7 +819,7 @@ public static class A1Units
                     Question = "\"cheese\" in German?",
                     Options = ["der Käse", "der Saft", "das Wasser", "die Suppe"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Käse", "cheese")
+                    Teaches = new VocabularyTeaching("Käse", "cheese", Article: "der", ExampleSentence: "Der Käse schmeckt gut.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -827,7 +829,7 @@ public static class A1Units
                     Question = "\"juice\" in German?",
                     Options = ["der Saft", "das Wasser", "die Milch", "der Käse"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Saft", "juice")
+                    Teaches = new VocabularyTeaching("Saft", "juice", Article: "der", ExampleSentence: "Der Saft ist kalt.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -837,7 +839,7 @@ public static class A1Units
                     TextBefore = "Ich trinke ",
                     TextAfter = ".",
                     CorrectAnswer = "Wasser",
-                    Teaches = new VocabularyTeaching("Wasser", "water")
+                    Teaches = new VocabularyTeaching("Wasser", "water", Article: "das", ExampleSentence: "Das Wasser ist kalt.", Highlights: [])
                 }
             ]
         },
@@ -858,7 +860,7 @@ public static class A1Units
                     Question = "\"kitchen\" in German?",
                     Options = ["die Küche", "das Schlafzimmer", "das Wohnzimmer", "das Bad"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Küche", "kitchen")
+                    Teaches = new VocabularyTeaching("Küche", "kitchen", Article: "die", ExampleSentence: "Die Küche ist klein.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -868,7 +870,7 @@ public static class A1Units
                     Question = "\"bedroom\" in German?",
                     Options = ["das Schlafzimmer", "die Küche", "das Bad", "das Wohnzimmer"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Schlafzimmer", "bedroom")
+                    Teaches = new VocabularyTeaching("Schlafzimmer", "bedroom", Article: "das", ExampleSentence: "Das Schlafzimmer ist klein.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -878,7 +880,7 @@ public static class A1Units
                     Question = "\"living room\" in German?",
                     Options = ["das Wohnzimmer", "das Schlafzimmer", "die Küche", "das Bad"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Wohnzimmer", "living room")
+                    Teaches = new VocabularyTeaching("Wohnzimmer", "living room", Article: "das", ExampleSentence: "Das Wohnzimmer ist groß.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -888,7 +890,7 @@ public static class A1Units
                     Question = "\"chair\" in German?",
                     Options = ["der Stuhl", "das Bett", "das Fenster", "die Tür"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Stuhl", "chair")
+                    Teaches = new VocabularyTeaching("Stuhl", "chair", Article: "der", ExampleSentence: "Der Stuhl ist kaputt.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -898,7 +900,7 @@ public static class A1Units
                     Question = "\"bed\" in German?",
                     Options = ["das Bett", "der Stuhl", "das Fenster", "die Tür"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Bett", "bed")
+                    Teaches = new VocabularyTeaching("Bett", "bed", Article: "das", ExampleSentence: "Das Bett ist bequem.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -908,7 +910,7 @@ public static class A1Units
                     Question = "\"window\" in German?",
                     Options = ["das Fenster", "die Tür", "das Bett", "der Stuhl"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Fenster", "window")
+                    Teaches = new VocabularyTeaching("Fenster", "window", Article: "das", ExampleSentence: "Das Fenster ist offen.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -947,7 +949,7 @@ public static class A1Units
                     Question = "\"dog\" in German?",
                     Options = ["der Hund", "die Katze", "der Vogel", "das Pferd"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Hund", "dog")
+                    Teaches = new VocabularyTeaching("Hund", "dog", Article: "der", ExampleSentence: "Der Hund bellt laut.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -957,7 +959,7 @@ public static class A1Units
                     Question = "\"cat\" in German?",
                     Options = ["die Katze", "der Hund", "die Kuh", "der Fisch"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Katze", "cat")
+                    Teaches = new VocabularyTeaching("Katze", "cat", Article: "die", ExampleSentence: "Die Katze schläft viel.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -967,7 +969,7 @@ public static class A1Units
                     Question = "\"bird\" in German?",
                     Options = ["der Vogel", "das Pferd", "das Schaf", "der Fisch"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Vogel", "bird")
+                    Teaches = new VocabularyTeaching("Vogel", "bird", Article: "der", ExampleSentence: "Der Vogel singt schön.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -977,7 +979,7 @@ public static class A1Units
                     Question = "\"horse\" in German?",
                     Options = ["das Pferd", "die Kuh", "das Schaf", "der Vogel"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Pferd", "horse")
+                    Teaches = new VocabularyTeaching("Pferd", "horse", Article: "das", ExampleSentence: "Das Pferd läuft schnell.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -987,7 +989,7 @@ public static class A1Units
                     Question = "\"cow\" in German?",
                     Options = ["die Kuh", "das Schaf", "das Pferd", "der Fisch"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Kuh", "cow")
+                    Teaches = new VocabularyTeaching("Kuh", "cow", Article: "die", ExampleSentence: "Die Kuh frisst Gras.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -997,7 +999,7 @@ public static class A1Units
                     Question = "\"fish\" in German?",
                     Options = ["der Fisch", "der Vogel", "die Katze", "das Schaf"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Fisch", "fish")
+                    Teaches = new VocabularyTeaching("Fisch", "fish", Article: "der", ExampleSentence: "Der Fisch schwimmt schnell.", Highlights: [])
                 },
                 new ClozeExercise
                 {

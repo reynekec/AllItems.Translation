@@ -1,3 +1,5 @@
+using AllItems.Translation.Core.Domain;
+
 namespace AllItems.Translation.Core.Curriculum.Content;
 
 /// <summary>
@@ -617,7 +619,7 @@ public static class A2Units
                     Question = "\"teacher\" in German?",
                     Options = ["der Lehrer", "der Ingenieur", "der Anwalt", "der Bauer"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Lehrer", "teacher")
+                    Teaches = new VocabularyTeaching("Lehrer", "teacher", Article: "der", ExampleSentence: "Der Lehrer erklärt viel.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -627,7 +629,7 @@ public static class A2Units
                     Question = "\"engineer\" in German?",
                     Options = ["der Ingenieur", "der Verkäufer", "der Lehrer", "der Bauer"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Ingenieur", "engineer")
+                    Teaches = new VocabularyTeaching("Ingenieur", "engineer", Article: "der", ExampleSentence: "Der Ingenieur baut Brücken.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -637,7 +639,7 @@ public static class A2Units
                     Question = "\"salesperson\" in German?",
                     Options = ["der Verkäufer", "der Anwalt", "der Ingenieur", "der Koch"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Verkäufer", "salesperson")
+                    Teaches = new VocabularyTeaching("Verkäufer", "salesperson", Article: "der", ExampleSentence: "Der Verkäufer berät Kunden.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -647,7 +649,7 @@ public static class A2Units
                     Question = "\"lawyer\" in German?",
                     Options = ["der Anwalt", "der Bauer", "der Lehrer", "der Verkäufer"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Anwalt", "lawyer")
+                    Teaches = new VocabularyTeaching("Anwalt", "lawyer", Article: "der", ExampleSentence: "Der Anwalt liest Verträge.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -657,7 +659,7 @@ public static class A2Units
                     Question = "\"farmer\" in German?",
                     Options = ["der Bauer", "der Ingenieur", "der Anwalt", "der Koch"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Bauer", "farmer")
+                    Teaches = new VocabularyTeaching("Bauer", "farmer", Article: "der", ExampleSentence: "Der Bauer pflanzt Kartoffeln.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -687,7 +689,7 @@ public static class A2Units
                     Question = "\"sun\" in German?",
                     Options = ["die Sonne", "der Regen", "der Schnee", "der Wind"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Sonne", "sun")
+                    Teaches = new VocabularyTeaching("Sonne", "sun", Article: "die", ExampleSentence: "Die Sonne scheint hell.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -697,7 +699,7 @@ public static class A2Units
                     Question = "\"rain\" in German?",
                     Options = ["der Regen", "der Schnee", "die Sonne", "die Wolke"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Regen", "rain")
+                    Teaches = new VocabularyTeaching("Regen", "rain", Article: "der", ExampleSentence: "Der Regen fällt stark.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -707,7 +709,7 @@ public static class A2Units
                     Question = "\"snow\" in German?",
                     Options = ["der Schnee", "der Regen", "der Wind", "die Wolke"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Schnee", "snow")
+                    Teaches = new VocabularyTeaching("Schnee", "snow", Article: "der", ExampleSentence: "Der Schnee fällt leise.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -717,7 +719,7 @@ public static class A2Units
                     Question = "\"wind\" in German?",
                     Options = ["der Wind", "die Wolke", "der Regen", "die Sonne"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Wind", "wind")
+                    Teaches = new VocabularyTeaching("Wind", "wind", Article: "der", ExampleSentence: "Der Wind weht stark.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -727,7 +729,7 @@ public static class A2Units
                     Question = "\"cloud\" in German?",
                     Options = ["die Wolke", "der Wind", "der Schnee", "die Sonne"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Wolke", "cloud")
+                    Teaches = new VocabularyTeaching("Wolke", "cloud", Article: "die", ExampleSentence: "Die Wolke ist grau.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -766,7 +768,7 @@ public static class A2Units
                     Question = "\"to swim\" in German?",
                     Options = ["schwimmen", "wandern", "malen", "tanzen"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("schwimmen", "to swim")
+                    Teaches = new VocabularyTeaching("schwimmen", "to swim", Article: null, ExampleSentence: "Wir schwimmen gern zusammen.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -776,7 +778,7 @@ public static class A2Units
                     Question = "\"to hike\" in German?",
                     Options = ["wandern", "schwimmen", "tanzen", "fotografieren"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("wandern", "to hike")
+                    Teaches = new VocabularyTeaching("wandern", "to hike", Article: null, ExampleSentence: "Wir wandern gern zusammen.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -786,7 +788,7 @@ public static class A2Units
                     Question = "\"to paint\" in German?",
                     Options = ["malen", "tanzen", "wandern", "schwimmen"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("malen", "to paint")
+                    Teaches = new VocabularyTeaching("malen", "to paint", Article: null, ExampleSentence: "Sie malt ein Bild.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -796,7 +798,7 @@ public static class A2Units
                     Question = "\"to dance\" in German?",
                     Options = ["tanzen", "malen", "fotografieren", "wandern"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("tanzen", "to dance")
+                    Teaches = new VocabularyTeaching("tanzen", "to dance", Article: null, ExampleSentence: "Sie tanzen jeden Abend.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -806,7 +808,7 @@ public static class A2Units
                     Question = "\"hobby\" in German?",
                     Options = ["das Hobby", "die Freizeit", "der Sport", "das Spiel"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Hobby", "hobby")
+                    Teaches = new VocabularyTeaching("Hobby", "hobby", Article: "das", ExampleSentence: "Mein Hobby ist Lesen.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -836,7 +838,7 @@ public static class A2Units
                     Question = "\"train\" in German?",
                     Options = ["der Zug", "der Bus", "das Fahrrad", "das Schiff"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Zug", "train")
+                    Teaches = new VocabularyTeaching("Zug", "train", Article: "der", ExampleSentence: "Der Zug kommt pünktlich.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -846,7 +848,7 @@ public static class A2Units
                     Question = "\"bicycle\" in German?",
                     Options = ["das Fahrrad", "der Zug", "das Flugzeug", "der Bus"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Fahrrad", "bicycle")
+                    Teaches = new VocabularyTeaching("Fahrrad", "bicycle", Article: "das", ExampleSentence: "Das Fahrrad ist neu.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -856,7 +858,7 @@ public static class A2Units
                     Question = "\"airplane\" in German?",
                     Options = ["das Flugzeug", "das Schiff", "der Zug", "das Fahrrad"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Flugzeug", "airplane")
+                    Teaches = new VocabularyTeaching("Flugzeug", "airplane", Article: "das", ExampleSentence: "Das Flugzeug fliegt hoch.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -866,7 +868,7 @@ public static class A2Units
                     Question = "\"ship\" in German?",
                     Options = ["das Schiff", "das Flugzeug", "der Bus", "die U-Bahn"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Schiff", "ship")
+                    Teaches = new VocabularyTeaching("Schiff", "ship", Article: "das", ExampleSentence: "Das Schiff fährt langsam.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -876,7 +878,7 @@ public static class A2Units
                     Question = "\"subway/underground\" in German?",
                     Options = ["die U-Bahn", "der Zug", "das Schiff", "das Fahrrad"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("U-Bahn", "subway")
+                    Teaches = new VocabularyTeaching("U-Bahn", "subway", Article: "die", ExampleSentence: "Die U-Bahn ist voll.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -906,7 +908,7 @@ public static class A2Units
                     Question = "\"price\" in German?",
                     Options = ["der Preis", "die Größe", "das Geld", "die Kasse"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Preis", "price")
+                    Teaches = new VocabularyTeaching("Preis", "price", Article: "der", ExampleSentence: "Der Preis ist hoch.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -916,7 +918,7 @@ public static class A2Units
                     Question = "\"cheap\" in German?",
                     Options = ["billig", "teuer", "groß", "klein"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("billig", "cheap")
+                    Teaches = new VocabularyTeaching("billig", "cheap", Article: null, ExampleSentence: "Das Auto ist billig.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -926,7 +928,7 @@ public static class A2Units
                     Question = "\"expensive\" in German?",
                     Options = ["teuer", "billig", "günstig", "kostenlos"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("teuer", "expensive")
+                    Teaches = new VocabularyTeaching("teuer", "expensive", Article: null, ExampleSentence: "Das Auto ist teuer.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -936,7 +938,7 @@ public static class A2Units
                     Question = "\"size\" in German?",
                     Options = ["die Größe", "der Preis", "die Kasse", "das Geld"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("Größe", "size")
+                    Teaches = new VocabularyTeaching("Größe", "size", Article: "die", ExampleSentence: "Die Größe passt gut.", Highlights: [])
                 },
                 new MultipleChoiceExercise
                 {
@@ -946,7 +948,7 @@ public static class A2Units
                     Question = "\"to pay\" in German?",
                     Options = ["bezahlen", "kaufen", "verkaufen", "kosten"],
                     CorrectOptionIndex = 0,
-                    Teaches = new VocabularyTeaching("bezahlen", "to pay")
+                    Teaches = new VocabularyTeaching("bezahlen", "to pay", Article: null, ExampleSentence: "Ich bezahle die Rechnung.", Highlights: [])
                 },
                 new ClozeExercise
                 {
@@ -956,7 +958,7 @@ public static class A2Units
                     TextBefore = "Ich bezahle an der ",
                     TextAfter = ".",
                     CorrectAnswer = "Kasse",
-                    Teaches = new VocabularyTeaching("Kasse", "checkout")
+                    Teaches = new VocabularyTeaching("Kasse", "checkout", Article: "die", ExampleSentence: "Die Kasse ist leer.", Highlights: [])
                 }
             ]
         }
