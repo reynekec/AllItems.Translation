@@ -4,7 +4,6 @@ using AllItems.Translation.Core.Translation;
 using AllItems.Translation.Infrastructure.Credentials;
 using AllItems.Translation.Infrastructure.GoogleTranslation;
 using AllItems.Translation.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AllItems.Translation.Infrastructure;
@@ -15,8 +14,8 @@ public static class ServiceCollectionExtensions
     {
         AppPaths.EnsureDirectoriesExist();
 
-        services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlite($"Data Source={AppPaths.DatabaseFilePath}"));
+        services.AddSingleton(new SqliteConnectionFactory($"Data Source={AppPaths.DatabaseFilePath}"));
+        services.AddSingleton<DatabaseInitializer>();
 
         services.AddSingleton<IClock, SystemClock>();
         services.AddSingleton<ICredentialStore, FileCredentialStore>();
@@ -24,10 +23,10 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IWordAligner, PositionalWordAligner>();
         services.AddSingleton<ITranslationProvider, GoogleTranslationProvider>();
 
-        services.AddScoped<IWordRepository, WordRepository>();
-        services.AddScoped<ISentenceTranslationRepository, SentenceTranslationRepository>();
-        services.AddScoped<IApiUsageTracker, ApiUsageTracker>();
-        services.AddScoped<ISentenceTranslationService, SentenceTranslationService>();
+        services.AddSingleton<IWordRepository, WordRepository>();
+        services.AddSingleton<ISentenceTranslationRepository, SentenceTranslationRepository>();
+        services.AddSingleton<IApiUsageTracker, ApiUsageTracker>();
+        services.AddSingleton<ISentenceTranslationService, SentenceTranslationService>();
 
         return services;
     }

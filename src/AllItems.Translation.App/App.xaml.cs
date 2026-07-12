@@ -4,7 +4,6 @@ using AllItems.Translation.App.Views;
 using AllItems.Translation.Core.Abstractions;
 using AllItems.Translation.Infrastructure;
 using AllItems.Translation.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Wpf.Ui.Appearance;
@@ -36,11 +35,8 @@ public partial class App : Application
 
         ApplicationThemeManager.Apply(ApplicationTheme.Dark);
 
-        using (var scope = _host.Services.CreateScope())
-        {
-            var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-            await db.Database.MigrateAsync();
-        }
+        var databaseInitializer = _host.Services.GetRequiredService<DatabaseInitializer>();
+        await databaseInitializer.InitializeAsync();
 
         var credentialStore = _host.Services.GetRequiredService<ICredentialStore>();
         if (!credentialStore.HasCredential)
