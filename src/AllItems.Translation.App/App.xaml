@@ -14,6 +14,9 @@
             <converters:NullOrEmptyToBoolConverter x:Key="NullOrEmptyToBoolConverter" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
             <converters:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
+            <converters:EnumMatchToVisibilityConverter x:Key="EnumMatchToVisibilityConverter" />
+            <converters:BoolToButtonAppearanceConverter x:Key="BoolToButtonAppearanceConverter" />
+            <converters:SlotCorrectnessToTextConverter x:Key="SlotCorrectnessToTextConverter" />
 
             <Style x:Key="WordChipButtonStyle" TargetType="ui:Button">
                 <Setter Property="Margin" Value="0,0,4,4" />

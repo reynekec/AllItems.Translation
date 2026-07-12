@@ -1,4 +1,4 @@
-using AllItems.Translation.App.ViewModels;
+using AllItems.Translation.App.ViewModels.Training;
 using Wpf.Ui.Controls;
 
 namespace AllItems.Translation.App.Views;
@@ -9,5 +9,6 @@ public partial class TrainingWindow : FluentWindow
     {
         InitializeComponent();
         DataContext = viewModel;
+        viewModel.Initialize();
     }
 }

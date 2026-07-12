@@ -243,4 +243,39 @@ public sealed class SqliteRepositoriesTests : IDisposable
 
         Assert.Empty(states);
     }
+
+    [Fact]
+    public async Task CurriculumProgressRepository_MarkCompleted_ThenQuery_ReturnsIt()
+    {
+        var repository = new SqlCurriculumProgressRepository(_connectionFactory, _clock);
+
+        await repository.MarkExerciseCompletedAsync("a1-u1-e1");
+
+        var completed = await repository.GetCompletedExerciseIdsAsync(["a1-u1-e1", "a1-u1-e2"]);
+
+        Assert.Contains("a1-u1-e1", completed);
+        Assert.DoesNotContain("a1-u1-e2", completed);
+    }
+
+    [Fact]
+    public async Task CurriculumProgressRepository_MarkCompletedTwice_DoesNotThrow()
+    {
+        var repository = new SqlCurriculumProgressRepository(_connectionFactory, _clock);
+
+        await repository.MarkExerciseCompletedAsync("a1-u1-e1");
+        await repository.MarkExerciseCompletedAsync("a1-u1-e1");
+
+        var completed = await repository.GetCompletedExerciseIdsAsync(["a1-u1-e1"]);
+        Assert.Single(completed);
+    }
+
+    [Fact]
+    public async Task CurriculumProgressRepository_EmptyIdList_ReturnsEmptySet()
+    {
+        var repository = new SqlCurriculumProgressRepository(_connectionFactory, _clock);
+
+        var completed = await repository.GetCompletedExerciseIdsAsync([]);
+
+        Assert.Empty(completed);
+    }
 }

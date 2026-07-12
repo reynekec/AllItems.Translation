@@ -59,6 +59,14 @@ public sealed class DatabaseInitializer(SqliteConnectionFactory connectionFactor
                 );
                 CREATE UNIQUE INDEX IF NOT EXISTS IX_ReviewStates_WordEntryId_TargetLanguage
                     ON ReviewStates (WordEntryId, TargetLanguage);
+
+                CREATE TABLE IF NOT EXISTS CurriculumExerciseProgress (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    ExerciseId TEXT NOT NULL,
+                    CompletedAtUtc TEXT NOT NULL
+                );
+                CREATE UNIQUE INDEX IF NOT EXISTS IX_CurriculumExerciseProgress_ExerciseId
+                    ON CurriculumExerciseProgress (ExerciseId);
                 """;
             command.ExecuteNonQuery();
         }, cancellationToken);

@@ -1,4 +1,5 @@
 using AllItems.Translation.Core.Abstractions;
+using AllItems.Translation.Core.Curriculum;
 using AllItems.Translation.Core.Study;
 using AllItems.Translation.Core.Tokenization;
 using AllItems.Translation.Core.Translation;
@@ -32,6 +33,11 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IReviewStateRepository, SqlReviewStateRepository>();
         services.AddSingleton<ISpacedRepetitionScheduler, Sm2Scheduler>();
         services.AddSingleton<IStudySessionService, StudySessionService>();
+
+        services.AddSingleton<ICurriculumCatalog, StaticCurriculumCatalog>();
+        services.AddSingleton<IExerciseGrader, ExerciseGrader>();
+        services.AddSingleton<ICurriculumProgressRepository, SqlCurriculumProgressRepository>();
+        services.AddSingleton<ICurriculumService, CurriculumService>();
 
         return services;
     }

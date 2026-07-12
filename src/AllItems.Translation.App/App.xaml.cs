@@ -1,5 +1,6 @@
 using System.Windows;
 using AllItems.Translation.App.ViewModels;
+using AllItems.Translation.App.ViewModels.Training;
 using AllItems.Translation.App.Views;
 using AllItems.Translation.Core.Abstractions;
 using AllItems.Translation.Infrastructure;
