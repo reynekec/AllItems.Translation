@@ -599,6 +599,340 @@ public static class A2Units
                     CorrectAnswer = "Ampel"
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a2-u11-berufe",
+            Level = CefrLevel.A2,
+            SortOrder = 11,
+            Title = "Berufe",
+            Description = "Vocabulary: professions.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u11-berufe-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Lehrer' means teacher (male); 'die Lehrerin' for female.",
+                    Question = "\"teacher\" in German?",
+                    Options = ["der Lehrer", "der Ingenieur", "der Anwalt", "der Bauer"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u11-berufe-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Ingenieur' means engineer.",
+                    Question = "\"engineer\" in German?",
+                    Options = ["der Ingenieur", "der Verkäufer", "der Lehrer", "der Bauer"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u11-berufe-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Verkäufer' means salesperson.",
+                    Question = "\"salesperson\" in German?",
+                    Options = ["der Verkäufer", "der Anwalt", "der Ingenieur", "der Koch"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u11-berufe-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Anwalt' means lawyer.",
+                    Question = "\"lawyer\" in German?",
+                    Options = ["der Anwalt", "der Bauer", "der Lehrer", "der Verkäufer"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u11-berufe-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Bauer' means farmer.",
+                    Question = "\"farmer\" in German?",
+                    Options = ["der Bauer", "der Ingenieur", "der Anwalt", "der Koch"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u11-berufe-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Er ist Lehrer von Beruf\" = \"He is a teacher by profession\".",
+                    TextBefore = "Er ist ",
+                    TextAfter = " von Beruf.",
+                    CorrectAnswer = "Lehrer"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a2-u12-wetter",
+            Level = CefrLevel.A2,
+            SortOrder = 12,
+            Title = "Wetter",
+            Description = "Vocabulary: weather.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u12-wetter-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Sonne' means sun.",
+                    Question = "\"sun\" in German?",
+                    Options = ["die Sonne", "der Regen", "der Schnee", "der Wind"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u12-wetter-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Regen' means rain.",
+                    Question = "\"rain\" in German?",
+                    Options = ["der Regen", "der Schnee", "die Sonne", "die Wolke"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u12-wetter-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Schnee' means snow.",
+                    Question = "\"snow\" in German?",
+                    Options = ["der Schnee", "der Regen", "der Wind", "die Wolke"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u12-wetter-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Wind' means wind.",
+                    Question = "\"wind\" in German?",
+                    Options = ["der Wind", "die Wolke", "der Regen", "die Sonne"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u12-wetter-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Wolke' means cloud.",
+                    Question = "\"cloud\" in German?",
+                    Options = ["die Wolke", "der Wind", "der Schnee", "die Sonne"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u12-wetter-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Die Sonne scheint\" = \"The sun is shining\".",
+                    TextBefore = "Die ",
+                    TextAfter = " scheint.",
+                    CorrectAnswer = "Sonne"
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u12-wetter-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Es schneit\" uses 'Schnee' as its root word; here 'Schnee' fills a descriptive slot: viel Schnee.",
+                    TextBefore = "Im Winter gibt es viel ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Schnee"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a2-u13-freizeit",
+            Level = CefrLevel.A2,
+            SortOrder = 13,
+            Title = "Freizeit",
+            Description = "Vocabulary: hobbies and leisure activities.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u13-freizeit-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'schwimmen' means to swim.",
+                    Question = "\"to swim\" in German?",
+                    Options = ["schwimmen", "wandern", "malen", "tanzen"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u13-freizeit-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'wandern' means to hike.",
+                    Question = "\"to hike\" in German?",
+                    Options = ["wandern", "schwimmen", "tanzen", "fotografieren"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u13-freizeit-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'malen' means to paint.",
+                    Question = "\"to paint\" in German?",
+                    Options = ["malen", "tanzen", "wandern", "schwimmen"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u13-freizeit-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'tanzen' means to dance.",
+                    Question = "\"to dance\" in German?",
+                    Options = ["tanzen", "malen", "fotografieren", "wandern"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u13-freizeit-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Hobby' means hobby.",
+                    Question = "\"hobby\" in German?",
+                    Options = ["das Hobby", "die Freizeit", "der Sport", "das Spiel"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u13-freizeit-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich gehe gern schwimmen\" = \"I like to go swimming\".",
+                    TextBefore = "Ich gehe gern ",
+                    TextAfter = ".",
+                    CorrectAnswer = "schwimmen"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a2-u14-verkehrsmittel",
+            Level = CefrLevel.A2,
+            SortOrder = 14,
+            Title = "Verkehrsmittel",
+            Description = "Vocabulary: modes of transportation.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u14-verkehrsmittel-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Zug' means train.",
+                    Question = "\"train\" in German?",
+                    Options = ["der Zug", "der Bus", "das Fahrrad", "das Schiff"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u14-verkehrsmittel-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Fahrrad' means bicycle.",
+                    Question = "\"bicycle\" in German?",
+                    Options = ["das Fahrrad", "der Zug", "das Flugzeug", "der Bus"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u14-verkehrsmittel-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Flugzeug' means airplane.",
+                    Question = "\"airplane\" in German?",
+                    Options = ["das Flugzeug", "das Schiff", "der Zug", "das Fahrrad"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u14-verkehrsmittel-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Schiff' means ship.",
+                    Question = "\"ship\" in German?",
+                    Options = ["das Schiff", "das Flugzeug", "der Bus", "die U-Bahn"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u14-verkehrsmittel-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die U-Bahn' means subway/underground.",
+                    Question = "\"subway/underground\" in German?",
+                    Options = ["die U-Bahn", "der Zug", "das Schiff", "das Fahrrad"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u14-verkehrsmittel-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich fahre mit dem Zug\" = \"I travel by train\".",
+                    TextBefore = "Ich fahre mit dem ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Zug"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a2-u15-einkaufen",
+            Level = CefrLevel.A2,
+            SortOrder = 15,
+            Title = "Einkaufen",
+            Description = "Vocabulary: shopping.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u15-einkaufen-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Preis' means price.",
+                    Question = "\"price\" in German?",
+                    Options = ["der Preis", "die Größe", "das Geld", "die Kasse"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u15-einkaufen-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'billig' means cheap.",
+                    Question = "\"cheap\" in German?",
+                    Options = ["billig", "teuer", "groß", "klein"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u15-einkaufen-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'teuer' means expensive.",
+                    Question = "\"expensive\" in German?",
+                    Options = ["teuer", "billig", "günstig", "kostenlos"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u15-einkaufen-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Größe' means size.",
+                    Question = "\"size\" in German?",
+                    Options = ["die Größe", "der Preis", "die Kasse", "das Geld"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a2-u15-einkaufen-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'bezahlen' means to pay.",
+                    Question = "\"to pay\" in German?",
+                    Options = ["bezahlen", "kaufen", "verkaufen", "kosten"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u15-einkaufen-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich bezahle an der Kasse\" = \"I pay at the checkout\".",
+                    TextBefore = "Ich bezahle an der ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Kasse"
+                }
+            ]
         }
     ];
 }

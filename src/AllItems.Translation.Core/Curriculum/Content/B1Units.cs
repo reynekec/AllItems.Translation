@@ -515,6 +515,331 @@ public static class B1Units
                     CorrectOptionIndex = 0
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b1-u11-umwelt",
+            Level = CefrLevel.B1,
+            SortOrder = 11,
+            Title = "Umwelt",
+            Description = "Vocabulary: the environment.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u11-umwelt-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Klimawandel' means climate change.",
+                    Question = "\"climate change\" in German?",
+                    Options = ["der Klimawandel", "die Erderwärmung", "der Müll", "der Naturschutz"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u11-umwelt-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'recyceln' means to recycle.",
+                    Question = "\"to recycle\" in German?",
+                    Options = ["recyceln", "verschmutzen", "verbrauchen", "wegwerfen"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u11-umwelt-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'nachhaltig' means sustainable.",
+                    Question = "\"sustainable\" in German?",
+                    Options = ["nachhaltig", "schädlich", "künstlich", "gefährlich"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u11-umwelt-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Müll' means trash/waste.",
+                    Question = "\"trash/waste\" in German?",
+                    Options = ["der Müll", "der Naturschutz", "die Erderwärmung", "der Klimawandel"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u11-umwelt-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'erneuerbare Energie' means renewable energy.",
+                    Question = "\"renewable energy\" in German?",
+                    Options = ["erneuerbare Energie", "künstliche Energie", "billige Energie", "alte Energie"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u11-umwelt-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Wir müssen die Umwelt schützen\" = \"We must protect the environment\".",
+                    TextBefore = "Wir müssen die ",
+                    TextAfter = " schützen.",
+                    CorrectAnswer = "Umwelt"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b1-u12-arbeit-karriere",
+            Level = CefrLevel.B1,
+            SortOrder = 12,
+            Title = "Arbeit und Karriere",
+            Description = "Vocabulary: work and career.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u12-arbeit-karriere-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Bewerbung' means job application.",
+                    Question = "\"job application\" in German?",
+                    Options = ["die Bewerbung", "der Lebenslauf", "das Gehalt", "die Kündigung"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u12-arbeit-karriere-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Lebenslauf' means resume/CV (literally \"life course\").",
+                    Question = "\"resume/CV\" in German?",
+                    Options = ["der Lebenslauf", "die Bewerbung", "das Vorstellungsgespräch", "das Gehalt"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u12-arbeit-karriere-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Vorstellungsgespräch' means job interview.",
+                    Question = "\"job interview\" in German?",
+                    Options = ["das Vorstellungsgespräch", "die Bewerbung", "die Kündigung", "das Gehalt"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u12-arbeit-karriere-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Gehalt' means salary.",
+                    Question = "\"salary\" in German?",
+                    Options = ["das Gehalt", "die Kündigung", "der Lebenslauf", "die Teilzeit"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u12-arbeit-karriere-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Kündigung' means termination/notice of resignation.",
+                    Question = "\"termination/resignation notice\" in German?",
+                    Options = ["die Kündigung", "die Bewerbung", "das Gehalt", "die Vollzeit"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u12-arbeit-karriere-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich schreibe eine Bewerbung\" = \"I'm writing a job application\".",
+                    TextBefore = "Ich schreibe eine ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Bewerbung"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b1-u13-wohnen-umzug",
+            Level = CefrLevel.B1,
+            SortOrder = 13,
+            Title = "Wohnen und Umzug",
+            Description = "Vocabulary: housing and moving.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u13-wohnen-umzug-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Miete' means rent.",
+                    Question = "\"rent\" in German?",
+                    Options = ["die Miete", "die Kaution", "der Vermieter", "der Mietvertrag"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u13-wohnen-umzug-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Vermieter' means landlord.",
+                    Question = "\"landlord\" in German?",
+                    Options = ["der Vermieter", "der Nachbar", "der Mieter", "der Makler"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u13-wohnen-umzug-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'umziehen' means to move/relocate.",
+                    Question = "\"to move/relocate\" in German?",
+                    Options = ["umziehen", "renovieren", "wohnen", "mieten"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u13-wohnen-umzug-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Kaution' means (security) deposit.",
+                    Question = "\"security deposit\" in German?",
+                    Options = ["die Kaution", "die Miete", "das Gehalt", "die Rechnung"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u13-wohnen-umzug-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'renovieren' means to renovate.",
+                    Question = "\"to renovate\" in German?",
+                    Options = ["renovieren", "umziehen", "mieten", "bauen"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u13-wohnen-umzug-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Die Miete ist hoch\" = \"The rent is high\".",
+                    TextBefore = "Die ",
+                    TextAfter = " ist hoch.",
+                    CorrectAnswer = "Miete"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b1-u14-gefuehle",
+            Level = CefrLevel.B1,
+            SortOrder = 14,
+            Title = "Gefühle",
+            Description = "Vocabulary: nuanced emotions.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u14-gefuehle-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Eifersucht' means jealousy.",
+                    Question = "\"jealousy\" in German?",
+                    Options = ["die Eifersucht", "die Wut", "die Enttäuschung", "die Sehnsucht"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u14-gefuehle-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Enttäuschung' means disappointment.",
+                    Question = "\"disappointment\" in German?",
+                    Options = ["die Enttäuschung", "die Erleichterung", "die Eifersucht", "die Wut"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u14-gefuehle-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Erleichterung' means relief.",
+                    Question = "\"relief\" in German?",
+                    Options = ["die Erleichterung", "die Sehnsucht", "die Enttäuschung", "die Wut"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u14-gefuehle-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Sehnsucht' means longing/yearning.",
+                    Question = "\"longing/yearning\" in German?",
+                    Options = ["die Sehnsucht", "die Wut", "die Eifersucht", "die Erleichterung"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u14-gefuehle-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'stolz' means proud.",
+                    Question = "\"proud\" in German?",
+                    Options = ["stolz", "neidisch", "gerührt", "wütend"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u14-gefuehle-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich bin stolz auf dich\" = \"I am proud of you\".",
+                    TextBefore = "Ich bin ",
+                    TextAfter = " auf dich.",
+                    CorrectAnswer = "stolz"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b1-u15-technologie",
+            Level = CefrLevel.B1,
+            SortOrder = 15,
+            Title = "Technologie",
+            Description = "Vocabulary: everyday technology.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u15-technologie-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Bildschirm' means screen/display.",
+                    Question = "\"screen/display\" in German?",
+                    Options = ["der Bildschirm", "das Netzwerk", "das Passwort", "die Anwendung"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u15-technologie-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'herunterladen' means to download.",
+                    Question = "\"to download\" in German?",
+                    Options = ["herunterladen", "hochladen", "speichern", "löschen"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u15-technologie-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'hochladen' means to upload.",
+                    Question = "\"to upload\" in German?",
+                    Options = ["hochladen", "herunterladen", "installieren", "aktualisieren"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u15-technologie-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Passwort' means password.",
+                    Question = "\"password\" in German?",
+                    Options = ["das Passwort", "der Benutzername", "das Netzwerk", "die Datei"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "b1-u15-technologie-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'speichern' means to save.",
+                    Question = "\"to save\" (a file) in German?",
+                    Options = ["speichern", "löschen", "öffnen", "drucken"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u15-technologie-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich habe mein Passwort vergessen\" = \"I forgot my password\".",
+                    TextBefore = "Ich habe mein ",
+                    TextAfter = " vergessen.",
+                    CorrectAnswer = "Passwort"
+                }
+            ]
         }
     ];
 }

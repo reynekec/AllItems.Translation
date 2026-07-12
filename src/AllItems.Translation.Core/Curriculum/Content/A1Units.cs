@@ -571,6 +571,421 @@ public static class A1Units
                     CorrectAnswer = "Kinder"
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a1-u11-farben",
+            Level = CefrLevel.A1,
+            SortOrder = 11,
+            Title = "Farben",
+            Description = "Vocabulary: colors.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u11-farben-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'rot' means red.",
+                    Question = "\"red\" in German?",
+                    Options = ["rot", "blau", "grün", "gelb"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u11-farben-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'blau' means blue.",
+                    Question = "\"blue\" in German?",
+                    Options = ["blau", "rot", "schwarz", "weiß"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u11-farben-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'grün' means green.",
+                    Question = "\"green\" in German?",
+                    Options = ["grün", "gelb", "orange", "lila"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u11-farben-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'gelb' means yellow.",
+                    Question = "\"yellow\" in German?",
+                    Options = ["gelb", "grün", "rot", "blau"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u11-farben-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'schwarz' means black.",
+                    Question = "\"black\" in German?",
+                    Options = ["schwarz", "weiß", "grau", "braun"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u11-farben-e6",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'weiß' means white.",
+                    Question = "\"white\" in German?",
+                    Options = ["weiß", "schwarz", "grau", "gelb"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u11-farben-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Der Himmel ist blau\" = \"The sky is blue\".",
+                    TextBefore = "Der Himmel ist ",
+                    TextAfter = ".",
+                    CorrectAnswer = "blau"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u11-farben-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Das Gras ist grün\" = \"The grass is green\".",
+                    TextBefore = "Das Gras ist ",
+                    TextAfter = ".",
+                    CorrectAnswer = "grün"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a1-u12-kleidung",
+            Level = CefrLevel.A1,
+            SortOrder = 12,
+            Title = "Kleidung",
+            Description = "Vocabulary: clothing.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u12-kleidung-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Hose' means pants/trousers.",
+                    Question = "\"pants/trousers\" in German?",
+                    Options = ["die Hose", "das Hemd", "der Rock", "die Jacke"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u12-kleidung-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Hemd' means shirt.",
+                    Question = "\"shirt\" in German?",
+                    Options = ["das Hemd", "die Hose", "die Schuhe", "der Hut"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u12-kleidung-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Schuhe' means shoes.",
+                    Question = "\"shoes\" in German?",
+                    Options = ["die Schuhe", "die Socken", "der Hut", "das Kleid"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u12-kleidung-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Jacke' means jacket.",
+                    Question = "\"jacket\" in German?",
+                    Options = ["die Jacke", "das Kleid", "der Rock", "die Hose"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u12-kleidung-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Kleid' means dress.",
+                    Question = "\"dress\" in German?",
+                    Options = ["das Kleid", "der Rock", "das Hemd", "die Socken"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u12-kleidung-e6",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Hut' means hat.",
+                    Question = "\"hat\" in German?",
+                    Options = ["der Hut", "die Jacke", "die Hose", "das Hemd"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u12-kleidung-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich trage eine Jacke\" = \"I'm wearing a jacket\".",
+                    TextBefore = "Ich trage eine ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Jacke"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u12-kleidung-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Die Schuhe sind neu\" = \"The shoes are new\".",
+                    TextBefore = "Die ",
+                    TextAfter = " sind neu.",
+                    CorrectAnswer = "Schuhe"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a1-u13-essen-trinken",
+            Level = CefrLevel.A1,
+            SortOrder = 13,
+            Title = "Essen und Trinken",
+            Description = "Vocabulary: food and drink.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u13-essen-trinken-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Apfel' means apple.",
+                    Question = "\"apple\" in German?",
+                    Options = ["der Apfel", "die Banane", "das Gemüse", "der Reis"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u13-essen-trinken-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Banane' means banana.",
+                    Question = "\"banana\" in German?",
+                    Options = ["die Banane", "der Apfel", "die Suppe", "das Fleisch"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u13-essen-trinken-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Gemüse' means vegetables.",
+                    Question = "\"vegetables\" in German?",
+                    Options = ["das Gemüse", "das Obst", "der Reis", "der Käse"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u13-essen-trinken-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Suppe' means soup.",
+                    Question = "\"soup\" in German?",
+                    Options = ["die Suppe", "das Fleisch", "der Saft", "das Wasser"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u13-essen-trinken-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Fleisch' means meat.",
+                    Question = "\"meat\" in German?",
+                    Options = ["das Fleisch", "der Käse", "das Gemüse", "der Apfel"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u13-essen-trinken-e6",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Käse' means cheese.",
+                    Question = "\"cheese\" in German?",
+                    Options = ["der Käse", "der Saft", "das Wasser", "die Suppe"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u13-essen-trinken-e7",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Saft' means juice.",
+                    Question = "\"juice\" in German?",
+                    Options = ["der Saft", "das Wasser", "die Milch", "der Käse"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u13-essen-trinken-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich trinke Wasser\" = \"I drink water\".",
+                    TextBefore = "Ich trinke ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Wasser"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a1-u14-zu-hause",
+            Level = CefrLevel.A1,
+            SortOrder = 14,
+            Title = "Zu Hause",
+            Description = "Vocabulary: rooms and furniture.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u14-zu-hause-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Küche' means kitchen.",
+                    Question = "\"kitchen\" in German?",
+                    Options = ["die Küche", "das Schlafzimmer", "das Wohnzimmer", "das Bad"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u14-zu-hause-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Schlafzimmer' means bedroom.",
+                    Question = "\"bedroom\" in German?",
+                    Options = ["das Schlafzimmer", "die Küche", "das Bad", "das Wohnzimmer"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u14-zu-hause-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Wohnzimmer' means living room.",
+                    Question = "\"living room\" in German?",
+                    Options = ["das Wohnzimmer", "das Schlafzimmer", "die Küche", "das Bad"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u14-zu-hause-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Stuhl' means chair.",
+                    Question = "\"chair\" in German?",
+                    Options = ["der Stuhl", "das Bett", "das Fenster", "die Tür"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u14-zu-hause-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Bett' means bed.",
+                    Question = "\"bed\" in German?",
+                    Options = ["das Bett", "der Stuhl", "das Fenster", "die Tür"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u14-zu-hause-e6",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Fenster' means window.",
+                    Question = "\"window\" in German?",
+                    Options = ["das Fenster", "die Tür", "das Bett", "der Stuhl"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u14-zu-hause-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Ich schlafe im Schlafzimmer\" = \"I sleep in the bedroom\".",
+                    TextBefore = "Ich schlafe im ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Schlafzimmer"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u14-zu-hause-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Das Fenster ist offen\" = \"The window is open\".",
+                    TextBefore = "Das ",
+                    TextAfter = " ist offen.",
+                    CorrectAnswer = "Fenster"
+                }
+            ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a1-u15-tiere",
+            Level = CefrLevel.A1,
+            SortOrder = 15,
+            Title = "Tiere",
+            Description = "Vocabulary: animals.",
+            Exercises =
+            [
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u15-tiere-e1",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Hund' means dog.",
+                    Question = "\"dog\" in German?",
+                    Options = ["der Hund", "die Katze", "der Vogel", "das Pferd"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u15-tiere-e2",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Katze' means cat.",
+                    Question = "\"cat\" in German?",
+                    Options = ["die Katze", "der Hund", "die Kuh", "der Fisch"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u15-tiere-e3",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Vogel' means bird.",
+                    Question = "\"bird\" in German?",
+                    Options = ["der Vogel", "das Pferd", "das Schaf", "der Fisch"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u15-tiere-e4",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'das Pferd' means horse.",
+                    Question = "\"horse\" in German?",
+                    Options = ["das Pferd", "die Kuh", "das Schaf", "der Vogel"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u15-tiere-e5",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'die Kuh' means cow.",
+                    Question = "\"cow\" in German?",
+                    Options = ["die Kuh", "das Schaf", "das Pferd", "der Fisch"],
+                    CorrectOptionIndex = 0
+                },
+                new MultipleChoiceExercise
+                {
+                    Id = "a1-u15-tiere-e6",
+                    Instruction = "Choose the correct German word.",
+                    Explanation = "'der Fisch' means fish.",
+                    Question = "\"fish\" in German?",
+                    Options = ["der Fisch", "der Vogel", "die Katze", "das Schaf"],
+                    CorrectOptionIndex = 0
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u15-tiere-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Der Hund läuft schnell\" = \"The dog runs fast\".",
+                    TextBefore = "",
+                    TextAfter = " läuft schnell.",
+                    CorrectAnswer = "Der Hund"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u15-tiere-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "\"Die Katze schläft\" = \"The cat is sleeping\".",
+                    TextBefore = "",
+                    TextAfter = " schläft.",
+                    CorrectAnswer = "Die Katze"
+                }
+            ]
         }
     ];
 }
