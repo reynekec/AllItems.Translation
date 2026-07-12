@@ -433,7 +433,8 @@ public static class C2Units
                     Explanation = "'die Novelle' means novella - a work shorter than a novel but longer than a short story.",
                     Question = "\"novella\" in German?",
                     Options = ["die Novelle", "der Roman", "das Epos", "die Elegie"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Novelle", "novella")
                 },
                 new MultipleChoiceExercise
                 {
@@ -442,7 +443,8 @@ public static class C2Units
                     Explanation = "'die Satire' means satire.",
                     Question = "\"satire\" in German?",
                     Options = ["die Satire", "die Parodie", "die Allegorie", "die Elegie"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Satire", "satire")
                 },
                 new MultipleChoiceExercise
                 {
@@ -451,7 +453,8 @@ public static class C2Units
                     Explanation = "'die Allegorie' means allegory - a story with a symbolic second meaning.",
                     Question = "\"allegory\" in German?",
                     Options = ["die Allegorie", "die Satire", "die Parodie", "das Epos"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Allegorie", "allegory")
                 },
                 new MultipleChoiceExercise
                 {
@@ -460,7 +463,8 @@ public static class C2Units
                     Explanation = "'der Protagonist' means protagonist/main character.",
                     Question = "\"protagonist/main character\" in German?",
                     Options = ["der Protagonist", "der Erzähler", "der Antagonist", "der Autor"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Protagonist", "protagonist")
                 }
             ]
         },
@@ -480,7 +484,8 @@ public static class C2Units
                     Explanation = "'die Ethik' means ethics.",
                     Question = "\"ethics\" in German?",
                     Options = ["die Ethik", "die Metaphysik", "die Existenz", "die Vernunft"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Ethik", "ethics")
                 },
                 new MultipleChoiceExercise
                 {
@@ -489,7 +494,8 @@ public static class C2Units
                     Explanation = "'die Metaphysik' means metaphysics.",
                     Question = "\"metaphysics\" in German?",
                     Options = ["die Metaphysik", "die Ethik", "die Erkenntnistheorie", "der Determinismus"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Metaphysik", "metaphysics")
                 },
                 new MultipleChoiceExercise
                 {
@@ -498,7 +504,8 @@ public static class C2Units
                     Explanation = "'die Vernunft' means reason (the faculty of rational thought).",
                     Question = "\"reason\" (rational thought) in German?",
                     Options = ["die Vernunft", "die Existenz", "die Weltanschauung", "die Ethik"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Vernunft", "reason")
                 },
                 new MultipleChoiceExercise
                 {
@@ -507,7 +514,8 @@ public static class C2Units
                     Explanation = "'die Weltanschauung' means worldview.",
                     Question = "\"worldview\" in German?",
                     Options = ["die Weltanschauung", "die Vernunft", "die Metaphysik", "der Determinismus"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Weltanschauung", "worldview")
                 }
             ]
         },
@@ -527,7 +535,8 @@ public static class C2Units
                     Explanation = "'das Zeitalter' means era/age.",
                     Question = "\"era/age\" in German?",
                     Options = ["das Zeitalter", "die Epoche", "der Umbruch", "der Brauch"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Zeitalter", "era")
                 },
                 new MultipleChoiceExercise
                 {
@@ -536,7 +545,8 @@ public static class C2Units
                     Explanation = "'der Umbruch' means upheaval/radical change.",
                     Question = "\"upheaval/radical change\" in German?",
                     Options = ["der Umbruch", "das Zeitalter", "der Brauch", "der Zeitgeist"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Umbruch", "upheaval")
                 },
                 new MultipleChoiceExercise
                 {
@@ -545,7 +555,8 @@ public static class C2Units
                     Explanation = "'der Brauch' means custom.",
                     Question = "\"custom\" (cultural practice) in German?",
                     Options = ["der Brauch", "die Epoche", "der Umbruch", "das Zeitalter"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Brauch", "custom")
                 },
                 new MultipleChoiceExercise
                 {
@@ -554,7 +565,8 @@ public static class C2Units
                     Explanation = "'der Zeitgeist' means \"spirit of the age\" - the defining mood/ideas of a period.",
                     Question = "\"zeitgeist / spirit of the age\" in German?",
                     Options = ["der Zeitgeist", "die Epoche", "der Brauch", "das Zeitalter"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Zeitgeist", "zeitgeist")
                 }
             ]
         },
@@ -574,7 +586,8 @@ public static class C2Units
                     Explanation = "'die Quantenmechanik' means quantum mechanics.",
                     Question = "\"quantum mechanics\" in German?",
                     Options = ["die Quantenmechanik", "die Genetik", "die Evolution", "die Synthese"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Quantenmechanik", "quantum mechanics")
                 },
                 new MultipleChoiceExercise
                 {
@@ -583,7 +596,8 @@ public static class C2Units
                     Explanation = "'das Molekül' means molecule.",
                     Question = "\"molecule\" in German?",
                     Options = ["das Molekül", "der Organismus", "das Phänomen", "die Synthese"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Molekül", "molecule")
                 },
                 new MultipleChoiceExercise
                 {
@@ -592,7 +606,8 @@ public static class C2Units
                     Explanation = "'der Organismus' means organism.",
                     Question = "\"organism\" in German?",
                     Options = ["der Organismus", "das Molekül", "die Genetik", "das Phänomen"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Organismus", "organism")
                 },
                 new MultipleChoiceExercise
                 {
@@ -601,7 +616,8 @@ public static class C2Units
                     Explanation = "'die Wechselwirkung' means interaction (between forces, particles, systems, etc.).",
                     Question = "\"interaction\" (between systems/forces) in German?",
                     Options = ["die Wechselwirkung", "die Synthese", "das Phänomen", "die Genetik"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Wechselwirkung", "interaction")
                 }
             ]
         },
@@ -621,7 +637,8 @@ public static class C2Units
                     Explanation = "'die Muße' is an elevated word for leisure - unhurried, contemplative free time.",
                     Question = "\"die Muße\" means?",
                     Options = ["leisure (unhurried, contemplative free time)", "exhaustion", "boredom", "haste"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Muße", "leisure")
                 },
                 new MultipleChoiceExercise
                 {
@@ -630,7 +647,8 @@ public static class C2Units
                     Explanation = "'die Zwietracht' means discord/strife between people.",
                     Question = "\"die Zwietracht\" means?",
                     Options = ["discord/strife", "harmony", "friendship", "silence"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Zwietracht", "discord")
                 },
                 new MultipleChoiceExercise
                 {
@@ -639,7 +657,8 @@ public static class C2Units
                     Explanation = "'erhaben' means sublime/exalted - inspiring awe through greatness.",
                     Question = "\"erhaben\" means?",
                     Options = ["sublime/exalted", "ordinary", "hidden", "broken"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("erhaben", "sublime")
                 },
                 new MultipleChoiceExercise
                 {
@@ -648,7 +667,8 @@ public static class C2Units
                     Explanation = "'unergründlich' means unfathomable - impossible to fully understand or measure.",
                     Question = "\"unergründlich\" means?",
                     Options = ["unfathomable", "shallow", "obvious", "temporary"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("unergründlich", "unfathomable")
                 },
                 new MultipleChoiceExercise
                 {
@@ -657,7 +677,8 @@ public static class C2Units
                     Explanation = "'die Anmut' means grace/gracefulness.",
                     Question = "\"die Anmut\" means?",
                     Options = ["grace/gracefulness", "clumsiness", "strength", "speed"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Anmut", "grace")
                 }
             ]
         }

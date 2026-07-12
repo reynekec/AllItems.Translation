@@ -1,5 +1,6 @@
 using AllItems.Translation.Core.Abstractions;
 using AllItems.Translation.Core.Curriculum;
+using AllItems.Translation.Core.Domain;
 using Moq;
 
 namespace AllItems.Translation.Tests.Curriculum;
@@ -9,8 +10,9 @@ public class CurriculumServiceTests
     private readonly Mock<ICurriculumCatalog> _catalog = new();
     private readonly Mock<ICurriculumProgressRepository> _progressRepository = new();
     private readonly Mock<IExerciseGrader> _grader = new();
+    private readonly Mock<IWordRepository> _wordRepository = new();
 
-    private CurriculumService CreateService() => new(_catalog.Object, _progressRepository.Object, _grader.Object);
+    private CurriculumService CreateService() => new(_catalog.Object, _progressRepository.Object, _grader.Object, _wordRepository.Object);
 
     private static CurriculumUnit UnitWithExercises(CefrLevel level, string id, int exerciseCount) => new()
     {
@@ -139,5 +141,72 @@ public class CurriculumServiceTests
         await service.SubmitAnswerAsync(exercise, answer);
 
         _progressRepository.Verify(r => r.MarkExerciseCompletedAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Never);
+    }
+
+    [Fact]
+    public async Task SubmitAnswerAsync_CorrectVocabularyExercise_AddsWordToDictionary()
+    {
+        var exercise = new MultipleChoiceExercise
+        {
+            Id = "a1-u11-farben-e1",
+            Instruction = "Choose",
+            Explanation = "explanation",
+            Question = "\"red\" in German?",
+            Options = ["rot", "blau"],
+            CorrectOptionIndex = 0,
+            Teaches = new VocabularyTeaching("rot", "red")
+        };
+        var answer = new ExerciseAnswer(SelectedOptionIndex: 0);
+        _grader.Setup(g => g.Grade(exercise, answer)).Returns(new GradingResult(true, "explanation"));
+
+        var entry = new WordEntry { Id = 1, Language = Language.German, NormalizedText = "rot" };
+        _wordRepository.Setup(r => r.GetOrCreateAsync(Language.German, "rot", It.IsAny<CancellationToken>())).ReturnsAsync(entry);
+        _wordRepository.Setup(r => r.GetTranslationsAsync(1, Language.English, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordTranslation>)[]);
+
+        var service = CreateService();
+        await service.SubmitAnswerAsync(exercise, answer);
+
+        _wordRepository.Verify(r => r.AddTranslationAsync(1, Language.English, "red", true, It.IsAny<CancellationToken>()), Times.Once);
+    }
+
+    [Fact]
+    public async Task SubmitAnswerAsync_VocabularyWordAlreadyKnown_DoesNotAddDuplicate()
+    {
+        var exercise = new MultipleChoiceExercise
+        {
+            Id = "a1-u11-farben-e1",
+            Instruction = "Choose",
+            Explanation = "explanation",
+            Question = "\"red\" in German?",
+            Options = ["rot", "blau"],
+            CorrectOptionIndex = 0,
+            Teaches = new VocabularyTeaching("rot", "red")
+        };
+        var answer = new ExerciseAnswer(SelectedOptionIndex: 0);
+        _grader.Setup(g => g.Grade(exercise, answer)).Returns(new GradingResult(true, "explanation"));
+
+        var entry = new WordEntry { Id = 1, Language = Language.German, NormalizedText = "rot" };
+        _wordRepository.Setup(r => r.GetOrCreateAsync(Language.German, "rot", It.IsAny<CancellationToken>())).ReturnsAsync(entry);
+        _wordRepository.Setup(r => r.GetTranslationsAsync(1, Language.English, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordTranslation>)[new WordTranslation { Id = 5, WordEntryId = 1, TargetLanguage = Language.English, TargetText = "red", IsPreferred = true }]);
+
+        var service = CreateService();
+        await service.SubmitAnswerAsync(exercise, answer);
+
+        _wordRepository.Verify(r => r.AddTranslationAsync(It.IsAny<int>(), It.IsAny<Language>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Never);
+    }
+
+    [Fact]
+    public async Task SubmitAnswerAsync_GrammarExerciseWithNoTeaches_NeverTouchesWordRepository()
+    {
+        var exercise = UnitWithExercises(CefrLevel.A1, "a1-u1", 1).Exercises[0];
+        var answer = new ExerciseAnswer(SelectedOptionIndex: 0);
+        _grader.Setup(g => g.Grade(exercise, answer)).Returns(new GradingResult(true, "explanation"));
+
+        var service = CreateService();
+        await service.SubmitAnswerAsync(exercise, answer);
+
+        _wordRepository.Verify(r => r.GetOrCreateAsync(It.IsAny<Language>(), It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 }

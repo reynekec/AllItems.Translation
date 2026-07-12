@@ -14,4 +14,7 @@ public abstract record Exercise
 
     /// <summary>Shown after answering, right or wrong - the gentle "here's why" explanation.</summary>
     public required string Explanation { get; init; }
+
+    /// <summary>Set only on the primary teaching exercise for a word - see <see cref="VocabularyTeaching"/>.</summary>
+    public VocabularyTeaching? Teaches { get; init; }
 }

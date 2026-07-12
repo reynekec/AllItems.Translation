@@ -485,7 +485,8 @@ public static class B2Units
                     Explanation = "'die Regierung' means government.",
                     Question = "\"government\" in German?",
                     Options = ["die Regierung", "die Wahl", "das Gesetz", "die Gesellschaft"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Regierung", "government")
                 },
                 new MultipleChoiceExercise
                 {
@@ -494,7 +495,8 @@ public static class B2Units
                     Explanation = "'die Wahl' means election.",
                     Question = "\"election\" in German?",
                     Options = ["die Wahl", "die Regierung", "der Bürger", "die Demokratie"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Wahl", "election")
                 },
                 new MultipleChoiceExercise
                 {
@@ -503,7 +505,8 @@ public static class B2Units
                     Explanation = "'der Bürger' means citizen.",
                     Question = "\"citizen\" in German?",
                     Options = ["der Bürger", "der Politiker", "der Wähler", "der Beamte"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Bürger", "citizen")
                 },
                 new MultipleChoiceExercise
                 {
@@ -512,7 +515,8 @@ public static class B2Units
                     Explanation = "'die Gerechtigkeit' means justice.",
                     Question = "\"justice\" in German?",
                     Options = ["die Gerechtigkeit", "die Ungleichheit", "das Gesetz", "die Freiheit"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Gerechtigkeit", "justice")
                 },
                 new MultipleChoiceExercise
                 {
@@ -521,7 +525,8 @@ public static class B2Units
                     Explanation = "'die Ungleichheit' means inequality.",
                     Question = "\"inequality\" in German?",
                     Options = ["die Ungleichheit", "die Gerechtigkeit", "die Demokratie", "die Wahl"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Ungleichheit", "inequality")
                 },
                 new ClozeExercise
                 {
@@ -550,7 +555,8 @@ public static class B2Units
                     Explanation = "'das Unternehmen' means company/enterprise.",
                     Question = "\"company/enterprise\" in German?",
                     Options = ["das Unternehmen", "der Gewinn", "die Steuer", "der Markt"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Unternehmen", "company")
                 },
                 new MultipleChoiceExercise
                 {
@@ -559,7 +565,8 @@ public static class B2Units
                     Explanation = "'der Gewinn' means profit.",
                     Question = "\"profit\" in German?",
                     Options = ["der Gewinn", "der Verlust", "die Steuer", "das Angebot"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Gewinn", "profit")
                 },
                 new MultipleChoiceExercise
                 {
@@ -568,7 +575,8 @@ public static class B2Units
                     Explanation = "'die Inflation' means inflation.",
                     Question = "\"inflation\" in German?",
                     Options = ["die Inflation", "die Steuer", "die Nachfrage", "der Markt"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Inflation", "inflation")
                 },
                 new MultipleChoiceExercise
                 {
@@ -577,7 +585,8 @@ public static class B2Units
                     Explanation = "'die Nachfrage' means demand.",
                     Question = "\"demand\" (economic) in German?",
                     Options = ["die Nachfrage", "das Angebot", "der Gewinn", "die Steuer"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Nachfrage", "demand")
                 },
                 new MultipleChoiceExercise
                 {
@@ -586,7 +595,8 @@ public static class B2Units
                     Explanation = "'das Angebot' means supply.",
                     Question = "\"supply\" (economic) in German?",
                     Options = ["das Angebot", "die Nachfrage", "der Gewinn", "die Inflation"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Angebot", "supply")
                 },
                 new ClozeExercise
                 {
@@ -615,7 +625,8 @@ public static class B2Units
                     Explanation = "'die Forschung' means research.",
                     Question = "\"research\" in German?",
                     Options = ["die Forschung", "das Experiment", "die Hypothese", "das Ergebnis"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Forschung", "research")
                 },
                 new MultipleChoiceExercise
                 {
@@ -624,7 +635,8 @@ public static class B2Units
                     Explanation = "'die Hypothese' means hypothesis.",
                     Question = "\"hypothesis\" in German?",
                     Options = ["die Hypothese", "die Theorie", "das Ergebnis", "der Beweis"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Hypothese", "hypothesis")
                 },
                 new MultipleChoiceExercise
                 {
@@ -633,7 +645,8 @@ public static class B2Units
                     Explanation = "'beweisen' means to prove.",
                     Question = "\"to prove\" in German?",
                     Options = ["beweisen", "vermuten", "messen", "analysieren"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("beweisen", "to prove")
                 },
                 new MultipleChoiceExercise
                 {
@@ -642,7 +655,8 @@ public static class B2Units
                     Explanation = "'die Erkenntnis' means insight/finding.",
                     Question = "\"insight/finding\" in German?",
                     Options = ["die Erkenntnis", "das Experiment", "die Hypothese", "die Forschung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Erkenntnis", "insight")
                 },
                 new MultipleChoiceExercise
                 {
@@ -651,7 +665,8 @@ public static class B2Units
                     Explanation = "'analysieren' means to analyze.",
                     Question = "\"to analyze\" in German?",
                     Options = ["analysieren", "beweisen", "messen", "vermuten"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("analysieren", "to analyze")
                 },
                 new ClozeExercise
                 {
@@ -680,7 +695,8 @@ public static class B2Units
                     Explanation = "'das Gemälde' means painting.",
                     Question = "\"painting\" in German?",
                     Options = ["das Gemälde", "die Skulptur", "die Ausstellung", "das Meisterwerk"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Gemälde", "painting")
                 },
                 new MultipleChoiceExercise
                 {
@@ -689,7 +705,8 @@ public static class B2Units
                     Explanation = "'die Ausstellung' means exhibition.",
                     Question = "\"exhibition\" in German?",
                     Options = ["die Ausstellung", "das Gemälde", "der Künstler", "die Skulptur"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Ausstellung", "exhibition")
                 },
                 new MultipleChoiceExercise
                 {
@@ -698,7 +715,8 @@ public static class B2Units
                     Explanation = "'die Skulptur' means sculpture.",
                     Question = "\"sculpture\" in German?",
                     Options = ["die Skulptur", "das Gemälde", "das Meisterwerk", "die Ausstellung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Skulptur", "sculpture")
                 },
                 new MultipleChoiceExercise
                 {
@@ -707,7 +725,8 @@ public static class B2Units
                     Explanation = "'das Erbe' means heritage/legacy.",
                     Question = "\"heritage/legacy\" in German?",
                     Options = ["das Erbe", "die Tradition", "das Meisterwerk", "die Kultur"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Erbe", "heritage")
                 },
                 new MultipleChoiceExercise
                 {
@@ -716,7 +735,8 @@ public static class B2Units
                     Explanation = "'zeitgenössisch' means contemporary.",
                     Question = "\"contemporary\" in German?",
                     Options = ["zeitgenössisch", "traditionell", "historisch", "altmodisch"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("zeitgenössisch", "contemporary")
                 },
                 new ClozeExercise
                 {
@@ -725,7 +745,8 @@ public static class B2Units
                     Explanation = "\"Der Künstler stellt seine Werke aus\" = \"The artist is exhibiting his works\".",
                     TextBefore = "Der ",
                     TextAfter = " stellt seine Werke aus.",
-                    CorrectAnswer = "Künstler"
+                    CorrectAnswer = "Künstler",
+                    Teaches = new VocabularyTeaching("Künstler", "artist")
                 }
             ]
         },
@@ -745,7 +766,8 @@ public static class B2Units
                     Explanation = "'die Diagnose' means diagnosis.",
                     Question = "\"diagnosis\" in German?",
                     Options = ["die Diagnose", "die Behandlung", "die Therapie", "die Genesung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Diagnose", "diagnosis")
                 },
                 new MultipleChoiceExercise
                 {
@@ -754,7 +776,8 @@ public static class B2Units
                     Explanation = "'die Behandlung' means treatment.",
                     Question = "\"treatment\" in German?",
                     Options = ["die Behandlung", "die Diagnose", "die Impfung", "das Medikament"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Behandlung", "treatment")
                 },
                 new MultipleChoiceExercise
                 {
@@ -763,7 +786,8 @@ public static class B2Units
                     Explanation = "'das Medikament' means medication.",
                     Question = "\"medication\" in German?",
                     Options = ["das Medikament", "die Impfung", "die Diagnose", "die Therapie"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Medikament", "medication")
                 },
                 new MultipleChoiceExercise
                 {
@@ -772,7 +796,8 @@ public static class B2Units
                     Explanation = "'chronisch' means chronic.",
                     Question = "\"chronic\" in German?",
                     Options = ["chronisch", "akut", "ansteckend", "harmlos"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("chronisch", "chronic")
                 },
                 new MultipleChoiceExercise
                 {
@@ -781,7 +806,8 @@ public static class B2Units
                     Explanation = "'die Genesung' means recovery.",
                     Question = "\"recovery\" (from illness) in German?",
                     Options = ["die Genesung", "die Diagnose", "die Impfung", "die Behandlung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Genesung", "recovery")
                 },
                 new ClozeExercise
                 {

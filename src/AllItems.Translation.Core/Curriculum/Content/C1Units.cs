@@ -507,7 +507,8 @@ public static class C1Units
                     Explanation = "'die Klage' means lawsuit.",
                     Question = "\"lawsuit\" in German?",
                     Options = ["die Klage", "das Urteil", "die Berufung", "der Vertrag"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Klage", "lawsuit")
                 },
                 new MultipleChoiceExercise
                 {
@@ -516,7 +517,8 @@ public static class C1Units
                     Explanation = "'das Urteil' means verdict/judgment.",
                     Question = "\"verdict/judgment\" in German?",
                     Options = ["das Urteil", "die Klage", "das Gericht", "die Haftung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Urteil", "verdict")
                 },
                 new MultipleChoiceExercise
                 {
@@ -525,7 +527,8 @@ public static class C1Units
                     Explanation = "'die Berufung' means (legal) appeal.",
                     Question = "\"(legal) appeal\" in German?",
                     Options = ["die Berufung", "die Klage", "das Urteil", "der Vertrag"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Berufung", "appeal")
                 },
                 new MultipleChoiceExercise
                 {
@@ -534,7 +537,8 @@ public static class C1Units
                     Explanation = "'die Haftung' means liability.",
                     Question = "\"liability\" in German?",
                     Options = ["die Haftung", "das Gericht", "die Klage", "die Berufung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Haftung", "liability")
                 },
                 new ClozeExercise
                 {
@@ -563,7 +567,8 @@ public static class C1Units
                     Explanation = "'die Fusion' means (corporate) merger.",
                     Question = "\"merger\" (of companies) in German?",
                     Options = ["die Fusion", "die Insolvenz", "die Rendite", "die Investition"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Fusion", "merger")
                 },
                 new MultipleChoiceExercise
                 {
@@ -572,7 +577,8 @@ public static class C1Units
                     Explanation = "'die Insolvenz' means insolvency/bankruptcy.",
                     Question = "\"insolvency/bankruptcy\" in German?",
                     Options = ["die Insolvenz", "die Fusion", "der Aktienmarkt", "das Kapital"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Insolvenz", "insolvency")
                 },
                 new MultipleChoiceExercise
                 {
@@ -581,7 +587,8 @@ public static class C1Units
                     Explanation = "'die Rendite' means (financial) return/yield.",
                     Question = "\"return/yield\" (on an investment) in German?",
                     Options = ["die Rendite", "das Kapital", "die Investition", "der Wettbewerb"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Rendite", "return/yield")
                 },
                 new MultipleChoiceExercise
                 {
@@ -590,7 +597,8 @@ public static class C1Units
                     Explanation = "'der Wettbewerb' means competition.",
                     Question = "\"competition\" in German?",
                     Options = ["der Wettbewerb", "die Rendite", "die Fusion", "die Effizienz"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Wettbewerb", "competition")
                 },
                 new ClozeExercise
                 {
@@ -619,7 +627,8 @@ public static class C1Units
                     Explanation = "'die Verantwortung' means responsibility.",
                     Question = "\"responsibility\" in German?",
                     Options = ["die Verantwortung", "die Freiheit", "die Identität", "die Moral"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Verantwortung", "responsibility")
                 },
                 new MultipleChoiceExercise
                 {
@@ -628,7 +637,8 @@ public static class C1Units
                     Explanation = "'das Bewusstsein' means consciousness/awareness.",
                     Question = "\"consciousness/awareness\" in German?",
                     Options = ["das Bewusstsein", "die Wahrnehmung", "die Autonomie", "das Dilemma"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Bewusstsein", "consciousness")
                 },
                 new MultipleChoiceExercise
                 {
@@ -637,7 +647,8 @@ public static class C1Units
                     Explanation = "'die Wahrnehmung' means perception.",
                     Question = "\"perception\" in German?",
                     Options = ["die Wahrnehmung", "das Bewusstsein", "die Identität", "die Verantwortung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Wahrnehmung", "perception")
                 },
                 new MultipleChoiceExercise
                 {
@@ -646,7 +657,8 @@ public static class C1Units
                     Explanation = "'das Dilemma' means dilemma.",
                     Question = "\"dilemma\" in German?",
                     Options = ["das Dilemma", "die Autonomie", "die Moral", "die Freiheit"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Dilemma", "dilemma")
                 },
                 new ClozeExercise
                 {
@@ -675,7 +687,8 @@ public static class C1Units
                     Explanation = "'die Wehmut' means wistfulness/melancholy - a bittersweet longing.",
                     Question = "\"wistfulness/melancholy\" in German?",
                     Options = ["die Wehmut", "die Gelassenheit", "die Ehrfurcht", "die Demut"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Wehmut", "wistfulness")
                 },
                 new MultipleChoiceExercise
                 {
@@ -684,7 +697,8 @@ public static class C1Units
                     Explanation = "'die Zerrissenheit' means a state of inner conflict, being torn between two things.",
                     Question = "\"inner conflict / being torn\" in German?",
                     Options = ["die Zerrissenheit", "die Gelassenheit", "die Verbitterung", "die Wehmut"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Zerrissenheit", "inner conflict")
                 },
                 new MultipleChoiceExercise
                 {
@@ -693,7 +707,8 @@ public static class C1Units
                     Explanation = "'die Gelassenheit' means composure/calmness.",
                     Question = "\"composure/calmness\" in German?",
                     Options = ["die Gelassenheit", "die Zerrissenheit", "die Verbitterung", "die Ehrfurcht"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Gelassenheit", "composure")
                 },
                 new MultipleChoiceExercise
                 {
@@ -702,7 +717,8 @@ public static class C1Units
                     Explanation = "'die Ehrfurcht' means awe/reverence.",
                     Question = "\"awe/reverence\" in German?",
                     Options = ["die Ehrfurcht", "die Demut", "die Wehmut", "die Gelassenheit"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Ehrfurcht", "awe")
                 },
                 new ClozeExercise
                 {

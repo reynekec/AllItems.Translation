@@ -616,7 +616,8 @@ public static class A2Units
                     Explanation = "'der Lehrer' means teacher (male); 'die Lehrerin' for female.",
                     Question = "\"teacher\" in German?",
                     Options = ["der Lehrer", "der Ingenieur", "der Anwalt", "der Bauer"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Lehrer", "teacher")
                 },
                 new MultipleChoiceExercise
                 {
@@ -625,7 +626,8 @@ public static class A2Units
                     Explanation = "'der Ingenieur' means engineer.",
                     Question = "\"engineer\" in German?",
                     Options = ["der Ingenieur", "der Verkäufer", "der Lehrer", "der Bauer"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Ingenieur", "engineer")
                 },
                 new MultipleChoiceExercise
                 {
@@ -634,7 +636,8 @@ public static class A2Units
                     Explanation = "'der Verkäufer' means salesperson.",
                     Question = "\"salesperson\" in German?",
                     Options = ["der Verkäufer", "der Anwalt", "der Ingenieur", "der Koch"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Verkäufer", "salesperson")
                 },
                 new MultipleChoiceExercise
                 {
@@ -643,7 +646,8 @@ public static class A2Units
                     Explanation = "'der Anwalt' means lawyer.",
                     Question = "\"lawyer\" in German?",
                     Options = ["der Anwalt", "der Bauer", "der Lehrer", "der Verkäufer"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Anwalt", "lawyer")
                 },
                 new MultipleChoiceExercise
                 {
@@ -652,7 +656,8 @@ public static class A2Units
                     Explanation = "'der Bauer' means farmer.",
                     Question = "\"farmer\" in German?",
                     Options = ["der Bauer", "der Ingenieur", "der Anwalt", "der Koch"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Bauer", "farmer")
                 },
                 new ClozeExercise
                 {
@@ -681,7 +686,8 @@ public static class A2Units
                     Explanation = "'die Sonne' means sun.",
                     Question = "\"sun\" in German?",
                     Options = ["die Sonne", "der Regen", "der Schnee", "der Wind"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Sonne", "sun")
                 },
                 new MultipleChoiceExercise
                 {
@@ -690,7 +696,8 @@ public static class A2Units
                     Explanation = "'der Regen' means rain.",
                     Question = "\"rain\" in German?",
                     Options = ["der Regen", "der Schnee", "die Sonne", "die Wolke"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Regen", "rain")
                 },
                 new MultipleChoiceExercise
                 {
@@ -699,7 +706,8 @@ public static class A2Units
                     Explanation = "'der Schnee' means snow.",
                     Question = "\"snow\" in German?",
                     Options = ["der Schnee", "der Regen", "der Wind", "die Wolke"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Schnee", "snow")
                 },
                 new MultipleChoiceExercise
                 {
@@ -708,7 +716,8 @@ public static class A2Units
                     Explanation = "'der Wind' means wind.",
                     Question = "\"wind\" in German?",
                     Options = ["der Wind", "die Wolke", "der Regen", "die Sonne"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Wind", "wind")
                 },
                 new MultipleChoiceExercise
                 {
@@ -717,7 +726,8 @@ public static class A2Units
                     Explanation = "'die Wolke' means cloud.",
                     Question = "\"cloud\" in German?",
                     Options = ["die Wolke", "der Wind", "der Schnee", "die Sonne"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Wolke", "cloud")
                 },
                 new ClozeExercise
                 {
@@ -755,7 +765,8 @@ public static class A2Units
                     Explanation = "'schwimmen' means to swim.",
                     Question = "\"to swim\" in German?",
                     Options = ["schwimmen", "wandern", "malen", "tanzen"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("schwimmen", "to swim")
                 },
                 new MultipleChoiceExercise
                 {
@@ -764,7 +775,8 @@ public static class A2Units
                     Explanation = "'wandern' means to hike.",
                     Question = "\"to hike\" in German?",
                     Options = ["wandern", "schwimmen", "tanzen", "fotografieren"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("wandern", "to hike")
                 },
                 new MultipleChoiceExercise
                 {
@@ -773,7 +785,8 @@ public static class A2Units
                     Explanation = "'malen' means to paint.",
                     Question = "\"to paint\" in German?",
                     Options = ["malen", "tanzen", "wandern", "schwimmen"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("malen", "to paint")
                 },
                 new MultipleChoiceExercise
                 {
@@ -782,7 +795,8 @@ public static class A2Units
                     Explanation = "'tanzen' means to dance.",
                     Question = "\"to dance\" in German?",
                     Options = ["tanzen", "malen", "fotografieren", "wandern"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("tanzen", "to dance")
                 },
                 new MultipleChoiceExercise
                 {
@@ -791,7 +805,8 @@ public static class A2Units
                     Explanation = "'das Hobby' means hobby.",
                     Question = "\"hobby\" in German?",
                     Options = ["das Hobby", "die Freizeit", "der Sport", "das Spiel"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Hobby", "hobby")
                 },
                 new ClozeExercise
                 {
@@ -820,7 +835,8 @@ public static class A2Units
                     Explanation = "'der Zug' means train.",
                     Question = "\"train\" in German?",
                     Options = ["der Zug", "der Bus", "das Fahrrad", "das Schiff"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Zug", "train")
                 },
                 new MultipleChoiceExercise
                 {
@@ -829,7 +845,8 @@ public static class A2Units
                     Explanation = "'das Fahrrad' means bicycle.",
                     Question = "\"bicycle\" in German?",
                     Options = ["das Fahrrad", "der Zug", "das Flugzeug", "der Bus"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Fahrrad", "bicycle")
                 },
                 new MultipleChoiceExercise
                 {
@@ -838,7 +855,8 @@ public static class A2Units
                     Explanation = "'das Flugzeug' means airplane.",
                     Question = "\"airplane\" in German?",
                     Options = ["das Flugzeug", "das Schiff", "der Zug", "das Fahrrad"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Flugzeug", "airplane")
                 },
                 new MultipleChoiceExercise
                 {
@@ -847,7 +865,8 @@ public static class A2Units
                     Explanation = "'das Schiff' means ship.",
                     Question = "\"ship\" in German?",
                     Options = ["das Schiff", "das Flugzeug", "der Bus", "die U-Bahn"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Schiff", "ship")
                 },
                 new MultipleChoiceExercise
                 {
@@ -856,7 +875,8 @@ public static class A2Units
                     Explanation = "'die U-Bahn' means subway/underground.",
                     Question = "\"subway/underground\" in German?",
                     Options = ["die U-Bahn", "der Zug", "das Schiff", "das Fahrrad"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("U-Bahn", "subway")
                 },
                 new ClozeExercise
                 {
@@ -885,7 +905,8 @@ public static class A2Units
                     Explanation = "'der Preis' means price.",
                     Question = "\"price\" in German?",
                     Options = ["der Preis", "die Größe", "das Geld", "die Kasse"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Preis", "price")
                 },
                 new MultipleChoiceExercise
                 {
@@ -894,7 +915,8 @@ public static class A2Units
                     Explanation = "'billig' means cheap.",
                     Question = "\"cheap\" in German?",
                     Options = ["billig", "teuer", "groß", "klein"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("billig", "cheap")
                 },
                 new MultipleChoiceExercise
                 {
@@ -903,7 +925,8 @@ public static class A2Units
                     Explanation = "'teuer' means expensive.",
                     Question = "\"expensive\" in German?",
                     Options = ["teuer", "billig", "günstig", "kostenlos"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("teuer", "expensive")
                 },
                 new MultipleChoiceExercise
                 {
@@ -912,7 +935,8 @@ public static class A2Units
                     Explanation = "'die Größe' means size.",
                     Question = "\"size\" in German?",
                     Options = ["die Größe", "der Preis", "die Kasse", "das Geld"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Größe", "size")
                 },
                 new MultipleChoiceExercise
                 {
@@ -921,7 +945,8 @@ public static class A2Units
                     Explanation = "'bezahlen' means to pay.",
                     Question = "\"to pay\" in German?",
                     Options = ["bezahlen", "kaufen", "verkaufen", "kosten"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("bezahlen", "to pay")
                 },
                 new ClozeExercise
                 {
@@ -930,7 +955,8 @@ public static class A2Units
                     Explanation = "\"Ich bezahle an der Kasse\" = \"I pay at the checkout\".",
                     TextBefore = "Ich bezahle an der ",
                     TextAfter = ".",
-                    CorrectAnswer = "Kasse"
+                    CorrectAnswer = "Kasse",
+                    Teaches = new VocabularyTeaching("Kasse", "checkout")
                 }
             ]
         }

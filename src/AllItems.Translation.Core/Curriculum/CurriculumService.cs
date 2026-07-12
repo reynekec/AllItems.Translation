@@ -1,11 +1,13 @@
 using AllItems.Translation.Core.Abstractions;
+using AllItems.Translation.Core.Domain;
 
 namespace AllItems.Translation.Core.Curriculum;
 
 public sealed class CurriculumService(
     ICurriculumCatalog catalog,
     ICurriculumProgressRepository progressRepository,
-    IExerciseGrader grader) : ICurriculumService
+    IExerciseGrader grader,
+    IWordRepository wordRepository) : ICurriculumService
 {
     public async Task<IReadOnlyList<LevelSummary>> GetLevelSummariesAsync(CancellationToken cancellationToken = default)
     {
@@ -56,8 +58,26 @@ public sealed class CurriculumService(
         if (result.IsCorrect)
         {
             await progressRepository.MarkExerciseCompletedAsync(exercise.Id, cancellationToken);
+
+            if (exercise.Teaches is { } teaching)
+            {
+                await AddToDictionaryAsync(teaching, cancellationToken);
+            }
         }
 
         return result;
+    }
+
+    private async Task AddToDictionaryAsync(VocabularyTeaching teaching, CancellationToken cancellationToken)
+    {
+        var normalized = teaching.GermanWord.ToLowerInvariant();
+        var entry = await wordRepository.GetOrCreateAsync(Language.German, normalized, cancellationToken);
+        var existing = await wordRepository.GetTranslationsAsync(entry.Id, Language.English, cancellationToken);
+
+        var alreadyKnown = existing.Any(t => string.Equals(t.TargetText, teaching.EnglishMeaning, StringComparison.OrdinalIgnoreCase));
+        if (!alreadyKnown)
+        {
+            await wordRepository.AddTranslationAsync(entry.Id, Language.English, teaching.EnglishMeaning, isPreferred: existing.Count == 0, cancellationToken);
+        }
     }
 }

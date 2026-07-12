@@ -588,7 +588,8 @@ public static class A1Units
                     Explanation = "'rot' means red.",
                     Question = "\"red\" in German?",
                     Options = ["rot", "blau", "grün", "gelb"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("rot", "red")
                 },
                 new MultipleChoiceExercise
                 {
@@ -597,7 +598,8 @@ public static class A1Units
                     Explanation = "'blau' means blue.",
                     Question = "\"blue\" in German?",
                     Options = ["blau", "rot", "schwarz", "weiß"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("blau", "blue")
                 },
                 new MultipleChoiceExercise
                 {
@@ -606,7 +608,8 @@ public static class A1Units
                     Explanation = "'grün' means green.",
                     Question = "\"green\" in German?",
                     Options = ["grün", "gelb", "orange", "lila"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("grün", "green")
                 },
                 new MultipleChoiceExercise
                 {
@@ -615,7 +618,8 @@ public static class A1Units
                     Explanation = "'gelb' means yellow.",
                     Question = "\"yellow\" in German?",
                     Options = ["gelb", "grün", "rot", "blau"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("gelb", "yellow")
                 },
                 new MultipleChoiceExercise
                 {
@@ -624,7 +628,8 @@ public static class A1Units
                     Explanation = "'schwarz' means black.",
                     Question = "\"black\" in German?",
                     Options = ["schwarz", "weiß", "grau", "braun"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("schwarz", "black")
                 },
                 new MultipleChoiceExercise
                 {
@@ -633,7 +638,8 @@ public static class A1Units
                     Explanation = "'weiß' means white.",
                     Question = "\"white\" in German?",
                     Options = ["weiß", "schwarz", "grau", "gelb"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("weiß", "white")
                 },
                 new ClozeExercise
                 {
@@ -671,7 +677,8 @@ public static class A1Units
                     Explanation = "'die Hose' means pants/trousers.",
                     Question = "\"pants/trousers\" in German?",
                     Options = ["die Hose", "das Hemd", "der Rock", "die Jacke"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Hose", "pants/trousers")
                 },
                 new MultipleChoiceExercise
                 {
@@ -680,7 +687,8 @@ public static class A1Units
                     Explanation = "'das Hemd' means shirt.",
                     Question = "\"shirt\" in German?",
                     Options = ["das Hemd", "die Hose", "die Schuhe", "der Hut"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Hemd", "shirt")
                 },
                 new MultipleChoiceExercise
                 {
@@ -689,7 +697,8 @@ public static class A1Units
                     Explanation = "'die Schuhe' means shoes.",
                     Question = "\"shoes\" in German?",
                     Options = ["die Schuhe", "die Socken", "der Hut", "das Kleid"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Schuhe", "shoes")
                 },
                 new MultipleChoiceExercise
                 {
@@ -698,7 +707,8 @@ public static class A1Units
                     Explanation = "'die Jacke' means jacket.",
                     Question = "\"jacket\" in German?",
                     Options = ["die Jacke", "das Kleid", "der Rock", "die Hose"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Jacke", "jacket")
                 },
                 new MultipleChoiceExercise
                 {
@@ -707,7 +717,8 @@ public static class A1Units
                     Explanation = "'das Kleid' means dress.",
                     Question = "\"dress\" in German?",
                     Options = ["das Kleid", "der Rock", "das Hemd", "die Socken"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Kleid", "dress")
                 },
                 new MultipleChoiceExercise
                 {
@@ -716,7 +727,8 @@ public static class A1Units
                     Explanation = "'der Hut' means hat.",
                     Question = "\"hat\" in German?",
                     Options = ["der Hut", "die Jacke", "die Hose", "das Hemd"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Hut", "hat")
                 },
                 new ClozeExercise
                 {
@@ -754,7 +766,8 @@ public static class A1Units
                     Explanation = "'der Apfel' means apple.",
                     Question = "\"apple\" in German?",
                     Options = ["der Apfel", "die Banane", "das Gemüse", "der Reis"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Apfel", "apple")
                 },
                 new MultipleChoiceExercise
                 {
@@ -763,7 +776,8 @@ public static class A1Units
                     Explanation = "'die Banane' means banana.",
                     Question = "\"banana\" in German?",
                     Options = ["die Banane", "der Apfel", "die Suppe", "das Fleisch"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Banane", "banana")
                 },
                 new MultipleChoiceExercise
                 {
@@ -772,7 +786,8 @@ public static class A1Units
                     Explanation = "'das Gemüse' means vegetables.",
                     Question = "\"vegetables\" in German?",
                     Options = ["das Gemüse", "das Obst", "der Reis", "der Käse"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Gemüse", "vegetables")
                 },
                 new MultipleChoiceExercise
                 {
@@ -781,7 +796,8 @@ public static class A1Units
                     Explanation = "'die Suppe' means soup.",
                     Question = "\"soup\" in German?",
                     Options = ["die Suppe", "das Fleisch", "der Saft", "das Wasser"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Suppe", "soup")
                 },
                 new MultipleChoiceExercise
                 {
@@ -790,7 +806,8 @@ public static class A1Units
                     Explanation = "'das Fleisch' means meat.",
                     Question = "\"meat\" in German?",
                     Options = ["das Fleisch", "der Käse", "das Gemüse", "der Apfel"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Fleisch", "meat")
                 },
                 new MultipleChoiceExercise
                 {
@@ -799,7 +816,8 @@ public static class A1Units
                     Explanation = "'der Käse' means cheese.",
                     Question = "\"cheese\" in German?",
                     Options = ["der Käse", "der Saft", "das Wasser", "die Suppe"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Käse", "cheese")
                 },
                 new MultipleChoiceExercise
                 {
@@ -808,7 +826,8 @@ public static class A1Units
                     Explanation = "'der Saft' means juice.",
                     Question = "\"juice\" in German?",
                     Options = ["der Saft", "das Wasser", "die Milch", "der Käse"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Saft", "juice")
                 },
                 new ClozeExercise
                 {
@@ -817,7 +836,8 @@ public static class A1Units
                     Explanation = "\"Ich trinke Wasser\" = \"I drink water\".",
                     TextBefore = "Ich trinke ",
                     TextAfter = ".",
-                    CorrectAnswer = "Wasser"
+                    CorrectAnswer = "Wasser",
+                    Teaches = new VocabularyTeaching("Wasser", "water")
                 }
             ]
         },
@@ -837,7 +857,8 @@ public static class A1Units
                     Explanation = "'die Küche' means kitchen.",
                     Question = "\"kitchen\" in German?",
                     Options = ["die Küche", "das Schlafzimmer", "das Wohnzimmer", "das Bad"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Küche", "kitchen")
                 },
                 new MultipleChoiceExercise
                 {
@@ -846,7 +867,8 @@ public static class A1Units
                     Explanation = "'das Schlafzimmer' means bedroom.",
                     Question = "\"bedroom\" in German?",
                     Options = ["das Schlafzimmer", "die Küche", "das Bad", "das Wohnzimmer"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Schlafzimmer", "bedroom")
                 },
                 new MultipleChoiceExercise
                 {
@@ -855,7 +877,8 @@ public static class A1Units
                     Explanation = "'das Wohnzimmer' means living room.",
                     Question = "\"living room\" in German?",
                     Options = ["das Wohnzimmer", "das Schlafzimmer", "die Küche", "das Bad"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Wohnzimmer", "living room")
                 },
                 new MultipleChoiceExercise
                 {
@@ -864,7 +887,8 @@ public static class A1Units
                     Explanation = "'der Stuhl' means chair.",
                     Question = "\"chair\" in German?",
                     Options = ["der Stuhl", "das Bett", "das Fenster", "die Tür"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Stuhl", "chair")
                 },
                 new MultipleChoiceExercise
                 {
@@ -873,7 +897,8 @@ public static class A1Units
                     Explanation = "'das Bett' means bed.",
                     Question = "\"bed\" in German?",
                     Options = ["das Bett", "der Stuhl", "das Fenster", "die Tür"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Bett", "bed")
                 },
                 new MultipleChoiceExercise
                 {
@@ -882,7 +907,8 @@ public static class A1Units
                     Explanation = "'das Fenster' means window.",
                     Question = "\"window\" in German?",
                     Options = ["das Fenster", "die Tür", "das Bett", "der Stuhl"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Fenster", "window")
                 },
                 new ClozeExercise
                 {
@@ -920,7 +946,8 @@ public static class A1Units
                     Explanation = "'der Hund' means dog.",
                     Question = "\"dog\" in German?",
                     Options = ["der Hund", "die Katze", "der Vogel", "das Pferd"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Hund", "dog")
                 },
                 new MultipleChoiceExercise
                 {
@@ -929,7 +956,8 @@ public static class A1Units
                     Explanation = "'die Katze' means cat.",
                     Question = "\"cat\" in German?",
                     Options = ["die Katze", "der Hund", "die Kuh", "der Fisch"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Katze", "cat")
                 },
                 new MultipleChoiceExercise
                 {
@@ -938,7 +966,8 @@ public static class A1Units
                     Explanation = "'der Vogel' means bird.",
                     Question = "\"bird\" in German?",
                     Options = ["der Vogel", "das Pferd", "das Schaf", "der Fisch"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Vogel", "bird")
                 },
                 new MultipleChoiceExercise
                 {
@@ -947,7 +976,8 @@ public static class A1Units
                     Explanation = "'das Pferd' means horse.",
                     Question = "\"horse\" in German?",
                     Options = ["das Pferd", "die Kuh", "das Schaf", "der Vogel"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Pferd", "horse")
                 },
                 new MultipleChoiceExercise
                 {
@@ -956,7 +986,8 @@ public static class A1Units
                     Explanation = "'die Kuh' means cow.",
                     Question = "\"cow\" in German?",
                     Options = ["die Kuh", "das Schaf", "das Pferd", "der Fisch"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Kuh", "cow")
                 },
                 new MultipleChoiceExercise
                 {
@@ -965,7 +996,8 @@ public static class A1Units
                     Explanation = "'der Fisch' means fish.",
                     Question = "\"fish\" in German?",
                     Options = ["der Fisch", "der Vogel", "die Katze", "das Schaf"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Fisch", "fish")
                 },
                 new ClozeExercise
                 {

@@ -532,7 +532,8 @@ public static class B1Units
                     Explanation = "'der Klimawandel' means climate change.",
                     Question = "\"climate change\" in German?",
                     Options = ["der Klimawandel", "die Erderwärmung", "der Müll", "der Naturschutz"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Klimawandel", "climate change")
                 },
                 new MultipleChoiceExercise
                 {
@@ -541,7 +542,8 @@ public static class B1Units
                     Explanation = "'recyceln' means to recycle.",
                     Question = "\"to recycle\" in German?",
                     Options = ["recyceln", "verschmutzen", "verbrauchen", "wegwerfen"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("recyceln", "to recycle")
                 },
                 new MultipleChoiceExercise
                 {
@@ -550,7 +552,8 @@ public static class B1Units
                     Explanation = "'nachhaltig' means sustainable.",
                     Question = "\"sustainable\" in German?",
                     Options = ["nachhaltig", "schädlich", "künstlich", "gefährlich"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("nachhaltig", "sustainable")
                 },
                 new MultipleChoiceExercise
                 {
@@ -559,7 +562,8 @@ public static class B1Units
                     Explanation = "'der Müll' means trash/waste.",
                     Question = "\"trash/waste\" in German?",
                     Options = ["der Müll", "der Naturschutz", "die Erderwärmung", "der Klimawandel"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Müll", "trash")
                 },
                 new MultipleChoiceExercise
                 {
@@ -568,7 +572,8 @@ public static class B1Units
                     Explanation = "'erneuerbare Energie' means renewable energy.",
                     Question = "\"renewable energy\" in German?",
                     Options = ["erneuerbare Energie", "künstliche Energie", "billige Energie", "alte Energie"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("erneuerbare Energie", "renewable energy")
                 },
                 new ClozeExercise
                 {
@@ -577,7 +582,8 @@ public static class B1Units
                     Explanation = "\"Wir müssen die Umwelt schützen\" = \"We must protect the environment\".",
                     TextBefore = "Wir müssen die ",
                     TextAfter = " schützen.",
-                    CorrectAnswer = "Umwelt"
+                    CorrectAnswer = "Umwelt",
+                    Teaches = new VocabularyTeaching("Umwelt", "environment")
                 }
             ]
         },
@@ -597,7 +603,8 @@ public static class B1Units
                     Explanation = "'die Bewerbung' means job application.",
                     Question = "\"job application\" in German?",
                     Options = ["die Bewerbung", "der Lebenslauf", "das Gehalt", "die Kündigung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Bewerbung", "job application")
                 },
                 new MultipleChoiceExercise
                 {
@@ -606,7 +613,8 @@ public static class B1Units
                     Explanation = "'der Lebenslauf' means resume/CV (literally \"life course\").",
                     Question = "\"resume/CV\" in German?",
                     Options = ["der Lebenslauf", "die Bewerbung", "das Vorstellungsgespräch", "das Gehalt"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Lebenslauf", "resume/CV")
                 },
                 new MultipleChoiceExercise
                 {
@@ -615,7 +623,8 @@ public static class B1Units
                     Explanation = "'das Vorstellungsgespräch' means job interview.",
                     Question = "\"job interview\" in German?",
                     Options = ["das Vorstellungsgespräch", "die Bewerbung", "die Kündigung", "das Gehalt"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Vorstellungsgespräch", "job interview")
                 },
                 new MultipleChoiceExercise
                 {
@@ -624,7 +633,8 @@ public static class B1Units
                     Explanation = "'das Gehalt' means salary.",
                     Question = "\"salary\" in German?",
                     Options = ["das Gehalt", "die Kündigung", "der Lebenslauf", "die Teilzeit"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Gehalt", "salary")
                 },
                 new MultipleChoiceExercise
                 {
@@ -633,7 +643,8 @@ public static class B1Units
                     Explanation = "'die Kündigung' means termination/notice of resignation.",
                     Question = "\"termination/resignation notice\" in German?",
                     Options = ["die Kündigung", "die Bewerbung", "das Gehalt", "die Vollzeit"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Kündigung", "termination notice")
                 },
                 new ClozeExercise
                 {
@@ -662,7 +673,8 @@ public static class B1Units
                     Explanation = "'die Miete' means rent.",
                     Question = "\"rent\" in German?",
                     Options = ["die Miete", "die Kaution", "der Vermieter", "der Mietvertrag"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Miete", "rent")
                 },
                 new MultipleChoiceExercise
                 {
@@ -671,7 +683,8 @@ public static class B1Units
                     Explanation = "'der Vermieter' means landlord.",
                     Question = "\"landlord\" in German?",
                     Options = ["der Vermieter", "der Nachbar", "der Mieter", "der Makler"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Vermieter", "landlord")
                 },
                 new MultipleChoiceExercise
                 {
@@ -680,7 +693,8 @@ public static class B1Units
                     Explanation = "'umziehen' means to move/relocate.",
                     Question = "\"to move/relocate\" in German?",
                     Options = ["umziehen", "renovieren", "wohnen", "mieten"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("umziehen", "to move")
                 },
                 new MultipleChoiceExercise
                 {
@@ -689,7 +703,8 @@ public static class B1Units
                     Explanation = "'die Kaution' means (security) deposit.",
                     Question = "\"security deposit\" in German?",
                     Options = ["die Kaution", "die Miete", "das Gehalt", "die Rechnung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Kaution", "security deposit")
                 },
                 new MultipleChoiceExercise
                 {
@@ -698,7 +713,8 @@ public static class B1Units
                     Explanation = "'renovieren' means to renovate.",
                     Question = "\"to renovate\" in German?",
                     Options = ["renovieren", "umziehen", "mieten", "bauen"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("renovieren", "to renovate")
                 },
                 new ClozeExercise
                 {
@@ -727,7 +743,8 @@ public static class B1Units
                     Explanation = "'die Eifersucht' means jealousy.",
                     Question = "\"jealousy\" in German?",
                     Options = ["die Eifersucht", "die Wut", "die Enttäuschung", "die Sehnsucht"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Eifersucht", "jealousy")
                 },
                 new MultipleChoiceExercise
                 {
@@ -736,7 +753,8 @@ public static class B1Units
                     Explanation = "'die Enttäuschung' means disappointment.",
                     Question = "\"disappointment\" in German?",
                     Options = ["die Enttäuschung", "die Erleichterung", "die Eifersucht", "die Wut"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Enttäuschung", "disappointment")
                 },
                 new MultipleChoiceExercise
                 {
@@ -745,7 +763,8 @@ public static class B1Units
                     Explanation = "'die Erleichterung' means relief.",
                     Question = "\"relief\" in German?",
                     Options = ["die Erleichterung", "die Sehnsucht", "die Enttäuschung", "die Wut"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Erleichterung", "relief")
                 },
                 new MultipleChoiceExercise
                 {
@@ -754,7 +773,8 @@ public static class B1Units
                     Explanation = "'die Sehnsucht' means longing/yearning.",
                     Question = "\"longing/yearning\" in German?",
                     Options = ["die Sehnsucht", "die Wut", "die Eifersucht", "die Erleichterung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Sehnsucht", "longing")
                 },
                 new MultipleChoiceExercise
                 {
@@ -763,7 +783,8 @@ public static class B1Units
                     Explanation = "'stolz' means proud.",
                     Question = "\"proud\" in German?",
                     Options = ["stolz", "neidisch", "gerührt", "wütend"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("stolz", "proud")
                 },
                 new ClozeExercise
                 {
@@ -792,7 +813,8 @@ public static class B1Units
                     Explanation = "'der Bildschirm' means screen/display.",
                     Question = "\"screen/display\" in German?",
                     Options = ["der Bildschirm", "das Netzwerk", "das Passwort", "die Anwendung"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Bildschirm", "screen")
                 },
                 new MultipleChoiceExercise
                 {
@@ -801,7 +823,8 @@ public static class B1Units
                     Explanation = "'herunterladen' means to download.",
                     Question = "\"to download\" in German?",
                     Options = ["herunterladen", "hochladen", "speichern", "löschen"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("herunterladen", "to download")
                 },
                 new MultipleChoiceExercise
                 {
@@ -810,7 +833,8 @@ public static class B1Units
                     Explanation = "'hochladen' means to upload.",
                     Question = "\"to upload\" in German?",
                     Options = ["hochladen", "herunterladen", "installieren", "aktualisieren"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("hochladen", "to upload")
                 },
                 new MultipleChoiceExercise
                 {
@@ -819,7 +843,8 @@ public static class B1Units
                     Explanation = "'das Passwort' means password.",
                     Question = "\"password\" in German?",
                     Options = ["das Passwort", "der Benutzername", "das Netzwerk", "die Datei"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("Passwort", "password")
                 },
                 new MultipleChoiceExercise
                 {
@@ -828,7 +853,8 @@ public static class B1Units
                     Explanation = "'speichern' means to save.",
                     Question = "\"to save\" (a file) in German?",
                     Options = ["speichern", "löschen", "öffnen", "drucken"],
-                    CorrectOptionIndex = 0
+                    CorrectOptionIndex = 0,
+                    Teaches = new VocabularyTeaching("speichern", "to save")
                 },
                 new ClozeExercise
                 {
