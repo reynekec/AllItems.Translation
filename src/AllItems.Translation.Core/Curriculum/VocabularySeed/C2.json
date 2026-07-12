@@ -1,1 +1,3922 @@
-[]
+[
+  {
+    "German": "wesley",
+    "English": "Wesley"
+  },
+  {
+    "German": "herausfindet",
+    "English": "finds out"
+  },
+  {
+    "German": "schaute",
+    "English": "looked"
+  },
+  {
+    "German": "theoretisch",
+    "English": "theoretical"
+  },
+  {
+    "German": "chan",
+    "English": "Chan"
+  },
+  {
+    "German": "beutel",
+    "English": "bag"
+  },
+  {
+    "German": "drängen",
+    "English": "to push"
+  },
+  {
+    "German": "schlimmen",
+    "English": "bad"
+  },
+  {
+    "German": "klient",
+    "English": "client"
+  },
+  {
+    "German": "hängst",
+    "English": "hang"
+  },
+  {
+    "German": "veranda",
+    "English": "porch"
+  },
+  {
+    "German": "pam",
+    "English": "Pam"
+  },
+  {
+    "German": "jüngste",
+    "English": "youngest"
+  },
+  {
+    "German": "strahlung",
+    "English": "radiation"
+  },
+  {
+    "German": "betrügt",
+    "English": "cheats"
+  },
+  {
+    "German": "unendlich",
+    "English": "infinite"
+  },
+  {
+    "German": "gedichte",
+    "English": "poems"
+  },
+  {
+    "German": "sven",
+    "English": "Sven"
+  },
+  {
+    "German": "irene",
+    "English": "Irene"
+  },
+  {
+    "German": "gereist",
+    "English": "traveled"
+  },
+  {
+    "German": "schiss",
+    "English": "fear"
+  },
+  {
+    "German": "benimmst",
+    "English": "behave"
+  },
+  {
+    "German": "schwangerschaft",
+    "English": "pregnancy"
+  },
+  {
+    "German": "kopien",
+    "English": "copies"
+  },
+  {
+    "German": "infrage",
+    "English": "into question"
+  },
+  {
+    "German": "zweifeln",
+    "English": "to doubt"
+  },
+  {
+    "German": "nonne",
+    "English": "nun"
+  },
+  {
+    "German": "müsse",
+    "English": "must"
+  },
+  {
+    "German": "juliette",
+    "English": "Juliette"
+  },
+  {
+    "German": "richtet",
+    "English": "directs"
+  },
+  {
+    "German": "lecken",
+    "English": "to lick"
+  },
+  {
+    "German": "feuerwerk",
+    "English": "fireworks"
+  },
+  {
+    "German": "neueste",
+    "English": "newest"
+  },
+  {
+    "German": "geistes",
+    "English": "of the spirit"
+  },
+  {
+    "German": "verletzten",
+    "English": "injured"
+  },
+  {
+    "German": "abwechslung",
+    "English": "variety"
+  },
+  {
+    "German": "ausgeführt",
+    "English": "carried out"
+  },
+  {
+    "German": "kleingeld",
+    "English": "small change"
+  },
+  {
+    "German": "evans",
+    "English": "Evans"
+  },
+  {
+    "German": "gelegentlich",
+    "English": "occasionally"
+  },
+  {
+    "German": "denise",
+    "English": "Denise"
+  },
+  {
+    "German": "braten",
+    "English": "to roast"
+  },
+  {
+    "German": "angelegt",
+    "English": "invested"
+  },
+  {
+    "German": "artie",
+    "English": "Artie"
+  },
+  {
+    "German": "corporal",
+    "English": "corporal"
+  },
+  {
+    "German": "entsteht",
+    "English": "arises"
+  },
+  {
+    "German": "rogers",
+    "English": "Rogers"
+  },
+  {
+    "German": "herzschlag",
+    "English": "heartbeat"
+  },
+  {
+    "German": "glücklicherweise",
+    "English": "fortunately"
+  },
+  {
+    "German": "heilung",
+    "English": "cure"
+  },
+  {
+    "German": "cäsar",
+    "English": "Caesar"
+  },
+  {
+    "German": "angeklagten",
+    "English": "defendant"
+  },
+  {
+    "German": "profit",
+    "English": "profit"
+  },
+  {
+    "German": "brüllen",
+    "English": "to roar"
+  },
+  {
+    "German": "verschieden",
+    "English": "different"
+  },
+  {
+    "German": "münzen",
+    "English": "coins"
+  },
+  {
+    "German": "hinterlässt",
+    "English": "leaves behind"
+  },
+  {
+    "German": "königlichen",
+    "English": "royal"
+  },
+  {
+    "German": "stadtrat",
+    "English": "city council"
+  },
+  {
+    "German": "pressekonferenz",
+    "English": "press conference"
+  },
+  {
+    "German": "nich",
+    "English": "not"
+  },
+  {
+    "German": "geschaut",
+    "English": "looked"
+  },
+  {
+    "German": "zugegeben",
+    "English": "admittedly"
+  },
+  {
+    "German": "komisches",
+    "English": "strange"
+  },
+  {
+    "German": "regie",
+    "English": "direction"
+  },
+  {
+    "German": "merk",
+    "English": "remember"
+  },
+  {
+    "German": "boote",
+    "English": "boats"
+  },
+  {
+    "German": "verbrennt",
+    "English": "burns"
+  },
+  {
+    "German": "allergisch",
+    "English": "allergic"
+  },
+  {
+    "German": "schweizer",
+    "English": "Swiss"
+  },
+  {
+    "German": "verdächtiger",
+    "English": "suspect"
+  },
+  {
+    "German": "gasse",
+    "English": "alley"
+  },
+  {
+    "German": "tussi",
+    "English": "chick"
+  },
+  {
+    "German": "befürchtet",
+    "English": "feared"
+  },
+  {
+    "German": "reite",
+    "English": "ride"
+  },
+  {
+    "German": "außerirdische",
+    "English": "alien"
+  },
+  {
+    "German": "ehemaliger",
+    "English": "former"
+  },
+  {
+    "German": "radar",
+    "English": "radar"
+  },
+  {
+    "German": "gestattet",
+    "English": "permitted"
+  },
+  {
+    "German": "gefecht",
+    "English": "battle"
+  },
+  {
+    "German": "angeschaut",
+    "English": "looked at"
+  },
+  {
+    "German": "gedient",
+    "English": "served"
+  },
+  {
+    "German": "pension",
+    "English": "pension"
+  },
+  {
+    "German": "strich",
+    "English": "line"
+  },
+  {
+    "German": "lippenstift",
+    "English": "lipstick"
+  },
+  {
+    "German": "stab",
+    "English": "staff"
+  },
+  {
+    "German": "außerirdischen",
+    "English": "alien"
+  },
+  {
+    "German": "termine",
+    "English": "appointments"
+  },
+  {
+    "German": "maler",
+    "English": "painter"
+  },
+  {
+    "German": "verweigert",
+    "English": "refuses"
+  },
+  {
+    "German": "boxer",
+    "English": "boxer"
+  },
+  {
+    "German": "vorteile",
+    "English": "advantages"
+  },
+  {
+    "German": "ausstellung",
+    "English": "exhibition"
+  },
+  {
+    "German": "tragisch",
+    "English": "tragic"
+  },
+  {
+    "German": "rasch",
+    "English": "quick"
+  },
+  {
+    "German": "oberste",
+    "English": "highest"
+  },
+  {
+    "German": "polizistin",
+    "English": "policewoman"
+  },
+  {
+    "German": "windeln",
+    "English": "diapers"
+  },
+  {
+    "German": "detroit",
+    "English": "Detroit"
+  },
+  {
+    "German": "arizona",
+    "English": "Arizona"
+  },
+  {
+    "German": "universums",
+    "English": "universe"
+  },
+  {
+    "German": "aufheben",
+    "English": "to pick up"
+  },
+  {
+    "German": "narben",
+    "English": "scars"
+  },
+  {
+    "German": "fleißig",
+    "English": "hardworking"
+  },
+  {
+    "German": "freizeit",
+    "English": "free time"
+  },
+  {
+    "German": "elegant",
+    "English": "elegant"
+  },
+  {
+    "German": "dolch",
+    "English": "dagger"
+  },
+  {
+    "German": "sloan",
+    "English": "Sloan"
+  },
+  {
+    "German": "eindringen",
+    "English": "to intrude"
+  },
+  {
+    "German": "auszeit",
+    "English": "timeout"
+  },
+  {
+    "German": "internationalen",
+    "English": "international"
+  },
+  {
+    "German": "fielen",
+    "English": "fell"
+  },
+  {
+    "German": "weggeworfen",
+    "English": "thrown away"
+  },
+  {
+    "German": "vergeuden",
+    "English": "to waste"
+  },
+  {
+    "German": "blätter",
+    "English": "leaves"
+  },
+  {
+    "German": "blass",
+    "English": "pale"
+  },
+  {
+    "German": "konzept",
+    "English": "concept"
+  },
+  {
+    "German": "look",
+    "English": "look"
+  },
+  {
+    "German": "keineswegs",
+    "English": "by no means"
+  },
+  {
+    "German": "faden",
+    "English": "thread"
+  },
+  {
+    "German": "kleinste",
+    "English": "smallest"
+  },
+  {
+    "German": "geschrien",
+    "English": "screamed"
+  },
+  {
+    "German": "ertrunken",
+    "English": "drowned"
+  },
+  {
+    "German": "blase",
+    "English": "bubble"
+  },
+  {
+    "German": "treffpunkt",
+    "English": "meeting point"
+  },
+  {
+    "German": "schrift",
+    "English": "writing"
+  },
+  {
+    "German": "mathe",
+    "English": "math"
+  },
+  {
+    "German": "royal",
+    "English": "royal"
+  },
+  {
+    "German": "evelyn",
+    "English": "Evelyn"
+  },
+  {
+    "German": "britische",
+    "English": "British"
+  },
+  {
+    "German": "körperlich",
+    "English": "physical"
+  },
+  {
+    "German": "konzentration",
+    "English": "concentration"
+  },
+  {
+    "German": "schaltet",
+    "English": "switches"
+  },
+  {
+    "German": "draht",
+    "English": "wire"
+  },
+  {
+    "German": "älteste",
+    "English": "oldest"
+  },
+  {
+    "German": "höhere",
+    "English": "higher"
+  },
+  {
+    "German": "gerannt",
+    "English": "ran"
+  },
+  {
+    "German": "tower",
+    "English": "tower"
+  },
+  {
+    "German": "gedrückt",
+    "English": "pressed"
+  },
+  {
+    "German": "reinigung",
+    "English": "cleaning"
+  },
+  {
+    "German": "fordert",
+    "English": "demands"
+  },
+  {
+    "German": "ideale",
+    "English": "ideal"
+  },
+  {
+    "German": "stiehlt",
+    "English": "steals"
+  },
+  {
+    "German": "money",
+    "English": "money"
+  },
+  {
+    "German": "eiern",
+    "English": "to wobble"
+  },
+  {
+    "German": "dritter",
+    "English": "third"
+  },
+  {
+    "German": "züge",
+    "English": "trains"
+  },
+  {
+    "German": "optionen",
+    "English": "options"
+  },
+  {
+    "German": "roland",
+    "English": "Roland"
+  },
+  {
+    "German": "ersticken",
+    "English": "to suffocate"
+  },
+  {
+    "German": "farmer",
+    "English": "farmer"
+  },
+  {
+    "German": "batterie",
+    "English": "battery"
+  },
+  {
+    "German": "obst",
+    "English": "fruit"
+  },
+  {
+    "German": "badewanne",
+    "English": "bathtub"
+  },
+  {
+    "German": "manches",
+    "English": "some things"
+  },
+  {
+    "German": "droge",
+    "English": "drug"
+  },
+  {
+    "German": "übertragung",
+    "English": "broadcast"
+  },
+  {
+    "German": "enge",
+    "English": "tightness"
+  },
+  {
+    "German": "nickerchen",
+    "English": "nap"
+  },
+  {
+    "German": "juhu",
+    "English": "yay"
+  },
+  {
+    "German": "cora",
+    "English": "Cora"
+  },
+  {
+    "German": "lungen",
+    "English": "lungs"
+  },
+  {
+    "German": "öffnete",
+    "English": "opened"
+  },
+  {
+    "German": "abschneiden",
+    "English": "to cut off"
+  },
+  {
+    "German": "valentine",
+    "English": "Valentine"
+  },
+  {
+    "German": "hierbei",
+    "English": "in this case"
+  },
+  {
+    "German": "sorgst",
+    "English": "care for"
+  },
+  {
+    "German": "phillip",
+    "English": "Phillip"
+  },
+  {
+    "German": "schaffte",
+    "English": "managed"
+  },
+  {
+    "German": "omar",
+    "English": "Omar"
+  },
+  {
+    "German": "anfänger",
+    "English": "beginner"
+  },
+  {
+    "German": "gen",
+    "English": "gene"
+  },
+  {
+    "German": "ungerecht",
+    "English": "unfair"
+  },
+  {
+    "German": "reue",
+    "English": "remorse"
+  },
+  {
+    "German": "rhythmus",
+    "English": "rhythm"
+  },
+  {
+    "German": "kündige",
+    "English": "quit"
+  },
+  {
+    "German": "mitgehen",
+    "English": "to come along"
+  },
+  {
+    "German": "siegel",
+    "English": "seal"
+  },
+  {
+    "German": "moore",
+    "English": "Moore"
+  },
+  {
+    "German": "stechen",
+    "English": "to sting"
+  },
+  {
+    "German": "baue",
+    "English": "build"
+  },
+  {
+    "German": "prostituierte",
+    "English": "prostitute"
+  },
+  {
+    "German": "heller",
+    "English": "brighter"
+  },
+  {
+    "German": "umgehend",
+    "English": "immediately"
+  },
+  {
+    "German": "hoffnungslos",
+    "English": "hopeless"
+  },
+  {
+    "German": "checken",
+    "English": "to check"
+  },
+  {
+    "German": "drücke",
+    "English": "press"
+  },
+  {
+    "German": "wong",
+    "English": "Wong"
+  },
+  {
+    "German": "merkwürdige",
+    "English": "strange"
+  },
+  {
+    "German": "valley",
+    "English": "valley"
+  },
+  {
+    "German": "brandy",
+    "English": "brandy"
+  },
+  {
+    "German": "gelbe",
+    "English": "yellow"
+  },
+  {
+    "German": "nützen",
+    "English": "to be useful"
+  },
+  {
+    "German": "venedig",
+    "English": "Venice"
+  },
+  {
+    "German": "gideon",
+    "English": "Gideon"
+  },
+  {
+    "German": "lernten",
+    "English": "learned"
+  },
+  {
+    "German": "benimmt",
+    "English": "behaves"
+  },
+  {
+    "German": "georg",
+    "English": "George"
+  },
+  {
+    "German": "mächtiger",
+    "English": "more powerful"
+  },
+  {
+    "German": "genutzt",
+    "English": "used"
+  },
+  {
+    "German": "verzieh",
+    "English": "forgave"
+  },
+  {
+    "German": "schüssel",
+    "English": "bowl"
+  },
+  {
+    "German": "dreckigen",
+    "English": "dirty"
+  },
+  {
+    "German": "wiegt",
+    "English": "weighs"
+  },
+  {
+    "German": "kg",
+    "English": "kg"
+  },
+  {
+    "German": "abraham",
+    "English": "Abraham"
+  },
+  {
+    "German": "seltsamer",
+    "English": "odder"
+  },
+  {
+    "German": "hiervon",
+    "English": "of this"
+  },
+  {
+    "German": "beraten",
+    "English": "to advise"
+  },
+  {
+    "German": "schienen",
+    "English": "seemed"
+  },
+  {
+    "German": "wirkliche",
+    "English": "real"
+  },
+  {
+    "German": "träumt",
+    "English": "dreams"
+  },
+  {
+    "German": "versprech",
+    "English": "promise"
+  },
+  {
+    "German": "ideal",
+    "English": "ideal"
+  },
+  {
+    "German": "norma",
+    "English": "Norma"
+  },
+  {
+    "German": "sire",
+    "English": "sire"
+  },
+  {
+    "German": "marschieren",
+    "English": "to march"
+  },
+  {
+    "German": "mitbewohner",
+    "English": "roommate"
+  },
+  {
+    "German": "verlobung",
+    "English": "engagement"
+  },
+  {
+    "German": "funken",
+    "English": "spark"
+  },
+  {
+    "German": "gleichfalls",
+    "English": "likewise"
+  },
+  {
+    "German": "geringsten",
+    "English": "slightest"
+  },
+  {
+    "German": "empfange",
+    "English": "receive"
+  },
+  {
+    "German": "führten",
+    "English": "led"
+  },
+  {
+    "German": "gelben",
+    "English": "yellow"
+  },
+  {
+    "German": "lach",
+    "English": "laugh"
+  },
+  {
+    "German": "vereinbart",
+    "English": "agreed"
+  },
+  {
+    "German": "kimmy",
+    "English": "Kimmy"
+  },
+  {
+    "German": "prügel",
+    "English": "beating"
+  },
+  {
+    "German": "läuten",
+    "English": "to ring"
+  },
+  {
+    "German": "anzugreifen",
+    "English": "to attack"
+  },
+  {
+    "German": "balkon",
+    "English": "balcony"
+  },
+  {
+    "German": "fran",
+    "English": "Fran"
+  },
+  {
+    "German": "flüchten",
+    "English": "to flee"
+  },
+  {
+    "German": "umkehren",
+    "English": "to turn around"
+  },
+  {
+    "German": "ansieht",
+    "English": "looks at"
+  },
+  {
+    "German": "rechtfertigen",
+    "English": "to justify"
+  },
+  {
+    "German": "belügen",
+    "English": "to lie to"
+  },
+  {
+    "German": "verdächtigt",
+    "English": "suspected"
+  },
+  {
+    "German": "begannen",
+    "English": "began"
+  },
+  {
+    "German": "snow",
+    "English": "Snow"
+  },
+  {
+    "German": "oskar",
+    "English": "Oscar"
+  },
+  {
+    "German": "englischen",
+    "English": "English"
+  },
+  {
+    "German": "inspiriert",
+    "English": "inspired"
+  },
+  {
+    "German": "murray",
+    "English": "Murray"
+  },
+  {
+    "German": "shirt",
+    "English": "shirt"
+  },
+  {
+    "German": "erlaube",
+    "English": "allow"
+  },
+  {
+    "German": "ertrinken",
+    "English": "to drown"
+  },
+  {
+    "German": "sorgfältig",
+    "English": "careful"
+  },
+  {
+    "German": "spuck",
+    "English": "spit"
+  },
+  {
+    "German": "eingetroffen",
+    "English": "arrived"
+  },
+  {
+    "German": "chang",
+    "English": "Chang"
+  },
+  {
+    "German": "lynette",
+    "English": "Lynette"
+  },
+  {
+    "German": "feine",
+    "English": "fine"
+  },
+  {
+    "German": "home",
+    "English": "home"
+  },
+  {
+    "German": "grosse",
+    "English": "big"
+  },
+  {
+    "German": "schickten",
+    "English": "sent"
+  },
+  {
+    "German": "überreste",
+    "English": "remains"
+  },
+  {
+    "German": "garantiere",
+    "English": "guarantee"
+  },
+  {
+    "German": "unerträglich",
+    "English": "unbearable"
+  },
+  {
+    "German": "vorerst",
+    "English": "for now"
+  },
+  {
+    "German": "yale",
+    "English": "Yale"
+  },
+  {
+    "German": "verirrt",
+    "English": "lost"
+  },
+  {
+    "German": "überstanden",
+    "English": "survived"
+  },
+  {
+    "German": "harriet",
+    "English": "Harriet"
+  },
+  {
+    "German": "liga",
+    "English": "league"
+  },
+  {
+    "German": "wertlos",
+    "English": "worthless"
+  },
+  {
+    "German": "marvin",
+    "English": "Marvin"
+  },
+  {
+    "German": "gottverdammt",
+    "English": "goddamn"
+  },
+  {
+    "German": "gesammelt",
+    "English": "collected"
+  },
+  {
+    "German": "kanntest",
+    "English": "knew"
+  },
+  {
+    "German": "bezeichnet",
+    "English": "labeled"
+  },
+  {
+    "German": "beantworte",
+    "English": "answer"
+  },
+  {
+    "German": "baltimore",
+    "English": "Baltimore"
+  },
+  {
+    "German": "shirley",
+    "English": "Shirley"
+  },
+  {
+    "German": "connie",
+    "English": "Connie"
+  },
+  {
+    "German": "netzwerk",
+    "English": "network"
+  },
+  {
+    "German": "moses",
+    "English": "Moses"
+  },
+  {
+    "German": "entstehen",
+    "English": "to arise"
+  },
+  {
+    "German": "ingalls",
+    "English": "Ingalls"
+  },
+  {
+    "German": "lauten",
+    "English": "to read"
+  },
+  {
+    "German": "fasziniert",
+    "English": "fascinated"
+  },
+  {
+    "German": "ehrliche",
+    "English": "honest"
+  },
+  {
+    "German": "akademie",
+    "English": "academy"
+  },
+  {
+    "German": "grünes",
+    "English": "green"
+  },
+  {
+    "German": "branche",
+    "English": "industry"
+  },
+  {
+    "German": "rudy",
+    "English": "Rudy"
+  },
+  {
+    "German": "soße",
+    "English": "sauce"
+  },
+  {
+    "German": "situationen",
+    "English": "situations"
+  },
+  {
+    "German": "entführer",
+    "English": "kidnapper"
+  },
+  {
+    "German": "ewigen",
+    "English": "eternal"
+  },
+  {
+    "German": "erzeugt",
+    "English": "produces"
+  },
+  {
+    "German": "fünften",
+    "English": "fifth"
+  },
+  {
+    "German": "registriert",
+    "English": "registered"
+  },
+  {
+    "German": "basketball",
+    "English": "basketball"
+  },
+  {
+    "German": "abgesetzt",
+    "English": "dropped off"
+  },
+  {
+    "German": "irgendwelchen",
+    "English": "any"
+  },
+  {
+    "German": "vorsitzender",
+    "English": "chairman"
+  },
+  {
+    "German": "bedürfnisse",
+    "English": "needs"
+  },
+  {
+    "German": "suite",
+    "English": "suite"
+  },
+  {
+    "German": "regieren",
+    "English": "to rule"
+  },
+  {
+    "German": "barkeeper",
+    "English": "bartender"
+  },
+  {
+    "German": "ausgemacht",
+    "English": "agreed"
+  },
+  {
+    "German": "fritz",
+    "English": "Fritz"
+  },
+  {
+    "German": "dateien",
+    "English": "files"
+  },
+  {
+    "German": "dixon",
+    "English": "Dixon"
+  },
+  {
+    "German": "gegründet",
+    "English": "founded"
+  },
+  {
+    "German": "wolke",
+    "English": "cloud"
+  },
+  {
+    "German": "wall",
+    "English": "wall"
+  },
+  {
+    "German": "umgang",
+    "English": "dealing with"
+  },
+  {
+    "German": "schenk",
+    "English": "give"
+  },
+  {
+    "German": "festen",
+    "English": "firm"
+  },
+  {
+    "German": "erziehung",
+    "English": "upbringing"
+  },
+  {
+    "German": "agentin",
+    "English": "agent"
+  },
+  {
+    "German": "marines",
+    "English": "marines"
+  },
+  {
+    "German": "hasen",
+    "English": "rabbits"
+  },
+  {
+    "German": "institut",
+    "English": "institute"
+  },
+  {
+    "German": "mittleren",
+    "English": "middle"
+  },
+  {
+    "German": "hingerichtet",
+    "English": "executed"
+  },
+  {
+    "German": "lenken",
+    "English": "to steer"
+  },
+  {
+    "German": "angewiesen",
+    "English": "dependent"
+  },
+  {
+    "German": "überlebende",
+    "English": "survivor"
+  },
+  {
+    "German": "bass",
+    "English": "bass"
+  },
+  {
+    "German": "pearl",
+    "English": "Pearl"
+  },
+  {
+    "German": "lahm",
+    "English": "lame"
+  },
+  {
+    "German": "basiert",
+    "English": "based"
+  },
+  {
+    "German": "rasieren",
+    "English": "to shave"
+  },
+  {
+    "German": "angeordnet",
+    "English": "ordered"
+  },
+  {
+    "German": "gewalttätig",
+    "English": "violent"
+  },
+  {
+    "German": "untergang",
+    "English": "downfall"
+  },
+  {
+    "German": "flach",
+    "English": "flat"
+  },
+  {
+    "German": "autogramm",
+    "English": "autograph"
+  },
+  {
+    "German": "schwule",
+    "English": "gay man"
+  },
+  {
+    "German": "kompanie",
+    "English": "company"
+  },
+  {
+    "German": "casino",
+    "English": "casino"
+  },
+  {
+    "German": "solches",
+    "English": "such a thing"
+  },
+  {
+    "German": "sackgasse",
+    "English": "dead end"
+  },
+  {
+    "German": "einbrecher",
+    "English": "burglar"
+  },
+  {
+    "German": "stehenbleiben",
+    "English": "to stop"
+  },
+  {
+    "German": "erwartungen",
+    "English": "expectations"
+  },
+  {
+    "German": "flüssigkeit",
+    "English": "liquid"
+  },
+  {
+    "German": "erraten",
+    "English": "to guess"
+  },
+  {
+    "German": "verkaufst",
+    "English": "sell"
+  },
+  {
+    "German": "vorsprung",
+    "English": "lead"
+  },
+  {
+    "German": "zahlst",
+    "English": "pay"
+  },
+  {
+    "German": "verkäufer",
+    "English": "salesman"
+  },
+  {
+    "German": "zukommen",
+    "English": "to come toward"
+  },
+  {
+    "German": "abdrücke",
+    "English": "fingerprints"
+  },
+  {
+    "German": "kurve",
+    "English": "curve"
+  },
+  {
+    "German": "kämpfst",
+    "English": "fight"
+  },
+  {
+    "German": "verziehen",
+    "English": "forgiven"
+  },
+  {
+    "German": "invasion",
+    "English": "invasion"
+  },
+  {
+    "German": "pissen",
+    "English": "to piss"
+  },
+  {
+    "German": "klarer",
+    "English": "clearer"
+  },
+  {
+    "German": "herrschen",
+    "English": "to rule"
+  },
+  {
+    "German": "prince",
+    "English": "prince"
+  },
+  {
+    "German": "zylonen",
+    "English": "Cylons"
+  },
+  {
+    "German": "donnie",
+    "English": "Donnie"
+  },
+  {
+    "German": "giles",
+    "English": "Giles"
+  },
+  {
+    "German": "outfit",
+    "English": "outfit"
+  },
+  {
+    "German": "prinzipien",
+    "English": "principles"
+  },
+  {
+    "German": "rühr",
+    "English": "stir"
+  },
+  {
+    "German": "entzückend",
+    "English": "delightful"
+  },
+  {
+    "German": "reinen",
+    "English": "pure"
+  },
+  {
+    "German": "drecksack",
+    "English": "bastard"
+  },
+  {
+    "German": "frischen",
+    "English": "fresh"
+  },
+  {
+    "German": "corabeth",
+    "English": "Corabeth"
+  },
+  {
+    "German": "höhepunkt",
+    "English": "highlight"
+  },
+  {
+    "German": "elsa",
+    "English": "Elsa"
+  },
+  {
+    "German": "geduldig",
+    "English": "patient"
+  },
+  {
+    "German": "rio",
+    "English": "Rio"
+  },
+  {
+    "German": "pest",
+    "English": "plague"
+  },
+  {
+    "German": "wenigsten",
+    "English": "least"
+  },
+  {
+    "German": "beschwert",
+    "English": "complains"
+  },
+  {
+    "German": "natürliche",
+    "English": "natural"
+  },
+  {
+    "German": "erzeugen",
+    "English": "to produce"
+  },
+  {
+    "German": "fürchterlich",
+    "English": "terrible"
+  },
+  {
+    "German": "veröffentlichen",
+    "English": "to publish"
+  },
+  {
+    "German": "wunderbares",
+    "English": "wonderful"
+  },
+  {
+    "German": "isaac",
+    "English": "Isaac"
+  },
+  {
+    "German": "unglücklicherweise",
+    "English": "unfortunately"
+  },
+  {
+    "German": "ratschläge",
+    "English": "advice"
+  },
+  {
+    "German": "erstickt",
+    "English": "suffocated"
+  },
+  {
+    "German": "vagina",
+    "English": "vagina"
+  },
+  {
+    "German": "scharfe",
+    "English": "sharp"
+  },
+  {
+    "German": "äpfel",
+    "English": "apples"
+  },
+  {
+    "German": "zoll",
+    "English": "customs"
+  },
+  {
+    "German": "region",
+    "English": "region"
+  },
+  {
+    "German": "zuliebe",
+    "English": "for the sake of"
+  },
+  {
+    "German": "riefen",
+    "English": "called"
+  },
+  {
+    "German": "wachmann",
+    "English": "security guard"
+  },
+  {
+    "German": "gipfel",
+    "English": "summit"
+  },
+  {
+    "German": "geübt",
+    "English": "practiced"
+  },
+  {
+    "German": "jammer",
+    "English": "misery"
+  },
+  {
+    "German": "lädt",
+    "English": "loads"
+  },
+  {
+    "German": "galerie",
+    "English": "gallery"
+  },
+  {
+    "German": "enkelin",
+    "English": "granddaughter"
+  },
+  {
+    "German": "mönch",
+    "English": "monk"
+  },
+  {
+    "German": "tinte",
+    "English": "ink"
+  },
+  {
+    "German": "journalist",
+    "English": "journalist"
+  },
+  {
+    "German": "glückspilz",
+    "English": "lucky devil"
+  },
+  {
+    "German": "platzen",
+    "English": "burst"
+  },
+  {
+    "German": "ego",
+    "English": "ego"
+  },
+  {
+    "German": "reinste",
+    "English": "purest"
+  },
+  {
+    "German": "news",
+    "English": "news"
+  },
+  {
+    "German": "aspirin",
+    "English": "aspirin"
+  },
+  {
+    "German": "andre",
+    "English": "Andre (name)"
+  },
+  {
+    "German": "früchte",
+    "English": "fruits"
+  },
+  {
+    "German": "gewähren",
+    "English": "grant"
+  },
+  {
+    "German": "prophezeiung",
+    "English": "prophecy"
+  },
+  {
+    "German": "winzig",
+    "English": "tiny"
+  },
+  {
+    "German": "tonnen",
+    "English": "tons"
+  },
+  {
+    "German": "lizenz",
+    "English": "license"
+  },
+  {
+    "German": "maßnahmen",
+    "English": "measures"
+  },
+  {
+    "German": "ermittelt",
+    "English": "investigated"
+  },
+  {
+    "German": "stufen",
+    "English": "steps"
+  },
+  {
+    "German": "lüg",
+    "English": "lie (imper.)"
+  },
+  {
+    "German": "student",
+    "English": "student"
+  },
+  {
+    "German": "absetzen",
+    "English": "drop off"
+  },
+  {
+    "German": "schwindel",
+    "English": "dizziness"
+  },
+  {
+    "German": "national",
+    "English": "national"
+  },
+  {
+    "German": "fanny",
+    "English": "Fanny (name)"
+  },
+  {
+    "German": "vorgeschlagen",
+    "English": "suggested"
+  },
+  {
+    "German": "arbeitslos",
+    "English": "unemployed"
+  },
+  {
+    "German": "borg",
+    "English": "Borg (name)"
+  },
+  {
+    "German": "getränke",
+    "English": "drinks"
+  },
+  {
+    "German": "ick",
+    "English": "I (dialect)"
+  },
+  {
+    "German": "joyce",
+    "English": "Joyce (name)"
+  },
+  {
+    "German": "änderte",
+    "English": "changed"
+  },
+  {
+    "German": "philadelphia",
+    "English": "Philadelphia"
+  },
+  {
+    "German": "pfoten",
+    "English": "paws"
+  },
+  {
+    "German": "ausländer",
+    "English": "foreigner"
+  },
+  {
+    "German": "häng",
+    "English": "hang (imper.)"
+  },
+  {
+    "German": "clyde",
+    "English": "Clyde (name)"
+  },
+  {
+    "German": "kalender",
+    "English": "calendar"
+  },
+  {
+    "German": "isabelle",
+    "English": "Isabelle (name)"
+  },
+  {
+    "German": "hannibal",
+    "English": "Hannibal (name)"
+  },
+  {
+    "German": "brüdern",
+    "English": "brothers"
+  },
+  {
+    "German": "überstunden",
+    "English": "overtime"
+  },
+  {
+    "German": "angehört",
+    "English": "belonged to"
+  },
+  {
+    "German": "langweilen",
+    "English": "bore"
+  },
+  {
+    "German": "deutet",
+    "English": "indicates"
+  },
+  {
+    "German": "griffin",
+    "English": "Griffin (name)"
+  },
+  {
+    "German": "friseur",
+    "English": "hairdresser"
+  },
+  {
+    "German": "oberen",
+    "English": "upper"
+  },
+  {
+    "German": "fertigmachen",
+    "English": "get ready"
+  },
+  {
+    "German": "teure",
+    "English": "expensive"
+  },
+  {
+    "German": "silas",
+    "English": "Silas (name)"
+  },
+  {
+    "German": "gedroht",
+    "English": "threatened"
+  },
+  {
+    "German": "ana",
+    "English": "Ana (name)"
+  },
+  {
+    "German": "ermordung",
+    "English": "murder"
+  },
+  {
+    "German": "maura",
+    "English": "Maura (name)"
+  },
+  {
+    "German": "komischen",
+    "English": "strange"
+  },
+  {
+    "German": "bestimmtes",
+    "English": "certain"
+  },
+  {
+    "German": "diskret",
+    "English": "discreet"
+  },
+  {
+    "German": "kriechen",
+    "English": "crawl"
+  },
+  {
+    "German": "weißes",
+    "English": "white"
+  },
+  {
+    "German": "luthor",
+    "English": "Luthor (name)"
+  },
+  {
+    "German": "hinüber",
+    "English": "across"
+  },
+  {
+    "German": "zauberei",
+    "English": "witchcraft"
+  },
+  {
+    "German": "wünschst",
+    "English": "wish"
+  },
+  {
+    "German": "nadia",
+    "English": "Nadia (name)"
+  },
+  {
+    "German": "biss",
+    "English": "bite"
+  },
+  {
+    "German": "komischer",
+    "English": "strange"
+  },
+  {
+    "German": "hotelzimmer",
+    "English": "hotel room"
+  },
+  {
+    "German": "delta",
+    "English": "delta"
+  },
+  {
+    "German": "chinesischen",
+    "English": "Chinese"
+  },
+  {
+    "German": "beängstigend",
+    "English": "frightening"
+  },
+  {
+    "German": "hills",
+    "English": "hills"
+  },
+  {
+    "German": "quentin",
+    "English": "Quentin (name)"
+  },
+  {
+    "German": "frequenz",
+    "English": "frequency"
+  },
+  {
+    "German": "vorhast",
+    "English": "planning"
+  },
+  {
+    "German": "tödliche",
+    "English": "deadly"
+  },
+  {
+    "German": "summer",
+    "English": "summer"
+  },
+  {
+    "German": "verband",
+    "English": "bandage"
+  },
+  {
+    "German": "gebucht",
+    "English": "booked"
+  },
+  {
+    "German": "investieren",
+    "English": "invest"
+  },
+  {
+    "German": "website",
+    "English": "website"
+  },
+  {
+    "German": "diät",
+    "English": "diet"
+  },
+  {
+    "German": "benimm",
+    "English": "behave"
+  },
+  {
+    "German": "vergangenen",
+    "English": "past"
+  },
+  {
+    "German": "rodney",
+    "English": "Rodney (name)"
+  },
+  {
+    "German": "verbringe",
+    "English": "spend (time)"
+  },
+  {
+    "German": "zukünftige",
+    "English": "future"
+  },
+  {
+    "German": "kong",
+    "English": "Kong (name)"
+  },
+  {
+    "German": "ehemalige",
+    "English": "former"
+  },
+  {
+    "German": "aufklären",
+    "English": "clarify"
+  },
+  {
+    "German": "kämen",
+    "English": "would come"
+  },
+  {
+    "German": "unauffällig",
+    "English": "inconspicuous"
+  },
+  {
+    "German": "gefälscht",
+    "English": "forged"
+  },
+  {
+    "German": "geier",
+    "English": "vulture"
+  },
+  {
+    "German": "anschuldigungen",
+    "English": "accusations"
+  },
+  {
+    "German": "sal",
+    "English": "Sal (name)"
+  },
+  {
+    "German": "restlichen",
+    "English": "remaining"
+  },
+  {
+    "German": "tomaten",
+    "English": "tomatoes"
+  },
+  {
+    "German": "philosophie",
+    "English": "philosophy"
+  },
+  {
+    "German": "liebten",
+    "English": "loved"
+  },
+  {
+    "German": "programmiert",
+    "English": "programmed"
+  },
+  {
+    "German": "shawn",
+    "English": "Shawn (name)"
+  },
+  {
+    "German": "festgestellt",
+    "English": "determined"
+  },
+  {
+    "German": "fällig",
+    "English": "due"
+  },
+  {
+    "German": "kneipe",
+    "English": "pub"
+  },
+  {
+    "German": "bezahlst",
+    "English": "pay"
+  },
+  {
+    "German": "beende",
+    "English": "end"
+  },
+  {
+    "German": "fehlst",
+    "English": "miss (you)"
+  },
+  {
+    "German": "vornehmen",
+    "English": "undertake"
+  },
+  {
+    "German": "sumpf",
+    "English": "swamp"
+  },
+  {
+    "German": "apotheke",
+    "English": "pharmacy"
+  },
+  {
+    "German": "internationale",
+    "English": "international"
+  },
+  {
+    "German": "liefert",
+    "English": "delivers"
+  },
+  {
+    "German": "wehen",
+    "English": "contractions"
+  },
+  {
+    "German": "bastarde",
+    "English": "bastards"
+  },
+  {
+    "German": "erstochen",
+    "English": "stabbed"
+  },
+  {
+    "German": "schiffes",
+    "English": "ship's"
+  },
+  {
+    "German": "manuel",
+    "English": "Manuel (name)"
+  },
+  {
+    "German": "nördlich",
+    "English": "northern"
+  },
+  {
+    "German": "american",
+    "English": "American"
+  },
+  {
+    "German": "körpers",
+    "English": "body's"
+  },
+  {
+    "German": "schal",
+    "English": "scarf"
+  },
+  {
+    "German": "anklagen",
+    "English": "accuse"
+  },
+  {
+    "German": "schlagt",
+    "English": "hit (imper.)"
+  },
+  {
+    "German": "entscheidest",
+    "English": "decide"
+  },
+  {
+    "German": "sammelt",
+    "English": "collects"
+  },
+  {
+    "German": "gegenzug",
+    "English": "in return"
+  },
+  {
+    "German": "vorzubereiten",
+    "English": "to prepare"
+  },
+  {
+    "German": "enttäuschung",
+    "English": "disappointment"
+  },
+  {
+    "German": "unterkunft",
+    "English": "accommodation"
+  },
+  {
+    "German": "freilassen",
+    "English": "release"
+  },
+  {
+    "German": "grau",
+    "English": "gray"
+  },
+  {
+    "German": "hunt",
+    "English": "Hunt (name)"
+  },
+  {
+    "German": "verlobter",
+    "English": "fiancé"
+  },
+  {
+    "German": "niere",
+    "English": "kidney"
+  },
+  {
+    "German": "kratzen",
+    "English": "scratch"
+  },
+  {
+    "German": "altar",
+    "English": "altar"
+  },
+  {
+    "German": "erstaunt",
+    "English": "astonished"
+  },
+  {
+    "German": "ausbruch",
+    "English": "outbreak"
+  },
+  {
+    "German": "tuch",
+    "English": "cloth"
+  },
+  {
+    "German": "fahne",
+    "English": "flag"
+  },
+  {
+    "German": "beleidigung",
+    "English": "insult"
+  },
+  {
+    "German": "bedeutete",
+    "English": "meant"
+  },
+  {
+    "German": "verhält",
+    "English": "behaves"
+  },
+  {
+    "German": "unheimliche",
+    "English": "eerie"
+  },
+  {
+    "German": "unsterblich",
+    "English": "immortal"
+  },
+  {
+    "German": "hohes",
+    "English": "high"
+  },
+  {
+    "German": "evakuieren",
+    "English": "evacuate"
+  },
+  {
+    "German": "produziert",
+    "English": "produces"
+  },
+  {
+    "German": "nachfolger",
+    "English": "successor"
+  },
+  {
+    "German": "blicke",
+    "English": "glances"
+  },
+  {
+    "German": "vorschläge",
+    "English": "suggestions"
+  },
+  {
+    "German": "chauffeur",
+    "English": "chauffeur"
+  },
+  {
+    "German": "englische",
+    "English": "English"
+  },
+  {
+    "German": "ironie",
+    "English": "irony"
+  },
+  {
+    "German": "ausreichend",
+    "English": "sufficient"
+  },
+  {
+    "German": "hit",
+    "English": "hit (song)"
+  },
+  {
+    "German": "anderthalb",
+    "English": "one and a half"
+  },
+  {
+    "German": "erlösung",
+    "English": "salvation"
+  },
+  {
+    "German": "käfer",
+    "English": "beetle"
+  },
+  {
+    "German": "küsschen",
+    "English": "little kiss"
+  },
+  {
+    "German": "eugene",
+    "English": "Eugene (name)"
+  },
+  {
+    "German": "auslöschen",
+    "English": "eliminate"
+  },
+  {
+    "German": "ihretwegen",
+    "English": "because of her"
+  },
+  {
+    "German": "limonade",
+    "English": "lemonade"
+  },
+  {
+    "German": "hedley",
+    "English": "Hedley (name)"
+  },
+  {
+    "German": "billige",
+    "English": "cheap"
+  },
+  {
+    "German": "tequila",
+    "English": "tequila"
+  },
+  {
+    "German": "schlachtfeld",
+    "English": "battlefield"
+  },
+  {
+    "German": "knight",
+    "English": "Knight (name)"
+  },
+  {
+    "German": "gemäß",
+    "English": "according to"
+  },
+  {
+    "German": "angreifer",
+    "English": "attacker"
+  },
+  {
+    "German": "hingegangen",
+    "English": "went there"
+  },
+  {
+    "German": "dns",
+    "English": "DNA"
+  },
+  {
+    "German": "zero",
+    "English": "zero"
+  },
+  {
+    "German": "liefen",
+    "English": "ran"
+  },
+  {
+    "German": "schale",
+    "English": "bowl"
+  },
+  {
+    "German": "restaurants",
+    "English": "restaurants"
+  },
+  {
+    "German": "ausfindig",
+    "English": "locate"
+  },
+  {
+    "German": "mills",
+    "English": "Mills (name)"
+  },
+  {
+    "German": "angriffe",
+    "English": "attacks"
+  },
+  {
+    "German": "rotes",
+    "English": "red"
+  },
+  {
+    "German": "percy",
+    "English": "Percy (name)"
+  },
+  {
+    "German": "modernen",
+    "English": "modern"
+  },
+  {
+    "German": "motto",
+    "English": "motto"
+  },
+  {
+    "German": "eintritt",
+    "English": "entrance"
+  },
+  {
+    "German": "bh",
+    "English": "bra"
+  },
+  {
+    "German": "betroffen",
+    "English": "affected"
+  },
+  {
+    "German": "misstrauisch",
+    "English": "suspicious"
+  },
+  {
+    "German": "verwirrend",
+    "English": "confusing"
+  },
+  {
+    "German": "kapelle",
+    "English": "chapel"
+  },
+  {
+    "German": "starkes",
+    "English": "strong"
+  },
+  {
+    "German": "brick",
+    "English": "brick"
+  },
+  {
+    "German": "gebetet",
+    "English": "prayed"
+  },
+  {
+    "German": "einrichten",
+    "English": "set up"
+  },
+  {
+    "German": "ausnutzen",
+    "English": "exploit"
+  },
+  {
+    "German": "kinn",
+    "English": "chin"
+  },
+  {
+    "German": "frisches",
+    "English": "fresh"
+  },
+  {
+    "German": "quatschen",
+    "English": "chat"
+  },
+  {
+    "German": "automatisch",
+    "English": "automatic"
+  },
+  {
+    "German": "chad",
+    "English": "Chad (name)"
+  },
+  {
+    "German": "körperverletzung",
+    "English": "assault"
+  },
+  {
+    "German": "spritzen",
+    "English": "inject"
+  },
+  {
+    "German": "einwohner",
+    "English": "resident"
+  },
+  {
+    "German": "renn",
+    "English": "run (imper.)"
+  },
+  {
+    "German": "pink",
+    "English": "pink"
+  },
+  {
+    "German": "chen",
+    "English": "Chen (name)"
+  },
+  {
+    "German": "gezeichnet",
+    "English": "drawn"
+  },
+  {
+    "German": "anständige",
+    "English": "decent"
+  },
+  {
+    "German": "steif",
+    "English": "stiff"
+  },
+  {
+    "German": "rekord",
+    "English": "record"
+  },
+  {
+    "German": "durchgeknallt",
+    "English": "crazy"
+  },
+  {
+    "German": "foltern",
+    "English": "torture"
+  },
+  {
+    "German": "erspart",
+    "English": "saved"
+  },
+  {
+    "German": "kuba",
+    "English": "Cuba"
+  },
+  {
+    "German": "bräuchten",
+    "English": "would need"
+  },
+  {
+    "German": "überdosis",
+    "English": "overdose"
+  },
+  {
+    "German": "armband",
+    "English": "bracelet"
+  },
+  {
+    "German": "bert",
+    "English": "Bert (name)"
+  },
+  {
+    "German": "adoptiert",
+    "English": "adopted"
+  },
+  {
+    "German": "komplizen",
+    "English": "accomplices"
+  },
+  {
+    "German": "ehemaligen",
+    "English": "former"
+  },
+  {
+    "German": "department",
+    "English": "department"
+  },
+  {
+    "German": "einschalten",
+    "English": "turn on"
+  },
+  {
+    "German": "handschrift",
+    "English": "handwriting"
+  },
+  {
+    "German": "ältesten",
+    "English": "oldest"
+  },
+  {
+    "German": "assistenten",
+    "English": "assistant"
+  },
+  {
+    "German": "großartigen",
+    "English": "great"
+  },
+  {
+    "German": "männlich",
+    "English": "male"
+  },
+  {
+    "German": "übernimmst",
+    "English": "take over"
+  },
+  {
+    "German": "übrigen",
+    "English": "remaining"
+  },
+  {
+    "German": "klaviermusik",
+    "English": "piano music"
+  },
+  {
+    "German": "ash",
+    "English": "Ash (name)"
+  },
+  {
+    "German": "viktor",
+    "English": "Viktor (name)"
+  },
+  {
+    "German": "judith",
+    "English": "Judith (name)"
+  },
+  {
+    "German": "gemietet",
+    "English": "rented"
+  },
+  {
+    "German": "mischung",
+    "English": "mixture"
+  },
+  {
+    "German": "luxus",
+    "English": "luxury"
+  },
+  {
+    "German": "schwung",
+    "English": "momentum"
+  },
+  {
+    "German": "vicky",
+    "English": "Vicky (name)"
+  },
+  {
+    "German": "hochgehen",
+    "English": "blow up"
+  },
+  {
+    "German": "wegtreten",
+    "English": "dismissed"
+  },
+  {
+    "German": "stargate",
+    "English": "Stargate"
+  },
+  {
+    "German": "carlo",
+    "English": "Carlo (name)"
+  },
+  {
+    "German": "beherrscht",
+    "English": "controls"
+  },
+  {
+    "German": "grippe",
+    "English": "flu"
+  },
+  {
+    "German": "informanten",
+    "English": "informant"
+  },
+  {
+    "German": "hülle",
+    "English": "cover"
+  },
+  {
+    "German": "floh",
+    "English": "flea"
+  },
+  {
+    "German": "kit",
+    "English": "kit"
+  },
+  {
+    "German": "fitz",
+    "English": "Fitz (name)"
+  },
+  {
+    "German": "nudeln",
+    "English": "noodles"
+  },
+  {
+    "German": "schaf",
+    "English": "sheep"
+  },
+  {
+    "German": "uhrzeit",
+    "English": "time"
+  },
+  {
+    "German": "zigarre",
+    "English": "cigar"
+  },
+  {
+    "German": "tänzerin",
+    "English": "dancer"
+  },
+  {
+    "German": "einkaufszentrum",
+    "English": "shopping mall"
+  },
+  {
+    "German": "vollmond",
+    "English": "full moon"
+  },
+  {
+    "German": "mexikaner",
+    "English": "Mexican"
+  },
+  {
+    "German": "piepst",
+    "English": "beeps"
+  },
+  {
+    "German": "gestoppt",
+    "English": "stopped"
+  },
+  {
+    "German": "gray",
+    "English": "Gray (name)"
+  },
+  {
+    "German": "eingerichtet",
+    "English": "furnished"
+  },
+  {
+    "German": "umarmung",
+    "English": "hug"
+  },
+  {
+    "German": "rohr",
+    "English": "pipe"
+  },
+  {
+    "German": "batterien",
+    "English": "batteries"
+  },
+  {
+    "German": "ella",
+    "English": "Ella (name)"
+  },
+  {
+    "German": "spende",
+    "English": "donation"
+  },
+  {
+    "German": "julius",
+    "English": "Julius (name)"
+  },
+  {
+    "German": "mumm",
+    "English": "guts"
+  },
+  {
+    "German": "gans",
+    "English": "goose"
+  },
+  {
+    "German": "leuchten",
+    "English": "glow"
+  },
+  {
+    "German": "alien",
+    "English": "alien"
+  },
+  {
+    "German": "dom",
+    "English": "cathedral"
+  },
+  {
+    "German": "geriet",
+    "English": "got into"
+  },
+  {
+    "German": "unterzeichnet",
+    "English": "signed"
+  },
+  {
+    "German": "operationen",
+    "English": "operations"
+  },
+  {
+    "German": "schütteln",
+    "English": "shake"
+  },
+  {
+    "German": "vermissten",
+    "English": "missing (people)"
+  },
+  {
+    "German": "angespannt",
+    "English": "tense"
+  },
+  {
+    "German": "folgenden",
+    "English": "following"
+  },
+  {
+    "German": "fantastische",
+    "English": "fantastic"
+  },
+  {
+    "German": "fies",
+    "English": "mean"
+  },
+  {
+    "German": "warp",
+    "English": "warp"
+  },
+  {
+    "German": "heilt",
+    "English": "heals"
+  },
+  {
+    "German": "auswirkungen",
+    "English": "effects"
+  },
+  {
+    "German": "geschlecht",
+    "English": "gender"
+  },
+  {
+    "German": "buchhalter",
+    "English": "accountant"
+  },
+  {
+    "German": "drache",
+    "English": "dragon"
+  },
+  {
+    "German": "computerlogbuch",
+    "English": "computer log"
+  },
+  {
+    "German": "deuten",
+    "English": "indicate"
+  },
+  {
+    "German": "bildung",
+    "English": "education"
+  },
+  {
+    "German": "aufbewahrt",
+    "English": "stored"
+  },
+  {
+    "German": "persönlicher",
+    "English": "personal"
+  },
+  {
+    "German": "erpresst",
+    "English": "blackmailed"
+  },
+  {
+    "German": "sang",
+    "English": "sang"
+  },
+  {
+    "German": "hinbringen",
+    "English": "take there"
+  },
+  {
+    "German": "amerikanischer",
+    "English": "American"
+  },
+  {
+    "German": "üble",
+    "English": "nasty"
+  },
+  {
+    "German": "einfaches",
+    "English": "simple"
+  },
+  {
+    "German": "angesetzt",
+    "English": "scheduled"
+  },
+  {
+    "German": "mmm",
+    "English": "mmm"
+  },
+  {
+    "German": "hudson",
+    "English": "Hudson (name)"
+  },
+  {
+    "German": "josef",
+    "English": "Josef (name)"
+  },
+  {
+    "German": "reagan",
+    "English": "Reagan (name)"
+  },
+  {
+    "German": "volltreffer",
+    "English": "direct hit"
+  },
+  {
+    "German": "jonah",
+    "English": "Jonah (name)"
+  },
+  {
+    "German": "totaler",
+    "English": "total"
+  },
+  {
+    "German": "robinson",
+    "English": "Robinson (name)"
+  },
+  {
+    "German": "zustößt",
+    "English": "happens to"
+  },
+  {
+    "German": "herrschaft",
+    "English": "rule"
+  },
+  {
+    "German": "verhören",
+    "English": "interrogate"
+  },
+  {
+    "German": "unverzüglich",
+    "English": "immediately"
+  },
+  {
+    "German": "christina",
+    "English": "Christina (name)"
+  },
+  {
+    "German": "bemüht",
+    "English": "tried hard"
+  },
+  {
+    "German": "aufgefunden",
+    "English": "found"
+  },
+  {
+    "German": "unfähig",
+    "English": "incapable"
+  },
+  {
+    "German": "stellten",
+    "English": "placed"
+  },
+  {
+    "German": "mi",
+    "English": "me (dialect)"
+  },
+  {
+    "German": "ursprünglich",
+    "English": "originally"
+  },
+  {
+    "German": "distanz",
+    "English": "distance"
+  },
+  {
+    "German": "rufus",
+    "English": "Rufus (name)"
+  },
+  {
+    "German": "verheimlichen",
+    "English": "conceal"
+  },
+  {
+    "German": "verstorben",
+    "English": "deceased"
+  },
+  {
+    "German": "göttern",
+    "English": "gods"
+  },
+  {
+    "German": "hunden",
+    "English": "dogs"
+  },
+  {
+    "German": "letztens",
+    "English": "recently"
+  },
+  {
+    "German": "jasper",
+    "English": "Jasper (name)"
+  },
+  {
+    "German": "napoleon",
+    "English": "Napoleon"
+  },
+  {
+    "German": "joshua",
+    "English": "Joshua (name)"
+  },
+  {
+    "German": "billigen",
+    "English": "cheap"
+  },
+  {
+    "German": "verschont",
+    "English": "spared"
+  },
+  {
+    "German": "rendezvous",
+    "English": "rendezvous"
+  },
+  {
+    "German": "empfehlung",
+    "English": "recommendation"
+  },
+  {
+    "German": "handgelenk",
+    "English": "wrist"
+  },
+  {
+    "German": "boten",
+    "English": "messengers"
+  },
+  {
+    "German": "unterzeichnen",
+    "English": "sign"
+  },
+  {
+    "German": "belasten",
+    "English": "incriminate"
+  },
+  {
+    "German": "speziellen",
+    "English": "special"
+  },
+  {
+    "German": "literatur",
+    "English": "literature"
+  },
+  {
+    "German": "landete",
+    "English": "landed"
+  },
+  {
+    "German": "gelangt",
+    "English": "reached"
+  },
+  {
+    "German": "cooler",
+    "English": "cooler"
+  },
+  {
+    "German": "quer",
+    "English": "across"
+  },
+  {
+    "German": "satelliten",
+    "English": "satellites"
+  },
+  {
+    "German": "triff",
+    "English": "meet (imper.)"
+  },
+  {
+    "German": "analysieren",
+    "English": "analyze"
+  },
+  {
+    "German": "zuhälter",
+    "English": "pimp"
+  },
+  {
+    "German": "zutiefst",
+    "English": "deeply"
+  },
+  {
+    "German": "geleitet",
+    "English": "led"
+  },
+  {
+    "German": "schlachten",
+    "English": "slaughter"
+  },
+  {
+    "German": "angestellte",
+    "English": "employee"
+  },
+  {
+    "German": "gestalten",
+    "English": "shape"
+  },
+  {
+    "German": "köpfen",
+    "English": "behead"
+  },
+  {
+    "German": "stipendium",
+    "English": "scholarship"
+  },
+  {
+    "German": "illegale",
+    "English": "illegal"
+  },
+  {
+    "German": "vergiften",
+    "English": "poison"
+  },
+  {
+    "German": "feiert",
+    "English": "celebrates"
+  },
+  {
+    "German": "bewundern",
+    "English": "admire"
+  },
+  {
+    "German": "herbert",
+    "English": "Herbert (name)"
+  },
+  {
+    "German": "furchtbaren",
+    "English": "terrible"
+  },
+  {
+    "German": "hüfte",
+    "English": "hip"
+  },
+  {
+    "German": "involviert",
+    "English": "involved"
+  },
+  {
+    "German": "wurf",
+    "English": "throw"
+  },
+  {
+    "German": "maschinenraum",
+    "English": "engine room"
+  },
+  {
+    "German": "inspiration",
+    "English": "inspiration"
+  },
+  {
+    "German": "ohio",
+    "English": "Ohio"
+  },
+  {
+    "German": "samen",
+    "English": "seed"
+  },
+  {
+    "German": "hinterhalt",
+    "English": "ambush"
+  },
+  {
+    "German": "gewahrsam",
+    "English": "custody"
+  },
+  {
+    "German": "schweres",
+    "English": "heavy"
+  },
+  {
+    "German": "einatmen",
+    "English": "inhale"
+  },
+  {
+    "German": "zurückhalten",
+    "English": "hold back"
+  },
+  {
+    "German": "parfüm",
+    "English": "perfume"
+  },
+  {
+    "German": "präsidentin",
+    "English": "president"
+  },
+  {
+    "German": "abe",
+    "English": "Abe (name)"
+  },
+  {
+    "German": "entlassung",
+    "English": "dismissal"
+  },
+  {
+    "German": "todesstrafe",
+    "English": "death penalty"
+  },
+  {
+    "German": "ausgebrochen",
+    "English": "broken out"
+  },
+  {
+    "German": "wegfahren",
+    "English": "drive away"
+  },
+  {
+    "German": "sultan",
+    "English": "sultan"
+  },
+  {
+    "German": "hauch",
+    "English": "hint"
+  },
+  {
+    "German": "abstellen",
+    "English": "turn off"
+  },
+  {
+    "German": "pornos",
+    "English": "porn"
+  },
+  {
+    "German": "erklärte",
+    "English": "explained"
+  },
+  {
+    "German": "produzieren",
+    "English": "to produce"
+  },
+  {
+    "German": "müller",
+    "English": "Miller"
+  },
+  {
+    "German": "gehängt",
+    "English": "hanged"
+  },
+  {
+    "German": "weinte",
+    "English": "cried"
+  },
+  {
+    "German": "routine",
+    "English": "routine"
+  },
+  {
+    "German": "merci",
+    "English": "thanks"
+  },
+  {
+    "German": "nellie",
+    "English": "Nellie"
+  },
+  {
+    "German": "xander",
+    "English": "Xander"
+  },
+  {
+    "German": "schneid",
+    "English": "guts"
+  },
+  {
+    "German": "kluge",
+    "English": "clever"
+  },
+  {
+    "German": "heart",
+    "English": "heart"
+  },
+  {
+    "German": "ländern",
+    "English": "countries"
+  },
+  {
+    "German": "bevorzuge",
+    "English": "prefer"
+  },
+  {
+    "German": "ctu",
+    "English": "CTU"
+  },
+  {
+    "German": "umkreis",
+    "English": "vicinity"
+  },
+  {
+    "German": "beschwerden",
+    "English": "complaints"
+  },
+  {
+    "German": "teufels",
+    "English": "devil's"
+  },
+  {
+    "German": "brooke",
+    "English": "Brooke"
+  },
+  {
+    "German": "genehmigt",
+    "English": "approved"
+  },
+  {
+    "German": "bildern",
+    "English": "pictures"
+  },
+  {
+    "German": "scheißen",
+    "English": "to shit"
+  },
+  {
+    "German": "schenkte",
+    "English": "gave"
+  },
+  {
+    "German": "erschlagen",
+    "English": "bludgeoned"
+  },
+  {
+    "German": "irland",
+    "English": "Ireland"
+  },
+  {
+    "German": "yard",
+    "English": "yard"
+  },
+  {
+    "German": "journalisten",
+    "English": "journalists"
+  },
+  {
+    "German": "fände",
+    "English": "would find"
+  },
+  {
+    "German": "zurückkomme",
+    "English": "come back"
+  },
+  {
+    "German": "ärmel",
+    "English": "sleeve"
+  },
+  {
+    "German": "fließen",
+    "English": "to flow"
+  },
+  {
+    "German": "arabisch",
+    "English": "Arabic"
+  },
+  {
+    "German": "verfolge",
+    "English": "pursue"
+  },
+  {
+    "German": "juckt",
+    "English": "itches"
+  },
+  {
+    "German": "männliche",
+    "English": "male"
+  },
+  {
+    "German": "klingonen",
+    "English": "Klingons"
+  },
+  {
+    "German": "zerrissen",
+    "English": "torn"
+  },
+  {
+    "German": "tausch",
+    "English": "swap"
+  },
+  {
+    "German": "schlaganfall",
+    "English": "stroke"
+  },
+  {
+    "German": "johannes",
+    "English": "John"
+  },
+  {
+    "German": "popcorn",
+    "English": "popcorn"
+  },
+  {
+    "German": "gärtner",
+    "English": "gardener"
+  },
+  {
+    "German": "bläst",
+    "English": "blows"
+  },
+  {
+    "German": "jet",
+    "English": "jet"
+  },
+  {
+    "German": "chester",
+    "English": "Chester"
+  },
+  {
+    "German": "garantie",
+    "English": "guarantee"
+  },
+  {
+    "German": "ändere",
+    "English": "change"
+  },
+  {
+    "German": "jessie",
+    "English": "Jessie"
+  },
+  {
+    "German": "anstand",
+    "English": "decency"
+  },
+  {
+    "German": "power",
+    "English": "power"
+  },
+  {
+    "German": "junkie",
+    "English": "junkie"
+  },
+  {
+    "German": "vati",
+    "English": "dad"
+  },
+  {
+    "German": "topf",
+    "English": "pot"
+  },
+  {
+    "German": "packe",
+    "English": "pack"
+  },
+  {
+    "German": "knöpfe",
+    "English": "buttons"
+  },
+  {
+    "German": "aussehe",
+    "English": "look like"
+  },
+  {
+    "German": "verabschiedet",
+    "English": "said goodbye"
+  },
+  {
+    "German": "bedürfnis",
+    "English": "need"
+  },
+  {
+    "German": "nähen",
+    "English": "to sew"
+  },
+  {
+    "German": "sprecher",
+    "English": "speaker"
+  },
+  {
+    "German": "chemie",
+    "English": "chemistry"
+  },
+  {
+    "German": "hinweisen",
+    "English": "point out"
+  },
+  {
+    "German": "stumm",
+    "English": "mute"
+  },
+  {
+    "German": "zusammenhalten",
+    "English": "stick together"
+  },
+  {
+    "German": "geradezu",
+    "English": "downright"
+  },
+  {
+    "German": "mitzunehmen",
+    "English": "to take along"
+  },
+  {
+    "German": "weite",
+    "English": "width"
+  },
+  {
+    "German": "lori",
+    "English": "Lori"
+  },
+  {
+    "German": "rippen",
+    "English": "ribs"
+  },
+  {
+    "German": "kühl",
+    "English": "cool"
+  },
+  {
+    "German": "dahinten",
+    "English": "back there"
+  },
+  {
+    "German": "techniker",
+    "English": "technician"
+  },
+  {
+    "German": "abel",
+    "English": "Abel"
+  },
+  {
+    "German": "betet",
+    "English": "prays"
+  },
+  {
+    "German": "beachten",
+    "English": "observe"
+  },
+  {
+    "German": "baute",
+    "English": "built"
+  },
+  {
+    "German": "bonjour",
+    "English": "hello"
+  },
+  {
+    "German": "schecks",
+    "English": "checks"
+  },
+  {
+    "German": "ausgabe",
+    "English": "edition"
+  },
+  {
+    "German": "boyd",
+    "English": "Boyd"
+  },
+  {
+    "German": "vermasseln",
+    "English": "mess up"
+  },
+  {
+    "German": "nötige",
+    "English": "necessary"
+  },
+  {
+    "German": "südlich",
+    "English": "southern"
+  },
+  {
+    "German": "gramm",
+    "English": "gram"
+  },
+  {
+    "German": "laken",
+    "English": "bedsheet"
+  },
+  {
+    "German": "bildet",
+    "English": "forms"
+  },
+  {
+    "German": "bewahre",
+    "English": "preserve"
+  },
+  {
+    "German": "leises",
+    "English": "quiet"
+  },
+  {
+    "German": "lastwagen",
+    "English": "truck"
+  },
+  {
+    "German": "kritik",
+    "English": "criticism"
+  },
+  {
+    "German": "stürzte",
+    "English": "fell"
+  },
+  {
+    "German": "behält",
+    "English": "keeps"
+  },
+  {
+    "German": "sofern",
+    "English": "provided that"
+  },
+  {
+    "German": "vermisste",
+    "English": "missed"
+  },
+  {
+    "German": "entsetzlich",
+    "English": "horrible"
+  },
+  {
+    "German": "francine",
+    "English": "Francine"
+  },
+  {
+    "German": "ermittler",
+    "English": "investigator"
+  },
+  {
+    "German": "nikki",
+    "English": "Nikki"
+  },
+  {
+    "German": "aufgestanden",
+    "English": "got up"
+  },
+  {
+    "German": "fälschung",
+    "English": "forgery"
+  },
+  {
+    "German": "visiontext",
+    "English": "VisionText"
+  },
+  {
+    "German": "abschnitt",
+    "English": "section"
+  },
+  {
+    "German": "hausarrest",
+    "English": "house arrest"
+  },
+  {
+    "German": "sensibel",
+    "English": "sensitive"
+  },
+  {
+    "German": "album",
+    "English": "album"
+  },
+  {
+    "German": "lebewesen",
+    "English": "creature"
+  },
+  {
+    "German": "lösegeld",
+    "English": "ransom"
+  },
+  {
+    "German": "verwechselt",
+    "English": "mixed up"
+  },
+  {
+    "German": "prügeln",
+    "English": "beat up"
+  },
+  {
+    "German": "regnen",
+    "English": "to rain"
+  },
+  {
+    "German": "weichen",
+    "English": "yield"
+  },
+  {
+    "German": "point",
+    "English": "point"
+  },
+  {
+    "German": "anvertrauen",
+    "English": "entrust"
+  },
+  {
+    "German": "ollie",
+    "English": "Ollie"
+  },
+  {
+    "German": "kuppel",
+    "English": "dome"
+  },
+  {
+    "German": "verließen",
+    "English": "left"
+  },
+  {
+    "German": "jakob",
+    "English": "Jacob"
+  },
+  {
+    "German": "besuchte",
+    "English": "visited"
+  },
+  {
+    "German": "gewerkschaft",
+    "English": "union"
+  },
+  {
+    "German": "herhören",
+    "English": "listen up"
+  },
+  {
+    "German": "vorbeigekommen",
+    "English": "came by"
+  },
+  {
+    "German": "stärken",
+    "English": "strengthen"
+  },
+  {
+    "German": "hinzu",
+    "English": "in addition"
+  },
+  {
+    "German": "wrack",
+    "English": "wreck"
+  },
+  {
+    "German": "knarren",
+    "English": "creak"
+  },
+  {
+    "German": "treibstoff",
+    "English": "fuel"
+  },
+  {
+    "German": "signale",
+    "English": "signals"
+  },
+  {
+    "German": "nachkommen",
+    "English": "catch up"
+  },
+  {
+    "German": "hoppla",
+    "English": "oops"
+  },
+  {
+    "German": "verborgen",
+    "English": "hidden"
+  },
+  {
+    "German": "belegt",
+    "English": "taken"
+  },
+  {
+    "German": "babylon",
+    "English": "Babylon"
+  },
+  {
+    "German": "waisenhaus",
+    "English": "orphanage"
+  },
+  {
+    "German": "brasilien",
+    "English": "Brazil"
+  },
+  {
+    "German": "bitteschön",
+    "English": "you're welcome"
+  },
+  {
+    "German": "wurmloch",
+    "English": "wormhole"
+  },
+  {
+    "German": "alters",
+    "English": "of age"
+  },
+  {
+    "German": "deb",
+    "English": "Deb"
+  },
+  {
+    "German": "fee",
+    "English": "fairy"
+  },
+  {
+    "German": "milton",
+    "English": "Milton"
+  },
+  {
+    "German": "quarantäne",
+    "English": "quarantine"
+  },
+  {
+    "German": "kommunisten",
+    "English": "communists"
+  },
+  {
+    "German": "stiftung",
+    "English": "foundation"
+  },
+  {
+    "German": "milo",
+    "English": "Milo"
+  },
+  {
+    "German": "gestapo",
+    "English": "Gestapo"
+  },
+  {
+    "German": "verreisen",
+    "English": "go on a trip"
+  },
+  {
+    "German": "halleluja",
+    "English": "hallelujah"
+  },
+  {
+    "German": "süchtig",
+    "English": "addicted"
+  },
+  {
+    "German": "jammern",
+    "English": "whine"
+  },
+  {
+    "German": "hofft",
+    "English": "hopes"
+  },
+  {
+    "German": "wertvolle",
+    "English": "valuable"
+  },
+  {
+    "German": "maulwurf",
+    "English": "mole"
+  },
+  {
+    "German": "konflikt",
+    "English": "conflict"
+  },
+  {
+    "German": "turnier",
+    "English": "tournament"
+  },
+  {
+    "German": "gebacken",
+    "English": "baked"
+  },
+  {
+    "German": "rauszufinden",
+    "English": "find out"
+  },
+  {
+    "German": "taube",
+    "English": "pigeon"
+  },
+  {
+    "German": "mais",
+    "English": "corn"
+  },
+  {
+    "German": "nüsse",
+    "English": "nuts"
+  },
+  {
+    "German": "trieb",
+    "English": "drive"
+  },
+  {
+    "German": "eigenschaften",
+    "English": "traits"
+  },
+  {
+    "German": "feder",
+    "English": "feather"
+  },
+  {
+    "German": "sänger",
+    "English": "singer"
+  },
+  {
+    "German": "elias",
+    "English": "Elias"
+  },
+  {
+    "German": "dessert",
+    "English": "dessert"
+  },
+  {
+    "German": "rathaus",
+    "English": "city hall"
+  },
+  {
+    "German": "drohungen",
+    "English": "threats"
+  },
+  {
+    "German": "bewirken",
+    "English": "cause"
+  },
+  {
+    "German": "mörderin",
+    "English": "murderer"
+  },
+  {
+    "German": "edith",
+    "English": "Edith"
+  },
+  {
+    "German": "wanne",
+    "English": "tub"
+  },
+  {
+    "German": "durchkommen",
+    "English": "get through"
+  },
+  {
+    "German": "reid",
+    "English": "Reid"
+  },
+  {
+    "German": "mandy",
+    "English": "Mandy"
+  },
+  {
+    "German": "vertraute",
+    "English": "trusted"
+  },
+  {
+    "German": "schätzt",
+    "English": "estimates"
+  },
+  {
+    "German": "freuden",
+    "English": "joys"
+  },
+  {
+    "German": "dauer",
+    "English": "duration"
+  },
+  {
+    "German": "regt",
+    "English": "annoys"
+  },
+  {
+    "German": "verbessert",
+    "English": "improved"
+  },
+  {
+    "German": "unerwartet",
+    "English": "unexpected"
+  },
+  {
+    "German": "drogendealer",
+    "English": "drug dealer"
+  },
+  {
+    "German": "gefährlichen",
+    "English": "dangerous"
+  },
+  {
+    "German": "fach",
+    "English": "subject"
+  },
+  {
+    "German": "verdanke",
+    "English": "owe"
+  },
+  {
+    "German": "wohnungen",
+    "English": "apartments"
+  },
+  {
+    "German": "commissioner",
+    "English": "commissioner"
+  },
+  {
+    "German": "cross",
+    "English": "cross"
+  },
+  {
+    "German": "kragen",
+    "English": "collar"
+  },
+  {
+    "German": "schwachen",
+    "English": "weak"
+  },
+  {
+    "German": "mercedes",
+    "English": "Mercedes"
+  },
+  {
+    "German": "klirren",
+    "English": "clink"
+  },
+  {
+    "German": "valentinstag",
+    "English": "Valentine's Day"
+  },
+  {
+    "German": "anstelle",
+    "English": "instead of"
+  },
+  {
+    "German": "plane",
+    "English": "plan"
+  },
+  {
+    "German": "reizende",
+    "English": "charming"
+  },
+  {
+    "German": "höheren",
+    "English": "higher"
+  },
+  {
+    "German": "markiert",
+    "English": "marked"
+  },
+  {
+    "German": "ehrenwort",
+    "English": "word of honor"
+  }
+]
