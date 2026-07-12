@@ -11,5 +11,14 @@ public class WordEntry
     public Language Language { get; set; }
     public required string NormalizedText { get; set; }
 
+    /// <summary>"der"/"die"/"das" for a German noun, null otherwise.</summary>
+    public string? Article { get; set; }
+
+    /// <summary>A short (aim for &lt;= 5 words) example sentence using this word, or null if not yet authored.</summary>
+    public string? ExampleSentence { get; set; }
+
+    /// <summary>Words within <see cref="ExampleSentence"/> whose form changed for a grammatical reason, with an explanation.</summary>
+    public List<SentenceHighlight> Highlights { get; set; } = [];
+
     public List<WordTranslation> Translations { get; set; } = [];
 }

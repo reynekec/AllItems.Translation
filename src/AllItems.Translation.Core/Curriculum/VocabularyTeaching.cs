@@ -1,3 +1,5 @@
+using AllItems.Translation.Core.Domain;
+
 namespace AllItems.Translation.Core.Curriculum;
 
 /// <summary>
@@ -6,4 +8,9 @@ namespace AllItems.Translation.Core.Curriculum;
 /// Only set on one exercise per distinct word within a unit - reinforcement exercises for a word
 /// already tagged elsewhere leave this null to avoid duplicate dictionary entries.
 /// </summary>
-public sealed record VocabularyTeaching(string GermanWord, string EnglishMeaning);
+public sealed record VocabularyTeaching(
+    string GermanWord,
+    string EnglishMeaning,
+    string? Article = null,
+    string? ExampleSentence = null,
+    IReadOnlyList<SentenceHighlight>? Highlights = null);

@@ -4,7 +4,7 @@
                  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
                  xmlns:study="clr-namespace:AllItems.Translation.Core.Study;assembly=AllItems.Translation.Core"
                  Title="Study"
-                 Height="560" Width="620"
+                 Height="640" Width="620"
                  WindowStartupLocation="CenterScreen"
                  ExtendsContentIntoTitleBar="True"
                  WindowBackdropType="Mica">
@@ -26,8 +26,12 @@
                 <TextBlock Text="Quiz me on:" Margin="0,16,0,4" />
                 <ComboBox ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding TargetLanguage}" Width="200" HorizontalAlignment="Left" />
 
-                <ui:Button Content="Start Session" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Left"
-                           Command="{Binding StartSessionCommand}" />
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <ui:Button Content="Start Session" Appearance="Primary" Margin="0,0,8,0"
+                               Command="{Binding StartSessionCommand}" />
+                    <ui:Button Content="Practice Trouble Words" Appearance="Secondary"
+                               Command="{Binding StartLeechSessionCommand}" />
+                </StackPanel>
 
                 <TextBlock Margin="0,16,0,0" TextWrapping="Wrap" Opacity="0.8"
                            Text="{Binding StatusMessage}"
@@ -42,7 +46,7 @@
                     <Run Text="Reviewed " /><Run Text="{Binding ReviewedCount, Mode=OneWay}" /><Run Text=" card(s)." />
                 </TextBlock>
                 <ui:Button Content="Study Again" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center"
-                           Command="{Binding StartSessionCommand}" />
+                           Command="{Binding RestartCommand}" />
             </StackPanel>
 
             <!-- Active card panel -->
@@ -57,6 +61,32 @@
 
                 <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock Text="{Binding FrontText}" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center" TextWrapping="Wrap" />
+
+                    <ItemsControl Margin="0,16,0,0" ItemsSource="{Binding SentenceWords}"
+                                  Visibility="{Binding ExampleSentence, Converter={StaticResource NullOrEmptyToVisibilityConverter}}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel HorizontalAlignment="Center" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Text}" FontSize="16" Opacity="0.85" Margin="0,0,6,0" ToolTip="{Binding Reason}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsHighlighted}" Value="True">
+                                                    <Setter Property="Foreground" Value="{DynamicResource AccentTextFillColorPrimaryBrush}" />
+                                                    <Setter Property="FontWeight" Value="SemiBold" />
+                                                    <Setter Property="Opacity" Value="1" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
 
                     <TextBlock Margin="0,20,0,0" FontSize="26" Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
                                HorizontalAlignment="Center" TextWrapping="Wrap"

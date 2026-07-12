@@ -103,9 +103,41 @@ public class StudySessionServiceTests
     }
 
     [Fact]
+    public async Task BuildLeechSessionAsync_NoLeeches_ReturnsEmpty()
+    {
+        _reviewStateRepository.Setup(r => r.GetLeechesAsync(Language.Afrikaans, 3, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordReviewState>)[]);
+
+        var service = CreateService();
+        var session = await service.BuildLeechSessionAsync(Language.German, Language.Afrikaans, 20);
+
+        Assert.Empty(session);
+        _wordRepository.Verify(r => r.GetWordsByIdsAsync(It.IsAny<IReadOnlyCollection<int>>(), It.IsAny<Language>(), It.IsAny<CancellationToken>()), Times.Never);
+    }
+
+    [Fact]
+    public async Task BuildLeechSessionAsync_ReturnsCardsForLeechWords()
+    {
+        var leechState = new WordReviewState { WordEntryId = 1, TargetLanguage = Language.Afrikaans, LapseCount = 3 };
+        _reviewStateRepository.Setup(r => r.GetLeechesAsync(Language.Afrikaans, 3, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordReviewState>)[leechState]);
+
+        var word = WordWithTranslation(1, "hund", Language.Afrikaans, "hond");
+        _wordRepository.Setup(r => r.GetWordsByIdsAsync(It.Is<IReadOnlyCollection<int>>(ids => ids.Contains(1)), Language.Afrikaans, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordEntry>)[word]);
+
+        var service = CreateService();
+        var session = await service.BuildLeechSessionAsync(Language.German, Language.Afrikaans, 20);
+
+        var card = Assert.Single(session);
+        Assert.Equal("hund", card.FrontText);
+        Assert.Equal(3, card.ReviewState.LapseCount);
+    }
+
+    [Fact]
     public async Task RecordAnswerAsync_PersistsSchedulerResult()
     {
-        var card = new StudyCard(1, Language.German, "hund", Language.Afrikaans, "hond",
+        var card = new StudyCard(1, Language.German, "hund", null, null, [], Language.Afrikaans, "hond",
             new WordReviewState { WordEntryId = 1, TargetLanguage = Language.Afrikaans });
         var scheduled = new WordReviewState { WordEntryId = 1, TargetLanguage = Language.Afrikaans, IntervalDays = 6 };
 

@@ -14,6 +14,9 @@ public class WordReviewState
     public int IntervalDays { get; set; }
     public int Repetitions { get; set; }
 
+    /// <summary>Total number of "Again" grades ever recorded for this card - unlike <see cref="Repetitions"/>, this never resets on a correct answer.</summary>
+    public int LapseCount { get; set; }
+
     /// <summary>Null means "never reviewed" - a brand-new card.</summary>
     public DateTime? DueDateUtc { get; set; }
     public DateTime? LastReviewedUtc { get; set; }

@@ -22,12 +22,20 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
             }
 
             using var select = connection.CreateCommand();
-            select.CommandText = "SELECT Id FROM WordEntries WHERE Language = $language AND NormalizedText = $text;";
+            select.CommandText = "SELECT Id, Article, ExampleSentence FROM WordEntries WHERE Language = $language AND NormalizedText = $text;";
             select.Parameters.AddWithValue("$language", (int)language);
             select.Parameters.AddWithValue("$text", normalizedText);
 
-            var id = Convert.ToInt32(select.ExecuteScalar(), CultureInfo.InvariantCulture);
-            return new WordEntry { Id = id, Language = language, NormalizedText = normalizedText };
+            using var reader = select.ExecuteReader();
+            reader.Read();
+            return new WordEntry
+            {
+                Id = reader.GetInt32(0),
+                Language = language,
+                NormalizedText = normalizedText,
+                Article = reader.IsDBNull(1) ? null : reader.GetString(1),
+                ExampleSentence = reader.IsDBNull(2) ? null : reader.GetString(2)
+            };
         }, cancellationToken);
 
     public Task<IReadOnlyList<WordTranslation>> GetTranslationsAsync(int wordEntryId, Language targetLanguage, CancellationToken cancellationToken = default) =>
@@ -116,7 +124,7 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
         {
             using var command = connection.CreateCommand();
             command.CommandText = """
-                SELECT we.Id, we.Language, we.NormalizedText,
+                SELECT we.Id, we.Language, we.NormalizedText, we.Article, we.ExampleSentence,
                        wt.Id, wt.TargetLanguage, wt.TargetText, wt.IsPreferred, wt.UsageCount, wt.CreatedAtUtc
                 FROM WordEntries we
                 LEFT JOIN WordTranslations wt ON wt.WordEntryId = we.Id
@@ -134,22 +142,24 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
                     {
                         Id = entryId,
                         Language = (Language)reader.GetInt32(1),
-                        NormalizedText = reader.GetString(2)
+                        NormalizedText = reader.GetString(2),
+                        Article = reader.IsDBNull(3) ? null : reader.GetString(3),
+                        ExampleSentence = reader.IsDBNull(4) ? null : reader.GetString(4)
                     };
                     entriesById.Add(entryId, entry);
                 }
 
-                if (!reader.IsDBNull(3))
+                if (!reader.IsDBNull(5))
                 {
                     entry.Translations.Add(new WordTranslation
                     {
-                        Id = reader.GetInt32(3),
+                        Id = reader.GetInt32(5),
                         WordEntryId = entryId,
-                        TargetLanguage = (Language)reader.GetInt32(4),
-                        TargetText = reader.GetString(5),
-                        IsPreferred = reader.GetInt64(6) != 0,
-                        UsageCount = reader.GetInt32(7),
-                        CreatedAtUtc = ParseUtc(reader.GetString(8))
+                        TargetLanguage = (Language)reader.GetInt32(6),
+                        TargetText = reader.GetString(7),
+                        IsPreferred = reader.GetInt64(8) != 0,
+                        UsageCount = reader.GetInt32(9),
+                        CreatedAtUtc = ParseUtc(reader.GetString(10))
                     });
                 }
             }
@@ -162,7 +172,7 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
         {
             using var command = connection.CreateCommand();
             command.CommandText = """
-                SELECT we.Id, we.NormalizedText, wt.Id, wt.TargetText, wt.IsPreferred, wt.UsageCount, wt.CreatedAtUtc
+                SELECT we.Id, we.NormalizedText, we.Article, we.ExampleSentence, wt.Id, wt.TargetText, wt.IsPreferred, wt.UsageCount, wt.CreatedAtUtc
                 FROM WordEntries we
                 JOIN WordTranslations wt ON wt.WordEntryId = we.Id
                 WHERE we.Language = $sourceLanguage AND wt.TargetLanguage = $targetLanguage AND wt.IsPreferred = 1;
@@ -171,25 +181,138 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
             command.Parameters.AddWithValue("$targetLanguage", (int)targetLanguage);
 
             var results = new List<WordEntry>();
-            using var reader = command.ExecuteReader();
-            while (reader.Read())
+            using (var reader = command.ExecuteReader())
             {
-                var entryId = reader.GetInt32(0);
-                var entry = new WordEntry { Id = entryId, Language = sourceLanguage, NormalizedText = reader.GetString(1) };
-                entry.Translations.Add(new WordTranslation
+                while (reader.Read())
                 {
-                    Id = reader.GetInt32(2),
-                    WordEntryId = entryId,
-                    TargetLanguage = targetLanguage,
-                    TargetText = reader.GetString(3),
-                    IsPreferred = reader.GetInt64(4) != 0,
-                    UsageCount = reader.GetInt32(5),
-                    CreatedAtUtc = ParseUtc(reader.GetString(6))
-                });
-                results.Add(entry);
+                    var entryId = reader.GetInt32(0);
+                    var entry = new WordEntry
+                    {
+                        Id = entryId,
+                        Language = sourceLanguage,
+                        NormalizedText = reader.GetString(1),
+                        Article = reader.IsDBNull(2) ? null : reader.GetString(2),
+                        ExampleSentence = reader.IsDBNull(3) ? null : reader.GetString(3)
+                    };
+                    entry.Translations.Add(new WordTranslation
+                    {
+                        Id = reader.GetInt32(4),
+                        WordEntryId = entryId,
+                        TargetLanguage = targetLanguage,
+                        TargetText = reader.GetString(5),
+                        IsPreferred = reader.GetInt64(6) != 0,
+                        UsageCount = reader.GetInt32(7),
+                        CreatedAtUtc = ParseUtc(reader.GetString(8))
+                    });
+                    results.Add(entry);
+                }
             }
 
+            AttachHighlights(connection, results);
             return (IReadOnlyList<WordEntry>)results;
+        }, cancellationToken);
+
+    public Task<IReadOnlyList<WordEntry>> GetWordsByIdsAsync(IReadOnlyCollection<int> wordEntryIds, Language targetLanguage, CancellationToken cancellationToken = default) =>
+        connectionFactory.RunAsync(connection =>
+        {
+            var results = new List<WordEntry>();
+            if (wordEntryIds.Count == 0)
+            {
+                return (IReadOnlyList<WordEntry>)results;
+            }
+
+            var ids = wordEntryIds.ToList();
+            var parameterNames = ids.Select((_, index) => $"$id{index}").ToList();
+
+            using var command = connection.CreateCommand();
+            command.CommandText = $"""
+                SELECT we.Id, we.Language, we.NormalizedText, we.Article, we.ExampleSentence,
+                       wt.Id, wt.TargetText, wt.IsPreferred, wt.UsageCount, wt.CreatedAtUtc
+                FROM WordEntries we
+                LEFT JOIN WordTranslations wt ON wt.WordEntryId = we.Id AND wt.TargetLanguage = $targetLanguage AND wt.IsPreferred = 1
+                WHERE we.Id IN ({string.Join(",", parameterNames)});
+                """;
+            command.Parameters.AddWithValue("$targetLanguage", (int)targetLanguage);
+            for (var i = 0; i < ids.Count; i++)
+            {
+                command.Parameters.AddWithValue(parameterNames[i], ids[i]);
+            }
+
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var entryId = reader.GetInt32(0);
+                    var entry = new WordEntry
+                    {
+                        Id = entryId,
+                        Language = (Language)reader.GetInt32(1),
+                        NormalizedText = reader.GetString(2),
+                        Article = reader.IsDBNull(3) ? null : reader.GetString(3),
+                        ExampleSentence = reader.IsDBNull(4) ? null : reader.GetString(4)
+                    };
+
+                    if (!reader.IsDBNull(5))
+                    {
+                        entry.Translations.Add(new WordTranslation
+                        {
+                            Id = reader.GetInt32(5),
+                            WordEntryId = entryId,
+                            TargetLanguage = targetLanguage,
+                            TargetText = reader.GetString(6),
+                            IsPreferred = reader.GetInt64(7) != 0,
+                            UsageCount = reader.GetInt32(8),
+                            CreatedAtUtc = ParseUtc(reader.GetString(9))
+                        });
+                    }
+
+                    results.Add(entry);
+                }
+            }
+
+            AttachHighlights(connection, results);
+            return (IReadOnlyList<WordEntry>)results;
+        }, cancellationToken);
+
+    public Task SetStudyContentAsync(int wordEntryId, string? article, string exampleSentence, IReadOnlyList<SentenceHighlight> highlights, CancellationToken cancellationToken = default) =>
+        connectionFactory.RunAsync(connection =>
+        {
+            using var transaction = connection.BeginTransaction();
+
+            using (var update = connection.CreateCommand())
+            {
+                update.Transaction = transaction;
+                update.CommandText = "UPDATE WordEntries SET Article = $article, ExampleSentence = $sentence WHERE Id = $id;";
+                update.Parameters.AddWithValue("$article", (object?)article ?? DBNull.Value);
+                update.Parameters.AddWithValue("$sentence", exampleSentence);
+                update.Parameters.AddWithValue("$id", wordEntryId);
+                update.ExecuteNonQuery();
+            }
+
+            using (var delete = connection.CreateCommand())
+            {
+                delete.Transaction = transaction;
+                delete.CommandText = "DELETE FROM WordSentenceHighlights WHERE WordEntryId = $id;";
+                delete.Parameters.AddWithValue("$id", wordEntryId);
+                delete.ExecuteNonQuery();
+            }
+
+            for (var i = 0; i < highlights.Count; i++)
+            {
+                using var insert = connection.CreateCommand();
+                insert.Transaction = transaction;
+                insert.CommandText = """
+                    INSERT INTO WordSentenceHighlights (WordEntryId, WordText, Reason, Position)
+                    VALUES ($wordEntryId, $word, $reason, $position);
+                    """;
+                insert.Parameters.AddWithValue("$wordEntryId", wordEntryId);
+                insert.Parameters.AddWithValue("$word", highlights[i].Word);
+                insert.Parameters.AddWithValue("$reason", highlights[i].Reason);
+                insert.Parameters.AddWithValue("$position", i);
+                insert.ExecuteNonQuery();
+            }
+
+            transaction.Commit();
         }, cancellationToken);
 
     public Task DeleteTranslationAsync(int translationId, CancellationToken cancellationToken = default) =>
@@ -210,6 +333,53 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
             command.Parameters.AddWithValue("$id", translationId);
             command.ExecuteNonQuery();
         }, cancellationToken);
+
+    private static void AttachHighlights(SqliteConnection connection, List<WordEntry> entries)
+    {
+        if (entries.Count == 0)
+        {
+            return;
+        }
+
+        var ids = entries.Select(e => e.Id).ToList();
+        var parameterNames = ids.Select((_, index) => $"$hid{index}").ToList();
+
+        using var command = connection.CreateCommand();
+        command.CommandText = $"""
+            SELECT WordEntryId, WordText, Reason
+            FROM WordSentenceHighlights
+            WHERE WordEntryId IN ({string.Join(",", parameterNames)})
+            ORDER BY WordEntryId, Position;
+            """;
+        for (var i = 0; i < ids.Count; i++)
+        {
+            command.Parameters.AddWithValue(parameterNames[i], ids[i]);
+        }
+
+        var highlightsByWordId = new Dictionary<int, List<SentenceHighlight>>();
+        using (var reader = command.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                var wordEntryId = reader.GetInt32(0);
+                if (!highlightsByWordId.TryGetValue(wordEntryId, out var list))
+                {
+                    list = [];
+                    highlightsByWordId[wordEntryId] = list;
+                }
+
+                list.Add(new SentenceHighlight(reader.GetString(1), reader.GetString(2)));
+            }
+        }
+
+        foreach (var entry in entries)
+        {
+            if (highlightsByWordId.TryGetValue(entry.Id, out var highlights))
+            {
+                entry.Highlights.AddRange(highlights);
+            }
+        }
+    }
 
     private static void ClearPreferred(SqliteConnection connection, SqliteTransaction transaction, int wordEntryId, Language targetLanguage)
     {

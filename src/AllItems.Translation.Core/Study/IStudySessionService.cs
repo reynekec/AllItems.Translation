@@ -14,6 +14,13 @@ public interface IStudySessionService
         int maxCards,
         CancellationToken cancellationToken = default);
 
+    /// <summary>Builds a session containing only words flagged as leeches (repeatedly missed), regardless of due date.</summary>
+    Task<IReadOnlyList<StudyCard>> BuildLeechSessionAsync(
+        Language sourceLanguage,
+        Language targetLanguage,
+        int maxCards,
+        CancellationToken cancellationToken = default);
+
     /// <summary>Grades a card and persists its next due date via the spaced-repetition scheduler.</summary>
     Task RecordAnswerAsync(StudyCard card, ReviewGrade grade, CancellationToken cancellationToken = default);
 }

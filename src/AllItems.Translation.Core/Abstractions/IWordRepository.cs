@@ -27,4 +27,13 @@ public interface IWordRepository
     Task DeleteTranslationAsync(int translationId, CancellationToken cancellationToken = default);
 
     Task UpdateTranslationTextAsync(int translationId, string newText, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Words matching the given ids, each with its preferred translation into <paramref name="targetLanguage"/>
+    /// loaded if one exists - used to build a flashcard session from a specific set of words (e.g. leeches).
+    /// </summary>
+    Task<IReadOnlyList<WordEntry>> GetWordsByIdsAsync(IReadOnlyCollection<int> wordEntryIds, Language targetLanguage, CancellationToken cancellationToken = default);
+
+    /// <summary>Sets (overwriting any previous value) the article, example sentence, and highlighted words for a word entry.</summary>
+    Task SetStudyContentAsync(int wordEntryId, string? article, string exampleSentence, IReadOnlyList<SentenceHighlight> highlights, CancellationToken cancellationToken = default);
 }

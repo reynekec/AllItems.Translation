@@ -7,6 +7,9 @@ public sealed record StudyCard(
     int WordEntryId,
     Language SourceLanguage,
     string FrontText,
+    string? Article,
+    string? ExampleSentence,
+    IReadOnlyList<SentenceHighlight> Highlights,
     Language TargetLanguage,
     string BackText,
     WordReviewState ReviewState);

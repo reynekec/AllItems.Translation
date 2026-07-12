@@ -9,6 +9,8 @@ public sealed class StudySessionService(
     ISpacedRepetitionScheduler scheduler,
     IClock clock) : IStudySessionService
 {
+    private const int LeechThreshold = 3;
+
     public async Task<IReadOnlyList<StudyCard>> BuildSessionAsync(
         Language sourceLanguage,
         Language targetLanguage,
@@ -46,13 +48,29 @@ public sealed class StudySessionService(
             .OrderBy(x => x.State.DueDateUtc)
             .Concat(fresh)
             .Take(maxCards)
-            .Select(x => new StudyCard(
-                x.Word.Id,
-                sourceLanguage,
-                x.Word.NormalizedText,
-                targetLanguage,
-                x.Word.Translations[0].TargetText,
-                x.State))
+            .Select(x => BuildCard(sourceLanguage, targetLanguage, x.Word, x.State))
+            .ToList();
+    }
+
+    public async Task<IReadOnlyList<StudyCard>> BuildLeechSessionAsync(
+        Language sourceLanguage,
+        Language targetLanguage,
+        int maxCards,
+        CancellationToken cancellationToken = default)
+    {
+        var leeches = await reviewStateRepository.GetLeechesAsync(targetLanguage, LeechThreshold, cancellationToken);
+        if (leeches.Count == 0)
+        {
+            return [];
+        }
+
+        var words = await wordRepository.GetWordsByIdsAsync(leeches.Select(l => l.WordEntryId).ToList(), targetLanguage, cancellationToken);
+        var statesByWordId = leeches.ToDictionary(l => l.WordEntryId);
+
+        return words
+            .Where(w => w.Translations.Count > 0 && statesByWordId.ContainsKey(w.Id))
+            .Take(maxCards)
+            .Select(w => BuildCard(sourceLanguage, targetLanguage, w, statesByWordId[w.Id]))
             .ToList();
     }
 
@@ -61,6 +79,17 @@ public sealed class StudySessionService(
         var updated = scheduler.Schedule(card.ReviewState, grade, clock.UtcNow);
         await reviewStateRepository.UpsertAsync(updated, cancellationToken);
     }
+
+    private static StudyCard BuildCard(Language sourceLanguage, Language targetLanguage, WordEntry word, WordReviewState state) => new(
+        word.Id,
+        sourceLanguage,
+        word.NormalizedText,
+        word.Article,
+        word.ExampleSentence,
+        word.Highlights,
+        targetLanguage,
+        word.Translations[0].TargetText,
+        state);
 
     private static WordReviewState NewState(int wordEntryId, Language targetLanguage) => new()
     {

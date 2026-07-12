@@ -1,3 +1,5 @@
+using Microsoft.Data.Sqlite;
+
 namespace AllItems.Translation.Infrastructure.Persistence;
 
 /// <summary>Creates the SQLite schema on first run - a hand-rolled stand-in for EF Core migrations.</summary>
@@ -6,12 +8,15 @@ public sealed class DatabaseInitializer(SqliteConnectionFactory connectionFactor
     public Task InitializeAsync(CancellationToken cancellationToken = default) =>
         connectionFactory.RunAsync(connection =>
         {
-            using var command = connection.CreateCommand();
-            command.CommandText = """
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = """
                 CREATE TABLE IF NOT EXISTS WordEntries (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     Language INTEGER NOT NULL,
-                    NormalizedText TEXT NOT NULL
+                    NormalizedText TEXT NOT NULL,
+                    Article TEXT NULL,
+                    ExampleSentence TEXT NULL
                 );
                 CREATE UNIQUE INDEX IF NOT EXISTS IX_WordEntries_Language_NormalizedText
                     ON WordEntries (Language, NormalizedText);
@@ -54,6 +59,7 @@ public sealed class DatabaseInitializer(SqliteConnectionFactory connectionFactor
                     EasinessFactor REAL NOT NULL DEFAULT 2.5,
                     IntervalDays INTEGER NOT NULL DEFAULT 0,
                     Repetitions INTEGER NOT NULL DEFAULT 0,
+                    LapseCount INTEGER NOT NULL DEFAULT 0,
                     DueDateUtc TEXT NULL,
                     LastReviewedUtc TEXT NULL
                 );
@@ -75,7 +81,42 @@ public sealed class DatabaseInitializer(SqliteConnectionFactory connectionFactor
                 );
                 CREATE UNIQUE INDEX IF NOT EXISTS IX_VocabularyLevelImports_Level
                     ON VocabularyLevelImports (Level);
+
+                CREATE TABLE IF NOT EXISTS WordSentenceHighlights (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    WordEntryId INTEGER NOT NULL REFERENCES WordEntries (Id) ON DELETE CASCADE,
+                    WordText TEXT NOT NULL,
+                    Reason TEXT NOT NULL,
+                    Position INTEGER NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS IX_WordSentenceHighlights_WordEntryId
+                    ON WordSentenceHighlights (WordEntryId);
                 """;
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+            }
+
+            EnsureColumnExists(connection, "WordEntries", "Article", "TEXT NULL");
+            EnsureColumnExists(connection, "WordEntries", "ExampleSentence", "TEXT NULL");
+            EnsureColumnExists(connection, "ReviewStates", "LapseCount", "INTEGER NOT NULL DEFAULT 0");
         }, cancellationToken);
+
+    private static void EnsureColumnExists(SqliteConnection connection, string table, string column, string columnDefinition)
+    {
+        using (var check = connection.CreateCommand())
+        {
+            check.CommandText = $"PRAGMA table_info({table});";
+            using var reader = check.ExecuteReader();
+            while (reader.Read())
+            {
+                if (string.Equals(reader.GetString(1), column, StringComparison.OrdinalIgnoreCase))
+                {
+                    return;
+                }
+            }
+        }
+
+        using var alter = connection.CreateCommand();
+        alter.CommandText = $"ALTER TABLE {table} ADD COLUMN {column} {columnDefinition};";
+        alter.ExecuteNonQuery();
+    }
 }

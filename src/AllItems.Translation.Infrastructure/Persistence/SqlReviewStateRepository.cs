@@ -23,7 +23,7 @@ public sealed class SqlReviewStateRepository(SqliteConnectionFactory connectionF
 
             using var command = connection.CreateCommand();
             command.CommandText = $"""
-                SELECT Id, WordEntryId, EasinessFactor, IntervalDays, Repetitions, DueDateUtc, LastReviewedUtc
+                SELECT Id, WordEntryId, EasinessFactor, IntervalDays, Repetitions, LapseCount, DueDateUtc, LastReviewedUtc
                 FROM ReviewStates
                 WHERE TargetLanguage = $targetLanguage AND WordEntryId IN ({string.Join(",", parameterNames)});
                 """;
@@ -45,8 +45,9 @@ public sealed class SqlReviewStateRepository(SqliteConnectionFactory connectionF
                     EasinessFactor = reader.GetDouble(2),
                     IntervalDays = reader.GetInt32(3),
                     Repetitions = reader.GetInt32(4),
-                    DueDateUtc = reader.IsDBNull(5) ? null : ParseUtc(reader.GetString(5)),
-                    LastReviewedUtc = reader.IsDBNull(6) ? null : ParseUtc(reader.GetString(6))
+                    LapseCount = reader.GetInt32(5),
+                    DueDateUtc = reader.IsDBNull(6) ? null : ParseUtc(reader.GetString(6)),
+                    LastReviewedUtc = reader.IsDBNull(7) ? null : ParseUtc(reader.GetString(7))
                 };
             }
 
@@ -58,12 +59,13 @@ public sealed class SqlReviewStateRepository(SqliteConnectionFactory connectionF
         {
             using var command = connection.CreateCommand();
             command.CommandText = """
-                INSERT INTO ReviewStates (WordEntryId, TargetLanguage, EasinessFactor, IntervalDays, Repetitions, DueDateUtc, LastReviewedUtc)
-                VALUES ($wordEntryId, $targetLanguage, $easinessFactor, $intervalDays, $repetitions, $dueDateUtc, $lastReviewedUtc)
+                INSERT INTO ReviewStates (WordEntryId, TargetLanguage, EasinessFactor, IntervalDays, Repetitions, LapseCount, DueDateUtc, LastReviewedUtc)
+                VALUES ($wordEntryId, $targetLanguage, $easinessFactor, $intervalDays, $repetitions, $lapseCount, $dueDateUtc, $lastReviewedUtc)
                 ON CONFLICT (WordEntryId, TargetLanguage) DO UPDATE SET
                     EasinessFactor = excluded.EasinessFactor,
                     IntervalDays = excluded.IntervalDays,
                     Repetitions = excluded.Repetitions,
+                    LapseCount = excluded.LapseCount,
                     DueDateUtc = excluded.DueDateUtc,
                     LastReviewedUtc = excluded.LastReviewedUtc;
                 """;
@@ -72,9 +74,47 @@ public sealed class SqlReviewStateRepository(SqliteConnectionFactory connectionF
             command.Parameters.AddWithValue("$easinessFactor", state.EasinessFactor);
             command.Parameters.AddWithValue("$intervalDays", state.IntervalDays);
             command.Parameters.AddWithValue("$repetitions", state.Repetitions);
+            command.Parameters.AddWithValue("$lapseCount", state.LapseCount);
             command.Parameters.AddWithValue("$dueDateUtc", (object?)state.DueDateUtc?.ToString("o", CultureInfo.InvariantCulture) ?? DBNull.Value);
             command.Parameters.AddWithValue("$lastReviewedUtc", (object?)state.LastReviewedUtc?.ToString("o", CultureInfo.InvariantCulture) ?? DBNull.Value);
             command.ExecuteNonQuery();
+        }, cancellationToken);
+
+    public Task<IReadOnlyList<WordReviewState>> GetLeechesAsync(
+        Language targetLanguage,
+        int minLapses,
+        CancellationToken cancellationToken = default) =>
+        connectionFactory.RunAsync(connection =>
+        {
+            using var command = connection.CreateCommand();
+            command.CommandText = """
+                SELECT Id, WordEntryId, EasinessFactor, IntervalDays, Repetitions, LapseCount, DueDateUtc, LastReviewedUtc
+                FROM ReviewStates
+                WHERE TargetLanguage = $targetLanguage AND LapseCount >= $minLapses
+                ORDER BY LapseCount DESC;
+                """;
+            command.Parameters.AddWithValue("$targetLanguage", (int)targetLanguage);
+            command.Parameters.AddWithValue("$minLapses", minLapses);
+
+            var results = new List<WordReviewState>();
+            using var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                results.Add(new WordReviewState
+                {
+                    Id = reader.GetInt32(0),
+                    WordEntryId = reader.GetInt32(1),
+                    TargetLanguage = targetLanguage,
+                    EasinessFactor = reader.GetDouble(2),
+                    IntervalDays = reader.GetInt32(3),
+                    Repetitions = reader.GetInt32(4),
+                    LapseCount = reader.GetInt32(5),
+                    DueDateUtc = reader.IsDBNull(6) ? null : ParseUtc(reader.GetString(6)),
+                    LastReviewedUtc = reader.IsDBNull(7) ? null : ParseUtc(reader.GetString(7))
+                });
+            }
+
+            return (IReadOnlyList<WordReviewState>)results;
         }, cancellationToken);
 
     private static DateTime ParseUtc(string value) =>

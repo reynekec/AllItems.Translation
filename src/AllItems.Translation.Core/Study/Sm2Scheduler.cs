@@ -49,6 +49,7 @@ public sealed class Sm2Scheduler : ISpacedRepetitionScheduler
             EasinessFactor = easinessFactor,
             IntervalDays = intervalDays,
             Repetitions = repetitions,
+            LapseCount = quality < 3 ? current.LapseCount + 1 : current.LapseCount,
             DueDateUtc = nowUtc.Date.AddDays(intervalDays),
             LastReviewedUtc = nowUtc
         };

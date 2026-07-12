@@ -26,6 +26,11 @@ public sealed class VocabularyImportService(
             {
                 await wordRepository.AddTranslationAsync(entry.Id, Language.English, word.English, isPreferred: existing.Count == 0, cancellationToken);
             }
+
+            if (!string.IsNullOrWhiteSpace(word.ExampleSentence))
+            {
+                await wordRepository.SetStudyContentAsync(entry.Id, word.Article, word.ExampleSentence, word.Highlights ?? [], cancellationToken);
+            }
         }
 
         await importRepository.MarkLevelImportedAsync(level, cancellationToken);

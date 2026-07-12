@@ -85,5 +85,10 @@ public sealed class CurriculumService(
         {
             await wordRepository.AddTranslationAsync(entry.Id, Language.English, teaching.EnglishMeaning, isPreferred: existing.Count == 0, cancellationToken);
         }
+
+        if (!string.IsNullOrWhiteSpace(teaching.ExampleSentence))
+        {
+            await wordRepository.SetStudyContentAsync(entry.Id, teaching.Article, teaching.ExampleSentence, teaching.Highlights ?? [], cancellationToken);
+        }
     }
 }

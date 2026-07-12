@@ -246,6 +246,87 @@ public sealed class SqliteRepositoriesTests : IDisposable
     }
 
     [Fact]
+    public async Task ReviewStateRepository_LapseCount_RoundTrips()
+    {
+        var wordRepository = new WordRepository(_connectionFactory, _clock);
+        var entry = await wordRepository.GetOrCreateAsync(Language.German, "vergessen");
+        var reviewRepository = new SqlReviewStateRepository(_connectionFactory);
+
+        await reviewRepository.UpsertAsync(new WordReviewState { WordEntryId = entry.Id, TargetLanguage = Language.Afrikaans, LapseCount = 3 });
+
+        var states = await reviewRepository.GetStatesAsync(Language.Afrikaans, [entry.Id]);
+
+        Assert.Equal(3, states[entry.Id].LapseCount);
+    }
+
+    [Fact]
+    public async Task ReviewStateRepository_GetLeechesAsync_ReturnsOnlyWordsAtOrAboveThreshold()
+    {
+        var wordRepository = new WordRepository(_connectionFactory, _clock);
+        var leechEntry = await wordRepository.GetOrCreateAsync(Language.German, "schwierig");
+        var okEntry = await wordRepository.GetOrCreateAsync(Language.German, "einfach");
+        var reviewRepository = new SqlReviewStateRepository(_connectionFactory);
+
+        await reviewRepository.UpsertAsync(new WordReviewState { WordEntryId = leechEntry.Id, TargetLanguage = Language.Afrikaans, LapseCount = 3 });
+        await reviewRepository.UpsertAsync(new WordReviewState { WordEntryId = okEntry.Id, TargetLanguage = Language.Afrikaans, LapseCount = 1 });
+
+        var leeches = await reviewRepository.GetLeechesAsync(Language.Afrikaans, 3);
+
+        var leech = Assert.Single(leeches);
+        Assert.Equal(leechEntry.Id, leech.WordEntryId);
+    }
+
+    [Fact]
+    public async Task WordRepository_SetStudyContentAsync_RoundTripsArticleSentenceAndHighlights()
+    {
+        var wordRepository = new WordRepository(_connectionFactory, _clock);
+        var entry = await wordRepository.GetOrCreateAsync(Language.German, "buch");
+        await wordRepository.AddTranslationAsync(entry.Id, Language.English, "book", isPreferred: true);
+
+        await wordRepository.SetStudyContentAsync(
+            entry.Id,
+            "das",
+            "Ich las das Buch.",
+            [new SentenceHighlight("las", "Präteritum (simple past) of 'lesen'")]);
+
+        var words = await wordRepository.GetWordsWithPreferredTranslationAsync(Language.German, Language.English);
+
+        var word = Assert.Single(words, w => w.Id == entry.Id);
+        Assert.Equal("das", word.Article);
+        Assert.Equal("Ich las das Buch.", word.ExampleSentence);
+        var highlight = Assert.Single(word.Highlights);
+        Assert.Equal("las", highlight.Word);
+        Assert.Equal("Präteritum (simple past) of 'lesen'", highlight.Reason);
+    }
+
+    [Fact]
+    public async Task WordRepository_SetStudyContentAsync_CalledTwice_ReplacesHighlightsRatherThanAppending()
+    {
+        var wordRepository = new WordRepository(_connectionFactory, _clock);
+        var entry = await wordRepository.GetOrCreateAsync(Language.German, "gehen");
+        await wordRepository.AddTranslationAsync(entry.Id, Language.English, "to go", isPreferred: true);
+
+        await wordRepository.SetStudyContentAsync(entry.Id, null, "Ich ging nach Hause.", [new SentenceHighlight("ging", "past tense")]);
+        await wordRepository.SetStudyContentAsync(entry.Id, null, "Ich gehe nach Hause.", []);
+
+        var words = await wordRepository.GetWordsByIdsAsync([entry.Id], Language.English);
+
+        var word = Assert.Single(words);
+        Assert.Equal("Ich gehe nach Hause.", word.ExampleSentence);
+        Assert.Empty(word.Highlights);
+    }
+
+    [Fact]
+    public async Task WordRepository_GetWordsByIdsAsync_UnknownId_ExcludedFromResults()
+    {
+        var wordRepository = new WordRepository(_connectionFactory, _clock);
+
+        var words = await wordRepository.GetWordsByIdsAsync([999], Language.English);
+
+        Assert.Empty(words);
+    }
+
+    [Fact]
     public async Task CurriculumProgressRepository_MarkCompleted_ThenQuery_ReturnsIt()
     {
         var repository = new SqlCurriculumProgressRepository(_connectionFactory, _clock);

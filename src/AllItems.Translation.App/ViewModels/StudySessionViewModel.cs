@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using AllItems.Translation.Core.Domain;
 using AllItems.Translation.Core.Study;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -41,6 +42,11 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
     private string backText = string.Empty;
 
     [ObservableProperty]
+    private string? exampleSentence;
+
+    public ObservableCollection<SentenceWordViewModel> SentenceWords { get; } = [];
+
+    [ObservableProperty]
     private string progressText = string.Empty;
 
     [ObservableProperty]
@@ -48,6 +54,9 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
 
     [ObservableProperty]
     private int reviewedCount;
+
+    [ObservableProperty]
+    private bool isLeechMode;
 
     [RelayCommand]
     private async Task StartSessionAsync()
@@ -60,6 +69,7 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
 
         StatusMessage = null;
         IsSessionComplete = false;
+        IsLeechMode = false;
         ReviewedCount = 0;
         _currentIndex = 0;
         _cards = await studySessionService.BuildSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
@@ -74,6 +84,36 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
         IsSessionActive = true;
         ShowCurrentCard();
     }
+
+    [RelayCommand]
+    private async Task StartLeechSessionAsync()
+    {
+        if (SourceLanguage == TargetLanguage)
+        {
+            StatusMessage = "Source and target language must be different.";
+            return;
+        }
+
+        StatusMessage = null;
+        IsSessionComplete = false;
+        IsLeechMode = true;
+        ReviewedCount = 0;
+        _currentIndex = 0;
+        _cards = await studySessionService.BuildLeechSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
+
+        if (_cards.Count == 0)
+        {
+            IsSessionActive = false;
+            StatusMessage = "No trouble words yet - keep studying and any tricky words will show up here.";
+            return;
+        }
+
+        IsSessionActive = true;
+        ShowCurrentCard();
+    }
+
+    [RelayCommand]
+    private Task RestartAsync() => IsLeechMode ? StartLeechSessionAsync() : StartSessionAsync();
 
     [RelayCommand]
     private void ShowAnswer() => IsAnswerShown = true;
@@ -100,9 +140,46 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
     private void ShowCurrentCard()
     {
         var card = _cards[_currentIndex];
-        FrontText = card.FrontText;
+        FrontText = card.Article is null ? card.FrontText : $"{card.Article} {card.FrontText}";
         BackText = card.BackText;
+        ExampleSentence = card.ExampleSentence;
+
+        SentenceWords.Clear();
+        foreach (var word in BuildSentenceWords(card.ExampleSentence, card.Highlights))
+        {
+            SentenceWords.Add(word);
+        }
+
         IsAnswerShown = false;
         ProgressText = $"{_currentIndex + 1} / {_cards.Count}";
+    }
+
+    private static IReadOnlyList<SentenceWordViewModel> BuildSentenceWords(string? sentence, IReadOnlyList<SentenceHighlight> highlights)
+    {
+        if (string.IsNullOrWhiteSpace(sentence))
+        {
+            return [];
+        }
+
+        var remaining = new List<SentenceHighlight>(highlights);
+        var tokens = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var result = new List<SentenceWordViewModel>(tokens.Length);
+
+        foreach (var token in tokens)
+        {
+            var stripped = token.Trim('.', ',', '!', '?', ';', ':');
+            var matchIndex = remaining.FindIndex(h => string.Equals(h.Word, stripped, StringComparison.OrdinalIgnoreCase));
+            if (matchIndex >= 0)
+            {
+                result.Add(new SentenceWordViewModel(token, true, remaining[matchIndex].Reason));
+                remaining.RemoveAt(matchIndex);
+            }
+            else
+            {
+                result.Add(new SentenceWordViewModel(token, false, null));
+            }
+        }
+
+        return result;
     }
 }

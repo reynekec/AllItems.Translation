@@ -88,6 +88,27 @@ public class Sm2SchedulerTests
     }
 
     [Fact]
+    public void Schedule_Again_IncrementsLapseCount()
+    {
+        var state = NewCard();
+        state = _scheduler.Schedule(state, ReviewGrade.Again, Now);
+        state = _scheduler.Schedule(state, ReviewGrade.Good, Now);
+        state = _scheduler.Schedule(state, ReviewGrade.Again, Now);
+
+        Assert.Equal(2, state.LapseCount);
+    }
+
+    [Fact]
+    public void Schedule_Good_DoesNotChangeLapseCount()
+    {
+        var state = NewCard();
+        state = _scheduler.Schedule(state, ReviewGrade.Again, Now);
+        state = _scheduler.Schedule(state, ReviewGrade.Good, Now);
+
+        Assert.Equal(1, state.LapseCount);
+    }
+
+    [Fact]
     public void Schedule_PreservesIdentityFields()
     {
         var state = NewCard();
