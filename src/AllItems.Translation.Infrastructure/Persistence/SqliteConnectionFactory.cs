@@ -31,7 +31,11 @@ public sealed class SqliteConnectionFactory(string connectionString)
         connection.Open();
 
         using var pragma = connection.CreateCommand();
-        pragma.CommandText = "PRAGMA foreign_keys = ON;";
+        pragma.CommandText = """
+            PRAGMA foreign_keys = ON;
+            PRAGMA journal_mode = WAL;
+            PRAGMA synchronous = NORMAL;
+            """;
         pragma.ExecuteNonQuery();
 
         return connection;

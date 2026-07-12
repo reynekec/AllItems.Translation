@@ -1,5 +1,6 @@
 using System.Globalization;
 using AllItems.Translation.Core.Abstractions;
+using AllItems.Translation.Core.Curriculum;
 using AllItems.Translation.Core.Domain;
 using Microsoft.Data.Sqlite;
 
@@ -314,6 +315,132 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
 
             transaction.Commit();
         }, cancellationToken);
+
+    public Task ImportWordsAsync(Language language, IReadOnlyList<VocabularyWord> words, CancellationToken cancellationToken = default) =>
+        connectionFactory.RunAsync(connection =>
+        {
+            using var transaction = connection.BeginTransaction();
+
+            foreach (var word in words)
+            {
+                var normalized = word.German.ToLowerInvariant();
+                var entryId = GetOrCreateEntryId(connection, transaction, language, normalized);
+                var existingTranslations = GetTranslationTexts(connection, transaction, entryId, Language.English);
+
+                var alreadyKnown = existingTranslations.Any(t => string.Equals(t, word.English, StringComparison.OrdinalIgnoreCase));
+                if (!alreadyKnown)
+                {
+                    InsertTranslation(connection, transaction, entryId, Language.English, word.English, isPreferred: existingTranslations.Count == 0, clock.UtcNow);
+                }
+
+                if (!string.IsNullOrWhiteSpace(word.ExampleSentence))
+                {
+                    ReplaceStudyContent(connection, transaction, entryId, word.Article, word.ExampleSentence, word.Highlights ?? []);
+                }
+            }
+
+            transaction.Commit();
+        }, cancellationToken);
+
+    private static int GetOrCreateEntryId(SqliteConnection connection, SqliteTransaction transaction, Language language, string normalizedText)
+    {
+        using (var insert = connection.CreateCommand())
+        {
+            insert.Transaction = transaction;
+            insert.CommandText = """
+                INSERT OR IGNORE INTO WordEntries (Language, NormalizedText)
+                VALUES ($language, $text);
+                """;
+            insert.Parameters.AddWithValue("$language", (int)language);
+            insert.Parameters.AddWithValue("$text", normalizedText);
+            insert.ExecuteNonQuery();
+        }
+
+        using var select = connection.CreateCommand();
+        select.Transaction = transaction;
+        select.CommandText = "SELECT Id FROM WordEntries WHERE Language = $language AND NormalizedText = $text;";
+        select.Parameters.AddWithValue("$language", (int)language);
+        select.Parameters.AddWithValue("$text", normalizedText);
+        return Convert.ToInt32(select.ExecuteScalar(), CultureInfo.InvariantCulture);
+    }
+
+    private static List<string> GetTranslationTexts(SqliteConnection connection, SqliteTransaction transaction, int wordEntryId, Language targetLanguage)
+    {
+        using var command = connection.CreateCommand();
+        command.Transaction = transaction;
+        command.CommandText = """
+            SELECT TargetText FROM WordTranslations
+            WHERE WordEntryId = $wordEntryId AND TargetLanguage = $targetLanguage;
+            """;
+        command.Parameters.AddWithValue("$wordEntryId", wordEntryId);
+        command.Parameters.AddWithValue("$targetLanguage", (int)targetLanguage);
+
+        var results = new List<string>();
+        using var reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            results.Add(reader.GetString(0));
+        }
+
+        return results;
+    }
+
+    private static void InsertTranslation(SqliteConnection connection, SqliteTransaction transaction, int wordEntryId, Language targetLanguage, string targetText, bool isPreferred, DateTime createdAtUtc)
+    {
+        if (isPreferred)
+        {
+            ClearPreferred(connection, transaction, wordEntryId, targetLanguage);
+        }
+
+        using var insert = connection.CreateCommand();
+        insert.Transaction = transaction;
+        insert.CommandText = """
+            INSERT INTO WordTranslations (WordEntryId, TargetLanguage, TargetText, IsPreferred, UsageCount, CreatedAtUtc)
+            VALUES ($wordEntryId, $targetLanguage, $targetText, $isPreferred, 0, $createdAtUtc);
+            """;
+        insert.Parameters.AddWithValue("$wordEntryId", wordEntryId);
+        insert.Parameters.AddWithValue("$targetLanguage", (int)targetLanguage);
+        insert.Parameters.AddWithValue("$targetText", targetText);
+        insert.Parameters.AddWithValue("$isPreferred", isPreferred ? 1 : 0);
+        insert.Parameters.AddWithValue("$createdAtUtc", createdAtUtc.ToString("o", CultureInfo.InvariantCulture));
+        insert.ExecuteNonQuery();
+    }
+
+    private static void ReplaceStudyContent(SqliteConnection connection, SqliteTransaction transaction, int wordEntryId, string? article, string exampleSentence, IReadOnlyList<SentenceHighlight> highlights)
+    {
+        using (var update = connection.CreateCommand())
+        {
+            update.Transaction = transaction;
+            update.CommandText = "UPDATE WordEntries SET Article = $article, ExampleSentence = $sentence WHERE Id = $id;";
+            update.Parameters.AddWithValue("$article", (object?)article ?? DBNull.Value);
+            update.Parameters.AddWithValue("$sentence", exampleSentence);
+            update.Parameters.AddWithValue("$id", wordEntryId);
+            update.ExecuteNonQuery();
+        }
+
+        using (var delete = connection.CreateCommand())
+        {
+            delete.Transaction = transaction;
+            delete.CommandText = "DELETE FROM WordSentenceHighlights WHERE WordEntryId = $id;";
+            delete.Parameters.AddWithValue("$id", wordEntryId);
+            delete.ExecuteNonQuery();
+        }
+
+        for (var i = 0; i < highlights.Count; i++)
+        {
+            using var insert = connection.CreateCommand();
+            insert.Transaction = transaction;
+            insert.CommandText = """
+                INSERT INTO WordSentenceHighlights (WordEntryId, WordText, Reason, Position)
+                VALUES ($wordEntryId, $word, $reason, $position);
+                """;
+            insert.Parameters.AddWithValue("$wordEntryId", wordEntryId);
+            insert.Parameters.AddWithValue("$word", highlights[i].Word);
+            insert.Parameters.AddWithValue("$reason", highlights[i].Reason);
+            insert.Parameters.AddWithValue("$position", i);
+            insert.ExecuteNonQuery();
+        }
+    }
 
     public Task DeleteTranslationAsync(int translationId, CancellationToken cancellationToken = default) =>
         connectionFactory.RunAsync(connection =>

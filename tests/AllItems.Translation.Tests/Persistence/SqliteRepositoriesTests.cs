@@ -118,6 +118,42 @@ public sealed class SqliteRepositoriesTests : IDisposable
     }
 
     [Fact]
+    public async Task ImportWordsAsync_ImportsTranslationsAndStudyContentInOneTransaction()
+    {
+        var repository = new WordRepository(_connectionFactory, _clock);
+        var words = new List<VocabularyWord>
+        {
+            new("Apfel", "apple", "der", "Der Apfel ist rot.", [new SentenceHighlight("Apfel", "noun")]),
+            new("gehen", "to go")
+        };
+
+        await repository.ImportWordsAsync(Language.German, words);
+
+        var all = await repository.GetAllWithTranslationsAsync();
+        var apfel = Assert.Single(all, w => w.NormalizedText == "apfel");
+        Assert.Equal("der", apfel.Article);
+        Assert.Equal("Der Apfel ist rot.", apfel.ExampleSentence);
+        Assert.Equal("apple", Assert.Single(apfel.Translations).TargetText);
+
+        var gehen = Assert.Single(all, w => w.NormalizedText == "gehen");
+        Assert.Equal("to go", Assert.Single(gehen.Translations).TargetText);
+    }
+
+    [Fact]
+    public async Task ImportWordsAsync_CalledTwiceForSameWord_DoesNotDuplicateTranslation()
+    {
+        var repository = new WordRepository(_connectionFactory, _clock);
+        var words = new List<VocabularyWord> { new("Hund", "dog") };
+
+        await repository.ImportWordsAsync(Language.German, words);
+        await repository.ImportWordsAsync(Language.German, words);
+
+        var all = await repository.GetAllWithTranslationsAsync();
+        var hund = Assert.Single(all, w => w.NormalizedText == "hund");
+        Assert.Single(hund.Translations);
+    }
+
+    [Fact]
     public async Task SentenceTranslationRepository_SaveThenFind_RoundTrips()
     {
         var repository = new SentenceTranslationRepository(_connectionFactory, _clock);

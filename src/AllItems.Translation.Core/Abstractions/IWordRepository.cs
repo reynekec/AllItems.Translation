@@ -1,3 +1,4 @@
+using AllItems.Translation.Core.Curriculum;
 using AllItems.Translation.Core.Domain;
 
 namespace AllItems.Translation.Core.Abstractions;
@@ -36,4 +37,10 @@ public interface IWordRepository
 
     /// <summary>Sets (overwriting any previous value) the article, example sentence, and highlighted words for a word entry.</summary>
     Task SetStudyContentAsync(int wordEntryId, string? article, string exampleSentence, IReadOnlyList<SentenceHighlight> highlights, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Imports a whole batch of vocabulary words in a single connection and transaction, instead of one
+    /// connection-open and one commit per word - used for the bulk CEFR-level seed import.
+    /// </summary>
+    Task ImportWordsAsync(Language language, IReadOnlyList<VocabularyWord> words, CancellationToken cancellationToken = default);
 }

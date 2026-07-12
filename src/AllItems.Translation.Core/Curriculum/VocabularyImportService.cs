@@ -15,22 +15,10 @@ public sealed class VocabularyImportService(
             return;
         }
 
-        foreach (var word in seedRepository.GetWords(level))
+        var words = seedRepository.GetWords(level);
+        if (words.Count > 0)
         {
-            var normalized = word.German.ToLowerInvariant();
-            var entry = await wordRepository.GetOrCreateAsync(Language.German, normalized, cancellationToken);
-            var existing = await wordRepository.GetTranslationsAsync(entry.Id, Language.English, cancellationToken);
-
-            var alreadyKnown = existing.Any(t => string.Equals(t.TargetText, word.English, StringComparison.OrdinalIgnoreCase));
-            if (!alreadyKnown)
-            {
-                await wordRepository.AddTranslationAsync(entry.Id, Language.English, word.English, isPreferred: existing.Count == 0, cancellationToken);
-            }
-
-            if (!string.IsNullOrWhiteSpace(word.ExampleSentence))
-            {
-                await wordRepository.SetStudyContentAsync(entry.Id, word.Article, word.ExampleSentence, word.Highlights ?? [], cancellationToken);
-            }
+            await wordRepository.ImportWordsAsync(Language.German, words, cancellationToken);
         }
 
         await importRepository.MarkLevelImportedAsync(level, cancellationToken);
