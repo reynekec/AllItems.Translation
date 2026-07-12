@@ -10,12 +10,21 @@
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <ui:TitleBar Grid.Row="0" Title="Dictionary Manager" />
 
-        <DataGrid Grid.Row="1" Margin="0,12,0,0"
+        <ui:InfoBar Grid.Row="1"
+                    Margin="0,12,0,0"
+                    Title="Heads up"
+                    Message="{Binding ErrorMessage}"
+                    Severity="Warning"
+                    IsOpen="{Binding ErrorMessage, Converter={StaticResource NullOrEmptyToBoolConverter}}"
+                    Visibility="{Binding ErrorMessage, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
+
+        <DataGrid Grid.Row="2" Margin="0,12,0,0"
                   ItemsSource="{Binding Rows}"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"

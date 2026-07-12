@@ -68,6 +68,13 @@
                                FontStyle="Italic"
                                Opacity="0.7"
                                TextWrapping="Wrap" />
+
+                    <ui:InfoBar Margin="0,8,0,0"
+                                Title="Heads up"
+                                Message="{Binding ErrorMessage}"
+                                Severity="Warning"
+                                IsOpen="{Binding ErrorMessage, Converter={StaticResource NullOrEmptyToBoolConverter}}"
+                                Visibility="{Binding ErrorMessage, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
                 </StackPanel>
             </ui:CardExpander>
         </DataTemplate>

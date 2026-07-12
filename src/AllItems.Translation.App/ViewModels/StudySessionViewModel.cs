@@ -58,7 +58,14 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
     [ObservableProperty]
     private bool isLeechMode;
 
-    [RelayCommand]
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(GradeCommand))]
+    [NotifyCanExecuteChangedFor(nameof(StartSessionCommand))]
+    [NotifyCanExecuteChangedFor(nameof(StartLeechSessionCommand))]
+    [NotifyCanExecuteChangedFor(nameof(RestartCommand))]
+    private bool isBusy;
+
+    [RelayCommand(CanExecute = nameof(CanStart))]
     private async Task StartSessionAsync()
     {
         if (SourceLanguage == TargetLanguage)
@@ -67,25 +74,38 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
             return;
         }
 
+        IsBusy = true;
         StatusMessage = null;
-        IsSessionComplete = false;
-        IsLeechMode = false;
-        ReviewedCount = 0;
-        _currentIndex = 0;
-        _cards = await studySessionService.BuildSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
+        try
+        {
+            IsSessionComplete = false;
+            IsLeechMode = false;
+            ReviewedCount = 0;
+            _currentIndex = 0;
+            _cards = await studySessionService.BuildSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
 
-        if (_cards.Count == 0)
+            if (_cards.Count == 0)
+            {
+                IsSessionActive = false;
+                StatusMessage = "No due or new words for this language pair yet - keep translating sentences to build up your dictionary.";
+                return;
+            }
+
+            IsSessionActive = true;
+            ShowCurrentCard();
+        }
+        catch (Exception ex)
         {
             IsSessionActive = false;
-            StatusMessage = "No due or new words for this language pair yet - keep translating sentences to build up your dictionary.";
-            return;
+            StatusMessage = $"Couldn't start the session: {ex.Message}";
         }
-
-        IsSessionActive = true;
-        ShowCurrentCard();
+        finally
+        {
+            IsBusy = false;
+        }
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanStart))]
     private async Task StartLeechSessionAsync()
     {
         if (SourceLanguage == TargetLanguage)
@@ -94,25 +114,40 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
             return;
         }
 
+        IsBusy = true;
         StatusMessage = null;
-        IsSessionComplete = false;
-        IsLeechMode = true;
-        ReviewedCount = 0;
-        _currentIndex = 0;
-        _cards = await studySessionService.BuildLeechSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
+        try
+        {
+            IsSessionComplete = false;
+            IsLeechMode = true;
+            ReviewedCount = 0;
+            _currentIndex = 0;
+            _cards = await studySessionService.BuildLeechSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
 
-        if (_cards.Count == 0)
+            if (_cards.Count == 0)
+            {
+                IsSessionActive = false;
+                StatusMessage = "No trouble words yet - keep studying and any tricky words will show up here.";
+                return;
+            }
+
+            IsSessionActive = true;
+            ShowCurrentCard();
+        }
+        catch (Exception ex)
         {
             IsSessionActive = false;
-            StatusMessage = "No trouble words yet - keep studying and any tricky words will show up here.";
-            return;
+            StatusMessage = $"Couldn't start the session: {ex.Message}";
         }
-
-        IsSessionActive = true;
-        ShowCurrentCard();
+        finally
+        {
+            IsBusy = false;
+        }
     }
 
-    [RelayCommand]
+    private bool CanStart() => !IsBusy;
+
+    [RelayCommand(CanExecute = nameof(CanStart))]
     private Task RestartAsync() => IsLeechMode ? StartLeechSessionAsync() : StartSessionAsync();
 
     [RelayCommand]
@@ -121,21 +156,33 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
     [RelayCommand(CanExecute = nameof(CanGrade))]
     private async Task GradeAsync(ReviewGrade grade)
     {
-        await studySessionService.RecordAnswerAsync(_cards[_currentIndex], grade);
-        ReviewedCount++;
-        _currentIndex++;
-
-        if (_currentIndex >= _cards.Count)
+        IsBusy = true;
+        try
         {
-            IsSessionActive = false;
-            IsSessionComplete = true;
-            return;
-        }
+            await studySessionService.RecordAnswerAsync(_cards[_currentIndex], grade);
+            ReviewedCount++;
+            _currentIndex++;
 
-        ShowCurrentCard();
+            if (_currentIndex >= _cards.Count)
+            {
+                IsSessionActive = false;
+                IsSessionComplete = true;
+                return;
+            }
+
+            ShowCurrentCard();
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"Couldn't record that answer: {ex.Message}";
+        }
+        finally
+        {
+            IsBusy = false;
+        }
     }
 
-    private bool CanGrade(ReviewGrade grade) => IsAnswerShown;
+    private bool CanGrade(ReviewGrade grade) => IsAnswerShown && !IsBusy;
 
     private void ShowCurrentCard()
     {
@@ -154,6 +201,32 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
         ProgressText = $"{_currentIndex + 1} / {_cards.Count}";
     }
 
+    /// <summary>
+    /// Some generated highlights describe a multi-word phrase (e.g. "hat ... gebracht" or
+    /// "nächsten Montag") instead of a single token. Splitting on whitespace and dropping
+    /// ellipsis placeholders lets each real word in the phrase match independently in
+    /// <see cref="BuildSentenceWords"/>, which otherwise only compares whole tokens.
+    /// </summary>
+    private static List<SentenceHighlight> ExpandHighlights(IReadOnlyList<SentenceHighlight> highlights)
+    {
+        var expanded = new List<SentenceHighlight>(highlights.Count);
+        foreach (var highlight in highlights)
+        {
+            var normalized = highlight.Word.Replace("...", " ", StringComparison.Ordinal).Replace('…', ' ');
+            foreach (var part in normalized.Split(' ', StringSplitOptions.RemoveEmptyEntries))
+            {
+                if (part.Trim('.', ',', '!', '?', ';', ':', '-').Length == 0)
+                {
+                    continue;
+                }
+
+                expanded.Add(highlight with { Word = part });
+            }
+        }
+
+        return expanded;
+    }
+
     private static IReadOnlyList<SentenceWordViewModel> BuildSentenceWords(string? sentence, IReadOnlyList<SentenceHighlight> highlights)
     {
         if (string.IsNullOrWhiteSpace(sentence))
@@ -161,7 +234,7 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
             return [];
         }
 
-        var remaining = new List<SentenceHighlight>(highlights);
+        var remaining = ExpandHighlights(highlights);
         var tokens = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
         var result = new List<SentenceWordViewModel>(tokens.Length);
 

@@ -16,6 +16,9 @@ public sealed partial class DictionaryManagerViewModel : ObservableObject
     [ObservableProperty]
     private bool isBusy;
 
+    [ObservableProperty]
+    private string? errorMessage;
+
     public DictionaryManagerViewModel(IWordRepository wordRepository)
     {
         _wordRepository = wordRepository;
@@ -26,6 +29,7 @@ public sealed partial class DictionaryManagerViewModel : ObservableObject
     private async Task LoadAsync()
     {
         IsBusy = true;
+        ErrorMessage = null;
         try
         {
             var words = await _wordRepository.GetAllWithTranslationsAsync();
@@ -36,6 +40,10 @@ public sealed partial class DictionaryManagerViewModel : ObservableObject
                 .ToList();
 
             Rows = new ObservableCollection<DictionaryRowViewModel>(list);
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Couldn't load the dictionary: {ex.Message}";
         }
         finally
         {
@@ -51,7 +59,15 @@ public sealed partial class DictionaryManagerViewModel : ObservableObject
             return;
         }
 
-        await _wordRepository.UpdateTranslationTextAsync(row.TranslationId, row.TargetText);
+        ErrorMessage = null;
+        try
+        {
+            await _wordRepository.UpdateTranslationTextAsync(row.TranslationId, row.TargetText);
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Couldn't save that change: {ex.Message}";
+        }
     }
 
     [RelayCommand]
@@ -62,7 +78,15 @@ public sealed partial class DictionaryManagerViewModel : ObservableObject
             return;
         }
 
-        await _wordRepository.DeleteTranslationAsync(row.TranslationId);
-        Rows.Remove(row);
+        ErrorMessage = null;
+        try
+        {
+            await _wordRepository.DeleteTranslationAsync(row.TranslationId);
+            Rows.Remove(row);
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Couldn't delete that entry: {ex.Message}";
+        }
     }
 }

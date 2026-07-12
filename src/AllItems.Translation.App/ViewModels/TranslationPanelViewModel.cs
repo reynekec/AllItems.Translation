@@ -27,6 +27,9 @@ public sealed partial class TranslationPanelViewModel : ObservableObject
     [ObservableProperty]
     private bool isBusy;
 
+    [ObservableProperty]
+    private string? errorMessage;
+
     public TranslationPanelViewModel(ISentenceTranslationService translationService, Language targetLanguage)
     {
         _translationService = translationService;
@@ -50,13 +53,26 @@ public sealed partial class TranslationPanelViewModel : ObservableObject
     [RelayCommand]
     private async Task CycleWordAsync(SlotViewModel? slot)
     {
-        if (slot is null || _current is null)
+        if (slot is null || _current is null || IsBusy)
         {
             return;
         }
 
-        _current = await _translationService.CycleWordMeaningAsync(_current, slot.TokenIndex);
-        Rebuild();
+        IsBusy = true;
+        ErrorMessage = null;
+        try
+        {
+            _current = await _translationService.CycleWordMeaningAsync(_current, slot.TokenIndex);
+            Rebuild();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Couldn't cycle that word: {ex.Message}";
+        }
+        finally
+        {
+            IsBusy = false;
+        }
     }
 
     private void Rebuild()
