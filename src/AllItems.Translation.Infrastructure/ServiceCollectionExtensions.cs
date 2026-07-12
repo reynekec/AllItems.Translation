@@ -6,6 +6,7 @@ using AllItems.Translation.Core.Translation;
 using AllItems.Translation.Infrastructure.Credentials;
 using AllItems.Translation.Infrastructure.GoogleTranslation;
 using AllItems.Translation.Infrastructure.Persistence;
+using AllItems.Translation.Infrastructure.Vocabulary;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AllItems.Translation.Infrastructure;
@@ -38,6 +39,10 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IExerciseGrader, ExerciseGrader>();
         services.AddSingleton<ICurriculumProgressRepository, SqlCurriculumProgressRepository>();
         services.AddSingleton<ICurriculumService, CurriculumService>();
+
+        services.AddSingleton<IVocabularySeedRepository, EmbeddedVocabularySeedRepository>();
+        services.AddSingleton<IVocabularyImportRepository, SqlVocabularyImportRepository>();
+        services.AddSingleton<IVocabularyImportService, VocabularyImportService>();
 
         return services;
     }

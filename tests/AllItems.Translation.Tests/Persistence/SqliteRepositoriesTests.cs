@@ -1,4 +1,5 @@
 using AllItems.Translation.Core.Abstractions;
+using AllItems.Translation.Core.Curriculum;
 using AllItems.Translation.Core.Domain;
 using AllItems.Translation.Infrastructure.Persistence;
 
@@ -277,5 +278,35 @@ public sealed class SqliteRepositoriesTests : IDisposable
         var completed = await repository.GetCompletedExerciseIdsAsync([]);
 
         Assert.Empty(completed);
+    }
+
+    [Fact]
+    public async Task VocabularyImportRepository_UnmarkedLevel_IsNotImported()
+    {
+        var repository = new SqlVocabularyImportRepository(_connectionFactory, _clock);
+
+        Assert.False(await repository.IsLevelImportedAsync(CefrLevel.A1));
+    }
+
+    [Fact]
+    public async Task VocabularyImportRepository_MarkLevelImported_ThenQuery_ReturnsTrue()
+    {
+        var repository = new SqlVocabularyImportRepository(_connectionFactory, _clock);
+
+        await repository.MarkLevelImportedAsync(CefrLevel.A1);
+
+        Assert.True(await repository.IsLevelImportedAsync(CefrLevel.A1));
+        Assert.False(await repository.IsLevelImportedAsync(CefrLevel.A2));
+    }
+
+    [Fact]
+    public async Task VocabularyImportRepository_MarkLevelImportedTwice_DoesNotThrow()
+    {
+        var repository = new SqlVocabularyImportRepository(_connectionFactory, _clock);
+
+        await repository.MarkLevelImportedAsync(CefrLevel.B1);
+        await repository.MarkLevelImportedAsync(CefrLevel.B1);
+
+        Assert.True(await repository.IsLevelImportedAsync(CefrLevel.B1));
     }
 }

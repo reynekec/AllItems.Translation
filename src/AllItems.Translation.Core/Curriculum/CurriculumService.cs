@@ -7,7 +7,8 @@ public sealed class CurriculumService(
     ICurriculumCatalog catalog,
     ICurriculumProgressRepository progressRepository,
     IExerciseGrader grader,
-    IWordRepository wordRepository) : ICurriculumService
+    IWordRepository wordRepository,
+    IVocabularyImportService vocabularyImportService) : ICurriculumService
 {
     public async Task<IReadOnlyList<LevelSummary>> GetLevelSummariesAsync(CancellationToken cancellationToken = default)
     {
@@ -25,6 +26,11 @@ public sealed class CurriculumService(
                 var exerciseIds = units.SelectMany(u => u.Exercises).Select(e => e.Id).ToList();
                 var completedIds = await progressRepository.GetCompletedExerciseIdsAsync(exerciseIds, cancellationToken);
                 completedUnitCount = units.Count(u => u.Exercises.All(e => completedIds.Contains(e.Id)));
+            }
+
+            if (isUnlocked)
+            {
+                await vocabularyImportService.EnsureLevelImportedAsync(level, cancellationToken);
             }
 
             summaries.Add(new LevelSummary(level, isUnlocked, completedUnitCount, units.Count));

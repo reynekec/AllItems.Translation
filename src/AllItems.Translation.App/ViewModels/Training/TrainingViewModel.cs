@@ -32,15 +32,26 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
     [ObservableProperty]
     private bool isUnitComplete;
 
+    [ObservableProperty]
+    private bool isLoadingLevels;
+
     public void Initialize() => _ = LoadLevelsAsync();
 
     private async Task LoadLevelsAsync()
     {
-        var summaries = await curriculumService.GetLevelSummariesAsync();
-        Levels.Clear();
-        foreach (var summary in summaries)
+        IsLoadingLevels = true;
+        try
         {
-            Levels.Add(new LevelTileViewModel(summary));
+            var summaries = await curriculumService.GetLevelSummariesAsync();
+            Levels.Clear();
+            foreach (var summary in summaries)
+            {
+                Levels.Add(new LevelTileViewModel(summary));
+            }
+        }
+        finally
+        {
+            IsLoadingLevels = false;
         }
     }
 

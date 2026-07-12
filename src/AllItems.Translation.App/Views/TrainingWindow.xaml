@@ -112,23 +112,31 @@
         <Grid Grid.Row="1" Margin="0,16,0,0">
 
             <!-- Levels screen -->
-            <StackPanel Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Levels}">
-                <TextBlock Text="Choose a level" FontSize="22" FontWeight="SemiBold" Margin="0,0,0,16" />
-                <ItemsControl ItemsSource="{Binding Levels}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <ui:CardAction Margin="0,0,0,10" IsEnabled="{Binding IsClickable}"
-                                           Command="{Binding DataContext.OpenLevelCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                           CommandParameter="{Binding}">
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Level}" FontSize="18" FontWeight="SemiBold" />
-                                    <TextBlock Text="{Binding StatusText}" Opacity="0.7" Margin="0,4,0,0" />
-                                </StackPanel>
-                            </ui:CardAction>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
+            <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Levels}">
+                <StackPanel Visibility="{Binding IsLoadingLevels, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+                    <TextBlock Text="Choose a level" FontSize="22" FontWeight="SemiBold" Margin="0,0,0,16" />
+                    <ItemsControl ItemsSource="{Binding Levels}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ui:CardAction Margin="0,0,0,10" IsEnabled="{Binding IsClickable}"
+                                               Command="{Binding DataContext.OpenLevelCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                               CommandParameter="{Binding}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Level}" FontSize="18" FontWeight="SemiBold" />
+                                        <TextBlock Text="{Binding StatusText}" Opacity="0.7" Margin="0,4,0,0" />
+                                    </StackPanel>
+                                </ui:CardAction>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Visibility="{Binding IsLoadingLevels, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <ui:ProgressRing IsIndeterminate="True" Width="40" Height="40" />
+                    <TextBlock Text="Loading vocabulary..." Opacity="0.7" Margin="0,12,0,0" HorizontalAlignment="Center" />
+                </StackPanel>
+            </Grid>
 
             <!-- Units screen -->
             <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Units}">

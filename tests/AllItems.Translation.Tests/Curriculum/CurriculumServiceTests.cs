@@ -11,8 +11,9 @@ public class CurriculumServiceTests
     private readonly Mock<ICurriculumProgressRepository> _progressRepository = new();
     private readonly Mock<IExerciseGrader> _grader = new();
     private readonly Mock<IWordRepository> _wordRepository = new();
+    private readonly Mock<IVocabularyImportService> _vocabularyImportService = new();
 
-    private CurriculumService CreateService() => new(_catalog.Object, _progressRepository.Object, _grader.Object, _wordRepository.Object);
+    private CurriculumService CreateService() => new(_catalog.Object, _progressRepository.Object, _grader.Object, _wordRepository.Object, _vocabularyImportService.Object);
 
     private static CurriculumUnit UnitWithExercises(CefrLevel level, string id, int exerciseCount) => new()
     {

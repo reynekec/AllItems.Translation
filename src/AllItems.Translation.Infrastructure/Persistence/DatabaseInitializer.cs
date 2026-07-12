@@ -67,6 +67,14 @@ public sealed class DatabaseInitializer(SqliteConnectionFactory connectionFactor
                 );
                 CREATE UNIQUE INDEX IF NOT EXISTS IX_CurriculumExerciseProgress_ExerciseId
                     ON CurriculumExerciseProgress (ExerciseId);
+
+                CREATE TABLE IF NOT EXISTS VocabularyLevelImports (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Level INTEGER NOT NULL,
+                    ImportedAtUtc TEXT NOT NULL
+                );
+                CREATE UNIQUE INDEX IF NOT EXISTS IX_VocabularyLevelImports_Level
+                    ON VocabularyLevelImports (Level);
                 """;
             command.ExecuteNonQuery();
         }, cancellationToken);
