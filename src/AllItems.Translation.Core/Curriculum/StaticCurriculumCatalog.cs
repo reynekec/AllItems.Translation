@@ -2,10 +2,7 @@ using AllItems.Translation.Core.Curriculum.Content;
 
 namespace AllItems.Translation.Core.Curriculum;
 
-/// <summary>
-/// Aggregates hand-authored curriculum content per level. C2 is intentionally empty for now -
-/// see <see cref="ICurriculumService"/>'s unlock rule for how an empty level is handled.
-/// </summary>
+/// <summary>Aggregates hand-authored curriculum content per level - the full A1-C2 progression.</summary>
 public sealed class StaticCurriculumCatalog : ICurriculumCatalog
 {
     public IReadOnlyList<CurriculumUnit> GetUnits(CefrLevel level) => level switch
@@ -15,7 +12,7 @@ public sealed class StaticCurriculumCatalog : ICurriculumCatalog
         CefrLevel.B1 => B1Units.All,
         CefrLevel.B2 => B2Units.All,
         CefrLevel.C1 => C1Units.All,
-        CefrLevel.C2 => [],
+        CefrLevel.C2 => C2Units.All,
         _ => throw new ArgumentOutOfRangeException(nameof(level), level, null)
     };
 }

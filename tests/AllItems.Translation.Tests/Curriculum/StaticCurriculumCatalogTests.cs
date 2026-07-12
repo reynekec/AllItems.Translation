@@ -6,40 +6,16 @@ public class StaticCurriculumCatalogTests
 {
     private readonly StaticCurriculumCatalog _catalog = new();
 
-    [Fact]
-    public void GetUnits_A1_ReturnsAuthoredContent()
+    [Theory]
+    [InlineData(CefrLevel.A1)]
+    [InlineData(CefrLevel.A2)]
+    [InlineData(CefrLevel.B1)]
+    [InlineData(CefrLevel.B2)]
+    [InlineData(CefrLevel.C1)]
+    [InlineData(CefrLevel.C2)]
+    public void GetUnits_EveryLevel_ReturnsAuthoredContent(CefrLevel level)
     {
-        Assert.NotEmpty(_catalog.GetUnits(CefrLevel.A1));
-    }
-
-    [Fact]
-    public void GetUnits_A2_ReturnsAuthoredContent()
-    {
-        Assert.NotEmpty(_catalog.GetUnits(CefrLevel.A2));
-    }
-
-    [Fact]
-    public void GetUnits_B1_ReturnsAuthoredContent()
-    {
-        Assert.NotEmpty(_catalog.GetUnits(CefrLevel.B1));
-    }
-
-    [Fact]
-    public void GetUnits_B2_ReturnsAuthoredContent()
-    {
-        Assert.NotEmpty(_catalog.GetUnits(CefrLevel.B2));
-    }
-
-    [Fact]
-    public void GetUnits_C1_ReturnsAuthoredContent()
-    {
-        Assert.NotEmpty(_catalog.GetUnits(CefrLevel.C1));
-    }
-
-    [Fact]
-    public void GetUnits_C2_IsNotYetAuthored()
-    {
-        Assert.Empty(_catalog.GetUnits(CefrLevel.C2));
+        Assert.NotEmpty(_catalog.GetUnits(level));
     }
 
     [Fact]
