@@ -171,15 +171,23 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
     public Task<IReadOnlyList<WordEntry>> GetWordsWithPreferredTranslationAsync(Language sourceLanguage, Language targetLanguage, CancellationToken cancellationToken = default) =>
         connectionFactory.RunAsync(connection =>
         {
+            // Every WordEntry is German-rooted, with translations into the other languages. Studying
+            // "German" from a non-German source (e.g. English -> German) has no German-language WordEntries
+            // to match, so flip the lookup: find the German entry whose preferred translation is the
+            // (non-German) source language instead.
+            var isReverseLookup = sourceLanguage != Language.German && targetLanguage == Language.German;
+            var wordLanguage = isReverseLookup ? targetLanguage : sourceLanguage;
+            var translationLanguage = isReverseLookup ? sourceLanguage : targetLanguage;
+
             using var command = connection.CreateCommand();
             command.CommandText = """
                 SELECT we.Id, we.NormalizedText, we.Article, we.ExampleSentence, wt.Id, wt.TargetText, wt.IsPreferred, wt.UsageCount, wt.CreatedAtUtc
                 FROM WordEntries we
                 JOIN WordTranslations wt ON wt.WordEntryId = we.Id
-                WHERE we.Language = $sourceLanguage AND wt.TargetLanguage = $targetLanguage AND wt.IsPreferred = 1;
+                WHERE we.Language = $wordLanguage AND wt.TargetLanguage = $translationLanguage AND wt.IsPreferred = 1;
                 """;
-            command.Parameters.AddWithValue("$sourceLanguage", (int)sourceLanguage);
-            command.Parameters.AddWithValue("$targetLanguage", (int)targetLanguage);
+            command.Parameters.AddWithValue("$wordLanguage", (int)wordLanguage);
+            command.Parameters.AddWithValue("$translationLanguage", (int)translationLanguage);
 
             var results = new List<WordEntry>();
             using (var reader = command.ExecuteReader())
@@ -190,7 +198,7 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
                     var entry = new WordEntry
                     {
                         Id = entryId,
-                        Language = sourceLanguage,
+                        Language = wordLanguage,
                         NormalizedText = reader.GetString(1),
                         Article = reader.IsDBNull(2) ? null : reader.GetString(2),
                         ExampleSentence = reader.IsDBNull(3) ? null : reader.GetString(3)
@@ -199,7 +207,7 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
                     {
                         Id = reader.GetInt32(4),
                         WordEntryId = entryId,
-                        TargetLanguage = targetLanguage,
+                        TargetLanguage = translationLanguage,
                         TargetText = reader.GetString(5),
                         IsPreferred = reader.GetInt64(6) != 0,
                         UsageCount = reader.GetInt32(7),
@@ -213,7 +221,7 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
             return (IReadOnlyList<WordEntry>)results;
         }, cancellationToken);
 
-    public Task<IReadOnlyList<WordEntry>> GetWordsByIdsAsync(IReadOnlyCollection<int> wordEntryIds, Language targetLanguage, CancellationToken cancellationToken = default) =>
+    public Task<IReadOnlyList<WordEntry>> GetWordsByIdsAsync(IReadOnlyCollection<int> wordEntryIds, Language sourceLanguage, Language targetLanguage, CancellationToken cancellationToken = default) =>
         connectionFactory.RunAsync(connection =>
         {
             var results = new List<WordEntry>();
@@ -221,6 +229,11 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
             {
                 return (IReadOnlyList<WordEntry>)results;
             }
+
+            // See GetWordsWithPreferredTranslationAsync: WordEntries are German-rooted, so studying "German"
+            // from a non-German source means the wanted translation is the source language, not the target.
+            var isReverseLookup = sourceLanguage != Language.German && targetLanguage == Language.German;
+            var translationLanguage = isReverseLookup ? sourceLanguage : targetLanguage;
 
             var ids = wordEntryIds.ToList();
             var parameterNames = ids.Select((_, index) => $"$id{index}").ToList();
@@ -230,10 +243,10 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
                 SELECT we.Id, we.Language, we.NormalizedText, we.Article, we.ExampleSentence,
                        wt.Id, wt.TargetText, wt.IsPreferred, wt.UsageCount, wt.CreatedAtUtc
                 FROM WordEntries we
-                LEFT JOIN WordTranslations wt ON wt.WordEntryId = we.Id AND wt.TargetLanguage = $targetLanguage AND wt.IsPreferred = 1
+                LEFT JOIN WordTranslations wt ON wt.WordEntryId = we.Id AND wt.TargetLanguage = $translationLanguage AND wt.IsPreferred = 1
                 WHERE we.Id IN ({string.Join(",", parameterNames)});
                 """;
-            command.Parameters.AddWithValue("$targetLanguage", (int)targetLanguage);
+            command.Parameters.AddWithValue("$translationLanguage", (int)translationLanguage);
             for (var i = 0; i < ids.Count; i++)
             {
                 command.Parameters.AddWithValue(parameterNames[i], ids[i]);
@@ -259,7 +272,7 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
                         {
                             Id = reader.GetInt32(5),
                             WordEntryId = entryId,
-                            TargetLanguage = targetLanguage,
+                            TargetLanguage = translationLanguage,
                             TargetText = reader.GetString(6),
                             IsPreferred = reader.GetInt64(7) != 0,
                             UsageCount = reader.GetInt32(8),

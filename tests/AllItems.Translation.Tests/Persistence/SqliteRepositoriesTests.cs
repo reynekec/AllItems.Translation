@@ -228,6 +228,22 @@ public sealed class SqliteRepositoriesTests : IDisposable
     }
 
     [Fact]
+    public async Task GetWordsWithPreferredTranslationAsync_NonGermanSourceAndGermanTarget_LooksUpReverseDirection()
+    {
+        var repository = new WordRepository(_connectionFactory, _clock);
+        var entry = await repository.GetOrCreateAsync(Language.German, "hund");
+        await repository.AddTranslationAsync(entry.Id, Language.English, "dog", isPreferred: true);
+
+        var words = await repository.GetWordsWithPreferredTranslationAsync(Language.English, Language.German);
+
+        var word = Assert.Single(words);
+        Assert.Equal("hund", word.NormalizedText);
+        var translation = Assert.Single(word.Translations);
+        Assert.Equal("dog", translation.TargetText);
+        Assert.Equal(Language.English, translation.TargetLanguage);
+    }
+
+    [Fact]
     public async Task ReviewStateRepository_UpsertThenGet_RoundTrips()
     {
         var wordRepository = new WordRepository(_connectionFactory, _clock);
@@ -345,7 +361,7 @@ public sealed class SqliteRepositoriesTests : IDisposable
         await wordRepository.SetStudyContentAsync(entry.Id, null, "Ich ging nach Hause.", [new SentenceHighlight("ging", "past tense")]);
         await wordRepository.SetStudyContentAsync(entry.Id, null, "Ich gehe nach Hause.", []);
 
-        var words = await wordRepository.GetWordsByIdsAsync([entry.Id], Language.English);
+        var words = await wordRepository.GetWordsByIdsAsync([entry.Id], Language.German, Language.English);
 
         var word = Assert.Single(words);
         Assert.Equal("Ich gehe nach Hause.", word.ExampleSentence);
@@ -357,7 +373,7 @@ public sealed class SqliteRepositoriesTests : IDisposable
     {
         var wordRepository = new WordRepository(_connectionFactory, _clock);
 
-        var words = await wordRepository.GetWordsByIdsAsync([999], Language.English);
+        var words = await wordRepository.GetWordsByIdsAsync([999], Language.German, Language.English);
 
         Assert.Empty(words);
     }

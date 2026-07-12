@@ -103,6 +103,25 @@ public class StudySessionServiceTests
     }
 
     [Fact]
+    public async Task BuildSessionAsync_NonGermanSource_SwapsFrontAndBackSoGermanIsTheAnswer()
+    {
+        var word = WordWithTranslation(1, "hund", Language.English, "dog");
+
+        _wordRepository.Setup(r => r.GetWordsWithPreferredTranslationAsync(Language.English, Language.German, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordEntry>)[word]);
+        _reviewStateRepository.Setup(r => r.GetStatesAsync(Language.German, It.IsAny<IReadOnlyCollection<int>>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new Dictionary<int, WordReviewState>());
+
+        var service = CreateService();
+        var session = await service.BuildSessionAsync(Language.English, Language.German, 20);
+
+        var card = Assert.Single(session);
+        Assert.Equal("dog", card.FrontText);
+        Assert.Equal("hund", card.BackText);
+        Assert.False(card.IsGermanFront);
+    }
+
+    [Fact]
     public async Task BuildLeechSessionAsync_NoLeeches_ReturnsEmpty()
     {
         _reviewStateRepository.Setup(r => r.GetLeechesAsync(Language.Afrikaans, 3, It.IsAny<CancellationToken>()))
@@ -112,7 +131,7 @@ public class StudySessionServiceTests
         var session = await service.BuildLeechSessionAsync(Language.German, Language.Afrikaans, 20);
 
         Assert.Empty(session);
-        _wordRepository.Verify(r => r.GetWordsByIdsAsync(It.IsAny<IReadOnlyCollection<int>>(), It.IsAny<Language>(), It.IsAny<CancellationToken>()), Times.Never);
+        _wordRepository.Verify(r => r.GetWordsByIdsAsync(It.IsAny<IReadOnlyCollection<int>>(), It.IsAny<Language>(), It.IsAny<Language>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 
     [Fact]
@@ -123,7 +142,7 @@ public class StudySessionServiceTests
             .ReturnsAsync((IReadOnlyList<WordReviewState>)[leechState]);
 
         var word = WordWithTranslation(1, "hund", Language.Afrikaans, "hond");
-        _wordRepository.Setup(r => r.GetWordsByIdsAsync(It.Is<IReadOnlyCollection<int>>(ids => ids.Contains(1)), Language.Afrikaans, It.IsAny<CancellationToken>()))
+        _wordRepository.Setup(r => r.GetWordsByIdsAsync(It.Is<IReadOnlyCollection<int>>(ids => ids.Contains(1)), Language.German, Language.Afrikaans, It.IsAny<CancellationToken>()))
             .ReturnsAsync((IReadOnlyList<WordEntry>)[word]);
 
         var service = CreateService();
@@ -135,10 +154,30 @@ public class StudySessionServiceTests
     }
 
     [Fact]
+    public async Task BuildLeechSessionAsync_NonGermanSource_SwapsFrontAndBackSoGermanIsTheAnswer()
+    {
+        var leechState = new WordReviewState { WordEntryId = 1, TargetLanguage = Language.German, LapseCount = 3 };
+        _reviewStateRepository.Setup(r => r.GetLeechesAsync(Language.German, 3, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordReviewState>)[leechState]);
+
+        var word = WordWithTranslation(1, "hund", Language.English, "dog");
+        _wordRepository.Setup(r => r.GetWordsByIdsAsync(It.Is<IReadOnlyCollection<int>>(ids => ids.Contains(1)), Language.English, Language.German, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordEntry>)[word]);
+
+        var service = CreateService();
+        var session = await service.BuildLeechSessionAsync(Language.English, Language.German, 20);
+
+        var card = Assert.Single(session);
+        Assert.Equal("dog", card.FrontText);
+        Assert.Equal("hund", card.BackText);
+        Assert.False(card.IsGermanFront);
+    }
+
+    [Fact]
     public async Task RecordAnswerAsync_PersistsSchedulerResult()
     {
         var card = new StudyCard(1, Language.German, "hund", null, null, [], Language.Afrikaans, "hond",
-            new WordReviewState { WordEntryId = 1, TargetLanguage = Language.Afrikaans });
+            new WordReviewState { WordEntryId = 1, TargetLanguage = Language.Afrikaans }, IsGermanFront: true);
         var scheduled = new WordReviewState { WordEntryId = 1, TargetLanguage = Language.Afrikaans, IntervalDays = 6 };
 
         _scheduler.Setup(s => s.Schedule(card.ReviewState, ReviewGrade.Good, Now)).Returns(scheduled);

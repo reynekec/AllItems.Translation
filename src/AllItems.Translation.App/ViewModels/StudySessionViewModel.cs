@@ -151,7 +151,22 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
     private Task RestartAsync() => IsLeechMode ? StartLeechSessionAsync() : StartSessionAsync();
 
     [RelayCommand]
-    private void ShowAnswer() => IsAnswerShown = true;
+    private void ShowAnswer()
+    {
+        IsAnswerShown = true;
+
+        var card = _cards[_currentIndex];
+        if (!card.IsGermanFront)
+        {
+            // The German example sentence would give away the answer if shown alongside the prompt, so it's
+            // only populated once the answer is revealed.
+            ExampleSentence = card.ExampleSentence;
+            foreach (var word in BuildSentenceWords(card.ExampleSentence, card.Highlights))
+            {
+                SentenceWords.Add(word);
+            }
+        }
+    }
 
     [RelayCommand(CanExecute = nameof(CanGrade))]
     private async Task GradeAsync(ReviewGrade grade)
@@ -187,14 +202,29 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
     private void ShowCurrentCard()
     {
         var card = _cards[_currentIndex];
-        FrontText = card.Article is null ? card.FrontText : $"{card.Article} {card.FrontText}";
-        BackText = card.BackText;
-        ExampleSentence = card.ExampleSentence;
+
+        // Article/ExampleSentence/Highlights are always German-language content. When German is the answer
+        // rather than the prompt, they belong on the back and must wait until ShowAnswer reveals it.
+        if (card.IsGermanFront)
+        {
+            FrontText = card.Article is null ? card.FrontText : $"{card.Article} {card.FrontText}";
+            BackText = card.BackText;
+        }
+        else
+        {
+            FrontText = card.FrontText;
+            BackText = card.Article is null ? card.BackText : $"{card.Article} {card.BackText}";
+        }
+
+        ExampleSentence = card.IsGermanFront ? card.ExampleSentence : null;
 
         SentenceWords.Clear();
-        foreach (var word in BuildSentenceWords(card.ExampleSentence, card.Highlights))
+        if (card.IsGermanFront)
         {
-            SentenceWords.Add(word);
+            foreach (var word in BuildSentenceWords(card.ExampleSentence, card.Highlights))
+            {
+                SentenceWords.Add(word);
+            }
         }
 
         IsAnswerShown = false;

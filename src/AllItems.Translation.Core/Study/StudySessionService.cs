@@ -64,7 +64,7 @@ public sealed class StudySessionService(
             return [];
         }
 
-        var words = await wordRepository.GetWordsByIdsAsync(leeches.Select(l => l.WordEntryId).ToList(), targetLanguage, cancellationToken);
+        var words = await wordRepository.GetWordsByIdsAsync(leeches.Select(l => l.WordEntryId).ToList(), sourceLanguage, targetLanguage, cancellationToken);
         var statesByWordId = leeches.ToDictionary(l => l.WordEntryId);
 
         return words
@@ -80,16 +80,26 @@ public sealed class StudySessionService(
         await reviewStateRepository.UpsertAsync(updated, cancellationToken);
     }
 
-    private static StudyCard BuildCard(Language sourceLanguage, Language targetLanguage, WordEntry word, WordReviewState state) => new(
-        word.Id,
-        sourceLanguage,
-        word.NormalizedText,
-        word.Article,
-        word.ExampleSentence,
-        word.Highlights,
-        targetLanguage,
-        word.Translations[0].TargetText,
-        state);
+    private static StudyCard BuildCard(Language sourceLanguage, Language targetLanguage, WordEntry word, WordReviewState state)
+    {
+        // WordEntries are always the German word; word.Translations[0] is the non-German meaning. When the
+        // source language isn't German, the user is being quizzed on German, so the German word is the answer.
+        var isGermanFront = sourceLanguage == Language.German;
+        var germanText = word.NormalizedText;
+        var otherText = word.Translations[0].TargetText;
+
+        return new StudyCard(
+            word.Id,
+            sourceLanguage,
+            isGermanFront ? germanText : otherText,
+            word.Article,
+            word.ExampleSentence,
+            word.Highlights,
+            targetLanguage,
+            isGermanFront ? otherText : germanText,
+            state,
+            isGermanFront);
+    }
 
     private static WordReviewState NewState(int wordEntryId, Language targetLanguage) => new()
     {
