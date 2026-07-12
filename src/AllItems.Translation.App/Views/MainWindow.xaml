@@ -1,0 +1,138 @@
+<ui:FluentWindow x:Class="AllItems.Translation.App.Views.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:vm="clr-namespace:AllItems.Translation.App.ViewModels"
+                 Title="AllItems.Translation"
+                 Height="720" Width="1180"
+                 MinHeight="560" MinWidth="900"
+                 WindowStartupLocation="CenterScreen"
+                 ExtendsContentIntoTitleBar="True"
+                 WindowBackdropType="Mica">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:TranslationPanelViewModel}">
+            <ui:CardExpander Margin="0,0,0,12" IsExpanded="True">
+                <ui:CardExpander.Header>
+                    <TextBlock Text="{Binding TargetLanguage}" FontWeight="SemiBold" FontSize="16" />
+                </ui:CardExpander.Header>
+
+                <StackPanel>
+                    <ItemsControl ItemsSource="{Binding Slots}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ContentControl>
+                                    <ContentControl.Style>
+                                        <Style TargetType="ContentControl">
+                                            <Setter Property="ContentTemplate">
+                                                <Setter.Value>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding DisplayText}" FontSize="16" VerticalAlignment="Center" />
+                                                    </DataTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsClickable}" Value="True">
+                                                    <Setter Property="ContentTemplate">
+                                                        <Setter.Value>
+                                                            <DataTemplate>
+                                                                <ui:Button Content="{Binding DisplayText}"
+                                                                           Style="{StaticResource WordChipButtonStyle}"
+                                                                           Appearance="Secondary"
+                                                                           ToolTip="Click to try another meaning"
+                                                                           Command="{Binding DataContext.CycleWordCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                                                           CommandParameter="{Binding}" />
+                                                            </DataTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ContentControl.Style>
+                                </ContentControl>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <TextBlock Margin="0,10,0,0"
+                               Text="{Binding ReferenceTranslation}"
+                               FontStyle="Italic"
+                               Opacity="0.7"
+                               TextWrapping="Wrap" />
+                </StackPanel>
+            </ui:CardExpander>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Grid.Row="0" Title="AllItems.Translation">
+            <ui:TitleBar.TrailingContent>
+                <StackPanel Orientation="Horizontal">
+                    <ui:Button Content="Dictionary" Appearance="Secondary" Margin="0,0,8,0" Click="OnOpenDictionaryClick" />
+                    <ui:Button Content="Settings" Appearance="Secondary" Margin="0,0,8,0" Click="OnOpenSettingsClick" />
+                </StackPanel>
+            </ui:TitleBar.TrailingContent>
+        </ui:TitleBar>
+
+        <Grid Grid.Row="1" Margin="0,12,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="I'm typing in:" VerticalAlignment="Center" Margin="0,0,12,0" />
+            <ComboBox Grid.Column="1"
+                      ItemsSource="{Binding AvailableSourceLanguages}"
+                      SelectedItem="{Binding SourceLanguage}" />
+        </Grid>
+
+        <ui:InfoBar Grid.Row="2"
+                    Margin="0,0,0,12"
+                    Title="Heads up"
+                    Message="{Binding ErrorMessage}"
+                    Severity="Warning"
+                    IsOpen="{Binding ErrorMessage, Converter={StaticResource NullOrEmptyToBoolConverter}}"
+                    Visibility="{Binding ErrorMessage, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
+
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ui:TextBox Grid.Row="0"
+                        Margin="0,0,0,16"
+                        Text="{Binding SourceText, UpdateSourceTrigger=PropertyChanged}"
+                        PlaceholderText="Type a German, Afrikaans, or English sentence..."
+                        AcceptsReturn="True"
+                        TextWrapping="Wrap"
+                        Height="90"
+                        FontSize="18"
+                        VerticalScrollBarVisibility="Auto" />
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="16" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ContentControl Grid.Column="0" Content="{Binding PanelA}" VerticalAlignment="Top" />
+                <ContentControl Grid.Column="2" Content="{Binding PanelB}" VerticalAlignment="Top" />
+            </Grid>
+        </Grid>
+
+        <TextBlock Grid.Row="4" Margin="0,12,0,0" Opacity="0.6" Text="{Binding UsageCounterText}" HorizontalAlignment="Right" />
+    </Grid>
+</ui:FluentWindow>

@@ -1,0 +1,30 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+
+## Rider / VS
+.vs/
+.idea/
+*.userprefs
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+## Local data & secrets - never committed
+*.db
+*.db-shm
+*.db-wal
+**/credentials/
+service-account*.json
+*.pfx
+
+## OS
+.DS_Store
+Thumbs.db
