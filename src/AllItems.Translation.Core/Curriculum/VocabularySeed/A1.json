@@ -1,3202 +1,5385 @@
 [
   {
     "German": "ich",
-    "English": "I"
+    "English": "I",
+    "ExampleSentence": "Ich wohne in Berlin."
   },
   {
     "German": "sie",
-    "English": "she / they"
+    "English": "she / they",
+    "ExampleSentence": "Sie kocht gern Pasta."
   },
   {
     "German": "das",
-    "English": "that"
+    "English": "that",
+    "ExampleSentence": "Das schmeckt wirklich gut."
   },
   {
     "German": "ist",
-    "English": "is"
+    "English": "is",
+    "ExampleSentence": "Der Kaffee ist heiß."
   },
   {
     "German": "du",
-    "English": "you"
+    "English": "you",
+    "ExampleSentence": "Du lernst sehr schnell."
   },
   {
     "German": "nicht",
-    "English": "not"
+    "English": "not",
+    "ExampleSentence": "Ich verstehe das nicht."
   },
   {
     "German": "die",
-    "English": "the"
+    "English": "the",
+    "ExampleSentence": "Die Sonne scheint heute."
   },
   {
     "German": "es",
-    "English": "it"
+    "English": "it",
+    "ExampleSentence": "Es schmeckt sehr gut."
   },
   {
     "German": "und",
-    "English": "and"
+    "English": "and",
+    "ExampleSentence": "Ich lese und schreibe."
   },
   {
     "German": "der",
-    "English": "the"
+    "English": "the",
+    "ExampleSentence": "Der Zug kommt gleich."
   },
   {
     "German": "wir",
-    "English": "we"
+    "English": "we",
+    "ExampleSentence": "Wir lernen heute Deutsch."
   },
   {
     "German": "was",
-    "English": "what"
+    "English": "what",
+    "ExampleSentence": "Was machst du gerade?"
   },
   {
     "German": "zu",
-    "English": "to"
+    "English": "to",
+    "ExampleSentence": "Der Rock ist zu teuer."
   },
   {
     "German": "er",
-    "English": "he"
+    "English": "he",
+    "ExampleSentence": "Er spielt gern Fußball."
   },
   {
     "German": "ein",
-    "English": "a"
+    "English": "a",
+    "ExampleSentence": "Ein Vogel singt sehr laut."
   },
   {
     "German": "in",
-    "English": "in"
+    "English": "in",
+    "ExampleSentence": "Wir gehen in die Stadt."
   },
   {
     "German": "ja",
-    "English": "yes"
+    "English": "yes",
+    "ExampleSentence": "Ja, das stimmt genau."
   },
   {
     "German": "mir",
-    "English": "me"
+    "English": "me",
+    "ExampleSentence": "Das gefällt mir sehr.",
+    "Highlights": [
+      {
+        "Word": "mir",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "mit",
-    "English": "with"
+    "English": "with",
+    "ExampleSentence": "Ich gehe mit dir.",
+    "Highlights": [
+      {
+        "Word": "dir",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "wie",
-    "English": "how"
+    "English": "how",
+    "ExampleSentence": "Wie geht es dir?",
+    "Highlights": [
+      {
+        "Word": "dir",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "den",
-    "English": "the"
+    "English": "the",
+    "ExampleSentence": "Ich sehe den Mann.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "Accusative masculine article, not nominative"
+      }
+    ]
   },
   {
     "German": "mich",
-    "English": "me"
+    "English": "me",
+    "ExampleSentence": "Er sieht mich heute.",
+    "Highlights": [
+      {
+        "Word": "mich",
+        "Reason": "Accusative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "auf",
-    "English": "on"
+    "English": "on",
+    "ExampleSentence": "Es liegt auf dem Boden.",
+    "Highlights": [
+      {
+        "Word": "dem",
+        "Reason": "Dative article, not nominative"
+      }
+    ]
   },
   {
     "German": "dass",
-    "English": "that"
+    "English": "that",
+    "ExampleSentence": "Ich weiß, dass du kommst."
   },
   {
     "German": "aber",
-    "English": "but"
+    "English": "but",
+    "ExampleSentence": "Ich komme, aber später."
   },
   {
     "German": "eine",
-    "English": "a"
+    "English": "a",
+    "ExampleSentence": "Eine Katze schläft hier."
   },
   {
     "German": "so",
-    "English": "so"
+    "English": "so",
+    "ExampleSentence": "Das Wetter ist so schön."
   },
   {
     "German": "hat",
-    "English": "has"
+    "English": "has",
+    "ExampleSentence": "Sie hat einen Hund.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "Accusative masculine article, not nominative"
+      }
+    ]
   },
   {
     "German": "hier",
-    "English": "here"
+    "English": "here",
+    "ExampleSentence": "Ich wohne jetzt hier."
   },
   {
     "German": "haben",
-    "English": "to have"
+    "English": "to have",
+    "ExampleSentence": "Wir haben heute Zeit."
   },
   {
     "German": "für",
-    "English": "for"
+    "English": "for",
+    "ExampleSentence": "Das Geschenk ist für dich.",
+    "Highlights": [
+      {
+        "Word": "dich",
+        "Reason": "Accusative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "sind",
-    "English": "are"
+    "English": "are",
+    "ExampleSentence": "Wir sind sehr müde."
   },
   {
     "German": "war",
-    "English": "was"
+    "English": "was",
+    "ExampleSentence": "Das Wetter war schön.",
+    "Highlights": [
+      {
+        "Word": "war",
+        "Reason": "Präteritum (past tense) of sein, not present"
+      }
+    ]
   },
   {
     "German": "von",
-    "English": "from"
+    "English": "from",
+    "ExampleSentence": "Das Geschenk kommt von ihm.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "wenn",
-    "English": "if / when"
+    "English": "if / when",
+    "ExampleSentence": "Wenn es regnet, bleibe ich."
   },
   {
     "German": "dich",
-    "English": "you"
+    "English": "you",
+    "ExampleSentence": "Ich mag dich sehr.",
+    "Highlights": [
+      {
+        "Word": "dich",
+        "Reason": "Accusative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "ihr",
-    "English": "you all"
+    "English": "you all",
+    "ExampleSentence": "Ihr lernt sehr gut."
   },
   {
     "German": "nein",
-    "English": "no"
+    "English": "no",
+    "ExampleSentence": "Nein, das stimmt nicht."
   },
   {
     "German": "habe",
-    "English": "have"
+    "English": "have",
+    "ExampleSentence": "Ich habe keine Zeit."
   },
   {
     "German": "an",
-    "English": "at"
+    "English": "at",
+    "ExampleSentence": "Ich warte an der Ecke.",
+    "Highlights": [
+      {
+        "Word": "der",
+        "Reason": "Dative feminine article, not nominative"
+      }
+    ]
   },
   {
     "German": "bin",
-    "English": "am"
+    "English": "am",
+    "ExampleSentence": "Ich bin sehr glücklich."
   },
   {
     "German": "noch",
-    "English": "still"
+    "English": "still",
+    "ExampleSentence": "Ich bin noch müde."
   },
   {
     "German": "nur",
-    "English": "only"
+    "English": "only",
+    "ExampleSentence": "Ich habe nur Wasser."
   },
   {
     "German": "da",
-    "English": "there"
+    "English": "there",
+    "ExampleSentence": "Das Auto steht da."
   },
   {
     "German": "dir",
-    "English": "you"
+    "English": "you",
+    "ExampleSentence": "Ich glaube dir wirklich.",
+    "Highlights": [
+      {
+        "Word": "dir",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "sich",
-    "English": "himself / herself"
+    "English": "himself / herself",
+    "ExampleSentence": "Er freut sich sehr.",
+    "Highlights": [
+      {
+        "Word": "sich",
+        "Reason": "Reflexive pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "einen",
-    "English": "a"
+    "English": "a",
+    "ExampleSentence": "Ich habe einen Bruder.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "Accusative masculine article, not nominative"
+      }
+    ]
   },
   {
     "German": "uns",
-    "English": "us"
+    "English": "us",
+    "ExampleSentence": "Sie besucht uns morgen.",
+    "Highlights": [
+      {
+        "Word": "uns",
+        "Reason": "Accusative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "hast",
-    "English": "have"
+    "English": "have",
+    "ExampleSentence": "Du hast einen Hund.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "Accusative masculine article, not nominative"
+      }
+    ]
   },
   {
     "German": "dem",
-    "English": "the"
+    "English": "the",
+    "ExampleSentence": "Ich helfe dem Kind.",
+    "Highlights": [
+      {
+        "Word": "dem",
+        "Reason": "Dative article, not nominative"
+      }
+    ]
   },
   {
     "German": "kann",
-    "English": "can"
+    "English": "can",
+    "ExampleSentence": "Ich kann gut schwimmen."
   },
   {
     "German": "gut",
-    "English": "good"
+    "English": "good",
+    "ExampleSentence": "Das Essen schmeckt sehr gut."
   },
   {
     "German": "auch",
-    "English": "also"
+    "English": "also",
+    "ExampleSentence": "Ich mag das auch."
   },
   {
     "German": "schon",
-    "English": "already"
+    "English": "already",
+    "ExampleSentence": "Er schläft schon wieder."
   },
   {
     "German": "als",
-    "English": "as / than"
+    "English": "as / than",
+    "ExampleSentence": "Sie ist größer als ich."
   },
   {
     "German": "sein",
-    "English": "his / to be"
+    "English": "his / to be",
+    "ExampleSentence": "Er will Lehrer sein."
   },
   {
     "German": "mal",
-    "English": "once / times"
+    "English": "once / times",
+    "ExampleSentence": "Wir probieren das mal aus."
   },
   {
     "German": "jetzt",
-    "English": "now"
+    "English": "now",
+    "ExampleSentence": "Ich gehe jetzt nach Hause."
   },
   {
     "German": "ihn",
-    "English": "him"
+    "English": "him",
+    "ExampleSentence": "Ich sehe ihn heute.",
+    "Highlights": [
+      {
+        "Word": "ihn",
+        "Reason": "Accusative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "dann",
-    "English": "then"
+    "English": "then",
+    "ExampleSentence": "Wir essen dann zusammen."
   },
   {
     "German": "aus",
-    "English": "out of"
+    "English": "out of",
+    "ExampleSentence": "Er kommt aus Berlin."
   },
   {
     "German": "meine",
-    "English": "my"
+    "English": "my",
+    "ExampleSentence": "Meine Mutter kocht sehr gut."
   },
   {
     "German": "um",
-    "English": "around"
+    "English": "around",
+    "ExampleSentence": "Wir sitzen um den Tisch.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "Accusative masculine article, not nominative"
+      }
+    ]
   },
   {
     "German": "im",
-    "English": "in the"
+    "English": "in the",
+    "ExampleSentence": "Das Buch liegt im Regal.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "Dative contraction (in+dem), not nominative"
+      }
+    ]
   },
   {
     "German": "wird",
-    "English": "becomes / will"
+    "English": "becomes / will",
+    "ExampleSentence": "Er wird bald Arzt."
   },
   {
     "German": "mein",
-    "English": "my"
+    "English": "my",
+    "ExampleSentence": "Mein Vater arbeitet viel."
   },
   {
     "German": "bist",
-    "English": "are"
+    "English": "are",
+    "ExampleSentence": "Du bist sehr nett."
   },
   {
     "German": "doch",
-    "English": "but / yet"
+    "English": "but / yet",
+    "ExampleSentence": "Das stimmt doch wirklich."
   },
   {
     "German": "alles",
-    "English": "everything"
+    "English": "everything",
+    "ExampleSentence": "Alles ist heute anders."
   },
   {
     "German": "weiß",
-    "English": "know"
+    "English": "know",
+    "ExampleSentence": "Ich weiß das genau."
   },
   {
     "German": "keine",
-    "English": "no / none"
+    "English": "no / none",
+    "ExampleSentence": "Ich habe keine Zeit."
   },
   {
     "German": "oder",
-    "English": "or"
+    "English": "or",
+    "ExampleSentence": "Trinkst du Tee oder Kaffee?"
   },
   {
     "German": "nach",
-    "English": "after"
+    "English": "after",
+    "ExampleSentence": "Wir fahren nach Berlin."
   },
   {
     "German": "nichts",
-    "English": "nothing"
+    "English": "nothing",
+    "ExampleSentence": "Ich weiß wirklich nichts."
   },
   {
     "German": "man",
-    "English": "one / you"
+    "English": "one / you",
+    "ExampleSentence": "Man lernt hier sehr viel."
   },
   {
     "German": "muss",
-    "English": "must"
+    "English": "must",
+    "ExampleSentence": "Ich muss jetzt gehen."
   },
   {
     "German": "werden",
-    "English": "to become"
+    "English": "to become",
+    "ExampleSentence": "Ich will Lehrer werden."
   },
   {
     "German": "will",
-    "English": "want"
+    "English": "want",
+    "ExampleSentence": "Ich will das machen."
   },
   {
     "German": "ihnen",
-    "English": "them"
+    "English": "them",
+    "ExampleSentence": "Ich helfe ihnen gern.",
+    "Highlights": [
+      {
+        "Word": "ihnen",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "geht",
-    "English": "goes"
+    "English": "goes",
+    "ExampleSentence": "Das geht wirklich gut."
   },
   {
     "German": "wo",
-    "English": "where"
+    "English": "where",
+    "ExampleSentence": "Wo wohnst du jetzt?"
   },
   {
     "German": "etwas",
-    "English": "something"
+    "English": "something",
+    "ExampleSentence": "Ich brauche etwas Wasser."
   },
   {
     "German": "oh",
-    "English": "oh"
+    "English": "oh",
+    "ExampleSentence": "Oh, das ist schön!"
   },
   {
     "German": "mehr",
-    "English": "more"
+    "English": "more",
+    "ExampleSentence": "Ich brauche mehr Zeit."
   },
   {
     "German": "bei",
-    "English": "at / near"
+    "English": "at / near",
+    "ExampleSentence": "Ich wohne bei meiner Oma.",
+    "Highlights": [
+      {
+        "Word": "meiner",
+        "Reason": "Dative feminine possessive, not nominative"
+      }
+    ]
   },
   {
     "German": "also",
-    "English": "so"
+    "English": "so",
+    "ExampleSentence": "Also, das ist klar."
   },
   {
     "German": "bitte",
-    "English": "please"
+    "English": "please",
+    "ExampleSentence": "Ich brauche bitte deine Hilfe."
   },
   {
     "German": "immer",
-    "English": "always"
+    "English": "always",
+    "ExampleSentence": "Ich trinke immer Wasser."
   },
   {
     "German": "hab",
-    "English": "have"
+    "English": "have",
+    "ExampleSentence": "Ich hab große Angst."
   },
   {
     "German": "warum",
-    "English": "why"
+    "English": "why",
+    "ExampleSentence": "Warum lernst du Deutsch?"
   },
   {
     "German": "vor",
-    "English": "before"
+    "English": "before",
+    "ExampleSentence": "Er wartet vor der Tür.",
+    "Highlights": [
+      {
+        "Word": "der",
+        "Reason": "Dative feminine article, not nominative"
+      }
+    ]
   },
   {
     "German": "los",
-    "English": "go / let's go"
+    "English": "go / let's go",
+    "ExampleSentence": "Los geht's jetzt!"
   },
   {
     "German": "können",
-    "English": "can / to be able"
+    "English": "can / to be able",
+    "ExampleSentence": "Wir können gut kochen."
   },
   {
     "German": "wieder",
-    "English": "again"
+    "English": "again",
+    "ExampleSentence": "Er kommt morgen wieder."
   },
   {
     "German": "sagen",
-    "English": "to say"
+    "English": "to say",
+    "ExampleSentence": "Ich will das sagen."
   },
   {
     "German": "machen",
-    "English": "to make / do"
+    "English": "to make / do",
+    "ExampleSentence": "Wir machen das zusammen."
   },
   {
     "German": "danke",
-    "English": "thanks"
+    "English": "thanks",
+    "ExampleSentence": "Danke, das ist nett."
   },
   {
     "German": "sehr",
-    "English": "very"
+    "English": "very",
+    "ExampleSentence": "Das ist sehr wichtig."
   },
   {
     "German": "alle",
-    "English": "all"
+    "English": "all",
+    "ExampleSentence": "Alle Kinder spielen zusammen."
   },
   {
     "German": "denn",
-    "English": "because"
+    "English": "because",
+    "ExampleSentence": "Ich bleibe, denn es regnet."
   },
   {
     "German": "mann",
-    "English": "man"
+    "English": "man",
+    "Article": "der",
+    "ExampleSentence": "Der Mann arbeitet sehr viel."
   },
   {
     "German": "tun",
-    "English": "to do"
+    "English": "to do",
+    "ExampleSentence": "Ich will das tun."
   },
   {
     "German": "ihm",
-    "English": "him"
+    "English": "him",
+    "ExampleSentence": "Ich glaube ihm nicht.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "zum",
-    "English": "to the"
+    "English": "to the",
+    "ExampleSentence": "Wir gehen zum Bahnhof.",
+    "Highlights": [
+      {
+        "Word": "zum",
+        "Reason": "Dative contraction (zu+dem), not nominative"
+      }
+    ]
   },
   {
     "German": "gehen",
-    "English": "to go"
+    "English": "to go",
+    "ExampleSentence": "Wir gehen jetzt nach Hause."
   },
   {
     "German": "sehen",
-    "English": "to see"
+    "English": "to see",
+    "ExampleSentence": "Ich sehe die Sonne."
   },
   {
     "German": "vielleicht",
-    "English": "maybe"
+    "English": "maybe",
+    "ExampleSentence": "Vielleicht regnet es morgen."
   },
   {
     "German": "einem",
-    "English": "a"
+    "English": "a",
+    "ExampleSentence": "Ich gebe einem Kind Brot.",
+    "Highlights": [
+      {
+        "Word": "einem",
+        "Reason": "Dative article, not nominative"
+      }
+    ]
   },
   {
     "German": "wer",
-    "English": "who"
+    "English": "who",
+    "ExampleSentence": "Wer kommt heute Abend?"
   },
   {
     "German": "ihre",
-    "English": "her / their"
+    "English": "her / their",
+    "ExampleSentence": "Ihre Tasche ist rot."
   },
   {
     "German": "diese",
-    "English": "this / these"
+    "English": "this / these",
+    "ExampleSentence": "Diese Suppe schmeckt sehr lecker."
   },
   {
     "German": "euch",
-    "English": "you all"
+    "English": "you all",
+    "ExampleSentence": "Ich sehe euch morgen.",
+    "Highlights": [
+      {
+        "Word": "euch",
+        "Reason": "Accusative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "einer",
-    "English": "a / one"
+    "English": "a / one",
+    "ExampleSentence": "Einer muss das machen."
   },
   {
     "German": "komm",
-    "English": "come"
+    "English": "come",
+    "ExampleSentence": "Komm bitte schnell her!",
+    "Highlights": [
+      {
+        "Word": "Komm",
+        "Reason": "Imperative form, not present indicative"
+      }
+    ]
   },
   {
     "German": "über",
-    "English": "over / about"
+    "English": "over / about",
+    "ExampleSentence": "Wir sprechen über das Wetter."
   },
   {
     "German": "gibt",
-    "English": "gives / there is"
+    "English": "gives / there is",
+    "ExampleSentence": "Es gibt viele Bücher."
   },
   {
     "German": "okay",
-    "English": "okay"
+    "English": "okay",
+    "ExampleSentence": "Okay, das ist gut."
   },
   {
     "German": "wissen",
-    "English": "to know"
+    "English": "to know",
+    "ExampleSentence": "Wir wissen das schon."
   },
   {
     "German": "deine",
-    "English": "your"
+    "English": "your",
+    "ExampleSentence": "Deine Idee ist super."
   },
   {
     "German": "müssen",
-    "English": "to have to"
+    "English": "to have to",
+    "ExampleSentence": "Wir müssen jetzt gehen."
   },
   {
     "German": "soll",
-    "English": "should"
+    "English": "should",
+    "ExampleSentence": "Er soll mehr lernen."
   },
   {
     "German": "werde",
-    "English": "will (I)"
+    "English": "will (I)",
+    "ExampleSentence": "Ich werde bald kommen.",
+    "Highlights": [
+      {
+        "Word": "werde",
+        "Reason": "Futur I construction (werde + infinitive), not simple present"
+      }
+    ]
   },
   {
     "German": "nie",
-    "English": "never"
+    "English": "never",
+    "ExampleSentence": "Ich vergesse das nie."
   },
   {
     "German": "wirklich",
-    "English": "really"
+    "English": "really",
+    "ExampleSentence": "Das ist wirklich schön."
   },
   {
     "German": "hey",
-    "English": "hey"
+    "English": "hey",
+    "ExampleSentence": "Hey, wie geht's dir?",
+    "Highlights": [
+      {
+        "Word": "dir",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "kein",
-    "English": "no / none"
+    "English": "no / none",
+    "ExampleSentence": "Das ist kein Problem."
   },
   {
     "German": "viel",
-    "English": "a lot"
+    "English": "a lot",
+    "ExampleSentence": "Ich habe viel Arbeit."
   },
   {
     "German": "weg",
-    "English": "away"
+    "English": "away",
+    "ExampleSentence": "Die Katze läuft schnell weg."
   },
   {
     "German": "würde",
-    "English": "would"
+    "English": "would",
+    "ExampleSentence": "Ich würde gern helfen.",
+    "Highlights": [
+      {
+        "Word": "würde",
+        "Reason": "Konjunktiv II (would), not present indicative"
+      }
+    ]
   },
   {
     "German": "tut",
-    "English": "does / hurts"
+    "English": "does / hurts",
+    "ExampleSentence": "Das tut wirklich weh."
   },
   {
     "German": "am",
-    "English": "at the"
+    "English": "at the",
+    "ExampleSentence": "Das Konzert ist am Montag.",
+    "Highlights": [
+      {
+        "Word": "am",
+        "Reason": "Dative contraction (an+dem), not nominative"
+      }
+    ]
   },
   {
     "German": "des",
-    "English": "of the"
+    "English": "of the",
+    "ExampleSentence": "Das Ende des Films kommt.",
+    "Highlights": [
+      {
+        "Word": "des",
+        "Reason": "Genitive case, not nominative"
+      }
+    ]
   },
   {
     "German": "einfach",
-    "English": "simple / just"
+    "English": "simple / just",
+    "ExampleSentence": "Das ist einfach super."
   },
   {
     "German": "leben",
-    "English": "life / to live"
+    "English": "life / to live",
+    "ExampleSentence": "Wir leben hier sehr gern."
   },
   {
     "German": "hatte",
-    "English": "had"
+    "English": "had",
+    "ExampleSentence": "Ich hatte keine Zeit.",
+    "Highlights": [
+      {
+        "Word": "hatte",
+        "Reason": "Präteritum (past tense) of haben, not present"
+      }
+    ]
   },
   {
     "German": "zeit",
-    "English": "time"
+    "English": "time",
+    "Article": "die",
+    "ExampleSentence": "Die Zeit vergeht sehr schnell."
   },
   {
     "German": "weil",
-    "English": "because"
+    "English": "because",
+    "ExampleSentence": "Ich bleibe, weil es regnet."
   },
   {
     "German": "willst",
-    "English": "want"
+    "English": "want",
+    "ExampleSentence": "Was willst du jetzt?"
   },
   {
     "German": "kommen",
-    "English": "to come"
+    "English": "to come",
+    "ExampleSentence": "Sie wollen morgen kommen."
   },
   {
     "German": "dein",
-    "English": "your"
+    "English": "your",
+    "ExampleSentence": "Dein Hund ist süß."
   },
   {
     "German": "heute",
-    "English": "today"
+    "English": "today",
+    "ExampleSentence": "Ich arbeite heute nicht."
   },
   {
     "German": "kommt",
-    "English": "comes"
+    "English": "comes",
+    "ExampleSentence": "Der Bus kommt gleich."
   },
   {
     "German": "wollen",
-    "English": "to want"
+    "English": "to want",
+    "ExampleSentence": "Wir wollen das machen."
   },
   {
     "German": "damit",
-    "English": "so that"
+    "English": "so that",
+    "ExampleSentence": "Ich lerne, damit ich bestehe."
   },
   {
     "German": "ganz",
-    "English": "whole / quite"
+    "English": "whole / quite",
+    "ExampleSentence": "Das Baby ist ganz klein."
   },
   {
     "German": "wäre",
-    "English": "would be"
+    "English": "would be",
+    "ExampleSentence": "Das wäre wirklich schön.",
+    "Highlights": [
+      {
+        "Word": "wäre",
+        "Reason": "Konjunktiv II (would be) of sein, not present indicative"
+      }
+    ]
   },
   {
     "German": "wollte",
-    "English": "wanted"
+    "English": "wanted",
+    "ExampleSentence": "Ich wollte das machen.",
+    "Highlights": [
+      {
+        "Word": "wollte",
+        "Reason": "Präteritum (past tense) of wollen, not present"
+      }
+    ]
   },
   {
     "German": "weißt",
-    "English": "know"
+    "English": "know",
+    "ExampleSentence": "Weißt du die Antwort?"
   },
   {
     "German": "sicher",
-    "English": "sure"
+    "English": "sure",
+    "ExampleSentence": "Das Ergebnis ist sicher richtig."
   },
   {
     "German": "gesagt",
-    "English": "said"
+    "English": "said",
+    "ExampleSentence": "Er hat nichts gesagt.",
+    "Highlights": [
+      {
+        "Word": "gesagt",
+        "Reason": "Partizip II (past participle) in Perfekt tense, not present"
+      }
+    ]
   },
   {
     "German": "frau",
-    "English": "woman"
+    "English": "woman",
+    "Article": "die",
+    "ExampleSentence": "Die Frau liest ein Buch."
   },
   {
     "German": "nun",
-    "English": "now"
+    "English": "now",
+    "ExampleSentence": "Nun beginnt der Unterricht."
   },
   {
     "German": "bis",
-    "English": "until"
+    "English": "until",
+    "ExampleSentence": "Ich bleibe bis morgen hier."
   },
   {
     "German": "wurde",
-    "English": "became / was"
+    "English": "became / was",
+    "ExampleSentence": "Das Auto wurde repariert.",
+    "Highlights": [
+      {
+        "Word": "wurde",
+        "Reason": "Präteritum passive auxiliary, not present tense"
+      },
+      {
+        "Word": "repariert",
+        "Reason": "Partizip II (past participle) in passive construction, not present"
+      }
+    ]
   },
   {
     "German": "leid",
-    "English": "sorry"
+    "English": "sorry",
+    "ExampleSentence": "Es tut mir leid.",
+    "Highlights": [
+      {
+        "Word": "mir",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "na",
-    "English": "well"
+    "English": "well",
+    "ExampleSentence": "Na, wie geht's dir?",
+    "Highlights": [
+      {
+        "Word": "dir",
+        "Reason": "Dative pronoun, not nominative case"
+      }
+    ]
   },
   {
     "German": "kannst",
-    "English": "can"
+    "English": "can",
+    "ExampleSentence": "Kannst du das machen?"
   },
   {
     "German": "macht",
-    "English": "makes / does"
+    "English": "makes / does",
+    "ExampleSentence": "Das macht wirklich Spaß."
   },
   {
     "German": "dieser",
-    "English": "this"
+    "English": "this",
+    "ExampleSentence": "Dieser Kaffee schmeckt sehr gut."
   },
   {
     "German": "zurück",
-    "English": "back"
+    "English": "back",
+    "ExampleSentence": "Ich komme später zurück."
   },
   {
     "German": "lassen",
-    "English": "to let"
+    "English": "to let",
+    "ExampleSentence": "Ich lasse ihn schlafen."
   },
   {
     "German": "hallo",
-    "English": "hello"
+    "English": "hello",
+    "ExampleSentence": "Hallo, wie geht es?"
   },
   {
     "German": "meinen",
-    "English": "to mean"
+    "English": "to mean",
+    "ExampleSentence": "Was meinst du damit?"
   },
   {
     "German": "gott",
-    "English": "god"
+    "English": "god",
+    "Article": "der",
+    "ExampleSentence": "Er glaubt an Gott."
   },
   {
     "German": "seine",
-    "English": "his"
+    "English": "his",
+    "ExampleSentence": "Er liebt seine Katze."
   },
   {
     "German": "hätte",
-    "English": "would have"
+    "English": "would have",
+    "ExampleSentence": "Ich hätte gern Kaffee.",
+    "Highlights": [
+      {
+        "Word": "hätte",
+        "Reason": "Konjunktiv II (subjunctive) form of haben, not present tense"
+      }
+    ]
   },
   {
     "German": "zwei",
-    "English": "two"
+    "English": "two",
+    "ExampleSentence": "Ich habe zwei Katzen."
   },
   {
     "German": "könnte",
-    "English": "could"
+    "English": "could",
+    "ExampleSentence": "Ich könnte dir helfen.",
+    "Highlights": [
+      {
+        "Word": "könnte",
+        "Reason": "Konjunktiv II (subjunctive) form of können, not present tense"
+      }
+    ]
   },
   {
     "German": "genau",
-    "English": "exactly"
+    "English": "exactly",
+    "ExampleSentence": "Das stimmt genau so."
   },
   {
     "German": "waren",
-    "English": "were"
+    "English": "were",
+    "ExampleSentence": "Wir waren gestern müde.",
+    "Highlights": [
+      {
+        "Word": "waren",
+        "Reason": "Präteritum (past tense) form of sein, not present tense"
+      }
+    ]
   },
   {
     "German": "zur",
-    "English": "to the"
+    "English": "to the",
+    "ExampleSentence": "Ich gehe zur Schule.",
+    "Highlights": [
+      {
+        "Word": "zur",
+        "Reason": "contraction of zu + der, dative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "lass",
-    "English": "let"
+    "English": "let",
+    "ExampleSentence": "Lass mich in Ruhe!",
+    "Highlights": [
+      {
+        "Word": "Lass",
+        "Reason": "imperative form of lassen"
+      }
+    ]
   },
   {
     "German": "klar",
-    "English": "clear / sure"
+    "English": "clear / sure",
+    "ExampleSentence": "Klar, das mache ich."
   },
   {
     "German": "morgen",
-    "English": "tomorrow"
+    "English": "tomorrow",
+    "ExampleSentence": "Wir treffen uns morgen."
   },
   {
     "German": "leute",
-    "English": "people"
+    "English": "people",
+    "Article": "die",
+    "ExampleSentence": "Die Leute sind nett."
   },
   {
     "German": "vater",
-    "English": "father"
+    "English": "father",
+    "Article": "der",
+    "ExampleSentence": "Mein Vater arbeitet viel."
   },
   {
     "German": "schön",
-    "English": "beautiful"
+    "English": "beautiful",
+    "ExampleSentence": "Das Wetter ist schön."
   },
   {
     "German": "glaube",
-    "English": "believe"
+    "English": "believe",
+    "ExampleSentence": "Ich glaube dir nicht."
   },
   {
     "German": "ab",
-    "English": "from / off"
+    "English": "from / off",
+    "ExampleSentence": "Der Zug fährt ab."
   },
   {
     "German": "gerade",
-    "English": "right now"
+    "English": "right now",
+    "ExampleSentence": "Ich esse gerade Pizza."
   },
   {
     "German": "tag",
-    "English": "day"
+    "English": "day",
+    "Article": "der",
+    "ExampleSentence": "Heute ist ein schöner Tag."
   },
   {
     "German": "gesehen",
-    "English": "seen"
+    "English": "seen",
+    "ExampleSentence": "Ich habe dich gesehen.",
+    "Highlights": [
+      {
+        "Word": "gesehen",
+        "Reason": "Partizip II (past participle), part of Perfekt tense"
+      }
+    ]
   },
   {
     "German": "reden",
-    "English": "to talk"
+    "English": "to talk",
+    "ExampleSentence": "Wir reden über Filme."
   },
   {
     "German": "wohl",
-    "English": "probably"
+    "English": "probably",
+    "ExampleSentence": "Er kommt wohl später."
   },
   {
     "German": "liebe",
-    "English": "love"
+    "English": "love",
+    "Article": "die",
+    "ExampleSentence": "Die Liebe ist schön."
   },
   {
     "German": "sollte",
-    "English": "should"
+    "English": "should",
+    "ExampleSentence": "Ich sollte mehr lernen.",
+    "Highlights": [
+      {
+        "Word": "sollte",
+        "Reason": "Präteritum/Konjunktiv II form of sollen, not present tense"
+      }
+    ]
   },
   {
     "German": "sagte",
-    "English": "said"
+    "English": "said",
+    "ExampleSentence": "Sie sagte nichts mehr.",
+    "Highlights": [
+      {
+        "Word": "sagte",
+        "Reason": "Präteritum (past tense) form of sagen"
+      }
+    ]
   },
   {
     "German": "unsere",
-    "English": "our"
+    "English": "our",
+    "ExampleSentence": "Unsere Familie ist groß."
   },
   {
     "German": "jemand",
-    "English": "someone"
+    "English": "someone",
+    "ExampleSentence": "Jemand mag dich sehr."
   },
   {
     "German": "geld",
-    "English": "money"
+    "English": "money",
+    "Article": "das",
+    "ExampleSentence": "Ich brauche mehr Geld."
   },
   {
     "German": "durch",
-    "English": "through"
+    "English": "through",
+    "ExampleSentence": "Wir laufen durch die Stadt."
   },
   {
     "German": "ob",
-    "English": "whether"
+    "English": "whether",
+    "ExampleSentence": "Ich frage, ob du kommst."
   },
   {
     "German": "keinen",
-    "English": "no / none"
+    "English": "no / none",
+    "ExampleSentence": "Ich habe keinen Hunger.",
+    "Highlights": [
+      {
+        "Word": "keinen",
+        "Reason": "accusative masculine negative article (non-nominative)"
+      }
+    ]
   },
   {
     "German": "mutter",
-    "English": "mother"
+    "English": "mother",
+    "Article": "die",
+    "ExampleSentence": "Meine Mutter kocht gern."
   },
   {
     "German": "raus",
-    "English": "out"
+    "English": "out",
+    "ExampleSentence": "Ich muss jetzt raus."
   },
   {
     "German": "gemacht",
-    "English": "done / made"
+    "English": "done / made",
+    "ExampleSentence": "Ich habe das gemacht.",
+    "Highlights": [
+      {
+        "Word": "gemacht",
+        "Reason": "Partizip II (past participle), part of Perfekt tense"
+      }
+    ]
   },
   {
     "German": "paar",
-    "English": "couple / few"
+    "English": "couple / few",
+    "ExampleSentence": "Ich habe ein paar Fragen."
   },
   {
     "German": "mach",
-    "English": "do / make"
+    "English": "do / make",
+    "ExampleSentence": "Mach das bitte schnell!",
+    "Highlights": [
+      {
+        "Word": "Mach",
+        "Reason": "imperative form of machen"
+      }
+    ]
   },
   {
     "German": "passiert",
-    "English": "happens"
+    "English": "happens",
+    "ExampleSentence": "Was passiert hier gerade?"
   },
   {
     "German": "dachte",
-    "English": "thought"
+    "English": "thought",
+    "ExampleSentence": "Ich dachte an dich.",
+    "Highlights": [
+      {
+        "Word": "dachte",
+        "Reason": "Präteritum (past tense) form of denken"
+      }
+    ]
   },
   {
     "German": "besser",
-    "English": "better"
+    "English": "better",
+    "ExampleSentence": "Das ist viel besser."
   },
   {
     "German": "musst",
-    "English": "must"
+    "English": "must",
+    "ExampleSentence": "Du musst jetzt schlafen."
   },
   {
     "German": "wieso",
-    "English": "why"
+    "English": "why",
+    "ExampleSentence": "Wieso weinst du jetzt?"
   },
   {
     "German": "dieses",
-    "English": "this"
+    "English": "this",
+    "ExampleSentence": "Dieses Buch ist gut."
   },
   {
     "German": "selbst",
-    "English": "myself / self"
+    "English": "myself / self",
+    "ExampleSentence": "Ich mache es selbst."
   },
   {
     "German": "gehört",
-    "English": "heard / belongs"
+    "English": "heard / belongs",
+    "ExampleSentence": "Das Buch gehört mir."
   },
   {
     "German": "möchte",
-    "English": "would like"
+    "English": "would like",
+    "ExampleSentence": "Ich möchte ein Eis.",
+    "Highlights": [
+      {
+        "Word": "möchte",
+        "Reason": "Konjunktiv II form of mögen, used for polite present requests"
+      }
+    ]
   },
   {
     "German": "ohne",
-    "English": "without"
+    "English": "without",
+    "ExampleSentence": "Ich trinke Kaffee ohne Zucker."
   },
   {
     "German": "hör",
-    "English": "listen"
+    "English": "listen",
+    "ExampleSentence": "Hör mir bitte zu!",
+    "Highlights": [
+      {
+        "Word": "Hör",
+        "Reason": "imperative form of hören"
+      }
+    ]
   },
   {
     "German": "her",
-    "English": "here"
+    "English": "here",
+    "ExampleSentence": "Er kommt gleich her."
   },
   {
     "German": "sag",
-    "English": "say"
+    "English": "say",
+    "ExampleSentence": "Sag mir die Wahrheit!",
+    "Highlights": [
+      {
+        "Word": "Sag",
+        "Reason": "imperative form of sagen"
+      }
+    ]
   },
   {
     "German": "meiner",
-    "English": "my"
+    "English": "my",
+    "ExampleSentence": "Ich helfe meiner Mutter.",
+    "Highlights": [
+      {
+        "Word": "meiner",
+        "Reason": "dative feminine possessive determiner (non-nominative)"
+      }
+    ]
   },
   {
     "German": "anderen",
-    "English": "other"
+    "English": "other",
+    "ExampleSentence": "Ich mag die anderen Bücher."
   },
   {
     "German": "helfen",
-    "English": "to help"
+    "English": "to help",
+    "ExampleSentence": "Ich helfe dir gern."
   },
   {
     "German": "nacht",
-    "English": "night"
+    "English": "night",
+    "Article": "die",
+    "ExampleSentence": "Die Nacht ist lang."
   },
   {
     "German": "finden",
-    "English": "to find"
+    "English": "to find",
+    "ExampleSentence": "Wir finden das Restaurant nicht."
   },
   {
     "German": "diesen",
-    "English": "this"
+    "English": "this",
+    "ExampleSentence": "Ich mag diesen Film.",
+    "Highlights": [
+      {
+        "Word": "diesen",
+        "Reason": "accusative masculine demonstrative (non-nominative)"
+      }
+    ]
   },
   {
     "German": "gute",
-    "English": "good"
+    "English": "good",
+    "ExampleSentence": "Das ist eine gute Idee."
   },
   {
     "German": "wirst",
-    "English": "will"
+    "English": "will",
+    "ExampleSentence": "Du wirst langsam müde."
   },
   {
     "German": "lange",
-    "English": "long"
+    "English": "long",
+    "ExampleSentence": "Ich warte schon lange."
   },
   {
     "German": "natürlich",
-    "English": "of course"
+    "English": "of course",
+    "ExampleSentence": "Natürlich helfe ich dir."
   },
   {
     "German": "ach",
-    "English": "oh"
+    "English": "oh",
+    "ExampleSentence": "Ach, das ist schade!"
   },
   {
     "German": "meinem",
-    "English": "my"
+    "English": "my",
+    "ExampleSentence": "Ich wohne bei meinem Vater.",
+    "Highlights": [
+      {
+        "Word": "meinem",
+        "Reason": "dative masculine possessive determiner (non-nominative)"
+      }
+    ]
   },
   {
     "German": "gar",
-    "English": "at all"
+    "English": "at all",
+    "ExampleSentence": "Das interessiert mich gar nicht."
   },
   {
     "German": "ins",
-    "English": "into the"
+    "English": "into the",
+    "ExampleSentence": "Wir gehen ins Kino.",
+    "Highlights": [
+      {
+        "Word": "ins",
+        "Reason": "contraction of in + das, accusative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "sei",
-    "English": "be"
+    "English": "be",
+    "ExampleSentence": "Sei bitte pünktlich heute!",
+    "Highlights": [
+      {
+        "Word": "Sei",
+        "Reason": "imperative form of sein"
+      }
+    ]
   },
   {
     "German": "dort",
-    "English": "there"
+    "English": "there",
+    "ExampleSentence": "Das Buch liegt dort."
   },
   {
     "German": "weiter",
-    "English": "further"
+    "English": "further",
+    "ExampleSentence": "Wir gehen einfach weiter."
   },
   {
     "German": "geben",
-    "English": "to give"
+    "English": "to give",
+    "ExampleSentence": "Kannst du mir das geben?"
   },
   {
     "German": "seit",
-    "English": "since"
+    "English": "since",
+    "ExampleSentence": "Ich lerne seit einem Jahr.",
+    "Highlights": [
+      {
+        "Word": "einem",
+        "Reason": "dative neuter article after seit (non-nominative)"
+      }
+    ]
   },
   {
     "German": "gleich",
-    "English": "right away / same"
+    "English": "right away / same",
+    "ExampleSentence": "Ich komme gleich zurück."
   },
   {
     "German": "sagt",
-    "English": "says"
+    "English": "says",
+    "ExampleSentence": "Er sagt immer die Wahrheit."
   },
   {
     "German": "recht",
-    "English": "right"
+    "English": "right",
+    "ExampleSentence": "Du hast völlig recht."
   },
   {
     "German": "ihren",
-    "English": "her / their"
+    "English": "her / their",
+    "ExampleSentence": "Sie liebt ihren Bruder.",
+    "Highlights": [
+      {
+        "Word": "ihren",
+        "Reason": "accusative masculine possessive determiner (non-nominative)"
+      }
+    ]
   },
   {
     "German": "richtig",
-    "English": "right / correct"
+    "English": "right / correct",
+    "ExampleSentence": "Das ist richtig gut."
   },
   {
     "German": "ordnung",
-    "English": "order"
+    "English": "order",
+    "Article": "die",
+    "ExampleSentence": "Die Ordnung ist wichtig."
   },
   {
     "German": "vom",
-    "English": "from the"
+    "English": "from the",
+    "ExampleSentence": "Ich komme vom Arzt.",
+    "Highlights": [
+      {
+        "Word": "vom",
+        "Reason": "contraction of von + dem, dative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "hören",
-    "English": "to hear"
+    "English": "to hear",
+    "ExampleSentence": "Wir hören gern Musik."
   },
   {
     "German": "sieht",
-    "English": "sees / looks"
+    "English": "sees / looks",
+    "ExampleSentence": "Sie sieht müde aus."
   },
   {
     "German": "davon",
-    "English": "of it"
+    "English": "of it",
+    "ExampleSentence": "Ich weiß nichts davon."
   },
   {
     "German": "dafür",
-    "English": "for it"
+    "English": "for it",
+    "ExampleSentence": "Ich bin sehr dankbar dafür."
   },
   {
     "German": "geh",
-    "English": "go"
+    "English": "go",
+    "ExampleSentence": "Geh jetzt bitte nach Hause!",
+    "Highlights": [
+      {
+        "Word": "Geh",
+        "Reason": "imperative form of gehen"
+      },
+      {
+        "Word": "Hause",
+        "Reason": "old dative form of Haus, used in fixed idiom nach Hause (non-nominative)"
+      }
+    ]
   },
   {
     "German": "diesem",
-    "English": "this"
+    "English": "this",
+    "ExampleSentence": "Ich wohne in diesem Haus.",
+    "Highlights": [
+      {
+        "Word": "diesem",
+        "Reason": "dative demonstrative (non-nominative)"
+      }
+    ]
   },
   {
     "German": "wegen",
-    "English": "because of"
+    "English": "because of",
+    "ExampleSentence": "Wegen des Wetters bleiben wir.",
+    "Highlights": [
+      {
+        "Word": "des",
+        "Reason": "genitive neuter article after wegen (non-nominative)"
+      },
+      {
+        "Word": "Wetters",
+        "Reason": "genitive neuter noun with -s ending (non-nominative)"
+      }
+    ]
   },
   {
     "German": "hause",
-    "English": "home"
+    "English": "home",
+    "ExampleSentence": "Ich bin zu Hause.",
+    "Highlights": [
+      {
+        "Word": "Hause",
+        "Reason": "old dative form of Haus, used in fixed idiom zu Hause (non-nominative)"
+      }
+    ]
   },
   {
     "German": "sollten",
-    "English": "should"
+    "English": "should",
+    "ExampleSentence": "Wir sollten früher schlafen gehen.",
+    "Highlights": [
+      {
+        "Word": "sollten",
+        "Reason": "Präteritum/Konjunktiv II form of sollen, not present tense"
+      }
+    ]
   },
   {
     "German": "mädchen",
-    "English": "girl"
+    "English": "girl",
+    "Article": "das",
+    "ExampleSentence": "Das Mädchen singt sehr schön."
   },
   {
     "German": "hin",
-    "English": "there"
+    "English": "there",
+    "ExampleSentence": "Wo gehst du hin?"
   },
   {
     "German": "sollen",
-    "English": "should"
+    "English": "should",
+    "ExampleSentence": "Wir sollen pünktlich sein."
   },
   {
     "German": "abend",
-    "English": "evening"
+    "English": "evening",
+    "Article": "der",
+    "ExampleSentence": "Der Abend ist ruhig."
   },
   {
     "German": "haus",
-    "English": "house"
+    "English": "house",
+    "Article": "das",
+    "ExampleSentence": "Das Haus ist groß."
   },
   {
     "German": "denke",
-    "English": "think"
+    "English": "think",
+    "ExampleSentence": "Ich denke oft an dich."
   },
   {
     "German": "viele",
-    "English": "many"
+    "English": "many",
+    "ExampleSentence": "Viele Menschen mögen Musik."
   },
   {
     "German": "drei",
-    "English": "three"
+    "English": "three",
+    "ExampleSentence": "Ich habe drei Kinder."
   },
   {
     "German": "deinen",
-    "English": "your"
+    "English": "your",
+    "ExampleSentence": "Ich mag deinen Bruder sehr.",
+    "Highlights": [
+      {
+        "Word": "deinen",
+        "Reason": "accusative masculine possessive determiner (non-nominative)"
+      }
+    ]
   },
   {
     "German": "freund",
-    "English": "friend"
+    "English": "friend",
+    "Article": "der",
+    "ExampleSentence": "Mein Freund wohnt hier."
   },
   {
     "German": "guten",
-    "English": "good"
+    "English": "good",
+    "ExampleSentence": "Ich wünsche dir guten Appetit.",
+    "Highlights": [
+      {
+        "Word": "guten",
+        "Reason": "accusative masculine adjective ending (non-nominative)"
+      }
+    ]
   },
   {
     "German": "unser",
-    "English": "our"
+    "English": "our",
+    "ExampleSentence": "Unser Haus ist klein."
   },
   {
     "German": "warte",
-    "English": "wait"
+    "English": "wait",
+    "ExampleSentence": "Ich warte auf dich."
   },
   {
     "German": "machst",
-    "English": "do / make"
+    "English": "do / make",
+    "ExampleSentence": "Was machst du gerade?"
   },
   {
     "German": "menschen",
-    "English": "people"
+    "English": "people",
+    "Article": "die",
+    "ExampleSentence": "Die Menschen sind sehr nett."
   },
   {
     "German": "essen",
-    "English": "to eat"
+    "English": "to eat",
+    "ExampleSentence": "Wir essen jetzt zu Mittag."
   },
   {
     "German": "angst",
-    "English": "fear"
+    "English": "fear",
+    "Article": "die",
+    "ExampleSentence": "Ich habe Angst davor."
   },
   {
     "German": "bleiben",
-    "English": "to stay"
+    "English": "to stay",
+    "ExampleSentence": "Wir bleiben lange hier."
   },
   {
     "German": "zusammen",
-    "English": "together"
+    "English": "together",
+    "ExampleSentence": "Wir arbeiten gern zusammen."
   },
   {
     "German": "welt",
-    "English": "world"
+    "English": "world",
+    "Article": "die",
+    "ExampleSentence": "Die Welt ist bunt."
   },
   {
     "German": "unter",
-    "English": "under"
+    "English": "under",
+    "ExampleSentence": "Sie sitzt unter dem Baum.",
+    "Highlights": [
+      {
+        "Word": "dem",
+        "Reason": "dative masculine article after unter (non-nominative)"
+      }
+    ]
   },
   {
     "German": "habt",
-    "English": "have"
+    "English": "have",
+    "ExampleSentence": "Habt ihr genug Zeit?"
   },
   {
     "German": "schnell",
-    "English": "fast"
+    "English": "fast",
+    "ExampleSentence": "Er läuft sehr schnell."
   },
   {
     "German": "andere",
-    "English": "other"
+    "English": "other",
+    "ExampleSentence": "Ich brauche eine andere Idee."
   },
   {
     "German": "tot",
-    "English": "dead"
+    "English": "dead",
+    "ExampleSentence": "Die Pflanze ist leider tot."
   },
   {
     "German": "getan",
-    "English": "done"
+    "English": "done",
+    "ExampleSentence": "Das habe ich schon getan.",
+    "Highlights": [
+      {
+        "Word": "getan",
+        "Reason": "Partizip II (past participle), part of Perfekt tense"
+      }
+    ]
   },
   {
     "German": "darf",
-    "English": "may"
+    "English": "may",
+    "ExampleSentence": "Ich darf heute länger bleiben."
   },
   {
     "German": "erst",
-    "English": "only / first"
+    "English": "only / first",
+    "ExampleSentence": "Ich stehe erst später auf."
   },
   {
     "German": "rein",
-    "English": "in / pure"
+    "English": "in / pure",
+    "ExampleSentence": "Die Luft hier ist rein."
   },
   {
     "German": "stimmt",
-    "English": "is right"
+    "English": "is right",
+    "ExampleSentence": "Das stimmt leider nicht."
   },
   {
     "German": "nehmen",
-    "English": "to take"
+    "English": "to take",
+    "ExampleSentence": "Wir nehmen den Bus heute.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative masculine article (non-nominative)"
+      }
+    ]
   },
   {
     "German": "kinder",
-    "English": "children"
+    "English": "children",
+    "Article": "die",
+    "ExampleSentence": "Die Kinder spielen im Garten.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "contraction of in + dem, dative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "eines",
-    "English": "one / a"
+    "English": "one / a",
+    "ExampleSentence": "Eines der Bücher ist rot.",
+    "Highlights": [
+      {
+        "Word": "der",
+        "Reason": "genitive plural article meaning 'of the' (non-nominative)"
+      }
+    ]
   },
   {
     "German": "glauben",
-    "English": "to believe"
+    "English": "to believe",
+    "ExampleSentence": "Wir glauben an dich."
   },
   {
     "German": "bringen",
-    "English": "to bring"
+    "English": "to bring",
+    "ExampleSentence": "Kannst du das bringen?"
   },
   {
     "German": "ganze",
-    "English": "whole"
+    "English": "whole",
+    "ExampleSentence": "Ich esse die ganze Pizza."
   },
   {
     "German": "genug",
-    "English": "enough"
+    "English": "enough",
+    "ExampleSentence": "Ich habe genug Zeit."
   },
   {
     "German": "scheiße",
-    "English": "shit"
+    "English": "shit",
+    "ExampleSentence": "Scheiße, das tut weh!"
   },
   {
     "German": "brauchen",
-    "English": "to need"
+    "English": "to need",
+    "ExampleSentence": "Wir brauchen mehr Zeit jetzt."
   },
   {
     "German": "gegen",
-    "English": "against"
+    "English": "against",
+    "ExampleSentence": "Er kämpft gegen die Angst."
   },
   {
     "German": "moment",
-    "English": "moment"
+    "English": "moment",
+    "Article": "der",
+    "ExampleSentence": "Dieser Moment ist wunderschön."
   },
   {
     "German": "junge",
-    "English": "boy"
+    "English": "boy",
+    "Article": "der",
+    "ExampleSentence": "Der Junge spielt im Park.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "contraction of in + dem, dative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "steht",
-    "English": "stands"
+    "English": "stands",
+    "ExampleSentence": "Er steht vor der Tür.",
+    "Highlights": [
+      {
+        "Word": "der",
+        "Reason": "dative feminine article after vor (non-nominative)"
+      }
+    ]
   },
   {
     "German": "sonst",
-    "English": "otherwise"
+    "English": "otherwise",
+    "ExampleSentence": "Sonst kommst du zu spät."
   },
   {
     "German": "musik",
-    "English": "music"
+    "English": "music",
+    "Article": "die",
+    "ExampleSentence": "Ich höre gern klassische Musik."
   },
   {
     "German": "arbeit",
-    "English": "work"
+    "English": "work",
+    "Article": "die",
+    "ExampleSentence": "Die Arbeit macht viel Spaß."
   },
   {
     "German": "seid",
-    "English": "are"
+    "English": "are",
+    "ExampleSentence": "Ihr seid heute sehr leise."
   },
   {
     "German": "ihrer",
-    "English": "her / their"
+    "English": "her / their",
+    "ExampleSentence": "Er hilft ihrer Schwester gern.",
+    "Highlights": [
+      {
+        "Word": "ihrer",
+        "Reason": "dative feminine possessive determiner (non-nominative)"
+      }
+    ]
   },
   {
     "German": "fragen",
-    "English": "to ask"
+    "English": "to ask",
+    "ExampleSentence": "Darf ich dich etwas fragen?"
   },
   {
     "German": "herr",
-    "English": "Mr. / lord"
+    "English": "Mr. / lord",
+    "Article": "der",
+    "ExampleSentence": "Der Herr wartet schon lange."
   },
   {
     "German": "dabei",
-    "English": "with it"
+    "English": "with it",
+    "ExampleSentence": "Was denkst du dir dabei?"
   },
   {
     "German": "heißt",
-    "English": "is called"
+    "English": "is called",
+    "ExampleSentence": "Wie heißt du eigentlich?"
   },
   {
     "German": "familie",
-    "English": "family"
+    "English": "family",
+    "Article": "die",
+    "ExampleSentence": "Meine Familie ist sehr groß."
   },
   {
     "German": "warten",
-    "English": "to wait"
+    "English": "to wait",
+    "ExampleSentence": "Wir warten schon zwei Stunden."
   },
   {
     "German": "niemand",
-    "English": "nobody"
+    "English": "nobody",
+    "ExampleSentence": "Niemand versteht mich hier wirklich."
   },
   {
     "German": "sofort",
-    "English": "immediately"
+    "English": "immediately",
+    "ExampleSentence": "Er kommt sofort zu uns."
   },
   {
     "German": "bevor",
-    "English": "before"
+    "English": "before",
+    "ExampleSentence": "Wir essen, bevor wir gehen."
   },
   {
     "German": "jahre",
-    "English": "years"
+    "English": "years",
+    "Article": "die",
+    "ExampleSentence": "Die Jahre vergehen sehr schnell."
   },
   {
     "German": "einmal",
-    "English": "once"
+    "English": "once",
+    "ExampleSentence": "Kommst du einmal pro Woche?"
   },
   {
     "German": "problem",
-    "English": "problem"
+    "English": "problem",
+    "Article": "das",
+    "ExampleSentence": "Das Problem ist wirklich klein."
   },
   {
     "German": "sohn",
-    "English": "son"
+    "English": "son",
+    "Article": "der",
+    "ExampleSentence": "Unser Sohn lernt fleißig Deutsch."
   },
   {
     "German": "wann",
-    "English": "when"
+    "English": "when",
+    "ExampleSentence": "Wann kommst du nach Hause?",
+    "Highlights": [
+      {
+        "Word": "Hause",
+        "Reason": "old dative form of Haus, used in fixed idiom nach Hause (non-nominative)"
+      }
+    ]
   },
   {
     "German": "brauche",
-    "English": "need"
+    "English": "need",
+    "ExampleSentence": "Ich brauche jetzt deine Hilfe."
   },
   {
     "German": "fertig",
-    "English": "finished / ready"
+    "English": "finished / ready",
+    "ExampleSentence": "Bist du schon fertig damit?"
   },
   {
     "German": "halt",
-    "English": "just / stop"
+    "English": "just / stop",
+    "ExampleSentence": "Das ist halt so."
   },
   {
     "German": "allein",
-    "English": "alone"
+    "English": "alone",
+    "ExampleSentence": "Ich wohne jetzt allein."
   },
   {
     "German": "beim",
-    "English": "at the"
+    "English": "at the",
+    "ExampleSentence": "Ich warte beim Bahnhof.",
+    "Highlights": [
+      {
+        "Word": "beim",
+        "Reason": "contraction of bei + dem, dative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "sprechen",
-    "English": "to speak"
+    "English": "to speak",
+    "ExampleSentence": "Wir sprechen gern Deutsch zusammen."
   },
   {
     "German": "beide",
-    "English": "both"
+    "English": "both",
+    "ExampleSentence": "Beide Kinder lachen sehr laut."
   },
   {
     "German": "gefunden",
-    "English": "found"
+    "English": "found",
+    "ExampleSentence": "Ich habe die Lösung gefunden.",
+    "Highlights": [
+      {
+        "Word": "gefunden",
+        "Reason": "Partizip II (past participle), part of Perfekt tense"
+      }
+    ]
   },
   {
     "German": "hatten",
-    "English": "had"
+    "English": "had",
+    "ExampleSentence": "Wir hatten gestern viel Zeit.",
+    "Highlights": [
+      {
+        "Word": "hatten",
+        "Reason": "Präteritum (past tense) form of haben"
+      }
+    ]
   },
   {
     "German": "sache",
-    "English": "thing"
+    "English": "thing",
+    "Article": "die",
+    "ExampleSentence": "Diese Sache ist mir wichtig."
   },
   {
     "German": "hilfe",
-    "English": "help"
+    "English": "help",
+    "Article": "die",
+    "ExampleSentence": "Ich brauche deine Hilfe jetzt."
   },
   {
     "German": "verdammt",
-    "English": "damn"
+    "English": "damn",
+    "ExampleSentence": "Verdammt, das tut weh!"
   },
   {
     "German": "ne",
-    "English": "no"
+    "English": "no",
+    "ExampleSentence": "Das ist schön, ne?"
   },
   {
     "German": "jeder",
-    "English": "everyone"
+    "English": "everyone",
+    "ExampleSentence": "Jeder hat eine Meinung."
   },
   {
     "German": "warst",
-    "English": "were"
+    "English": "were",
+    "ExampleSentence": "Wo warst du gestern?",
+    "Highlights": [
+      {
+        "Word": "warst",
+        "Reason": "Präteritum (past tense) of sein"
+      }
+    ]
   },
   {
     "German": "gern",
-    "English": "gladly"
+    "English": "gladly",
+    "ExampleSentence": "Ich trinke gern Kaffee."
   },
   {
     "German": "konnte",
-    "English": "could"
+    "English": "could",
+    "ExampleSentence": "Ich konnte nicht kommen.",
+    "Highlights": [
+      {
+        "Word": "konnte",
+        "Reason": "Präteritum (past tense) of können"
+      }
+    ]
   },
   {
     "German": "darüber",
-    "English": "about it"
+    "English": "about it",
+    "ExampleSentence": "Wir sprechen darüber morgen."
   },
   {
     "German": "halten",
-    "English": "to hold"
+    "English": "to hold",
+    "ExampleSentence": "Kannst du das halten?"
   },
   {
     "German": "siehst",
-    "English": "see"
+    "English": "see",
+    "ExampleSentence": "Siehst du das Auto?"
   },
   {
     "German": "verstehe",
-    "English": "understand"
+    "English": "understand",
+    "ExampleSentence": "Ich verstehe dich nicht."
   },
   {
     "German": "jahren",
-    "English": "years"
+    "English": "years",
+    "Article": "das",
+    "ExampleSentence": "Sie wohnt seit Jahren hier."
   },
   {
     "German": "kam",
-    "English": "came"
+    "English": "came",
+    "ExampleSentence": "Er kam zu spät.",
+    "Highlights": [
+      {
+        "Word": "kam",
+        "Reason": "Präteritum (past tense) of kommen"
+      }
+    ]
   },
   {
     "German": "kind",
-    "English": "child"
+    "English": "child",
+    "Article": "das",
+    "ExampleSentence": "Das Kind spielt draußen."
   },
   {
     "German": "wusste",
-    "English": "knew"
+    "English": "knew",
+    "ExampleSentence": "Ich wusste die Antwort.",
+    "Highlights": [
+      {
+        "Word": "wusste",
+        "Reason": "Präteritum (past tense) of wissen"
+      }
+    ]
   },
   {
     "German": "wahr",
-    "English": "true"
+    "English": "true",
+    "ExampleSentence": "Das ist wirklich wahr."
   },
   {
     "German": "seinen",
-    "English": "his"
+    "English": "his",
+    "ExampleSentence": "Er mag seinen Bruder.",
+    "Highlights": [
+      {
+        "Word": "seinen",
+        "Reason": "accusative masculine possessive (non-nominative)"
+      }
+    ]
   },
   {
     "German": "dazu",
-    "English": "to it / for that"
+    "English": "to it / for that",
+    "ExampleSentence": "Ich habe dazu keine Meinung."
   },
   {
     "German": "bruder",
-    "English": "brother"
+    "English": "brother",
+    "Article": "der",
+    "ExampleSentence": "Mein Bruder wohnt hier."
   },
   {
     "German": "daran",
-    "English": "about it"
+    "English": "about it",
+    "ExampleSentence": "Ich denke oft daran."
   },
   {
     "German": "ihrem",
-    "English": "her / their"
+    "English": "her / their",
+    "ExampleSentence": "Sie hilft ihrem Bruder.",
+    "Highlights": [
+      {
+        "Word": "ihrem",
+        "Reason": "dative masculine possessive (non-nominative)"
+      }
+    ]
   },
   {
     "German": "denken",
-    "English": "to think"
+    "English": "to think",
+    "ExampleSentence": "Wir denken an dich."
   },
   {
     "German": "könnten",
-    "English": "could"
+    "English": "could",
+    "ExampleSentence": "Wir könnten später kommen.",
+    "Highlights": [
+      {
+        "Word": "könnten",
+        "Reason": "Konjunktiv II (conditional) of können"
+      }
+    ]
   },
   {
     "German": "dank",
-    "English": "thanks"
+    "English": "thanks",
+    "Article": "der",
+    "ExampleSentence": "Herzlichen Dank für die Blumen!",
+    "Highlights": [
+      {
+        "Word": "Herzlichen",
+        "Reason": "accusative masculine adjective ending, non-nominative (fixed phrase)"
+      }
+    ]
   },
   {
     "German": "würden",
-    "English": "would"
+    "English": "would",
+    "ExampleSentence": "Wir würden gerne helfen.",
+    "Highlights": [
+      {
+        "Word": "würden",
+        "Reason": "Konjunktiv II (conditional) of werden"
+      }
+    ]
   },
   {
     "German": "lieber",
-    "English": "rather"
+    "English": "rather",
+    "ExampleSentence": "Ich trinke lieber Tee."
   },
   {
     "German": "fall",
-    "English": "case"
+    "English": "case",
+    "Article": "der",
+    "ExampleSentence": "Das ist ein klarer Fall."
   },
   {
     "German": "deiner",
-    "English": "your"
+    "English": "your",
+    "ExampleSentence": "Ich helfe deiner Schwester.",
+    "Highlights": [
+      {
+        "Word": "deiner",
+        "Reason": "dative feminine possessive (non-nominative)"
+      }
+    ]
   },
   {
     "German": "sehe",
-    "English": "see"
+    "English": "see",
+    "ExampleSentence": "Ich sehe dich später."
   },
   {
     "German": "egal",
-    "English": "doesn't matter"
+    "English": "doesn't matter",
+    "ExampleSentence": "Das ist mir egal."
   },
   {
     "German": "kennen",
-    "English": "to know (someone)"
+    "English": "to know (someone)",
+    "ExampleSentence": "Wir kennen diese Stadt gut."
   },
   {
     "German": "deinem",
-    "English": "your"
+    "English": "your",
+    "ExampleSentence": "Ich schreibe deinem Bruder.",
+    "Highlights": [
+      {
+        "Word": "deinem",
+        "Reason": "dative masculine possessive (non-nominative)"
+      }
+    ]
   },
   {
     "German": "vergessen",
-    "English": "to forget"
+    "English": "to forget",
+    "ExampleSentence": "Ich will das nicht vergessen."
   },
   {
     "German": "frage",
-    "English": "question"
+    "English": "question",
+    "Article": "die",
+    "ExampleSentence": "Ich habe eine Frage."
   },
   {
     "German": "mache",
-    "English": "do / make"
+    "English": "do / make",
+    "ExampleSentence": "Ich mache das gern."
   },
   {
     "German": "komme",
-    "English": "come"
+    "English": "come",
+    "ExampleSentence": "Ich komme gleich nach Hause."
   },
   {
     "German": "sage",
-    "English": "say"
+    "English": "say",
+    "ExampleSentence": "Ich sage immer die Wahrheit."
   },
   {
     "German": "mag",
-    "English": "like"
+    "English": "like",
+    "ExampleSentence": "Ich mag dieses Buch."
   },
   {
     "German": "sieh",
-    "English": "look"
+    "English": "look",
+    "ExampleSentence": "Sieh mal das Auto!",
+    "Highlights": [
+      {
+        "Word": "Sieh",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "echt",
-    "English": "really"
+    "English": "really",
+    "ExampleSentence": "Das ist echt gut."
   },
   {
     "German": "gib",
-    "English": "give"
+    "English": "give",
+    "ExampleSentence": "Gib mir das Buch.",
+    "Highlights": [
+      {
+        "Word": "Gib",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "eigentlich",
-    "English": "actually"
+    "English": "actually",
+    "ExampleSentence": "Was machst du eigentlich?"
   },
   {
     "German": "jeden",
-    "English": "every"
+    "English": "every",
+    "ExampleSentence": "Ich laufe jeden Tag.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine (non-nominative)"
+      }
+    ]
   },
   {
     "German": "gab",
-    "English": "gave"
+    "English": "gave",
+    "ExampleSentence": "Es gab keinen Kaffee.",
+    "Highlights": [
+      {
+        "Word": "gab",
+        "Reason": "Präteritum (past tense) of geben"
+      },
+      {
+        "Word": "keinen",
+        "Reason": "accusative masculine article (non-nominative)"
+      }
+    ]
   },
   {
     "German": "uhr",
-    "English": "o'clock"
+    "English": "o'clock",
+    "Article": "die",
+    "ExampleSentence": "Es ist zehn Uhr."
   },
   {
     "German": "stadt",
-    "English": "city"
+    "English": "city",
+    "Article": "die",
+    "ExampleSentence": "Die Stadt ist sehr groß."
   },
   {
     "German": "männer",
-    "English": "men"
+    "English": "men",
+    "Article": "der",
+    "ExampleSentence": "Die Männer arbeiten viel."
   },
   {
     "German": "baby",
-    "English": "baby"
+    "English": "baby",
+    "Article": "das",
+    "ExampleSentence": "Das Baby schläft jetzt."
   },
   {
     "German": "fahren",
-    "English": "to drive"
+    "English": "to drive",
+    "ExampleSentence": "Wir fahren morgen nach Berlin."
   },
   {
     "German": "namen",
-    "English": "name"
+    "English": "name",
+    "Article": "der",
+    "ExampleSentence": "Ich kenne seinen Namen nicht.",
+    "Highlights": [
+      {
+        "Word": "seinen",
+        "Reason": "accusative masculine possessive (non-nominative)"
+      }
+    ]
   },
   {
     "German": "bekommen",
-    "English": "to get"
+    "English": "to get",
+    "ExampleSentence": "Wir bekommen morgen Besuch."
   },
   {
     "German": "kopf",
-    "English": "head"
+    "English": "head",
+    "Article": "der",
+    "ExampleSentence": "Mein Kopf tut weh."
   },
   {
     "German": "gehe",
-    "English": "go"
+    "English": "go",
+    "ExampleSentence": "Ich gehe jetzt nach Hause."
   },
   {
     "German": "kleine",
-    "English": "small"
+    "English": "small",
+    "ExampleSentence": "Die kleine Katze schläft."
   },
   {
     "German": "später",
-    "English": "later"
+    "English": "later",
+    "ExampleSentence": "Wir sehen uns später."
   },
   {
     "German": "glück",
-    "English": "luck"
+    "English": "luck",
+    "Article": "das",
+    "ExampleSentence": "Das bringt viel Glück."
   },
   {
     "German": "letzte",
-    "English": "last"
+    "English": "last",
+    "ExampleSentence": "Das ist die letzte Frage."
   },
   {
     "German": "freunde",
-    "English": "friends"
+    "English": "friends",
+    "Article": "der",
+    "ExampleSentence": "Meine Freunde kommen heute."
   },
   {
     "German": "all",
-    "English": "all"
+    "English": "all",
+    "ExampleSentence": "All das gehört mir."
   },
   {
     "German": "darauf",
-    "English": "on it"
+    "English": "on it",
+    "ExampleSentence": "Ich warte darauf schon lange."
   },
   {
     "German": "ende",
-    "English": "end"
+    "English": "end",
+    "Article": "das",
+    "ExampleSentence": "Das Ende ist nah."
   },
   {
     "German": "bald",
-    "English": "soon"
+    "English": "soon",
+    "ExampleSentence": "Wir sehen uns bald wieder."
   },
   {
     "German": "töten",
-    "English": "to kill"
+    "English": "to kill",
+    "ExampleSentence": "Er will niemanden töten."
   },
   {
     "German": "dinge",
-    "English": "things"
+    "English": "things",
+    "Article": "das",
+    "ExampleSentence": "Diese Dinge sind wichtig."
   },
   {
     "German": "meinst",
-    "English": "mean"
+    "English": "mean",
+    "ExampleSentence": "Was meinst du damit?"
   },
   {
     "German": "toll",
-    "English": "great"
+    "English": "great",
+    "ExampleSentence": "Das ist echt toll!"
   },
   {
     "German": "eins",
-    "English": "one"
+    "English": "one",
+    "ExampleSentence": "Ich zähle bis eins."
   },
   {
     "German": "minuten",
-    "English": "minutes"
+    "English": "minutes",
+    "Article": "die",
+    "ExampleSentence": "Wir warten nur fünf Minuten."
   },
   {
     "German": "vielen",
-    "English": "many"
+    "English": "many",
+    "ExampleSentence": "Vielen Dank für die Hilfe!",
+    "Highlights": [
+      {
+        "Word": "Vielen",
+        "Reason": "accusative masculine adjective ending, non-nominative (fixed phrase)"
+      }
+    ]
   },
   {
     "German": "bereit",
-    "English": "ready"
+    "English": "ready",
+    "ExampleSentence": "Ich bin bereit dafür."
   },
   {
     "German": "weit",
-    "English": "far"
+    "English": "far",
+    "ExampleSentence": "Das ist nicht weit."
   },
   {
     "German": "ahnung",
-    "English": "idea / clue"
+    "English": "idea / clue",
+    "Article": "die",
+    "ExampleSentence": "Ich habe keine Ahnung."
   },
   {
     "German": "seiner",
-    "English": "his"
+    "English": "his",
+    "ExampleSentence": "Er hilft seiner Mutter.",
+    "Highlights": [
+      {
+        "Word": "seiner",
+        "Reason": "dative feminine possessive (non-nominative)"
+      }
+    ]
   },
   {
     "German": "bisschen",
-    "English": "a bit"
+    "English": "a bit",
+    "ExampleSentence": "Ich habe ein bisschen Zeit."
   },
   {
     "German": "tür",
-    "English": "door"
+    "English": "door",
+    "Article": "die",
+    "ExampleSentence": "Die Tür ist offen."
   },
   {
     "German": "auto",
-    "English": "car"
+    "English": "car",
+    "Article": "das",
+    "ExampleSentence": "Das Auto ist neu."
   },
   {
     "German": "jungs",
-    "English": "guys"
+    "English": "guys",
+    "Article": "der",
+    "ExampleSentence": "Die Jungs spielen Fußball."
   },
   {
     "German": "eure",
-    "English": "your"
+    "English": "your",
+    "ExampleSentence": "Ist das eure Wohnung?"
   },
   {
     "German": "augen",
-    "English": "eyes"
+    "English": "eyes",
+    "Article": "das",
+    "ExampleSentence": "Ihre Augen sind blau."
   },
   {
     "German": "polizei",
-    "English": "police"
+    "English": "police",
+    "Article": "die",
+    "ExampleSentence": "Die Polizei kommt gleich."
   },
   {
     "German": "stehen",
-    "English": "to stand"
+    "English": "to stand",
+    "ExampleSentence": "Wir stehen vor der Tür.",
+    "Highlights": [
+      {
+        "Word": "der",
+        "Reason": "dative feminine article after 'vor' (non-nominative)"
+      }
+    ]
   },
   {
     "German": "sterben",
-    "English": "to die"
+    "English": "to die",
+    "ExampleSentence": "Niemand will heute sterben."
   },
   {
     "German": "hätten",
-    "English": "would have"
+    "English": "would have",
+    "ExampleSentence": "Wir hätten gerne Kaffee.",
+    "Highlights": [
+      {
+        "Word": "hätten",
+        "Reason": "Konjunktiv II (conditional) of haben"
+      }
+    ]
   },
   {
     "German": "draußen",
-    "English": "outside"
+    "English": "outside",
+    "ExampleSentence": "Die Kinder spielen draußen."
   },
   {
     "German": "kenne",
-    "English": "know"
+    "English": "know",
+    "ExampleSentence": "Ich kenne diese Stadt."
   },
   {
     "German": "fast",
-    "English": "almost"
+    "English": "almost",
+    "ExampleSentence": "Ich bin fast fertig."
   },
   {
     "German": "runter",
-    "English": "down"
+    "English": "down",
+    "ExampleSentence": "Wir gehen runter zum Keller.",
+    "Highlights": [
+      {
+        "Word": "zum",
+        "Reason": "dative masculine (zu dem) after 'zu' (non-nominative)"
+      }
+    ]
   },
   {
     "German": "vorbei",
-    "English": "past"
+    "English": "past",
+    "ExampleSentence": "Der Sommer ist bald vorbei."
   },
   {
     "German": "treffen",
-    "English": "to meet"
+    "English": "to meet",
+    "ExampleSentence": "Wir treffen uns morgen früh."
   },
   {
     "German": "gerne",
-    "English": "gladly"
+    "English": "gladly",
+    "ExampleSentence": "Ich helfe dir gerne."
   },
   {
     "German": "dran",
-    "English": "next (turn)"
+    "English": "next (turn)",
+    "ExampleSentence": "Jetzt bist du dran."
   },
   {
     "German": "wurden",
-    "English": "were"
+    "English": "were",
+    "ExampleSentence": "Die Fenster wurden geputzt.",
+    "Highlights": [
+      {
+        "Word": "wurden",
+        "Reason": "Präteritum passive auxiliary (past tense)"
+      }
+    ]
   },
   {
     "German": "arbeiten",
-    "English": "to work"
+    "English": "to work",
+    "ExampleSentence": "Wir arbeiten heute zu Hause."
   },
   {
     "German": "verrückt",
-    "English": "crazy"
+    "English": "crazy",
+    "ExampleSentence": "Das ist total verrückt!"
   },
   {
     "German": "neue",
-    "English": "new"
+    "English": "new",
+    "ExampleSentence": "Das neue Auto ist toll."
   },
   {
     "German": "ging",
-    "English": "went"
+    "English": "went",
+    "ExampleSentence": "Er ging schnell nach Hause.",
+    "Highlights": [
+      {
+        "Word": "ging",
+        "Reason": "Präteritum (past tense) of gehen"
+      }
+    ]
   },
   {
     "German": "hinter",
-    "English": "behind"
+    "English": "behind",
+    "ExampleSentence": "Der Hund steht hinter dir."
   },
   {
     "German": "sorgen",
-    "English": "to worry"
+    "English": "to worry",
+    "ExampleSentence": "Sie sorgen sich um dich."
   },
   {
     "German": "einzige",
-    "English": "only"
+    "English": "only",
+    "ExampleSentence": "Sie ist die einzige Lösung."
   },
   {
     "German": "jemanden",
-    "English": "someone"
+    "English": "someone",
+    "ExampleSentence": "Ich sehe jemanden dort drüben."
   },
   {
     "German": "darum",
-    "English": "that's why"
+    "English": "that's why",
+    "ExampleSentence": "Darum bin ich hier."
   },
   {
     "German": "tochter",
-    "English": "daughter"
+    "English": "daughter",
+    "Article": "die",
+    "ExampleSentence": "Meine Tochter lernt Deutsch."
   },
   {
     "German": "braucht",
-    "English": "needs"
+    "English": "needs",
+    "ExampleSentence": "Er braucht mehr Zeit."
   },
   {
     "German": "idee",
-    "English": "idea"
+    "English": "idea",
+    "Article": "die",
+    "ExampleSentence": "Das ist eine gute Idee."
   },
   {
     "German": "schwester",
-    "English": "sister"
+    "English": "sister",
+    "Article": "die",
+    "ExampleSentence": "Meine Schwester wohnt in Berlin."
   },
   {
     "German": "drin",
-    "English": "inside"
+    "English": "inside",
+    "ExampleSentence": "Ist noch Kaffee drin?"
   },
   {
     "German": "ruhig",
-    "English": "calm"
+    "English": "calm",
+    "ExampleSentence": "Das Kind ist sehr ruhig."
   },
   {
     "German": "sah",
-    "English": "saw"
+    "English": "saw",
+    "ExampleSentence": "Sie sah ihn gestern.",
+    "Highlights": [
+      {
+        "Word": "sah",
+        "Reason": "Präteritum (past tense) of sehen"
+      }
+    ]
   },
   {
     "German": "ganzen",
-    "English": "whole"
+    "English": "whole",
+    "ExampleSentence": "Ich arbeite den ganzen Tag.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative masculine article (non-nominative)"
+      },
+      {
+        "Word": "ganzen",
+        "Reason": "accusative masculine adjective ending (non-nominative)"
+      }
+    ]
   },
   {
     "German": "spät",
-    "English": "late"
+    "English": "late",
+    "ExampleSentence": "Es ist schon sehr spät."
   },
   {
     "German": "ziemlich",
-    "English": "quite"
+    "English": "quite",
+    "ExampleSentence": "Das ist ziemlich einfach."
   },
   {
     "German": "solltest",
-    "English": "should"
+    "English": "should",
+    "ExampleSentence": "Du solltest mehr schlafen.",
+    "Highlights": [
+      {
+        "Word": "solltest",
+        "Reason": "Konjunktiv II, used for advice (sollen)"
+      }
+    ]
   },
   {
     "German": "name",
-    "English": "name"
+    "English": "name",
+    "Article": "der",
+    "ExampleSentence": "Wie ist dein Name?"
   },
   {
     "German": "sogar",
-    "English": "even"
+    "English": "even",
+    "ExampleSentence": "Er kann sogar kochen."
   },
   {
     "German": "kurz",
-    "English": "short"
+    "English": "short",
+    "ExampleSentence": "Der Film ist kurz."
   },
   {
     "German": "kerl",
-    "English": "guy"
+    "English": "guy",
+    "Article": "der",
+    "ExampleSentence": "Er ist ein netter Kerl."
   },
   {
     "German": "frauen",
-    "English": "women"
+    "English": "women",
+    "Article": "die",
+    "ExampleSentence": "Die Frauen arbeiten im Büro.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative neuter (in dem) after 'in' (non-nominative)"
+      }
+    ]
   },
   {
     "German": "liegt",
-    "English": "lies"
+    "English": "lies",
+    "ExampleSentence": "Das Buch liegt hier."
   },
   {
     "German": "suchen",
-    "English": "to search"
+    "English": "to search",
+    "ExampleSentence": "Wir suchen eine neue Wohnung."
   },
   {
     "German": "finde",
-    "English": "find"
+    "English": "find",
+    "ExampleSentence": "Ich finde das interessant."
   },
   {
     "German": "je",
-    "English": "ever"
+    "English": "ever",
+    "ExampleSentence": "Warst du je in Paris?",
+    "Highlights": [
+      {
+        "Word": "Warst",
+        "Reason": "Präteritum (past tense) of sein"
+      }
+    ]
   },
   {
     "German": "woher",
-    "English": "where from"
+    "English": "where from",
+    "ExampleSentence": "Woher kommst du genau?"
   },
   {
     "German": "lang",
-    "English": "long"
+    "English": "long",
+    "ExampleSentence": "Der Weg ist sehr lang."
   },
   {
     "German": "job",
-    "English": "job"
+    "English": "job",
+    "Article": "der",
+    "ExampleSentence": "Mein Job ist stressig."
   },
   {
     "German": "keiner",
-    "English": "no one"
+    "English": "no one",
+    "ExampleSentence": "Keiner mag diese Idee."
   },
   {
     "German": "seinem",
-    "English": "his"
+    "English": "his",
+    "ExampleSentence": "Sie glaubt seinem Bruder.",
+    "Highlights": [
+      {
+        "Word": "seinem",
+        "Reason": "dative masculine possessive (non-nominative)"
+      }
+    ]
   },
   {
     "German": "hört",
-    "English": "hears"
+    "English": "hears",
+    "ExampleSentence": "Er hört gern Musik."
   },
   {
     "German": "verstehen",
-    "English": "to understand"
+    "English": "to understand",
+    "ExampleSentence": "Wir verstehen das Problem nicht."
   },
   {
     "German": "spielen",
-    "English": "to play"
+    "English": "to play",
+    "ExampleSentence": "Kinder spielen gerne draußen."
   },
   {
     "German": "überhaupt",
-    "English": "at all"
+    "English": "at all",
+    "ExampleSentence": "Das interessiert mich überhaupt nicht."
   },
   {
     "German": "teufel",
-    "English": "devil"
+    "English": "devil",
+    "Article": "der",
+    "ExampleSentence": "Der Teufel steckt im Detail.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative neuter (in dem) after 'in' (non-nominative)"
+      }
+    ]
   },
   {
     "German": "verstanden",
-    "English": "understood"
+    "English": "understood",
+    "ExampleSentence": "Ich habe alles verstanden.",
+    "Highlights": [
+      {
+        "Word": "verstanden",
+        "Reason": "Perfekt past participle (with habe)"
+      }
+    ]
   },
   {
     "German": "verloren",
-    "English": "lost"
+    "English": "lost",
+    "ExampleSentence": "Er hat sein Handy verloren.",
+    "Highlights": [
+      {
+        "Word": "verloren",
+        "Reason": "Perfekt past participle (with hat)"
+      }
+    ]
   },
   {
     "German": "große",
-    "English": "big"
+    "English": "big",
+    "ExampleSentence": "Berlin ist eine große Stadt."
   },
   {
     "German": "hand",
-    "English": "hand"
+    "English": "hand",
+    "Article": "die",
+    "ExampleSentence": "Meine Hand tut weh."
   },
   {
     "German": "grund",
-    "English": "reason"
+    "English": "reason",
+    "Article": "der",
+    "ExampleSentence": "Das ist kein guter Grund."
   },
   {
     "German": "jahr",
-    "English": "year"
+    "English": "year",
+    "Article": "das",
+    "ExampleSentence": "Dieses Jahr ist besonders."
   },
   {
     "German": "kommst",
-    "English": "come"
+    "English": "come",
+    "ExampleSentence": "Kommst du heute mit?"
   },
   {
     "German": "mama",
-    "English": "mom"
+    "English": "mom",
+    "Article": "die",
+    "ExampleSentence": "Mama kocht das Abendessen."
   },
   {
     "German": "ruhe",
-    "English": "quiet"
+    "English": "quiet",
+    "Article": "die",
+    "ExampleSentence": "Ich brauche jetzt Ruhe."
   },
   {
     "German": "gewesen",
-    "English": "been"
+    "English": "been",
+    "ExampleSentence": "Ich bin dort gewesen.",
+    "Highlights": [
+      {
+        "Word": "gewesen",
+        "Reason": "Perfekt past participle of sein (with bin)"
+      }
+    ]
   },
   {
     "German": "tod",
-    "English": "death"
+    "English": "death",
+    "Article": "der",
+    "ExampleSentence": "Der Tod gehört zum Leben.",
+    "Highlights": [
+      {
+        "Word": "zum",
+        "Reason": "dative neuter (zu dem) after 'zu' (non-nominative)"
+      }
+    ]
   },
   {
     "German": "stunden",
-    "English": "hours"
+    "English": "hours",
+    "Article": "die",
+    "ExampleSentence": "Wir warten schon drei Stunden."
   },
   {
     "German": "hoffe",
-    "English": "hope"
+    "English": "hope",
+    "ExampleSentence": "Ich hoffe auf gutes Wetter."
   },
   {
     "German": "denkst",
-    "English": "think"
+    "English": "think",
+    "ExampleSentence": "Was denkst du darüber?"
   },
   {
     "German": "oben",
-    "English": "upstairs"
+    "English": "upstairs",
+    "ExampleSentence": "Die Kinder sind oben."
   },
   {
     "German": "gestern",
-    "English": "yesterday"
+    "English": "yesterday",
+    "ExampleSentence": "Ich habe gestern gearbeitet.",
+    "Highlights": [
+      {
+        "Word": "gearbeitet",
+        "Reason": "Perfekt past participle (with habe)"
+      }
+    ]
   },
   {
     "German": "versuchen",
-    "English": "to try"
+    "English": "to try",
+    "ExampleSentence": "Wir versuchen es noch einmal."
   },
   {
     "German": "art",
-    "English": "kind"
+    "English": "kind",
+    "Article": "die",
+    "ExampleSentence": "Das ist eine seltsame Art."
   },
   {
     "German": "letzten",
-    "English": "last"
+    "English": "last",
+    "ExampleSentence": "Die letzten Tage waren stressig.",
+    "Highlights": [
+      {
+        "Word": "waren",
+        "Reason": "Präteritum (past tense) of sein"
+      }
+    ]
   },
   {
     "German": "schatz",
-    "English": "darling"
+    "English": "darling",
+    "Article": "der",
+    "ExampleSentence": "Du bist mein Schatz."
   },
   {
     "German": "endlich",
-    "English": "finally"
+    "English": "finally",
+    "ExampleSentence": "Endlich ist der Sommer da."
   },
   {
     "German": "he",
-    "English": "hey"
+    "English": "hey",
+    "ExampleSentence": "He, das ist meins!"
   },
   {
     "German": "nimm",
-    "English": "take"
+    "English": "take",
+    "ExampleSentence": "Nimm das Buch mit.",
+    "Highlights": [
+      {
+        "Word": "Nimm",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "etwa",
-    "English": "about"
+    "English": "about",
+    "ExampleSentence": "Das dauert etwa zehn Minuten."
   },
   {
     "German": "erzählt",
-    "English": "tells"
+    "English": "tells",
+    "ExampleSentence": "Er erzählt eine spannende Geschichte."
   },
   {
     "German": "läuft",
-    "English": "runs"
+    "English": "runs",
+    "ExampleSentence": "Der Hund läuft schnell."
   },
   {
     "German": "schwer",
-    "English": "hard"
+    "English": "hard",
+    "ExampleSentence": "Diese Aufgabe ist sehr schwer."
   },
   {
     "German": "anders",
-    "English": "different"
+    "English": "different",
+    "ExampleSentence": "Das ist heute anders."
   },
   {
     "German": "musste",
-    "English": "had to"
+    "English": "had to",
+    "ExampleSentence": "Ich musste früh aufstehen.",
+    "Highlights": [
+      {
+        "Word": "musste",
+        "Reason": "Präteritum (past tense) of müssen"
+      }
+    ]
   },
   {
     "German": "fünf",
-    "English": "five"
+    "English": "five",
+    "ExampleSentence": "Ich habe fünf Bücher."
   },
   {
     "German": "wasser",
-    "English": "water"
+    "English": "water",
+    "Article": "das",
+    "ExampleSentence": "Ich trinke gern Wasser."
   },
   {
     "German": "lässt",
-    "English": "lets"
+    "English": "lets",
+    "ExampleSentence": "Er lässt mich gehen."
   },
   {
     "German": "erste",
-    "English": "first"
+    "English": "first",
+    "ExampleSentence": "Der erste Tag beginnt."
   },
   {
     "German": "versucht",
-    "English": "tries"
+    "English": "tries",
+    "ExampleSentence": "Sie versucht es."
   },
   {
     "German": "gekommen",
-    "English": "come"
+    "English": "come",
+    "ExampleSentence": "Er ist gekommen.",
+    "Highlights": [
+      {
+        "Word": "gekommen",
+        "Reason": "Perfekt (past participle), not present tense"
+      }
+    ]
   },
   {
     "German": "geschichte",
-    "English": "story"
+    "English": "story",
+    "Article": "die",
+    "ExampleSentence": "Die Geschichte ist spannend."
   },
   {
     "German": "wenig",
-    "English": "little"
+    "English": "little",
+    "ExampleSentence": "Ich habe wenig Zeit."
   },
   {
     "German": "holen",
-    "English": "to get"
+    "English": "to get",
+    "ExampleSentence": "Wir holen das Brot."
   },
   {
     "German": "bedeutet",
-    "English": "means"
+    "English": "means",
+    "ExampleSentence": "Das bedeutet viel Glück."
   },
   {
     "German": "nett",
-    "English": "nice"
+    "English": "nice",
+    "ExampleSentence": "Er ist sehr nett."
   },
   {
     "German": "wahrheit",
-    "English": "truth"
+    "English": "truth",
+    "Article": "die",
+    "ExampleSentence": "Die Wahrheit ist wichtig."
   },
   {
     "German": "woche",
-    "English": "week"
+    "English": "week",
+    "Article": "die",
+    "ExampleSentence": "Diese Woche ist lang."
   },
   {
     "German": "bringt",
-    "English": "brings"
+    "English": "brings",
+    "ExampleSentence": "Er bringt das Essen."
   },
   {
     "German": "deshalb",
-    "English": "that's why"
+    "English": "that's why",
+    "ExampleSentence": "Deshalb bleibe ich zuhause."
   },
   {
     "German": "welche",
-    "English": "which"
+    "English": "which",
+    "ExampleSentence": "Welche Farbe magst du?"
   },
   {
     "German": "bestimmt",
-    "English": "definitely"
+    "English": "definitely",
+    "ExampleSentence": "Das ist bestimmt richtig."
   },
   {
     "German": "hoch",
-    "English": "high"
+    "English": "high",
+    "ExampleSentence": "Der Berg ist hoch."
   },
   {
     "German": "alter",
-    "English": "dude"
+    "English": "dude",
+    "ExampleSentence": "Alter, das ist verrückt!"
   },
   {
     "German": "sagst",
-    "English": "say"
+    "English": "say",
+    "ExampleSentence": "Was sagst du dazu?"
   },
   {
     "German": "schau",
-    "English": "look"
+    "English": "look",
+    "ExampleSentence": "Schau, das ist schön!",
+    "Highlights": [
+      {
+        "Word": "Schau",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "ah",
-    "English": "ah"
+    "English": "ah",
+    "ExampleSentence": "Ah, das ist toll!"
   },
   {
     "German": "land",
-    "English": "country"
+    "English": "country",
+    "Article": "das",
+    "ExampleSentence": "Das Land ist groß."
   },
   {
     "German": "zimmer",
-    "English": "room"
+    "English": "room",
+    "Article": "das",
+    "ExampleSentence": "Das Zimmer ist sauber."
   },
   {
     "German": "wagen",
-    "English": "car"
+    "English": "car",
+    "Article": "der",
+    "ExampleSentence": "Der Wagen ist neu."
   },
   {
     "German": "vier",
-    "English": "four"
+    "English": "four",
+    "ExampleSentence": "Ich habe vier Äpfel."
   },
   {
     "German": "gefallen",
-    "English": "liked"
+    "English": "liked",
+    "ExampleSentence": "Der Film hat gefallen.",
+    "Highlights": [
+      {
+        "Word": "gefallen",
+        "Reason": "Perfekt (past participle), not present tense"
+      }
+    ]
   },
   {
     "German": "spaß",
-    "English": "fun"
+    "English": "fun",
+    "Article": "der",
+    "ExampleSentence": "Das macht mir Spaß."
   },
   {
     "German": "niemals",
-    "English": "never"
+    "English": "never",
+    "ExampleSentence": "Ich vergesse dich niemals."
   },
   {
     "German": "schuld",
-    "English": "fault"
+    "English": "fault",
+    "Article": "die",
+    "ExampleSentence": "Das ist meine Schuld."
   },
   {
     "German": "getötet",
-    "English": "killed"
+    "English": "killed",
+    "ExampleSentence": "Er hat ihn getötet.",
+    "Highlights": [
+      {
+        "Word": "getötet",
+        "Reason": "Perfekt (past participle), not present tense"
+      }
+    ]
   },
   {
     "German": "wollten",
-    "English": "wanted"
+    "English": "wanted",
+    "ExampleSentence": "Wir wollten ins Kino.",
+    "Highlights": [
+      {
+        "Word": "wollten",
+        "Reason": "Präteritum (simple past), not present tense"
+      }
+    ]
   },
   {
     "German": "verlassen",
-    "English": "to leave"
+    "English": "to leave",
+    "ExampleSentence": "Ich will das Haus verlassen."
   },
   {
     "German": "zeigen",
-    "English": "to show"
+    "English": "to show",
+    "ExampleSentence": "Wir zeigen dir das."
   },
   {
     "German": "beste",
-    "English": "best"
+    "English": "best",
+    "ExampleSentence": "Das ist meine beste Freundin."
   },
   {
     "German": "ernst",
-    "English": "serious"
+    "English": "serious",
+    "ExampleSentence": "Die Lage ist sehr ernst."
   },
   {
     "German": "unserer",
-    "English": "our"
+    "English": "our",
+    "ExampleSentence": "Wir helfen unserer Mutter.",
+    "Highlights": [
+      {
+        "Word": "unserer",
+        "Reason": "dative case (not nominative)"
+      }
+    ]
   },
   {
     "German": "denen",
-    "English": "those"
+    "English": "those",
+    "ExampleSentence": "Ich helfe denen dort.",
+    "Highlights": [
+      {
+        "Word": "denen",
+        "Reason": "dative case (not nominative)"
+      }
+    ]
   },
   {
     "German": "ort",
-    "English": "place"
+    "English": "place",
+    "Article": "der",
+    "ExampleSentence": "Der Ort ist schön."
   },
   {
     "German": "bleibt",
-    "English": "stays"
+    "English": "stays",
+    "ExampleSentence": "Er bleibt zu Hause."
   },
   {
     "German": "würdest",
-    "English": "would"
+    "English": "would",
+    "ExampleSentence": "Würdest du das machen?",
+    "Highlights": [
+      {
+        "Word": "Würdest",
+        "Reason": "Konjunktiv II (would-form), not present tense"
+      }
+    ]
   },
   {
     "German": "manchmal",
-    "English": "sometimes"
+    "English": "sometimes",
+    "ExampleSentence": "Ich lese manchmal Bücher."
   },
   {
     "German": "glaubst",
-    "English": "believe"
+    "English": "believe",
+    "ExampleSentence": "Glaubst du mir nicht?"
   },
   {
     "German": "seite",
-    "English": "side"
+    "English": "side",
+    "Article": "die",
+    "ExampleSentence": "Die Seite ist leer."
   },
   {
     "German": "lasst",
-    "English": "let"
+    "English": "let",
+    "ExampleSentence": "Lasst uns Fußball spielen!",
+    "Highlights": [
+      {
+        "Word": "Lasst",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "zwischen",
-    "English": "between"
+    "English": "between",
+    "ExampleSentence": "Der Ball liegt zwischen uns."
   },
   {
     "German": "eben",
-    "English": "just"
+    "English": "just",
+    "ExampleSentence": "Das ist eben so."
   },
   {
     "German": "während",
-    "English": "during"
+    "English": "during",
+    "ExampleSentence": "Während des Films esse ich.",
+    "Highlights": [
+      {
+        "Word": "des",
+        "Reason": "genitive article (not nominative)"
+      }
+    ]
   },
   {
     "German": "spiel",
-    "English": "game"
+    "English": "game",
+    "Article": "das",
+    "ExampleSentence": "Das Spiel macht Spaß."
   },
   {
     "German": "nehme",
-    "English": "take"
+    "English": "take",
+    "ExampleSentence": "Ich nehme den Bus.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative case (not nominative)"
+      }
+    ]
   },
   {
     "German": "ersten",
-    "English": "first"
+    "English": "first",
+    "ExampleSentence": "Am ersten Tag regnet es.",
+    "Highlights": [
+      {
+        "Word": "ersten",
+        "Reason": "dative adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "guter",
-    "English": "good"
+    "English": "good",
+    "ExampleSentence": "Das ist guter Kaffee."
   },
   {
     "German": "chance",
-    "English": "chance"
+    "English": "chance",
+    "Article": "die",
+    "ExampleSentence": "Das ist eine gute Chance."
   },
   {
     "German": "freundin",
-    "English": "girlfriend"
+    "English": "girlfriend",
+    "Article": "die",
+    "ExampleSentence": "Sie ist meine Freundin."
   },
   {
     "German": "krieg",
-    "English": "war"
+    "English": "war",
+    "Article": "der",
+    "ExampleSentence": "Der Krieg ist schrecklich."
   },
   {
     "German": "gefällt",
-    "English": "like"
+    "English": "like",
+    "ExampleSentence": "Mir gefällt dieser Film."
   },
   {
     "German": "kleinen",
-    "English": "small"
+    "English": "small",
+    "ExampleSentence": "Ich sehe den kleinen Hund.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative case (not nominative)"
+      },
+      {
+        "Word": "kleinen",
+        "Reason": "accusative adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "erzählen",
-    "English": "to tell"
+    "English": "to tell",
+    "ExampleSentence": "Wir erzählen eine Geschichte."
   },
   {
     "German": "anderes",
-    "English": "other"
+    "English": "other",
+    "ExampleSentence": "Ich brauche etwas anderes."
   },
   {
     "German": "tage",
-    "English": "days"
+    "English": "days",
+    "Article": "die",
+    "ExampleSentence": "Die Tage sind kurz."
   },
   {
     "German": "entschuldigen",
-    "English": "to apologize"
+    "English": "to apologize",
+    "ExampleSentence": "Er will sich entschuldigen."
   },
   {
     "German": "wichtig",
-    "English": "important"
+    "English": "important",
+    "ExampleSentence": "Das ist sehr wichtig."
   },
   {
     "German": "gehst",
-    "English": "go"
+    "English": "go",
+    "ExampleSentence": "Wohin gehst du jetzt?"
   },
   {
     "German": "allen",
-    "English": "all"
+    "English": "all",
+    "ExampleSentence": "Ich danke allen Freunden.",
+    "Highlights": [
+      {
+        "Word": "allen",
+        "Reason": "dative plural (not nominative)"
+      }
+    ]
   },
   {
     "German": "bett",
-    "English": "bed"
+    "English": "bed",
+    "Article": "das",
+    "ExampleSentence": "Das Bett ist bequem."
   },
   {
     "German": "sachen",
-    "English": "things"
+    "English": "things",
+    "Article": "die",
+    "ExampleSentence": "Die Sachen sind neu."
   },
   {
     "German": "schlecht",
-    "English": "bad"
+    "English": "bad",
+    "ExampleSentence": "Das Wetter ist schlecht."
   },
   {
     "German": "schule",
-    "English": "school"
+    "English": "school",
+    "Article": "die",
+    "ExampleSentence": "Die Schule beginnt früh."
   },
   {
     "German": "entschuldigung",
-    "English": "sorry"
+    "English": "sorry",
+    "Article": "die",
+    "ExampleSentence": "Die Entschuldigung ist wichtig."
   },
   {
     "German": "wort",
-    "English": "word"
+    "English": "word",
+    "Article": "das",
+    "ExampleSentence": "Das Wort ist schwer."
   },
   {
     "German": "hättest",
-    "English": "would have"
+    "English": "would have",
+    "ExampleSentence": "Du hättest das gewusst.",
+    "Highlights": [
+      {
+        "Word": "hättest",
+        "Reason": "Konjunktiv II (would have), not present tense"
+      },
+      {
+        "Word": "gewusst",
+        "Reason": "past participle, not present tense"
+      }
+    ]
   },
   {
     "German": "wären",
-    "English": "would be"
+    "English": "would be",
+    "ExampleSentence": "Wir wären gern dabei.",
+    "Highlights": [
+      {
+        "Word": "wären",
+        "Reason": "Konjunktiv II (would be), not present tense"
+      }
+    ]
   },
   {
     "German": "typ",
-    "English": "guy"
+    "English": "guy",
+    "Article": "der",
+    "ExampleSentence": "Der Typ ist komisch."
   },
   {
     "German": "schlafen",
-    "English": "to sleep"
+    "English": "to sleep",
+    "ExampleSentence": "Kinder schlafen gerne lange."
   },
   {
     "German": "äh",
-    "English": "uh"
+    "English": "uh",
+    "ExampleSentence": "Äh, ich weiß nicht."
   },
   {
     "German": "tu",
-    "English": "do"
+    "English": "do",
+    "ExampleSentence": "Tu das bitte jetzt.",
+    "Highlights": [
+      {
+        "Word": "Tu",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "euer",
-    "English": "your"
+    "English": "your",
+    "ExampleSentence": "Euer Haus ist groß."
   },
   {
     "German": "gesicht",
-    "English": "face"
+    "English": "face",
+    "Article": "das",
+    "ExampleSentence": "Sein Gesicht ist rot."
   },
   {
     "German": "falls",
-    "English": "in case"
+    "English": "in case",
+    "ExampleSentence": "Falls es regnet, bleiben wir."
   },
   {
     "German": "neuen",
-    "English": "new"
+    "English": "new",
+    "ExampleSentence": "Ich wohne im neuen Haus.",
+    "Highlights": [
+      {
+        "Word": "neuen",
+        "Reason": "dative adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "bloß",
-    "English": "just"
+    "English": "just",
+    "ExampleSentence": "Sag bloß nicht das!",
+    "Highlights": [
+      {
+        "Word": "Sag",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "unten",
-    "English": "below"
+    "English": "below",
+    "ExampleSentence": "Das Buch liegt unten."
   },
   {
     "German": "teil",
-    "English": "part"
+    "English": "part",
+    "Article": "der",
+    "ExampleSentence": "Das ist ein Teil."
   },
   {
     "German": "beiden",
-    "English": "both"
+    "English": "both",
+    "ExampleSentence": "Ich helfe beiden Kindern.",
+    "Highlights": [
+      {
+        "Word": "beiden",
+        "Reason": "dative plural (not nominative)"
+      }
+    ]
   },
   {
     "German": "mensch",
-    "English": "person"
+    "English": "person",
+    "Article": "der",
+    "ExampleSentence": "Der Mensch ist klug."
   },
   {
     "German": "kleiner",
-    "English": "smaller"
+    "English": "smaller",
+    "ExampleSentence": "Er ist kleiner als ich."
   },
   {
     "German": "stellen",
-    "English": "to put"
+    "English": "to put",
+    "ExampleSentence": "Wir stellen viele Fragen."
   },
   {
     "German": "oft",
-    "English": "often"
+    "English": "often",
+    "ExampleSentence": "Ich lache oft laut."
   },
   {
     "German": "sorge",
-    "English": "worry"
+    "English": "worry",
+    "Article": "die",
+    "ExampleSentence": "Die Sorge ist groß."
   },
   {
     "German": "gedacht",
-    "English": "thought"
+    "English": "thought",
+    "ExampleSentence": "Ich habe daran gedacht.",
+    "Highlights": [
+      {
+        "Word": "gedacht",
+        "Reason": "Perfekt (past participle), not present tense"
+      }
+    ]
   },
   {
     "German": "tust",
-    "English": "do"
+    "English": "do",
+    "ExampleSentence": "Was tust du gerade?"
   },
   {
     "German": "trinken",
-    "English": "to drink"
+    "English": "to drink",
+    "ExampleSentence": "Wir trinken gerne Kaffee."
   },
   {
     "German": "einige",
-    "English": "some"
+    "English": "some",
+    "ExampleSentence": "Einige Leute sind nett."
   },
   {
     "German": "dies",
-    "English": "this"
+    "English": "this",
+    "ExampleSentence": "Dies ist mein Auto."
   },
   {
     "German": "ding",
-    "English": "thing"
+    "English": "thing",
+    "Article": "das",
+    "ExampleSentence": "Das Ding ist kaputt."
   },
   {
     "German": "unseren",
-    "English": "our"
+    "English": "our",
+    "ExampleSentence": "Wir lieben unseren Hund.",
+    "Highlights": [
+      {
+        "Word": "unseren",
+        "Reason": "accusative case (not nominative)"
+      }
+    ]
   },
   {
     "German": "kriegen",
-    "English": "to get"
+    "English": "to get",
+    "ExampleSentence": "Wir kriegen bald Besuch."
   },
   {
     "German": "blut",
-    "English": "blood"
+    "English": "blood",
+    "Article": "das",
+    "ExampleSentence": "Das Blut ist rot."
   },
   {
     "German": "ehrlich",
-    "English": "honest"
+    "English": "honest",
+    "ExampleSentence": "Sei ehrlich zu mir.",
+    "Highlights": [
+      {
+        "Word": "Sei",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "eltern",
-    "English": "parents"
+    "English": "parents",
+    "Article": "die",
+    "ExampleSentence": "Meine Eltern sind nett."
   },
   {
     "German": "scheint",
-    "English": "seems"
+    "English": "seems",
+    "ExampleSentence": "Die Sonne scheint heute."
   },
   {
     "German": "herz",
-    "English": "heart"
+    "English": "heart",
+    "Article": "das",
+    "ExampleSentence": "Mein Herz schlägt schnell."
   },
   {
     "German": "glücklich",
-    "English": "happy"
+    "English": "happy",
+    "ExampleSentence": "Ich bin sehr glücklich."
   },
   {
     "German": "alte",
-    "English": "old"
+    "English": "old",
+    "ExampleSentence": "Der alte Mann lächelt."
   },
   {
     "German": "alt",
-    "English": "old"
+    "English": "old",
+    "ExampleSentence": "Das Auto ist alt."
   },
   {
     "German": "bleib",
-    "English": "stay"
+    "English": "stay",
+    "ExampleSentence": "Bleib bitte bei mir.",
+    "Highlights": [
+      {
+        "Word": "Bleib",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "wiedersehen",
-    "English": "goodbye"
+    "English": "goodbye",
+    "Article": "das",
+    "ExampleSentence": "Auf Wiedersehen, bis morgen!"
   },
   {
     "German": "frei",
-    "English": "free"
+    "English": "free",
+    "ExampleSentence": "Der Platz ist frei."
   },
   {
     "German": "wen",
-    "English": "whom"
+    "English": "whom",
+    "ExampleSentence": "Wen siehst du dort?",
+    "Highlights": [
+      {
+        "Word": "Wen",
+        "Reason": "accusative case (not nominative 'wer')"
+      }
+    ]
   },
   {
     "German": "drauf",
-    "English": "on it"
+    "English": "on it",
+    "ExampleSentence": "Ich freue mich drauf."
   },
   {
     "German": "möglich",
-    "English": "possible"
+    "English": "possible",
+    "ExampleSentence": "Das ist doch möglich."
   },
   {
     "German": "irgendwie",
-    "English": "somehow"
+    "English": "somehow",
+    "ExampleSentence": "Irgendwie geht das schon."
   },
   {
     "German": "reicht",
-    "English": "is enough"
+    "English": "is enough",
+    "ExampleSentence": "Das reicht mir jetzt."
   },
   {
     "German": "fest",
-    "English": "solid"
+    "English": "solid",
+    "ExampleSentence": "Der Knoten ist fest."
   },
   {
     "German": "besten",
-    "English": "best"
+    "English": "best",
+    "ExampleSentence": "Das ist am besten.",
+    "Highlights": [
+      {
+        "Word": "besten",
+        "Reason": "dative superlative form (not nominative)"
+      }
+    ]
   },
   {
     "German": "waffe",
-    "English": "weapon"
+    "English": "weapon",
+    "Article": "die",
+    "ExampleSentence": "Die Waffe ist gefährlich."
   },
   {
     "German": "kaum",
-    "English": "hardly"
+    "English": "hardly",
+    "ExampleSentence": "Ich glaube das kaum."
   },
   {
     "German": "irgendwas",
-    "English": "something"
+    "English": "something",
+    "ExampleSentence": "Irgendwas stimmt hier nicht."
   },
   {
     "German": "klingt",
-    "English": "sounds"
+    "English": "sounds",
+    "ExampleSentence": "Das klingt sehr gut."
   },
   {
     "German": "platz",
-    "English": "place"
+    "English": "place",
+    "Article": "der",
+    "ExampleSentence": "Der Platz ist leer."
   },
   {
     "German": "brauchst",
-    "English": "need"
+    "English": "need",
+    "ExampleSentence": "Brauchst du meine Hilfe?"
   },
   {
     "German": "rede",
-    "English": "talk"
+    "English": "talk",
+    "ExampleSentence": "Ich rede mit ihm."
   },
   {
     "German": "papa",
-    "English": "dad"
+    "English": "dad",
+    "Article": "der",
+    "ExampleSentence": "Mein Papa ist nett."
   },
   {
     "German": "falsch",
-    "English": "wrong"
+    "English": "wrong",
+    "ExampleSentence": "Das ist total falsch."
   },
   {
     "German": "sondern",
-    "English": "but rather"
+    "English": "but rather",
+    "ExampleSentence": "Er kommt nicht, sondern bleibt."
   },
   {
     "German": "alten",
-    "English": "old"
+    "English": "old",
+    "ExampleSentence": "Ich kenne den alten Mann.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative case (not nominative)"
+      },
+      {
+        "Word": "alten",
+        "Reason": "accusative adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "nummer",
-    "English": "number"
+    "English": "number",
+    "Article": "die",
+    "ExampleSentence": "Die Nummer ist falsch."
   },
   {
     "German": "früher",
-    "English": "earlier"
+    "English": "earlier",
+    "ExampleSentence": "Früher wohnte ich hier.",
+    "Highlights": [
+      {
+        "Word": "wohnte",
+        "Reason": "Präteritum (simple past), not present tense"
+      }
+    ]
   },
   {
     "German": "jungen",
-    "English": "boys"
+    "English": "boys",
+    "Article": "die",
+    "ExampleSentence": "Die Jungen spielen im Garten."
   },
   {
     "German": "wohin",
-    "English": "where to"
+    "English": "where to",
+    "ExampleSentence": "Wohin fährst du heute?"
   },
   {
     "German": "außer",
-    "English": "except"
+    "English": "except",
+    "ExampleSentence": "Außer mir kommt niemand."
   },
   {
     "German": "früh",
-    "English": "early"
+    "English": "early",
+    "ExampleSentence": "Wir stehen früh auf."
   },
   {
     "German": "setzen",
-    "English": "to sit"
+    "English": "to sit",
+    "ExampleSentence": "Wir setzen uns hierher."
   },
   {
     "German": "zuerst",
-    "English": "first"
+    "English": "first",
+    "ExampleSentence": "Zuerst gehen wir heim."
   },
   {
     "German": "wahrscheinlich",
-    "English": "probably"
+    "English": "probably",
+    "ExampleSentence": "Das ist wahrscheinlich richtig."
   },
   {
     "German": "dürfen",
-    "English": "may"
+    "English": "may",
+    "ExampleSentence": "Wir dürfen heute spielen."
   },
   {
     "German": "jede",
-    "English": "every"
+    "English": "every",
+    "ExampleSentence": "Jede Frau ist wichtig."
   },
   {
     "German": "arsch",
-    "English": "ass"
+    "English": "ass",
+    "Article": "der",
+    "ExampleSentence": "Er ist ein Arsch."
   },
   {
     "German": "telefon",
-    "English": "phone"
+    "English": "phone",
+    "Article": "das",
+    "ExampleSentence": "Das Telefon klingelt laut."
   },
   {
     "German": "tue",
-    "English": "do"
+    "English": "do",
+    "ExampleSentence": "Ich tue mein Bestes."
   },
   {
     "German": "kennst",
-    "English": "know"
+    "English": "know",
+    "ExampleSentence": "Kennst du diesen Mann?",
+    "Highlights": [
+      {
+        "Word": "diesen",
+        "Reason": "accusative case (not nominative)"
+      }
+    ]
   },
   {
     "German": "willkommen",
-    "English": "welcome"
+    "English": "welcome",
+    "ExampleSentence": "Herzlich willkommen bei uns!"
   },
   {
     "German": "plan",
-    "English": "plan"
+    "English": "plan",
+    "Article": "der",
+    "ExampleSentence": "Der Plan ist gut."
   },
   {
     "German": "großen",
-    "English": "big"
+    "English": "big",
+    "ExampleSentence": "Ich sehe den großen Hund.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative case (not nominative)"
+      },
+      {
+        "Word": "großen",
+        "Reason": "accusative adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "retten",
-    "English": "to save"
+    "English": "to save",
+    "ExampleSentence": "Wir retten das Kind."
   },
   {
     "German": "hierher",
-    "English": "over here"
+    "English": "over here",
+    "ExampleSentence": "Komm doch mal hierher!",
+    "Highlights": [
+      {
+        "Word": "Komm",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "wär",
-    "English": "would be"
+    "English": "would be",
+    "ExampleSentence": "Das wär nicht schlecht.",
+    "Highlights": [
+      {
+        "Word": "wär",
+        "Reason": "Konjunktiv II (colloquial short form of wäre), not present tense"
+      }
+    ]
   },
   {
     "German": "bring",
-    "English": "bring"
+    "English": "bring",
+    "ExampleSentence": "Bring mir das Buch.",
+    "Highlights": [
+      {
+        "Word": "Bring",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "fehler",
-    "English": "mistake"
+    "English": "mistake",
+    "Article": "der",
+    "ExampleSentence": "Das ist ein Fehler."
   },
   {
     "German": "wollt",
-    "English": "want"
+    "English": "want",
+    "ExampleSentence": "Wollt ihr Pizza essen?"
   },
   {
     "German": "dollar",
-    "English": "dollar"
+    "English": "dollar",
+    "Article": "der",
+    "ExampleSentence": "Das kostet zehn Dollar."
   },
   {
     "German": "zehn",
-    "English": "ten"
+    "English": "ten",
+    "ExampleSentence": "Ich habe zehn Finger."
   },
   {
     "German": "allem",
-    "English": "everything"
+    "English": "everything",
+    "ExampleSentence": "Trotz allem bleibe ich hier.",
+    "Highlights": [
+      {
+        "Word": "allem",
+        "Reason": "dative case (not nominative)"
+      }
+    ]
   },
   {
     "German": "pass",
-    "English": "passport"
+    "English": "passport",
+    "Article": "der",
+    "ExampleSentence": "Mein Pass ist gültig."
   },
   {
     "German": "nächste",
-    "English": "next"
+    "English": "next",
+    "ExampleSentence": "Die nächste Straße ist hier."
   },
   {
     "German": "stunde",
-    "English": "hour"
+    "English": "hour",
+    "Article": "die",
+    "ExampleSentence": "Die Stunde ist vorbei."
   },
   {
     "German": "hände",
-    "English": "hands"
+    "English": "hands",
+    "Article": "die",
+    "ExampleSentence": "Meine Hände sind kalt."
   },
   {
     "German": "gegeben",
-    "English": "given"
+    "English": "given",
+    "ExampleSentence": "Er hat es gegeben.",
+    "Highlights": [
+      {
+        "Word": "gegeben",
+        "Reason": "Perfekt (past participle), not present tense"
+      }
+    ]
   },
   {
     "German": "menge",
-    "English": "amount"
+    "English": "amount",
+    "Article": "die",
+    "ExampleSentence": "Die Menge ist groß."
   },
   {
     "German": "langsam",
-    "English": "slow"
+    "English": "slow",
+    "ExampleSentence": "Er fährt sehr langsam."
   },
   {
     "German": "bereits",
-    "English": "already"
+    "English": "already",
+    "ExampleSentence": "Ich bin bereits fertig."
   },
   {
     "German": "wartet",
-    "English": "waits"
+    "English": "waits",
+    "ExampleSentence": "Er wartet auf mich."
   },
   {
     "German": "sechs",
-    "English": "six"
+    "English": "six",
+    "ExampleSentence": "Ich habe sechs Katzen."
   },
   {
     "German": "lieben",
-    "English": "to love"
+    "English": "to love",
+    "ExampleSentence": "Sie lieben ihre Katze."
   },
   {
     "German": "meines",
-    "English": "my"
+    "English": "my",
+    "ExampleSentence": "Das ist meines Bruders Auto.",
+    "Highlights": [
+      {
+        "Word": "meines",
+        "Reason": "genitive singular masculine (possessive), not nominative"
+      }
+    ]
   },
   {
     "German": "büro",
-    "English": "office"
+    "English": "office",
+    "Article": "das",
+    "ExampleSentence": "Ich arbeite im Büro.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "nächsten",
-    "English": "next"
+    "English": "next",
+    "ExampleSentence": "Wir sehen uns nächsten Montag.",
+    "Highlights": [
+      {
+        "Word": "nächsten Montag",
+        "Reason": "accusative time expression, adjective ending differs from nominative"
+      }
+    ]
   },
   {
     "German": "gebe",
-    "English": "give"
+    "English": "give",
+    "ExampleSentence": "Ich gebe dir Wasser."
   },
   {
     "German": "wochen",
-    "English": "weeks"
+    "English": "weeks",
+    "Article": "die",
+    "ExampleSentence": "Die Wochen vergehen schnell."
   },
   {
     "German": "ruf",
-    "English": "call"
+    "English": "call",
+    "ExampleSentence": "Ruf mich bitte an!",
+    "Highlights": [
+      {
+        "Word": "Ruf ... an",
+        "Reason": "imperative of anrufen (separable verb), not present"
+      }
+    ]
   },
   {
     "German": "schaffen",
-    "English": "to manage"
+    "English": "to manage",
+    "ExampleSentence": "Wir schaffen das zusammen."
   },
   {
     "German": "leider",
-    "English": "unfortunately"
+    "English": "unfortunately",
+    "ExampleSentence": "Ich habe leider keine Zeit."
   },
   {
     "German": "scheiß",
-    "English": "damn"
+    "English": "damn",
+    "ExampleSentence": "Das ist scheiß kalt heute."
   },
   {
     "German": "hölle",
-    "English": "hell"
+    "English": "hell",
+    "Article": "die",
+    "ExampleSentence": "Die Hölle ist sehr heiß."
   },
   {
     "German": "trotzdem",
-    "English": "anyway"
+    "English": "anyway",
+    "ExampleSentence": "Ich gehe trotzdem raus."
   },
   {
     "German": "doktor",
-    "English": "doctor"
+    "English": "doctor",
+    "Article": "der",
+    "ExampleSentence": "Der Doktor kommt bald."
   },
   {
     "German": "tja",
-    "English": "well"
+    "English": "well",
+    "ExampleSentence": "Tja, das Leben ist hart."
   },
   {
     "German": "voll",
-    "English": "full"
+    "English": "full",
+    "ExampleSentence": "Der Bus ist total voll."
   },
   {
     "German": "film",
-    "English": "movie"
+    "English": "movie",
+    "Article": "der",
+    "ExampleSentence": "Der Film ist echt gut."
   },
   {
     "German": "überall",
-    "English": "everywhere"
+    "English": "everywhere",
+    "ExampleSentence": "Überall liegt heute Schnee."
   },
   {
     "German": "hund",
-    "English": "dog"
+    "English": "dog",
+    "Article": "der",
+    "ExampleSentence": "Der Hund schläft im Garten.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "geworden",
-    "English": "become"
+    "English": "become",
+    "ExampleSentence": "Er ist krank geworden.",
+    "Highlights": [
+      {
+        "Word": "ist geworden",
+        "Reason": "Perfekt tense (sein + past participle), not present"
+      }
+    ]
   },
   {
     "German": "direkt",
-    "English": "directly"
+    "English": "directly",
+    "ExampleSentence": "Wir gehen direkt nach Hause."
   },
   {
     "German": "wolltest",
-    "English": "wanted"
+    "English": "wanted",
+    "ExampleSentence": "Du wolltest das Buch lesen.",
+    "Highlights": [
+      {
+        "Word": "wolltest",
+        "Reason": "Präteritum (simple past) of wollen, not present"
+      }
+    ]
   },
   {
     "German": "tat",
-    "English": "did"
+    "English": "did",
+    "ExampleSentence": "Er tat mir sehr leid.",
+    "Highlights": [
+      {
+        "Word": "tat",
+        "Reason": "Präteritum (simple past) of tun, not present"
+      }
+    ]
   },
   {
     "German": "denkt",
-    "English": "thinks"
+    "English": "thinks",
+    "ExampleSentence": "Sie denkt oft an ihn."
   },
   {
     "German": "schiff",
-    "English": "ship"
+    "English": "ship",
+    "Article": "das",
+    "ExampleSentence": "Das Schiff fährt nach Norden."
   },
   {
     "German": "neues",
-    "English": "new"
+    "English": "new",
+    "ExampleSentence": "Ich kaufe ein neues Auto."
   },
   {
     "German": "wem",
-    "English": "whom"
+    "English": "whom",
+    "ExampleSentence": "Wem gehört dieses Buch?",
+    "Highlights": [
+      {
+        "Word": "Wem",
+        "Reason": "dative interrogative pronoun (form of wer), not nominative"
+      }
+    ]
   },
   {
     "German": "könig",
-    "English": "king"
+    "English": "king",
+    "Article": "der",
+    "ExampleSentence": "Der König lebt im Schloss.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "danach",
-    "English": "afterward"
+    "English": "afterward",
+    "ExampleSentence": "Wir essen danach zusammen."
   },
   {
     "German": "funktioniert",
-    "English": "works"
+    "English": "works",
+    "ExampleSentence": "Das Handy funktioniert nicht mehr."
   },
   {
     "German": "hattest",
-    "English": "had"
+    "English": "had",
+    "ExampleSentence": "Du hattest gestern frei.",
+    "Highlights": [
+      {
+        "Word": "hattest",
+        "Reason": "Präteritum (simple past) of haben, not present"
+      }
+    ]
   },
   {
     "German": "lernen",
-    "English": "to learn"
+    "English": "to learn",
+    "ExampleSentence": "Wir lernen jeden Tag Deutsch.",
+    "Highlights": [
+      {
+        "Word": "jeden Tag",
+        "Reason": "accusative time expression, differs from nominative jeder Tag"
+      }
+    ]
   },
   {
     "German": "deswegen",
-    "English": "that's why"
+    "English": "that's why",
+    "ExampleSentence": "Deswegen bleibe ich zu Hause."
   },
   {
     "German": "nennen",
-    "English": "to name"
+    "English": "to name",
+    "ExampleSentence": "Sie nennen ihn einen Helden.",
+    "Highlights": [
+      {
+        "Word": "einen Helden",
+        "Reason": "accusative case (masculine), differs from nominative ein Held"
+      }
+    ]
   },
   {
     "German": "hm",
-    "English": "hmm"
+    "English": "hmm",
+    "ExampleSentence": "Hm, das weiß ich nicht."
   },
   {
     "German": "feuer",
-    "English": "fire"
+    "English": "fire",
+    "Article": "das",
+    "ExampleSentence": "Das Feuer brennt sehr heiß."
   },
   {
     "German": "laufen",
-    "English": "to run"
+    "English": "to run",
+    "ExampleSentence": "Die Kinder laufen im Park.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "alleine",
-    "English": "alone"
+    "English": "alone",
+    "ExampleSentence": "Ich wohne jetzt alleine."
   },
   {
     "German": "erinnern",
-    "English": "to remember"
+    "English": "to remember",
+    "ExampleSentence": "Wir erinnern uns gern daran."
   },
   {
     "German": "völlig",
-    "English": "completely"
+    "English": "completely",
+    "ExampleSentence": "Das ist völlig normal hier."
   },
   {
     "German": "kleines",
-    "English": "small"
+    "English": "small",
+    "ExampleSentence": "Ich habe ein kleines Auto."
   },
   {
     "German": "könnt",
-    "English": "can"
+    "English": "can",
+    "ExampleSentence": "Ihr könnt gerne bleiben hier."
   },
   {
     "German": "stelle",
-    "English": "spot"
+    "English": "spot",
+    "Article": "die",
+    "ExampleSentence": "Die Stelle ist noch frei."
   },
   {
     "German": "kumpel",
-    "English": "buddy"
+    "English": "buddy",
+    "Article": "der",
+    "ExampleSentence": "Mein Kumpel wohnt nebenan."
   },
   {
     "German": "verlieren",
-    "English": "to lose"
+    "English": "to lose",
+    "ExampleSentence": "Wir verlieren nie die Hoffnung."
   },
   {
     "German": "probleme",
-    "English": "problems"
+    "English": "problems",
+    "Article": "die",
+    "ExampleSentence": "Wir haben keine großen Probleme."
   },
   {
     "German": "spricht",
-    "English": "speaks"
+    "English": "speaks",
+    "ExampleSentence": "Er spricht drei Sprachen fließend."
   },
   {
     "German": "kaffee",
-    "English": "coffee"
+    "English": "coffee",
+    "Article": "der",
+    "ExampleSentence": "Der Kaffee ist noch heiß."
   },
   {
     "German": "luft",
-    "English": "air"
+    "English": "air",
+    "Article": "die",
+    "ExampleSentence": "Die Luft ist heute frisch."
   },
   {
     "German": "fand",
-    "English": "found"
+    "English": "found",
+    "ExampleSentence": "Ich fand das Buch super.",
+    "Highlights": [
+      {
+        "Word": "fand",
+        "Reason": "Präteritum (simple past) of finden, not present"
+      }
+    ]
   },
   {
     "German": "entschuldige",
-    "English": "sorry"
+    "English": "sorry",
+    "ExampleSentence": "Entschuldige bitte meine Verspätung!",
+    "Highlights": [
+      {
+        "Word": "Entschuldige",
+        "Reason": "imperative form, not present tense statement"
+      }
+    ]
   },
   {
     "German": "ziehen",
-    "English": "to pull"
+    "English": "to pull",
+    "ExampleSentence": "Wir ziehen nächste Woche um."
   },
   {
     "German": "verschwinden",
-    "English": "to disappear"
+    "English": "to disappear",
+    "ExampleSentence": "Die Sterne verschwinden am Morgen.",
+    "Highlights": [
+      {
+        "Word": "am",
+        "Reason": "dative contraction (an dem), not nominative"
+      }
+    ]
   },
   {
     "German": "könntest",
-    "English": "could"
+    "English": "could",
+    "ExampleSentence": "Du könntest mir helfen bitte.",
+    "Highlights": [
+      {
+        "Word": "könntest",
+        "Reason": "Konjunktiv II (could), not simple present"
+      }
+    ]
   },
   {
     "German": "seht",
-    "English": "look"
+    "English": "look",
+    "ExampleSentence": "Seht mal dieses schöne Bild!",
+    "Highlights": [
+      {
+        "Word": "Seht",
+        "Reason": "imperative (ihr-form) of sehen, not present"
+      }
+    ]
   },
   {
     "German": "aufhören",
-    "English": "to stop"
+    "English": "to stop",
+    "ExampleSentence": "Wir müssen jetzt aufhören."
   },
   {
     "German": "eigenen",
-    "English": "own"
+    "English": "own",
+    "ExampleSentence": "Ich habe meine eigenen Pläne."
   },
   {
     "German": "richtige",
-    "English": "right"
+    "English": "right",
+    "ExampleSentence": "Das ist die richtige Antwort."
   },
   {
     "German": "unserem",
-    "English": "our"
+    "English": "our",
+    "ExampleSentence": "Das ist in unserem Haus.",
+    "Highlights": [
+      {
+        "Word": "unserem",
+        "Reason": "dative case (neuter), not nominative"
+      }
+    ]
   },
   {
     "German": "suche",
-    "English": "search"
+    "English": "search",
+    "ExampleSentence": "Ich suche meinen Schlüssel gerade.",
+    "Highlights": [
+      {
+        "Word": "meinen Schlüssel",
+        "Reason": "accusative case (masculine), differs from nominative mein Schlüssel"
+      }
+    ]
   },
   {
     "German": "zwar",
-    "English": "indeed"
+    "English": "indeed",
+    "ExampleSentence": "Das stimmt zwar nicht ganz."
   },
   {
     "German": "groß",
-    "English": "big"
+    "English": "big",
+    "ExampleSentence": "Unser Haus ist sehr groß."
   },
   {
     "German": "hol",
-    "English": "get"
+    "English": "get",
+    "ExampleSentence": "Hol bitte das Brot!",
+    "Highlights": [
+      {
+        "Word": "Hol",
+        "Reason": "imperative form of holen, not present"
+      }
+    ]
   },
   {
     "German": "buch",
-    "English": "book"
+    "English": "book",
+    "Article": "das",
+    "ExampleSentence": "Das Buch ist sehr interessant."
   },
   {
     "German": "krank",
-    "English": "sick"
+    "English": "sick",
+    "ExampleSentence": "Mein Bruder ist heute krank."
   },
   {
     "German": "fühle",
-    "English": "feel"
+    "English": "feel",
+    "ExampleSentence": "Ich fühle mich heute gut."
   },
   {
     "German": "jedes",
-    "English": "every"
+    "English": "every",
+    "ExampleSentence": "Jedes Kind mag Schokolade."
   },
   {
     "German": "verstehst",
-    "English": "understand"
+    "English": "understand",
+    "ExampleSentence": "Verstehst du diese Frage jetzt?"
   },
   {
     "German": "wert",
-    "English": "worth"
+    "English": "worth",
+    "ExampleSentence": "Das Auto ist viel wert."
   },
   {
     "German": "arzt",
-    "English": "doctor"
+    "English": "doctor",
+    "Article": "der",
+    "ExampleSentence": "Der Arzt kommt gleich vorbei."
   },
   {
     "German": "froh",
-    "English": "glad"
+    "English": "glad",
+    "ExampleSentence": "Ich bin sehr froh heute."
   },
   {
     "German": "versuche",
-    "English": "try"
+    "English": "try",
+    "ExampleSentence": "Ich versuche es morgen wieder."
   },
   {
     "German": "straße",
-    "English": "street"
+    "English": "street",
+    "Article": "die",
+    "ExampleSentence": "Die Straße ist heute leer."
   },
   {
     "German": "rufen",
-    "English": "to call"
+    "English": "to call",
+    "ExampleSentence": "Wir rufen dich später an."
   },
   {
     "German": "heiraten",
-    "English": "to marry"
+    "English": "to marry",
+    "ExampleSentence": "Sie heiraten im nächsten Sommer.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "super",
-    "English": "great"
+    "English": "great",
+    "ExampleSentence": "Das Essen schmeckt super gut."
   },
   {
     "German": "lebt",
-    "English": "lives"
+    "English": "lives",
+    "ExampleSentence": "Meine Oma lebt in Berlin."
   },
   {
     "German": "gutes",
-    "English": "good"
+    "English": "good",
+    "ExampleSentence": "Das ist ein gutes Buch."
   },
   {
     "German": "lasse",
-    "English": "let"
+    "English": "let",
+    "ExampleSentence": "Ich lasse dich jetzt gehen."
   },
   {
     "German": "onkel",
-    "English": "uncle"
+    "English": "uncle",
+    "Article": "der",
+    "ExampleSentence": "Mein Onkel wohnt in München."
   },
   {
     "German": "total",
-    "English": "totally"
+    "English": "totally",
+    "ExampleSentence": "Das ist total verrückt hier."
   },
   {
     "German": "gebracht",
-    "English": "brought"
+    "English": "brought",
+    "ExampleSentence": "Er hat mir Kaffee gebracht.",
+    "Highlights": [
+      {
+        "Word": "hat ... gebracht",
+        "Reason": "Perfekt tense (haben + past participle), not present"
+      }
+    ]
   },
   {
     "German": "party",
-    "English": "party"
+    "English": "party",
+    "Article": "die",
+    "ExampleSentence": "Die Party beginnt um acht."
   },
   {
     "German": "erklären",
-    "English": "to explain"
+    "English": "to explain",
+    "ExampleSentence": "Kannst du das kurz erklären?"
   },
   {
     "German": "spielt",
-    "English": "plays"
+    "English": "plays",
+    "ExampleSentence": "Er spielt jeden Tag Fußball.",
+    "Highlights": [
+      {
+        "Word": "jeden Tag",
+        "Reason": "accusative time expression, differs from nominative jeder Tag"
+      }
+    ]
   },
   {
     "German": "wahl",
-    "English": "choice"
+    "English": "choice",
+    "Article": "die",
+    "ExampleSentence": "Du hast keine andere Wahl."
   },
   {
     "German": "vertrauen",
-    "English": "to trust"
+    "English": "to trust",
+    "ExampleSentence": "Wir vertrauen dir sehr."
   },
   {
     "German": "damals",
-    "English": "back then"
+    "English": "back then",
+    "ExampleSentence": "Damals wohnte ich in Berlin.",
+    "Highlights": [
+      {
+        "Word": "wohnte",
+        "Reason": "Präteritum (simple past), triggered by damals (back then)"
+      }
+    ]
   },
   {
     "German": "tagen",
-    "English": "days"
+    "English": "days",
+    "Article": "die",
+    "ExampleSentence": "In diesen Tagen regnet es.",
+    "Highlights": [
+      {
+        "Word": "Tagen",
+        "Reason": "dative plural, not nominative (die Tage)"
+      }
+    ]
   },
   {
     "German": "leicht",
-    "English": "easy"
+    "English": "easy",
+    "ExampleSentence": "Diese Übung ist ziemlich leicht."
   },
   {
     "German": "nachdem",
-    "English": "after"
+    "English": "after",
+    "ExampleSentence": "Nachdem du isst, gehen wir."
   },
   {
     "German": "gegangen",
-    "English": "gone"
+    "English": "gone",
+    "ExampleSentence": "Er ist nach Hause gegangen.",
+    "Highlights": [
+      {
+        "Word": "ist ... gegangen",
+        "Reason": "Perfekt tense (sein + past participle), not present"
+      }
+    ]
   },
   {
     "German": "gefühl",
-    "English": "feeling"
+    "English": "feeling",
+    "Article": "das",
+    "ExampleSentence": "Ich habe ein komisches Gefühl."
   },
   {
     "German": "kaufen",
-    "English": "to buy"
+    "English": "to buy",
+    "ExampleSentence": "Wir kaufen frisches Brot heute."
   },
   {
     "German": "geschafft",
-    "English": "managed"
+    "English": "managed",
+    "ExampleSentence": "Ich habe es geschafft endlich.",
+    "Highlights": [
+      {
+        "Word": "habe ... geschafft",
+        "Reason": "Perfekt tense (haben + past participle), not present"
+      }
+    ]
   },
   {
     "German": "typen",
-    "English": "guys"
+    "English": "guys",
+    "Article": "die",
+    "ExampleSentence": "Diese Typen kenne ich nicht."
   },
   {
     "German": "interessiert",
-    "English": "interested"
+    "English": "interested",
+    "ExampleSentence": "Das interessiert mich sehr."
   },
   {
     "German": "möchten",
-    "English": "would like"
+    "English": "would like",
+    "ExampleSentence": "Wir möchten gerne bestellen bitte.",
+    "Highlights": [
+      {
+        "Word": "möchten",
+        "Reason": "Konjunktiv II form (of mögen), used as polite present"
+      }
+    ]
   },
   {
     "German": "halte",
-    "English": "hold"
+    "English": "hold",
+    "ExampleSentence": "Ich halte das Baby vorsichtig."
   },
   {
     "German": "hält",
-    "English": "holds"
+    "English": "holds",
+    "ExampleSentence": "Er hält die Tür auf."
   },
   {
     "German": "glaub",
-    "English": "believe"
+    "English": "believe",
+    "ExampleSentence": "Ich glaub dir jetzt wirklich."
   },
   {
     "German": "irgendwo",
-    "English": "somewhere"
+    "English": "somewhere",
+    "ExampleSentence": "Er wohnt irgendwo in Berlin."
   },
   {
     "German": "stück",
-    "English": "piece"
+    "English": "piece",
+    "Article": "das",
+    "ExampleSentence": "Ich esse ein Stück Kuchen."
   },
   {
     "German": "genauso",
-    "English": "just as"
+    "English": "just as",
+    "ExampleSentence": "Er ist genauso groß."
   },
   {
     "German": "kennt",
-    "English": "knows"
+    "English": "knows",
+    "ExampleSentence": "Sie kennt die ganze Stadt."
   },
   {
     "German": "genommen",
-    "English": "taken"
+    "English": "taken",
+    "ExampleSentence": "Er hat mein Buch genommen.",
+    "Highlights": [
+      {
+        "Word": "hat ... genommen",
+        "Reason": "Perfekt tense (haben + past participle), not present"
+      }
+    ]
   },
   {
     "German": "zukunft",
-    "English": "future"
+    "English": "future",
+    "Article": "die",
+    "ExampleSentence": "Die Zukunft bleibt immer ungewiss."
   },
   {
     "German": "weniger",
-    "English": "less"
+    "English": "less",
+    "ExampleSentence": "Ich esse jetzt weniger Fleisch."
   },
   {
     "German": "cool",
-    "English": "cool"
+    "English": "cool",
+    "ExampleSentence": "Dein neues Auto ist cool."
   },
   {
     "German": "licht",
-    "English": "light"
+    "English": "light",
+    "Article": "das",
+    "ExampleSentence": "Das Licht ist sehr hell."
   },
   {
     "German": "getroffen",
-    "English": "met"
+    "English": "met",
+    "ExampleSentence": "Ich habe ihn gestern getroffen.",
+    "Highlights": [
+      {
+        "Word": "habe ... getroffen",
+        "Reason": "Perfekt tense (haben + past participle), not present"
+      }
+    ]
   },
   {
     "German": "himmel",
-    "English": "sky"
+    "English": "sky",
+    "Article": "der",
+    "ExampleSentence": "Der Himmel ist heute blau."
   },
   {
     "German": "nachricht",
-    "English": "message"
+    "English": "message",
+    "Article": "die",
+    "ExampleSentence": "Ich schreibe dir eine Nachricht."
   },
   {
     "German": "drüben",
-    "English": "over there"
+    "English": "over there",
+    "ExampleSentence": "Das Auto steht drüben rechts."
   },
   {
     "German": "passt",
-    "English": "fits"
+    "English": "fits",
+    "ExampleSentence": "Das Kleid passt dir super."
   },
   {
     "German": "sagten",
-    "English": "said"
+    "English": "said",
+    "ExampleSentence": "Sie sagten mir die Wahrheit.",
+    "Highlights": [
+      {
+        "Word": "sagten",
+        "Reason": "Präteritum (simple past) of sagen, not present"
+      }
+    ]
   },
   {
     "German": "kümmern",
-    "English": "to care"
+    "English": "to care",
+    "ExampleSentence": "Wir kümmern uns um dich."
   },
   {
     "German": "laut",
-    "English": "loud"
+    "English": "loud",
+    "ExampleSentence": "Die Musik ist sehr laut."
   },
   {
     "German": "vergiss",
-    "English": "forget"
+    "English": "forget",
+    "ExampleSentence": "Vergiss bitte nicht dein Buch!",
+    "Highlights": [
+      {
+        "Word": "Vergiss",
+        "Reason": "imperative form of vergessen, not present"
+      }
+    ]
   },
   {
     "German": "angerufen",
-    "English": "called"
+    "English": "called",
+    "ExampleSentence": "Hast du ihn schon angerufen?",
+    "Highlights": [
+      {
+        "Word": "Hast ... angerufen",
+        "Reason": "Perfekt tense (haben + past participle), not present"
+      }
+    ]
   },
   {
     "German": "sitzen",
-    "English": "to sit"
+    "English": "to sit",
+    "ExampleSentence": "Wir sitzen heute im Garten.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "daß",
-    "English": "that"
+    "English": "that",
+    "ExampleSentence": "Ich weiß, daß es stimmt."
   },
   {
     "German": "erde",
-    "English": "earth"
+    "English": "earth",
+    "Article": "die",
+    "ExampleSentence": "Die Erde dreht sich schnell."
   },
   {
     "German": "großer",
-    "English": "big"
+    "English": "big",
+    "ExampleSentence": "Das ist ein großer Erfolg."
   },
   {
     "German": "schlüssel",
-    "English": "key"
+    "English": "key",
+    "Article": "der",
+    "ExampleSentence": "Der Schlüssel ist leider weg."
   },
   {
     "German": "rest",
-    "English": "rest"
+    "English": "rest",
+    "Article": "der",
+    "ExampleSentence": "Der Rest bleibt für morgen."
   },
   {
     "German": "passieren",
-    "English": "to happen"
+    "English": "to happen",
+    "ExampleSentence": "Das darf nicht mehr passieren."
   },
   {
     "German": "eher",
-    "English": "rather"
+    "English": "rather",
+    "ExampleSentence": "Ich bin eher ein Morgenmensch."
   },
   {
     "German": "gefragt",
-    "English": "asked"
+    "English": "asked",
+    "ExampleSentence": "Er hat mich das gefragt.",
+    "Highlights": [
+      {
+        "Word": "hat ... gefragt",
+        "Reason": "Perfekt tense (haben + past participle), not present"
+      }
+    ]
   },
   {
     "German": "gefängnis",
-    "English": "prison"
+    "English": "prison",
+    "Article": "das",
+    "ExampleSentence": "Das Gefängnis ist sehr alt."
   },
   {
     "German": "opfer",
-    "English": "victim"
+    "English": "victim",
+    "Article": "das",
+    "ExampleSentence": "Das Opfer braucht jetzt Hilfe."
   },
   {
     "German": "körper",
-    "English": "body"
+    "English": "body",
+    "Article": "der",
+    "ExampleSentence": "Der Körper braucht viel Wasser."
   },
   {
     "German": "solche",
-    "English": "such"
+    "English": "such",
+    "ExampleSentence": "Solche Filme mag ich nicht."
   },
   {
     "German": "mist",
-    "English": "crap"
+    "English": "crap",
+    "Article": "der",
+    "ExampleSentence": "Das ist echt Mist heute."
   },
   {
     "German": "findet",
-    "English": "finds"
+    "English": "finds",
+    "ExampleSentence": "Er findet seinen Schlüssel nicht.",
+    "Highlights": [
+      {
+        "Word": "seinen Schlüssel",
+        "Reason": "accusative case (masculine), differs from nominative sein Schlüssel"
+      }
+    ]
   },
   {
     "German": "schreiben",
-    "English": "to write"
+    "English": "to write",
+    "ExampleSentence": "Wir schreiben heute einen Brief.",
+    "Highlights": [
+      {
+        "Word": "einen Brief",
+        "Reason": "accusative case (masculine), differs from nominative ein Brief"
+      }
+    ]
   },
   {
     "German": "böse",
-    "English": "evil"
+    "English": "evil",
+    "ExampleSentence": "Der Wolf ist sehr böse."
   },
   {
     "German": "gesprochen",
-    "English": "spoken"
+    "English": "spoken",
+    "ExampleSentence": "Wir haben lange darüber gesprochen.",
+    "Highlights": [
+      {
+        "Word": "haben ... gesprochen",
+        "Reason": "Perfekt tense (haben + past participle), not present"
+      }
+    ]
   },
   {
     "German": "versuch",
-    "English": "try"
+    "English": "try",
+    "ExampleSentence": "Versuch es doch einfach mal!",
+    "Highlights": [
+      {
+        "Word": "Versuch",
+        "Reason": "imperative form of versuchen, not present"
+      }
+    ]
   },
   {
     "German": "vorstellen",
-    "English": "to imagine"
+    "English": "to imagine",
+    "ExampleSentence": "Ich kann mir das vorstellen."
   },
   {
     "German": "wovon",
-    "English": "about what"
+    "English": "about what",
+    "ExampleSentence": "Wovon redest du gerade eigentlich?"
   },
   {
     "German": "sobald",
-    "English": "as soon as"
+    "English": "as soon as",
+    "ExampleSentence": "Sobald du kommst, essen wir."
   },
   {
     "German": "nochmal",
-    "English": "again"
+    "English": "again",
+    "ExampleSentence": "Ich sage es dir nochmal."
   },
   {
     "German": "herren",
-    "English": "gentlemen"
+    "English": "gentlemen",
+    "Article": "die",
+    "ExampleSentence": "Die Herren warten schon lange."
   },
   {
     "German": "sex",
-    "English": "sex"
+    "English": "sex",
+    "Article": "der",
+    "ExampleSentence": "Sex ist für viele wichtig."
   },
   {
     "German": "waffen",
-    "English": "weapons"
+    "English": "weapons",
+    "Article": "die",
+    "ExampleSentence": "Die Polizei findet keine Waffen."
   },
   {
     "German": "wohnung",
-    "English": "apartment"
+    "English": "apartment",
+    "Article": "die",
+    "ExampleSentence": "Die Wohnung ist ziemlich klein."
   },
   {
     "German": "weh",
-    "English": "hurt"
+    "English": "hurt",
+    "ExampleSentence": "Mein Bein tut weh."
   },
   {
     "German": "heißen",
-    "English": "to be called"
+    "English": "to be called",
+    "ExampleSentence": "Wie heißen deine beiden Kinder?"
   },
   {
     "German": "krankenhaus",
-    "English": "hospital"
+    "English": "hospital",
+    "Article": "das",
+    "ExampleSentence": "Das Krankenhaus liegt ganz nah."
   },
   {
     "German": "bringe",
-    "English": "bring"
+    "English": "bring",
+    "ExampleSentence": "Ich bringe dir dein Buch."
   },
   {
     "German": "höre",
-    "English": "hear"
+    "English": "hear",
+    "ExampleSentence": "Ich höre gern klassische Musik."
   },
   {
     "German": "millionen",
-    "English": "millions"
+    "English": "millions",
+    "Article": "die",
+    "ExampleSentence": "Millionen Menschen leben in Indien."
   },
   {
     "German": "klasse",
-    "English": "class"
+    "English": "class",
+    "Article": "die",
+    "ExampleSentence": "Unsere Klasse ist sehr groß."
   },
   {
     "German": "hart",
-    "English": "hard"
+    "English": "hard",
+    "ExampleSentence": "Diese Prüfung ist sehr hart."
   },
   {
     "German": "worden",
-    "English": "been"
+    "English": "been",
+    "ExampleSentence": "Das Haus ist gebaut worden.",
+    "Highlights": [
+      {
+        "Word": "ist gebaut worden",
+        "Reason": "Perfekt passive (ist + past participle + worden), not present"
+      }
+    ]
   },
   {
     "German": "sinn",
-    "English": "sense"
+    "English": "sense",
+    "Article": "der",
+    "ExampleSentence": "Das ergibt für mich Sinn."
   },
   {
     "German": "außerdem",
-    "English": "besides"
+    "English": "besides",
+    "ExampleSentence": "Außerdem regnet es heute wieder."
   },
   {
     "German": "verletzt",
-    "English": "hurt"
+    "English": "hurt",
+    "ExampleSentence": "Er ist schwer verletzt."
   },
   {
     "German": "ändern",
-    "English": "to change"
+    "English": "to change",
+    "ExampleSentence": "Wir müssen das sofort ändern."
   }
 ]
