@@ -1,0 +1,23 @@
+<ui:FluentWindow x:Class="AllItems.Translation.App.Views.TrainingWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 Title="Training"
+                 Height="400" Width="560"
+                 WindowStartupLocation="CenterScreen"
+                 ExtendsContentIntoTitleBar="True"
+                 WindowBackdropType="Mica">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Grid.Row="0" Title="Training" />
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Training" FontSize="24" FontWeight="SemiBold" HorizontalAlignment="Center" />
+            <TextBlock Margin="0,8,0,0" Text="{Binding Message}" Opacity="0.7" HorizontalAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</ui:FluentWindow>

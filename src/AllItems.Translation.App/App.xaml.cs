@@ -30,6 +30,9 @@ public partial class App : Application
                 services.AddTransient<CredentialSetupWindow>();
                 services.AddTransient<StudySessionViewModel>();
                 services.AddTransient<StudySessionWindow>();
+                services.AddTransient<TrainingViewModel>();
+                services.AddTransient<TrainingWindow>();
+                services.AddTransient<StartWindow>();
             })
             .Build();
 
@@ -52,9 +55,9 @@ public partial class App : Application
             }
         }
 
-        var mainWindow = _host.Services.GetRequiredService<MainWindow>();
-        MainWindow = mainWindow;
-        mainWindow.Show();
+        var startWindow = _host.Services.GetRequiredService<StartWindow>();
+        MainWindow = startWindow;
+        startWindow.Show();
     }
 
     protected override async void OnExit(ExitEventArgs e)
