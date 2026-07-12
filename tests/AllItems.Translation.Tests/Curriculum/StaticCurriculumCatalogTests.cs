@@ -18,8 +18,13 @@ public class StaticCurriculumCatalogTests
         Assert.NotEmpty(_catalog.GetUnits(CefrLevel.A2));
     }
 
+    [Fact]
+    public void GetUnits_B1_ReturnsAuthoredContent()
+    {
+        Assert.NotEmpty(_catalog.GetUnits(CefrLevel.B1));
+    }
+
     [Theory]
-    [InlineData(CefrLevel.B1)]
     [InlineData(CefrLevel.B2)]
     [InlineData(CefrLevel.C1)]
     [InlineData(CefrLevel.C2)]
