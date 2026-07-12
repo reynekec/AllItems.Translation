@@ -1,3922 +1,6897 @@
 [
   {
     "German": "wesley",
-    "English": "Wesley"
+    "English": "Wesley",
+    "ExampleSentence": "Wesley kommt heute vorbei."
   },
   {
     "German": "herausfindet",
-    "English": "finds out"
+    "English": "finds out",
+    "ExampleSentence": "Niemand weiß, was er herausfindet."
   },
   {
     "German": "schaute",
-    "English": "looked"
+    "English": "looked",
+    "ExampleSentence": "Er schaute nach draußen.",
+    "Highlights": [
+      {
+        "Word": "schaute",
+        "Reason": "Präteritum (simple past), not present tense"
+      }
+    ]
   },
   {
     "German": "theoretisch",
-    "English": "theoretical"
+    "English": "theoretical",
+    "ExampleSentence": "Das ist theoretisch möglich."
   },
   {
     "German": "chan",
-    "English": "Chan"
+    "English": "Chan",
+    "ExampleSentence": "Chan kämpft sehr gut."
   },
   {
     "German": "beutel",
-    "English": "bag"
+    "English": "bag",
+    "Article": "der",
+    "ExampleSentence": "Der Beutel ist sehr schwer."
   },
   {
     "German": "drängen",
-    "English": "to push"
+    "English": "to push",
+    "ExampleSentence": "Wir drängen auf eine Lösung."
   },
   {
     "German": "schlimmen",
-    "English": "bad"
+    "English": "bad",
+    "ExampleSentence": "Er macht einen schlimmen Fehler.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative case article, not nominative"
+      },
+      {
+        "Word": "schlimmen",
+        "Reason": "accusative case adjective ending, not nominative"
+      }
+    ]
   },
   {
     "German": "klient",
-    "English": "client"
+    "English": "client",
+    "Article": "der",
+    "ExampleSentence": "Der Klient wartet schon lange."
   },
   {
     "German": "hängst",
-    "English": "hang"
+    "English": "hang",
+    "ExampleSentence": "Du hängst die Wäsche auf."
   },
   {
     "German": "veranda",
-    "English": "porch"
+    "English": "porch",
+    "Article": "die",
+    "ExampleSentence": "Die Veranda ist sehr groß."
   },
   {
     "German": "pam",
-    "English": "Pam"
+    "English": "Pam",
+    "ExampleSentence": "Pam kocht heute das Abendessen."
   },
   {
     "German": "jüngste",
-    "English": "youngest"
+    "English": "youngest",
+    "ExampleSentence": "Sie ist die jüngste Tochter."
   },
   {
     "German": "strahlung",
-    "English": "radiation"
+    "English": "radiation",
+    "Article": "die",
+    "ExampleSentence": "Die Strahlung ist extrem gefährlich."
   },
   {
     "German": "betrügt",
-    "English": "cheats"
+    "English": "cheats",
+    "ExampleSentence": "Er betrügt seine Frau."
   },
   {
     "German": "unendlich",
-    "English": "infinite"
+    "English": "infinite",
+    "ExampleSentence": "Der Raum ist unendlich groß."
   },
   {
     "German": "gedichte",
-    "English": "poems"
+    "English": "poems",
+    "Article": "die",
+    "ExampleSentence": "Sie schreibt schöne Gedichte."
   },
   {
     "German": "sven",
-    "English": "Sven"
+    "English": "Sven",
+    "ExampleSentence": "Sven spielt gerne Fußball."
   },
   {
     "German": "irene",
-    "English": "Irene"
+    "English": "Irene",
+    "ExampleSentence": "Irene singt sehr schön."
   },
   {
     "German": "gereist",
-    "English": "traveled"
+    "English": "traveled",
+    "ExampleSentence": "Er ist viel gereist.",
+    "Highlights": [
+      {
+        "Word": "gereist",
+        "Reason": "Perfekt tense (past participle), not simple present"
+      }
+    ]
   },
   {
     "German": "schiss",
-    "English": "fear"
+    "English": "fear",
+    "Article": "der",
+    "ExampleSentence": "Er hat großen Schiss davor.",
+    "Highlights": [
+      {
+        "Word": "großen",
+        "Reason": "accusative case adjective ending, not nominative"
+      }
+    ]
   },
   {
     "German": "benimmst",
-    "English": "behave"
+    "English": "behave",
+    "ExampleSentence": "Du benimmst dich sehr kindisch.",
+    "Highlights": [
+      {
+        "Word": "dich",
+        "Reason": "accusative reflexive pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "schwangerschaft",
-    "English": "pregnancy"
+    "English": "pregnancy",
+    "Article": "die",
+    "ExampleSentence": "Die Schwangerschaft verläuft völlig normal."
   },
   {
     "German": "kopien",
-    "English": "copies"
+    "English": "copies",
+    "Article": "die",
+    "ExampleSentence": "Er macht drei Kopien davon."
   },
   {
     "German": "infrage",
-    "English": "into question"
+    "English": "into question",
+    "ExampleSentence": "Sie stellt das infrage."
   },
   {
     "German": "zweifeln",
-    "English": "to doubt"
+    "English": "to doubt",
+    "ExampleSentence": "Wir zweifeln an seinen Worten.",
+    "Highlights": [
+      {
+        "Word": "seinen",
+        "Reason": "dative plural possessive, not nominative"
+      }
+    ]
   },
   {
     "German": "nonne",
-    "English": "nun"
+    "English": "nun",
+    "Article": "die",
+    "ExampleSentence": "Die Nonne betet sehr oft."
   },
   {
     "German": "müsse",
-    "English": "must"
+    "English": "must",
+    "ExampleSentence": "Er sagt, er müsse gehen.",
+    "Highlights": [
+      {
+        "Word": "müsse",
+        "Reason": "Konjunktiv I (reported speech), not present indicative"
+      }
+    ]
   },
   {
     "German": "juliette",
-    "English": "Juliette"
+    "English": "Juliette",
+    "ExampleSentence": "Juliette tanzt heute wirklich gut."
   },
   {
     "German": "richtet",
-    "English": "directs"
+    "English": "directs",
+    "ExampleSentence": "Er richtet die Waffe darauf."
   },
   {
     "German": "lecken",
-    "English": "to lick"
+    "English": "to lick",
+    "ExampleSentence": "Hunde lecken gerne ihre Pfoten."
   },
   {
     "German": "feuerwerk",
-    "English": "fireworks"
+    "English": "fireworks",
+    "Article": "das",
+    "ExampleSentence": "Das Feuerwerk beginnt um Mitternacht."
   },
   {
     "German": "neueste",
-    "English": "newest"
+    "English": "newest",
+    "ExampleSentence": "Das ist die neueste Ausgabe."
   },
   {
     "German": "geistes",
-    "English": "of the spirit"
+    "English": "of the spirit",
+    "Article": "der",
+    "ExampleSentence": "Das ist Freiheit des Geistes.",
+    "Highlights": [
+      {
+        "Word": "des",
+        "Reason": "genitive case article, not nominative"
+      },
+      {
+        "Word": "Geistes",
+        "Reason": "genitive case noun ending, not nominative"
+      }
+    ]
   },
   {
     "German": "verletzten",
-    "English": "injured"
+    "English": "injured",
+    "Article": "die",
+    "ExampleSentence": "Sanitäter helfen den Verletzten.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "dative plural article, not nominative"
+      }
+    ]
   },
   {
     "German": "abwechslung",
-    "English": "variety"
+    "English": "variety",
+    "Article": "die",
+    "ExampleSentence": "Abwechslung tut immer gut."
   },
   {
     "German": "ausgeführt",
-    "English": "carried out"
+    "English": "carried out",
+    "ExampleSentence": "Der Plan wird sorgfältig ausgeführt.",
+    "Highlights": [
+      {
+        "Word": "ausgeführt",
+        "Reason": "present passive participle (Vorgangspassiv), not active simple present"
+      }
+    ]
   },
   {
     "German": "kleingeld",
-    "English": "small change"
+    "English": "small change",
+    "Article": "das",
+    "ExampleSentence": "Ich habe kein Kleingeld dabei."
   },
   {
     "German": "evans",
-    "English": "Evans"
+    "English": "Evans",
+    "ExampleSentence": "Evans arbeitet bei der Polizei.",
+    "Highlights": [
+      {
+        "Word": "der",
+        "Reason": "dative case article (feminine), not nominative"
+      }
+    ]
   },
   {
     "German": "gelegentlich",
-    "English": "occasionally"
+    "English": "occasionally",
+    "ExampleSentence": "Er raucht nur gelegentlich Zigaretten."
   },
   {
     "German": "denise",
-    "English": "Denise"
+    "English": "Denise",
+    "ExampleSentence": "Denise ist eine kluge Ärztin."
   },
   {
     "German": "braten",
-    "English": "to roast"
+    "English": "to roast",
+    "ExampleSentence": "Wir braten heute ein Hähnchen."
   },
   {
     "German": "angelegt",
-    "English": "invested"
+    "English": "invested",
+    "ExampleSentence": "Er hat viel Geld angelegt.",
+    "Highlights": [
+      {
+        "Word": "angelegt",
+        "Reason": "Perfekt tense (past participle), not simple present"
+      }
+    ]
   },
   {
     "German": "artie",
-    "English": "Artie"
+    "English": "Artie",
+    "ExampleSentence": "Artie lacht über den Witz.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative case article, not nominative"
+      }
+    ]
   },
   {
     "German": "corporal",
-    "English": "corporal"
+    "English": "corporal",
+    "Article": "der",
+    "ExampleSentence": "Der Corporal gibt einen Befehl.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative case article, not nominative"
+      }
+    ]
   },
   {
     "German": "entsteht",
-    "English": "arises"
+    "English": "arises",
+    "ExampleSentence": "So entsteht ein neuer Stern."
   },
   {
     "German": "rogers",
-    "English": "Rogers"
+    "English": "Rogers",
+    "ExampleSentence": "Rogers arbeitet für das FBI."
   },
   {
     "German": "herzschlag",
-    "English": "heartbeat"
+    "English": "heartbeat",
+    "Article": "der",
+    "ExampleSentence": "Der Herzschlag wird immer schneller."
   },
   {
     "German": "glücklicherweise",
-    "English": "fortunately"
+    "English": "fortunately",
+    "ExampleSentence": "Glücklicherweise geht es allen gut.",
+    "Highlights": [
+      {
+        "Word": "allen",
+        "Reason": "dative case pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "heilung",
-    "English": "cure"
+    "English": "cure",
+    "Article": "die",
+    "ExampleSentence": "Die Heilung dauert einige Wochen."
   },
   {
     "German": "cäsar",
-    "English": "Caesar"
+    "English": "Caesar",
+    "ExampleSentence": "Cäsar regiert das ganze Reich."
   },
   {
     "German": "angeklagten",
-    "English": "defendant"
+    "English": "defendant",
+    "Article": "der",
+    "ExampleSentence": "Der Richter befragt den Angeklagten.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative case article, not nominative"
+      },
+      {
+        "Word": "Angeklagten",
+        "Reason": "accusative case noun ending, differs from nominative Angeklagte"
+      }
+    ]
   },
   {
     "German": "profit",
-    "English": "profit"
+    "English": "profit",
+    "Article": "der",
+    "ExampleSentence": "Der Profit steigt jedes Jahr."
   },
   {
     "German": "brüllen",
-    "English": "to roar"
+    "English": "to roar",
+    "ExampleSentence": "Löwen brüllen nachts sehr laut."
   },
   {
     "German": "verschieden",
-    "English": "different"
+    "English": "different",
+    "ExampleSentence": "Die beiden Meinungen sind verschieden."
   },
   {
     "German": "münzen",
-    "English": "coins"
+    "English": "coins",
+    "Article": "die",
+    "ExampleSentence": "Er sammelt seltene alte Münzen."
   },
   {
     "German": "hinterlässt",
-    "English": "leaves behind"
+    "English": "leaves behind",
+    "ExampleSentence": "Er hinterlässt eine wichtige Nachricht."
   },
   {
     "German": "königlichen",
-    "English": "royal"
+    "English": "royal",
+    "ExampleSentence": "Sie dient der königlichen Familie.",
+    "Highlights": [
+      {
+        "Word": "der",
+        "Reason": "dative case article (feminine), not nominative"
+      },
+      {
+        "Word": "königlichen",
+        "Reason": "dative case adjective ending, not nominative"
+      }
+    ]
   },
   {
     "German": "stadtrat",
-    "English": "city council"
+    "English": "city council",
+    "Article": "der",
+    "ExampleSentence": "Der Stadtrat trifft eine Entscheidung."
   },
   {
     "German": "pressekonferenz",
-    "English": "press conference"
+    "English": "press conference",
+    "Article": "die",
+    "ExampleSentence": "Die Pressekonferenz beginnt in Kürze."
   },
   {
     "German": "nich",
-    "English": "not"
+    "English": "not",
+    "ExampleSentence": "Das ist doch nich schwer."
   },
   {
     "German": "geschaut",
-    "English": "looked"
+    "English": "looked",
+    "ExampleSentence": "Er hat nicht genau geschaut.",
+    "Highlights": [
+      {
+        "Word": "geschaut",
+        "Reason": "Perfekt tense (past participle), not simple present"
+      }
+    ]
   },
   {
     "German": "zugegeben",
-    "English": "admittedly"
+    "English": "admittedly",
+    "ExampleSentence": "Zugegeben, das war ziemlich riskant.",
+    "Highlights": [
+      {
+        "Word": "Zugegeben",
+        "Reason": "past participle used adverbially, not present tense"
+      },
+      {
+        "Word": "war",
+        "Reason": "Präteritum (simple past), not present tense"
+      }
+    ]
   },
   {
     "German": "komisches",
-    "English": "strange"
+    "English": "strange",
+    "ExampleSentence": "Das ist ein komisches Gefühl."
   },
   {
     "German": "regie",
-    "English": "direction"
+    "English": "direction",
+    "Article": "die",
+    "ExampleSentence": "Sie führt heute die Regie."
   },
   {
     "German": "merk",
-    "English": "remember"
+    "English": "remember",
+    "ExampleSentence": "Merk dir diesen wichtigen Termin!",
+    "Highlights": [
+      {
+        "Word": "Merk",
+        "Reason": "imperative mood, not present indicative"
+      },
+      {
+        "Word": "dir",
+        "Reason": "dative pronoun, not nominative"
+      },
+      {
+        "Word": "diesen",
+        "Reason": "accusative case article, not nominative"
+      },
+      {
+        "Word": "wichtigen",
+        "Reason": "accusative case adjective ending, not nominative"
+      }
+    ]
   },
   {
     "German": "boote",
-    "English": "boats"
+    "English": "boats",
+    "Article": "die",
+    "ExampleSentence": "Die Boote liegen im Hafen.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "verbrennt",
-    "English": "burns"
+    "English": "burns",
+    "ExampleSentence": "Das Holz verbrennt sehr schnell."
   },
   {
     "German": "allergisch",
-    "English": "allergic"
+    "English": "allergic",
+    "ExampleSentence": "Er ist allergisch gegen Nüsse."
   },
   {
     "German": "schweizer",
-    "English": "Swiss"
+    "English": "Swiss",
+    "Article": "der",
+    "ExampleSentence": "Der Schweizer trinkt gerne Kaffee."
   },
   {
     "German": "verdächtiger",
-    "English": "suspect"
+    "English": "suspect",
+    "Article": "der",
+    "ExampleSentence": "Ein Verdächtiger flieht vom Tatort.",
+    "Highlights": [
+      {
+        "Word": "vom",
+        "Reason": "dative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "gasse",
-    "English": "alley"
+    "English": "alley",
+    "Article": "die",
+    "ExampleSentence": "Die Gasse ist sehr eng."
   },
   {
     "German": "tussi",
-    "English": "chick"
+    "English": "chick",
+    "Article": "die",
+    "ExampleSentence": "Diese Tussi nervt mich total.",
+    "Highlights": [
+      {
+        "Word": "mich",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "befürchtet",
-    "English": "feared"
+    "English": "feared",
+    "ExampleSentence": "Sie befürchtet das Schlimmste."
   },
   {
     "German": "reite",
-    "English": "ride"
+    "English": "ride",
+    "ExampleSentence": "Ich reite gerne jeden Tag.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative case (time expression), not nominative"
+      }
+    ]
   },
   {
     "German": "außerirdische",
-    "English": "alien"
+    "English": "alien",
+    "ExampleSentence": "Die außerirdische Kreatur wirkt fremd."
   },
   {
     "German": "ehemaliger",
-    "English": "former"
+    "English": "former",
+    "ExampleSentence": "Er ist ein ehemaliger Soldat."
   },
   {
     "German": "radar",
-    "English": "radar"
+    "English": "radar",
+    "Article": "der",
+    "ExampleSentence": "Der Radar erfasst das Flugzeug."
   },
   {
     "German": "gestattet",
-    "English": "permitted"
+    "English": "permitted",
+    "ExampleSentence": "Das Rauchen ist hier gestattet.",
+    "Highlights": [
+      {
+        "Word": "gestattet",
+        "Reason": "stative passive participle (Zustandspassiv), not plain present active"
+      }
+    ]
   },
   {
     "German": "gefecht",
-    "English": "battle"
+    "English": "battle",
+    "Article": "das",
+    "ExampleSentence": "Das Gefecht dauert schrecklich lange."
   },
   {
     "German": "angeschaut",
-    "English": "looked at"
+    "English": "looked at",
+    "ExampleSentence": "Er hat mich lange angeschaut.",
+    "Highlights": [
+      {
+        "Word": "angeschaut",
+        "Reason": "Perfekt tense (past participle), not simple present"
+      },
+      {
+        "Word": "mich",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "gedient",
-    "English": "served"
+    "English": "served",
+    "ExampleSentence": "Er hat der Armee gedient.",
+    "Highlights": [
+      {
+        "Word": "gedient",
+        "Reason": "Perfekt tense (past participle), not simple present"
+      },
+      {
+        "Word": "der",
+        "Reason": "dative case article (feminine), not nominative"
+      }
+    ]
   },
   {
     "German": "pension",
-    "English": "pension"
+    "English": "pension",
+    "Article": "die",
+    "ExampleSentence": "Sie geht bald in Pension."
   },
   {
     "German": "strich",
-    "English": "line"
+    "English": "line",
+    "Article": "der",
+    "ExampleSentence": "Der Strich ist leicht schief."
   },
   {
     "German": "lippenstift",
-    "English": "lipstick"
+    "English": "lipstick",
+    "Article": "der",
+    "ExampleSentence": "Der Lippenstift ist ziemlich teuer."
   },
   {
     "German": "stab",
-    "English": "staff"
+    "English": "staff",
+    "Article": "der",
+    "ExampleSentence": "Der Stab plant alles genau."
   },
   {
     "German": "außerirdischen",
-    "English": "alien"
+    "English": "alien",
+    "ExampleSentence": "Wir suchen nach außerirdischen Lebensformen.",
+    "Highlights": [
+      {
+        "Word": "außerirdischen",
+        "Reason": "dative case adjective ending, not nominative"
+      }
+    ]
   },
   {
     "German": "termine",
-    "English": "appointments"
+    "English": "appointments",
+    "Article": "die",
+    "ExampleSentence": "Ich habe heute viele Termine."
   },
   {
     "German": "maler",
-    "English": "painter"
+    "English": "painter",
+    "Article": "der",
+    "ExampleSentence": "Der Maler malt ein Porträt."
   },
   {
     "German": "verweigert",
-    "English": "refuses"
+    "English": "refuses",
+    "ExampleSentence": "Er verweigert jede weitere Aussage."
   },
   {
     "German": "boxer",
-    "English": "boxer"
+    "English": "boxer",
+    "Article": "der",
+    "ExampleSentence": "Der Boxer trainiert jeden Tag.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative case (time expression), not nominative"
+      }
+    ]
   },
   {
     "German": "vorteile",
-    "English": "advantages"
+    "English": "advantages",
+    "Article": "die",
+    "ExampleSentence": "Diese Lösung bietet viele Vorteile."
   },
   {
     "German": "ausstellung",
-    "English": "exhibition"
+    "English": "exhibition",
+    "Article": "die",
+    "ExampleSentence": "Die Ausstellung zeigt moderne Kunst."
   },
   {
     "German": "tragisch",
-    "English": "tragic"
+    "English": "tragic",
+    "ExampleSentence": "Diese Geschichte ist sehr tragisch."
   },
   {
     "German": "rasch",
-    "English": "quick"
+    "English": "quick",
+    "ExampleSentence": "Er läuft sehr rasch davon."
   },
   {
     "German": "oberste",
-    "English": "highest"
+    "English": "highest",
+    "ExampleSentence": "Das ist die oberste Priorität."
   },
   {
     "German": "polizistin",
-    "English": "policewoman"
+    "English": "policewoman",
+    "Article": "die",
+    "ExampleSentence": "Die Polizistin patrouilliert jede Nacht."
   },
   {
     "German": "windeln",
-    "English": "diapers"
+    "English": "diapers",
+    "Article": "die",
+    "ExampleSentence": "Das Baby braucht neue Windeln."
   },
   {
     "German": "detroit",
-    "English": "Detroit"
+    "English": "Detroit",
+    "ExampleSentence": "Detroit liegt im Bundesstaat Michigan.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "arizona",
-    "English": "Arizona"
+    "English": "Arizona",
+    "ExampleSentence": "Arizona ist im Sommer heiß.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "universums",
-    "English": "universe"
+    "English": "universe",
+    "Article": "das",
+    "ExampleSentence": "Das Alter des Universums fasziniert.",
+    "Highlights": [
+      {
+        "Word": "des",
+        "Reason": "genitive case article, not nominative"
+      },
+      {
+        "Word": "Universums",
+        "Reason": "genitive case noun ending, not nominative"
+      }
+    ]
   },
   {
     "German": "aufheben",
-    "English": "to pick up"
+    "English": "to pick up",
+    "ExampleSentence": "Wir müssen das aufheben."
   },
   {
     "German": "narben",
-    "English": "scars"
+    "English": "scars",
+    "Article": "die",
+    "ExampleSentence": "Er hat viele alte Narben."
   },
   {
     "German": "fleißig",
-    "English": "hardworking"
+    "English": "hardworking",
+    "ExampleSentence": "Sie arbeitet heute sehr fleißig."
   },
   {
     "German": "freizeit",
-    "English": "free time"
+    "English": "free time",
+    "Article": "die",
+    "ExampleSentence": "Ich verbringe meine Freizeit draußen."
   },
   {
     "German": "elegant",
-    "English": "elegant"
+    "English": "elegant",
+    "ExampleSentence": "Sie tanzt heute sehr elegant."
   },
   {
     "German": "dolch",
-    "English": "dagger"
+    "English": "dagger",
+    "Article": "der",
+    "ExampleSentence": "Der Dolch ist sehr scharf."
   },
   {
     "German": "sloan",
-    "English": "Sloan"
+    "English": "Sloan",
+    "ExampleSentence": "Sloan leitet das ganze Projekt."
   },
   {
     "German": "eindringen",
-    "English": "to intrude"
+    "English": "to intrude",
+    "ExampleSentence": "Einbrecher wollen ins Haus eindringen.",
+    "Highlights": [
+      {
+        "Word": "ins",
+        "Reason": "accusative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "auszeit",
-    "English": "timeout"
+    "English": "timeout",
+    "Article": "die",
+    "ExampleSentence": "Er braucht dringend eine Auszeit."
   },
   {
     "German": "internationalen",
-    "English": "international"
+    "English": "international",
+    "ExampleSentence": "Sie arbeitet bei internationalen Organisationen.",
+    "Highlights": [
+      {
+        "Word": "internationalen",
+        "Reason": "dative case adjective ending, not nominative"
+      }
+    ]
   },
   {
     "German": "fielen",
-    "English": "fell"
+    "English": "fell",
+    "ExampleSentence": "Die Blätter fielen langsam herunter.",
+    "Highlights": [
+      {
+        "Word": "fielen",
+        "Reason": "Präteritum (simple past), not present tense"
+      }
+    ]
   },
   {
     "German": "weggeworfen",
-    "English": "thrown away"
+    "English": "thrown away",
+    "ExampleSentence": "Er hat das Papier weggeworfen.",
+    "Highlights": [
+      {
+        "Word": "weggeworfen",
+        "Reason": "Perfekt tense (past participle), not simple present"
+      }
+    ]
   },
   {
     "German": "vergeuden",
-    "English": "to waste"
+    "English": "to waste",
+    "ExampleSentence": "Wir dürfen keine Zeit vergeuden."
   },
   {
     "German": "blätter",
-    "English": "leaves"
+    "English": "leaves",
+    "Article": "die",
+    "ExampleSentence": "Die Blätter fallen im Herbst.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "blass",
-    "English": "pale"
+    "English": "pale",
+    "ExampleSentence": "Sein Gesicht wirkt heute blass."
   },
   {
     "German": "konzept",
-    "English": "concept"
+    "English": "concept",
+    "Article": "das",
+    "ExampleSentence": "Das Konzept klingt wirklich vielversprechend."
   },
   {
     "German": "look",
-    "English": "look"
+    "English": "look",
+    "Article": "der",
+    "ExampleSentence": "Ihr neuer Look wirkt toll."
   },
   {
     "German": "keineswegs",
-    "English": "by no means"
+    "English": "by no means",
+    "ExampleSentence": "Das ist keineswegs eine Ausrede."
   },
   {
     "German": "faden",
-    "English": "thread"
+    "English": "thread",
+    "Article": "der",
+    "ExampleSentence": "Der Faden reißt sehr leicht."
   },
   {
     "German": "kleinste",
-    "English": "smallest"
+    "English": "smallest",
+    "ExampleSentence": "Das ist das kleinste Zimmer."
   },
   {
     "German": "geschrien",
-    "English": "screamed"
+    "English": "screamed",
+    "ExampleSentence": "Sie hat vor Angst geschrien.",
+    "Highlights": [
+      {
+        "Word": "geschrien",
+        "Reason": "Perfekt tense (past participle), not simple present"
+      }
+    ]
   },
   {
     "German": "ertrunken",
-    "English": "drowned"
+    "English": "drowned",
+    "ExampleSentence": "Er ist im Fluss ertrunken.",
+    "Highlights": [
+      {
+        "Word": "ertrunken",
+        "Reason": "Perfekt tense (past participle with sein), not simple present"
+      },
+      {
+        "Word": "im",
+        "Reason": "dative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "blase",
-    "English": "bubble"
+    "English": "bubble",
+    "Article": "die",
+    "ExampleSentence": "Die Blase im Fuß schmerzt.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "treffpunkt",
-    "English": "meeting point"
+    "English": "meeting point",
+    "Article": "der",
+    "ExampleSentence": "Der Treffpunkt ist am Bahnhof.",
+    "Highlights": [
+      {
+        "Word": "am",
+        "Reason": "dative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "schrift",
-    "English": "writing"
+    "English": "writing",
+    "Article": "die",
+    "ExampleSentence": "Die Schrift ist kaum lesbar."
   },
   {
     "German": "mathe",
-    "English": "math"
+    "English": "math",
+    "Article": "die",
+    "ExampleSentence": "Mathe macht ihm keinen Spaß.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun, not nominative"
+      },
+      {
+        "Word": "keinen",
+        "Reason": "accusative case article, not nominative"
+      }
+    ]
   },
   {
     "German": "royal",
-    "English": "royal"
+    "English": "royal",
+    "ExampleSentence": "Die Hochzeit wirkt sehr royal."
   },
   {
     "German": "evelyn",
-    "English": "Evelyn"
+    "English": "Evelyn",
+    "ExampleSentence": "Evelyn liest gerne alte Bücher."
   },
   {
     "German": "britische",
-    "English": "British"
+    "English": "British",
+    "ExampleSentence": "Die britische Königin lächelt freundlich."
   },
   {
     "German": "körperlich",
-    "English": "physical"
+    "English": "physical",
+    "ExampleSentence": "Die Arbeit ist körperlich anstrengend."
   },
   {
     "German": "konzentration",
-    "English": "concentration"
+    "English": "concentration",
+    "Article": "die",
+    "ExampleSentence": "Seine Konzentration lässt langsam nach."
   },
   {
     "German": "schaltet",
-    "English": "switches"
+    "English": "switches",
+    "ExampleSentence": "Er schaltet das Licht aus."
   },
   {
     "German": "draht",
-    "English": "wire"
+    "English": "wire",
+    "Article": "der",
+    "ExampleSentence": "Der Draht steht unter Strom."
   },
   {
     "German": "älteste",
-    "English": "oldest"
+    "English": "oldest",
+    "ExampleSentence": "Er ist der älteste Bruder."
   },
   {
     "German": "höhere",
-    "English": "higher"
+    "English": "higher",
+    "ExampleSentence": "Sie sucht eine höhere Position."
   },
   {
     "German": "gerannt",
-    "English": "ran"
+    "English": "ran",
+    "ExampleSentence": "Er ist sehr schnell gerannt.",
+    "Highlights": [
+      {
+        "Word": "gerannt",
+        "Reason": "Perfekt tense (past participle with sein), not simple present"
+      }
+    ]
   },
   {
     "German": "tower",
-    "English": "tower"
+    "English": "tower",
+    "Article": "der",
+    "ExampleSentence": "Der Tower überragt die Stadt."
   },
   {
     "German": "gedrückt",
-    "English": "pressed"
+    "English": "pressed",
+    "ExampleSentence": "Er hat den Knopf gedrückt.",
+    "Highlights": [
+      {
+        "Word": "gedrückt",
+        "Reason": "Perfekt tense (past participle), not simple present"
+      },
+      {
+        "Word": "den",
+        "Reason": "accusative case article, not nominative"
+      }
+    ]
   },
   {
     "German": "reinigung",
-    "English": "cleaning"
+    "English": "cleaning",
+    "Article": "die",
+    "ExampleSentence": "Die Reinigung dauert nicht lange."
   },
   {
     "German": "fordert",
-    "English": "demands"
+    "English": "demands",
+    "ExampleSentence": "Er fordert eine sofortige Antwort."
   },
   {
     "German": "ideale",
-    "English": "ideal"
+    "English": "ideal",
+    "ExampleSentence": "Das ist die ideale Lösung."
   },
   {
     "German": "stiehlt",
-    "English": "steals"
+    "English": "steals",
+    "ExampleSentence": "Er stiehlt heimlich das Geld."
   },
   {
     "German": "money",
-    "English": "money"
+    "English": "money",
+    "ExampleSentence": "Money bedeutet ihm sehr viel.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "eiern",
-    "English": "to wobble"
+    "English": "to wobble",
+    "ExampleSentence": "Die Räder eiern ziemlich stark."
   },
   {
     "German": "dritter",
-    "English": "third"
+    "English": "third",
+    "ExampleSentence": "Ein dritter Mann erscheint plötzlich."
   },
   {
     "German": "züge",
-    "English": "trains"
+    "English": "trains",
+    "Article": "die",
+    "ExampleSentence": "Die Züge fahren heute pünktlich."
   },
   {
     "German": "optionen",
-    "English": "options"
+    "English": "options",
+    "Article": "die",
+    "ExampleSentence": "Wir haben noch viele Optionen."
   },
   {
     "German": "roland",
-    "English": "Roland"
+    "English": "Roland",
+    "ExampleSentence": "Roland repariert gerade das Auto."
   },
   {
     "German": "ersticken",
-    "English": "to suffocate"
+    "English": "to suffocate",
+    "ExampleSentence": "Die Hitze lässt uns ersticken.",
+    "Highlights": [
+      {
+        "Word": "uns",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "farmer",
-    "English": "farmer"
+    "English": "farmer",
+    "Article": "der",
+    "ExampleSentence": "Der Farmer pflegt seine Felder."
   },
   {
     "German": "batterie",
-    "English": "battery"
+    "English": "battery",
+    "Article": "die",
+    "ExampleSentence": "Die Batterie ist fast leer."
   },
   {
     "German": "obst",
-    "English": "fruit"
+    "English": "fruit",
+    "Article": "das",
+    "ExampleSentence": "Das Obst schmeckt sehr süß."
   },
   {
     "German": "badewanne",
-    "English": "bathtub"
+    "English": "bathtub",
+    "Article": "die",
+    "ExampleSentence": "Die Badewanne ist ziemlich voll."
   },
   {
     "German": "manches",
-    "English": "some things"
+    "English": "some things",
+    "ExampleSentence": "Manches versteht er einfach nicht."
   },
   {
     "German": "droge",
-    "English": "drug"
+    "English": "drug",
+    "Article": "die",
+    "ExampleSentence": "Diese Droge macht schnell abhängig."
   },
   {
     "German": "übertragung",
-    "English": "broadcast"
+    "English": "broadcast",
+    "Article": "die",
+    "ExampleSentence": "Die Übertragung beginnt schon bald."
   },
   {
     "German": "enge",
-    "English": "tightness"
+    "English": "tightness",
+    "Article": "die",
+    "ExampleSentence": "Die Enge im Aufzug stört.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative case (fused preposition and article), not nominative"
+      }
+    ]
   },
   {
     "German": "nickerchen",
-    "English": "nap"
+    "English": "nap",
+    "Article": "das",
+    "ExampleSentence": "Das Baby macht ein Nickerchen."
   },
   {
     "German": "juhu",
-    "English": "yay"
+    "English": "yay",
+    "ExampleSentence": "Juhu, wir haben endlich gewonnen!",
+    "Highlights": [
+      {
+        "Word": "gewonnen",
+        "Reason": "Perfekt tense (past participle), not simple present"
+      }
+    ]
   },
   {
     "German": "cora",
-    "English": "Cora"
+    "English": "Cora",
+    "ExampleSentence": "Cora lächelt heute viel."
   },
   {
     "German": "lungen",
-    "English": "lungs"
+    "English": "lungs",
+    "Article": "die",
+    "ExampleSentence": "Die Lungen brauchen viel Sauerstoff."
   },
   {
     "German": "öffnete",
-    "English": "opened"
+    "English": "opened",
+    "ExampleSentence": "Sie öffnete die Tür.",
+    "Highlights": [
+      {
+        "Word": "öffnete",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "abschneiden",
-    "English": "to cut off"
+    "English": "to cut off",
+    "ExampleSentence": "Er will Brot abschneiden."
   },
   {
     "German": "valentine",
-    "English": "Valentine"
+    "English": "Valentine",
+    "ExampleSentence": "Valentine schreibt eine Nachricht."
   },
   {
     "German": "hierbei",
-    "English": "in this case"
+    "English": "in this case",
+    "ExampleSentence": "Hierbei zählt jede Übung."
   },
   {
     "German": "sorgst",
-    "English": "care for"
+    "English": "care for",
+    "ExampleSentence": "Du sorgst für deine Familie."
   },
   {
     "German": "phillip",
-    "English": "Phillip"
+    "English": "Phillip",
+    "ExampleSentence": "Phillip kocht gern italienisch."
   },
   {
     "German": "schaffte",
-    "English": "managed"
+    "English": "managed",
+    "ExampleSentence": "Sie schaffte die schwere Prüfung.",
+    "Highlights": [
+      {
+        "Word": "schaffte",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "omar",
-    "English": "Omar"
+    "English": "Omar",
+    "ExampleSentence": "Omar spielt gerne Schach."
   },
   {
     "German": "anfänger",
-    "English": "beginner"
+    "English": "beginner",
+    "Article": "der",
+    "ExampleSentence": "Der Anfänger übt täglich fleißig."
   },
   {
     "German": "gen",
-    "English": "gene"
+    "English": "gene",
+    "Article": "das",
+    "ExampleSentence": "Das Gen bestimmt die Augenfarbe."
   },
   {
     "German": "ungerecht",
-    "English": "unfair"
+    "English": "unfair",
+    "ExampleSentence": "Das Urteil ist ungerecht."
   },
   {
     "German": "reue",
-    "English": "remorse"
+    "English": "remorse",
+    "Article": "die",
+    "ExampleSentence": "Die Reue quält sie sehr."
   },
   {
     "German": "rhythmus",
-    "English": "rhythm"
+    "English": "rhythm",
+    "Article": "der",
+    "ExampleSentence": "Der Rhythmus begeistert das Publikum."
   },
   {
     "German": "kündige",
-    "English": "quit"
+    "English": "quit",
+    "ExampleSentence": "Ich kündige meine Stelle."
   },
   {
     "German": "mitgehen",
-    "English": "to come along"
+    "English": "to come along",
+    "ExampleSentence": "Willst du kurz mitgehen."
   },
   {
     "German": "siegel",
-    "English": "seal"
+    "English": "seal",
+    "Article": "das",
+    "ExampleSentence": "Das Siegel bestätigt die Echtheit."
   },
   {
     "German": "moore",
-    "English": "Moore"
+    "English": "Moore",
+    "ExampleSentence": "Moore wohnt in London."
   },
   {
     "German": "stechen",
-    "English": "to sting"
+    "English": "to sting",
+    "ExampleSentence": "Bienen können schmerzhaft stechen."
   },
   {
     "German": "baue",
-    "English": "build"
+    "English": "build",
+    "ExampleSentence": "Ich baue ein Baumhaus."
   },
   {
     "German": "prostituierte",
-    "English": "prostitute"
+    "English": "prostitute",
+    "Article": "die",
+    "ExampleSentence": "Die Prostituierte wartet geduldig draußen."
   },
   {
     "German": "heller",
-    "English": "brighter"
+    "English": "brighter",
+    "ExampleSentence": "Die Lampe wird immer heller."
   },
   {
     "German": "umgehend",
-    "English": "immediately"
+    "English": "immediately",
+    "ExampleSentence": "Er antwortet umgehend darauf."
   },
   {
     "German": "hoffnungslos",
-    "English": "hopeless"
+    "English": "hopeless",
+    "ExampleSentence": "Die Lage wirkt hoffnungslos."
   },
   {
     "German": "checken",
-    "English": "to check"
+    "English": "to check",
+    "ExampleSentence": "Wir müssen das schnell checken."
   },
   {
     "German": "drücke",
-    "English": "press"
+    "English": "press",
+    "ExampleSentence": "Ich drücke die rote Taste."
   },
   {
     "German": "wong",
-    "English": "Wong"
+    "English": "Wong",
+    "ExampleSentence": "Wong arbeitet im Labor."
   },
   {
     "German": "merkwürdige",
-    "English": "strange"
+    "English": "strange",
+    "ExampleSentence": "Das ist eine merkwürdige Geschichte."
   },
   {
     "German": "valley",
-    "English": "valley"
+    "English": "valley",
+    "ExampleSentence": "Das Valley beeindruckt viele Touristen."
   },
   {
     "German": "brandy",
-    "English": "brandy"
+    "English": "brandy",
+    "Article": "der",
+    "ExampleSentence": "Er trinkt gerne Brandy pur."
   },
   {
     "German": "gelbe",
-    "English": "yellow"
+    "English": "yellow",
+    "ExampleSentence": "Die gelbe Blume blüht schön."
   },
   {
     "German": "nützen",
-    "English": "to be useful"
+    "English": "to be useful",
+    "ExampleSentence": "Gute Kontakte nützen sehr."
   },
   {
     "German": "venedig",
-    "English": "Venice"
+    "English": "Venice",
+    "ExampleSentence": "Venedig begeistert alle Besucher."
   },
   {
     "German": "gideon",
-    "English": "Gideon"
+    "English": "Gideon",
+    "ExampleSentence": "Gideon repariert das alte Auto."
   },
   {
     "German": "lernten",
-    "English": "learned"
+    "English": "learned",
+    "ExampleSentence": "Sie lernten viele neue Sprachen.",
+    "Highlights": [
+      {
+        "Word": "lernten",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "benimmt",
-    "English": "behaves"
+    "English": "behaves",
+    "ExampleSentence": "Er benimmt sich sehr schlecht."
   },
   {
     "German": "georg",
-    "English": "George"
+    "English": "George",
+    "ExampleSentence": "Georg spielt gern Klavier."
   },
   {
     "German": "mächtiger",
-    "English": "more powerful"
+    "English": "more powerful",
+    "ExampleSentence": "Er wird immer mächtiger."
   },
   {
     "German": "genutzt",
-    "English": "used"
+    "English": "used",
+    "ExampleSentence": "Er hat die Chance genutzt.",
+    "Highlights": [
+      {
+        "Word": "genutzt",
+        "Reason": "Partizip II (Perfekt tense)"
+      }
+    ]
   },
   {
     "German": "verzieh",
-    "English": "forgave"
+    "English": "forgave",
+    "ExampleSentence": "Sie verzieh ihre eigene Schwäche.",
+    "Highlights": [
+      {
+        "Word": "verzieh",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "schüssel",
-    "English": "bowl"
+    "English": "bowl",
+    "Article": "die",
+    "ExampleSentence": "Die Schüssel ist sehr groß."
   },
   {
     "German": "dreckigen",
-    "English": "dirty"
+    "English": "dirty",
+    "ExampleSentence": "Die dreckigen Teller stapeln sich."
   },
   {
     "German": "wiegt",
-    "English": "weighs"
+    "English": "weighs",
+    "ExampleSentence": "Das Paket wiegt zehn Kilo."
   },
   {
     "German": "kg",
-    "English": "kg"
+    "English": "kg",
+    "ExampleSentence": "Das Paket wiegt zehn kg."
   },
   {
     "German": "abraham",
-    "English": "Abraham"
+    "English": "Abraham",
+    "ExampleSentence": "Abraham betet still und lange."
   },
   {
     "German": "seltsamer",
-    "English": "odder"
+    "English": "odder",
+    "ExampleSentence": "Er wirkt heute viel seltsamer."
   },
   {
     "German": "hiervon",
-    "English": "of this"
+    "English": "of this",
+    "ExampleSentence": "Hiervon profitieren wir alle sehr."
   },
   {
     "German": "beraten",
-    "English": "to advise"
+    "English": "to advise",
+    "ExampleSentence": "Der Anwalt kann sie beraten."
   },
   {
     "German": "schienen",
-    "English": "seemed"
+    "English": "seemed",
+    "ExampleSentence": "Sie schienen sehr glücklich damals.",
+    "Highlights": [
+      {
+        "Word": "schienen",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "wirkliche",
-    "English": "real"
+    "English": "real",
+    "ExampleSentence": "Das ist die wirkliche Wahrheit."
   },
   {
     "German": "träumt",
-    "English": "dreams"
+    "English": "dreams",
+    "ExampleSentence": "Sie träumt fast jede Nacht."
   },
   {
     "German": "versprech",
-    "English": "promise"
+    "English": "promise",
+    "ExampleSentence": "Ich versprech das ganz sicher."
   },
   {
     "German": "ideal",
-    "English": "ideal"
+    "English": "ideal",
+    "ExampleSentence": "Diese Lösung ist wirklich ideal."
   },
   {
     "German": "norma",
-    "English": "Norma"
+    "English": "Norma",
+    "ExampleSentence": "Norma kocht heute für alle."
   },
   {
     "German": "sire",
-    "English": "sire"
+    "English": "sire",
+    "Article": "der",
+    "ExampleSentence": "Der Sire gewinnt jedes Rennen."
   },
   {
     "German": "marschieren",
-    "English": "to march"
+    "English": "to march",
+    "ExampleSentence": "Die Soldaten marschieren geschlossen weiter."
   },
   {
     "German": "mitbewohner",
-    "English": "roommate"
+    "English": "roommate",
+    "Article": "der",
+    "ExampleSentence": "Der Mitbewohner kocht sehr gerne."
   },
   {
     "German": "verlobung",
-    "English": "engagement"
+    "English": "engagement",
+    "Article": "die",
+    "ExampleSentence": "Die Verlobung überrascht alle Gäste."
   },
   {
     "German": "funken",
-    "English": "spark"
+    "English": "spark",
+    "Article": "der",
+    "ExampleSentence": "Sie spürt einen Funken Hoffnung.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative masculine article"
+      },
+      {
+        "Word": "Funken",
+        "Reason": "accusative singular of \"der Funke\" (weak noun ending -n)"
+      }
+    ]
   },
   {
     "German": "gleichfalls",
-    "English": "likewise"
+    "English": "likewise",
+    "ExampleSentence": "Ich wünsche gleichfalls alles Gute."
   },
   {
     "German": "geringsten",
-    "English": "slightest"
+    "English": "slightest",
+    "ExampleSentence": "Das interessiert mich am geringsten.",
+    "Highlights": [
+      {
+        "Word": "mich",
+        "Reason": "accusative pronoun"
+      }
+    ]
   },
   {
     "German": "empfange",
-    "English": "receive"
+    "English": "receive",
+    "ExampleSentence": "Ich empfange heute meine Gäste."
   },
   {
     "German": "führten",
-    "English": "led"
+    "English": "led",
+    "ExampleSentence": "Sie führten das Team perfekt.",
+    "Highlights": [
+      {
+        "Word": "führten",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "gelben",
-    "English": "yellow"
+    "English": "yellow",
+    "ExampleSentence": "Er trägt einen gelben Mantel.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative masculine article"
+      },
+      {
+        "Word": "gelben",
+        "Reason": "accusative masculine adjective ending"
+      }
+    ]
   },
   {
     "German": "lach",
-    "English": "laugh"
+    "English": "laugh",
+    "ExampleSentence": "Lach doch mal wieder.",
+    "Highlights": [
+      {
+        "Word": "Lach",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "vereinbart",
-    "English": "agreed"
+    "English": "agreed",
+    "ExampleSentence": "Wir haben das Treffen vereinbart.",
+    "Highlights": [
+      {
+        "Word": "vereinbart",
+        "Reason": "Partizip II (Perfekt tense)"
+      }
+    ]
   },
   {
     "German": "kimmy",
-    "English": "Kimmy"
+    "English": "Kimmy",
+    "ExampleSentence": "Kimmy singt heute sehr schön."
   },
   {
     "German": "prügel",
-    "English": "beating"
+    "English": "beating",
+    "Article": "die",
+    "ExampleSentence": "Die Prügel schmerzen noch immer."
   },
   {
     "German": "läuten",
-    "English": "to ring"
+    "English": "to ring",
+    "ExampleSentence": "Die Glocken läuten sehr laut."
   },
   {
     "German": "anzugreifen",
-    "English": "to attack"
+    "English": "to attack",
+    "ExampleSentence": "Er plant, die Stadt anzugreifen."
   },
   {
     "German": "balkon",
-    "English": "balcony"
+    "English": "balcony",
+    "Article": "der",
+    "ExampleSentence": "Der Balkon bietet viel Platz."
   },
   {
     "German": "fran",
-    "English": "Fran"
+    "English": "Fran",
+    "ExampleSentence": "Fran arbeitet heute sehr lange."
   },
   {
     "German": "flüchten",
-    "English": "to flee"
+    "English": "to flee",
+    "ExampleSentence": "Viele Menschen flüchten vor Krieg."
   },
   {
     "German": "umkehren",
-    "English": "to turn around"
+    "English": "to turn around",
+    "ExampleSentence": "Wir sollten jetzt lieber umkehren."
   },
   {
     "German": "ansieht",
-    "English": "looks at"
+    "English": "looks at",
+    "ExampleSentence": "Wenn sie es ansieht."
   },
   {
     "German": "rechtfertigen",
-    "English": "to justify"
+    "English": "to justify",
+    "ExampleSentence": "Er kann sein Handeln rechtfertigen."
   },
   {
     "German": "belügen",
-    "English": "to lie to"
+    "English": "to lie to",
+    "ExampleSentence": "Er will seine Familie belügen."
   },
   {
     "German": "verdächtigt",
-    "English": "suspected"
+    "English": "suspected",
+    "ExampleSentence": "Der Chef verdächtigt seine Sekretärin."
   },
   {
     "German": "begannen",
-    "English": "began"
+    "English": "began",
+    "ExampleSentence": "Sie begannen das neue Projekt.",
+    "Highlights": [
+      {
+        "Word": "begannen",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "snow",
-    "English": "Snow"
+    "English": "Snow",
+    "ExampleSentence": "Snow lächelt sehr selten heute."
   },
   {
     "German": "oskar",
-    "English": "Oscar"
+    "English": "Oscar",
+    "ExampleSentence": "Oskar lernt fleißig für morgen."
   },
   {
     "German": "englischen",
-    "English": "English"
+    "English": "English",
+    "ExampleSentence": "Er spricht mit englischen Freunden.",
+    "Highlights": [
+      {
+        "Word": "englischen",
+        "Reason": "dative plural adjective ending"
+      },
+      {
+        "Word": "Freunden",
+        "Reason": "dative plural noun ending -n"
+      }
+    ]
   },
   {
     "German": "inspiriert",
-    "English": "inspired"
+    "English": "inspired",
+    "ExampleSentence": "Das Buch inspiriert viele Leser."
   },
   {
     "German": "murray",
-    "English": "Murray"
+    "English": "Murray",
+    "ExampleSentence": "Murray angelt gern am See."
   },
   {
     "German": "shirt",
-    "English": "shirt"
+    "English": "shirt",
+    "Article": "das",
+    "ExampleSentence": "Das Shirt passt wirklich gut."
   },
   {
     "German": "erlaube",
-    "English": "allow"
+    "English": "allow",
+    "ExampleSentence": "Ich erlaube diese kurze Reise."
   },
   {
     "German": "ertrinken",
-    "English": "to drown"
+    "English": "to drown",
+    "ExampleSentence": "Die Schwimmer könnten fast ertrinken."
   },
   {
     "German": "sorgfältig",
-    "English": "careful"
+    "English": "careful",
+    "ExampleSentence": "Sie arbeitet sehr sorgfältig heute."
   },
   {
     "German": "spuck",
-    "English": "spit"
+    "English": "spit",
+    "ExampleSentence": "Spuck das Kaugummi sofort aus.",
+    "Highlights": [
+      {
+        "Word": "Spuck",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "eingetroffen",
-    "English": "arrived"
+    "English": "arrived",
+    "ExampleSentence": "Der Zug ist endlich eingetroffen.",
+    "Highlights": [
+      {
+        "Word": "eingetroffen",
+        "Reason": "Partizip II (Perfekt tense)"
+      }
+    ]
   },
   {
     "German": "chang",
-    "English": "Chang"
+    "English": "Chang",
+    "ExampleSentence": "Chang kocht gerne chinesisch heute."
   },
   {
     "German": "lynette",
-    "English": "Lynette"
+    "English": "Lynette",
+    "ExampleSentence": "Lynette lächelt oft sehr nervös."
   },
   {
     "German": "feine",
-    "English": "fine"
+    "English": "fine",
+    "ExampleSentence": "Das ist eine feine Sache."
   },
   {
     "German": "home",
-    "English": "home"
+    "English": "home",
+    "ExampleSentence": "Home bedeutet für sie Familie."
   },
   {
     "German": "grosse",
-    "English": "big"
+    "English": "big",
+    "ExampleSentence": "Das ist eine grosse Stadt."
   },
   {
     "German": "schickten",
-    "English": "sent"
+    "English": "sent",
+    "ExampleSentence": "Sie schickten eine wichtige Nachricht.",
+    "Highlights": [
+      {
+        "Word": "schickten",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "überreste",
-    "English": "remains"
+    "English": "remains",
+    "Article": "die",
+    "ExampleSentence": "Die Überreste liegen noch dort."
   },
   {
     "German": "garantiere",
-    "English": "guarantee"
+    "English": "guarantee",
+    "ExampleSentence": "Ich garantiere absolute Diskretion immer."
   },
   {
     "German": "unerträglich",
-    "English": "unbearable"
+    "English": "unbearable",
+    "ExampleSentence": "Die Hitze ist heute unerträglich."
   },
   {
     "German": "vorerst",
-    "English": "for now"
+    "English": "for now",
+    "ExampleSentence": "Vorerst bleibt alles beim Alten."
   },
   {
     "German": "yale",
-    "English": "Yale"
+    "English": "Yale",
+    "ExampleSentence": "Yale gilt als beste Universität."
   },
   {
     "German": "verirrt",
-    "English": "lost"
+    "English": "lost",
+    "ExampleSentence": "Er verirrt sich im Wald."
   },
   {
     "German": "überstanden",
-    "English": "survived"
+    "English": "survived",
+    "ExampleSentence": "Sie hat die Krise überstanden.",
+    "Highlights": [
+      {
+        "Word": "überstanden",
+        "Reason": "Partizip II (Perfekt tense)"
+      }
+    ]
   },
   {
     "German": "harriet",
-    "English": "Harriet"
+    "English": "Harriet",
+    "ExampleSentence": "Harriet schreibt gerade ein Gedicht."
   },
   {
     "German": "liga",
-    "English": "league"
+    "English": "league",
+    "Article": "die",
+    "ExampleSentence": "Die Liga startet nächste Woche."
   },
   {
     "German": "wertlos",
-    "English": "worthless"
+    "English": "worthless",
+    "ExampleSentence": "Dieses alte Geld ist wertlos."
   },
   {
     "German": "marvin",
-    "English": "Marvin"
+    "English": "Marvin",
+    "ExampleSentence": "Marvin repariert gerade sein Fahrrad."
   },
   {
     "German": "gottverdammt",
-    "English": "goddamn"
+    "English": "goddamn",
+    "ExampleSentence": "Diese Tür ist gottverdammt kaputt."
   },
   {
     "German": "gesammelt",
-    "English": "collected"
+    "English": "collected",
+    "ExampleSentence": "Er hat viele Briefmarken gesammelt.",
+    "Highlights": [
+      {
+        "Word": "gesammelt",
+        "Reason": "Partizip II (Perfekt tense)"
+      }
+    ]
   },
   {
     "German": "kanntest",
-    "English": "knew"
+    "English": "knew",
+    "ExampleSentence": "Du kanntest die ganze Wahrheit.",
+    "Highlights": [
+      {
+        "Word": "kanntest",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "bezeichnet",
-    "English": "labeled"
+    "English": "labeled",
+    "ExampleSentence": "Man bezeichnet sie als Expertin."
   },
   {
     "German": "beantworte",
-    "English": "answer"
+    "English": "answer",
+    "ExampleSentence": "Ich beantworte jede wichtige Frage."
   },
   {
     "German": "baltimore",
-    "English": "Baltimore"
+    "English": "Baltimore",
+    "ExampleSentence": "Baltimore hat viele historische Gebäude."
   },
   {
     "German": "shirley",
-    "English": "Shirley"
+    "English": "Shirley",
+    "ExampleSentence": "Shirley backt heute frisches Brot."
   },
   {
     "German": "connie",
-    "English": "Connie"
+    "English": "Connie",
+    "ExampleSentence": "Connie mag laute Musik sehr."
   },
   {
     "German": "netzwerk",
-    "English": "network"
+    "English": "network",
+    "Article": "das",
+    "ExampleSentence": "Das Netzwerk funktioniert wieder einwandfrei."
   },
   {
     "German": "moses",
-    "English": "Moses"
+    "English": "Moses",
+    "ExampleSentence": "Moses führt sein Volk heraus."
   },
   {
     "German": "entstehen",
-    "English": "to arise"
+    "English": "to arise",
+    "ExampleSentence": "Hier können neue Ideen entstehen."
   },
   {
     "German": "ingalls",
-    "English": "Ingalls"
+    "English": "Ingalls",
+    "ExampleSentence": "Ingalls arbeitet gerne im Garten."
   },
   {
     "German": "lauten",
-    "English": "to read"
+    "English": "to read",
+    "ExampleSentence": "Die Regeln lauten sehr klar."
   },
   {
     "German": "fasziniert",
-    "English": "fascinated"
+    "English": "fascinated",
+    "ExampleSentence": "Das Thema fasziniert viele Studenten."
   },
   {
     "German": "ehrliche",
-    "English": "honest"
+    "English": "honest",
+    "ExampleSentence": "Sie ist eine ehrliche Frau."
   },
   {
     "German": "akademie",
-    "English": "academy"
+    "English": "academy",
+    "Article": "die",
+    "ExampleSentence": "Die Akademie bildet junge Talente."
   },
   {
     "German": "grünes",
-    "English": "green"
+    "English": "green",
+    "ExampleSentence": "Ein grünes Auto steht dort."
   },
   {
     "German": "branche",
-    "English": "industry"
+    "English": "industry",
+    "Article": "die",
+    "ExampleSentence": "Die Branche wächst sehr schnell."
   },
   {
     "German": "rudy",
-    "English": "Rudy"
+    "English": "Rudy",
+    "ExampleSentence": "Rudy fährt gerne schnelle Autos."
   },
   {
     "German": "soße",
-    "English": "sauce"
+    "English": "sauce",
+    "Article": "die",
+    "ExampleSentence": "Die Soße schmeckt wirklich lecker."
   },
   {
     "German": "situationen",
-    "English": "situations"
+    "English": "situations",
+    "Article": "die",
+    "ExampleSentence": "Solche Situationen passieren leider oft."
   },
   {
     "German": "entführer",
-    "English": "kidnapper"
+    "English": "kidnapper",
+    "Article": "der",
+    "ExampleSentence": "Der Entführer fordert hohes Lösegeld."
   },
   {
     "German": "ewigen",
-    "English": "eternal"
+    "English": "eternal",
+    "ExampleSentence": "Sie kämpft seit ewigen Zeiten.",
+    "Highlights": [
+      {
+        "Word": "ewigen",
+        "Reason": "dative plural adjective ending"
+      }
+    ]
   },
   {
     "German": "erzeugt",
-    "English": "produces"
+    "English": "produces",
+    "ExampleSentence": "Die Fabrik erzeugt viel Strom."
   },
   {
     "German": "fünften",
-    "English": "fifth"
+    "English": "fifth",
+    "ExampleSentence": "Wir feiern am fünften Mai.",
+    "Highlights": [
+      {
+        "Word": "fünften",
+        "Reason": "dative case ending (ordinal adjective)"
+      }
+    ]
   },
   {
     "German": "registriert",
-    "English": "registered"
+    "English": "registered",
+    "ExampleSentence": "Das System registriert jede Änderung."
   },
   {
     "German": "basketball",
-    "English": "basketball"
+    "English": "basketball",
+    "Article": "der",
+    "ExampleSentence": "Der Basketball rollt einfach weg."
   },
   {
     "German": "abgesetzt",
-    "English": "dropped off"
+    "English": "dropped off",
+    "ExampleSentence": "Der Fahrer hat sie abgesetzt.",
+    "Highlights": [
+      {
+        "Word": "abgesetzt",
+        "Reason": "Partizip II (Perfekt tense)"
+      }
+    ]
   },
   {
     "German": "irgendwelchen",
-    "English": "any"
+    "English": "any",
+    "ExampleSentence": "Er redet mit irgendwelchen Leuten.",
+    "Highlights": [
+      {
+        "Word": "irgendwelchen",
+        "Reason": "dative plural ending"
+      },
+      {
+        "Word": "Leuten",
+        "Reason": "dative plural noun ending -n"
+      }
+    ]
   },
   {
     "German": "vorsitzender",
-    "English": "chairman"
+    "English": "chairman",
+    "Article": "der",
+    "ExampleSentence": "Ein Vorsitzender trifft wichtige Entscheidungen."
   },
   {
     "German": "bedürfnisse",
-    "English": "needs"
+    "English": "needs",
+    "Article": "die",
+    "ExampleSentence": "Die Bedürfnisse ändern sich ständig."
   },
   {
     "German": "suite",
-    "English": "suite"
+    "English": "suite",
+    "Article": "die",
+    "ExampleSentence": "Die Suite bietet viel Komfort."
   },
   {
     "German": "regieren",
-    "English": "to rule"
+    "English": "to rule",
+    "ExampleSentence": "Sie wollen das Land regieren."
   },
   {
     "German": "barkeeper",
-    "English": "bartender"
+    "English": "bartender",
+    "Article": "der",
+    "ExampleSentence": "Der Barkeeper mixt starke Cocktails."
   },
   {
     "German": "ausgemacht",
-    "English": "agreed"
+    "English": "agreed",
+    "ExampleSentence": "Wir haben das genau ausgemacht.",
+    "Highlights": [
+      {
+        "Word": "ausgemacht",
+        "Reason": "Partizip II (Perfekt tense)"
+      }
+    ]
   },
   {
     "German": "fritz",
-    "English": "Fritz"
+    "English": "Fritz",
+    "ExampleSentence": "Fritz repariert gerne alte Uhren."
   },
   {
     "German": "dateien",
-    "English": "files"
+    "English": "files",
+    "Article": "die",
+    "ExampleSentence": "Die Dateien öffnen sich sofort."
   },
   {
     "German": "dixon",
-    "English": "Dixon"
+    "English": "Dixon",
+    "ExampleSentence": "Dixon leitet ein kleines Team."
   },
   {
     "German": "gegründet",
-    "English": "founded"
+    "English": "founded",
+    "ExampleSentence": "Er hat die Firma gegründet.",
+    "Highlights": [
+      {
+        "Word": "gegründet",
+        "Reason": "Partizip II (Perfekt tense)"
+      }
+    ]
   },
   {
     "German": "wolke",
-    "English": "cloud"
+    "English": "cloud",
+    "Article": "die",
+    "ExampleSentence": "Die Wolke verdeckt die Sonne."
   },
   {
     "German": "wall",
-    "English": "wall"
+    "English": "wall",
+    "Article": "der",
+    "ExampleSentence": "Der Wall schützt die Stadt."
   },
   {
     "German": "umgang",
-    "English": "dealing with"
+    "English": "dealing with",
+    "Article": "der",
+    "ExampleSentence": "Der Umgang mit Kritik überrascht."
   },
   {
     "German": "schenk",
-    "English": "give"
+    "English": "give",
+    "ExampleSentence": "Schenk mir bitte dein Vertrauen.",
+    "Highlights": [
+      {
+        "Word": "Schenk",
+        "Reason": "imperative form"
+      },
+      {
+        "Word": "mir",
+        "Reason": "dative pronoun"
+      }
+    ]
   },
   {
     "German": "festen",
-    "English": "firm"
+    "English": "firm",
+    "ExampleSentence": "Sie folgt festen Regeln immer.",
+    "Highlights": [
+      {
+        "Word": "festen",
+        "Reason": "dative plural adjective ending"
+      }
+    ]
   },
   {
     "German": "erziehung",
-    "English": "upbringing"
+    "English": "upbringing",
+    "Article": "die",
+    "ExampleSentence": "Die Erziehung prägt junge Menschen."
   },
   {
     "German": "agentin",
-    "English": "agent"
+    "English": "agent",
+    "Article": "die",
+    "ExampleSentence": "Die Agentin arbeitet völlig undercover."
   },
   {
     "German": "marines",
-    "English": "marines"
+    "English": "marines",
+    "Article": "die",
+    "ExampleSentence": "Die Marines trainieren sehr hart."
   },
   {
     "German": "hasen",
-    "English": "rabbits"
+    "English": "rabbits",
+    "Article": "die",
+    "ExampleSentence": "Die Hasen laufen sehr schnell."
   },
   {
     "German": "institut",
-    "English": "institute"
+    "English": "institute",
+    "Article": "das",
+    "ExampleSentence": "Das Institut erforscht seltene Krankheiten."
   },
   {
     "German": "mittleren",
-    "English": "middle"
+    "English": "middle",
+    "ExampleSentence": "Er ist in mittleren Jahren.",
+    "Highlights": [
+      {
+        "Word": "mittleren",
+        "Reason": "dative plural adjective ending"
+      },
+      {
+        "Word": "Jahren",
+        "Reason": "dative plural noun ending -n"
+      }
+    ]
   },
   {
     "German": "hingerichtet",
-    "English": "executed"
+    "English": "executed",
+    "ExampleSentence": "Der Gefangene wird morgen hingerichtet.",
+    "Highlights": [
+      {
+        "Word": "hingerichtet",
+        "Reason": "Partizip II (passive construction)"
+      }
+    ]
   },
   {
     "German": "lenken",
-    "English": "to steer"
+    "English": "to steer",
+    "ExampleSentence": "Er kann das Auto lenken."
   },
   {
     "German": "angewiesen",
-    "English": "dependent"
+    "English": "dependent",
+    "ExampleSentence": "Er ist auf Hilfe angewiesen."
   },
   {
     "German": "überlebende",
-    "English": "survivor"
+    "English": "survivor",
+    "Article": "der",
+    "ExampleSentence": "Der Überlebende erzählt seine Geschichte."
   },
   {
     "German": "bass",
-    "English": "bass"
+    "English": "bass",
+    "Article": "der",
+    "ExampleSentence": "Der Bass klingt sehr tief."
   },
   {
     "German": "pearl",
-    "English": "Pearl"
+    "English": "Pearl",
+    "ExampleSentence": "Pearl mag alte Filme."
   },
   {
     "German": "lahm",
-    "English": "lame"
+    "English": "lame",
+    "ExampleSentence": "Der Witz ist lahm."
   },
   {
     "German": "basiert",
-    "English": "based"
+    "English": "based",
+    "ExampleSentence": "Der Film basiert auf Tatsachen."
   },
   {
     "German": "rasieren",
-    "English": "to shave"
+    "English": "to shave",
+    "ExampleSentence": "Sie rasieren sich täglich."
   },
   {
     "German": "angeordnet",
-    "English": "ordered"
+    "English": "ordered",
+    "ExampleSentence": "Die Untersuchung wird angeordnet."
   },
   {
     "German": "gewalttätig",
-    "English": "violent"
+    "English": "violent",
+    "ExampleSentence": "Er wird schnell gewalttätig."
   },
   {
     "German": "untergang",
-    "English": "downfall"
+    "English": "downfall",
+    "Article": "der",
+    "ExampleSentence": "Der Untergang naht unaufhaltsam."
   },
   {
     "German": "flach",
-    "English": "flat"
+    "English": "flat",
+    "ExampleSentence": "Das Land ist völlig flach."
   },
   {
     "German": "autogramm",
-    "English": "autograph"
+    "English": "autograph",
+    "Article": "das",
+    "ExampleSentence": "Er gibt ein Autogramm."
   },
   {
     "German": "schwule",
-    "English": "gay man"
+    "English": "gay man",
+    "Article": "der",
+    "ExampleSentence": "Der Schwule liebt seinen Partner.",
+    "Highlights": [
+      {
+        "Word": "seinen",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "kompanie",
-    "English": "company"
+    "English": "company",
+    "Article": "die",
+    "ExampleSentence": "Die Kompanie marschiert schnell los."
   },
   {
     "German": "casino",
-    "English": "casino"
+    "English": "casino",
+    "Article": "das",
+    "ExampleSentence": "Das Casino öffnet um Mitternacht."
   },
   {
     "German": "solches",
-    "English": "such a thing"
+    "English": "such a thing",
+    "ExampleSentence": "Solches vergisst man nicht."
   },
   {
     "German": "sackgasse",
-    "English": "dead end"
+    "English": "dead end",
+    "Article": "die",
+    "ExampleSentence": "Die Straße ist eine Sackgasse."
   },
   {
     "German": "einbrecher",
-    "English": "burglar"
+    "English": "burglar",
+    "Article": "der",
+    "ExampleSentence": "Der Einbrecher flieht sofort."
   },
   {
     "German": "stehenbleiben",
-    "English": "to stop"
+    "English": "to stop",
+    "ExampleSentence": "Sie muss sofort stehenbleiben!"
   },
   {
     "German": "erwartungen",
-    "English": "expectations"
+    "English": "expectations",
+    "Article": "die",
+    "ExampleSentence": "Er übertrifft alle Erwartungen leicht."
   },
   {
     "German": "flüssigkeit",
-    "English": "liquid"
+    "English": "liquid",
+    "Article": "die",
+    "ExampleSentence": "Die Flüssigkeit verdampft bei Hitze."
   },
   {
     "German": "erraten",
-    "English": "to guess"
+    "English": "to guess",
+    "ExampleSentence": "Sie erraten das Rätsel sofort."
   },
   {
     "German": "verkaufst",
-    "English": "sell"
+    "English": "sell",
+    "ExampleSentence": "Du verkaufst dein altes Auto."
   },
   {
     "German": "vorsprung",
-    "English": "lead"
+    "English": "lead",
+    "Article": "der",
+    "ExampleSentence": "Er baut seinen Vorsprung aus.",
+    "Highlights": [
+      {
+        "Word": "seinen",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "zahlst",
-    "English": "pay"
+    "English": "pay",
+    "ExampleSentence": "Du zahlst die Rechnung sofort."
   },
   {
     "German": "verkäufer",
-    "English": "salesman"
+    "English": "salesman",
+    "Article": "der",
+    "ExampleSentence": "Der Verkäufer berät die Kundin."
   },
   {
     "German": "zukommen",
-    "English": "to come toward"
+    "English": "to come toward",
+    "ExampleSentence": "Es soll ihm bald zukommen.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun (not nominative)"
+      }
+    ]
   },
   {
     "German": "abdrücke",
-    "English": "fingerprints"
+    "English": "fingerprints",
+    "Article": "die",
+    "ExampleSentence": "Die Abdrücke stimmen genau überein."
   },
   {
     "German": "kurve",
-    "English": "curve"
+    "English": "curve",
+    "Article": "die",
+    "ExampleSentence": "Die Kurve verläuft sehr steil."
   },
   {
     "German": "kämpfst",
-    "English": "fight"
+    "English": "fight",
+    "ExampleSentence": "Du kämpfst für deine Familie."
   },
   {
     "German": "verziehen",
-    "English": "forgiven"
+    "English": "forgiven",
+    "ExampleSentence": "Sie hat ihm längst verziehen.",
+    "Highlights": [
+      {
+        "Word": "verziehen",
+        "Reason": "past participle forming Perfekt tense (not present)"
+      }
+    ]
   },
   {
     "German": "invasion",
-    "English": "invasion"
+    "English": "invasion",
+    "Article": "die",
+    "ExampleSentence": "Die Invasion beginnt im Morgengrauen."
   },
   {
     "German": "pissen",
-    "English": "to piss"
+    "English": "to piss",
+    "ExampleSentence": "Hunde pissen oft ans Bein."
   },
   {
     "German": "klarer",
-    "English": "clearer"
+    "English": "clearer",
+    "ExampleSentence": "Die Lage wird täglich klarer."
   },
   {
     "German": "herrschen",
-    "English": "to rule"
+    "English": "to rule",
+    "ExampleSentence": "Hier herrschen strenge alte Regeln."
   },
   {
     "German": "prince",
-    "English": "prince"
+    "English": "prince",
+    "ExampleSentence": "Prince gilt als Musiklegende."
   },
   {
     "German": "zylonen",
-    "English": "Cylons"
+    "English": "Cylons",
+    "Article": "die",
+    "ExampleSentence": "Die Zylonen greifen Menschen an."
   },
   {
     "German": "donnie",
-    "English": "Donnie"
+    "English": "Donnie",
+    "ExampleSentence": "Donnie mag Baseballkarten sehr gern."
   },
   {
     "German": "giles",
-    "English": "Giles"
+    "English": "Giles",
+    "ExampleSentence": "Giles liest gern alte Bücher."
   },
   {
     "German": "outfit",
-    "English": "outfit"
+    "English": "outfit",
+    "Article": "das",
+    "ExampleSentence": "Ihr Outfit wirkt sehr elegant."
   },
   {
     "German": "prinzipien",
-    "English": "principles"
+    "English": "principles",
+    "Article": "die",
+    "ExampleSentence": "Ihre Prinzipien bleiben stets unerschütterlich."
   },
   {
     "German": "rühr",
-    "English": "stir"
+    "English": "stir",
+    "ExampleSentence": "Rühr die Soße gut um!",
+    "Highlights": [
+      {
+        "Word": "Rühr",
+        "Reason": "imperative mood (not present tense)"
+      }
+    ]
   },
   {
     "German": "entzückend",
-    "English": "delightful"
+    "English": "delightful",
+    "ExampleSentence": "Das Konzert ist entzückend schön."
   },
   {
     "German": "reinen",
-    "English": "pure"
+    "English": "pure",
+    "ExampleSentence": "Sie handelt aus reinen Gründen.",
+    "Highlights": [
+      {
+        "Word": "reinen",
+        "Reason": "dative plural adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "drecksack",
-    "English": "bastard"
+    "English": "bastard",
+    "Article": "der",
+    "ExampleSentence": "Du bist ein richtiger Drecksack."
   },
   {
     "German": "frischen",
-    "English": "fresh"
+    "English": "fresh",
+    "ExampleSentence": "Sie kocht mit frischen Kräutern.",
+    "Highlights": [
+      {
+        "Word": "frischen",
+        "Reason": "dative plural adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "corabeth",
-    "English": "Corabeth"
+    "English": "Corabeth",
+    "ExampleSentence": "Corabeth führt den kleinen Laden.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "höhepunkt",
-    "English": "highlight"
+    "English": "highlight",
+    "Article": "der",
+    "ExampleSentence": "Das Konzert erreicht seinen Höhepunkt.",
+    "Highlights": [
+      {
+        "Word": "seinen",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "elsa",
-    "English": "Elsa"
+    "English": "Elsa",
+    "ExampleSentence": "Elsa mag kaltes Winterwetter."
   },
   {
     "German": "geduldig",
-    "English": "patient"
+    "English": "patient",
+    "ExampleSentence": "Die Lehrerin bleibt sehr geduldig."
   },
   {
     "German": "rio",
-    "English": "Rio"
+    "English": "Rio",
+    "ExampleSentence": "Rio liegt am Atlantik direkt."
   },
   {
     "German": "pest",
-    "English": "plague"
+    "English": "plague",
+    "Article": "die",
+    "ExampleSentence": "Die Pest tötet Millionen Menschen."
   },
   {
     "German": "wenigsten",
-    "English": "least"
+    "English": "least",
+    "ExampleSentence": "Die wenigsten kennen diese Regel."
   },
   {
     "German": "beschwert",
-    "English": "complains"
+    "English": "complains",
+    "ExampleSentence": "Er beschwert sich ständig lautstark."
   },
   {
     "German": "natürliche",
-    "English": "natural"
+    "English": "natural",
+    "ExampleSentence": "Sie hat natürliche rote Haare."
   },
   {
     "German": "erzeugen",
-    "English": "to produce"
+    "English": "to produce",
+    "ExampleSentence": "Sie erzeugen enorme elektrische Spannung."
   },
   {
     "German": "fürchterlich",
-    "English": "terrible"
+    "English": "terrible",
+    "ExampleSentence": "Das Wetter ist fürchterlich kalt."
   },
   {
     "German": "veröffentlichen",
-    "English": "to publish"
+    "English": "to publish",
+    "ExampleSentence": "Sie veröffentlichen morgen ihr Album."
   },
   {
     "German": "wunderbares",
-    "English": "wonderful"
+    "English": "wonderful",
+    "ExampleSentence": "Das ist ein wunderbares Geschenk."
   },
   {
     "German": "isaac",
-    "English": "Isaac"
+    "English": "Isaac",
+    "ExampleSentence": "Isaac löst jedes schwierige Rätsel."
   },
   {
     "German": "unglücklicherweise",
-    "English": "unfortunately"
+    "English": "unfortunately",
+    "ExampleSentence": "Unglücklicherweise regnet es heute wieder."
   },
   {
     "German": "ratschläge",
-    "English": "advice"
+    "English": "advice",
+    "Article": "die",
+    "ExampleSentence": "Ihre Ratschläge helfen mir wirklich.",
+    "Highlights": [
+      {
+        "Word": "mir",
+        "Reason": "dative pronoun (not nominative)"
+      }
+    ]
   },
   {
     "German": "erstickt",
-    "English": "suffocated"
+    "English": "suffocated",
+    "ExampleSentence": "Der Rauch erstickt die Flammen."
   },
   {
     "German": "vagina",
-    "English": "vagina"
+    "English": "vagina",
+    "Article": "die",
+    "ExampleSentence": "Die Vagina ist ein Organ."
   },
   {
     "German": "scharfe",
-    "English": "sharp"
+    "English": "sharp",
+    "ExampleSentence": "Sie kocht gern scharfe Currys."
   },
   {
     "German": "äpfel",
-    "English": "apples"
+    "English": "apples",
+    "Article": "die",
+    "ExampleSentence": "Die Äpfel schmecken herrlich süß."
   },
   {
     "German": "zoll",
-    "English": "customs"
+    "English": "customs",
+    "Article": "der",
+    "ExampleSentence": "Der Zoll kontrolliert jeden Koffer.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "region",
-    "English": "region"
+    "English": "region",
+    "Article": "die",
+    "ExampleSentence": "Diese Region bietet herrliche Landschaften."
   },
   {
     "German": "zuliebe",
-    "English": "for the sake of"
+    "English": "for the sake of",
+    "ExampleSentence": "Er tut es ihr zuliebe.",
+    "Highlights": [
+      {
+        "Word": "ihr",
+        "Reason": "dative pronoun (not nominative)"
+      }
+    ]
   },
   {
     "German": "riefen",
-    "English": "called"
+    "English": "called",
+    "ExampleSentence": "Sie riefen laut um Hilfe.",
+    "Highlights": [
+      {
+        "Word": "riefen",
+        "Reason": "Präteritum (simple past), not present tense"
+      }
+    ]
   },
   {
     "German": "wachmann",
-    "English": "security guard"
+    "English": "security guard",
+    "Article": "der",
+    "ExampleSentence": "Der Wachmann kontrolliert den Eingang.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "gipfel",
-    "English": "summit"
+    "English": "summit",
+    "Article": "der",
+    "ExampleSentence": "Der Gipfel liegt sehr hoch."
   },
   {
     "German": "geübt",
-    "English": "practiced"
+    "English": "practiced",
+    "ExampleSentence": "Sie ist sehr geübt darin."
   },
   {
     "German": "jammer",
-    "English": "misery"
+    "English": "misery",
+    "Article": "der",
+    "ExampleSentence": "Der Jammer nimmt kein Ende."
   },
   {
     "German": "lädt",
-    "English": "loads"
+    "English": "loads",
+    "ExampleSentence": "Er lädt die Waffe schnell."
   },
   {
     "German": "galerie",
-    "English": "gallery"
+    "English": "gallery",
+    "Article": "die",
+    "ExampleSentence": "Die Galerie zeigt moderne Kunst."
   },
   {
     "German": "enkelin",
-    "English": "granddaughter"
+    "English": "granddaughter",
+    "Article": "die",
+    "ExampleSentence": "Seine Enkelin besucht ihn oft.",
+    "Highlights": [
+      {
+        "Word": "ihn",
+        "Reason": "accusative pronoun (not nominative)"
+      }
+    ]
   },
   {
     "German": "mönch",
-    "English": "monk"
+    "English": "monk",
+    "Article": "der",
+    "ExampleSentence": "Der Mönch betet jeden Morgen.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "tinte",
-    "English": "ink"
+    "English": "ink",
+    "Article": "die",
+    "ExampleSentence": "Die Tinte trocknet sehr schnell."
   },
   {
     "German": "journalist",
-    "English": "journalist"
+    "English": "journalist",
+    "Article": "der",
+    "ExampleSentence": "Der Journalist schreibt einen Artikel.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "glückspilz",
-    "English": "lucky devil"
+    "English": "lucky devil",
+    "Article": "der",
+    "ExampleSentence": "Du bist ein echter Glückspilz."
   },
   {
     "German": "platzen",
-    "English": "burst"
+    "English": "burst",
+    "ExampleSentence": "Die Reifen platzen bei Hitze."
   },
   {
     "German": "ego",
-    "English": "ego"
+    "English": "ego",
+    "Article": "das",
+    "ExampleSentence": "Sein Ego kennt keine Grenzen."
   },
   {
     "German": "reinste",
-    "English": "purest"
+    "English": "purest",
+    "ExampleSentence": "Das ist die reinste Wahrheit."
   },
   {
     "German": "news",
-    "English": "news"
+    "English": "news",
+    "Article": "die",
+    "ExampleSentence": "Die News verbreiten sich schnell."
   },
   {
     "German": "aspirin",
-    "English": "aspirin"
+    "English": "aspirin",
+    "Article": "das",
+    "ExampleSentence": "Aspirin lindert leichte Kopfschmerzen schnell."
   },
   {
     "German": "andre",
-    "English": "Andre (name)"
+    "English": "Andre (name)",
+    "ExampleSentence": "Andre spielt gern Videospiele abends."
   },
   {
     "German": "früchte",
-    "English": "fruits"
+    "English": "fruits",
+    "Article": "die",
+    "ExampleSentence": "Die Früchte reifen im Sommer."
   },
   {
     "German": "gewähren",
-    "English": "grant"
+    "English": "grant",
+    "ExampleSentence": "Sie gewähren ihm freien Zugang.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun (not nominative)"
+      },
+      {
+        "Word": "freien",
+        "Reason": "accusative masculine adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "prophezeiung",
-    "English": "prophecy"
+    "English": "prophecy",
+    "Article": "die",
+    "ExampleSentence": "Die Prophezeiung erfüllt sich langsam."
   },
   {
     "German": "winzig",
-    "English": "tiny"
+    "English": "tiny",
+    "ExampleSentence": "Das Zimmer ist wirklich winzig."
   },
   {
     "German": "tonnen",
-    "English": "tons"
+    "English": "tons",
+    "Article": "die",
+    "ExampleSentence": "Das Schiff transportiert tausend Tonnen."
   },
   {
     "German": "lizenz",
-    "English": "license"
+    "English": "license",
+    "Article": "die",
+    "ExampleSentence": "Er braucht eine gültige Lizenz."
   },
   {
     "German": "maßnahmen",
-    "English": "measures"
+    "English": "measures",
+    "Article": "die",
+    "ExampleSentence": "Die Regierung ergreift strenge Maßnahmen."
   },
   {
     "German": "ermittelt",
-    "English": "investigated"
+    "English": "investigated",
+    "ExampleSentence": "Die Polizei ermittelt gründlich."
   },
   {
     "German": "stufen",
-    "English": "steps"
+    "English": "steps",
+    "Article": "die",
+    "ExampleSentence": "Die Stufen führen steil hinauf."
   },
   {
     "German": "lüg",
-    "English": "lie (imper.)"
+    "English": "lie (imper.)",
+    "ExampleSentence": "Lüg mich bitte nicht an!",
+    "Highlights": [
+      {
+        "Word": "Lüg",
+        "Reason": "imperative mood (not present tense)"
+      },
+      {
+        "Word": "mich",
+        "Reason": "accusative pronoun (not nominative)"
+      }
+    ]
   },
   {
     "German": "student",
-    "English": "student"
+    "English": "student",
+    "Article": "der",
+    "ExampleSentence": "Der Student besteht die Prüfung."
   },
   {
     "German": "absetzen",
-    "English": "drop off"
+    "English": "drop off",
+    "ExampleSentence": "Sie will ihn zuhause absetzen.",
+    "Highlights": [
+      {
+        "Word": "ihn",
+        "Reason": "accusative pronoun (not nominative)"
+      }
+    ]
   },
   {
     "German": "schwindel",
-    "English": "dizziness"
+    "English": "dizziness",
+    "Article": "der",
+    "ExampleSentence": "Der Schwindel vergeht recht schnell."
   },
   {
     "German": "national",
-    "English": "national"
+    "English": "national",
+    "ExampleSentence": "Das Thema wird national diskutiert."
   },
   {
     "German": "fanny",
-    "English": "Fanny (name)"
+    "English": "Fanny (name)",
+    "ExampleSentence": "Fanny mag klassische Musik sehr."
   },
   {
     "German": "vorgeschlagen",
-    "English": "suggested"
+    "English": "suggested",
+    "ExampleSentence": "Sie hat eine Lösung vorgeschlagen.",
+    "Highlights": [
+      {
+        "Word": "vorgeschlagen",
+        "Reason": "past participle forming Perfekt tense (not present)"
+      }
+    ]
   },
   {
     "German": "arbeitslos",
-    "English": "unemployed"
+    "English": "unemployed",
+    "ExampleSentence": "Er ist momentan arbeitslos."
   },
   {
     "German": "borg",
-    "English": "Borg (name)"
+    "English": "Borg (name)",
+    "Article": "die",
+    "ExampleSentence": "Die Borg assimilieren jede Spezies."
   },
   {
     "German": "getränke",
-    "English": "drinks"
+    "English": "drinks",
+    "Article": "die",
+    "ExampleSentence": "Die Getränke stehen im Kühlschrank."
   },
   {
     "German": "ick",
-    "English": "I (dialect)"
+    "English": "I (dialect)",
+    "ExampleSentence": "Ick liebe meine alte Heimat."
   },
   {
     "German": "joyce",
-    "English": "Joyce (name)"
+    "English": "Joyce (name)",
+    "ExampleSentence": "Joyce backt gerne süße Kuchen."
   },
   {
     "German": "änderte",
-    "English": "changed"
+    "English": "changed",
+    "ExampleSentence": "Er änderte plötzlich seine Meinung.",
+    "Highlights": [
+      {
+        "Word": "änderte",
+        "Reason": "Präteritum (simple past), not present tense"
+      }
+    ]
   },
   {
     "German": "philadelphia",
-    "English": "Philadelphia"
+    "English": "Philadelphia",
+    "ExampleSentence": "Philadelphia liegt in Pennsylvania."
   },
   {
     "German": "pfoten",
-    "English": "paws"
+    "English": "paws",
+    "Article": "die",
+    "ExampleSentence": "Die Pfoten hinterlassen nasse Spuren."
   },
   {
     "German": "ausländer",
-    "English": "foreigner"
+    "English": "foreigner",
+    "Article": "der",
+    "ExampleSentence": "Der Ausländer spricht drei Sprachen."
   },
   {
     "German": "häng",
-    "English": "hang (imper.)"
+    "English": "hang (imper.)",
+    "ExampleSentence": "Häng die Jacke bitte auf!",
+    "Highlights": [
+      {
+        "Word": "Häng",
+        "Reason": "imperative mood (not present tense)"
+      }
+    ]
   },
   {
     "German": "clyde",
-    "English": "Clyde (name)"
+    "English": "Clyde (name)",
+    "ExampleSentence": "Clyde fährt einen alten Truck.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative masculine case (not nominative)"
+      },
+      {
+        "Word": "alten",
+        "Reason": "accusative masculine adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "kalender",
-    "English": "calendar"
+    "English": "calendar",
+    "Article": "der",
+    "ExampleSentence": "Der Kalender hängt schief."
   },
   {
     "German": "isabelle",
-    "English": "Isabelle (name)"
+    "English": "Isabelle (name)",
+    "ExampleSentence": "Isabelle malt gerne bunte Bilder."
   },
   {
     "German": "hannibal",
-    "English": "Hannibal (name)"
+    "English": "Hannibal (name)",
+    "ExampleSentence": "Hannibal überquert die hohen Alpen."
   },
   {
     "German": "brüdern",
-    "English": "brothers"
+    "English": "brothers",
+    "Article": "die",
+    "ExampleSentence": "Sie redet mit ihren Brüdern.",
+    "Highlights": [
+      {
+        "Word": "ihren",
+        "Reason": "dative plural possessive (not nominative)"
+      },
+      {
+        "Word": "Brüdern",
+        "Reason": "dative plural noun ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "überstunden",
-    "English": "overtime"
+    "English": "overtime",
+    "Article": "die",
+    "ExampleSentence": "Er macht heute viele Überstunden."
   },
   {
     "German": "angehört",
-    "English": "belonged to"
+    "English": "belonged to",
+    "ExampleSentence": "Er hat der Kirche angehört.",
+    "Highlights": [
+      {
+        "Word": "angehört",
+        "Reason": "past participle forming Perfekt tense (not present)"
+      },
+      {
+        "Word": "der",
+        "Reason": "dative feminine article (not nominative)"
+      }
+    ]
   },
   {
     "German": "langweilen",
-    "English": "bore"
+    "English": "bore",
+    "ExampleSentence": "Die Vorträge langweilen die Studenten."
   },
   {
     "German": "deutet",
-    "English": "indicates"
+    "English": "indicates",
+    "ExampleSentence": "Das deutet auf Ärger hin."
   },
   {
     "German": "griffin",
-    "English": "Griffin (name)"
+    "English": "Griffin (name)",
+    "ExampleSentence": "Griffin arbeitet bei einer Zeitung.",
+    "Highlights": [
+      {
+        "Word": "einer",
+        "Reason": "dative feminine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "friseur",
-    "English": "hairdresser"
+    "English": "hairdresser",
+    "Article": "der",
+    "ExampleSentence": "Der Friseur schneidet ihr Haar."
   },
   {
     "German": "oberen",
-    "English": "upper"
+    "English": "upper",
+    "ExampleSentence": "Sie wohnt in oberen Etagen.",
+    "Highlights": [
+      {
+        "Word": "oberen",
+        "Reason": "dative plural adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "fertigmachen",
-    "English": "get ready"
+    "English": "get ready",
+    "ExampleSentence": "Sie muss sich fertigmachen."
   },
   {
     "German": "teure",
-    "English": "expensive"
+    "English": "expensive",
+    "ExampleSentence": "Sie trägt eine teure Uhr."
   },
   {
     "German": "silas",
-    "English": "Silas (name)"
+    "English": "Silas (name)",
+    "ExampleSentence": "Silas repariert alte Uhren gerne."
   },
   {
     "German": "gedroht",
-    "English": "threatened"
+    "English": "threatened",
+    "ExampleSentence": "Er hat ihr heimlich gedroht.",
+    "Highlights": [
+      {
+        "Word": "gedroht",
+        "Reason": "past participle forming Perfekt tense (not present)"
+      },
+      {
+        "Word": "ihr",
+        "Reason": "dative pronoun (not nominative)"
+      }
+    ]
   },
   {
     "German": "ana",
-    "English": "Ana (name)"
+    "English": "Ana (name)",
+    "ExampleSentence": "Ana studiert Medizin in Madrid."
   },
   {
     "German": "ermordung",
-    "English": "murder"
+    "English": "murder",
+    "Article": "die",
+    "ExampleSentence": "Die Ermordung schockiert die Stadt."
   },
   {
     "German": "maura",
-    "English": "Maura (name)"
+    "English": "Maura (name)",
+    "ExampleSentence": "Maura löst jeden kniffligen Fall.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine case (not nominative)"
+      },
+      {
+        "Word": "kniffligen",
+        "Reason": "accusative masculine adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "komischen",
-    "English": "strange"
+    "English": "strange",
+    "ExampleSentence": "Sie kennt einen komischen Mann.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative masculine case (not nominative)"
+      },
+      {
+        "Word": "komischen",
+        "Reason": "accusative masculine adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "bestimmtes",
-    "English": "certain"
+    "English": "certain",
+    "ExampleSentence": "Sie sucht ein bestimmtes Buch."
   },
   {
     "German": "diskret",
-    "English": "discreet"
+    "English": "discreet",
+    "ExampleSentence": "Er verhält sich stets diskret."
   },
   {
     "German": "kriechen",
-    "English": "crawl"
+    "English": "crawl",
+    "ExampleSentence": "Babys kriechen auf allen vieren.",
+    "Highlights": [
+      {
+        "Word": "allen",
+        "Reason": "dative plural case (not nominative)"
+      }
+    ]
   },
   {
     "German": "weißes",
-    "English": "white"
+    "English": "white",
+    "ExampleSentence": "Sie trägt ein weißes Kleid."
   },
   {
     "German": "luthor",
-    "English": "Luthor (name)"
+    "English": "Luthor (name)",
+    "ExampleSentence": "Luthor plant einen finsteren Anschlag.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative masculine case (not nominative)"
+      },
+      {
+        "Word": "finsteren",
+        "Reason": "accusative masculine adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "hinüber",
-    "English": "across"
+    "English": "across",
+    "ExampleSentence": "Er schwimmt einfach hinüber."
   },
   {
     "German": "zauberei",
-    "English": "witchcraft"
+    "English": "witchcraft",
+    "Article": "die",
+    "ExampleSentence": "Zauberei fasziniert viele Kinder."
   },
   {
     "German": "wünschst",
-    "English": "wish"
+    "English": "wish",
+    "ExampleSentence": "Du wünschst dir ein Fahrrad.",
+    "Highlights": [
+      {
+        "Word": "dir",
+        "Reason": "dative pronoun (not nominative)"
+      }
+    ]
   },
   {
     "German": "nadia",
-    "English": "Nadia (name)"
+    "English": "Nadia (name)",
+    "ExampleSentence": "Nadia trainiert jeden Tag hart.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "biss",
-    "English": "bite"
+    "English": "bite",
+    "Article": "der",
+    "ExampleSentence": "Der Biss schmerzt noch immer."
   },
   {
     "German": "komischer",
-    "English": "strange"
+    "English": "strange",
+    "ExampleSentence": "Das ist ein komischer Typ."
   },
   {
     "German": "hotelzimmer",
-    "English": "hotel room"
+    "English": "hotel room",
+    "Article": "das",
+    "ExampleSentence": "Das Hotelzimmer bietet einen Meerblick.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "delta",
-    "English": "delta"
+    "English": "delta",
+    "Article": "das",
+    "ExampleSentence": "Das Delta liegt am Fluss."
   },
   {
     "German": "chinesischen",
-    "English": "Chinese"
+    "English": "Chinese",
+    "ExampleSentence": "Sie spricht mit chinesischen Kollegen.",
+    "Highlights": [
+      {
+        "Word": "chinesischen",
+        "Reason": "dative plural adjective ending (not nominative)"
+      }
+    ]
   },
   {
     "German": "beängstigend",
-    "English": "frightening"
+    "English": "frightening",
+    "ExampleSentence": "Der Sturm wirkt sehr beängstigend."
   },
   {
     "German": "hills",
-    "English": "hills"
+    "English": "hills",
+    "Article": "die",
+    "ExampleSentence": "Die Hills wirken heute neblig."
   },
   {
     "German": "quentin",
-    "English": "Quentin (name)"
+    "English": "Quentin (name)",
+    "ExampleSentence": "Quentin dreht gerne blutige Filme."
   },
   {
     "German": "frequenz",
-    "English": "frequency"
+    "English": "frequency",
+    "Article": "die",
+    "ExampleSentence": "Die Frequenz ändert sich ständig."
   },
   {
     "German": "vorhast",
-    "English": "planning"
+    "English": "planning",
+    "ExampleSentence": "Ich weiß, was du vorhast."
   },
   {
     "German": "tödliche",
-    "English": "deadly"
+    "English": "deadly",
+    "ExampleSentence": "Das ist eine tödliche Krankheit."
   },
   {
     "German": "summer",
-    "English": "summer"
+    "English": "summer",
+    "ExampleSentence": "Summer surft jeden Sommer gern.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine case (not nominative)"
+      }
+    ]
   },
   {
     "German": "verband",
-    "English": "bandage"
+    "English": "bandage",
+    "Article": "der",
+    "ExampleSentence": "Der Verband deckt die Wunde."
   },
   {
     "German": "gebucht",
-    "English": "booked"
+    "English": "booked",
+    "ExampleSentence": "Sie hat das Hotel gebucht.",
+    "Highlights": [
+      {
+        "Word": "gebucht",
+        "Reason": "past participle forming Perfekt tense (not present)"
+      }
+    ]
   },
   {
     "German": "investieren",
-    "English": "invest"
+    "English": "invest",
+    "ExampleSentence": "Sie investieren viel Geld heute."
   },
   {
     "German": "website",
-    "English": "website"
+    "English": "website",
+    "Article": "die",
+    "ExampleSentence": "Die Website lädt sehr langsam."
   },
   {
     "German": "diät",
-    "English": "diet"
+    "English": "diet",
+    "Article": "die",
+    "ExampleSentence": "Sie hält eine strenge Diät."
   },
   {
     "German": "benimm",
-    "English": "behave"
+    "English": "behave",
+    "ExampleSentence": "Benimm dich bitte im Restaurant!",
+    "Highlights": [
+      {
+        "Word": "Benimm",
+        "Reason": "imperative mood (not present tense)"
+      },
+      {
+        "Word": "dich",
+        "Reason": "accusative reflexive pronoun (not nominative)"
+      }
+    ]
   },
   {
     "German": "vergangenen",
-    "English": "past"
+    "English": "past",
+    "ExampleSentence": "Er denkt an vergangenen Sommer.",
+    "Highlights": [
+      {
+        "Word": "vergangenen",
+        "Reason": "accusative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "rodney",
-    "English": "Rodney (name)"
+    "English": "Rodney (name)",
+    "ExampleSentence": "Rodney kommt heute Abend vorbei."
   },
   {
     "German": "verbringe",
-    "English": "spend (time)"
+    "English": "spend (time)",
+    "ExampleSentence": "Ich verbringe viel Zeit hier."
   },
   {
     "German": "zukünftige",
-    "English": "future"
+    "English": "future",
+    "ExampleSentence": "Sie plant ihre zukünftige Karriere."
   },
   {
     "German": "kong",
-    "English": "Kong (name)"
+    "English": "Kong (name)",
+    "ExampleSentence": "Kong lebt in Hongkong."
   },
   {
     "German": "ehemalige",
-    "English": "former"
+    "English": "former",
+    "ExampleSentence": "Der ehemalige Minister spricht heute."
   },
   {
     "German": "aufklären",
-    "English": "clarify"
+    "English": "clarify",
+    "ExampleSentence": "Wir müssen das aufklären."
   },
   {
     "German": "kämen",
-    "English": "would come"
+    "English": "would come",
+    "ExampleSentence": "Sie kämen gern vorbei.",
+    "Highlights": [
+      {
+        "Word": "kämen",
+        "Reason": "Konjunktiv II (subjunctive 'would come')"
+      }
+    ]
   },
   {
     "German": "unauffällig",
-    "English": "inconspicuous"
+    "English": "inconspicuous",
+    "ExampleSentence": "Er verhält sich unauffällig heute."
   },
   {
     "German": "gefälscht",
-    "English": "forged"
+    "English": "forged",
+    "ExampleSentence": "Der Ausweis ist gefälscht."
   },
   {
     "German": "geier",
-    "English": "vulture"
+    "English": "vulture",
+    "Article": "der",
+    "ExampleSentence": "Der Geier kreist am Himmel."
   },
   {
     "German": "anschuldigungen",
-    "English": "accusations"
+    "English": "accusations",
+    "Article": "die",
+    "ExampleSentence": "Die Anschuldigungen sind sehr ernst."
   },
   {
     "German": "sal",
-    "English": "Sal (name)"
+    "English": "Sal (name)",
+    "ExampleSentence": "Sal arbeitet in der Bar."
   },
   {
     "German": "restlichen",
-    "English": "remaining"
+    "English": "remaining",
+    "ExampleSentence": "Die restlichen Gäste kommen später."
   },
   {
     "German": "tomaten",
-    "English": "tomatoes"
+    "English": "tomatoes",
+    "Article": "die",
+    "ExampleSentence": "Die Tomaten schmecken heute gut."
   },
   {
     "German": "philosophie",
-    "English": "philosophy"
+    "English": "philosophy",
+    "Article": "die",
+    "ExampleSentence": "Die Philosophie fasziniert ihn sehr."
   },
   {
     "German": "liebten",
-    "English": "loved"
+    "English": "loved",
+    "ExampleSentence": "Sie liebten sich sehr.",
+    "Highlights": [
+      {
+        "Word": "liebten",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "programmiert",
-    "English": "programmed"
+    "English": "programmed",
+    "ExampleSentence": "Er programmiert eine neue App."
   },
   {
     "German": "shawn",
-    "English": "Shawn (name)"
+    "English": "Shawn (name)",
+    "ExampleSentence": "Shawn wohnt jetzt in Berlin."
   },
   {
     "German": "festgestellt",
-    "English": "determined"
+    "English": "determined",
+    "ExampleSentence": "Der Arzt hat das festgestellt.",
+    "Highlights": [
+      {
+        "Word": "festgestellt",
+        "Reason": "Perfekt tense (past participle with 'hat')"
+      }
+    ]
   },
   {
     "German": "fällig",
-    "English": "due"
+    "English": "due",
+    "ExampleSentence": "Die Miete ist heute fällig."
   },
   {
     "German": "kneipe",
-    "English": "pub"
+    "English": "pub",
+    "Article": "die",
+    "ExampleSentence": "Die Kneipe öffnet um Mitternacht."
   },
   {
     "German": "bezahlst",
-    "English": "pay"
+    "English": "pay",
+    "ExampleSentence": "Du bezahlst die Rechnung heute."
   },
   {
     "German": "beende",
-    "English": "end"
+    "English": "end",
+    "ExampleSentence": "Ich beende die Sitzung jetzt."
   },
   {
     "German": "fehlst",
-    "English": "miss (you)"
+    "English": "miss (you)",
+    "ExampleSentence": "Du fehlst mir sehr."
   },
   {
     "German": "vornehmen",
-    "English": "undertake"
+    "English": "undertake",
+    "ExampleSentence": "Wir wollen das später vornehmen."
   },
   {
     "German": "sumpf",
-    "English": "swamp"
+    "English": "swamp",
+    "Article": "der",
+    "ExampleSentence": "Der Sumpf riecht heute streng."
   },
   {
     "German": "apotheke",
-    "English": "pharmacy"
+    "English": "pharmacy",
+    "Article": "die",
+    "ExampleSentence": "Die Apotheke schließt bald."
   },
   {
     "German": "internationale",
-    "English": "international"
+    "English": "international",
+    "ExampleSentence": "Die internationale Presse berichtet ausführlich."
   },
   {
     "German": "liefert",
-    "English": "delivers"
+    "English": "delivers",
+    "ExampleSentence": "Er liefert das Paket heute."
   },
   {
     "German": "wehen",
-    "English": "contractions"
+    "English": "contractions",
+    "Article": "die",
+    "ExampleSentence": "Die Wehen setzen langsam ein."
   },
   {
     "German": "bastarde",
-    "English": "bastards"
+    "English": "bastards",
+    "Article": "die",
+    "ExampleSentence": "Die Bastarde greifen uns an."
   },
   {
     "German": "erstochen",
-    "English": "stabbed"
+    "English": "stabbed",
+    "ExampleSentence": "Er wurde im Streit erstochen.",
+    "Highlights": [
+      {
+        "Word": "wurde",
+        "Reason": "Präteritum passive auxiliary"
+      },
+      {
+        "Word": "erstochen",
+        "Reason": "past participle in passive construction"
+      }
+    ]
   },
   {
     "German": "schiffes",
-    "English": "ship's"
+    "English": "ship's",
+    "Article": "das",
+    "ExampleSentence": "Die Farbe des Schiffes gefällt.",
+    "Highlights": [
+      {
+        "Word": "Schiffes",
+        "Reason": "genitive case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "manuel",
-    "English": "Manuel (name)"
+    "English": "Manuel (name)",
+    "ExampleSentence": "Manuel arbeitet gern nachts."
   },
   {
     "German": "nördlich",
-    "English": "northern"
+    "English": "northern",
+    "ExampleSentence": "Das Dorf liegt nördlich davon."
   },
   {
     "German": "american",
-    "English": "American"
+    "English": "American",
+    "ExampleSentence": "American liebt seine Heimat sehr."
   },
   {
     "German": "körpers",
-    "English": "body's"
+    "English": "body's",
+    "Article": "der",
+    "ExampleSentence": "Die Form des Körpers erstaunt.",
+    "Highlights": [
+      {
+        "Word": "Körpers",
+        "Reason": "genitive case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "schal",
-    "English": "scarf"
+    "English": "scarf",
+    "Article": "der",
+    "ExampleSentence": "Der Schal wärmt ihn sehr."
   },
   {
     "German": "anklagen",
-    "English": "accuse"
+    "English": "accuse",
+    "ExampleSentence": "Sie wollen ihn anklagen lassen."
   },
   {
     "German": "schlagt",
-    "English": "hit (imper.)"
+    "English": "hit (imper.)",
+    "ExampleSentence": "Schlagt nicht so hart!",
+    "Highlights": [
+      {
+        "Word": "Schlagt",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "entscheidest",
-    "English": "decide"
+    "English": "decide",
+    "ExampleSentence": "Du entscheidest das ganz allein."
   },
   {
     "German": "sammelt",
-    "English": "collects"
+    "English": "collects",
+    "ExampleSentence": "Er sammelt alte Briefmarken gerne."
   },
   {
     "German": "gegenzug",
-    "English": "in return"
+    "English": "in return",
+    "Article": "der",
+    "ExampleSentence": "Als Gegenzug hilft er mir."
   },
   {
     "German": "vorzubereiten",
-    "English": "to prepare"
+    "English": "to prepare",
+    "ExampleSentence": "Er versucht, das Essen vorzubereiten."
   },
   {
     "German": "enttäuschung",
-    "English": "disappointment"
+    "English": "disappointment",
+    "Article": "die",
+    "ExampleSentence": "Die Enttäuschung sitzt heute tief."
   },
   {
     "German": "unterkunft",
-    "English": "accommodation"
+    "English": "accommodation",
+    "Article": "die",
+    "ExampleSentence": "Die Unterkunft gefällt ihm sehr."
   },
   {
     "German": "freilassen",
-    "English": "release"
+    "English": "release",
+    "ExampleSentence": "Sie wollen ihn sofort freilassen."
   },
   {
     "German": "grau",
-    "English": "gray"
+    "English": "gray",
+    "ExampleSentence": "Der Himmel wirkt heute grau."
   },
   {
     "German": "hunt",
-    "English": "Hunt (name)"
+    "English": "Hunt (name)",
+    "ExampleSentence": "Hunt löst diesen Fall schnell."
   },
   {
     "German": "verlobter",
-    "English": "fiancé"
+    "English": "fiancé",
+    "Article": "der",
+    "ExampleSentence": "Ihr Verlobter kocht sehr gut."
   },
   {
     "German": "niere",
-    "English": "kidney"
+    "English": "kidney",
+    "Article": "die",
+    "ExampleSentence": "Die Niere arbeitet nicht richtig."
   },
   {
     "German": "kratzen",
-    "English": "scratch"
+    "English": "scratch",
+    "ExampleSentence": "Die Katzen kratzen den Sessel."
   },
   {
     "German": "altar",
-    "English": "altar"
+    "English": "altar",
+    "Article": "der",
+    "ExampleSentence": "Der Altar steht ganz vorne."
   },
   {
     "German": "erstaunt",
-    "English": "astonished"
+    "English": "astonished",
+    "ExampleSentence": "Sie wirkt heute sehr erstaunt."
   },
   {
     "German": "ausbruch",
-    "English": "outbreak"
+    "English": "outbreak",
+    "Article": "der",
+    "ExampleSentence": "Der Ausbruch überrascht alle Ärzte."
   },
   {
     "German": "tuch",
-    "English": "cloth"
+    "English": "cloth",
+    "Article": "das",
+    "ExampleSentence": "Das Tuch riecht nach Lavendel."
   },
   {
     "German": "fahne",
-    "English": "flag"
+    "English": "flag",
+    "Article": "die",
+    "ExampleSentence": "Die Fahne weht im Wind."
   },
   {
     "German": "beleidigung",
-    "English": "insult"
+    "English": "insult",
+    "Article": "die",
+    "ExampleSentence": "Die Beleidigung verletzt ihn tief."
   },
   {
     "German": "bedeutete",
-    "English": "meant"
+    "English": "meant",
+    "ExampleSentence": "Das bedeutete ihm sehr viel.",
+    "Highlights": [
+      {
+        "Word": "bedeutete",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "verhält",
-    "English": "behaves"
+    "English": "behaves",
+    "ExampleSentence": "Er verhält sich sehr seltsam."
   },
   {
     "German": "unheimliche",
-    "English": "eerie"
+    "English": "eerie",
+    "ExampleSentence": "Eine unheimliche Stille erfüllt alles."
   },
   {
     "German": "unsterblich",
-    "English": "immortal"
+    "English": "immortal",
+    "ExampleSentence": "Diese Liebe ist unsterblich."
   },
   {
     "German": "hohes",
-    "English": "high"
+    "English": "high",
+    "ExampleSentence": "Das Haus hat hohes Ansehen."
   },
   {
     "German": "evakuieren",
-    "English": "evacuate"
+    "English": "evacuate",
+    "ExampleSentence": "Sie müssen das Dorf evakuieren."
   },
   {
     "German": "produziert",
-    "English": "produces"
+    "English": "produces",
+    "ExampleSentence": "Die Fabrik produziert neue Autos."
   },
   {
     "German": "nachfolger",
-    "English": "successor"
+    "English": "successor",
+    "Article": "der",
+    "ExampleSentence": "Der Nachfolger tritt heute an."
   },
   {
     "German": "blicke",
-    "English": "glances"
+    "English": "glances",
+    "Article": "die",
+    "ExampleSentence": "Die Blicke treffen sich kurz."
   },
   {
     "German": "vorschläge",
-    "English": "suggestions"
+    "English": "suggestions",
+    "Article": "die",
+    "ExampleSentence": "Die Vorschläge klingen wirklich gut."
   },
   {
     "German": "chauffeur",
-    "English": "chauffeur"
+    "English": "chauffeur",
+    "Article": "der",
+    "ExampleSentence": "Der Chauffeur wartet schon lange."
   },
   {
     "German": "englische",
-    "English": "English"
+    "English": "English",
+    "ExampleSentence": "Die englische Sprache klingt melodisch."
   },
   {
     "German": "ironie",
-    "English": "irony"
+    "English": "irony",
+    "Article": "die",
+    "ExampleSentence": "Die Ironie entgeht ihm völlig."
   },
   {
     "German": "ausreichend",
-    "English": "sufficient"
+    "English": "sufficient",
+    "ExampleSentence": "Der Vorrat ist ausreichend groß."
   },
   {
     "German": "hit",
-    "English": "hit (song)"
+    "English": "hit (song)",
+    "Article": "der",
+    "ExampleSentence": "Der Hit läuft im Radio."
   },
   {
     "German": "anderthalb",
-    "English": "one and a half"
+    "English": "one and a half",
+    "ExampleSentence": "Er wartet anderthalb Stunden lang."
   },
   {
     "German": "erlösung",
-    "English": "salvation"
+    "English": "salvation",
+    "Article": "die",
+    "ExampleSentence": "Die Erlösung kommt endlich näher."
   },
   {
     "German": "käfer",
-    "English": "beetle"
+    "English": "beetle",
+    "Article": "der",
+    "ExampleSentence": "Der Käfer krabbelt langsam davon."
   },
   {
     "German": "küsschen",
-    "English": "little kiss"
+    "English": "little kiss",
+    "Article": "das",
+    "ExampleSentence": "Sie gibt ihm ein Küsschen."
   },
   {
     "German": "eugene",
-    "English": "Eugene (name)"
+    "English": "Eugene (name)",
+    "ExampleSentence": "Eugene arbeitet gern im Garten."
   },
   {
     "German": "auslöschen",
-    "English": "eliminate"
+    "English": "eliminate",
+    "ExampleSentence": "Sie wollen alle Spuren auslöschen."
   },
   {
     "German": "ihretwegen",
-    "English": "because of her"
+    "English": "because of her",
+    "ExampleSentence": "Ihretwegen verpasst er den Bus."
   },
   {
     "German": "limonade",
-    "English": "lemonade"
+    "English": "lemonade",
+    "Article": "die",
+    "ExampleSentence": "Die Limonade schmeckt angenehm süß."
   },
   {
     "German": "hedley",
-    "English": "Hedley (name)"
+    "English": "Hedley (name)",
+    "ExampleSentence": "Hedley wohnt um die Ecke."
   },
   {
     "German": "billige",
-    "English": "cheap"
+    "English": "cheap",
+    "ExampleSentence": "Er kauft billige alte Möbel."
   },
   {
     "German": "tequila",
-    "English": "tequila"
+    "English": "tequila",
+    "Article": "der",
+    "ExampleSentence": "Der Tequila schmeckt sehr stark."
   },
   {
     "German": "schlachtfeld",
-    "English": "battlefield"
+    "English": "battlefield",
+    "Article": "das",
+    "ExampleSentence": "Das Schlachtfeld liegt völlig verlassen."
   },
   {
     "German": "knight",
-    "English": "Knight (name)"
+    "English": "Knight (name)",
+    "ExampleSentence": "Knight kämpft für die Gerechtigkeit."
   },
   {
     "German": "gemäß",
-    "English": "according to"
+    "English": "according to",
+    "ExampleSentence": "Gemäß dem Gesetz handelt er."
   },
   {
     "German": "angreifer",
-    "English": "attacker"
+    "English": "attacker",
+    "Article": "der",
+    "ExampleSentence": "Der Angreifer flieht sehr schnell."
   },
   {
     "German": "hingegangen",
-    "English": "went there"
+    "English": "went there",
+    "ExampleSentence": "Er ist dorthin schon hingegangen.",
+    "Highlights": [
+      {
+        "Word": "hingegangen",
+        "Reason": "Perfekt tense (past participle with 'ist')"
+      }
+    ]
   },
   {
     "German": "dns",
-    "English": "DNA"
+    "English": "DNA",
+    "Article": "die",
+    "ExampleSentence": "Die DNS beweist seine Schuld."
   },
   {
     "German": "zero",
-    "English": "zero"
+    "English": "zero",
+    "ExampleSentence": "Zero bedeutet für ihn nichts."
   },
   {
     "German": "liefen",
-    "English": "ran"
+    "English": "ran",
+    "ExampleSentence": "Wir liefen durch den Park.",
+    "Highlights": [
+      {
+        "Word": "liefen",
+        "Reason": "Präteritum (simple past)"
+      }
+    ]
   },
   {
     "German": "schale",
-    "English": "bowl"
+    "English": "bowl",
+    "Article": "die",
+    "ExampleSentence": "Die Schale glänzt im Licht."
   },
   {
     "German": "restaurants",
-    "English": "restaurants"
+    "English": "restaurants",
+    "Article": "die",
+    "ExampleSentence": "Die Restaurants öffnen erst abends."
   },
   {
     "German": "ausfindig",
-    "English": "locate"
+    "English": "locate",
+    "ExampleSentence": "Er macht ihn ausfindig schnell."
   },
   {
     "German": "mills",
-    "English": "Mills (name)"
+    "English": "Mills (name)",
+    "ExampleSentence": "Mills löst den Fall clever."
   },
   {
     "German": "angriffe",
-    "English": "attacks"
+    "English": "attacks",
+    "Article": "die",
+    "ExampleSentence": "Die Angriffe nehmen stetig zu."
   },
   {
     "German": "rotes",
-    "English": "red"
+    "English": "red",
+    "ExampleSentence": "Sie trägt ein rotes Kleid."
   },
   {
     "German": "percy",
-    "English": "Percy (name)"
+    "English": "Percy (name)",
+    "ExampleSentence": "Percy übt jeden Tag Klavier."
   },
   {
     "German": "modernen",
-    "English": "modern"
+    "English": "modern",
+    "ExampleSentence": "Sie leben in modernen Häusern.",
+    "Highlights": [
+      {
+        "Word": "modernen",
+        "Reason": "dative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "motto",
-    "English": "motto"
+    "English": "motto",
+    "Article": "das",
+    "ExampleSentence": "Ihr Motto bleibt stets positiv."
   },
   {
     "German": "eintritt",
-    "English": "entrance"
+    "English": "entrance",
+    "Article": "der",
+    "ExampleSentence": "Der Eintritt kostet zehn Euro."
   },
   {
     "German": "bh",
-    "English": "bra"
+    "English": "bra",
+    "Article": "der",
+    "ExampleSentence": "Der BH passt ihr perfekt."
   },
   {
     "German": "betroffen",
-    "English": "affected"
+    "English": "affected",
+    "ExampleSentence": "Er wirkt von allem betroffen."
   },
   {
     "German": "misstrauisch",
-    "English": "suspicious"
+    "English": "suspicious",
+    "ExampleSentence": "Sie schaut ihn misstrauisch an."
   },
   {
     "German": "verwirrend",
-    "English": "confusing"
+    "English": "confusing",
+    "ExampleSentence": "Diese Anleitung wirkt sehr verwirrend."
   },
   {
     "German": "kapelle",
-    "English": "chapel"
+    "English": "chapel",
+    "Article": "die",
+    "ExampleSentence": "Die Kapelle liegt am Waldrand."
   },
   {
     "German": "starkes",
-    "English": "strong"
+    "English": "strong",
+    "ExampleSentence": "Er zeigt starkes Interesse daran."
   },
   {
     "German": "brick",
-    "English": "brick"
+    "English": "brick",
+    "ExampleSentence": "Brick trainiert jeden Tag hart."
   },
   {
     "German": "gebetet",
-    "English": "prayed"
+    "English": "prayed",
+    "ExampleSentence": "Sie hat lange dafür gebetet.",
+    "Highlights": [
+      {
+        "Word": "gebetet",
+        "Reason": "Perfekt tense (past participle with 'hat')"
+      }
+    ]
   },
   {
     "German": "einrichten",
-    "English": "set up"
+    "English": "set up",
+    "ExampleSentence": "Sie wollen die Wohnung einrichten."
   },
   {
     "German": "ausnutzen",
-    "English": "exploit"
+    "English": "exploit",
+    "ExampleSentence": "Er will die Lage ausnutzen."
   },
   {
     "German": "kinn",
-    "English": "chin"
+    "English": "chin",
+    "Article": "das",
+    "ExampleSentence": "Das Kinn zittert vor Angst."
   },
   {
     "German": "frisches",
-    "English": "fresh"
+    "English": "fresh",
+    "ExampleSentence": "Sie kauft frisches Obst heute."
   },
   {
     "German": "quatschen",
-    "English": "chat"
+    "English": "chat",
+    "ExampleSentence": "Wir quatschen gern über alles."
   },
   {
     "German": "automatisch",
-    "English": "automatic"
+    "English": "automatic",
+    "ExampleSentence": "Die Tür öffnet sich automatisch."
   },
   {
     "German": "chad",
-    "English": "Chad (name)"
+    "English": "Chad (name)",
+    "ExampleSentence": "Chad trainiert jeden Morgen hart."
   },
   {
     "German": "körperverletzung",
-    "English": "assault"
+    "English": "assault",
+    "Article": "die",
+    "ExampleSentence": "Die Körperverletzung wiegt hier schwer."
   },
   {
     "German": "spritzen",
-    "English": "inject"
+    "English": "inject",
+    "ExampleSentence": "Ärzte spritzen ihm ein Medikament."
   },
   {
     "German": "einwohner",
-    "English": "resident"
+    "English": "resident",
+    "Article": "der",
+    "ExampleSentence": "Der Einwohner beschwert sich lautstark."
   },
   {
     "German": "renn",
-    "English": "run (imper.)"
+    "English": "run (imper.)",
+    "ExampleSentence": "Renn, so schnell du kannst!",
+    "Highlights": [
+      {
+        "Word": "Renn",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "pink",
-    "English": "pink"
+    "English": "pink",
+    "ExampleSentence": "Ihr Kleid leuchtet knallig pink."
   },
   {
     "German": "chen",
-    "English": "Chen (name)"
+    "English": "Chen (name)",
+    "ExampleSentence": "Chen arbeitet an einem Projekt."
   },
   {
     "German": "gezeichnet",
-    "English": "drawn"
+    "English": "drawn",
+    "ExampleSentence": "Er wirkt vom Leben gezeichnet."
   },
   {
     "German": "anständige",
-    "English": "decent"
+    "English": "decent",
+    "ExampleSentence": "Er sucht eine anständige Arbeit."
   },
   {
     "German": "steif",
-    "English": "stiff"
+    "English": "stiff",
+    "ExampleSentence": "Sein Nacken fühlt sich steif."
   },
   {
     "German": "rekord",
-    "English": "record"
+    "English": "record",
+    "Article": "der",
+    "ExampleSentence": "Der Rekord fällt heute endlich."
   },
   {
     "German": "durchgeknallt",
-    "English": "crazy"
+    "English": "crazy",
+    "ExampleSentence": "Dieser Plan klingt völlig durchgeknallt."
   },
   {
     "German": "foltern",
-    "English": "torture"
+    "English": "torture",
+    "ExampleSentence": "Sie foltern die Gefangenen brutal."
   },
   {
     "German": "erspart",
-    "English": "saved"
+    "English": "saved",
+    "ExampleSentence": "Das erspart ihm viel Ärger."
   },
   {
     "German": "kuba",
-    "English": "Cuba"
+    "English": "Cuba",
+    "ExampleSentence": "Kuba begeistert viele junge Touristen."
   },
   {
     "German": "bräuchten",
-    "English": "would need"
+    "English": "would need",
+    "ExampleSentence": "Sie bräuchten mehr Zeit dafür.",
+    "Highlights": [
+      {
+        "Word": "bräuchten",
+        "Reason": "Konjunktiv II (subjunctive 'would need')"
+      }
+    ]
   },
   {
     "German": "überdosis",
-    "English": "overdose"
+    "English": "overdose",
+    "Article": "die",
+    "ExampleSentence": "Die Überdosis wirkt fast sofort."
   },
   {
     "German": "armband",
-    "English": "bracelet"
+    "English": "bracelet",
+    "Article": "das",
+    "ExampleSentence": "Das Armband glänzt im Licht."
   },
   {
     "German": "bert",
-    "English": "Bert (name)"
+    "English": "Bert (name)",
+    "ExampleSentence": "Bert repariert gerade das Auto."
   },
   {
     "German": "adoptiert",
-    "English": "adopted"
+    "English": "adopted",
+    "ExampleSentence": "Sie adoptiert bald einen Hund."
   },
   {
     "German": "komplizen",
-    "English": "accomplices"
+    "English": "accomplices",
+    "Article": "die",
+    "ExampleSentence": "Die Komplizen fliehen in Panik."
   },
   {
     "German": "ehemaligen",
-    "English": "former"
+    "English": "former",
+    "ExampleSentence": "Sie sieht ihren ehemaligen Chef.",
+    "Highlights": [
+      {
+        "Word": "ehemaligen",
+        "Reason": "accusative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "department",
-    "English": "department"
+    "English": "department",
+    "Article": "das",
+    "ExampleSentence": "Das Department leitet neue Projekte."
   },
   {
     "German": "einschalten",
-    "English": "turn on"
+    "English": "turn on",
+    "ExampleSentence": "Er will den Fernseher einschalten."
   },
   {
     "German": "handschrift",
-    "English": "handwriting"
+    "English": "handwriting",
+    "Article": "die",
+    "ExampleSentence": "Seine Handschrift wirkt sehr elegant."
   },
   {
     "German": "ältesten",
-    "English": "oldest"
+    "English": "oldest",
+    "ExampleSentence": "Er hilft den ältesten Bewohnern."
   },
   {
     "German": "assistenten",
-    "English": "assistant"
+    "English": "assistant",
+    "Article": "der",
+    "ExampleSentence": "Ich sehe den Assistenten heute.",
+    "Highlights": [
+      {
+        "Word": "Assistenten",
+        "Reason": "accusative case, weak noun declension (non-nominative)"
+      }
+    ]
   },
   {
     "German": "großartigen",
-    "English": "great"
+    "English": "great",
+    "ExampleSentence": "Er lobt ihren großartigen Erfolg.",
+    "Highlights": [
+      {
+        "Word": "großartigen",
+        "Reason": "accusative case (non-nominative)"
+      }
+    ]
   },
   {
     "German": "männlich",
-    "English": "male"
+    "English": "male",
+    "ExampleSentence": "Der Hund ist eindeutig männlich."
   },
   {
     "German": "übernimmst",
-    "English": "take over"
+    "English": "take over",
+    "ExampleSentence": "Du übernimmst jetzt die Verantwortung."
   },
   {
     "German": "übrigen",
-    "English": "remaining"
+    "English": "remaining",
+    "ExampleSentence": "Er grüßt die übrigen Gäste."
   },
   {
     "German": "klaviermusik",
-    "English": "piano music"
+    "English": "piano music",
+    "Article": "die",
+    "ExampleSentence": "Die Klaviermusik beruhigt ihn sehr."
   },
   {
     "German": "ash",
-    "English": "Ash (name)"
+    "English": "Ash (name)",
+    "ExampleSentence": "Ash kämpft mutig gegen Feinde."
   },
   {
     "German": "viktor",
-    "English": "Viktor (name)"
+    "English": "Viktor (name)",
+    "ExampleSentence": "Viktor plant eine große Reise."
   },
   {
     "German": "judith",
-    "English": "Judith (name)"
+    "English": "Judith (name)",
+    "ExampleSentence": "Judith arbeitet als erfolgreiche Anwältin."
   },
   {
     "German": "gemietet",
-    "English": "rented"
+    "English": "rented",
+    "ExampleSentence": "Sie hat eine Wohnung gemietet.",
+    "Highlights": [
+      {
+        "Word": "gemietet",
+        "Reason": "Perfekt tense (past participle with 'hat')"
+      }
+    ]
   },
   {
     "German": "mischung",
-    "English": "mixture"
+    "English": "mixture",
+    "Article": "die",
+    "ExampleSentence": "Die Mischung schmeckt angenehm süß."
   },
   {
     "German": "luxus",
-    "English": "luxury"
+    "English": "luxury",
+    "Article": "der",
+    "ExampleSentence": "Der Luxus beeindruckt alle Gäste."
   },
   {
     "German": "schwung",
-    "English": "momentum"
+    "English": "momentum",
+    "Article": "der",
+    "ExampleSentence": "Der Schwung trägt ihn weiter."
   },
   {
     "German": "vicky",
-    "English": "Vicky (name)"
+    "English": "Vicky (name)",
+    "ExampleSentence": "Vicky singt heute im Chor."
   },
   {
     "German": "hochgehen",
-    "English": "blow up"
+    "English": "blow up",
+    "ExampleSentence": "Die Bombe könnte jederzeit hochgehen.",
+    "Highlights": [
+      {
+        "Word": "könnte",
+        "Reason": "Konjunktiv II (modal subjunctive)"
+      }
+    ]
   },
   {
     "German": "wegtreten",
-    "English": "dismissed"
+    "English": "dismissed",
+    "ExampleSentence": "Der Soldat muss sofort wegtreten."
   },
   {
     "German": "stargate",
-    "English": "Stargate"
+    "English": "Stargate",
+    "ExampleSentence": "Stargate fasziniert Millionen von Zuschauern."
   },
   {
     "German": "carlo",
-    "English": "Carlo (name)"
+    "English": "Carlo (name)",
+    "ExampleSentence": "Carlo kommt aus Süditalien."
   },
   {
     "German": "beherrscht",
-    "English": "controls"
+    "English": "controls",
+    "ExampleSentence": "Er beherrscht die Situation gut."
   },
   {
     "German": "grippe",
-    "English": "flu"
+    "English": "flu",
+    "Article": "die",
+    "ExampleSentence": "Sie hat die Grippe."
   },
   {
     "German": "informanten",
-    "English": "informant"
+    "English": "informant",
+    "Article": "die",
+    "ExampleSentence": "Die Informanten schweigen beharrlich."
   },
   {
     "German": "hülle",
-    "English": "cover"
+    "English": "cover",
+    "Article": "die",
+    "ExampleSentence": "Die Hülle schützt das Handy."
   },
   {
     "German": "floh",
-    "English": "flea"
+    "English": "flea",
+    "Article": "der",
+    "ExampleSentence": "Der Floh springt sehr hoch."
   },
   {
     "German": "kit",
-    "English": "kit"
+    "English": "kit",
+    "Article": "das",
+    "ExampleSentence": "Das Kit enthält nützliche Werkzeuge."
   },
   {
     "German": "fitz",
-    "English": "Fitz (name)"
+    "English": "Fitz (name)",
+    "ExampleSentence": "Fitz löst jedes Rätsel schnell."
   },
   {
     "German": "nudeln",
-    "English": "noodles"
+    "English": "noodles",
+    "Article": "die",
+    "ExampleSentence": "Die Nudeln schmecken sehr gut."
   },
   {
     "German": "schaf",
-    "English": "sheep"
+    "English": "sheep",
+    "Article": "das",
+    "ExampleSentence": "Das Schaf frisst frisches Gras."
   },
   {
     "German": "uhrzeit",
-    "English": "time"
+    "English": "time",
+    "Article": "die",
+    "ExampleSentence": "Die Uhrzeit stimmt nicht ganz."
   },
   {
     "German": "zigarre",
-    "English": "cigar"
+    "English": "cigar",
+    "Article": "die",
+    "ExampleSentence": "Er raucht eine teure Zigarre."
   },
   {
     "German": "tänzerin",
-    "English": "dancer"
+    "English": "dancer",
+    "Article": "die",
+    "ExampleSentence": "Die Tänzerin übt jeden Tag.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine (not nominative jeder)"
+      }
+    ]
   },
   {
     "German": "einkaufszentrum",
-    "English": "shopping mall"
+    "English": "shopping mall",
+    "Article": "das",
+    "ExampleSentence": "Das Einkaufszentrum öffnet um zehn."
   },
   {
     "German": "vollmond",
-    "English": "full moon"
+    "English": "full moon",
+    "Article": "der",
+    "ExampleSentence": "Heute Nacht scheint der Vollmond."
   },
   {
     "German": "mexikaner",
-    "English": "Mexican"
+    "English": "Mexican",
+    "Article": "der",
+    "ExampleSentence": "Der Mexikaner spricht drei Sprachen."
   },
   {
     "German": "piepst",
-    "English": "beeps"
+    "English": "beeps",
+    "ExampleSentence": "Das Handy piepst ständig laut."
   },
   {
     "German": "gestoppt",
-    "English": "stopped"
+    "English": "stopped",
+    "ExampleSentence": "Der Angriff wird sofort gestoppt."
   },
   {
     "German": "gray",
-    "English": "Gray (name)"
+    "English": "Gray (name)",
+    "ExampleSentence": "Gray arbeitet für die Regierung."
   },
   {
     "German": "eingerichtet",
-    "English": "furnished"
+    "English": "furnished",
+    "ExampleSentence": "Die Wohnung ist gut eingerichtet."
   },
   {
     "German": "umarmung",
-    "English": "hug"
+    "English": "hug",
+    "Article": "die",
+    "ExampleSentence": "Die Umarmung tut richtig gut."
   },
   {
     "German": "rohr",
-    "English": "pipe"
+    "English": "pipe",
+    "Article": "das",
+    "ExampleSentence": "Das Rohr leitet warmes Wasser."
   },
   {
     "German": "batterien",
-    "English": "batteries"
+    "English": "batteries",
+    "Article": "die",
+    "ExampleSentence": "Die Batterien sind bald leer."
   },
   {
     "German": "ella",
-    "English": "Ella (name)"
+    "English": "Ella (name)",
+    "ExampleSentence": "Ella malt gerne bunte Bilder."
   },
   {
     "German": "spende",
-    "English": "donation"
+    "English": "donation",
+    "Article": "die",
+    "ExampleSentence": "Die Spende hilft vielen Kindern.",
+    "Highlights": [
+      {
+        "Word": "vielen Kindern",
+        "Reason": "dative plural, not nominative"
+      }
+    ]
   },
   {
     "German": "julius",
-    "English": "Julius (name)"
+    "English": "Julius (name)",
+    "ExampleSentence": "Julius liebt klassische deutsche Literatur."
   },
   {
     "German": "mumm",
-    "English": "guts"
+    "English": "guts",
+    "Article": "der",
+    "ExampleSentence": "Er hat richtig viel Mumm."
   },
   {
     "German": "gans",
-    "English": "goose"
+    "English": "goose",
+    "Article": "die",
+    "ExampleSentence": "Die Gans schnattert sehr laut."
   },
   {
     "German": "leuchten",
-    "English": "glow"
+    "English": "glow",
+    "ExampleSentence": "Die Sterne leuchten hell heute."
   },
   {
     "German": "alien",
-    "English": "alien"
+    "English": "alien",
+    "Article": "das",
+    "ExampleSentence": "Das Alien beobachtet die Menschen."
   },
   {
     "German": "dom",
-    "English": "cathedral"
+    "English": "cathedral",
+    "Article": "der",
+    "ExampleSentence": "Der Dom ist wirklich riesig."
   },
   {
     "German": "geriet",
-    "English": "got into"
+    "English": "got into",
+    "ExampleSentence": "Er geriet in große Gefahr.",
+    "Highlights": [
+      {
+        "Word": "geriet",
+        "Reason": "Präteritum (simple past) of geraten"
+      }
+    ]
   },
   {
     "German": "unterzeichnet",
-    "English": "signed"
+    "English": "signed",
+    "ExampleSentence": "Der Vertrag wird heute unterzeichnet."
   },
   {
     "German": "operationen",
-    "English": "operations"
+    "English": "operations",
+    "Article": "die",
+    "ExampleSentence": "Die Operationen dauern sehr lange."
   },
   {
     "German": "schütteln",
-    "English": "shake"
+    "English": "shake",
+    "ExampleSentence": "Wir schütteln kräftig die Hände."
   },
   {
     "German": "vermissten",
-    "English": "missing (people)"
+    "English": "missing (people)",
+    "Article": "die",
+    "ExampleSentence": "Die Vermissten sind noch unauffindbar."
   },
   {
     "German": "angespannt",
-    "English": "tense"
+    "English": "tense",
+    "ExampleSentence": "Die Lage ist sehr angespannt."
   },
   {
     "German": "folgenden",
-    "English": "following"
+    "English": "following",
+    "ExampleSentence": "Im folgenden Kapitel steht es.",
+    "Highlights": [
+      {
+        "Word": "Im",
+        "Reason": "dative contraction (in dem), not nominative"
+      },
+      {
+        "Word": "folgenden",
+        "Reason": "dative case adjective ending, not nominative"
+      }
+    ]
   },
   {
     "German": "fantastische",
-    "English": "fantastic"
+    "English": "fantastic",
+    "ExampleSentence": "Das ist eine fantastische Idee."
   },
   {
     "German": "fies",
-    "English": "mean"
+    "English": "mean",
+    "ExampleSentence": "Er ist manchmal richtig fies."
   },
   {
     "German": "warp",
-    "English": "warp"
+    "English": "warp",
+    "Article": "das",
+    "ExampleSentence": "Das Warp funktioniert heute nicht."
   },
   {
     "German": "heilt",
-    "English": "heals"
+    "English": "heals",
+    "ExampleSentence": "Die Zeit heilt alle Wunden."
   },
   {
     "German": "auswirkungen",
-    "English": "effects"
+    "English": "effects",
+    "Article": "die",
+    "ExampleSentence": "Die Auswirkungen sind noch unklar."
   },
   {
     "German": "geschlecht",
-    "English": "gender"
+    "English": "gender",
+    "Article": "das",
+    "ExampleSentence": "Das Geschlecht spielt keine Rolle."
   },
   {
     "German": "buchhalter",
-    "English": "accountant"
+    "English": "accountant",
+    "Article": "der",
+    "ExampleSentence": "Der Buchhalter prüft alle Rechnungen."
   },
   {
     "German": "drache",
-    "English": "dragon"
+    "English": "dragon",
+    "Article": "der",
+    "ExampleSentence": "Der Drache spuckt heißes Feuer."
   },
   {
     "German": "computerlogbuch",
-    "English": "computer log"
+    "English": "computer log",
+    "Article": "das",
+    "ExampleSentence": "Das Computerlogbuch zeigt alte Einträge."
   },
   {
     "German": "deuten",
-    "English": "indicate"
+    "English": "indicate",
+    "ExampleSentence": "Die Zeichen deuten auf Regen."
   },
   {
     "German": "bildung",
-    "English": "education"
+    "English": "education",
+    "Article": "die",
+    "ExampleSentence": "Die Bildung verändert das Leben."
   },
   {
     "German": "aufbewahrt",
-    "English": "stored"
+    "English": "stored",
+    "ExampleSentence": "Die Akten werden sicher aufbewahrt."
   },
   {
     "German": "persönlicher",
-    "English": "personal"
+    "English": "personal",
+    "ExampleSentence": "Das ist ein persönlicher Brief."
   },
   {
     "German": "erpresst",
-    "English": "blackmailed"
+    "English": "blackmailed",
+    "ExampleSentence": "Der Chef erpresst seine Mitarbeiter."
   },
   {
     "German": "sang",
-    "English": "sang"
+    "English": "sang",
+    "ExampleSentence": "Sie sang ein trauriges Lied.",
+    "Highlights": [
+      {
+        "Word": "sang",
+        "Reason": "Präteritum (simple past) of singen"
+      }
+    ]
   },
   {
     "German": "hinbringen",
-    "English": "take there"
+    "English": "take there",
+    "ExampleSentence": "Ich muss ihn hinbringen.",
+    "Highlights": [
+      {
+        "Word": "ihn",
+        "Reason": "accusative pronoun (not nominative er)"
+      }
+    ]
   },
   {
     "German": "amerikanischer",
-    "English": "American"
+    "English": "American",
+    "ExampleSentence": "Das ist ein amerikanischer Film."
   },
   {
     "German": "üble",
-    "English": "nasty"
+    "English": "nasty",
+    "ExampleSentence": "Das ist eine üble Angelegenheit."
   },
   {
     "German": "einfaches",
-    "English": "simple"
+    "English": "simple",
+    "ExampleSentence": "Das ist ein einfaches Rezept."
   },
   {
     "German": "angesetzt",
-    "English": "scheduled"
+    "English": "scheduled",
+    "ExampleSentence": "Der Termin wird neu angesetzt."
   },
   {
     "German": "mmm",
-    "English": "mmm"
+    "English": "mmm",
+    "ExampleSentence": "Mmm, das schmeckt wirklich lecker."
   },
   {
     "German": "hudson",
-    "English": "Hudson (name)"
+    "English": "Hudson (name)",
+    "ExampleSentence": "Hudson wohnt jetzt in Texas."
   },
   {
     "German": "josef",
-    "English": "Josef (name)"
+    "English": "Josef (name)",
+    "ExampleSentence": "Josef betet jeden Abend still.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine (not nominative jeder)"
+      }
+    ]
   },
   {
     "German": "reagan",
-    "English": "Reagan (name)"
+    "English": "Reagan (name)",
+    "ExampleSentence": "Reagan gilt als wichtiger Präsident."
   },
   {
     "German": "volltreffer",
-    "English": "direct hit"
+    "English": "direct hit",
+    "Article": "der",
+    "ExampleSentence": "Das ist ein Volltreffer!"
   },
   {
     "German": "jonah",
-    "English": "Jonah (name)"
+    "English": "Jonah (name)",
+    "ExampleSentence": "Jonah verpasst fast jeden Bus.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine (not nominative jeder)"
+      }
+    ]
   },
   {
     "German": "totaler",
-    "English": "total"
+    "English": "total",
+    "ExampleSentence": "Das ist ein totaler Erfolg."
   },
   {
     "German": "robinson",
-    "English": "Robinson (name)"
+    "English": "Robinson (name)",
+    "ExampleSentence": "Robinson lebt ganz allein hier."
   },
   {
     "German": "zustößt",
-    "English": "happens to"
+    "English": "happens to",
+    "ExampleSentence": "Ich fürchte, was ihm zustößt.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun (not nominative er)"
+      }
+    ]
   },
   {
     "German": "herrschaft",
-    "English": "rule"
+    "English": "rule",
+    "Article": "die",
+    "ExampleSentence": "Die Herrschaft dauert nicht lange."
   },
   {
     "German": "verhören",
-    "English": "interrogate"
+    "English": "interrogate",
+    "ExampleSentence": "Wir verhören den Verdächtigen morgen.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative masculine article (not nominative der)"
+      }
+    ]
   },
   {
     "German": "unverzüglich",
-    "English": "immediately"
+    "English": "immediately",
+    "ExampleSentence": "Er antwortet stets unverzüglich."
   },
   {
     "German": "christina",
-    "English": "Christina (name)"
+    "English": "Christina (name)",
+    "ExampleSentence": "Christina studiert Medizin in Berlin."
   },
   {
     "German": "bemüht",
-    "English": "tried hard"
+    "English": "tried hard",
+    "ExampleSentence": "Sie ist wirklich sehr bemüht."
   },
   {
     "German": "aufgefunden",
-    "English": "found"
+    "English": "found",
+    "ExampleSentence": "Die Leiche wird schnell aufgefunden."
   },
   {
     "German": "unfähig",
-    "English": "incapable"
+    "English": "incapable",
+    "ExampleSentence": "Er ist völlig unfähig dazu."
   },
   {
     "German": "stellten",
-    "English": "placed"
+    "English": "placed",
+    "ExampleSentence": "Sie stellten den Stuhl hin.",
+    "Highlights": [
+      {
+        "Word": "stellten",
+        "Reason": "Präteritum (simple past) of stellen"
+      },
+      {
+        "Word": "den",
+        "Reason": "accusative masculine article (not nominative der)"
+      }
+    ]
   },
   {
     "German": "mi",
-    "English": "me (dialect)"
+    "English": "me (dialect)",
+    "ExampleSentence": "Er kennt mi schon lange.",
+    "Highlights": [
+      {
+        "Word": "mi",
+        "Reason": "dialect accusative pronoun (mich), not nominative"
+      }
+    ]
   },
   {
     "German": "ursprünglich",
-    "English": "originally"
+    "English": "originally",
+    "ExampleSentence": "Ursprünglich kommt sie aus Polen."
   },
   {
     "German": "distanz",
-    "English": "distance"
+    "English": "distance",
+    "Article": "die",
+    "ExampleSentence": "Die Distanz beträgt zehn Kilometer."
   },
   {
     "German": "rufus",
-    "English": "Rufus (name)"
+    "English": "Rufus (name)",
+    "ExampleSentence": "Rufus bellt jede Nacht laut."
   },
   {
     "German": "verheimlichen",
-    "English": "conceal"
+    "English": "conceal",
+    "ExampleSentence": "Wir verheimlichen ihm die Wahrheit.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun (not nominative er)"
+      }
+    ]
   },
   {
     "German": "verstorben",
-    "English": "deceased"
+    "English": "deceased",
+    "ExampleSentence": "Ihr Vater ist bereits verstorben.",
+    "Highlights": [
+      {
+        "Word": "ist verstorben",
+        "Reason": "Perfekt (present perfect) tense, not simple present"
+      }
+    ]
   },
   {
     "German": "göttern",
-    "English": "gods"
+    "English": "gods",
+    "Article": "die",
+    "ExampleSentence": "Er dankt den alten Göttern.",
+    "Highlights": [
+      {
+        "Word": "den alten Göttern",
+        "Reason": "dative plural, not nominative die Götter"
+      }
+    ]
   },
   {
     "German": "hunden",
-    "English": "dogs"
+    "English": "dogs",
+    "Article": "die",
+    "ExampleSentence": "Sie spielt gern mit Hunden.",
+    "Highlights": [
+      {
+        "Word": "Hunden",
+        "Reason": "dative plural, not nominative die Hunde"
+      }
+    ]
   },
   {
     "German": "letztens",
-    "English": "recently"
+    "English": "recently",
+    "ExampleSentence": "Letztens bin ich oft müde."
   },
   {
     "German": "jasper",
-    "English": "Jasper (name)"
+    "English": "Jasper (name)",
+    "ExampleSentence": "Jasper reist gerne nach Asien."
   },
   {
     "German": "napoleon",
-    "English": "Napoleon"
+    "English": "Napoleon",
+    "ExampleSentence": "Napoleon gilt als großer Feldherr."
   },
   {
     "German": "joshua",
-    "English": "Joshua (name)"
+    "English": "Joshua (name)",
+    "ExampleSentence": "Joshua spielt jeden Tag Fußball.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative masculine (not nominative jeder)"
+      }
+    ]
   },
   {
     "German": "billigen",
-    "English": "cheap"
+    "English": "cheap",
+    "ExampleSentence": "Sie kauft die billigen Schuhe."
   },
   {
     "German": "verschont",
-    "English": "spared"
+    "English": "spared",
+    "ExampleSentence": "Niemand wird heute verschont."
   },
   {
     "German": "rendezvous",
-    "English": "rendezvous"
+    "English": "rendezvous",
+    "Article": "das",
+    "ExampleSentence": "Das Rendezvous beginnt in Kürze."
   },
   {
     "German": "empfehlung",
-    "English": "recommendation"
+    "English": "recommendation",
+    "Article": "die",
+    "ExampleSentence": "Die Empfehlung klingt sehr vielversprechend."
   },
   {
     "German": "handgelenk",
-    "English": "wrist"
+    "English": "wrist",
+    "Article": "das",
+    "ExampleSentence": "Das Handgelenk tut ihm weh.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "boten",
-    "English": "messengers"
+    "English": "messengers",
+    "Article": "die",
+    "ExampleSentence": "Die Boten bringen wichtige Nachrichten."
   },
   {
     "German": "unterzeichnen",
-    "English": "sign"
+    "English": "sign",
+    "ExampleSentence": "Beide Länder unterzeichnen den Vertrag.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative masculine article (not nominative der)"
+      }
+    ]
   },
   {
     "German": "belasten",
-    "English": "incriminate"
+    "English": "incriminate",
+    "ExampleSentence": "Die Schulden belasten die Familie."
   },
   {
     "German": "speziellen",
-    "English": "special"
+    "English": "special",
+    "ExampleSentence": "Er nutzt einen speziellen Trick.",
+    "Highlights": [
+      {
+        "Word": "einen speziellen Trick",
+        "Reason": "accusative masculine case, not nominative"
+      }
+    ]
   },
   {
     "German": "literatur",
-    "English": "literature"
+    "English": "literature",
+    "Article": "die",
+    "ExampleSentence": "Die Literatur begeistert viele Leser."
   },
   {
     "German": "landete",
-    "English": "landed"
+    "English": "landed",
+    "ExampleSentence": "Das Flugzeug landete sicher heute.",
+    "Highlights": [
+      {
+        "Word": "landete",
+        "Reason": "Präteritum (simple past) of landen"
+      }
+    ]
   },
   {
     "German": "gelangt",
-    "English": "reached"
+    "English": "reached",
+    "ExampleSentence": "Er gelangt schnell zur Wahrheit.",
+    "Highlights": [
+      {
+        "Word": "zur",
+        "Reason": "dative contraction (zu der), not nominative"
+      }
+    ]
   },
   {
     "German": "cooler",
-    "English": "cooler"
+    "English": "cooler",
+    "ExampleSentence": "Das ist ein cooler Typ."
   },
   {
     "German": "quer",
-    "English": "across"
+    "English": "across",
+    "ExampleSentence": "Er parkt das Auto quer."
   },
   {
     "German": "satelliten",
-    "English": "satellites"
+    "English": "satellites",
+    "Article": "die",
+    "ExampleSentence": "Die Satelliten senden ständig Daten."
   },
   {
     "German": "triff",
-    "English": "meet (imper.)"
+    "English": "meet (imper.)",
+    "ExampleSentence": "Triff mich morgen um zwölf.",
+    "Highlights": [
+      {
+        "Word": "Triff",
+        "Reason": "imperative form of treffen"
+      },
+      {
+        "Word": "mich",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "analysieren",
-    "English": "analyze"
+    "English": "analyze",
+    "ExampleSentence": "Experten analysieren die neuen Daten."
   },
   {
     "German": "zuhälter",
-    "English": "pimp"
+    "English": "pimp",
+    "Article": "der",
+    "ExampleSentence": "Der Zuhälter bedroht seine Opfer."
   },
   {
     "German": "zutiefst",
-    "English": "deeply"
+    "English": "deeply",
+    "ExampleSentence": "Die Nachricht schockiert mich zutiefst.",
+    "Highlights": [
+      {
+        "Word": "mich",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "geleitet",
-    "English": "led"
+    "English": "led",
+    "ExampleSentence": "Das Projekt wird gut geleitet."
   },
   {
     "German": "schlachten",
-    "English": "slaughter"
+    "English": "slaughter",
+    "ExampleSentence": "Bauern schlachten heute ein Schwein."
   },
   {
     "German": "angestellte",
-    "English": "employee"
+    "English": "employee",
+    "Article": "der",
+    "ExampleSentence": "Der Angestellte kommt immer pünktlich."
   },
   {
     "German": "gestalten",
-    "English": "shape"
+    "English": "shape",
+    "ExampleSentence": "Wir gestalten die Zukunft gemeinsam."
   },
   {
     "German": "köpfen",
-    "English": "behead"
+    "English": "behead",
+    "ExampleSentence": "Der König lässt sie köpfen."
   },
   {
     "German": "stipendium",
-    "English": "scholarship"
+    "English": "scholarship",
+    "Article": "das",
+    "ExampleSentence": "Das Stipendium deckt alle Kosten."
   },
   {
     "German": "illegale",
-    "English": "illegal"
+    "English": "illegal",
+    "ExampleSentence": "Das ist eine illegale Handlung."
   },
   {
     "German": "vergiften",
-    "English": "poison"
+    "English": "poison",
+    "ExampleSentence": "Die Chemikalien vergiften das Wasser."
   },
   {
     "German": "feiert",
-    "English": "celebrates"
+    "English": "celebrates",
+    "ExampleSentence": "Sie feiert heute ihren Geburtstag.",
+    "Highlights": [
+      {
+        "Word": "ihren",
+        "Reason": "accusative masculine possessive, not nominative ihr"
+      }
+    ]
   },
   {
     "German": "bewundern",
-    "English": "admire"
+    "English": "admire",
+    "ExampleSentence": "Viele bewundern seinen großen Mut.",
+    "Highlights": [
+      {
+        "Word": "seinen großen Mut",
+        "Reason": "accusative masculine case, not nominative"
+      }
+    ]
   },
   {
     "German": "herbert",
-    "English": "Herbert (name)"
+    "English": "Herbert (name)",
+    "ExampleSentence": "Herbert angelt jedes Wochenende gern."
   },
   {
     "German": "furchtbaren",
-    "English": "terrible"
+    "English": "terrible",
+    "ExampleSentence": "Er erzählt von furchtbaren Erlebnissen.",
+    "Highlights": [
+      {
+        "Word": "furchtbaren Erlebnissen",
+        "Reason": "dative plural, not nominative"
+      }
+    ]
   },
   {
     "German": "hüfte",
-    "English": "hip"
+    "English": "hip",
+    "Article": "die",
+    "ExampleSentence": "Die Hüfte schmerzt ihm sehr.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "involviert",
-    "English": "involved"
+    "English": "involved",
+    "ExampleSentence": "Er ist stark involviert dabei."
   },
   {
     "German": "wurf",
-    "English": "throw"
+    "English": "throw",
+    "Article": "der",
+    "ExampleSentence": "Der Wurf gelingt ihm perfekt.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "maschinenraum",
-    "English": "engine room"
+    "English": "engine room",
+    "Article": "der",
+    "ExampleSentence": "Der Maschinenraum liegt unter Deck."
   },
   {
     "German": "inspiration",
-    "English": "inspiration"
+    "English": "inspiration",
+    "Article": "die",
+    "ExampleSentence": "Die Inspiration kommt oft plötzlich."
   },
   {
     "German": "ohio",
-    "English": "Ohio"
+    "English": "Ohio",
+    "ExampleSentence": "Ohio liegt im Mittleren Westen.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "samen",
-    "English": "seed"
+    "English": "seed",
+    "Article": "der",
+    "ExampleSentence": "Der Samen keimt sehr schnell."
   },
   {
     "German": "hinterhalt",
-    "English": "ambush"
+    "English": "ambush",
+    "Article": "der",
+    "ExampleSentence": "Der Hinterhalt gelingt den Räubern.",
+    "Highlights": [
+      {
+        "Word": "den Räubern",
+        "Reason": "dative plural, not nominative"
+      }
+    ]
   },
   {
     "German": "gewahrsam",
-    "English": "custody"
+    "English": "custody",
+    "Article": "der",
+    "ExampleSentence": "Er bleibt vorerst in Gewahrsam."
   },
   {
     "German": "schweres",
-    "English": "heavy"
+    "English": "heavy",
+    "ExampleSentence": "Das ist ein schweres Problem."
   },
   {
     "German": "einatmen",
-    "English": "inhale"
+    "English": "inhale",
+    "ExampleSentence": "Er muss jetzt tief einatmen."
   },
   {
     "German": "zurückhalten",
-    "English": "hold back"
+    "English": "hold back",
+    "ExampleSentence": "Er kann seine Wut zurückhalten."
   },
   {
     "German": "parfüm",
-    "English": "perfume"
+    "English": "perfume",
+    "Article": "das",
+    "ExampleSentence": "Das Parfüm riecht sehr blumig."
   },
   {
     "German": "präsidentin",
-    "English": "president"
+    "English": "president",
+    "Article": "die",
+    "ExampleSentence": "Die Präsidentin reist morgen ab."
   },
   {
     "German": "abe",
-    "English": "Abe (name)"
+    "English": "Abe (name)",
+    "ExampleSentence": "Abe arbeitet gerne im Garten.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "entlassung",
-    "English": "dismissal"
+    "English": "dismissal",
+    "Article": "die",
+    "ExampleSentence": "Die Entlassung trifft ihn hart.",
+    "Highlights": [
+      {
+        "Word": "ihn",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "todesstrafe",
-    "English": "death penalty"
+    "English": "death penalty",
+    "Article": "die",
+    "ExampleSentence": "Die Todesstrafe bleibt stark umstritten."
   },
   {
     "German": "ausgebrochen",
-    "English": "broken out"
+    "English": "broken out",
+    "ExampleSentence": "Ein Feuer ist ausgebrochen.",
+    "Highlights": [
+      {
+        "Word": "ist ausgebrochen",
+        "Reason": "Perfekt (present perfect) tense, not simple present"
+      }
+    ]
   },
   {
     "German": "wegfahren",
-    "English": "drive away"
+    "English": "drive away",
+    "ExampleSentence": "Wir wollen morgen früh wegfahren."
   },
   {
     "German": "sultan",
-    "English": "sultan"
+    "English": "sultan",
+    "Article": "der",
+    "ExampleSentence": "Der Sultan regiert sehr weise."
   },
   {
     "German": "hauch",
-    "English": "hint"
+    "English": "hint",
+    "Article": "der",
+    "ExampleSentence": "Ein Hauch von Zimt reicht."
   },
   {
     "German": "abstellen",
-    "English": "turn off"
+    "English": "turn off",
+    "ExampleSentence": "Kannst du das Radio abstellen?"
   },
   {
     "German": "pornos",
-    "English": "porn"
+    "English": "porn",
+    "Article": "die",
+    "ExampleSentence": "Er schaut heimlich alte Pornos."
   },
   {
     "German": "erklärte",
-    "English": "explained"
+    "English": "explained",
+    "ExampleSentence": "Er erklärte den Plan genau.",
+    "Highlights": [
+      {
+        "Word": "erklärte",
+        "Reason": "Präteritum (simple past) of erklären"
+      },
+      {
+        "Word": "den Plan",
+        "Reason": "accusative masculine, not nominative"
+      }
+    ]
   },
   {
     "German": "produzieren",
-    "English": "to produce"
+    "English": "to produce",
+    "ExampleSentence": "Fabriken produzieren jedes Jahr Autos."
   },
   {
     "German": "müller",
-    "English": "Miller"
+    "English": "Miller",
+    "Article": "der",
+    "ExampleSentence": "Der Müller mahlt frisches Korn."
   },
   {
     "German": "gehängt",
-    "English": "hanged"
+    "English": "hanged",
+    "ExampleSentence": "Der Dieb wird morgen gehängt."
   },
   {
     "German": "weinte",
-    "English": "cried"
+    "English": "cried",
+    "ExampleSentence": "Sie weinte die ganze Nacht.",
+    "Highlights": [
+      {
+        "Word": "weinte",
+        "Reason": "Präteritum (simple past) of weinen"
+      }
+    ]
   },
   {
     "German": "routine",
-    "English": "routine"
+    "English": "routine",
+    "Article": "die",
+    "ExampleSentence": "Die Routine gibt ihm Sicherheit.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "merci",
-    "English": "thanks"
+    "English": "thanks",
+    "ExampleSentence": "Merci, das ist sehr nett."
   },
   {
     "German": "nellie",
-    "English": "Nellie"
+    "English": "Nellie",
+    "ExampleSentence": "Nellie backt gerne süße Kuchen."
   },
   {
     "German": "xander",
-    "English": "Xander"
+    "English": "Xander",
+    "ExampleSentence": "Xander spielt gerne Videospiele online."
   },
   {
     "German": "schneid",
-    "English": "guts"
+    "English": "guts",
+    "Article": "der",
+    "ExampleSentence": "Ihm fehlt jeglicher Schneid dafür.",
+    "Highlights": [
+      {
+        "Word": "Ihm",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "kluge",
-    "English": "clever"
+    "English": "clever",
+    "ExampleSentence": "Das ist eine kluge Entscheidung."
   },
   {
     "German": "heart",
-    "English": "heart"
+    "English": "heart",
+    "ExampleSentence": "Sie schickt ihm ein Heart.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "ländern",
-    "English": "countries"
+    "English": "countries",
+    "Article": "die",
+    "ExampleSentence": "Er arbeitet in vielen Ländern.",
+    "Highlights": [
+      {
+        "Word": "vielen Ländern",
+        "Reason": "dative plural, not nominative die Länder"
+      }
+    ]
   },
   {
     "German": "bevorzuge",
-    "English": "prefer"
+    "English": "prefer",
+    "ExampleSentence": "Ich bevorzuge Tee statt Kaffee."
   },
   {
     "German": "ctu",
-    "English": "CTU"
+    "English": "CTU",
+    "ExampleSentence": "Die CTU löst diesen Fall.",
+    "Highlights": [
+      {
+        "Word": "diesen",
+        "Reason": "accusative masculine, not nominative dieser"
+      }
+    ]
   },
   {
     "German": "umkreis",
-    "English": "vicinity"
+    "English": "vicinity",
+    "Article": "der",
+    "ExampleSentence": "Der Umkreis beträgt zehn Kilometer."
   },
   {
     "German": "beschwerden",
-    "English": "complaints"
+    "English": "complaints",
+    "Article": "die",
+    "ExampleSentence": "Die Beschwerden häufen sich langsam."
   },
   {
     "German": "teufels",
-    "English": "devil's"
+    "English": "devil's",
+    "Article": "der",
+    "ExampleSentence": "Das Kind des Teufels weint.",
+    "Highlights": [
+      {
+        "Word": "des Teufels",
+        "Reason": "genitive case, not nominative der Teufel"
+      }
+    ]
   },
   {
     "German": "brooke",
-    "English": "Brooke"
+    "English": "Brooke",
+    "ExampleSentence": "Brooke wohnt jetzt in London."
   },
   {
     "German": "genehmigt",
-    "English": "approved"
+    "English": "approved",
+    "ExampleSentence": "Der Plan wurde genehmigt.",
+    "Highlights": [
+      {
+        "Word": "wurde",
+        "Reason": "Präteritum passive auxiliary"
+      },
+      {
+        "Word": "genehmigt",
+        "Reason": "past participle in passive construction"
+      }
+    ]
   },
   {
     "German": "bildern",
-    "English": "pictures"
+    "English": "pictures",
+    "Article": "die",
+    "ExampleSentence": "Ich denke in Bildern.",
+    "Highlights": [
+      {
+        "Word": "Bildern",
+        "Reason": "dative plural, not nominative"
+      }
+    ]
   },
   {
     "German": "scheißen",
-    "English": "to shit"
+    "English": "to shit",
+    "ExampleSentence": "Hunde scheißen auf Wiesen."
   },
   {
     "German": "schenkte",
-    "English": "gave"
+    "English": "gave",
+    "ExampleSentence": "Er schenkte ihr Blumen.",
+    "Highlights": [
+      {
+        "Word": "schenkte",
+        "Reason": "Präteritum"
+      },
+      {
+        "Word": "ihr",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "erschlagen",
-    "English": "bludgeoned"
+    "English": "bludgeoned",
+    "ExampleSentence": "Er hat ihn erschlagen.",
+    "Highlights": [
+      {
+        "Word": "hat",
+        "Reason": "Perfekt auxiliary"
+      },
+      {
+        "Word": "erschlagen",
+        "Reason": "past participle"
+      },
+      {
+        "Word": "ihn",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "irland",
-    "English": "Ireland"
+    "English": "Ireland",
+    "ExampleSentence": "Irland ist wunderschön grün."
   },
   {
     "German": "yard",
-    "English": "yard"
+    "English": "yard",
+    "Article": "das",
+    "ExampleSentence": "Ein Yard ist kurz."
   },
   {
     "German": "journalisten",
-    "English": "journalists"
+    "English": "journalists",
+    "Article": "die",
+    "ExampleSentence": "Journalisten stellen kritische Fragen."
   },
   {
     "German": "fände",
-    "English": "would find"
+    "English": "would find",
+    "ExampleSentence": "Ich fände das großartig.",
+    "Highlights": [
+      {
+        "Word": "fände",
+        "Reason": "Konjunktiv II"
+      }
+    ]
   },
   {
     "German": "zurückkomme",
-    "English": "come back"
+    "English": "come back",
+    "ExampleSentence": "Ich hoffe, dass ich zurückkomme."
   },
   {
     "German": "ärmel",
-    "English": "sleeve"
+    "English": "sleeve",
+    "Article": "der",
+    "ExampleSentence": "Der Ärmel ist zu lang."
   },
   {
     "German": "fließen",
-    "English": "to flow"
+    "English": "to flow",
+    "ExampleSentence": "Flüsse fließen sehr langsam."
   },
   {
     "German": "arabisch",
-    "English": "Arabic"
+    "English": "Arabic",
+    "ExampleSentence": "Das Schild ist arabisch beschriftet."
   },
   {
     "German": "verfolge",
-    "English": "pursue"
+    "English": "pursue",
+    "ExampleSentence": "Ich verfolge deine Karriere."
   },
   {
     "German": "juckt",
-    "English": "itches"
+    "English": "itches",
+    "ExampleSentence": "Der Pullover juckt fürchterlich."
   },
   {
     "German": "männliche",
-    "English": "male"
+    "English": "male",
+    "ExampleSentence": "Die männliche Figur dominiert."
   },
   {
     "German": "klingonen",
-    "English": "Klingons"
+    "English": "Klingons",
+    "Article": "die",
+    "ExampleSentence": "Klingonen kämpfen für ihre Ehre."
   },
   {
     "German": "zerrissen",
-    "English": "torn"
+    "English": "torn",
+    "ExampleSentence": "Die Jacke ist zerrissen."
   },
   {
     "German": "tausch",
-    "English": "swap"
+    "English": "swap",
+    "Article": "der",
+    "ExampleSentence": "Der Tausch ist völlig fair."
   },
   {
     "German": "schlaganfall",
-    "English": "stroke"
+    "English": "stroke",
+    "Article": "der",
+    "ExampleSentence": "Er erleidet einen schweren Schlaganfall.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative article, not nominative"
+      },
+      {
+        "Word": "schweren",
+        "Reason": "accusative adjective ending, not nominative"
+      }
+    ]
   },
   {
     "German": "johannes",
-    "English": "John"
+    "English": "John",
+    "ExampleSentence": "Johannes wohnt in Hamburg."
   },
   {
     "German": "popcorn",
-    "English": "popcorn"
+    "English": "popcorn",
+    "Article": "das",
+    "ExampleSentence": "Das Popcorn schmeckt sehr lecker."
   },
   {
     "German": "gärtner",
-    "English": "gardener"
+    "English": "gardener",
+    "Article": "der",
+    "ExampleSentence": "Der Gärtner pflegt den Garten.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative article, not nominative"
+      }
+    ]
   },
   {
     "German": "bläst",
-    "English": "blows"
+    "English": "blows",
+    "ExampleSentence": "Der Wind bläst heute stark."
   },
   {
     "German": "jet",
-    "English": "jet"
+    "English": "jet",
+    "Article": "der",
+    "ExampleSentence": "Der Jet fliegt sehr schnell."
   },
   {
     "German": "chester",
-    "English": "Chester"
+    "English": "Chester",
+    "ExampleSentence": "Chester lebt in England."
   },
   {
     "German": "garantie",
-    "English": "guarantee"
+    "English": "guarantee",
+    "Article": "die",
+    "ExampleSentence": "Die Garantie gilt zwei Jahre."
   },
   {
     "German": "ändere",
-    "English": "change"
+    "English": "change",
+    "ExampleSentence": "Ich ändere meine Meinung oft."
   },
   {
     "German": "jessie",
-    "English": "Jessie"
+    "English": "Jessie",
+    "ExampleSentence": "Jessie singt heute wunderschön."
   },
   {
     "German": "anstand",
-    "English": "decency"
+    "English": "decency",
+    "Article": "der",
+    "ExampleSentence": "Der Anstand gebietet Zurückhaltung."
   },
   {
     "German": "power",
-    "English": "power"
+    "English": "power",
+    "Article": "die",
+    "ExampleSentence": "Diese Band hat Power."
   },
   {
     "German": "junkie",
-    "English": "junkie"
+    "English": "junkie",
+    "Article": "der",
+    "ExampleSentence": "Der Junkie braucht dringend Hilfe."
   },
   {
     "German": "vati",
-    "English": "dad"
+    "English": "dad",
+    "Article": "der",
+    "ExampleSentence": "Vati kocht heute das Abendessen."
   },
   {
     "German": "topf",
-    "English": "pot"
+    "English": "pot",
+    "Article": "der",
+    "ExampleSentence": "Der Topf ist sehr heiß."
   },
   {
     "German": "packe",
-    "English": "pack"
+    "English": "pack",
+    "ExampleSentence": "Ich packe meinen Koffer schnell.",
+    "Highlights": [
+      {
+        "Word": "meinen",
+        "Reason": "accusative possessive, not nominative"
+      }
+    ]
   },
   {
     "German": "knöpfe",
-    "English": "buttons"
+    "English": "buttons",
+    "Article": "die",
+    "ExampleSentence": "Die Knöpfe glänzen im Licht.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "aussehe",
-    "English": "look like"
+    "English": "look like",
+    "ExampleSentence": "Ich glaube, ich aussehe müde."
   },
   {
     "German": "verabschiedet",
-    "English": "said goodbye"
+    "English": "said goodbye",
+    "ExampleSentence": "Er hat sich verabschiedet.",
+    "Highlights": [
+      {
+        "Word": "hat",
+        "Reason": "Perfekt auxiliary"
+      },
+      {
+        "Word": "sich",
+        "Reason": "reflexive accusative pronoun, not nominative"
+      },
+      {
+        "Word": "verabschiedet",
+        "Reason": "past participle"
+      }
+    ]
   },
   {
     "German": "bedürfnis",
-    "English": "need"
+    "English": "need",
+    "Article": "das",
+    "ExampleSentence": "Das Bedürfnis wächst stetig."
   },
   {
     "German": "nähen",
-    "English": "to sew"
+    "English": "to sew",
+    "ExampleSentence": "Wir nähen unsere eigenen Kleider."
   },
   {
     "German": "sprecher",
-    "English": "speaker"
+    "English": "speaker",
+    "Article": "der",
+    "ExampleSentence": "Der Sprecher spricht sehr deutlich."
   },
   {
     "German": "chemie",
-    "English": "chemistry"
+    "English": "chemistry",
+    "Article": "die",
+    "ExampleSentence": "Chemie fasziniert mich sehr.",
+    "Highlights": [
+      {
+        "Word": "mich",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "hinweisen",
-    "English": "point out"
+    "English": "point out",
+    "ExampleSentence": "Wir müssen darauf hinweisen."
   },
   {
     "German": "stumm",
-    "English": "mute"
+    "English": "mute",
+    "ExampleSentence": "Das Kind bleibt heute stumm."
   },
   {
     "German": "zusammenhalten",
-    "English": "stick together"
+    "English": "stick together",
+    "ExampleSentence": "Wir müssen fest zusammenhalten."
   },
   {
     "German": "geradezu",
-    "English": "downright"
+    "English": "downright",
+    "ExampleSentence": "Das ist geradezu unglaublich."
   },
   {
     "German": "mitzunehmen",
-    "English": "to take along"
+    "English": "to take along",
+    "ExampleSentence": "Vergiss nicht, das mitzunehmen.",
+    "Highlights": [
+      {
+        "Word": "Vergiss",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "weite",
-    "English": "width"
+    "English": "width",
+    "Article": "die",
+    "ExampleSentence": "Die Weite beeindruckt alle Besucher."
   },
   {
     "German": "lori",
-    "English": "Lori"
+    "English": "Lori",
+    "ExampleSentence": "Lori arbeitet als Ärztin."
   },
   {
     "German": "rippen",
-    "English": "ribs"
+    "English": "ribs",
+    "Article": "die",
+    "ExampleSentence": "Seine Rippen schmerzen sehr stark."
   },
   {
     "German": "kühl",
-    "English": "cool"
+    "English": "cool",
+    "ExampleSentence": "Das Wasser ist angenehm kühl."
   },
   {
     "German": "dahinten",
-    "English": "back there"
+    "English": "back there",
+    "ExampleSentence": "Das Auto steht dahinten."
   },
   {
     "German": "techniker",
-    "English": "technician"
+    "English": "technician",
+    "Article": "der",
+    "ExampleSentence": "Der Techniker repariert den Fernseher.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative article, not nominative"
+      }
+    ]
   },
   {
     "German": "abel",
-    "English": "Abel"
+    "English": "Abel",
+    "ExampleSentence": "Abel ist Kains Bruder.",
+    "Highlights": [
+      {
+        "Word": "Kains",
+        "Reason": "genitive case, not nominative"
+      }
+    ]
   },
   {
     "German": "betet",
-    "English": "prays"
+    "English": "prays",
+    "ExampleSentence": "Sie betet jeden Abend still.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative time expression, not nominative"
+      }
+    ]
   },
   {
     "German": "beachten",
-    "English": "observe"
+    "English": "observe",
+    "ExampleSentence": "Bitte beachten Sie die Regeln.",
+    "Highlights": [
+      {
+        "Word": "beachten",
+        "Reason": "formal imperative (Sie-form)"
+      }
+    ]
   },
   {
     "German": "baute",
-    "English": "built"
+    "English": "built",
+    "ExampleSentence": "Er baute ein kleines Haus.",
+    "Highlights": [
+      {
+        "Word": "baute",
+        "Reason": "Präteritum"
+      }
+    ]
   },
   {
     "German": "bonjour",
-    "English": "hello"
+    "English": "hello",
+    "ExampleSentence": "Er sagt fröhlich Bonjour."
   },
   {
     "German": "schecks",
-    "English": "checks"
+    "English": "checks",
+    "Article": "die",
+    "ExampleSentence": "Die Schecks kommen heute an."
   },
   {
     "German": "ausgabe",
-    "English": "edition"
+    "English": "edition",
+    "Article": "die",
+    "ExampleSentence": "Diese Ausgabe kostet zehn Euro."
   },
   {
     "German": "boyd",
-    "English": "Boyd"
+    "English": "Boyd",
+    "ExampleSentence": "Boyd arbeitet bei der Polizei.",
+    "Highlights": [
+      {
+        "Word": "der",
+        "Reason": "dative article (feminine), not nominative"
+      }
+    ]
   },
   {
     "German": "vermasseln",
-    "English": "mess up"
+    "English": "mess up",
+    "ExampleSentence": "Wir dürfen das nicht vermasseln."
   },
   {
     "German": "nötige",
-    "English": "necessary"
+    "English": "necessary",
+    "ExampleSentence": "Sie hat die nötige Erfahrung."
   },
   {
     "German": "südlich",
-    "English": "southern"
+    "English": "southern",
+    "ExampleSentence": "Das Dorf liegt südlich davon."
   },
   {
     "German": "gramm",
-    "English": "gram"
+    "English": "gram",
+    "Article": "das",
+    "ExampleSentence": "Hundert Gramm reichen völlig aus."
   },
   {
     "German": "laken",
-    "English": "bedsheet"
+    "English": "bedsheet",
+    "Article": "das",
+    "ExampleSentence": "Das Laken riecht nach Lavendel."
   },
   {
     "German": "bildet",
-    "English": "forms"
+    "English": "forms",
+    "ExampleSentence": "Wasser bildet kleine, runde Tropfen."
   },
   {
     "German": "bewahre",
-    "English": "preserve"
+    "English": "preserve",
+    "ExampleSentence": "Bewahre dieses Geheimnis gut!",
+    "Highlights": [
+      {
+        "Word": "Bewahre",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "leises",
-    "English": "quiet"
+    "English": "quiet",
+    "ExampleSentence": "Ich höre ein leises Geräusch."
   },
   {
     "German": "lastwagen",
-    "English": "truck"
+    "English": "truck",
+    "Article": "der",
+    "ExampleSentence": "Der Lastwagen transportiert schwere Güter."
   },
   {
     "German": "kritik",
-    "English": "criticism"
+    "English": "criticism",
+    "Article": "die",
+    "ExampleSentence": "Die Kritik trifft ihn hart.",
+    "Highlights": [
+      {
+        "Word": "ihn",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "stürzte",
-    "English": "fell"
+    "English": "fell",
+    "ExampleSentence": "Er stürzte die Treppe hinunter.",
+    "Highlights": [
+      {
+        "Word": "stürzte",
+        "Reason": "Präteritum"
+      }
+    ]
   },
   {
     "German": "behält",
-    "English": "keeps"
+    "English": "keeps",
+    "ExampleSentence": "Sie behält immer die Ruhe."
   },
   {
     "German": "sofern",
-    "English": "provided that"
+    "English": "provided that",
+    "ExampleSentence": "Sofern möglich, komme ich mit."
   },
   {
     "German": "vermisste",
-    "English": "missed"
+    "English": "missed",
+    "ExampleSentence": "Ich vermisste dich sehr.",
+    "Highlights": [
+      {
+        "Word": "vermisste",
+        "Reason": "Präteritum"
+      },
+      {
+        "Word": "dich",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "entsetzlich",
-    "English": "horrible"
+    "English": "horrible",
+    "ExampleSentence": "Der Geruch ist entsetzlich streng."
   },
   {
     "German": "francine",
-    "English": "Francine"
+    "English": "Francine",
+    "ExampleSentence": "Francine liebt klassische Musik."
   },
   {
     "German": "ermittler",
-    "English": "investigator"
+    "English": "investigator",
+    "Article": "der",
+    "ExampleSentence": "Der Ermittler untersucht den Tatort.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative article, not nominative"
+      }
+    ]
   },
   {
     "German": "nikki",
-    "English": "Nikki"
+    "English": "Nikki",
+    "ExampleSentence": "Nikki wohnt in Chicago."
   },
   {
     "German": "aufgestanden",
-    "English": "got up"
+    "English": "got up",
+    "ExampleSentence": "Er ist früh aufgestanden.",
+    "Highlights": [
+      {
+        "Word": "ist",
+        "Reason": "Perfekt auxiliary"
+      },
+      {
+        "Word": "aufgestanden",
+        "Reason": "past participle"
+      }
+    ]
   },
   {
     "German": "fälschung",
-    "English": "forgery"
+    "English": "forgery",
+    "Article": "die",
+    "ExampleSentence": "Die Fälschung täuscht viele Experten."
   },
   {
     "German": "visiontext",
-    "English": "VisionText"
+    "English": "VisionText",
+    "ExampleSentence": "VisionText übersetzt viele Fernsehserien."
   },
   {
     "German": "abschnitt",
-    "English": "section"
+    "English": "section",
+    "Article": "der",
+    "ExampleSentence": "Dieser Abschnitt behandelt wichtige Themen."
   },
   {
     "German": "hausarrest",
-    "English": "house arrest"
+    "English": "house arrest",
+    "Article": "der",
+    "ExampleSentence": "Er steht unter Hausarrest."
   },
   {
     "German": "sensibel",
-    "English": "sensitive"
+    "English": "sensitive",
+    "ExampleSentence": "Er reagiert sehr sensibel darauf."
   },
   {
     "German": "album",
-    "English": "album"
+    "English": "album",
+    "Article": "das",
+    "ExampleSentence": "Das Album erscheint nächsten Monat.",
+    "Highlights": [
+      {
+        "Word": "nächsten",
+        "Reason": "accusative time expression, not nominative"
+      }
+    ]
   },
   {
     "German": "lebewesen",
-    "English": "creature"
+    "English": "creature",
+    "Article": "das",
+    "ExampleSentence": "Jedes Lebewesen braucht Wasser."
   },
   {
     "German": "lösegeld",
-    "English": "ransom"
+    "English": "ransom",
+    "Article": "das",
+    "ExampleSentence": "Die Entführer fordern hohes Lösegeld."
   },
   {
     "German": "verwechselt",
-    "English": "mixed up"
+    "English": "mixed up",
+    "ExampleSentence": "Er hat uns verwechselt.",
+    "Highlights": [
+      {
+        "Word": "hat",
+        "Reason": "Perfekt auxiliary"
+      },
+      {
+        "Word": "uns",
+        "Reason": "accusative pronoun, not nominative"
+      },
+      {
+        "Word": "verwechselt",
+        "Reason": "past participle"
+      }
+    ]
   },
   {
     "German": "prügeln",
-    "English": "beat up"
+    "English": "beat up",
+    "ExampleSentence": "Sie wollen ihn prügeln.",
+    "Highlights": [
+      {
+        "Word": "ihn",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "regnen",
-    "English": "to rain"
+    "English": "to rain",
+    "ExampleSentence": "Morgen soll es regnen."
   },
   {
     "German": "weichen",
-    "English": "yield"
+    "English": "yield",
+    "ExampleSentence": "Wir weichen keinen Schritt zurück.",
+    "Highlights": [
+      {
+        "Word": "keinen",
+        "Reason": "accusative article, not nominative"
+      }
+    ]
   },
   {
     "German": "point",
-    "English": "point"
+    "English": "point",
+    "Article": "der",
+    "ExampleSentence": "Der Point entscheidet das Spiel."
   },
   {
     "German": "anvertrauen",
-    "English": "entrust"
+    "English": "entrust",
+    "ExampleSentence": "Ich kann dir alles anvertrauen.",
+    "Highlights": [
+      {
+        "Word": "dir",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "ollie",
-    "English": "Ollie"
+    "English": "Ollie",
+    "ExampleSentence": "Ollie spielt gerne Fußball."
   },
   {
     "German": "kuppel",
-    "English": "dome"
+    "English": "dome",
+    "Article": "die",
+    "ExampleSentence": "Die Kuppel überragt die Stadt."
   },
   {
     "German": "verließen",
-    "English": "left"
+    "English": "left",
+    "ExampleSentence": "Sie verließen sofort das Haus.",
+    "Highlights": [
+      {
+        "Word": "verließen",
+        "Reason": "Präteritum"
+      }
+    ]
   },
   {
     "German": "jakob",
-    "English": "Jacob"
+    "English": "Jacob",
+    "ExampleSentence": "Jakob betet jeden Abend.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative time expression, not nominative"
+      }
+    ]
   },
   {
     "German": "besuchte",
-    "English": "visited"
+    "English": "visited",
+    "ExampleSentence": "Sie besuchte ihre kranke Mutter.",
+    "Highlights": [
+      {
+        "Word": "besuchte",
+        "Reason": "Präteritum"
+      }
+    ]
   },
   {
     "German": "gewerkschaft",
-    "English": "union"
+    "English": "union",
+    "Article": "die",
+    "ExampleSentence": "Die Gewerkschaft vertritt alle Arbeiter."
   },
   {
     "German": "herhören",
-    "English": "listen up"
+    "English": "listen up",
+    "ExampleSentence": "Bitte kurz herhören!",
+    "Highlights": [
+      {
+        "Word": "herhören",
+        "Reason": "imperative (infinitive used as command)"
+      }
+    ]
   },
   {
     "German": "vorbeigekommen",
-    "English": "came by"
+    "English": "came by",
+    "ExampleSentence": "Er ist kurz vorbeigekommen.",
+    "Highlights": [
+      {
+        "Word": "ist",
+        "Reason": "Perfekt auxiliary"
+      },
+      {
+        "Word": "vorbeigekommen",
+        "Reason": "past participle"
+      }
+    ]
   },
   {
     "German": "stärken",
-    "English": "strengthen"
+    "English": "strengthen",
+    "ExampleSentence": "Sport kann das Immunsystem stärken."
   },
   {
     "German": "hinzu",
-    "English": "in addition"
+    "English": "in addition",
+    "ExampleSentence": "Er fügt Salz hinzu."
   },
   {
     "German": "wrack",
-    "English": "wreck"
+    "English": "wreck",
+    "Article": "das",
+    "ExampleSentence": "Das Wrack liegt am Meeresgrund.",
+    "Highlights": [
+      {
+        "Word": "am",
+        "Reason": "dative contraction (an dem), not nominative"
+      }
+    ]
   },
   {
     "German": "knarren",
-    "English": "creak"
+    "English": "creak",
+    "ExampleSentence": "Alte Dielen knarren beim Gehen.",
+    "Highlights": [
+      {
+        "Word": "beim",
+        "Reason": "dative contraction (bei dem), not nominative"
+      }
+    ]
   },
   {
     "German": "treibstoff",
-    "English": "fuel"
+    "English": "fuel",
+    "Article": "der",
+    "ExampleSentence": "Der Treibstoff wird langsam knapp."
   },
   {
     "German": "signale",
-    "English": "signals"
+    "English": "signals",
+    "Article": "die",
+    "ExampleSentence": "Die Signale blinken hell rot."
   },
   {
     "German": "nachkommen",
-    "English": "catch up"
+    "English": "catch up",
+    "ExampleSentence": "Er muss seiner Pflicht nachkommen.",
+    "Highlights": [
+      {
+        "Word": "seiner",
+        "Reason": "dative possessive, not nominative"
+      }
+    ]
   },
   {
     "German": "hoppla",
-    "English": "oops"
+    "English": "oops",
+    "ExampleSentence": "Hoppla, das ging schief!",
+    "Highlights": [
+      {
+        "Word": "ging",
+        "Reason": "Präteritum"
+      }
+    ]
   },
   {
     "German": "verborgen",
-    "English": "hidden"
+    "English": "hidden",
+    "ExampleSentence": "Der Schatz bleibt gut verborgen."
   },
   {
     "German": "belegt",
-    "English": "taken"
+    "English": "taken",
+    "ExampleSentence": "Dieser Platz ist schon belegt."
   },
   {
     "German": "babylon",
-    "English": "Babylon"
+    "English": "Babylon",
+    "ExampleSentence": "Babylon liegt am Euphrat.",
+    "Highlights": [
+      {
+        "Word": "am",
+        "Reason": "dative contraction (an dem), not nominative"
+      }
+    ]
   },
   {
     "German": "waisenhaus",
-    "English": "orphanage"
+    "English": "orphanage",
+    "Article": "das",
+    "ExampleSentence": "Das Waisenhaus braucht dringend Spenden."
   },
   {
     "German": "brasilien",
-    "English": "Brazil"
+    "English": "Brazil",
+    "ExampleSentence": "Brasilien produziert exzellenten Kaffee.",
+    "Highlights": [
+      {
+        "Word": "exzellenten",
+        "Reason": "accusative adjective ending, not nominative"
+      }
+    ]
   },
   {
     "German": "bitteschön",
-    "English": "you're welcome"
+    "English": "you're welcome",
+    "ExampleSentence": "Bitteschön, kein Problem!"
   },
   {
     "German": "wurmloch",
-    "English": "wormhole"
+    "English": "wormhole",
+    "Article": "das",
+    "ExampleSentence": "Das Wurmloch verbindet zwei Galaxien."
   },
   {
     "German": "alters",
-    "English": "of age"
+    "English": "of age",
+    "ExampleSentence": "Menschen jeden Alters kommen.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "genitive case, not nominative"
+      },
+      {
+        "Word": "Alters",
+        "Reason": "genitive case, not nominative"
+      }
+    ]
   },
   {
     "German": "deb",
-    "English": "Deb"
+    "English": "Deb",
+    "ExampleSentence": "Deb kocht gerne italienisch."
   },
   {
     "German": "fee",
-    "English": "fairy"
+    "English": "fairy",
+    "Article": "die",
+    "ExampleSentence": "Die Fee erfüllt einen Wunsch.",
+    "Highlights": [
+      {
+        "Word": "einen",
+        "Reason": "accusative article, not nominative"
+      }
+    ]
   },
   {
     "German": "milton",
-    "English": "Milton"
+    "English": "Milton",
+    "ExampleSentence": "Milton schreibt lange Gedichte."
   },
   {
     "German": "quarantäne",
-    "English": "quarantine"
+    "English": "quarantine",
+    "Article": "die",
+    "ExampleSentence": "Die Quarantäne dauert vierzehn Tage."
   },
   {
     "German": "kommunisten",
-    "English": "communists"
+    "English": "communists",
+    "Article": "die",
+    "ExampleSentence": "Kommunisten fordern radikale Veränderungen."
   },
   {
     "German": "stiftung",
-    "English": "foundation"
+    "English": "foundation",
+    "Article": "die",
+    "ExampleSentence": "Die Stiftung unterstützt arme Familien."
   },
   {
     "German": "milo",
-    "English": "Milo"
+    "English": "Milo",
+    "ExampleSentence": "Milo mag frisches Obst."
   },
   {
     "German": "gestapo",
-    "English": "Gestapo"
+    "English": "Gestapo",
+    "ExampleSentence": "Die Gestapo verhaftete viele Menschen.",
+    "Highlights": [
+      {
+        "Word": "verhaftete",
+        "Reason": "Präteritum"
+      }
+    ]
   },
   {
     "German": "verreisen",
-    "English": "go on a trip"
+    "English": "go on a trip",
+    "ExampleSentence": "Wir verreisen nächsten Sommer zusammen.",
+    "Highlights": [
+      {
+        "Word": "nächsten",
+        "Reason": "accusative time expression, not nominative"
+      }
+    ]
   },
   {
     "German": "halleluja",
-    "English": "hallelujah"
+    "English": "hallelujah",
+    "ExampleSentence": "Halleluja, endlich ist Frühling!"
   },
   {
     "German": "süchtig",
-    "English": "addicted"
+    "English": "addicted",
+    "ExampleSentence": "Er wird schnell süchtig danach."
   },
   {
     "German": "jammern",
-    "English": "whine"
+    "English": "whine",
+    "ExampleSentence": "Hör auf zu jammern!",
+    "Highlights": [
+      {
+        "Word": "Hör",
+        "Reason": "imperative form"
+      }
+    ]
   },
   {
     "German": "hofft",
-    "English": "hopes"
+    "English": "hopes",
+    "ExampleSentence": "Sie hofft auf gutes Wetter."
   },
   {
     "German": "wertvolle",
-    "English": "valuable"
+    "English": "valuable",
+    "ExampleSentence": "Diese wertvolle Vase zerbrach.",
+    "Highlights": [
+      {
+        "Word": "zerbrach",
+        "Reason": "Präteritum"
+      }
+    ]
   },
   {
     "German": "maulwurf",
-    "English": "mole"
+    "English": "mole",
+    "Article": "der",
+    "ExampleSentence": "Der Maulwurf gräbt tiefe Tunnel."
   },
   {
     "German": "konflikt",
-    "English": "conflict"
+    "English": "conflict",
+    "Article": "der",
+    "ExampleSentence": "Dieser Konflikt eskaliert sehr schnell."
   },
   {
     "German": "turnier",
-    "English": "tournament"
+    "English": "tournament",
+    "Article": "das",
+    "ExampleSentence": "Das Turnier beginnt nächste Woche."
   },
   {
     "German": "gebacken",
-    "English": "baked"
+    "English": "baked",
+    "ExampleSentence": "Der Kuchen ist frisch gebacken."
   },
   {
     "German": "rauszufinden",
-    "English": "find out"
+    "English": "find out",
+    "ExampleSentence": "Ich versuche, es rauszufinden."
   },
   {
     "German": "taube",
-    "English": "pigeon"
+    "English": "pigeon",
+    "Article": "die",
+    "ExampleSentence": "Die Taube pickt Krümel auf."
   },
   {
     "German": "mais",
-    "English": "corn"
+    "English": "corn",
+    "Article": "der",
+    "ExampleSentence": "Der Mais wächst schnell heran."
   },
   {
     "German": "nüsse",
-    "English": "nuts"
+    "English": "nuts",
+    "Article": "die",
+    "ExampleSentence": "Eichhörnchen sammeln Nüsse im Herbst.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "trieb",
-    "English": "drive"
+    "English": "drive",
+    "Article": "der",
+    "ExampleSentence": "Der Trieb steuert sein Verhalten."
   },
   {
     "German": "eigenschaften",
-    "English": "traits"
+    "English": "traits",
+    "Article": "die",
+    "ExampleSentence": "Eigenschaften bestimmen unseren Charakter.",
+    "Highlights": [
+      {
+        "Word": "unseren",
+        "Reason": "accusative possessive, not nominative"
+      }
+    ]
   },
   {
     "German": "feder",
-    "English": "feather"
+    "English": "feather",
+    "Article": "die",
+    "ExampleSentence": "Die Feder schwebt sanft herab."
   },
   {
     "German": "sänger",
-    "English": "singer"
+    "English": "singer",
+    "Article": "der",
+    "ExampleSentence": "Der Sänger begeistert das Publikum."
   },
   {
     "German": "elias",
-    "English": "Elias"
+    "English": "Elias",
+    "ExampleSentence": "Elias spielt gern Klavier."
   },
   {
     "German": "dessert",
-    "English": "dessert"
+    "English": "dessert",
+    "Article": "das",
+    "ExampleSentence": "Das Dessert schmeckt herrlich süß."
   },
   {
     "German": "rathaus",
-    "English": "city hall"
+    "English": "city hall",
+    "Article": "das",
+    "ExampleSentence": "Das Rathaus steht im Zentrum.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "drohungen",
-    "English": "threats"
+    "English": "threats",
+    "Article": "die",
+    "ExampleSentence": "Drohungen beeindrucken ihn kaum.",
+    "Highlights": [
+      {
+        "Word": "ihn",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "bewirken",
-    "English": "cause"
+    "English": "cause",
+    "ExampleSentence": "Medikamente können Nebenwirkungen bewirken."
   },
   {
     "German": "mörderin",
-    "English": "murderer"
+    "English": "murderer",
+    "Article": "die",
+    "ExampleSentence": "Die Mörderin flieht schnell davon."
   },
   {
     "German": "edith",
-    "English": "Edith"
+    "English": "Edith",
+    "ExampleSentence": "Edith liest jeden Abend.",
+    "Highlights": [
+      {
+        "Word": "jeden",
+        "Reason": "accusative time expression, not nominative"
+      }
+    ]
   },
   {
     "German": "wanne",
-    "English": "tub"
+    "English": "tub",
+    "Article": "die",
+    "ExampleSentence": "Die Wanne läuft langsam über."
   },
   {
     "German": "durchkommen",
-    "English": "get through"
+    "English": "get through",
+    "ExampleSentence": "Wir müssen da durchkommen."
   },
   {
     "German": "reid",
-    "English": "Reid"
+    "English": "Reid",
+    "ExampleSentence": "Reid arbeitet beim FBI.",
+    "Highlights": [
+      {
+        "Word": "beim",
+        "Reason": "dative contraction (bei dem), not nominative"
+      }
+    ]
   },
   {
     "German": "mandy",
-    "English": "Mandy"
+    "English": "Mandy",
+    "ExampleSentence": "Mandy tanzt wirklich sehr gut."
   },
   {
     "German": "vertraute",
-    "English": "trusted"
+    "English": "trusted",
+    "ExampleSentence": "Er vertraute ihr völlig.",
+    "Highlights": [
+      {
+        "Word": "vertraute",
+        "Reason": "Präteritum"
+      },
+      {
+        "Word": "ihr",
+        "Reason": "dative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "schätzt",
-    "English": "estimates"
+    "English": "estimates",
+    "ExampleSentence": "Er schätzt ihre Ehrlichkeit sehr."
   },
   {
     "German": "freuden",
-    "English": "joys"
+    "English": "joys",
+    "Article": "die",
+    "ExampleSentence": "Kleine Freuden zählen im Alltag.",
+    "Highlights": [
+      {
+        "Word": "im",
+        "Reason": "dative contraction (in dem), not nominative"
+      }
+    ]
   },
   {
     "German": "dauer",
-    "English": "duration"
+    "English": "duration",
+    "Article": "die",
+    "ExampleSentence": "Die Dauer variiert stark."
   },
   {
     "German": "regt",
-    "English": "annoys"
+    "English": "annoys",
+    "ExampleSentence": "Das regt ihn auf.",
+    "Highlights": [
+      {
+        "Word": "ihn",
+        "Reason": "accusative pronoun, not nominative"
+      }
+    ]
   },
   {
     "German": "verbessert",
-    "English": "improved"
+    "English": "improved",
+    "ExampleSentence": "Die Note verbessert sich."
   },
   {
     "German": "unerwartet",
-    "English": "unexpected"
+    "English": "unexpected",
+    "ExampleSentence": "Der Erfolg kommt unerwartet."
   },
   {
     "German": "drogendealer",
-    "English": "drug dealer"
+    "English": "drug dealer",
+    "Article": "der",
+    "ExampleSentence": "Der Drogendealer verkauft Drogen."
   },
   {
     "German": "gefährlichen",
-    "English": "dangerous"
+    "English": "dangerous",
+    "ExampleSentence": "Die gefährlichen Straßen sind bekannt."
   },
   {
     "German": "fach",
-    "English": "subject"
+    "English": "subject",
+    "Article": "das",
+    "ExampleSentence": "Deutsch ist ein schwieriges Fach."
   },
   {
     "German": "verdanke",
-    "English": "owe"
+    "English": "owe",
+    "ExampleSentence": "Ich verdanke ihm alles.",
+    "Highlights": [
+      {
+        "Word": "ihm",
+        "Reason": "dative pronoun (object of verdanken), not nominative"
+      }
+    ]
   },
   {
     "German": "wohnungen",
-    "English": "apartments"
+    "English": "apartments",
+    "Article": "die",
+    "ExampleSentence": "Die Wohnungen sind sehr teuer."
   },
   {
     "German": "commissioner",
-    "English": "commissioner"
+    "English": "commissioner",
+    "Article": "der",
+    "ExampleSentence": "Der Commissioner leitet die Ermittlung."
   },
   {
     "German": "cross",
-    "English": "cross"
+    "English": "cross",
+    "ExampleSentence": "Er spielt den Ball cross.",
+    "Highlights": [
+      {
+        "Word": "den",
+        "Reason": "accusative masculine article (direct object), not nominative der"
+      }
+    ]
   },
   {
     "German": "kragen",
-    "English": "collar"
+    "English": "collar",
+    "Article": "der",
+    "ExampleSentence": "Der Kragen sitzt sehr eng."
   },
   {
     "German": "schwachen",
-    "English": "weak"
+    "English": "weak",
+    "ExampleSentence": "Die schwachen Spieler verlieren oft."
   },
   {
     "German": "mercedes",
-    "English": "Mercedes"
+    "English": "Mercedes",
+    "ExampleSentence": "Der Mercedes fährt sehr schnell."
   },
   {
     "German": "klirren",
-    "English": "clink"
+    "English": "clink",
+    "ExampleSentence": "Die Gläser klirren laut."
   },
   {
     "German": "valentinstag",
-    "English": "Valentine's Day"
+    "English": "Valentine's Day",
+    "Article": "der",
+    "ExampleSentence": "Der Valentinstag naht schon wieder."
   },
   {
     "German": "anstelle",
-    "English": "instead of"
+    "English": "instead of",
+    "ExampleSentence": "Er kommt anstelle seines Bruders.",
+    "Highlights": [
+      {
+        "Word": "seines",
+        "Reason": "genitive possessive pronoun, required by preposition anstelle + genitive"
+      }
+    ]
   },
   {
     "German": "plane",
-    "English": "plan"
+    "English": "plan",
+    "ExampleSentence": "Ich plane meine nächste Reise."
   },
   {
     "German": "reizende",
-    "English": "charming"
+    "English": "charming",
+    "ExampleSentence": "Das ist eine reizende Idee."
   },
   {
     "German": "höheren",
-    "English": "higher"
+    "English": "higher",
+    "ExampleSentence": "Er strebt nach höheren Zielen.",
+    "Highlights": [
+      {
+        "Word": "höheren",
+        "Reason": "dative plural adjective ending, required by preposition nach + dative"
+      }
+    ]
   },
   {
     "German": "markiert",
-    "English": "marked"
+    "English": "marked",
+    "ExampleSentence": "Er markiert die Stelle deutlich."
   },
   {
     "German": "ehrenwort",
-    "English": "word of honor"
+    "English": "word of honor",
+    "Article": "das",
+    "ExampleSentence": "Sein Ehrenwort zählt sehr viel."
   }
 ]
