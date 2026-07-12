@@ -8,6 +8,26 @@
                  WindowStartupLocation="CenterScreen"
                  ExtendsContentIntoTitleBar="True"
                  WindowBackdropType="Mica">
+    <ui:FluentWindow.Resources>
+        <ItemsPanelTemplate x:Key="SentenceWordsPanel">
+            <WrapPanel HorizontalAlignment="Center" />
+        </ItemsPanelTemplate>
+        <DataTemplate x:Key="SentenceWordTemplate">
+            <TextBlock Text="{Binding Text}" FontSize="16" Opacity="0.85" Margin="0,0,6,0" ToolTip="{Binding Reason}">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsHighlighted}" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource AccentTextFillColorPrimaryBrush}" />
+                                <Setter Property="FontWeight" Value="SemiBold" />
+                                <Setter Property="Opacity" Value="1" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </DataTemplate>
+    </ui:FluentWindow.Resources>
     <Grid Margin="16">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -62,36 +82,23 @@
                 <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock Text="{Binding FrontText}" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center" TextWrapping="Wrap" />
 
+                    <!-- Source-language sentence on the front: it's in the prompt's language, so it never leaks the answer. -->
                     <ItemsControl Margin="0,16,0,0" ItemsSource="{Binding SentenceWords}"
-                                  Visibility="{Binding ExampleSentence, Converter={StaticResource NullOrEmptyToVisibilityConverter}}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel HorizontalAlignment="Center" />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Text}" FontSize="16" Opacity="0.85" Margin="0,0,6,0" ToolTip="{Binding Reason}">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding IsHighlighted}" Value="True">
-                                                    <Setter Property="Foreground" Value="{DynamicResource AccentTextFillColorPrimaryBrush}" />
-                                                    <Setter Property="FontWeight" Value="SemiBold" />
-                                                    <Setter Property="Opacity" Value="1" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                                  ItemsPanel="{StaticResource SentenceWordsPanel}"
+                                  ItemTemplate="{StaticResource SentenceWordTemplate}"
+                                  Visibility="{Binding ExampleSentence, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
 
-                    <TextBlock Margin="0,20,0,0" FontSize="26" Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
-                               HorizontalAlignment="Center" TextWrapping="Wrap"
-                               Text="{Binding BackText}"
-                               Visibility="{Binding IsAnswerShown, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <!-- Answer and its destination-language sentence stay hidden until the card is flipped. -->
+                    <StackPanel Visibility="{Binding IsAnswerShown, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Margin="0,20,0,0" FontSize="26" Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
+                                   HorizontalAlignment="Center" TextWrapping="Wrap"
+                                   Text="{Binding BackText}" />
+
+                        <ItemsControl Margin="0,16,0,0" ItemsSource="{Binding BackSentenceWords}"
+                                      ItemsPanel="{StaticResource SentenceWordsPanel}"
+                                      ItemTemplate="{StaticResource SentenceWordTemplate}"
+                                      Visibility="{Binding BackExampleSentence, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
+                    </StackPanel>
                 </StackPanel>
 
                 <Grid Grid.Row="2" Margin="0,20,0,0">

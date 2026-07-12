@@ -6,6 +6,7 @@ using AllItems.Translation.Core.Translation;
 using AllItems.Translation.Infrastructure.Credentials;
 using AllItems.Translation.Infrastructure.GoogleTranslation;
 using AllItems.Translation.Infrastructure.Persistence;
+using AllItems.Translation.Infrastructure.Settings;
 using AllItems.Translation.Infrastructure.Vocabulary;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,6 +23,7 @@ public static class ServiceCollectionExtensions
 
         services.AddSingleton<IClock, SystemClock>();
         services.AddSingleton<ICredentialStore, FileCredentialStore>();
+        services.AddSingleton<IStudyPreferenceStore, FileStudyPreferenceStore>();
         services.AddSingleton<ISentenceTokenizer, SentenceTokenizer>();
         services.AddSingleton<IWordAligner, PositionalWordAligner>();
         services.AddSingleton<ITranslationProvider, GoogleTranslationProvider>();

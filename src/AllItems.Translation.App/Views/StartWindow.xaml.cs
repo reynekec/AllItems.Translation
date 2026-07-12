@@ -23,6 +23,13 @@ public partial class StartWindow : FluentWindow
     private void OnTrainingClick(object sender, RoutedEventArgs e) =>
         OpenSection(_services.GetRequiredService<TrainingWindow>());
 
+    private void OnSettingsClick(object sender, RoutedEventArgs e)
+    {
+        var window = _services.GetRequiredService<CredentialSetupWindow>();
+        window.Owner = this;
+        window.ShowDialog();
+    }
+
     private void OpenSection(Window window)
     {
         window.Closed += (_, _) => Show();

@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using AllItems.Translation.Core.Abstractions;
 using AllItems.Translation.Core.Domain;
 using AllItems.Translation.Core.Study;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -6,20 +7,40 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace AllItems.Translation.App.ViewModels;
 
-public sealed partial class StudySessionViewModel(IStudySessionService studySessionService) : ObservableObject
+public sealed partial class StudySessionViewModel : ObservableObject
 {
     private const int SessionSize = 20;
+
+    private readonly IStudySessionService _studySessionService;
+    private readonly IStudyPreferenceStore _preferenceStore;
 
     private IReadOnlyList<StudyCard> _cards = [];
     private int _currentIndex;
 
+    public StudySessionViewModel(IStudySessionService studySessionService, IStudyPreferenceStore preferenceStore)
+    {
+        _studySessionService = studySessionService;
+        _preferenceStore = preferenceStore;
+
+        var preferences = preferenceStore.Load();
+        sourceLanguage = preferences.SourceLanguage;
+        targetLanguage = preferences.TargetLanguage;
+    }
+
     public IReadOnlyList<Language> AvailableLanguages { get; } = Enum.GetValues<Language>();
 
     [ObservableProperty]
-    private Language sourceLanguage = Language.German;
+    private Language sourceLanguage;
 
     [ObservableProperty]
-    private Language targetLanguage = Language.Afrikaans;
+    private Language targetLanguage;
+
+    partial void OnSourceLanguageChanged(Language value) => SavePreferences();
+
+    partial void OnTargetLanguageChanged(Language value) => SavePreferences();
+
+    private void SavePreferences() =>
+        _preferenceStore.Save(new StudyPreferences(SourceLanguage, TargetLanguage));
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsSetupVisible))]
@@ -45,6 +66,11 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
     private string? exampleSentence;
 
     public ObservableCollection<SentenceWordViewModel> SentenceWords { get; } = [];
+
+    [ObservableProperty]
+    private string? backExampleSentence;
+
+    public ObservableCollection<SentenceWordViewModel> BackSentenceWords { get; } = [];
 
     [ObservableProperty]
     private string progressText = string.Empty;
@@ -82,7 +108,7 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
             IsLeechMode = false;
             ReviewedCount = 0;
             _currentIndex = 0;
-            _cards = await studySessionService.BuildSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
+            _cards = await _studySessionService.BuildSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
 
             if (_cards.Count == 0)
             {
@@ -122,7 +148,7 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
             IsLeechMode = true;
             ReviewedCount = 0;
             _currentIndex = 0;
-            _cards = await studySessionService.BuildLeechSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
+            _cards = await _studySessionService.BuildLeechSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
 
             if (_cards.Count == 0)
             {
@@ -151,22 +177,7 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
     private Task RestartAsync() => IsLeechMode ? StartLeechSessionAsync() : StartSessionAsync();
 
     [RelayCommand]
-    private void ShowAnswer()
-    {
-        IsAnswerShown = true;
-
-        var card = _cards[_currentIndex];
-        if (!card.IsGermanFront)
-        {
-            // The German example sentence would give away the answer if shown alongside the prompt, so it's
-            // only populated once the answer is revealed.
-            ExampleSentence = card.ExampleSentence;
-            foreach (var word in BuildSentenceWords(card.ExampleSentence, card.Highlights))
-            {
-                SentenceWords.Add(word);
-            }
-        }
-    }
+    private void ShowAnswer() => IsAnswerShown = true;
 
     [RelayCommand(CanExecute = nameof(CanGrade))]
     private async Task GradeAsync(ReviewGrade grade)
@@ -174,7 +185,7 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
         IsBusy = true;
         try
         {
-            await studySessionService.RecordAnswerAsync(_cards[_currentIndex], grade);
+            await _studySessionService.RecordAnswerAsync(_cards[_currentIndex], grade);
             ReviewedCount++;
             _currentIndex++;
 
@@ -202,29 +213,23 @@ public sealed partial class StudySessionViewModel(IStudySessionService studySess
     private void ShowCurrentCard()
     {
         var card = _cards[_currentIndex];
+        FrontText = card.Article is null ? card.FrontText : $"{card.Article} {card.FrontText}";
+        BackText = card.BackText;
 
-        // Article/ExampleSentence/Highlights are always German-language content. When German is the answer
-        // rather than the prompt, they belong on the back and must wait until ShowAnswer reveals it.
-        if (card.IsGermanFront)
-        {
-            FrontText = card.Article is null ? card.FrontText : $"{card.Article} {card.FrontText}";
-            BackText = card.BackText;
-        }
-        else
-        {
-            FrontText = card.FrontText;
-            BackText = card.Article is null ? card.BackText : $"{card.Article} {card.BackText}";
-        }
-
-        ExampleSentence = card.IsGermanFront ? card.ExampleSentence : null;
-
+        // The front example sentence is always in the prompt's language, so it never leaks the answer
+        // and can be shown immediately.
+        ExampleSentence = card.ExampleSentence;
         SentenceWords.Clear();
-        if (card.IsGermanFront)
+        foreach (var word in BuildSentenceWords(card.ExampleSentence, card.Highlights))
         {
-            foreach (var word in BuildSentenceWords(card.ExampleSentence, card.Highlights))
-            {
-                SentenceWords.Add(word);
-            }
+            SentenceWords.Add(word);
+        }
+
+        BackExampleSentence = card.BackExampleSentence;
+        BackSentenceWords.Clear();
+        foreach (var word in BuildSentenceWords(card.BackExampleSentence, card.BackHighlights))
+        {
+            BackSentenceWords.Add(word);
         }
 
         IsAnswerShown = false;

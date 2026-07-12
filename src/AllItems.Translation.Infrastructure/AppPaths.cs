@@ -11,9 +11,12 @@ public static class AppPaths
 
     public static string CredentialFilePath => Path.Combine(DataRoot, "credentials", "service-account.json");
 
+    public static string StudyPreferencesFilePath => Path.Combine(DataRoot, "settings", "study-preferences.json");
+
     public static void EnsureDirectoriesExist()
     {
         Directory.CreateDirectory(Path.GetDirectoryName(DatabaseFilePath)!);
         Directory.CreateDirectory(Path.GetDirectoryName(CredentialFilePath)!);
+        Directory.CreateDirectory(Path.GetDirectoryName(StudyPreferencesFilePath)!);
     }
 }

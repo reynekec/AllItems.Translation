@@ -18,4 +18,13 @@ public class WordTranslation
 
     public int UsageCount { get; set; }
     public DateTime CreatedAtUtc { get; set; }
+
+    /// <summary>
+    /// The example sentence (and its highlights) for this meaning in the target language, resolved
+    /// from the target-language word entry when a study card is built. Lets a card show the answer in
+    /// context on its back. Null/empty when that word has no authored sentence.
+    /// </summary>
+    public string? ExampleSentence { get; set; }
+
+    public List<SentenceHighlight> Highlights { get; set; } = [];
 }

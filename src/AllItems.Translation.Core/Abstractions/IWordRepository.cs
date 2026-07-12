@@ -22,10 +22,9 @@ public interface IWordRepository
     /// Words in <paramref name="sourceLanguage"/> that have a preferred translation into
     /// <paramref name="targetLanguage"/> - the study-session card pool for that language pair.
     /// Each returned entry's <see cref="WordEntry.Translations"/> contains just that one preferred translation.
-    /// The Dictionary is German-rooted (every <see cref="WordEntry"/> is a German word, with translations into
-    /// the other languages) - when <paramref name="sourceLanguage"/> isn't German but <paramref name="targetLanguage"/>
-    /// is, this transparently looks up the reverse direction instead so studying "German" from a non-German
-    /// source language still finds cards.
+    /// The bulk import stores both directions (German-&gt;X and X-&gt;German) as their own word entries, so every
+    /// study pair is a direct lookup; the preferred translation additionally carries the answer's own
+    /// example sentence for the card back.
     /// </summary>
     Task<IReadOnlyList<WordEntry>> GetWordsWithPreferredTranslationAsync(Language sourceLanguage, Language targetLanguage, CancellationToken cancellationToken = default);
 
@@ -34,12 +33,10 @@ public interface IWordRepository
     Task UpdateTranslationTextAsync(int translationId, string newText, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Words matching the given ids, each with its preferred translation for the (<paramref name="sourceLanguage"/>,
-    /// <paramref name="targetLanguage"/>) study direction loaded if one exists - used to build a flashcard session
-    /// from a specific set of words (e.g. leeches). See <see cref="GetWordsWithPreferredTranslationAsync"/> for the
-    /// reverse-direction lookup this also applies when studying "German" from a non-German source language.
+    /// Words matching the given ids, each with its preferred translation into <paramref name="targetLanguage"/>
+    /// loaded if one exists - used to build a flashcard session from a specific set of words (e.g. leeches).
     /// </summary>
-    Task<IReadOnlyList<WordEntry>> GetWordsByIdsAsync(IReadOnlyCollection<int> wordEntryIds, Language sourceLanguage, Language targetLanguage, CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<WordEntry>> GetWordsByIdsAsync(IReadOnlyCollection<int> wordEntryIds, Language targetLanguage, CancellationToken cancellationToken = default);
 
     /// <summary>Sets (overwriting any previous value) the article, example sentence, and highlighted words for a word entry.</summary>
     Task SetStudyContentAsync(int wordEntryId, string? article, string exampleSentence, IReadOnlyList<SentenceHighlight> highlights, CancellationToken cancellationToken = default);

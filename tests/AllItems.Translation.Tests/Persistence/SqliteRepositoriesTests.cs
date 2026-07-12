@@ -20,15 +20,21 @@ public sealed class SqliteRepositoriesTests : IDisposable
     public SqliteRepositoriesTests()
     {
         _databasePath = Path.Combine(Path.GetTempPath(), $"allitems-test-{Guid.NewGuid():N}.db");
-        _connectionFactory = new SqliteConnectionFactory($"Data Source={_databasePath}");
+        // Pooling=False so no handle survives the connection's Dispose(); otherwise WAL mode keeps
+        // the file locked and the cleanup below throws on Windows.
+        _connectionFactory = new SqliteConnectionFactory($"Data Source={_databasePath};Pooling=False");
         new DatabaseInitializer(_connectionFactory).InitializeAsync().GetAwaiter().GetResult();
     }
 
     public void Dispose()
     {
-        if (File.Exists(_databasePath))
+        // WAL mode leaves -wal/-shm sidecar files alongside the database; remove all three.
+        foreach (var path in new[] { _databasePath, _databasePath + "-wal", _databasePath + "-shm" })
         {
-            File.Delete(_databasePath);
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
         }
     }
 
@@ -154,6 +160,43 @@ public sealed class SqliteRepositoriesTests : IDisposable
     }
 
     [Fact]
+    public async Task ImportWordsAsync_StoresBothDirectionsWithLanguageSpecificSentences()
+    {
+        var repository = new WordRepository(_connectionFactory, _clock);
+        var words = new List<VocabularyWord>
+        {
+            new("Apfel", "apple", "der", "Der Apfel ist rot.", [new SentenceHighlight("Apfel", "noun")],
+                "The apple is red.", [new SentenceHighlight("apple", "noun")]),
+            new("gehen", "to go")
+        };
+
+        await repository.ImportWordsAsync(Language.German, words);
+
+        // Forward (German -> English): the German entry keeps its German sentence for the front, and
+        // its preferred translation carries the English sentence (looked up) for the back.
+        var forward = await repository.GetWordsWithPreferredTranslationAsync(Language.German, Language.English);
+        var apfel = Assert.Single(forward, w => w.NormalizedText == "apfel");
+        Assert.Equal("Der Apfel ist rot.", apfel.ExampleSentence);
+        Assert.Equal("apple", apfel.Translations[0].TargetText);
+        Assert.Equal("The apple is red.", apfel.Translations[0].ExampleSentence);
+
+        // Reverse (English -> German): the English entry owns the English sentence (no German copy,
+        // no article), and its preferred translation carries the German sentence for the back.
+        var reverse = await repository.GetWordsWithPreferredTranslationAsync(Language.English, Language.German);
+        var apple = Assert.Single(reverse, w => w.NormalizedText == "apple");
+        Assert.Null(apple.Article);
+        Assert.Equal("The apple is red.", apple.ExampleSentence);
+        Assert.Equal("apple", Assert.Single(apple.Highlights).Word);
+        Assert.Equal("der Apfel", apple.Translations[0].TargetText);
+        Assert.Equal("Der Apfel ist rot.", apple.Translations[0].ExampleSentence);
+
+        // A word with no English sentence authored simply has none on the English side.
+        var toGo = Assert.Single(reverse, w => w.NormalizedText == "to go");
+        Assert.Null(toGo.ExampleSentence);
+        Assert.Equal("gehen", toGo.Translations[0].TargetText);
+    }
+
+    [Fact]
     public async Task SentenceTranslationRepository_SaveThenFind_RoundTrips()
     {
         var repository = new SentenceTranslationRepository(_connectionFactory, _clock);
@@ -225,22 +268,6 @@ public sealed class SqliteRepositoriesTests : IDisposable
         var words = await repository.GetWordsWithPreferredTranslationAsync(Language.German, Language.Afrikaans);
 
         Assert.Empty(words);
-    }
-
-    [Fact]
-    public async Task GetWordsWithPreferredTranslationAsync_NonGermanSourceAndGermanTarget_LooksUpReverseDirection()
-    {
-        var repository = new WordRepository(_connectionFactory, _clock);
-        var entry = await repository.GetOrCreateAsync(Language.German, "hund");
-        await repository.AddTranslationAsync(entry.Id, Language.English, "dog", isPreferred: true);
-
-        var words = await repository.GetWordsWithPreferredTranslationAsync(Language.English, Language.German);
-
-        var word = Assert.Single(words);
-        Assert.Equal("hund", word.NormalizedText);
-        var translation = Assert.Single(word.Translations);
-        Assert.Equal("dog", translation.TargetText);
-        Assert.Equal(Language.English, translation.TargetLanguage);
     }
 
     [Fact]
@@ -361,7 +388,7 @@ public sealed class SqliteRepositoriesTests : IDisposable
         await wordRepository.SetStudyContentAsync(entry.Id, null, "Ich ging nach Hause.", [new SentenceHighlight("ging", "past tense")]);
         await wordRepository.SetStudyContentAsync(entry.Id, null, "Ich gehe nach Hause.", []);
 
-        var words = await wordRepository.GetWordsByIdsAsync([entry.Id], Language.German, Language.English);
+        var words = await wordRepository.GetWordsByIdsAsync([entry.Id], Language.English);
 
         var word = Assert.Single(words);
         Assert.Equal("Ich gehe nach Hause.", word.ExampleSentence);
@@ -373,7 +400,7 @@ public sealed class SqliteRepositoriesTests : IDisposable
     {
         var wordRepository = new WordRepository(_connectionFactory, _clock);
 
-        var words = await wordRepository.GetWordsByIdsAsync([999], Language.German, Language.English);
+        var words = await wordRepository.GetWordsByIdsAsync([999], Language.English);
 
         Assert.Empty(words);
     }

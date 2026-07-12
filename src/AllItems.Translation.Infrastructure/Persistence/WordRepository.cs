@@ -171,13 +171,11 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
     public Task<IReadOnlyList<WordEntry>> GetWordsWithPreferredTranslationAsync(Language sourceLanguage, Language targetLanguage, CancellationToken cancellationToken = default) =>
         connectionFactory.RunAsync(connection =>
         {
-            // Every WordEntry is German-rooted, with translations into the other languages. Studying
-            // "German" from a non-German source (e.g. English -> German) has no German-language WordEntries
-            // to match, so flip the lookup: find the German entry whose preferred translation is the
-            // (non-German) source language instead.
-            var isReverseLookup = sourceLanguage != Language.German && targetLanguage == Language.German;
-            var wordLanguage = isReverseLookup ? targetLanguage : sourceLanguage;
-            var translationLanguage = isReverseLookup ? sourceLanguage : targetLanguage;
+            // The bulk import stores both directions (German->X and X->German) as their own WordEntries,
+            // so a study pair is a direct lookup: source-language entries whose preferred translation is
+            // into the target language. AttachBackContent then resolves the answer's own sentence.
+            var wordLanguage = sourceLanguage;
+            var translationLanguage = targetLanguage;
 
             using var command = connection.CreateCommand();
             command.CommandText = """
@@ -218,10 +216,11 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
             }
 
             AttachHighlights(connection, results);
+            AttachBackContent(connection, results, targetLanguage);
             return (IReadOnlyList<WordEntry>)results;
         }, cancellationToken);
 
-    public Task<IReadOnlyList<WordEntry>> GetWordsByIdsAsync(IReadOnlyCollection<int> wordEntryIds, Language sourceLanguage, Language targetLanguage, CancellationToken cancellationToken = default) =>
+    public Task<IReadOnlyList<WordEntry>> GetWordsByIdsAsync(IReadOnlyCollection<int> wordEntryIds, Language targetLanguage, CancellationToken cancellationToken = default) =>
         connectionFactory.RunAsync(connection =>
         {
             var results = new List<WordEntry>();
@@ -230,11 +229,7 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
                 return (IReadOnlyList<WordEntry>)results;
             }
 
-            // See GetWordsWithPreferredTranslationAsync: WordEntries are German-rooted, so studying "German"
-            // from a non-German source means the wanted translation is the source language, not the target.
-            var isReverseLookup = sourceLanguage != Language.German && targetLanguage == Language.German;
-            var translationLanguage = isReverseLookup ? sourceLanguage : targetLanguage;
-
+            var translationLanguage = targetLanguage;
             var ids = wordEntryIds.ToList();
             var parameterNames = ids.Select((_, index) => $"$id{index}").ToList();
 
@@ -336,24 +331,51 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
 
             foreach (var word in words)
             {
-                var normalized = word.German.ToLowerInvariant();
-                var entryId = GetOrCreateEntryId(connection, transaction, language, normalized);
-                var existingTranslations = GetTranslationTexts(connection, transaction, entryId, Language.English);
-
-                var alreadyKnown = existingTranslations.Any(t => string.Equals(t, word.English, StringComparison.OrdinalIgnoreCase));
-                if (!alreadyKnown)
-                {
-                    InsertTranslation(connection, transaction, entryId, Language.English, word.English, isPreferred: existingTranslations.Count == 0, clock.UtcNow);
-                }
+                // Forward direction (German -> English): the German entry carries the article,
+                // example sentence and highlights so it can be studied with full context.
+                var germanEntryId = GetOrCreateEntryId(connection, transaction, language, word.German.ToLowerInvariant());
+                AddTranslationIfMissing(connection, transaction, germanEntryId, Language.English, word.English);
 
                 if (!string.IsNullOrWhiteSpace(word.ExampleSentence))
                 {
-                    ReplaceStudyContent(connection, transaction, entryId, word.Article, word.ExampleSentence, word.Highlights ?? []);
+                    ReplaceStudyContent(connection, transaction, germanEntryId, word.Article, word.ExampleSentence, word.Highlights ?? []);
+                }
+
+                // Reverse direction (English -> German) so the same words are quizzable both ways.
+                // The article travels with the answer ("der Apfel") to teach gender. The English entry
+                // carries its OWN English example sentence (not a copy of the German one) so that when
+                // English is the source it shows an English sentence on the front. Article stays null
+                // here: it belongs to the German answer, and prepending it would read as "der apple".
+                var englishEntryId = GetOrCreateEntryId(connection, transaction, Language.English, word.English.ToLowerInvariant());
+                var germanAnswer = word.Article is null ? word.German : $"{word.Article} {word.German}";
+                var storedAsPreferred = AddTranslationIfMissing(connection, transaction, englishEntryId, language, germanAnswer);
+
+                if (storedAsPreferred && !string.IsNullOrWhiteSpace(word.EnglishExampleSentence))
+                {
+                    ReplaceStudyContent(connection, transaction, englishEntryId, article: null, word.EnglishExampleSentence, word.EnglishHighlights ?? []);
                 }
             }
 
             transaction.Commit();
         }, cancellationToken);
+
+    /// <summary>
+    /// Adds <paramref name="targetText"/> as a translation unless an equal one already exists.
+    /// Returns true when it was inserted as the entry's first (preferred) translation, which the
+    /// reverse import uses to decide whether to attach the matching example sentence.
+    /// </summary>
+    private bool AddTranslationIfMissing(SqliteConnection connection, SqliteTransaction transaction, int wordEntryId, Language targetLanguage, string targetText)
+    {
+        var existing = GetTranslationTexts(connection, transaction, wordEntryId, targetLanguage);
+        if (existing.Any(t => string.Equals(t, targetText, StringComparison.OrdinalIgnoreCase)))
+        {
+            return false;
+        }
+
+        var isPreferred = existing.Count == 0;
+        InsertTranslation(connection, transaction, wordEntryId, targetLanguage, targetText, isPreferred, clock.UtcNow);
+        return isPreferred;
+    }
 
     private static int GetOrCreateEntryId(SqliteConnection connection, SqliteTransaction transaction, Language language, string normalizedText)
     {
@@ -481,8 +503,114 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
             return;
         }
 
-        var ids = entries.Select(e => e.Id).ToList();
-        var parameterNames = ids.Select((_, index) => $"$hid{index}").ToList();
+        var highlightsByWordId = LoadHighlights(connection, entries.Select(e => e.Id).ToList());
+        foreach (var entry in entries)
+        {
+            if (highlightsByWordId.TryGetValue(entry.Id, out var highlights))
+            {
+                entry.Highlights.AddRange(highlights);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Resolves the destination-language example sentence for each entry's preferred translation, so a
+    /// study card can show the answer in context. The translation text (e.g. "really" or "der Apfel")
+    /// is normalized back to a word entry key and looked up among <paramref name="targetLanguage"/>
+    /// entries; its own sentence/highlights are copied onto the translation.
+    /// </summary>
+    private static void AttachBackContent(SqliteConnection connection, List<WordEntry> entries, Language targetLanguage)
+    {
+        var keyByEntryId = new Dictionary<int, string>();
+        var keys = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var entry in entries)
+        {
+            if (entry.Translations.Count == 0)
+            {
+                continue;
+            }
+
+            var key = NormalizeForLookup(entry.Translations[0].TargetText);
+            keyByEntryId[entry.Id] = key;
+            keys.Add(key);
+        }
+
+        if (keys.Count == 0)
+        {
+            return;
+        }
+
+        var keyList = keys.ToList();
+        var parameterNames = keyList.Select((_, index) => $"$bk{index}").ToList();
+
+        var destByKey = new Dictionary<string, (int Id, string? ExampleSentence)>(StringComparer.Ordinal);
+        using (var command = connection.CreateCommand())
+        {
+            command.CommandText = $"""
+                SELECT Id, NormalizedText, ExampleSentence
+                FROM WordEntries
+                WHERE Language = $language AND NormalizedText IN ({string.Join(",", parameterNames)});
+                """;
+            command.Parameters.AddWithValue("$language", (int)targetLanguage);
+            for (var i = 0; i < keyList.Count; i++)
+            {
+                command.Parameters.AddWithValue(parameterNames[i], keyList[i]);
+            }
+
+            using var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                destByKey[reader.GetString(1)] = (reader.GetInt32(0), reader.IsDBNull(2) ? null : reader.GetString(2));
+            }
+        }
+
+        if (destByKey.Count == 0)
+        {
+            return;
+        }
+
+        var highlightsByDestId = LoadHighlights(connection, destByKey.Values.Select(v => v.Id).Distinct().ToList());
+        foreach (var entry in entries)
+        {
+            if (!keyByEntryId.TryGetValue(entry.Id, out var key) || !destByKey.TryGetValue(key, out var dest))
+            {
+                continue;
+            }
+
+            var translation = entry.Translations[0];
+            translation.ExampleSentence = dest.ExampleSentence;
+            if (highlightsByDestId.TryGetValue(dest.Id, out var highlights))
+            {
+                translation.Highlights.AddRange(highlights);
+            }
+        }
+    }
+
+    /// <summary>Strips a leading German article and lower-cases, mapping a translation back to a word entry key.</summary>
+    private static string NormalizeForLookup(string text)
+    {
+        var trimmed = text.Trim();
+        foreach (var article in (ReadOnlySpan<string>)["der ", "die ", "das "])
+        {
+            if (trimmed.StartsWith(article, StringComparison.OrdinalIgnoreCase))
+            {
+                trimmed = trimmed[article.Length..];
+                break;
+            }
+        }
+
+        return trimmed.ToLowerInvariant();
+    }
+
+    private static Dictionary<int, List<SentenceHighlight>> LoadHighlights(SqliteConnection connection, IReadOnlyList<int> wordEntryIds)
+    {
+        var highlightsByWordId = new Dictionary<int, List<SentenceHighlight>>();
+        if (wordEntryIds.Count == 0)
+        {
+            return highlightsByWordId;
+        }
+
+        var parameterNames = wordEntryIds.Select((_, index) => $"$hid{index}").ToList();
 
         using var command = connection.CreateCommand();
         command.CommandText = $"""
@@ -491,34 +619,25 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
             WHERE WordEntryId IN ({string.Join(",", parameterNames)})
             ORDER BY WordEntryId, Position;
             """;
-        for (var i = 0; i < ids.Count; i++)
+        for (var i = 0; i < wordEntryIds.Count; i++)
         {
-            command.Parameters.AddWithValue(parameterNames[i], ids[i]);
+            command.Parameters.AddWithValue(parameterNames[i], wordEntryIds[i]);
         }
 
-        var highlightsByWordId = new Dictionary<int, List<SentenceHighlight>>();
-        using (var reader = command.ExecuteReader())
+        using var reader = command.ExecuteReader();
+        while (reader.Read())
         {
-            while (reader.Read())
+            var wordEntryId = reader.GetInt32(0);
+            if (!highlightsByWordId.TryGetValue(wordEntryId, out var list))
             {
-                var wordEntryId = reader.GetInt32(0);
-                if (!highlightsByWordId.TryGetValue(wordEntryId, out var list))
-                {
-                    list = [];
-                    highlightsByWordId[wordEntryId] = list;
-                }
-
-                list.Add(new SentenceHighlight(reader.GetString(1), reader.GetString(2)));
+                list = [];
+                highlightsByWordId[wordEntryId] = list;
             }
+
+            list.Add(new SentenceHighlight(reader.GetString(1), reader.GetString(2)));
         }
 
-        foreach (var entry in entries)
-        {
-            if (highlightsByWordId.TryGetValue(entry.Id, out var highlights))
-            {
-                entry.Highlights.AddRange(highlights);
-            }
-        }
+        return highlightsByWordId;
     }
 
     private static void ClearPreferred(SqliteConnection connection, SqliteTransaction transaction, int wordEntryId, Language targetLanguage)

@@ -4,9 +4,8 @@ namespace AllItems.Translation.Core.Study;
 
 /// <summary>
 /// One flashcard: a source word to recall, and the target-language meaning as the answer.
-/// <see cref="Article"/>, <see cref="ExampleSentence"/>, and <see cref="Highlights"/> are always German-language
-/// content: when <see cref="IsGermanFront"/> is false (studying "German" from a non-German source), they
-/// describe the answer, not the prompt, and a UI must not reveal them until after the answer is shown.
+/// The front carries the source-language example sentence; the back carries the destination-language
+/// one, so the sentence always reads in the language of the side it sits on.
 /// </summary>
 public sealed record StudyCard(
     int WordEntryId,
@@ -17,5 +16,6 @@ public sealed record StudyCard(
     IReadOnlyList<SentenceHighlight> Highlights,
     Language TargetLanguage,
     string BackText,
-    WordReviewState ReviewState,
-    bool IsGermanFront);
+    string? BackExampleSentence,
+    IReadOnlyList<SentenceHighlight> BackHighlights,
+    WordReviewState ReviewState);
