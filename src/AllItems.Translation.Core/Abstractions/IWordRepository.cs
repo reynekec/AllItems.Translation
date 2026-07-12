@@ -17,6 +17,13 @@ public interface IWordRepository
     /// <summary>All known words with all their translations, for the Dictionary Manager screen.</summary>
     Task<IReadOnlyList<WordEntry>> GetAllWithTranslationsAsync(CancellationToken cancellationToken = default);
 
+    /// <summary>
+    /// Words in <paramref name="sourceLanguage"/> that have a preferred translation into
+    /// <paramref name="targetLanguage"/> - the study-session card pool for that language pair.
+    /// Each returned entry's <see cref="WordEntry.Translations"/> contains just that one preferred translation.
+    /// </summary>
+    Task<IReadOnlyList<WordEntry>> GetWordsWithPreferredTranslationAsync(Language sourceLanguage, Language targetLanguage, CancellationToken cancellationToken = default);
+
     Task DeleteTranslationAsync(int translationId, CancellationToken cancellationToken = default);
 
     Task UpdateTranslationTextAsync(int translationId, string newText, CancellationToken cancellationToken = default);

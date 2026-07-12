@@ -28,6 +28,8 @@ public partial class App : Application
                 services.AddTransient<DictionaryManagerWindow>();
                 services.AddTransient<CredentialSetupViewModel>();
                 services.AddTransient<CredentialSetupWindow>();
+                services.AddTransient<StudySessionViewModel>();
+                services.AddTransient<StudySessionWindow>();
             })
             .Build();
 

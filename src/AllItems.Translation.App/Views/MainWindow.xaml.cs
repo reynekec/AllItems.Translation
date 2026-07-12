@@ -16,6 +16,13 @@ public partial class MainWindow : FluentWindow
         _services = services;
     }
 
+    private void OnOpenStudyClick(object sender, RoutedEventArgs e)
+    {
+        var window = _services.GetRequiredService<StudySessionWindow>();
+        window.Owner = this;
+        window.Show();
+    }
+
     private void OnOpenDictionaryClick(object sender, RoutedEventArgs e)
     {
         var window = _services.GetRequiredService<DictionaryManagerWindow>();

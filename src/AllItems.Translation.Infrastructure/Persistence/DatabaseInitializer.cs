@@ -46,6 +46,19 @@ public sealed class DatabaseInitializer(SqliteConnectionFactory connectionFactor
                 );
                 CREATE UNIQUE INDEX IF NOT EXISTS IX_ApiUsageRecords_YearMonth
                     ON ApiUsageRecords (YearMonth);
+
+                CREATE TABLE IF NOT EXISTS ReviewStates (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    WordEntryId INTEGER NOT NULL REFERENCES WordEntries (Id) ON DELETE CASCADE,
+                    TargetLanguage INTEGER NOT NULL,
+                    EasinessFactor REAL NOT NULL DEFAULT 2.5,
+                    IntervalDays INTEGER NOT NULL DEFAULT 0,
+                    Repetitions INTEGER NOT NULL DEFAULT 0,
+                    DueDateUtc TEXT NULL,
+                    LastReviewedUtc TEXT NULL
+                );
+                CREATE UNIQUE INDEX IF NOT EXISTS IX_ReviewStates_WordEntryId_TargetLanguage
+                    ON ReviewStates (WordEntryId, TargetLanguage);
                 """;
             command.ExecuteNonQuery();
         }, cancellationToken);

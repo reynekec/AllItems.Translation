@@ -157,6 +157,41 @@ public sealed class WordRepository(SqliteConnectionFactory connectionFactory, IC
             return (IReadOnlyList<WordEntry>)entriesById.Values.ToList();
         }, cancellationToken);
 
+    public Task<IReadOnlyList<WordEntry>> GetWordsWithPreferredTranslationAsync(Language sourceLanguage, Language targetLanguage, CancellationToken cancellationToken = default) =>
+        connectionFactory.RunAsync(connection =>
+        {
+            using var command = connection.CreateCommand();
+            command.CommandText = """
+                SELECT we.Id, we.NormalizedText, wt.Id, wt.TargetText, wt.IsPreferred, wt.UsageCount, wt.CreatedAtUtc
+                FROM WordEntries we
+                JOIN WordTranslations wt ON wt.WordEntryId = we.Id
+                WHERE we.Language = $sourceLanguage AND wt.TargetLanguage = $targetLanguage AND wt.IsPreferred = 1;
+                """;
+            command.Parameters.AddWithValue("$sourceLanguage", (int)sourceLanguage);
+            command.Parameters.AddWithValue("$targetLanguage", (int)targetLanguage);
+
+            var results = new List<WordEntry>();
+            using var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                var entryId = reader.GetInt32(0);
+                var entry = new WordEntry { Id = entryId, Language = sourceLanguage, NormalizedText = reader.GetString(1) };
+                entry.Translations.Add(new WordTranslation
+                {
+                    Id = reader.GetInt32(2),
+                    WordEntryId = entryId,
+                    TargetLanguage = targetLanguage,
+                    TargetText = reader.GetString(3),
+                    IsPreferred = reader.GetInt64(4) != 0,
+                    UsageCount = reader.GetInt32(5),
+                    CreatedAtUtc = ParseUtc(reader.GetString(6))
+                });
+                results.Add(entry);
+            }
+
+            return (IReadOnlyList<WordEntry>)results;
+        }, cancellationToken);
+
     public Task DeleteTranslationAsync(int translationId, CancellationToken cancellationToken = default) =>
         connectionFactory.RunAsync(connection =>
         {

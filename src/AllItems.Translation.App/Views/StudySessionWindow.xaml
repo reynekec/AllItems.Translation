@@ -1,0 +1,85 @@
+<ui:FluentWindow x:Class="AllItems.Translation.App.Views.StudySessionWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:study="clr-namespace:AllItems.Translation.Core.Study;assembly=AllItems.Translation.Core"
+                 Title="Study"
+                 Height="560" Width="620"
+                 WindowStartupLocation="CenterScreen"
+                 ExtendsContentIntoTitleBar="True"
+                 WindowBackdropType="Mica">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Grid.Row="0" Title="Study" />
+
+        <Grid Grid.Row="1" Margin="0,16,0,0">
+
+            <!-- Setup panel -->
+            <StackPanel Visibility="{Binding IsSetupVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <TextBlock Text="I know:" Margin="0,0,0,4" />
+                <ComboBox ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding SourceLanguage}" Width="200" HorizontalAlignment="Left" />
+
+                <TextBlock Text="Quiz me on:" Margin="0,16,0,4" />
+                <ComboBox ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding TargetLanguage}" Width="200" HorizontalAlignment="Left" />
+
+                <ui:Button Content="Start Session" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Left"
+                           Command="{Binding StartSessionCommand}" />
+
+                <TextBlock Margin="0,16,0,0" TextWrapping="Wrap" Opacity="0.8"
+                           Text="{Binding StatusMessage}"
+                           Visibility="{Binding StatusMessage, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
+            </StackPanel>
+
+            <!-- Session complete panel -->
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Visibility="{Binding IsSessionComplete, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <TextBlock Text="Session complete!" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" />
+                <TextBlock Margin="0,8,0,0" HorizontalAlignment="Center">
+                    <Run Text="Reviewed " /><Run Text="{Binding ReviewedCount, Mode=OneWay}" /><Run Text=" card(s)." />
+                </TextBlock>
+                <ui:Button Content="Study Again" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center"
+                           Command="{Binding StartSessionCommand}" />
+            </StackPanel>
+
+            <!-- Active card panel -->
+            <Grid Visibility="{Binding IsSessionActive, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="{Binding ProgressText}" Opacity="0.6" HorizontalAlignment="Center" />
+
+                <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding FrontText}" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center" TextWrapping="Wrap" />
+
+                    <TextBlock Margin="0,20,0,0" FontSize="26" Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
+                               HorizontalAlignment="Center" TextWrapping="Wrap"
+                               Text="{Binding BackText}"
+                               Visibility="{Binding IsAnswerShown, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                </StackPanel>
+
+                <Grid Grid.Row="2" Margin="0,20,0,0">
+                    <ui:Button Content="Show Answer" Appearance="Primary" HorizontalAlignment="Center"
+                               Command="{Binding ShowAnswerCommand}"
+                               Visibility="{Binding IsAnswerShown, Converter={StaticResource InverseBooleanToVisibilityConverter}}" />
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                                Visibility="{Binding IsAnswerShown, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <ui:Button Content="Again" Appearance="Danger" Margin="0,0,8,0"
+                                   Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Again}" />
+                        <ui:Button Content="Good" Appearance="Primary" Margin="0,0,8,0"
+                                   Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Good}" />
+                        <ui:Button Content="Easy" Appearance="Success"
+                                   Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Easy}" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ui:FluentWindow>

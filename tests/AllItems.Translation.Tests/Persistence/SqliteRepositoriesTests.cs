@@ -161,4 +161,86 @@ public sealed class SqliteRepositoriesTests : IDisposable
 
         Assert.Equal(7, await tracker.GetCurrentMonthUsageAsync());
     }
+
+    [Fact]
+    public async Task GetWordsWithPreferredTranslationAsync_OnlyReturnsPreferredMeaning()
+    {
+        var repository = new WordRepository(_connectionFactory, _clock);
+        var entry = await repository.GetOrCreateAsync(Language.German, "bank");
+        await repository.AddTranslationAsync(entry.Id, Language.Afrikaans, "bankinstelling", isPreferred: false);
+        var preferred = await repository.AddTranslationAsync(entry.Id, Language.Afrikaans, "bank", isPreferred: true);
+
+        var words = await repository.GetWordsWithPreferredTranslationAsync(Language.German, Language.Afrikaans);
+
+        var word = Assert.Single(words);
+        var translation = Assert.Single(word.Translations);
+        Assert.Equal(preferred.Id, translation.Id);
+        Assert.Equal("bank", translation.TargetText);
+    }
+
+    [Fact]
+    public async Task GetWordsWithPreferredTranslationAsync_ExcludesWordsWithNoPreferredTranslationInThatLanguage()
+    {
+        var repository = new WordRepository(_connectionFactory, _clock);
+        var entry = await repository.GetOrCreateAsync(Language.German, "haus");
+        await repository.AddTranslationAsync(entry.Id, Language.English, "house", isPreferred: true);
+
+        var words = await repository.GetWordsWithPreferredTranslationAsync(Language.German, Language.Afrikaans);
+
+        Assert.Empty(words);
+    }
+
+    [Fact]
+    public async Task ReviewStateRepository_UpsertThenGet_RoundTrips()
+    {
+        var wordRepository = new WordRepository(_connectionFactory, _clock);
+        var entry = await wordRepository.GetOrCreateAsync(Language.German, "hund");
+        var reviewRepository = new SqlReviewStateRepository(_connectionFactory);
+
+        var state = new WordReviewState
+        {
+            WordEntryId = entry.Id,
+            TargetLanguage = Language.Afrikaans,
+            EasinessFactor = 2.6,
+            IntervalDays = 6,
+            Repetitions = 2,
+            DueDateUtc = _clock.UtcNow.AddDays(6),
+            LastReviewedUtc = _clock.UtcNow
+        };
+        await reviewRepository.UpsertAsync(state);
+
+        var states = await reviewRepository.GetStatesAsync(Language.Afrikaans, [entry.Id]);
+
+        var stored = Assert.Single(states.Values);
+        Assert.Equal(2.6, stored.EasinessFactor);
+        Assert.Equal(6, stored.IntervalDays);
+        Assert.Equal(2, stored.Repetitions);
+        Assert.Equal(state.DueDateUtc, stored.DueDateUtc);
+    }
+
+    [Fact]
+    public async Task ReviewStateRepository_UpsertTwice_UpdatesInPlaceRatherThanDuplicating()
+    {
+        var wordRepository = new WordRepository(_connectionFactory, _clock);
+        var entry = await wordRepository.GetOrCreateAsync(Language.German, "katze");
+        var reviewRepository = new SqlReviewStateRepository(_connectionFactory);
+
+        await reviewRepository.UpsertAsync(new WordReviewState { WordEntryId = entry.Id, TargetLanguage = Language.Afrikaans, Repetitions = 1 });
+        await reviewRepository.UpsertAsync(new WordReviewState { WordEntryId = entry.Id, TargetLanguage = Language.Afrikaans, Repetitions = 2 });
+
+        var states = await reviewRepository.GetStatesAsync(Language.Afrikaans, [entry.Id]);
+
+        var stored = Assert.Single(states.Values);
+        Assert.Equal(2, stored.Repetitions);
+    }
+
+    [Fact]
+    public async Task ReviewStateRepository_UnknownWord_IsAbsentFromResults()
+    {
+        var reviewRepository = new SqlReviewStateRepository(_connectionFactory);
+
+        var states = await reviewRepository.GetStatesAsync(Language.Afrikaans, [999]);
+
+        Assert.Empty(states);
+    }
 }

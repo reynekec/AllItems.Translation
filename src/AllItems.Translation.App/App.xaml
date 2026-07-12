@@ -12,6 +12,8 @@
 
             <converters:NullOrEmptyToVisibilityConverter x:Key="NullOrEmptyToVisibilityConverter" />
             <converters:NullOrEmptyToBoolConverter x:Key="NullOrEmptyToBoolConverter" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
 
             <Style x:Key="WordChipButtonStyle" TargetType="ui:Button">
                 <Setter Property="Margin" Value="0,0,4,4" />

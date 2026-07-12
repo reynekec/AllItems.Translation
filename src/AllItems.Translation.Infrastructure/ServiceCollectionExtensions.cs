@@ -1,4 +1,5 @@
 using AllItems.Translation.Core.Abstractions;
+using AllItems.Translation.Core.Study;
 using AllItems.Translation.Core.Tokenization;
 using AllItems.Translation.Core.Translation;
 using AllItems.Translation.Infrastructure.Credentials;
@@ -27,6 +28,10 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<ISentenceTranslationRepository, SentenceTranslationRepository>();
         services.AddSingleton<IApiUsageTracker, ApiUsageTracker>();
         services.AddSingleton<ISentenceTranslationService, SentenceTranslationService>();
+
+        services.AddSingleton<IReviewStateRepository, SqlReviewStateRepository>();
+        services.AddSingleton<ISpacedRepetitionScheduler, Sm2Scheduler>();
+        services.AddSingleton<IStudySessionService, StudySessionService>();
 
         return services;
     }
