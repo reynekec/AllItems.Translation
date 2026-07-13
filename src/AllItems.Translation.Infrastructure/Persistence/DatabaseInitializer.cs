@@ -74,6 +74,30 @@ public sealed class DatabaseInitializer(SqliteConnectionFactory connectionFactor
                 CREATE UNIQUE INDEX IF NOT EXISTS IX_CurriculumExerciseProgress_ExerciseId
                     ON CurriculumExerciseProgress (ExerciseId);
 
+                CREATE TABLE IF NOT EXISTS CurriculumExerciseAttempts (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    ExerciseId TEXT NOT NULL,
+                    IsCorrect INTEGER NOT NULL,
+                    AttemptedAtUtc TEXT NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS IX_CurriculumExerciseAttempts_ExerciseId
+                    ON CurriculumExerciseAttempts (ExerciseId);
+
+                CREATE TABLE IF NOT EXISTS CurriculumExerciseReviewStates (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    ExerciseId TEXT NOT NULL,
+                    EasinessFactor REAL NOT NULL DEFAULT 2.5,
+                    IntervalDays INTEGER NOT NULL DEFAULT 0,
+                    Repetitions INTEGER NOT NULL DEFAULT 0,
+                    LapseCount INTEGER NOT NULL DEFAULT 0,
+                    CorrectAttempts INTEGER NOT NULL DEFAULT 0,
+                    IncorrectAttempts INTEGER NOT NULL DEFAULT 0,
+                    DueDateUtc TEXT NULL,
+                    LastReviewedUtc TEXT NULL
+                );
+                CREATE UNIQUE INDEX IF NOT EXISTS IX_CurriculumExerciseReviewStates_ExerciseId
+                    ON CurriculumExerciseReviewStates (ExerciseId);
+
                 CREATE TABLE IF NOT EXISTS VocabularyLevelImports (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     Level INTEGER NOT NULL,
@@ -98,6 +122,16 @@ public sealed class DatabaseInitializer(SqliteConnectionFactory connectionFactor
             EnsureColumnExists(connection, "WordEntries", "Article", "TEXT NULL");
             EnsureColumnExists(connection, "WordEntries", "ExampleSentence", "TEXT NULL");
             EnsureColumnExists(connection, "ReviewStates", "LapseCount", "INTEGER NOT NULL DEFAULT 0");
+            EnsureColumnExists(connection, "CurriculumExerciseAttempts", "IsCorrect", "INTEGER NOT NULL DEFAULT 0");
+            EnsureColumnExists(connection, "CurriculumExerciseAttempts", "AttemptedAtUtc", "TEXT NOT NULL DEFAULT ''");
+            EnsureColumnExists(connection, "CurriculumExerciseReviewStates", "EasinessFactor", "REAL NOT NULL DEFAULT 2.5");
+            EnsureColumnExists(connection, "CurriculumExerciseReviewStates", "IntervalDays", "INTEGER NOT NULL DEFAULT 0");
+            EnsureColumnExists(connection, "CurriculumExerciseReviewStates", "Repetitions", "INTEGER NOT NULL DEFAULT 0");
+            EnsureColumnExists(connection, "CurriculumExerciseReviewStates", "LapseCount", "INTEGER NOT NULL DEFAULT 0");
+            EnsureColumnExists(connection, "CurriculumExerciseReviewStates", "CorrectAttempts", "INTEGER NOT NULL DEFAULT 0");
+            EnsureColumnExists(connection, "CurriculumExerciseReviewStates", "IncorrectAttempts", "INTEGER NOT NULL DEFAULT 0");
+            EnsureColumnExists(connection, "CurriculumExerciseReviewStates", "DueDateUtc", "TEXT NULL");
+            EnsureColumnExists(connection, "CurriculumExerciseReviewStates", "LastReviewedUtc", "TEXT NULL");
         }, cancellationToken);
 
     private static void EnsureColumnExists(SqliteConnection connection, string table, string column, string columnDefinition)

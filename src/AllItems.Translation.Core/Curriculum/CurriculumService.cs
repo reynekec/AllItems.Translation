@@ -1,5 +1,6 @@
 using AllItems.Translation.Core.Abstractions;
 using AllItems.Translation.Core.Domain;
+using AllItems.Translation.Core.Study;
 
 namespace AllItems.Translation.Core.Curriculum;
 
@@ -8,7 +9,9 @@ public sealed class CurriculumService(
     ICurriculumProgressRepository progressRepository,
     IExerciseGrader grader,
     IWordRepository wordRepository,
-    IVocabularyImportService vocabularyImportService) : ICurriculumService
+    IVocabularyImportService vocabularyImportService,
+    ISpacedRepetitionScheduler scheduler,
+    IClock clock) : ICurriculumService
 {
     public async Task<IReadOnlyList<LevelSummary>> GetLevelSummariesAsync(CancellationToken cancellationToken = default)
     {
@@ -58,9 +61,84 @@ public sealed class CurriculumService(
             .ToList();
     }
 
+    public async Task<CurriculumRetrainSession> BuildRetrainSessionAsync(CancellationToken cancellationToken = default)
+    {
+        var attemptedIds = await progressRepository.GetAttemptedExerciseIdsAsync(cancellationToken);
+        if (attemptedIds.Count == 0)
+        {
+            return new CurriculumRetrainSession([], 0, 0);
+        }
+
+        var allExercises = Enum.GetValues<CefrLevel>()
+            .SelectMany(level => catalog.GetUnits(level))
+            .SelectMany(unit => unit.Exercises)
+            .ToDictionary(exercise => exercise.Id, StringComparer.Ordinal);
+
+        var eligibleIds = attemptedIds.Where(allExercises.ContainsKey).ToList();
+        if (eligibleIds.Count == 0)
+        {
+            return new CurriculumRetrainSession([], 0, attemptedIds.Count);
+        }
+
+        var states = await progressRepository.GetReviewStatesAsync(eligibleIds, cancellationToken);
+        var now = clock.UtcNow;
+
+        var dueExercises = eligibleIds
+            .Select(id => new CurriculumRetrainExercise(
+                allExercises[id],
+                states.TryGetValue(id, out var state)
+                    ? state
+                    : new CurriculumExerciseReviewState { ExerciseId = id }))
+            .Where(item => item.ReviewState.DueDateUtc is null || item.ReviewState.DueDateUtc <= now)
+            .OrderByDescending(item => item.ReviewState.IncorrectAttempts > 0)
+            .ThenByDescending(item => item.ReviewState.LapseCount)
+            .ThenByDescending(item => item.ReviewState.IncorrectAttempts - item.ReviewState.CorrectAttempts)
+            .ThenBy(item => item.ReviewState.DueDateUtc ?? DateTime.MinValue)
+            .ThenBy(item => item.Exercise.Id, StringComparer.Ordinal)
+            .ToList();
+
+        return new CurriculumRetrainSession(dueExercises, dueExercises.Count, attemptedIds.Count);
+    }
+
     public async Task<GradingResult> SubmitAnswerAsync(Exercise exercise, ExerciseAnswer answer, CancellationToken cancellationToken = default)
     {
         var result = grader.Grade(exercise, answer);
+        await progressRepository.RecordAttemptAsync(exercise.Id, result.IsCorrect, cancellationToken);
+
+        var currentState = (await progressRepository.GetReviewStatesAsync([exercise.Id], cancellationToken))
+            .GetValueOrDefault(exercise.Id)
+            ?? new CurriculumExerciseReviewState { ExerciseId = exercise.Id };
+
+        var scheduledState = scheduler.Schedule(
+            new WordReviewState
+            {
+                EasinessFactor = currentState.EasinessFactor,
+                IntervalDays = currentState.IntervalDays,
+                Repetitions = currentState.Repetitions,
+                LapseCount = currentState.LapseCount,
+                DueDateUtc = currentState.DueDateUtc,
+                LastReviewedUtc = currentState.LastReviewedUtc
+            },
+            result.IsCorrect ? ReviewGrade.Good : ReviewGrade.Again,
+            clock.UtcNow);
+
+        currentState.EasinessFactor = scheduledState.EasinessFactor;
+        currentState.IntervalDays = scheduledState.IntervalDays;
+        currentState.Repetitions = scheduledState.Repetitions;
+        currentState.LapseCount = scheduledState.LapseCount;
+        currentState.DueDateUtc = scheduledState.DueDateUtc;
+        currentState.LastReviewedUtc = scheduledState.LastReviewedUtc;
+        if (result.IsCorrect)
+        {
+            currentState.CorrectAttempts++;
+        }
+        else
+        {
+            currentState.IncorrectAttempts++;
+        }
+
+        await progressRepository.UpsertReviewStateAsync(currentState, cancellationToken);
+
         if (result.IsCorrect)
         {
             await progressRepository.MarkExerciseCompletedAsync(exercise.Id, cancellationToken);

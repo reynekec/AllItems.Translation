@@ -109,7 +109,28 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ui:TitleBar Grid.Row="0" Title="Training" />
+        <ui:TitleBar Grid.Row="0" x:Name="TrainingTitleBar" Title="">
+            <ui:TitleBar.Header>
+                <Grid x:Name="TitleBarLeftContentRoot" Margin="0,0,12,0">
+                    <ui:Button Content="Retrain" Appearance="Secondary"
+                               Command="{Binding OpenRetrainCommand}"
+                               IsEnabled="{Binding IsRetrainButtonEnabled}" />
+                </Grid>
+            </ui:TitleBar.Header>
+            <ui:TitleBar.CenterContent>
+                <Grid x:Name="TitleBarCenterContentRoot" Height="40">
+                    <TextBlock Text="Training"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               TextTrimming="CharacterEllipsis" />
+                </Grid>
+            </ui:TitleBar.CenterContent>
+            <ui:TitleBar.TrailingContent>
+                <Grid x:Name="TitleBarRightContentRoot" Width="0" />
+            </ui:TitleBar.TrailingContent>
+        </ui:TitleBar>
 
         <ScrollViewer Grid.Row="1" Margin="0,16,0,0"
                       x:Name="ContentScrollViewer"
@@ -193,8 +214,9 @@
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
                     <ui:Button Content="&lt; Units" Appearance="Secondary" Margin="0,0,12,0" Command="{Binding BackToUnitsCommand}" />
-                    <TextBlock Text="{Binding SelectedUnit.Title}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,12,0" />
-                    <TextBlock Text="{Binding ExerciseProgressText}" Opacity="0.6" VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding ActiveSessionTitle}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,12,0" />
+                    <TextBlock Text="{Binding ExerciseProgressText}" Opacity="0.6" VerticalAlignment="Center" Margin="0,0,12,0" />
+                    <TextBlock Text="{Binding ActiveSessionProgressDetail}" Opacity="0.6" VerticalAlignment="Center" />
                 </StackPanel>
 
                 <!-- In-progress exercise -->
@@ -237,9 +259,18 @@
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"
                             Visibility="{Binding IsUnitComplete, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <TextBlock Text="Nice work!" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" />
-                    <TextBlock Text="You've completed this unit." Margin="0,8,0,0" Opacity="0.8" HorizontalAlignment="Center" />
+                    <TextBlock Text="You've completed this session." Margin="0,8,0,0" Opacity="0.8" HorizontalAlignment="Center" />
                     <ui:Button Content="Back to units" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center"
                                Command="{Binding BackToUnitsCommand}" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=RetrainEmpty}">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="460">
+                    <TextBlock Text="Mixed retraining" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" />
+                    <TextBlock Text="{Binding RetrainEmptyMessage}" Margin="0,12,0,0" Opacity="0.8" TextAlignment="Center" TextWrapping="Wrap" />
+                    <ui:Button Content="Back to levels" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center"
+                               Command="{Binding BackToLevelsCommand}" />
                 </StackPanel>
             </Grid>
 

@@ -10,6 +10,7 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
     private CefrLevel _selectedLevel;
     private IReadOnlyList<Exercise> _currentExercises = [];
     private int _currentExerciseIndex;
+    private bool _isRetrainSession;
 
     public ObservableCollection<LevelTileViewModel> Levels { get; } = [];
     public ObservableCollection<UnitTileViewModel> Units { get; } = [];
@@ -37,6 +38,18 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
 
     [ObservableProperty]
     private bool isLoadingLevels;
+
+    [ObservableProperty]
+    private string activeSessionTitle = string.Empty;
+
+    [ObservableProperty]
+    private string activeSessionProgressDetail = string.Empty;
+
+    [ObservableProperty]
+    private string retrainEmptyMessage = "No retraining is due yet. Finish or revisit some A1-C2 exercises and due items will appear here.";
+
+    [ObservableProperty]
+    private bool isRetrainButtonEnabled = true;
 
     public void Initialize() => _ = LoadLevelsAsync();
 
@@ -101,9 +114,46 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
         SelectedUnit = unitTile.Unit;
         _currentExercises = unitTile.Unit.Exercises;
         _currentExerciseIndex = Math.Min(unitTile.CompletedExerciseCount, Math.Max(_currentExercises.Count - 1, 0));
+        _isRetrainSession = false;
         IsUnitComplete = false;
+        ActiveSessionTitle = unitTile.Title;
+        ActiveSessionProgressDetail = "Unit training";
         ShowCurrentExercise();
         Screen = TrainingScreen.Exercise;
+    }
+
+    [RelayCommand]
+    private async Task OpenRetrainAsync()
+    {
+        IsRetrainButtonEnabled = false;
+        try
+        {
+            var retrainSession = await curriculumService.BuildRetrainSessionAsync();
+            ActiveSessionTitle = "Mixed retraining";
+            ActiveSessionProgressDetail = $"Due: {retrainSession.DueExerciseCount} | Attempted: {retrainSession.TotalAttemptedExerciseCount}";
+
+            if (retrainSession.Exercises.Count == 0)
+            {
+                _currentExercises = [];
+                _currentExerciseIndex = 0;
+                _isRetrainSession = true;
+                IsUnitComplete = false;
+                Screen = TrainingScreen.RetrainEmpty;
+                return;
+            }
+
+            _currentExercises = retrainSession.Exercises.Select(item => item.Exercise).ToList();
+            _currentExerciseIndex = 0;
+            _isRetrainSession = true;
+            SelectedUnit = null;
+            IsUnitComplete = false;
+            ShowCurrentExercise();
+            Screen = TrainingScreen.Exercise;
+        }
+        finally
+        {
+            IsRetrainButtonEnabled = true;
+        }
     }
 
     private void ShowCurrentExercise()
@@ -144,7 +194,10 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
         if (_currentExerciseIndex >= _currentExercises.Count)
         {
             IsUnitComplete = true;
-            await LoadUnitsAsync();
+            if (!_isRetrainSession)
+            {
+                await LoadUnitsAsync();
+            }
             await LoadLevelsAsync();
             return;
         }
@@ -153,11 +206,16 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
     }
 
     [RelayCommand]
-    private void BackToUnits() => Screen = TrainingScreen.Units;
+    private void BackToUnits()
+    {
+        _isRetrainSession = false;
+        Screen = TrainingScreen.Units;
+    }
 
     [RelayCommand]
     private async Task BackToLevelsAsync()
     {
+        _isRetrainSession = false;
         Screen = TrainingScreen.Levels;
         SelectedLevelProgressText = string.Empty;
         await LoadLevelsAsync();

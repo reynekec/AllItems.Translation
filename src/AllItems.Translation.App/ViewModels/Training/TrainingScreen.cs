@@ -4,5 +4,6 @@ public enum TrainingScreen
 {
     Levels,
     Units,
-    Exercise
+    Exercise,
+    RetrainEmpty
 }

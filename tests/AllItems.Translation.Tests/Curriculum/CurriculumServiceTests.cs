@@ -1,6 +1,7 @@
 using AllItems.Translation.Core.Abstractions;
 using AllItems.Translation.Core.Curriculum;
 using AllItems.Translation.Core.Domain;
+using AllItems.Translation.Core.Study;
 using Moq;
 
 namespace AllItems.Translation.Tests.Curriculum;
@@ -12,8 +13,29 @@ public class CurriculumServiceTests
     private readonly Mock<IExerciseGrader> _grader = new();
     private readonly Mock<IWordRepository> _wordRepository = new();
     private readonly Mock<IVocabularyImportService> _vocabularyImportService = new();
+    private readonly Mock<ISpacedRepetitionScheduler> _scheduler = new();
+    private readonly Mock<IClock> _clock = new();
 
-    private CurriculumService CreateService() => new(_catalog.Object, _progressRepository.Object, _grader.Object, _wordRepository.Object, _vocabularyImportService.Object);
+    private static readonly DateTime Now = new(2026, 7, 13, 0, 0, 0, DateTimeKind.Utc);
+
+    private CurriculumService CreateService() => new(_catalog.Object, _progressRepository.Object, _grader.Object, _wordRepository.Object, _vocabularyImportService.Object, _scheduler.Object, _clock.Object);
+
+    public CurriculumServiceTests()
+    {
+        _clock.Setup(c => c.UtcNow).Returns(Now);
+        _progressRepository.Setup(r => r.GetReviewStatesAsync(It.IsAny<IReadOnlyCollection<string>>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new Dictionary<string, CurriculumExerciseReviewState>());
+        _scheduler.Setup(s => s.Schedule(It.IsAny<WordReviewState>(), It.IsAny<ReviewGrade>(), It.IsAny<DateTime>()))
+            .Returns((WordReviewState current, ReviewGrade grade, DateTime now) => new WordReviewState
+            {
+                EasinessFactor = current.EasinessFactor,
+                IntervalDays = 1,
+                Repetitions = grade == ReviewGrade.Good ? current.Repetitions + 1 : 0,
+                LapseCount = grade == ReviewGrade.Again ? current.LapseCount + 1 : current.LapseCount,
+                DueDateUtc = now.Date.AddDays(1),
+                LastReviewedUtc = now
+            });
+    }
 
     private static CurriculumUnit UnitWithExercises(CefrLevel level, string id, int exerciseCount) => new()
     {
@@ -128,7 +150,9 @@ public class CurriculumServiceTests
         var service = CreateService();
         await service.SubmitAnswerAsync(exercise, answer);
 
+        _progressRepository.Verify(r => r.RecordAttemptAsync(exercise.Id, true, It.IsAny<CancellationToken>()), Times.Once);
         _progressRepository.Verify(r => r.MarkExerciseCompletedAsync(exercise.Id, It.IsAny<CancellationToken>()), Times.Once);
+        _progressRepository.Verify(r => r.UpsertReviewStateAsync(It.Is<CurriculumExerciseReviewState>(state => state.ExerciseId == exercise.Id && state.CorrectAttempts == 1), It.IsAny<CancellationToken>()), Times.Once);
     }
 
     [Fact]
@@ -141,7 +165,55 @@ public class CurriculumServiceTests
         var service = CreateService();
         await service.SubmitAnswerAsync(exercise, answer);
 
+        _progressRepository.Verify(r => r.RecordAttemptAsync(exercise.Id, false, It.IsAny<CancellationToken>()), Times.Once);
         _progressRepository.Verify(r => r.MarkExerciseCompletedAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Never);
+        _progressRepository.Verify(r => r.UpsertReviewStateAsync(It.Is<CurriculumExerciseReviewState>(state => state.ExerciseId == exercise.Id && state.IncorrectAttempts == 1), It.IsAny<CancellationToken>()), Times.Once);
+    }
+
+    [Fact]
+    public async Task BuildRetrainSessionAsync_ReturnsOnlyAttemptedDueExercises_WeakOnesFirst()
+    {
+        var weakExercise = UnitWithExercises(CefrLevel.A1, "a1-u1", 1).Exercises[0];
+        var strongExercise = UnitWithExercises(CefrLevel.B1, "b1-u1", 1).Exercises[0];
+
+        SetUpLevels(new Dictionary<CefrLevel, IReadOnlyList<CurriculumUnit>>
+        {
+            [CefrLevel.A1] = [new CurriculumUnit
+            {
+                Id = "a1-u1",
+                Level = CefrLevel.A1,
+                SortOrder = 1,
+                Title = "A1",
+                Description = "A1",
+                Exercises = [weakExercise]
+            }],
+            [CefrLevel.B1] = [new CurriculumUnit
+            {
+                Id = "b1-u1",
+                Level = CefrLevel.B1,
+                SortOrder = 1,
+                Title = "B1",
+                Description = "B1",
+                Exercises = [strongExercise]
+            }]
+        });
+
+        _progressRepository.Setup(r => r.GetAttemptedExerciseIdsAsync(It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlySet<string>)new HashSet<string> { weakExercise.Id, strongExercise.Id, "missing" });
+        _progressRepository.Setup(r => r.GetReviewStatesAsync(It.IsAny<IReadOnlyCollection<string>>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new Dictionary<string, CurriculumExerciseReviewState>
+            {
+                [weakExercise.Id] = new() { ExerciseId = weakExercise.Id, DueDateUtc = Now.AddDays(-1), IncorrectAttempts = 2, CorrectAttempts = 0, LapseCount = 2 },
+                [strongExercise.Id] = new() { ExerciseId = strongExercise.Id, DueDateUtc = Now.AddDays(-1), IncorrectAttempts = 0, CorrectAttempts = 2, LapseCount = 0 }
+            });
+
+        var service = CreateService();
+        var session = await service.BuildRetrainSessionAsync();
+
+        Assert.Equal(2, session.DueExerciseCount);
+        Assert.Equal(3, session.TotalAttemptedExerciseCount);
+        Assert.Equal(weakExercise.Id, session.Exercises[0].Exercise.Id);
+        Assert.Equal(strongExercise.Id, session.Exercises[1].Exercise.Id);
     }
 
     [Fact]

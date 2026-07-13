@@ -11,6 +11,8 @@ public interface ICurriculumService
 
     Task<IReadOnlyList<UnitSummary>> GetUnitSummariesAsync(CefrLevel level, CancellationToken cancellationToken = default);
 
+    Task<CurriculumRetrainSession> BuildRetrainSessionAsync(CancellationToken cancellationToken = default);
+
     /// <summary>Grades the answer and, if correct, records the exercise as completed.</summary>
     Task<GradingResult> SubmitAnswerAsync(Exercise exercise, ExerciseAnswer answer, CancellationToken cancellationToken = default);
 }
