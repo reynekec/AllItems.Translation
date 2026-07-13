@@ -100,7 +100,7 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
 
         SelectedUnit = unitTile.Unit;
         _currentExercises = unitTile.Unit.Exercises;
-        _currentExerciseIndex = 0;
+        _currentExerciseIndex = Math.Min(unitTile.CompletedExerciseCount, Math.Max(_currentExercises.Count - 1, 0));
         IsUnitComplete = false;
         ShowCurrentExercise();
         Screen = TrainingScreen.Exercise;
