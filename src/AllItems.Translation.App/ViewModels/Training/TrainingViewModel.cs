@@ -21,6 +21,9 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
     private string selectedLevelTitle = string.Empty;
 
     [ObservableProperty]
+    private string selectedLevelProgressText = string.Empty;
+
+    [ObservableProperty]
     private CurriculumUnit? selectedUnit;
 
     [ObservableProperty]
@@ -73,10 +76,18 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
     {
         var summaries = await curriculumService.GetUnitSummariesAsync(_selectedLevel);
         Units.Clear();
+        var completedUnits = 0;
         foreach (var summary in summaries)
         {
-            Units.Add(new UnitTileViewModel(summary));
+            var unitTile = new UnitTileViewModel(summary);
+            Units.Add(unitTile);
+            if (unitTile.IsComplete)
+            {
+                completedUnits++;
+            }
         }
+
+        SelectedLevelProgressText = $"{completedUnits} / {Units.Count}";
     }
 
     [RelayCommand]
@@ -148,6 +159,7 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
     private async Task BackToLevelsAsync()
     {
         Screen = TrainingScreen.Levels;
+        SelectedLevelProgressText = string.Empty;
         await LoadLevelsAsync();
     }
 }
