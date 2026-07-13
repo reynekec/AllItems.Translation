@@ -22,6 +22,7 @@ public sealed partial class MultipleChoiceExerciseViewModel : ExerciseViewModel
     public ObservableCollection<MultipleChoiceOptionViewModel> Options { get; }
 
     public int SelectedOptionIndex { get; private set; } = -1;
+    public override bool RequiresExplicitCheck => false;
 
     public MultipleChoiceExerciseViewModel(MultipleChoiceExercise exercise) : base(exercise)
     {
@@ -45,6 +46,12 @@ public sealed partial class MultipleChoiceExerciseViewModel : ExerciseViewModel
 
         option.IsSelected = true;
         SelectedOptionIndex = option.Index;
+
+        // Multiple-choice answers are checked immediately after selection.
+        if (SubmitAnswerAsync is not null)
+        {
+            _ = SubmitAnswerAsync();
+        }
     }
 
     public override ExerciseAnswer BuildAnswer() => new(SelectedOptionIndex: SelectedOptionIndex);

@@ -13,6 +13,7 @@ public abstract partial class ExerciseViewModel(Exercise exercise) : ObservableO
     public string Instruction => Exercise.Instruction;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(ShowCheckAnswerButton))]
     private bool isAnswered;
 
     [ObservableProperty]
@@ -25,6 +26,9 @@ public abstract partial class ExerciseViewModel(Exercise exercise) : ObservableO
 
     public bool ShowCorrectFeedback => IsCorrect == true;
     public bool ShowIncorrectFeedback => IsCorrect == false;
+    public virtual bool RequiresExplicitCheck => true;
+    public bool ShowCheckAnswerButton => RequiresExplicitCheck && !IsAnswered;
+    public Func<Task>? SubmitAnswerAsync { get; set; }
 
     public abstract ExerciseAnswer BuildAnswer();
 

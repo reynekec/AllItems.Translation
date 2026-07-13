@@ -160,6 +160,7 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
     {
         var exercise = _currentExercises[_currentExerciseIndex];
         CurrentExercise = ExerciseViewModelFactory.Create(exercise);
+        CurrentExercise.SubmitAnswerAsync = CheckAnswerAsync;
         ExerciseProgressText = $"{_currentExerciseIndex + 1} / {_currentExercises.Count}";
     }
 
@@ -173,6 +174,12 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
 
         var answer = CurrentExercise.BuildAnswer();
         var result = await curriculumService.SubmitAnswerAsync(CurrentExercise.Exercise, answer);
+
+        if (result.IsCorrect)
+        {
+            await NextExerciseAsync();
+            return;
+        }
 
         CurrentExercise.IsAnswered = true;
         CurrentExercise.IsCorrect = result.IsCorrect;
