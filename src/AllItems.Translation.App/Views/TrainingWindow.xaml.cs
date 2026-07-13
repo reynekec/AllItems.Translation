@@ -111,6 +111,11 @@ public partial class TrainingWindow : FluentWindow
 
     private void OnWindowPreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
     {
+        if (HandleExerciseEnterKey(e))
+        {
+            return;
+        }
+
         if (ContentScrollViewer is null)
         {
             return;
@@ -155,5 +160,36 @@ public partial class TrainingWindow : FluentWindow
                 e.Handled = true;
                 break;
         }
+    }
+
+    private bool HandleExerciseEnterKey(System.Windows.Input.KeyEventArgs e)
+    {
+        if (e.Key != Key.Enter)
+        {
+            return false;
+        }
+
+        if (Keyboard.FocusedElement is not System.Windows.Controls.TextBox)
+        {
+            return false;
+        }
+
+        if (DataContext is not TrainingViewModel viewModel)
+        {
+            return false;
+        }
+
+        if (viewModel.Screen != TrainingScreen.Exercise ||
+            viewModel.IsUnitComplete ||
+            viewModel.CurrentExercise is null ||
+            !viewModel.CurrentExercise.ShowCheckAnswerButton ||
+            !viewModel.CheckAnswerCommand.CanExecute(null))
+        {
+            return false;
+        }
+
+        viewModel.CheckAnswerCommand.Execute(null);
+        e.Handled = true;
+        return true;
     }
 }
