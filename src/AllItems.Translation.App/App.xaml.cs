@@ -8,13 +8,17 @@ using AllItems.Translation.Infrastructure;
 using AllItems.Translation.Infrastructure.Persistence;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Drawing = System.Drawing;
+using WinForms = System.Windows.Forms;
 using Wpf.Ui.Appearance;
 
 namespace AllItems.Translation.App;
 
-public partial class App : Application
+public partial class App : System.Windows.Application
 {
     private IHost? _host;
+    private WinForms.NotifyIcon? _notifyIcon;
+    private bool _isExiting;
 
     protected override async void OnStartup(StartupEventArgs e)
     {
@@ -65,15 +69,17 @@ public partial class App : Application
 
             var startWindow = _host.Services.GetRequiredService<StartWindow>();
             MainWindow = startWindow;
+            ConfigureMainWindowBehavior(startWindow);
+            InitializeNotifyIcon();
             startWindow.Show();
         }
         catch (Exception ex)
         {
-            MessageBox.Show(
+            System.Windows.MessageBox.Show(
                 $"AllItems.Translation failed to start:\n\n{ex.Message}",
                 "Startup error",
-                MessageBoxButton.OK,
-                MessageBoxImage.Error);
+                System.Windows.MessageBoxButton.OK,
+                System.Windows.MessageBoxImage.Error);
             Shutdown(-1);
         }
     }
@@ -82,6 +88,8 @@ public partial class App : Application
     {
         try
         {
+            DisposeNotifyIcon();
+
             if (_host is not null)
             {
                 await _host.StopAsync();
@@ -96,24 +104,116 @@ public partial class App : Application
         base.OnExit(e);
     }
 
+    private void ConfigureMainWindowBehavior(Window mainWindow)
+    {
+        mainWindow.Closing += (_, e) =>
+        {
+            if (_isExiting)
+            {
+                return;
+            }
+
+            e.Cancel = true;
+            HideMainWindowToTray();
+        };
+    }
+
+    private void InitializeNotifyIcon()
+    {
+        var trayMenu = new WinForms.ContextMenuStrip();
+        trayMenu.Items.Add("Exit", null, (_, _) => ExitApplicationFromTray());
+
+        _notifyIcon = new WinForms.NotifyIcon
+        {
+            Text = "AllItems.Translation",
+            Icon = ResolveTrayIcon(),
+            ContextMenuStrip = trayMenu,
+            Visible = true
+        };
+
+        _notifyIcon.DoubleClick += (_, _) => ShowAndFocusMainWindow();
+    }
+
+    private void HideMainWindowToTray()
+    {
+        if (MainWindow is null)
+        {
+            return;
+        }
+
+        MainWindow.WindowState = WindowState.Minimized;
+        MainWindow.ShowInTaskbar = false;
+        MainWindow.Hide();
+    }
+
+    private void ShowAndFocusMainWindow()
+    {
+        Dispatcher.Invoke(() =>
+        {
+            if (MainWindow is null)
+            {
+                return;
+            }
+
+            MainWindow.ShowInTaskbar = true;
+            MainWindow.Show();
+            MainWindow.WindowState = WindowState.Normal;
+            MainWindow.Activate();
+            MainWindow.Topmost = true;
+            MainWindow.Topmost = false;
+            MainWindow.Focus();
+        });
+    }
+
+    private void ExitApplicationFromTray()
+    {
+        Dispatcher.Invoke(() =>
+        {
+            _isExiting = true;
+            DisposeNotifyIcon();
+            Shutdown();
+        });
+    }
+
+    private static Drawing.Icon ResolveTrayIcon()
+    {
+        var processIcon = Environment.ProcessPath is not null
+            ? Drawing.Icon.ExtractAssociatedIcon(Environment.ProcessPath)
+            : null;
+
+        return processIcon ?? Drawing.SystemIcons.Application;
+    }
+
+    private void DisposeNotifyIcon()
+    {
+        if (_notifyIcon is null)
+        {
+            return;
+        }
+
+        _notifyIcon.Visible = false;
+        _notifyIcon.Dispose();
+        _notifyIcon = null;
+    }
+
     private static void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
     {
-        MessageBox.Show(
+        System.Windows.MessageBox.Show(
             $"An unexpected error occurred:\n\n{e.Exception.Message}\n\nThe application will try to continue.",
             "Unexpected error",
-            MessageBoxButton.OK,
-            MessageBoxImage.Error);
+            System.Windows.MessageBoxButton.OK,
+            System.Windows.MessageBoxImage.Error);
         e.Handled = true;
     }
 
     private static void OnAppDomainUnhandledException(object sender, UnhandledExceptionEventArgs e)
     {
         var message = e.ExceptionObject is Exception ex ? ex.Message : e.ExceptionObject.ToString();
-        MessageBox.Show(
+        System.Windows.MessageBox.Show(
             $"A fatal error occurred and the application must close:\n\n{message}",
             "Fatal error",
-            MessageBoxButton.OK,
-            MessageBoxImage.Error);
+            System.Windows.MessageBoxButton.OK,
+            System.Windows.MessageBoxImage.Error);
     }
 
     private static void OnUnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs e)

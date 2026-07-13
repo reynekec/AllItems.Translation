@@ -8,7 +8,9 @@
                  MinHeight="520" MinWidth="620"
                  WindowStartupLocation="CenterScreen"
                  ExtendsContentIntoTitleBar="True"
-                 WindowBackdropType="Mica">
+                 WindowBackdropType="Mica"
+                 PreviewMouseWheel="OnWindowPreviewMouseWheel"
+                 PreviewKeyDown="OnWindowPreviewKeyDown">
     <Window.Resources>
 
         <DataTemplate DataType="{x:Type vm:MultipleChoiceExerciseViewModel}">
@@ -109,7 +111,14 @@
 
         <ui:TitleBar Grid.Row="0" Title="Training" />
 
-        <Grid Grid.Row="1" Margin="0,16,0,0">
+        <ScrollViewer Grid.Row="1" Margin="0,16,0,0"
+                      x:Name="ContentScrollViewer"
+                      VerticalScrollBarVisibility="Hidden"
+                      HorizontalScrollBarVisibility="Disabled"
+                      PanningMode="VerticalOnly"
+                      Focusable="True">
+
+            <Grid>
 
             <!-- Levels screen -->
             <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Levels}">
@@ -226,6 +235,8 @@
                 </StackPanel>
             </Grid>
 
-        </Grid>
+            </Grid>
+
+        </ScrollViewer>
     </Grid>
 </ui:FluentWindow>

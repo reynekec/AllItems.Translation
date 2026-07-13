@@ -11,7 +11,10 @@
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
             "console": "internalConsole",
-            "internalConsoleOptions": "openOnSessionStart"
+            "internalConsoleOptions": "openOnSessionStart",
+            "logging": {
+                "moduleLoad": false
+            }
         },
         {
             "name": ".NET Core Attach",
