@@ -1,5 +1,7 @@
 using AllItems.Translation.App.ViewModels.Training;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Input;
 using Wpf.Ui.Controls;
 
@@ -18,7 +20,65 @@ public partial class TrainingWindow : FluentWindow
         Loaded += (_, _) => UpdateTitleBarCentering();
         TitleBarLeftContentRoot.SizeChanged += (_, _) => UpdateTitleBarCentering();
         TitleBarRightContentRoot.SizeChanged += (_, _) => UpdateTitleBarCentering();
+        viewModel.PropertyChanged += OnViewModelPropertyChanged;
         viewModel.Initialize();
+    }
+
+    private void OnViewModelPropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        if (sender is not TrainingViewModel viewModel)
+        {
+            return;
+        }
+
+        if (e.PropertyName == nameof(TrainingViewModel.CurrentExercise) ||
+            e.PropertyName == nameof(TrainingViewModel.Screen))
+        {
+            TryFocusFirstExerciseTextBox(viewModel);
+        }
+    }
+
+    private void TryFocusFirstExerciseTextBox(TrainingViewModel viewModel)
+    {
+        if (viewModel.Screen != TrainingScreen.Exercise || ExerciseContentHost is null)
+        {
+            return;
+        }
+
+        // Defer to ensure the exercise template has been instantiated.
+        Dispatcher.BeginInvoke(() =>
+        {
+            var textBox = FindFirstChild<System.Windows.Controls.TextBox>(ExerciseContentHost);
+            if (textBox is null)
+            {
+                return;
+            }
+
+            textBox.Focus();
+            textBox.SelectAll();
+            Keyboard.Focus(textBox);
+        }, System.Windows.Threading.DispatcherPriority.Loaded);
+    }
+
+    private static T? FindFirstChild<T>(DependencyObject parent) where T : DependencyObject
+    {
+        var childCount = VisualTreeHelper.GetChildrenCount(parent);
+        for (var i = 0; i < childCount; i++)
+        {
+            var child = VisualTreeHelper.GetChild(parent, i);
+            if (child is T match)
+            {
+                return match;
+            }
+
+            var nestedMatch = FindFirstChild<T>(child);
+            if (nestedMatch is not null)
+            {
+                return nestedMatch;
+            }
+        }
+
+        return null;
     }
 
     private void UpdateTitleBarCentering()
