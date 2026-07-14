@@ -74,6 +74,90 @@ public sealed class StudySessionService(
             .ToList();
     }
 
+    public async Task<IReadOnlyList<StudyCard>> BuildRetrainSessionAsync(
+        Language sourceLanguage,
+        Language targetLanguage,
+        IReadOnlyList<int> wordEntryIds,
+        int maxCards,
+        CancellationToken cancellationToken = default)
+    {
+        if (wordEntryIds.Count == 0 || maxCards <= 0)
+        {
+            return [];
+        }
+
+        var requestedIds = wordEntryIds
+            .Where(id => id > 0)
+            .Distinct()
+            .Take(maxCards)
+            .ToList();
+
+        if (requestedIds.Count == 0)
+        {
+            return [];
+        }
+
+        var words = await wordRepository.GetWordsByIdsAsync(requestedIds, targetLanguage, cancellationToken);
+        if (words.Count == 0)
+        {
+            return [];
+        }
+
+        var wordById = words
+            .Where(w => w.Translations.Count > 0)
+            .ToDictionary(w => w.Id);
+
+        if (wordById.Count == 0)
+        {
+            return [];
+        }
+
+        var states = await reviewStateRepository.GetStatesAsync(targetLanguage, wordById.Keys.ToList(), cancellationToken);
+        var cards = new List<StudyCard>(requestedIds.Count);
+        foreach (var id in requestedIds)
+        {
+            if (!wordById.TryGetValue(id, out var word))
+            {
+                continue;
+            }
+
+            var state = states.TryGetValue(id, out var existingState)
+                ? existingState
+                : NewState(id, targetLanguage);
+
+            cards.Add(BuildCard(sourceLanguage, targetLanguage, word, state));
+        }
+
+        return cards;
+    }
+
+    public async Task<int> GetLeechCountAsync(
+        Language targetLanguage,
+        CancellationToken cancellationToken = default)
+    {
+        var leeches = await reviewStateRepository.GetLeechesAsync(targetLanguage, LeechThreshold, cancellationToken);
+        return leeches.Count;
+    }
+
+    public async Task<int> GetRetrainCountAsync(
+        Language sourceLanguage,
+        Language targetLanguage,
+        IReadOnlyList<int> wordEntryIds,
+        CancellationToken cancellationToken = default)
+    {
+        var cards = await BuildRetrainSessionAsync(sourceLanguage, targetLanguage, wordEntryIds, int.MaxValue, cancellationToken);
+        return cards.Count;
+    }
+
+    public async Task<int> GetAvailableWordCountAsync(
+        Language sourceLanguage,
+        Language targetLanguage,
+        CancellationToken cancellationToken = default)
+    {
+        var words = await wordRepository.GetWordsWithPreferredTranslationAsync(sourceLanguage, targetLanguage, cancellationToken);
+        return words.Count;
+    }
+
     public async Task RecordAnswerAsync(StudyCard card, ReviewGrade grade, CancellationToken cancellationToken = default)
     {
         var updated = scheduler.Schedule(card.ReviewState, grade, clock.UtcNow);

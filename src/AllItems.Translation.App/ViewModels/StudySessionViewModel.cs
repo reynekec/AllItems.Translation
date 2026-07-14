@@ -15,6 +15,7 @@ public sealed partial class StudySessionViewModel : ObservableObject
     private readonly IStudyPreferenceStore _preferenceStore;
 
     private IReadOnlyList<StudyCard> _cards = [];
+    private readonly List<int> _currentSessionAgainWordIds = [];
     private int _currentIndex;
 
     public StudySessionViewModel(IStudySessionService studySessionService, IStudyPreferenceStore preferenceStore)
@@ -38,6 +39,10 @@ public sealed partial class StudySessionViewModel : ObservableObject
     partial void OnSourceLanguageChanged(Language value) => SavePreferences();
 
     partial void OnTargetLanguageChanged(Language value) => SavePreferences();
+
+    partial void OnSourceLanguageChanged(Language oldValue, Language newValue) => _ = RefreshAvailabilityAsync();
+
+    partial void OnTargetLanguageChanged(Language oldValue, Language newValue) => _ = RefreshAvailabilityAsync();
 
     private void SavePreferences() =>
         _preferenceStore.Save(new StudyPreferences(SourceLanguage, TargetLanguage));
@@ -76,6 +81,9 @@ public sealed partial class StudySessionViewModel : ObservableObject
     private string progressText = string.Empty;
 
     [ObservableProperty]
+    private string activeProgressDetail = string.Empty;
+
+    [ObservableProperty]
     private string? statusMessage;
 
     [ObservableProperty]
@@ -85,11 +93,43 @@ public sealed partial class StudySessionViewModel : ObservableObject
     private bool isLeechMode;
 
     [ObservableProperty]
+    private bool isRetrainCurrentMode;
+
+    [ObservableProperty]
+    private int availableCardCount;
+
+    [ObservableProperty]
+    private string retrainMissedAvailabilityText = string.Empty;
+
+    [ObservableProperty]
+    private string retrainTroubleAvailabilityText = string.Empty;
+
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(StartLeechSessionCommand))]
+    private int retrainTroubleCount;
+
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(StartRetrainCurrentSessionCommand))]
+    private int retrainMissedCount;
+
+    [ObservableProperty]
+    private string availableWordsText = string.Empty;
+
+    [ObservableProperty]
+    private string retrainMissedEmptyText = string.Empty;
+
+    [ObservableProperty]
+    private string retrainTroubleEmptyText = string.Empty;
+
+    [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(GradeCommand))]
     [NotifyCanExecuteChangedFor(nameof(StartSessionCommand))]
     [NotifyCanExecuteChangedFor(nameof(StartLeechSessionCommand))]
+    [NotifyCanExecuteChangedFor(nameof(StartRetrainCurrentSessionCommand))]
     [NotifyCanExecuteChangedFor(nameof(RestartCommand))]
     private bool isBusy;
+
+    public async Task InitializeAsync() => await RefreshAvailabilityAsync();
 
     [RelayCommand(CanExecute = nameof(CanStart))]
     private async Task StartSessionAsync()
@@ -106,14 +146,18 @@ public sealed partial class StudySessionViewModel : ObservableObject
         {
             IsSessionComplete = false;
             IsLeechMode = false;
+            IsRetrainCurrentMode = false;
             ReviewedCount = 0;
+            _currentSessionAgainWordIds.Clear();
             _currentIndex = 0;
             _cards = await _studySessionService.BuildSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
+            AvailableCardCount = _cards.Count;
 
             if (_cards.Count == 0)
             {
                 IsSessionActive = false;
                 StatusMessage = "No due or new words for this language pair yet - keep translating sentences to build up your dictionary.";
+                await RefreshAvailabilityAsync();
                 return;
             }
 
@@ -131,7 +175,7 @@ public sealed partial class StudySessionViewModel : ObservableObject
         }
     }
 
-    [RelayCommand(CanExecute = nameof(CanStart))]
+    [RelayCommand(CanExecute = nameof(CanStartLeech))]
     private async Task StartLeechSessionAsync()
     {
         if (SourceLanguage == TargetLanguage)
@@ -146,14 +190,17 @@ public sealed partial class StudySessionViewModel : ObservableObject
         {
             IsSessionComplete = false;
             IsLeechMode = true;
+            IsRetrainCurrentMode = false;
             ReviewedCount = 0;
             _currentIndex = 0;
             _cards = await _studySessionService.BuildLeechSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
+            AvailableCardCount = _cards.Count;
 
             if (_cards.Count == 0)
             {
                 IsSessionActive = false;
                 StatusMessage = "No trouble words yet - keep studying and any tricky words will show up here.";
+                await RefreshAvailabilityAsync();
                 return;
             }
 
@@ -171,10 +218,67 @@ public sealed partial class StudySessionViewModel : ObservableObject
         }
     }
 
+    [RelayCommand(CanExecute = nameof(CanStartRetrainCurrent))]
+    private async Task StartRetrainCurrentSessionAsync()
+    {
+        if (SourceLanguage == TargetLanguage)
+        {
+            StatusMessage = "Source and target language must be different.";
+            return;
+        }
+
+        IsBusy = true;
+        StatusMessage = null;
+        try
+        {
+            IsSessionComplete = false;
+            IsLeechMode = false;
+            IsRetrainCurrentMode = true;
+            ReviewedCount = 0;
+            _currentIndex = 0;
+
+            _cards = await _studySessionService.BuildRetrainSessionAsync(
+                SourceLanguage,
+                TargetLanguage,
+                _currentSessionAgainWordIds,
+                SessionSize);
+            AvailableCardCount = _cards.Count;
+
+            if (_cards.Count == 0)
+            {
+                IsSessionActive = false;
+                StatusMessage = "No missed cards from your latest study session yet. Rate cards as Again, then retrain them here.";
+                await RefreshAvailabilityAsync();
+                return;
+            }
+
+            IsSessionActive = true;
+            ShowCurrentCard();
+        }
+        catch (Exception ex)
+        {
+            IsSessionActive = false;
+            StatusMessage = $"Couldn't start the retrain session: {ex.Message}";
+        }
+        finally
+        {
+            IsBusy = false;
+        }
+    }
+
     private bool CanStart() => !IsBusy;
 
+    private bool CanStartLeech() => CanStart() && RetrainTroubleCount > 0;
+
+    private bool CanStartRetrainCurrent() => CanStart() && RetrainMissedCount > 0;
+
     [RelayCommand(CanExecute = nameof(CanStart))]
-    private Task RestartAsync() => IsLeechMode ? StartLeechSessionAsync() : StartSessionAsync();
+    private Task RestartAsync() =>
+        IsLeechMode
+            ? StartLeechSessionAsync()
+            : IsRetrainCurrentMode
+                ? StartRetrainCurrentSessionAsync()
+                : StartSessionAsync();
 
     [RelayCommand]
     private void ShowAnswer() => IsAnswerShown = true;
@@ -185,7 +289,15 @@ public sealed partial class StudySessionViewModel : ObservableObject
         IsBusy = true;
         try
         {
-            await _studySessionService.RecordAnswerAsync(_cards[_currentIndex], grade);
+            var currentCard = _cards[_currentIndex];
+            await _studySessionService.RecordAnswerAsync(currentCard, grade);
+
+            if (grade == ReviewGrade.Again && !_currentSessionAgainWordIds.Contains(currentCard.WordEntryId))
+            {
+                _currentSessionAgainWordIds.Add(currentCard.WordEntryId);
+                await RefreshAvailabilityAsync();
+            }
+
             ReviewedCount++;
             _currentIndex++;
 
@@ -193,6 +305,7 @@ public sealed partial class StudySessionViewModel : ObservableObject
             {
                 IsSessionActive = false;
                 IsSessionComplete = true;
+                await RefreshAvailabilityAsync();
                 return;
             }
 
@@ -234,6 +347,31 @@ public sealed partial class StudySessionViewModel : ObservableObject
 
         IsAnswerShown = false;
         ProgressText = $"{_currentIndex + 1} / {_cards.Count}";
+        ActiveProgressDetail = $"({ReviewedCount} / {AvailableCardCount})";
+    }
+
+    private async Task RefreshAvailabilityAsync()
+    {
+        if (SourceLanguage == TargetLanguage)
+        {
+            AvailableWordsText = string.Empty;
+            RetrainMissedAvailabilityText = string.Empty;
+            RetrainTroubleAvailabilityText = string.Empty;
+            return;
+        }
+
+        var availableWordCount = await _studySessionService.GetAvailableWordCountAsync(SourceLanguage, TargetLanguage);
+        var missedCount = await _studySessionService.GetRetrainCountAsync(SourceLanguage, TargetLanguage, _currentSessionAgainWordIds);
+        var troubleCount = await _studySessionService.GetLeechCountAsync(TargetLanguage);
+
+        RetrainMissedCount = missedCount;
+        RetrainTroubleCount = troubleCount;
+
+        AvailableWordsText = $"{availableWordCount} word(s) available";
+        RetrainMissedAvailabilityText = $"{missedCount} card(s) ready";
+        RetrainTroubleAvailabilityText = $"{troubleCount} card(s) ready";
+        RetrainMissedEmptyText = missedCount == 0 ? "No cards ready yet" : string.Empty;
+        RetrainTroubleEmptyText = troubleCount == 0 ? "No cards ready yet" : string.Empty;
     }
 
     /// <summary>

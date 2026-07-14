@@ -9,5 +9,6 @@ public partial class StudySessionWindow : FluentWindow
     {
         InitializeComponent();
         DataContext = viewModel;
+        Loaded += async (_, _) => await viewModel.InitializeAsync();
     }
 }

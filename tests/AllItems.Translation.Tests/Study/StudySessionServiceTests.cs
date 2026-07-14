@@ -158,6 +158,46 @@ public class StudySessionServiceTests
     }
 
     [Fact]
+    public async Task BuildRetrainSessionAsync_PreservesRequestedOrder()
+    {
+        var word1 = WordWithTranslation(1, "hund", Language.Afrikaans, "hond");
+        var word2 = WordWithTranslation(2, "katze", Language.Afrikaans, "kat");
+
+        _wordRepository.Setup(r => r.GetWordsByIdsAsync(
+                It.Is<IReadOnlyCollection<int>>(ids => ids.SequenceEqual(new[] { 2, 1 })),
+                Language.Afrikaans,
+                It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordEntry>)[word1, word2]);
+
+        _reviewStateRepository.Setup(r => r.GetStatesAsync(Language.Afrikaans, It.IsAny<IReadOnlyCollection<int>>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new Dictionary<int, WordReviewState>());
+
+        var service = CreateService();
+        var session = await service.BuildRetrainSessionAsync(Language.German, Language.Afrikaans, [2, 1], 20);
+
+        Assert.Equal(2, session.Count);
+        Assert.Equal("katze", session[0].FrontText);
+        Assert.Equal("hund", session[1].FrontText);
+    }
+
+    [Fact]
+    public async Task BuildRetrainSessionAsync_UsesExistingReviewStateWhenAvailable()
+    {
+        var word = WordWithTranslation(1, "hund", Language.Afrikaans, "hond");
+        var existingState = new WordReviewState { WordEntryId = 1, TargetLanguage = Language.Afrikaans, IntervalDays = 9 };
+
+        _wordRepository.Setup(r => r.GetWordsByIdsAsync(It.IsAny<IReadOnlyCollection<int>>(), Language.Afrikaans, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordEntry>)[word]);
+        _reviewStateRepository.Setup(r => r.GetStatesAsync(Language.Afrikaans, It.IsAny<IReadOnlyCollection<int>>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new Dictionary<int, WordReviewState> { [1] = existingState });
+
+        var service = CreateService();
+        var card = Assert.Single(await service.BuildRetrainSessionAsync(Language.German, Language.Afrikaans, [1], 20));
+
+        Assert.Equal(9, card.ReviewState.IntervalDays);
+    }
+
+    [Fact]
     public async Task RecordAnswerAsync_PersistsSchedulerResult()
     {
         var card = new StudyCard(1, Language.German, "hund", null, null, [], Language.Afrikaans, "hond",
