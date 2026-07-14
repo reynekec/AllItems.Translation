@@ -11,6 +11,8 @@ public static class AppPaths
 
     public static string CredentialFilePath => Path.Combine(DataRoot, "credentials", "service-account.json");
 
+    public static string GitHubTokenFilePath => Path.Combine(DataRoot, "credentials", "github-pat.txt");
+
     public static string StudyPreferencesFilePath => Path.Combine(DataRoot, "settings", "study-preferences.json");
 
     public static void EnsureDirectoriesExist()

@@ -7,6 +7,7 @@ using AllItems.Translation.Infrastructure.Credentials;
 using AllItems.Translation.Infrastructure.GoogleTranslation;
 using AllItems.Translation.Infrastructure.Persistence;
 using AllItems.Translation.Infrastructure.Settings;
+using AllItems.Translation.Infrastructure.Sync;
 using AllItems.Translation.Infrastructure.Vocabulary;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,24 +19,22 @@ public static class ServiceCollectionExtensions
     {
         AppPaths.EnsureDirectoriesExist();
 
-        services.AddSingleton(new SqliteConnectionFactory($"Data Source={AppPaths.DatabaseFilePath}"));
-        services.AddSingleton<DatabaseInitializer>();
+        // Shared SQLite study stack (connection factory, initializer, clock, word/review repos, scheduler,
+        // study session service) - the same registrations the iOS/MAUI app uses, pointed at the desktop DB.
+        services.AddAllItemsTranslationStudy(AppPaths.DatabaseFilePath);
 
-        services.AddSingleton<IClock, SystemClock>();
         services.AddSingleton<ICredentialStore, FileCredentialStore>();
+        services.AddSingleton<IGitHubTokenStore, FileGitHubTokenStore>();
         services.AddSingleton<IStudyPreferenceStore, FileStudyPreferenceStore>();
         services.AddSingleton<ISentenceTokenizer, SentenceTokenizer>();
         services.AddSingleton<IWordAligner, PositionalWordAligner>();
         services.AddSingleton<ITranslationProvider, GoogleTranslationProvider>();
 
-        services.AddSingleton<IWordRepository, WordRepository>();
         services.AddSingleton<ISentenceTranslationRepository, SentenceTranslationRepository>();
         services.AddSingleton<IApiUsageTracker, ApiUsageTracker>();
         services.AddSingleton<ISentenceTranslationService, SentenceTranslationService>();
 
-        services.AddSingleton<IReviewStateRepository, SqlReviewStateRepository>();
-        services.AddSingleton<ISpacedRepetitionScheduler, Sm2Scheduler>();
-        services.AddSingleton<IStudySessionService, StudySessionService>();
+        services.AddSingleton<IFlashcardExportService, GitHubFlashcardExportService>();
 
         services.AddSingleton<ICurriculumCatalog, StaticCurriculumCatalog>();
         services.AddSingleton<IExerciseGrader, ExerciseGrader>();

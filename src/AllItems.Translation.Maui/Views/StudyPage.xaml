@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:study="clr-namespace:AllItems.Translation.Core.Study;assembly=AllItems.Translation.Core"
+             x:Class="AllItems.Translation.Maui.Views.StudyPage"
+             Title="Study">
+    <ScrollView>
+        <Grid Padding="20" RowSpacing="16">
+
+            <!-- Setup -->
+            <VerticalStackLayout Spacing="14" IsVisible="{Binding IsSetupVisible}">
+                <Label Text="Flashcards" FontSize="28" FontAttributes="Bold" />
+                <Label Text="Choose the direction you want to review." Opacity="0.7" />
+
+                <Label Text="I know" />
+                <Picker ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding SourceLanguage}" />
+
+                <Label Text="Quiz me on" />
+                <Picker ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding TargetLanguage}" />
+
+                <Label Text="{Binding AvailableWordsText}" Opacity="0.7" />
+
+                <Button Text="Start session" Command="{Binding StartSessionCommand}" />
+
+                <Label Text="{Binding StatusMessage}" TextColor="Tomato" Margin="0,8,0,0" />
+            </VerticalStackLayout>
+
+            <!-- Active card -->
+            <VerticalStackLayout Spacing="18" IsVisible="{Binding IsSessionActive}" VerticalOptions="Center">
+                <Label Text="{Binding ProgressText}" HorizontalOptions="Center" Opacity="0.6" />
+
+                <Label Text="{Binding FrontText}" FontSize="34" FontAttributes="Bold"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding ExampleSentence}" FontSize="16" Opacity="0.8"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+
+                <VerticalStackLayout Spacing="12" IsVisible="{Binding IsAnswerShown}">
+                    <Label Text="{Binding BackText}" FontSize="26" TextColor="MediumPurple"
+                           HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding BackExampleSentence}" FontSize="16" Opacity="0.8"
+                           HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+
+                <Button Text="Show answer" Command="{Binding ShowAnswerCommand}" IsVisible="{Binding IsAnswerHidden}" />
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" IsVisible="{Binding IsAnswerShown}">
+                    <Button Text="Again" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Again}" />
+                    <Button Text="Good" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Good}" />
+                    <Button Text="Easy" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Easy}" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <!-- Complete -->
+            <VerticalStackLayout Spacing="16" IsVisible="{Binding IsSessionComplete}" VerticalOptions="Center">
+                <Label Text="Session complete!" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Reviewed " />
+                            <Span Text="{Binding ReviewedCount}" />
+                            <Span Text=" card(s)." />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Text="Study again" Command="{Binding RestartCommand}" HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

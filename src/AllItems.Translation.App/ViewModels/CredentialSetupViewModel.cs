@@ -5,13 +5,24 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace AllItems.Translation.App.ViewModels;
 
-public sealed partial class CredentialSetupViewModel(ICredentialStore credentialStore, IVocabularyImportService vocabularyImportService) : ObservableObject
+public sealed partial class CredentialSetupViewModel(
+    ICredentialStore credentialStore,
+    IVocabularyImportService vocabularyImportService,
+    IGitHubTokenStore gitHubTokenStore) : ObservableObject
 {
     [ObservableProperty]
     private string jsonInput = string.Empty;
 
     [ObservableProperty]
     private string? errorMessage;
+
+    [ObservableProperty]
+    private string gitHubToken = string.Empty;
+
+    [ObservableProperty]
+    private string? gitHubTokenStatus = gitHubTokenStore.HasToken
+        ? "A GitHub token is already saved. Paste a new one to replace it."
+        : null;
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(ImportAllVocabularyCommand))]
@@ -34,6 +45,22 @@ public sealed partial class CredentialSetupViewModel(ICredentialStore credential
         catch (Exception ex)
         {
             ErrorMessage = ex.Message;
+        }
+    }
+
+    [RelayCommand]
+    private async Task SaveGitHubTokenAsync()
+    {
+        GitHubTokenStatus = null;
+        try
+        {
+            await gitHubTokenStore.SaveTokenAsync(GitHubToken);
+            GitHubToken = string.Empty;
+            GitHubTokenStatus = "GitHub token saved. You can now export flashcards to your phone from the Flashcards screen.";
+        }
+        catch (Exception ex)
+        {
+            GitHubTokenStatus = $"Couldn't save the token: {ex.Message}";
         }
     }
 

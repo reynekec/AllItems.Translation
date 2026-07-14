@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\AllItems.Translation.Core\AllItems.Translation.Core.csproj" />
     <ProjectReference Include="..\..\src\AllItems.Translation.Infrastructure\AllItems.Translation.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\AllItems.Translation.Infrastructure.Persistence\AllItems.Translation.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

@@ -26,6 +26,9 @@ x86/
 service-account*.json
 *.pfx
 
+## Exception: the one-way flashcard export is meant to be committed and served to the phone.
+!/sync/allitems.db
+
 ## OS
 .DS_Store
 Thumbs.db

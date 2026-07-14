@@ -13,15 +13,20 @@ public sealed partial class StudySessionViewModel : ObservableObject
 
     private readonly IStudySessionService _studySessionService;
     private readonly IStudyPreferenceStore _preferenceStore;
+    private readonly IFlashcardExportService _exportService;
 
     private IReadOnlyList<StudyCard> _cards = [];
     private readonly List<int> _currentSessionAgainWordIds = [];
     private int _currentIndex;
 
-    public StudySessionViewModel(IStudySessionService studySessionService, IStudyPreferenceStore preferenceStore)
+    public StudySessionViewModel(
+        IStudySessionService studySessionService,
+        IStudyPreferenceStore preferenceStore,
+        IFlashcardExportService exportService)
     {
         _studySessionService = studySessionService;
         _preferenceStore = preferenceStore;
+        _exportService = exportService;
 
         var preferences = preferenceStore.Load();
         sourceLanguage = preferences.SourceLanguage;
@@ -114,6 +119,13 @@ public sealed partial class StudySessionViewModel : ObservableObject
 
     [ObservableProperty]
     private string availableWordsText = string.Empty;
+
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(ExportToPhoneCommand))]
+    private bool isExporting;
+
+    [ObservableProperty]
+    private string? exportStatusMessage;
 
     [ObservableProperty]
     private string retrainMissedEmptyText = string.Empty;
@@ -279,6 +291,30 @@ public sealed partial class StudySessionViewModel : ObservableObject
             : IsRetrainCurrentMode
                 ? StartRetrainCurrentSessionAsync()
                 : StartSessionAsync();
+
+    [RelayCommand(CanExecute = nameof(CanExport))]
+    private async Task ExportToPhoneAsync()
+    {
+        IsExporting = true;
+        ExportStatusMessage = "Exporting your flashcards to GitHub...";
+        try
+        {
+            var result = await _exportService.ExportAsync();
+            var kilobytes = Math.Max(1, result.SizeBytes / 1024);
+            ExportStatusMessage =
+                $"Exported {kilobytes} KB at {result.ExportedUtc:HH:mm} UTC. Open the app on your iPhone and tap Import to sync.";
+        }
+        catch (Exception ex)
+        {
+            ExportStatusMessage = $"Couldn't export: {ex.Message}";
+        }
+        finally
+        {
+            IsExporting = false;
+        }
+    }
+
+    private bool CanExport() => !IsExporting;
 
     [RelayCommand]
     private void ShowAnswer() => IsAnswerShown = true;
