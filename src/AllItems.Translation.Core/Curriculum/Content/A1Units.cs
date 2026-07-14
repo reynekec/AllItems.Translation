@@ -55,7 +55,7 @@ public static class A1Units
                 new ClozeExercise
                 {
                     Id = "a1-u1-sein-haben-e3",
-                    Instruction = "Fill in the blank.",
+                    Instruction = "Fill in the blank with the correct form of 'sein' (to be).",
                     Explanation = "'ich' always takes 'bin' with sein.",
                     TextBefore = "Ich ",
                     TextAfter = " dreißig Jahre alt.",
@@ -64,7 +64,7 @@ public static class A1Units
                 new ClozeExercise
                 {
                     Id = "a1-u1-sein-haben-e4",
-                    Instruction = "Fill in the blank.",
+                    Instruction = "Fill in the blank with the correct form of 'haben' (to have).",
                     Explanation = "'wir' always takes 'haben' with haben.",
                     TextBefore = "Wir ",
                     TextAfter = " zwei Kinder.",
@@ -134,7 +134,7 @@ public static class A1Units
                 new ClozeExercise
                 {
                     Id = "a1-u2-praesens-e3",
-                    Instruction = "Fill in the blank.",
+                    Instruction = "Fill in the blank with the correct form of 'kommen' (to come).",
                     Explanation = "'er' takes the -t ending: er kommt.",
                     TextBefore = "Er ",
                     TextAfter = " aus Deutschland.",
@@ -143,7 +143,7 @@ public static class A1Units
                 new ClozeExercise
                 {
                     Id = "a1-u2-praesens-e4",
-                    Instruction = "Fill in the blank.",
+                    Instruction = "Fill in the blank with the correct form of 'wohnen' (to live).",
                     Explanation = "'ich' takes the -e ending: ich wohne.",
                     TextBefore = "Ich ",
                     TextAfter = " in Berlin.",
