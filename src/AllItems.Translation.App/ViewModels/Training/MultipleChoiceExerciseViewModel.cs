@@ -38,8 +38,11 @@ public sealed partial class MultipleChoiceExerciseViewModel : ExerciseViewModel
     public MultipleChoiceExerciseViewModel(MultipleChoiceExercise exercise) : base(exercise)
     {
         _exercise = exercise;
-        Options = new ObservableCollection<MultipleChoiceOptionViewModel>(
-            exercise.Options.Select((text, index) => new MultipleChoiceOptionViewModel(index, text)));
+        var shuffled = exercise.Options
+            .Select((text, index) => new MultipleChoiceOptionViewModel(index, text))
+            .OrderBy(_ => Random.Shared.Next())
+            .ToList();
+        Options = new ObservableCollection<MultipleChoiceOptionViewModel>(shuffled);
     }
 
     [RelayCommand]
