@@ -181,15 +181,27 @@ public partial class TrainingWindow : FluentWindow
 
         if (viewModel.Screen != TrainingScreen.Exercise ||
             viewModel.IsUnitComplete ||
-            viewModel.CurrentExercise is null ||
-            !viewModel.CurrentExercise.ShowCheckAnswerButton ||
-            !viewModel.CheckAnswerCommand.CanExecute(null))
+            viewModel.CurrentExercise is null)
         {
             return false;
         }
 
-        viewModel.CheckAnswerCommand.Execute(null);
-        e.Handled = true;
-        return true;
+        if (viewModel.CurrentExercise.ShowIncorrectFeedback &&
+            viewModel.TryAgainCommand.CanExecute(null))
+        {
+            viewModel.TryAgainCommand.Execute(null);
+            e.Handled = true;
+            return true;
+        }
+
+        if (viewModel.CurrentExercise.ShowCheckAnswerButton &&
+            viewModel.CheckAnswerCommand.CanExecute(null))
+        {
+            viewModel.CheckAnswerCommand.Execute(null);
+            e.Handled = true;
+            return true;
+        }
+
+        return false;
     }
 }
