@@ -42,7 +42,7 @@ public sealed class GitHubFlashcardExportService(
 
         var client = new GitHubClient(new ProductHeaderValue("AllItems-Translation"))
         {
-            Credentials = new Credentials(token)
+            Credentials = new Octokit.Credentials(token)
         };
 
         var commitMessage = $"Flashcard export {exportedUtc:yyyy-MM-dd HH:mm:ss}Z";
