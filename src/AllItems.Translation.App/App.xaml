@@ -16,6 +16,7 @@
             <converters:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
             <converters:EnumMatchToVisibilityConverter x:Key="EnumMatchToVisibilityConverter" />
             <converters:BoolToButtonAppearanceConverter x:Key="BoolToButtonAppearanceConverter" />
+            <converters:MultipleChoiceVisualStateToButtonAppearanceConverter x:Key="MultipleChoiceVisualStateToButtonAppearanceConverter" />
             <converters:SlotCorrectnessToTextConverter x:Key="SlotCorrectnessToTextConverter" />
 
             <Style x:Key="WordChipButtonStyle" TargetType="ui:Button">

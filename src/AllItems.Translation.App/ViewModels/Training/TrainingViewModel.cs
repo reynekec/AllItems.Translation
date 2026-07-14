@@ -189,6 +189,11 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
         {
             drillViewModel.ApplySlotCorrectness(result.SlotCorrectness);
         }
+
+        if (CurrentExercise is MultipleChoiceExerciseViewModel multipleChoiceViewModel)
+        {
+            multipleChoiceViewModel.ApplyIncorrectAnswerHighlights();
+        }
     }
 
     [RelayCommand]

@@ -5,6 +5,14 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace AllItems.Translation.App.ViewModels.Training;
 
+public enum MultipleChoiceOptionVisualState
+{
+    Neutral,
+    Selected,
+    Correct,
+    Incorrect
+}
+
 public sealed partial class MultipleChoiceOptionViewModel(int index, string text) : ObservableObject
 {
     public int Index { get; } = index;
@@ -12,6 +20,9 @@ public sealed partial class MultipleChoiceOptionViewModel(int index, string text
 
     [ObservableProperty]
     private bool isSelected;
+
+    [ObservableProperty]
+    private MultipleChoiceOptionVisualState visualState;
 }
 
 public sealed partial class MultipleChoiceExerciseViewModel : ExerciseViewModel
@@ -34,7 +45,7 @@ public sealed partial class MultipleChoiceExerciseViewModel : ExerciseViewModel
     [RelayCommand]
     private void SelectOption(MultipleChoiceOptionViewModel? option)
     {
-        if (option is null)
+        if (option is null || IsAnswered)
         {
             return;
         }
@@ -42,15 +53,37 @@ public sealed partial class MultipleChoiceExerciseViewModel : ExerciseViewModel
         foreach (var candidate in Options)
         {
             candidate.IsSelected = false;
+            candidate.VisualState = MultipleChoiceOptionVisualState.Neutral;
         }
 
         option.IsSelected = true;
+        option.VisualState = MultipleChoiceOptionVisualState.Selected;
         SelectedOptionIndex = option.Index;
 
         // Multiple-choice answers are checked immediately after selection.
         if (SubmitAnswerAsync is not null)
         {
             _ = SubmitAnswerAsync();
+        }
+    }
+
+    public void ApplyIncorrectAnswerHighlights()
+    {
+        foreach (var option in Options)
+        {
+            if (option.Index == _exercise.CorrectOptionIndex)
+            {
+                option.VisualState = MultipleChoiceOptionVisualState.Correct;
+                continue;
+            }
+
+            if (option.Index == SelectedOptionIndex)
+            {
+                option.VisualState = MultipleChoiceOptionVisualState.Incorrect;
+                continue;
+            }
+
+            option.VisualState = MultipleChoiceOptionVisualState.Neutral;
         }
     }
 
@@ -62,6 +95,7 @@ public sealed partial class MultipleChoiceExerciseViewModel : ExerciseViewModel
         foreach (var option in Options)
         {
             option.IsSelected = false;
+            option.VisualState = MultipleChoiceOptionVisualState.Neutral;
         }
 
         SelectedOptionIndex = -1;

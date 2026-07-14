@@ -21,7 +21,7 @@
                         <DataTemplate>
                             <ui:Button Content="{Binding Text}" Margin="0,0,0,8"
                                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
-                                       Appearance="{Binding IsSelected, Converter={StaticResource BoolToButtonAppearanceConverter}}"
+                                       Appearance="{Binding VisualState, Converter={StaticResource MultipleChoiceVisualStateToButtonAppearanceConverter}}"
                                        Command="{Binding DataContext.SelectOptionCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                        CommandParameter="{Binding}" />
                         </DataTemplate>
