@@ -261,6 +261,7 @@
                     <TextBlock Text="Nice work!" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" />
                     <TextBlock Text="You've completed this session." Margin="0,8,0,0" Opacity="0.8" HorizontalAlignment="Center" />
                     <ui:Button Content="Back to units" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center"
+                               IsDefault="True"
                                Command="{Binding BackToUnitsCommand}" />
                 </StackPanel>
             </Grid>
