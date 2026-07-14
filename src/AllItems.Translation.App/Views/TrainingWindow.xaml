@@ -1,307 +1,223 @@
 <ui:FluentWindow x:Class="AllItems.Translation.App.Views.TrainingWindow"
-                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-                 xmlns:vm="clr-namespace:AllItems.Translation.App.ViewModels.Training"
-                 Title="Training"
-                 Height="720" Width="820"
-                 MinHeight="520" MinWidth="620"
-                 WindowStartupLocation="CenterScreen"
-                 ExtendsContentIntoTitleBar="True"
-                 WindowBackdropType="Mica"
-                 PreviewMouseWheel="OnWindowPreviewMouseWheel"
-                 PreviewKeyDown="OnWindowPreviewKeyDown">
-    <Window.Resources>
-
-        <DataTemplate DataType="{x:Type vm:MultipleChoiceExerciseViewModel}">
-            <StackPanel>
-                <TextBlock Text="{Binding Question}" FontSize="20" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,0,0,16" />
-                <ItemsControl ItemsSource="{Binding Options}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <ui:Button Content="{Binding Text}" Margin="0,0,0,8"
-                                       HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
-                                       Appearance="{Binding VisualState, Converter={StaticResource MultipleChoiceVisualStateToButtonAppearanceConverter}}"
-                                       Command="{Binding DataContext.SelectOptionCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                       CommandParameter="{Binding}" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type vm:ClozeExerciseViewModel}">
-            <StackPanel>
-                <WrapPanel>
-                    <TextBlock Text="{Binding TextBefore}" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap" />
-                    <ui:TextBox Text="{Binding TypedAnswer, UpdateSourceTrigger=PropertyChanged}" Width="140" Margin="4,0" FontSize="18" />
-                    <TextBlock Text="{Binding TextAfter}" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap" />
-                </WrapPanel>
-
-                <StackPanel Margin="0,12,0,0">
-                    <TextBlock Opacity="0.8">
-                        <Run Text="Hint: " FontWeight="SemiBold" />
-                        <Run Text="{Binding EnglishHint, Mode=OneWay}" />
-                    </TextBlock>
-                    <TextBlock Text="{Binding HintHelperText, Mode=OneWay}" Opacity="0.65" TextWrapping="Wrap" Margin="0,4,0,0" />
-                </StackPanel>
-            </StackPanel>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type vm:SentenceOrderExerciseViewModel}">
-            <StackPanel>
-                <TextBlock Text="Your sentence:" Opacity="0.7" Margin="0,0,0,4" />
-                <Border BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="4" Padding="8" MinHeight="52">
-                    <ItemsControl ItemsSource="{Binding ChosenWords}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <ui:Button Content="{Binding}" Margin="0,0,4,4" Appearance="Primary"
-                                           Command="{Binding DataContext.RemoveWordCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                           CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </Border>
-
-                <TextBlock Text="Available words:" Opacity="0.7" Margin="0,16,0,4" />
-                <ItemsControl ItemsSource="{Binding AvailableWords}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <ui:Button Content="{Binding}" Margin="0,0,4,4" Appearance="Secondary"
-                                       Command="{Binding DataContext.ChooseWordCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                       CommandParameter="{Binding}" />
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type vm:ConjugationDrillExerciseViewModel}">
-            <StackPanel>
-                <TextBlock FontSize="20" FontWeight="SemiBold" Margin="0,0,0,16">
-                    <Run Text="Conjugate: " /><Run Text="{Binding BaseWord, Mode=OneWay}" FontStyle="Italic" />
-                </TextBlock>
-                <ItemsControl ItemsSource="{Binding Slots}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Margin="0,0,0,8">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="120" />
-                                    <ColumnDefinition Width="200" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Text="{Binding Label}" VerticalAlignment="Center" />
-                                <ui:TextBox Grid.Column="1" Text="{Binding TypedForm, UpdateSourceTrigger=PropertyChanged}">
-                                    <ui:TextBox.Style>
-                                        <Style TargetType="ui:TextBox" BasedOn="{StaticResource {x:Type ui:TextBox}}">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding IsCorrect}" Value="False">
-                                                    <Setter Property="Foreground" Value="Red" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </ui:TextBox.Style>
-                                </ui:TextBox>
-                                <TextBlock Grid.Column="2" Margin="8,0,0,0" VerticalAlignment="Center" FontWeight="Bold"
-                                           Text="{Binding IsCorrect, Converter={StaticResource SlotCorrectnessToTextConverter}}" />
-                                <TextBlock Grid.Column="3" Margin="8,0,0,0" VerticalAlignment="Center" FontWeight="Bold"
-                                           Foreground="Green"
-                                           Text="{Binding CorrectForm}"
-                                           Visibility="{Binding ShowCorrectAnswer, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                            </Grid>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
-        </DataTemplate>
-
-    </Window.Resources>
-
-    <Grid Margin="16">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <ui:TitleBar Grid.Row="0" x:Name="TrainingTitleBar" Title="">
-            <ui:TitleBar.Header>
-                <Grid x:Name="TitleBarLeftContentRoot" Margin="0,0,12,0">
-                    <ui:Button Content="Retrain" Appearance="Secondary"
-                               Command="{Binding OpenRetrainCommand}"
-                               IsEnabled="{Binding IsRetrainButtonEnabled}" />
-                </Grid>
-            </ui:TitleBar.Header>
-            <ui:TitleBar.CenterContent>
-                <Grid x:Name="TitleBarCenterContentRoot" Height="40">
-                    <TextBlock Text="Training"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                               FontSize="16"
-                               FontWeight="SemiBold"
-                               TextTrimming="CharacterEllipsis" />
-                </Grid>
-            </ui:TitleBar.CenterContent>
-            <ui:TitleBar.TrailingContent>
-                <Grid x:Name="TitleBarRightContentRoot" Width="0" />
-            </ui:TitleBar.TrailingContent>
-        </ui:TitleBar>
-
-        <ScrollViewer Grid.Row="1" Margin="0,16,0,0"
-                      x:Name="ContentScrollViewer"
-                      VerticalScrollBarVisibility="Hidden"
-                      HorizontalScrollBarVisibility="Disabled"
-                      PanningMode="VerticalOnly"
-                      Focusable="True">
-
-            <Grid>
-
-            <!-- Levels screen -->
-            <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Levels}">
-                <StackPanel Visibility="{Binding IsLoadingLevels, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
-                    <TextBlock Text="Choose a level" FontSize="22" FontWeight="SemiBold" Margin="0,0,0,16" />
-                    <ItemsControl ItemsSource="{Binding Levels}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <ui:CardAction Margin="0,0,0,10" IsEnabled="{Binding IsClickable}"
-                                               Command="{Binding DataContext.OpenLevelCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                               CommandParameter="{Binding}">
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding Level}" FontSize="18" FontWeight="SemiBold" />
-                                        <TextBlock Text="{Binding StatusText}" Opacity="0.7" Margin="0,4,0,0" />
-                                    </StackPanel>
-                                </ui:CardAction>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Visibility="{Binding IsLoadingLevels, Converter={StaticResource BooleanToVisibilityConverter}}">
-                    <ui:ProgressRing IsIndeterminate="True" Width="40" Height="40" />
-                    <TextBlock Text="Loading vocabulary..." Opacity="0.7" Margin="0,12,0,0" HorizontalAlignment="Center" />
-                </StackPanel>
-            </Grid>
-
-            <!-- Units screen -->
-            <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Units}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <Grid Grid.Row="0" Margin="0,0,0,16">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-
-                    <ui:Button Grid.Column="0" Content="&lt; Levels" Appearance="Secondary" Margin="0,0,12,0" Command="{Binding BackToLevelsCommand}" />
-                    <TextBlock Grid.Column="1" Text="{Binding SelectedLevelTitle}" FontSize="22" FontWeight="SemiBold" VerticalAlignment="Center" />
-                    <TextBlock Grid.Column="3" Text="{Binding SelectedLevelProgressText}" Opacity="0.7" FontSize="14" VerticalAlignment="Center" />
-                </Grid>
-
-                <ItemsControl Grid.Row="1" ItemsSource="{Binding Units}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <ui:CardAction Margin="0,0,0,10"
-                                           Command="{Binding DataContext.OpenUnitCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                           CommandParameter="{Binding}">
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="SemiBold" />
-                                    <TextBlock Text="{Binding Description}" Opacity="0.7" Margin="0,4,0,4" TextWrapping="Wrap" />
-                                    <TextBlock Text="{Binding ProgressText}" Opacity="0.6" FontSize="12" />
-                                </StackPanel>
-                            </ui:CardAction>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </Grid>
-
-            <!-- Exercise screen -->
-            <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Exercise}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
-                    <ui:Button Content="&lt; Units" Appearance="Secondary" Margin="0,0,12,0" Command="{Binding BackToUnitsCommand}" />
-                    <TextBlock Text="{Binding ActiveSessionTitle}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,12,0" />
-                    <TextBlock Text="{Binding ExerciseProgressText}" Opacity="0.6" VerticalAlignment="Center" Margin="0,0,12,0" />
-                    <TextBlock Text="{Binding ActiveSessionProgressDetail}" Opacity="0.6" VerticalAlignment="Center" />
-                </StackPanel>
-
-                <!-- In-progress exercise -->
-                <Grid Grid.Row="1" Visibility="{Binding IsUnitComplete, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-
-                    <TextBlock Grid.Row="0" Text="{Binding CurrentExercise.Instruction}" Opacity="0.7" Margin="0,0,0,16" TextWrapping="Wrap" />
-
-                    <ContentControl x:Name="ExerciseContentHost" Grid.Row="1" Content="{Binding CurrentExercise}" VerticalAlignment="Top" />
-
-                    <StackPanel Grid.Row="2" Margin="0,20,0,0">
-                        <ui:Button Content="Check answer" Appearance="Primary" HorizontalAlignment="Left"
-                                   Command="{Binding CheckAnswerCommand}"
-                                   Visibility="{Binding CurrentExercise.ShowCheckAnswerButton, Converter={StaticResource BooleanToVisibilityConverter}}" />
-
-                        <StackPanel Visibility="{Binding CurrentExercise.IsAnswered, Converter={StaticResource BooleanToVisibilityConverter}}">
-                            <TextBlock Text="Nice, that's right." FontWeight="SemiBold" Margin="0,0,0,4"
-                                       Visibility="{Binding CurrentExercise.ShowCorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                            <TextBlock Text="Not quite - here's why:" FontWeight="SemiBold" Margin="0,0,0,4"
-                                       Visibility="{Binding CurrentExercise.ShowIncorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                            <TextBlock Text="{Binding CurrentExercise.Explanation}" TextWrapping="Wrap" Opacity="0.8" Margin="0,0,0,12" />
-
-                            <StackPanel Orientation="Horizontal">
-                                <ui:Button Content="Try again" Appearance="Secondary" Margin="0,0,8,0"
-                                           Command="{Binding TryAgainCommand}"
-                                           Visibility="{Binding CurrentExercise.ShowIncorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                                <ui:Button Content="Next" Appearance="Primary"
-                                           Command="{Binding NextExerciseCommand}"
-                                           Visibility="{Binding CurrentExercise.ShowCorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                            </StackPanel>
-                        </StackPanel>
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+ xmlns:vm="clr-namespace:AllItems.Translation.App.ViewModels.Training"
+ Title="Training" Height="720" Width="820" MinHeight="520" MinWidth="620" WindowStartupLocation="CenterScreen" ExtendsContentIntoTitleBar="True" WindowBackdropType="Mica" PreviewMouseWheel="OnWindowPreviewMouseWheel" PreviewKeyDown="OnWindowPreviewKeyDown">
+  <Window.Resources>
+    <DataTemplate DataType="{x:Type vm:MultipleChoiceExerciseViewModel}">
+      <StackPanel>
+        <TextBlock Text="{Binding Question}" FontSize="20" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,0,0,16"/>
+        <ItemsControl ItemsSource="{Binding Options}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <ui:Button Content="{Binding Text}" Margin="0,0,0,8" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Appearance="{Binding VisualState, Converter={StaticResource MultipleChoiceVisualStateToButtonAppearanceConverter}}" Command="{Binding DataContext.SelectOptionCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}"/>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ClozeExerciseViewModel}">
+      <StackPanel>
+        <WrapPanel>
+          <TextBlock Text="{Binding TextBefore}" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap"/>
+          <ui:TextBox Text="{Binding TypedAnswer, UpdateSourceTrigger=PropertyChanged}" Width="140" Margin="4,0" FontSize="18"/>
+          <TextBlock Text="{Binding TextAfter}" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap"/>
+        </WrapPanel>
+        <StackPanel Margin="0,12,0,0">
+          <TextBlock Opacity="0.8">
+            <Run Text="Hint: " FontWeight="SemiBold"/>
+            <Run Text="{Binding EnglishHint, Mode=OneWay}"/>
+          </TextBlock>
+          <TextBlock Text="{Binding HintHelperText, Mode=OneWay}" Opacity="0.65" TextWrapping="Wrap" Margin="0,4,0,0"/>
+        </StackPanel>
+      </StackPanel>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SentenceOrderExerciseViewModel}">
+      <StackPanel>
+        <TextBlock Text="Your sentence:" Opacity="0.7" Margin="0,0,0,4"/>
+        <Border BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="4" Padding="8" MinHeight="52">
+          <ItemsControl ItemsSource="{Binding ChosenWords}">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <WrapPanel/>
+              </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <ui:Button Content="{Binding}" Margin="0,0,4,4" Appearance="Primary" Command="{Binding DataContext.RemoveWordCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}"/>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </Border>
+        <TextBlock Text="Available words:" Opacity="0.7" Margin="0,16,0,4"/>
+        <ItemsControl ItemsSource="{Binding AvailableWords}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <WrapPanel/>
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <ui:Button Content="{Binding}" Margin="0,0,4,4" Appearance="Secondary" Command="{Binding DataContext.ChooseWordCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}"/>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ConjugationDrillExerciseViewModel}">
+      <StackPanel>
+        <TextBlock FontSize="20" FontWeight="SemiBold" Margin="0,0,0,16">
+          <Run Text="Conjugate: "/>
+          <Run Text="{Binding BaseWord, Mode=OneWay}" FontStyle="Italic"/>
+        </TextBlock>
+        <ItemsControl ItemsSource="{Binding Slots}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Grid Margin="0,0,0,8">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="120"/>
+                  <ColumnDefinition Width="200"/>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Label}" VerticalAlignment="Center"/>
+                <ui:TextBox Grid.Column="1" Text="{Binding TypedForm, UpdateSourceTrigger=PropertyChanged}">
+                  <ui:TextBox.Style>
+                    <Style TargetType="ui:TextBox" BasedOn="{StaticResource {x:Type ui:TextBox}}">
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsCorrect}" Value="False">
+                          <Setter Property="Foreground" Value="Red"/>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </ui:TextBox.Style>
+                </ui:TextBox>
+                <TextBlock Grid.Column="2" Margin="8,0,0,0" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding IsCorrect, Converter={StaticResource SlotCorrectnessToTextConverter}}"/>
+                <TextBlock Grid.Column="3" Margin="8,0,0,0" VerticalAlignment="Center" FontWeight="Bold" Foreground="Green" Text="{Binding CorrectForm}" Visibility="{Binding ShowCorrectAnswer, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+              </Grid>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+    </DataTemplate>
+  </Window.Resources>
+  <Grid Margin="16">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <ui:TitleBar Grid.Row="0" Height="32" MinHeight="32" Title="Training">
+      <ui:TitleBar.TrailingContent>
+        <ui:Button Width="46" Height="32" Appearance="Transparent" ToolTip="Retrain" Icon="{ui:SymbolIcon ArrowRepeatAll24}" Command="{Binding OpenRetrainCommand}" IsEnabled="{Binding IsRetrainButtonEnabled}"/>
+      </ui:TitleBar.TrailingContent>
+    </ui:TitleBar>
+    <ScrollViewer Grid.Row="1" Margin="0,16,0,0" x:Name="ContentScrollViewer"
+ VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" PanningMode="VerticalOnly" Focusable="True">
+      <Grid>
+        <!-- Levels screen -->
+        <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Levels}">
+          <StackPanel Visibility="{Binding IsLoadingLevels, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+            <TextBlock Text="Choose a level" FontSize="22" FontWeight="SemiBold" Margin="0,0,0,16"/>
+            <ItemsControl ItemsSource="{Binding Levels}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <ui:CardAction Margin="0,0,0,10" IsEnabled="{Binding IsClickable}" Command="{Binding DataContext.OpenLevelCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}">
+                    <StackPanel>
+                      <TextBlock Text="{Binding Level}" FontSize="18" FontWeight="SemiBold"/>
+                      <TextBlock Text="{Binding StatusText}" Opacity="0.7" Margin="0,4,0,0"/>
                     </StackPanel>
-                </Grid>
-
-                <!-- Unit complete -->
-                <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Visibility="{Binding IsUnitComplete, Converter={StaticResource BooleanToVisibilityConverter}}">
-                    <TextBlock Text="Nice work!" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" />
-                    <TextBlock Text="You've completed this session." Margin="0,8,0,0" Opacity="0.8" HorizontalAlignment="Center" />
-                    <ui:Button Content="Back to units" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center"
-                               IsDefault="True"
-                               Command="{Binding BackToUnitsCommand}" />
+                  </ui:CardAction>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </StackPanel>
+          <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsLoadingLevels, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <ui:ProgressRing IsIndeterminate="True" Width="40" Height="40"/>
+            <TextBlock Text="Loading vocabulary..." Opacity="0.7" Margin="0,12,0,0" HorizontalAlignment="Center"/>
+          </StackPanel>
+        </Grid>
+        <!-- Units screen -->
+        <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Units}">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <Grid Grid.Row="0" Margin="0,0,0,16">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ui:Button Grid.Column="0" Content="&lt; Levels" Appearance="Secondary" Margin="0,0,12,0" Command="{Binding BackToLevelsCommand}"/>
+            <TextBlock Grid.Column="1" Text="{Binding SelectedLevelTitle}" FontSize="22" FontWeight="SemiBold" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="3" Text="{Binding SelectedLevelProgressText}" Opacity="0.7" FontSize="14" VerticalAlignment="Center"/>
+          </Grid>
+          <ItemsControl Grid.Row="1" ItemsSource="{Binding Units}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <ui:CardAction Margin="0,0,0,10" Command="{Binding DataContext.OpenUnitCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}">
+                  <StackPanel>
+                    <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding Description}" Opacity="0.7" Margin="0,4,0,4" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding ProgressText}" Opacity="0.6" FontSize="12"/>
+                  </StackPanel>
+                </ui:CardAction>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </Grid>
+        <!-- Exercise screen -->
+        <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Exercise}">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <ui:Button Content="&lt; Units" Appearance="Secondary" Margin="0,0,12,0" Command="{Binding BackToUnitsCommand}"/>
+            <TextBlock Text="{Binding ActiveSessionTitle}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,12,0"/>
+            <TextBlock Text="{Binding ExerciseProgressText}" Opacity="0.6" VerticalAlignment="Center" Margin="0,0,12,0"/>
+            <TextBlock Text="{Binding ActiveSessionProgressDetail}" Opacity="0.6" VerticalAlignment="Center"/>
+          </StackPanel>
+          <!-- In-progress exercise -->
+          <Grid Grid.Row="1" Visibility="{Binding IsUnitComplete, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="{Binding CurrentExercise.Instruction}" Opacity="0.7" Margin="0,0,0,16" TextWrapping="Wrap"/>
+            <ContentControl x:Name="ExerciseContentHost"
+ Grid.Row="1" Content="{Binding CurrentExercise}" VerticalAlignment="Top"/>
+            <StackPanel Grid.Row="2" Margin="0,20,0,0">
+              <ui:Button Content="Check answer" Appearance="Primary" HorizontalAlignment="Left" Command="{Binding CheckAnswerCommand}" Visibility="{Binding CurrentExercise.ShowCheckAnswerButton, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+              <StackPanel Visibility="{Binding CurrentExercise.IsAnswered, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <TextBlock Text="Nice, that's right." FontWeight="SemiBold" Margin="0,0,0,4" Visibility="{Binding CurrentExercise.ShowCorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBlock Text="Not quite - here's why:" FontWeight="SemiBold" Margin="0,0,0,4" Visibility="{Binding CurrentExercise.ShowIncorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBlock Text="{Binding CurrentExercise.Explanation}" TextWrapping="Wrap" Opacity="0.8" Margin="0,0,0,12"/>
+                <StackPanel Orientation="Horizontal">
+                  <ui:Button Content="Try again" Appearance="Secondary" Margin="0,0,8,0" Command="{Binding TryAgainCommand}" Visibility="{Binding CurrentExercise.ShowIncorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                  <ui:Button Content="Next" Appearance="Primary" Command="{Binding NextExerciseCommand}" Visibility="{Binding CurrentExercise.ShowCorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </StackPanel>
-            </Grid>
-
-            <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=RetrainEmpty}">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="460">
-                    <TextBlock Text="Mixed retraining" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" />
-                    <TextBlock Text="{Binding RetrainEmptyMessage}" Margin="0,12,0,0" Opacity="0.8" TextAlignment="Center" TextWrapping="Wrap" />
-                    <ui:Button Content="Back to levels" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center"
-                               Command="{Binding BackToLevelsCommand}" />
-                </StackPanel>
-            </Grid>
-
-            </Grid>
-
-        </ScrollViewer>
-    </Grid>
+              </StackPanel>
+            </StackPanel>
+          </Grid>
+          <!-- Unit complete -->
+          <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsUnitComplete, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock Text="Nice work!" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <TextBlock Text="You've completed this session." Margin="0,8,0,0" Opacity="0.8" HorizontalAlignment="Center"/>
+            <ui:Button Content="Back to units" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center" IsDefault="True" Command="{Binding BackToUnitsCommand}"/>
+          </StackPanel>
+        </Grid>
+        <Grid Visibility="{Binding Screen, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=RetrainEmpty}">
+          <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="460">
+            <TextBlock Text="Mixed retraining" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding RetrainEmptyMessage}" Margin="0,12,0,0" Opacity="0.8" TextAlignment="Center" TextWrapping="Wrap"/>
+            <ui:Button Content="Back to levels" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center" Command="{Binding BackToLevelsCommand}"/>
+          </StackPanel>
+        </Grid>
+      </Grid>
+    </ScrollViewer>
+  </Grid>
 </ui:FluentWindow>

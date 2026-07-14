@@ -10,16 +10,11 @@ namespace AllItems.Translation.App.Views;
 public partial class TrainingWindow : FluentWindow
 {
     private const double MouseWheelScrollDelta = 48;
-    private const int CaptionButtonCount = 3;
 
     public TrainingWindow(TrainingViewModel viewModel)
     {
         InitializeComponent();
         DataContext = viewModel;
-        SizeChanged += (_, _) => UpdateTitleBarCentering();
-        Loaded += (_, _) => UpdateTitleBarCentering();
-        TitleBarLeftContentRoot.SizeChanged += (_, _) => UpdateTitleBarCentering();
-        TitleBarRightContentRoot.SizeChanged += (_, _) => UpdateTitleBarCentering();
         viewModel.PropertyChanged += OnViewModelPropertyChanged;
         viewModel.Initialize();
     }
@@ -81,21 +76,6 @@ public partial class TrainingWindow : FluentWindow
         return null;
     }
 
-    private void UpdateTitleBarCentering()
-    {
-        if (TrainingTitleBar is null)
-        {
-            return;
-        }
-
-        var captionButtonsWidth = SystemParameters.CaptionWidth * CaptionButtonCount;
-        var leftWidth = TitleBarLeftContentRoot.ActualWidth;
-        var rightWidth = TitleBarRightContentRoot.ActualWidth + captionButtonsWidth;
-        var largerMargin = Math.Max(leftWidth, rightWidth);
-        var availableWidth = Math.Max(0, TrainingTitleBar.ActualWidth - (largerMargin * 2));
-
-        TitleBarCenterContentRoot.Width = availableWidth;
-    }
 
     private void OnWindowPreviewMouseWheel(object sender, MouseWheelEventArgs e)
     {
