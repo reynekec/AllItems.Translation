@@ -1,0 +1,120 @@
+using System.Collections.Frozen;
+
+namespace AllItems.Translation.Core.Curriculum;
+
+public static class ClozeEnglishHintProvider
+{
+    public const string UnknownHint = "English hint unavailable.";
+
+    private static readonly FrozenDictionary<string, string> HintsByAnswer =
+        new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["als"] = "than/as (comparison)",
+            ["Ampel"] = "traffic light",
+            ["an"] = "at/on (preposition)",
+            ["Angebot"] = "offer",
+            ["besten"] = "best",
+            ["Bewerbung"] = "job application",
+            ["bin"] = "am",
+            ["blau"] = "blue",
+            ["Bücher"] = "books",
+            ["Dagegen"] = "on the other hand",
+            ["damit"] = "so that",
+            ["dass"] = "that",
+            ["dem"] = "the (dative, masculine/neuter)",
+            ["den"] = "the (accusative masculine/dative plural)",
+            ["der"] = "the (masculine nominative/feminine dative-genitive)",
+            ["Der Hund"] = "the dog",
+            ["deren"] = "whose (feminine/plural)",
+            ["des"] = "of the (genitive masculine/neuter)",
+            ["dessen"] = "whose (masculine/neuter)",
+            ["desto"] = "the ... (correlative: the more/the less)",
+            ["Die"] = "the (feminine/plural)",
+            ["Die Katze"] = "the cat",
+            ["ein"] = "a/an (masculine nominative/neuter nominative-accusative)",
+            ["einen"] = "a/an (accusative masculine)",
+            ["Einerseits"] = "on the one hand",
+            ["Fenster"] = "window",
+            ["Forschung"] = "research",
+            ["gefahren"] = "traveled/driven (past participle)",
+            ["gegangen"] = "gone/went (past participle)",
+            ["gegessen"] = "eaten (past participle)",
+            ["Genesung"] = "recovery",
+            ["geradeaus"] = "straight ahead",
+            ["gesehen"] = "seen (past participle)",
+            ["grün"] = "green",
+            ["gute"] = "good (adjective form)",
+            ["habe"] = "have (1st person singular)",
+            ["haben"] = "have (plural/formal)",
+            ["hätte"] = "would have (Konjunktiv II)",
+            ["hatten"] = "had (simple past)",
+            ["hätten"] = "would have (plural/formal)",
+            ["Ihnen"] = "you (formal, dative)",
+            ["Insolvenz"] = "insolvency / bankruptcy",
+            ["Jacke"] = "jacket",
+            ["kann"] = "can (3rd person singular)",
+            ["Kannst"] = "can you (2nd person singular)",
+            ["Kasse"] = "checkout/cash register",
+            ["keine"] = "no / not any",
+            ["Kinder"] = "children",
+            ["Klage"] = "lawsuit/complaint",
+            ["kommt"] = "comes (3rd person singular)",
+            ["könne"] = "may/can (reported speech form)",
+            ["Kopf"] = "head",
+            ["Künstler"] = "artist",
+            ["Lehrer"] = "teacher",
+            ["Lernen"] = "learning",
+            ["leugnen"] = "to deny",
+            ["Meinung"] = "opinion",
+            ["mich"] = "me/myself",
+            ["Miete"] = "rent",
+            ["mir"] = "to me (dative)",
+            ["möchten"] = "would like",
+            ["muss"] = "must",
+            ["neues"] = "new (neuter adjective form)",
+            ["nicht"] = "not",
+            ["noch"] = "still/yet",
+            ["ob"] = "whether/if",
+            ["Obwohl"] = "although",
+            ["Passwort"] = "password",
+            ["Regierung"] = "government",
+            ["Schlafzimmer"] = "bedroom",
+            ["Schluss"] = "conclusion / end",
+            ["Schnee"] = "snow",
+            ["schneller"] = "faster",
+            ["Schuhe"] = "shoes",
+            ["schwimmen"] = "to swim (infinitive)",
+            ["sei"] = "be (reported speech form)",
+            ["sich"] = "oneself",
+            ["Sonne"] = "sun",
+            ["stolz"] = "proud",
+            ["Trotzdem"] = "nevertheless",
+            ["Umwelt"] = "environment",
+            ["Verantwortung"] = "responsibility",
+            ["war"] = "was (simple past)",
+            ["wäre"] = "would be (Konjunktiv II)",
+            ["was"] = "what/that which",
+            ["Wasser"] = "water",
+            ["Wehmut"] = "melancholy / wistfulness",
+            ["weil"] = "because",
+            ["Wenn"] = "if/when",
+            ["werde"] = "will/become (1st person singular)",
+            ["wird"] = "will/becomes (3rd person singular)",
+            ["wo"] = "where",
+            ["wohne"] = "live (1st person singular)",
+            ["wollte"] = "wanted (simple past)",
+            ["würde"] = "would (Konjunktiv II)",
+            ["zu"] = "to",
+            ["Zug"] = "train"
+        }.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
+
+    public static string GetHint(ClozeExercise exercise)
+    {
+        if (HintsByAnswer.TryGetValue(exercise.CorrectAnswer, out var hint))
+        {
+            return hint;
+        }
+
+        return UnknownHint;
+    }
+}

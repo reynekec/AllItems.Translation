@@ -39,17 +39,11 @@
                 </WrapPanel>
 
                 <StackPanel Margin="0,12,0,0">
-                    <ui:Button Content="Hint" Appearance="Secondary" HorizontalAlignment="Left"
-                               Command="{Binding RevealHintCommand}" />
-
-                    <StackPanel Margin="0,8,0,0"
-                                Visibility="{Binding IsHintVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <TextBlock Opacity="0.8">
-                            <Run Text="Hint: " FontWeight="SemiBold" />
-                            <Run Text="{Binding EnglishHint, Mode=OneWay}" />
-                        </TextBlock>
-                        <TextBlock Text="{Binding HintHelperText, Mode=OneWay}" Opacity="0.65" TextWrapping="Wrap" Margin="0,4,0,0" />
-                    </StackPanel>
+                    <TextBlock Opacity="0.8">
+                        <Run Text="Hint: " FontWeight="SemiBold" />
+                        <Run Text="{Binding EnglishHint, Mode=OneWay}" />
+                    </TextBlock>
+                    <TextBlock Text="{Binding HintHelperText, Mode=OneWay}" Opacity="0.65" TextWrapping="Wrap" Margin="0,4,0,0" />
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
