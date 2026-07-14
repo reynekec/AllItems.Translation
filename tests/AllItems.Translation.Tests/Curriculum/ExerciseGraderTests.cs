@@ -26,6 +26,17 @@ public class ExerciseGraderTests
         CorrectAnswer = "bin"
     };
 
+    private static ClozeExercise ClozeWithSynonyms() => new()
+    {
+        Id = "cloze-2",
+        Instruction = "Fill in",
+        Explanation = "explanation",
+        TextBefore = "Das ist ",
+        TextAfter = " gut.",
+        CorrectAnswer = "okay",
+        AcceptedAnswers = ["ok", "in ordnung"]
+    };
+
     private static SentenceOrderExercise SentenceOrder() => new()
     {
         Id = "order-1",
@@ -79,6 +90,26 @@ public class ExerciseGraderTests
     {
         var result = _grader.Grade(Cloze(), new ExerciseAnswer(TypedText: typed));
         Assert.Equal(expectedCorrect, result.IsCorrect);
+    }
+
+    [Theory]
+    [InlineData("okay")]
+    [InlineData("OK")]
+    [InlineData("in ordnung")]
+    [InlineData(" in   ordnung ")]
+    public void Grade_Cloze_AcceptsConfiguredSynonyms(string typed)
+    {
+        var result = _grader.Grade(ClozeWithSynonyms(), new ExerciseAnswer(TypedText: typed));
+
+        Assert.True(result.IsCorrect);
+    }
+
+    [Fact]
+    public void Grade_Cloze_RejectsUnconfiguredAlternative()
+    {
+        var result = _grader.Grade(ClozeWithSynonyms(), new ExerciseAnswer(TypedText: "gut"));
+
+        Assert.False(result.IsCorrect);
     }
 
     [Fact]

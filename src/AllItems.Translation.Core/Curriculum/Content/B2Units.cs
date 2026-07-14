@@ -71,7 +71,8 @@ public static class B2Units
                     Explanation = "Konjunktiv I of 'können' for 'er': er könne.",
                     TextBefore = "Er sagt, dass er kommen ",
                     TextAfter = ".",
-                    CorrectAnswer = "könne"
+                    CorrectAnswer = "könne",
+                    AcceptedAnswers = ["koenne"]
                 }
             ]
         },
@@ -138,7 +139,8 @@ public static class B2Units
                     Explanation = "Past Konjunktiv II = hätte/wäre + Partizip II. 'haben' takes 'gehabt' as its own participle here.",
                     TextBefore = "Wenn ich Zeit gehabt ",
                     TextAfter = ", wäre ich gekommen.",
-                    CorrectAnswer = "hätte"
+                    CorrectAnswer = "hätte",
+                    AcceptedAnswers = ["haette"]
                 },
                 new ClozeExercise
                 {
@@ -147,7 +149,8 @@ public static class B2Units
                     Explanation = "'kommen' takes 'sein' as its auxiliary, so the past Konjunktiv II uses 'wäre'.",
                     TextBefore = "Wenn ich Zeit gehabt hätte, ",
                     TextAfter = " ich gekommen.",
-                    CorrectAnswer = "wäre"
+                    CorrectAnswer = "wäre",
+                    AcceptedAnswers = ["waere"]
                 },
                 new ClozeExercise
                 {
@@ -156,7 +159,8 @@ public static class B2Units
                     Explanation = "\"Ich hätte das nicht gemacht\" = \"I wouldn't have done that\".",
                     TextBefore = "Ich ",
                     TextAfter = " das nicht gemacht.",
-                    CorrectAnswer = "hätte"
+                    CorrectAnswer = "hätte",
+                    AcceptedAnswers = ["haette"]
                 },
                 new MultipleChoiceExercise
                 {
@@ -748,6 +752,7 @@ public static class B2Units
                     TextBefore = "Der ",
                     TextAfter = " stellt seine Werke aus.",
                     CorrectAnswer = "Künstler",
+                    AcceptedAnswers = ["Kuenstler"],
                     Teaches = new VocabularyTeaching("Künstler", "artist", Article: "der", ExampleSentence: "Der Künstler malt ein Porträt.", Highlights: [])
                 }
             ]

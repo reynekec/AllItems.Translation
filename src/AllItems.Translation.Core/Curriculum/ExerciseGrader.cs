@@ -23,7 +23,11 @@ public sealed class ExerciseGrader : IExerciseGrader
 
     private static GradingResult GradeCloze(ClozeExercise exercise, ExerciseAnswer answer)
     {
-        var isCorrect = TextsMatch(answer.TypedText, exercise.CorrectAnswer);
+        var acceptedAnswers = exercise.AcceptedAnswers.Count == 0
+            ? new[] { exercise.CorrectAnswer }
+            : new[] { exercise.CorrectAnswer }.Concat(exercise.AcceptedAnswers);
+
+        var isCorrect = acceptedAnswers.Any(expected => TextsMatch(answer.TypedText, expected));
         return new GradingResult(isCorrect, exercise.Explanation);
     }
 

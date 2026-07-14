@@ -31,11 +31,27 @@
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type vm:ClozeExerciseViewModel}">
-            <WrapPanel>
-                <TextBlock Text="{Binding TextBefore}" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap" />
-                <ui:TextBox Text="{Binding TypedAnswer, UpdateSourceTrigger=PropertyChanged}" Width="140" Margin="4,0" FontSize="18" />
-                <TextBlock Text="{Binding TextAfter}" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap" />
-            </WrapPanel>
+            <StackPanel>
+                <WrapPanel>
+                    <TextBlock Text="{Binding TextBefore}" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap" />
+                    <ui:TextBox Text="{Binding TypedAnswer, UpdateSourceTrigger=PropertyChanged}" Width="140" Margin="4,0" FontSize="18" />
+                    <TextBlock Text="{Binding TextAfter}" FontSize="18" VerticalAlignment="Center" TextWrapping="Wrap" />
+                </WrapPanel>
+
+                <StackPanel Margin="0,12,0,0">
+                    <ui:Button Content="Hint" Appearance="Secondary" HorizontalAlignment="Left"
+                               Command="{Binding RevealHintCommand}" />
+
+                    <StackPanel Margin="0,8,0,0"
+                                Visibility="{Binding IsHintVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Opacity="0.8">
+                            <Run Text="Hint: " FontWeight="SemiBold" />
+                            <Run Text="{Binding EnglishHint, Mode=OneWay}" />
+                        </TextBlock>
+                        <TextBlock Text="{Binding HintHelperText, Mode=OneWay}" Opacity="0.65" TextWrapping="Wrap" Margin="0,4,0,0" />
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type vm:SentenceOrderExerciseViewModel}">

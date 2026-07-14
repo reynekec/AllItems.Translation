@@ -225,7 +225,8 @@ public static class C1Units
                     Explanation = "Konjunktiv I of 'haben': die Forscher hätten neue Daten gefunden.",
                     TextBefore = "Der Autor behauptet, die Forscher ",
                     TextAfter = " neue Daten gefunden.",
-                    CorrectAnswer = "hätten"
+                    CorrectAnswer = "hätten",
+                    AcceptedAnswers = ["haetten"]
                 }
             ]
         },

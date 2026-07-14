@@ -373,7 +373,8 @@ public static class A1Units
                     Explanation = "'wir' + möchten = 'wir möchten' - a polite way to order.",
                     TextBefore = "Wir ",
                     TextAfter = " einen Kaffee, bitte.",
-                    CorrectAnswer = "möchten"
+                    CorrectAnswer = "möchten",
+                    AcceptedAnswers = ["moechten"]
                 }
             ]
         },
@@ -561,7 +562,8 @@ public static class A1Units
                     Explanation = "'Buch' has an irregular plural: Bücher (note the umlaut).",
                     TextBefore = "Ich habe drei ",
                     TextAfter = ".",
-                    CorrectAnswer = "Bücher"
+                    CorrectAnswer = "Bücher",
+                    AcceptedAnswers = ["Buecher"]
                 },
                 new ClozeExercise
                 {
@@ -659,7 +661,8 @@ public static class A1Units
                     Explanation = "\"Das Gras ist grün\" = \"The grass is green\".",
                     TextBefore = "Das Gras ist ",
                     TextAfter = ".",
-                    CorrectAnswer = "grün"
+                    CorrectAnswer = "grün",
+                    AcceptedAnswers = ["gruen"]
                 }
             ]
         },

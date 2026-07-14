@@ -6,4 +6,5 @@ public sealed record ClozeExercise : Exercise
     public required string TextBefore { get; init; }
     public required string TextAfter { get; init; }
     public required string CorrectAnswer { get; init; }
+    public IReadOnlyList<string> AcceptedAnswers { get; init; } = [];
 }

@@ -43,7 +43,8 @@ public static class B1Units
                     Explanation = "\"Ich hätte gerne...\" is the standard polite way to order or request something.",
                     TextBefore = "Ich ",
                     TextAfter = " gerne einen Kaffee.",
-                    CorrectAnswer = "hätte"
+                    CorrectAnswer = "hätte",
+                    AcceptedAnswers = ["haette"]
                 },
                 new ClozeExercise
                 {
@@ -52,7 +53,8 @@ public static class B1Units
                     Explanation = "The 'wenn' clause uses 'hätte'; the main clause uses 'würde + Infinitiv'.",
                     TextBefore = "Wenn ich Zeit hätte, ",
                     TextAfter = " ich kommen.",
-                    CorrectAnswer = "würde"
+                    CorrectAnswer = "würde",
+                    AcceptedAnswers = ["wuerde"]
                 },
                 new MultipleChoiceExercise
                 {
@@ -70,7 +72,8 @@ public static class B1Units
                     Explanation = "\"Das wäre schön\" = \"That would be nice\" - a common polite phrase.",
                     TextBefore = "Das ",
                     TextAfter = " schön.",
-                    CorrectAnswer = "wäre"
+                    CorrectAnswer = "wäre",
+                    AcceptedAnswers = ["waere"]
                 }
             ]
         },
