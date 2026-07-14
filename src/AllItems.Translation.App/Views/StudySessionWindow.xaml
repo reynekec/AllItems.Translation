@@ -35,7 +35,20 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ui:TitleBar Grid.Row="0" Title="Study" />
+        <ui:TitleBar Grid.Row="0" Height="32" MinHeight="32" Title="Study">
+            <ui:TitleBar.TrailingContent>
+                <StackPanel Orientation="Horizontal" Margin="0,0,8,0" VerticalAlignment="Center">
+                    <ui:Button Width="46" Height="32" Appearance="Transparent" ToolTip="Retrain missed" Margin="0,0,8,0"
+                               Icon="{ui:SymbolIcon ArrowUndo24}" 
+                               Command="{Binding StartRetrainCurrentSessionCommand}"
+                               IsEnabled="{Binding StartRetrainCurrentSessionCommand.CanExecute, Mode=OneWay}" />
+                    <ui:Button Width="46" Height="32" Appearance="Transparent" ToolTip="Retrain trouble"
+                               Icon="{ui:SymbolIcon Warning24}"
+                               Command="{Binding StartLeechSessionCommand}"
+                               IsEnabled="{Binding StartLeechSessionCommand.CanExecute, Mode=OneWay}" />
+                </StackPanel>
+            </ui:TitleBar.TrailingContent>
+        </ui:TitleBar>
 
         <Grid Grid.Row="1" Margin="0,16,0,0">
 
@@ -110,79 +123,6 @@
                             <TextBlock Text="Start session" FontSize="18" FontWeight="SemiBold" />
                             <TextBlock Margin="0,4,0,0" Opacity="0.72" TextWrapping="Wrap"
                                        Text="Standard spaced-repetition review using due cards first, then new cards from this language pair." />
-                        </StackPanel>
-                    </ui:CardAction>
-
-                    <ui:CardAction Margin="0,0,0,10"
-                                   IsEnabled="{Binding StartRetrainCurrentSessionCommand.CanExecute, Mode=OneWay}"
-                                   Command="{Binding StartRetrainCurrentSessionCommand}">
-                        <StackPanel>
-                            <StackPanel.Style>
-                                <Style TargetType="StackPanel">
-                                    <Setter Property="Opacity" Value="1" />
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding StartRetrainCurrentSessionCommand.CanExecute, Mode=OneWay}" Value="False">
-                                            <Setter Property="Opacity" Value="0.6" />
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </StackPanel.Style>
-                            <TextBlock Text="Retrain missed" FontSize="18" FontWeight="SemiBold" />
-                            <TextBlock Margin="0,4,0,0" Opacity="0.72" TextWrapping="Wrap"
-                                       Text="Go back over cards you marked Again in your latest study session." />
-                            <TextBlock Margin="0,8,0,0" Opacity="0.65" FontSize="12"
-                                       Text="{Binding RetrainMissedAvailabilityText}">
-                                <TextBlock.Style>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="Visibility" Value="Visible" />
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding RetrainMissedCount}" Value="0">
-                                                <Setter Property="Visibility" Value="Collapsed" />
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBlock Margin="0,4,0,0" Opacity="0.75" FontSize="12"
-                                       Foreground="{DynamicResource SystemFillColorCautionBrush}"
-                                       Text="{Binding RetrainMissedEmptyText}"
-                                       Visibility="{Binding RetrainMissedEmptyText, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
-                        </StackPanel>
-                    </ui:CardAction>
-
-                    <ui:CardAction IsEnabled="{Binding StartLeechSessionCommand.CanExecute, Mode=OneWay}"
-                                   Command="{Binding StartLeechSessionCommand}">
-                        <StackPanel>
-                            <StackPanel.Style>
-                                <Style TargetType="StackPanel">
-                                    <Setter Property="Opacity" Value="1" />
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding StartLeechSessionCommand.CanExecute, Mode=OneWay}" Value="False">
-                                            <Setter Property="Opacity" Value="0.6" />
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </StackPanel.Style>
-                            <TextBlock Text="Retrain trouble" FontSize="18" FontWeight="SemiBold" />
-                            <TextBlock Margin="0,4,0,0" Opacity="0.72" TextWrapping="Wrap"
-                                       Text="Focus on persistent trouble words that have repeatedly come back wrong." />
-                            <TextBlock Margin="0,8,0,0" Opacity="0.65" FontSize="12"
-                                       Text="{Binding RetrainTroubleAvailabilityText}">
-                                <TextBlock.Style>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="Visibility" Value="Visible" />
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding RetrainTroubleCount}" Value="0">
-                                                <Setter Property="Visibility" Value="Collapsed" />
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBlock Margin="0,4,0,0" Opacity="0.75" FontSize="12"
-                                       Foreground="{DynamicResource SystemFillColorCautionBrush}"
-                                       Text="{Binding RetrainTroubleEmptyText}"
-                                       Visibility="{Binding RetrainTroubleEmptyText, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
                         </StackPanel>
                     </ui:CardAction>
 
