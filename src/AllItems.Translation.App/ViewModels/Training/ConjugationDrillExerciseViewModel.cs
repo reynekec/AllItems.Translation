@@ -4,15 +4,19 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AllItems.Translation.App.ViewModels.Training;
 
-public sealed partial class ConjugationSlotAnswerViewModel(string label) : ObservableObject
+public sealed partial class ConjugationSlotAnswerViewModel(string label, string correctForm) : ObservableObject
 {
     public string Label { get; } = label;
+    public string CorrectForm { get; } = correctForm;
 
     [ObservableProperty]
     private string typedForm = string.Empty;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(ShowCorrectAnswer))]
     private bool? isCorrect;
+
+    public bool ShowCorrectAnswer => IsCorrect == false;
 }
 
 public sealed partial class ConjugationDrillExerciseViewModel : ExerciseViewModel
@@ -26,7 +30,7 @@ public sealed partial class ConjugationDrillExerciseViewModel : ExerciseViewMode
     {
         _exercise = exercise;
         Slots = new ObservableCollection<ConjugationSlotAnswerViewModel>(
-            exercise.Slots.Select(slot => new ConjugationSlotAnswerViewModel(slot.Label)));
+            exercise.Slots.Select(slot => new ConjugationSlotAnswerViewModel(slot.Label, slot.CorrectForm)));
     }
 
     public override ExerciseAnswer BuildAnswer() => new(
