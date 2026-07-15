@@ -24,6 +24,9 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IClock, SystemClock>();
         services.AddSingleton<ICredentialStore, FileCredentialStore>();
         services.AddSingleton<IStudyPreferenceStore, FileStudyPreferenceStore>();
+#pragma warning disable CA1416
+        services.AddSingleton<IStartupPreferenceStore>(new FileStartupPreferenceStore());
+#pragma warning restore CA1416
         services.AddSingleton<ISentenceTokenizer, SentenceTokenizer>();
         services.AddSingleton<IWordAligner, PositionalWordAligner>();
         services.AddSingleton<ITranslationProvider, GoogleTranslationProvider>();

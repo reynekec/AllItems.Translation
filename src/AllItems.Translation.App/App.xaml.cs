@@ -19,6 +19,7 @@ public partial class App : System.Windows.Application
     private IHost? _host;
     private WinForms.NotifyIcon? _notifyIcon;
     private bool _isExiting;
+    private IStartupPreferenceStore? _startupPreferenceStore;
 
     protected override async void OnStartup(StartupEventArgs e)
     {
@@ -70,6 +71,7 @@ public partial class App : System.Windows.Application
             var startWindow = _host.Services.GetRequiredService<StartWindow>();
             MainWindow = startWindow;
             ConfigureMainWindowBehavior(startWindow);
+            _startupPreferenceStore = _host.Services.GetRequiredService<IStartupPreferenceStore>();
             InitializeNotifyIcon();
             startWindow.Show();
         }
@@ -121,6 +123,14 @@ public partial class App : System.Windows.Application
     private void InitializeNotifyIcon()
     {
         var trayMenu = new WinForms.ContextMenuStrip();
+        
+        var runAtStartupItem = new WinForms.ToolStripMenuItem("Start on Windows startup", null, OnRunAtStartupToggled)
+        {
+            Checked = _startupPreferenceStore?.IsRunAtStartupEnabled ?? false,
+            CheckOnClick = true
+        };
+        trayMenu.Items.Add(runAtStartupItem);
+        trayMenu.Items.Add(new WinForms.ToolStripSeparator());
         trayMenu.Items.Add("Exit", null, (_, _) => ExitApplicationFromTray());
 
         _notifyIcon = new WinForms.NotifyIcon
@@ -132,6 +142,16 @@ public partial class App : System.Windows.Application
         };
 
         _notifyIcon.DoubleClick += (_, _) => ShowAndFocusMainWindow();
+    }
+
+    private void OnRunAtStartupToggled(object? sender, EventArgs e)
+    {
+        if (sender is not WinForms.ToolStripMenuItem item || _startupPreferenceStore is null)
+        {
+            return;
+        }
+
+        _ = _startupPreferenceStore.SetRunAtStartupAsync(item.Checked);
     }
 
     private void HideMainWindowToTray()
