@@ -92,9 +92,7 @@
         <ui:TitleBar Grid.Row="0" Title="AllItems.Translation">
             <ui:TitleBar.TrailingContent>
                 <StackPanel Orientation="Horizontal">
-                    <ui:Button Content="Study" Appearance="Secondary" Margin="0,0,8,0" Click="OnOpenStudyClick" />
-                    <ui:Button Content="Dictionary" Appearance="Secondary" Margin="0,0,8,0" Click="OnOpenDictionaryClick" />
-                    <ui:Button Content="Settings" Appearance="Secondary" Margin="0,0,8,0" Click="OnOpenSettingsClick" />
+                    <ui:Button Appearance="Transparent" ToolTip="Settings" Click="OnOpenSettingsClick" Icon="{ui:SymbolIcon Settings24}" />
                 </StackPanel>
             </ui:TitleBar.TrailingContent>
         </ui:TitleBar>
