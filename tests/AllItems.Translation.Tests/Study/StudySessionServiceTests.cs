@@ -158,22 +158,23 @@ public class StudySessionServiceTests
     }
 
     [Fact]
-    public async Task BuildRetrainSessionAsync_PreservesRequestedOrder()
+    public async Task BuildRetrainSessionAsync_ReturnsHistoricallyMissedCards_WeakestFirst()
     {
         var word1 = WordWithTranslation(1, "hund", Language.Afrikaans, "hond");
         var word2 = WordWithTranslation(2, "katze", Language.Afrikaans, "kat");
 
-        _wordRepository.Setup(r => r.GetWordsByIdsAsync(
-                It.Is<IReadOnlyCollection<int>>(ids => ids.SequenceEqual(new[] { 2, 1 })),
-                Language.Afrikaans,
-                It.IsAny<CancellationToken>()))
+        _wordRepository.Setup(r => r.GetWordsWithPreferredTranslationAsync(Language.German, Language.Afrikaans, It.IsAny<CancellationToken>()))
             .ReturnsAsync((IReadOnlyList<WordEntry>)[word1, word2]);
 
         _reviewStateRepository.Setup(r => r.GetStatesAsync(Language.Afrikaans, It.IsAny<IReadOnlyCollection<int>>(), It.IsAny<CancellationToken>()))
-            .ReturnsAsync(new Dictionary<int, WordReviewState>());
+            .ReturnsAsync(new Dictionary<int, WordReviewState>
+            {
+                [1] = new() { WordEntryId = 1, TargetLanguage = Language.Afrikaans, LapseCount = 1, DueDateUtc = Now.AddDays(-1) },
+                [2] = new() { WordEntryId = 2, TargetLanguage = Language.Afrikaans, LapseCount = 3, DueDateUtc = Now.AddDays(2) }
+            });
 
         var service = CreateService();
-        var session = await service.BuildRetrainSessionAsync(Language.German, Language.Afrikaans, [2, 1], 20);
+        var session = await service.BuildRetrainSessionAsync(Language.German, Language.Afrikaans, 20);
 
         Assert.Equal(2, session.Count);
         Assert.Equal("katze", session[0].FrontText);
@@ -184,17 +185,36 @@ public class StudySessionServiceTests
     public async Task BuildRetrainSessionAsync_UsesExistingReviewStateWhenAvailable()
     {
         var word = WordWithTranslation(1, "hund", Language.Afrikaans, "hond");
-        var existingState = new WordReviewState { WordEntryId = 1, TargetLanguage = Language.Afrikaans, IntervalDays = 9 };
+        var existingState = new WordReviewState { WordEntryId = 1, TargetLanguage = Language.Afrikaans, IntervalDays = 9, LapseCount = 1 };
 
-        _wordRepository.Setup(r => r.GetWordsByIdsAsync(It.IsAny<IReadOnlyCollection<int>>(), Language.Afrikaans, It.IsAny<CancellationToken>()))
+        _wordRepository.Setup(r => r.GetWordsWithPreferredTranslationAsync(Language.German, Language.Afrikaans, It.IsAny<CancellationToken>()))
             .ReturnsAsync((IReadOnlyList<WordEntry>)[word]);
         _reviewStateRepository.Setup(r => r.GetStatesAsync(Language.Afrikaans, It.IsAny<IReadOnlyCollection<int>>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync(new Dictionary<int, WordReviewState> { [1] = existingState });
 
         var service = CreateService();
-        var card = Assert.Single(await service.BuildRetrainSessionAsync(Language.German, Language.Afrikaans, [1], 20));
+        var card = Assert.Single(await service.BuildRetrainSessionAsync(Language.German, Language.Afrikaans, 20));
 
         Assert.Equal(9, card.ReviewState.IntervalDays);
+    }
+
+    [Fact]
+    public async Task BuildRetrainSessionAsync_IgnoresCardsNeverMissed()
+    {
+        var word = WordWithTranslation(1, "hund", Language.Afrikaans, "hond");
+
+        _wordRepository.Setup(r => r.GetWordsWithPreferredTranslationAsync(Language.German, Language.Afrikaans, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((IReadOnlyList<WordEntry>)[word]);
+        _reviewStateRepository.Setup(r => r.GetStatesAsync(Language.Afrikaans, It.IsAny<IReadOnlyCollection<int>>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new Dictionary<int, WordReviewState>
+            {
+                [1] = new() { WordEntryId = 1, TargetLanguage = Language.Afrikaans, LapseCount = 0 }
+            });
+
+        var service = CreateService();
+        var session = await service.BuildRetrainSessionAsync(Language.German, Language.Afrikaans, 20);
+
+        Assert.Empty(session);
     }
 
     [Fact]

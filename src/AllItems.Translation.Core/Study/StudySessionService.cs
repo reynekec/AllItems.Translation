@@ -77,58 +77,31 @@ public sealed class StudySessionService(
     public async Task<IReadOnlyList<StudyCard>> BuildRetrainSessionAsync(
         Language sourceLanguage,
         Language targetLanguage,
-        IReadOnlyList<int> wordEntryIds,
         int maxCards,
         CancellationToken cancellationToken = default)
     {
-        if (wordEntryIds.Count == 0 || maxCards <= 0)
+        if (maxCards <= 0)
         {
             return [];
         }
 
-        var requestedIds = wordEntryIds
-            .Where(id => id > 0)
-            .Distinct()
-            .Take(maxCards)
-            .ToList();
-
-        if (requestedIds.Count == 0)
-        {
-            return [];
-        }
-
-        var words = await wordRepository.GetWordsByIdsAsync(requestedIds, targetLanguage, cancellationToken);
+        var words = await wordRepository.GetWordsWithPreferredTranslationAsync(sourceLanguage, targetLanguage, cancellationToken);
         if (words.Count == 0)
         {
             return [];
         }
 
-        var wordById = words
-            .Where(w => w.Translations.Count > 0)
-            .ToDictionary(w => w.Id);
+        var states = await reviewStateRepository.GetStatesAsync(targetLanguage, words.Select(w => w.Id).ToList(), cancellationToken);
 
-        if (wordById.Count == 0)
-        {
-            return [];
-        }
-
-        var states = await reviewStateRepository.GetStatesAsync(targetLanguage, wordById.Keys.ToList(), cancellationToken);
-        var cards = new List<StudyCard>(requestedIds.Count);
-        foreach (var id in requestedIds)
-        {
-            if (!wordById.TryGetValue(id, out var word))
-            {
-                continue;
-            }
-
-            var state = states.TryGetValue(id, out var existingState)
-                ? existingState
-                : NewState(id, targetLanguage);
-
-            cards.Add(BuildCard(sourceLanguage, targetLanguage, word, state));
-        }
-
-        return cards;
+        return words
+            .Where(word => states.TryGetValue(word.Id, out var state) && state.LapseCount > 0)
+            .Select(word => (Word: word, State: states[word.Id]))
+            .OrderByDescending(x => x.State.LapseCount)
+            .ThenBy(x => x.State.DueDateUtc ?? DateTime.MinValue)
+            .ThenBy(x => x.Word.NormalizedText, StringComparer.Ordinal)
+            .Take(maxCards)
+            .Select(x => BuildCard(sourceLanguage, targetLanguage, x.Word, x.State))
+            .ToList();
     }
 
     public async Task<int> GetLeechCountAsync(
@@ -142,10 +115,9 @@ public sealed class StudySessionService(
     public async Task<int> GetRetrainCountAsync(
         Language sourceLanguage,
         Language targetLanguage,
-        IReadOnlyList<int> wordEntryIds,
         CancellationToken cancellationToken = default)
     {
-        var cards = await BuildRetrainSessionAsync(sourceLanguage, targetLanguage, wordEntryIds, int.MaxValue, cancellationToken);
+        var cards = await BuildRetrainSessionAsync(sourceLanguage, targetLanguage, int.MaxValue, cancellationToken);
         return cards.Count;
     }
 

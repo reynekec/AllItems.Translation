@@ -15,7 +15,6 @@ public sealed partial class StudySessionViewModel : ObservableObject
     private readonly IStudyPreferenceStore _preferenceStore;
 
     private IReadOnlyList<StudyCard> _cards = [];
-    private readonly List<int> _currentSessionAgainWordIds = [];
     private int _currentIndex;
 
     public StudySessionViewModel(IStudySessionService studySessionService, IStudyPreferenceStore preferenceStore)
@@ -79,9 +78,6 @@ public sealed partial class StudySessionViewModel : ObservableObject
 
     [ObservableProperty]
     private string progressText = string.Empty;
-
-    [ObservableProperty]
-    private string activeProgressDetail = string.Empty;
 
     [ObservableProperty]
     private string? statusMessage;
@@ -148,7 +144,6 @@ public sealed partial class StudySessionViewModel : ObservableObject
             IsLeechMode = false;
             IsRetrainCurrentMode = false;
             ReviewedCount = 0;
-            _currentSessionAgainWordIds.Clear();
             _currentIndex = 0;
             _cards = await _studySessionService.BuildSessionAsync(SourceLanguage, TargetLanguage, SessionSize);
             AvailableCardCount = _cards.Count;
@@ -240,14 +235,13 @@ public sealed partial class StudySessionViewModel : ObservableObject
             _cards = await _studySessionService.BuildRetrainSessionAsync(
                 SourceLanguage,
                 TargetLanguage,
-                _currentSessionAgainWordIds,
                 SessionSize);
             AvailableCardCount = _cards.Count;
 
             if (_cards.Count == 0)
             {
                 IsSessionActive = false;
-                StatusMessage = "No missed cards from your latest study session yet. Rate cards as Again, then retrain them here.";
+                StatusMessage = "No historically missed cards for this language pair yet. Cards appear here after you miss them during study.";
                 await RefreshAvailabilityAsync();
                 return;
             }
@@ -292,9 +286,8 @@ public sealed partial class StudySessionViewModel : ObservableObject
             var currentCard = _cards[_currentIndex];
             await _studySessionService.RecordAnswerAsync(currentCard, grade);
 
-            if (grade == ReviewGrade.Again && !_currentSessionAgainWordIds.Contains(currentCard.WordEntryId))
+            if (grade == ReviewGrade.Again)
             {
-                _currentSessionAgainWordIds.Add(currentCard.WordEntryId);
                 await RefreshAvailabilityAsync();
             }
 
@@ -347,7 +340,6 @@ public sealed partial class StudySessionViewModel : ObservableObject
 
         IsAnswerShown = false;
         ProgressText = $"Card {_currentIndex + 1} of {_cards.Count}";
-        ActiveProgressDetail = $"Answered {ReviewedCount} of {AvailableCardCount} cards in this session";
     }
 
     private async Task RefreshAvailabilityAsync()
@@ -361,14 +353,14 @@ public sealed partial class StudySessionViewModel : ObservableObject
         }
 
         var availableWordCount = await _studySessionService.GetAvailableWordCountAsync(SourceLanguage, TargetLanguage);
-        var missedCount = await _studySessionService.GetRetrainCountAsync(SourceLanguage, TargetLanguage, _currentSessionAgainWordIds);
+        var missedCount = await _studySessionService.GetRetrainCountAsync(SourceLanguage, TargetLanguage);
         var troubleCount = await _studySessionService.GetLeechCountAsync(TargetLanguage);
 
         RetrainMissedCount = missedCount;
         RetrainTroubleCount = troubleCount;
 
         AvailableWordsText = $"{availableWordCount} word(s) available for a standard session";
-        RetrainMissedAvailabilityText = $"{missedCount} retrain card(s) from this session";
+        RetrainMissedAvailabilityText = $"{missedCount} previously missed card(s) ready";
         RetrainTroubleAvailabilityText = $"{troubleCount} trouble card(s) missed at least 3 times";
         RetrainMissedEmptyText = missedCount == 0 ? "No cards ready yet" : string.Empty;
         RetrainTroubleEmptyText = troubleCount == 0 ? "No cards ready yet" : string.Empty;

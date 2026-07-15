@@ -22,13 +22,12 @@ public interface IStudySessionService
         CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Builds a retraining session from an explicit list of card word IDs, preserving the provided order.
-    /// Missing words or words without a preferred translation for <paramref name="targetLanguage"/> are skipped.
+    /// Builds a retraining session from persisted historically missed cards for the given language pair.
+    /// Cards are prioritized by weakness so the most repeatedly missed items appear first.
     /// </summary>
     Task<IReadOnlyList<StudyCard>> BuildRetrainSessionAsync(
         Language sourceLanguage,
         Language targetLanguage,
-        IReadOnlyList<int> wordEntryIds,
         int maxCards,
         CancellationToken cancellationToken = default);
 
@@ -37,13 +36,10 @@ public interface IStudySessionService
         Language targetLanguage,
         CancellationToken cancellationToken = default);
 
-    /// <summary>
-    /// Returns how many requested retrain card IDs currently resolve to study cards for the language pair.
-    /// </summary>
+    /// <summary>Returns how many historically missed cards are available for retraining in this language pair.</summary>
     Task<int> GetRetrainCountAsync(
         Language sourceLanguage,
         Language targetLanguage,
-        IReadOnlyList<int> wordEntryIds,
         CancellationToken cancellationToken = default);
 
     /// <summary>Returns the total number of words available for this source-target study pair.</summary>
