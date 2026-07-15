@@ -27,7 +27,10 @@ public static class MauiProgram
         builder.Services.AddSingleton<IStudyPreferenceStore, MauiStudyPreferenceStore>();
         builder.Services.AddSingleton(new HttpClient());
         builder.Services.AddSingleton<IFlashcardImportService>(sp =>
-            new GitHubFlashcardImportService(sp.GetRequiredService<HttpClient>(), databasePath));
+            new GitHubFlashcardImportService(
+                sp.GetRequiredService<HttpClient>(),
+                databasePath,
+                sp.GetRequiredService<DatabaseInitializer>()));
 
         builder.Services.AddSingleton<StudyPageViewModel>();
         builder.Services.AddSingleton<ImportPageViewModel>();

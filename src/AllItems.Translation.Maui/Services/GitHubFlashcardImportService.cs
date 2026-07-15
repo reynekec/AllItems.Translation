@@ -1,5 +1,6 @@
 using System.Text.Json;
 using AllItems.Translation.Core.Sync;
+using AllItems.Translation.Infrastructure.Persistence;
 using Microsoft.Data.Sqlite;
 
 namespace AllItems.Translation.Maui.Services;
@@ -9,7 +10,10 @@ namespace AllItems.Translation.Maui.Services;
 /// local database. Because sync is one-way, importing overwrites the local file wholesale - the phone's own
 /// grades are intentionally discarded and replaced by the desktop's source-of-truth state.
 /// </summary>
-public sealed class GitHubFlashcardImportService(HttpClient httpClient, string databasePath) : IFlashcardImportService
+public sealed class GitHubFlashcardImportService(
+    HttpClient httpClient,
+    string databasePath,
+    DatabaseInitializer databaseInitializer) : IFlashcardImportService
 {
     private static readonly JsonSerializerOptions ManifestJsonOptions = new() { PropertyNameCaseInsensitive = true };
 
@@ -31,6 +35,14 @@ public sealed class GitHubFlashcardImportService(HttpClient httpClient, string d
     public async Task<FlashcardSyncManifest?> ImportAsync(CancellationToken cancellationToken = default)
     {
         var manifest = await TryGetRemoteManifestAsync(cancellationToken);
+
+        // Refuse an export produced by a newer app than this one - its schema may not be understood here.
+        if (manifest is not null && manifest.SchemaVersion > FlashcardSync.SchemaVersion)
+        {
+            throw new InvalidOperationException(
+                $"This export was made by a newer version of the app (sync format v{manifest.SchemaVersion}, " +
+                $"this app supports v{FlashcardSync.SchemaVersion}). Update the app, then import again.");
+        }
 
         var url = $"{FlashcardSync.RawDatabaseUrl}?t={Guid.NewGuid():N}";
         var bytes = await httpClient.GetByteArrayAsync(url, cancellationToken);
@@ -56,6 +68,10 @@ public sealed class GitHubFlashcardImportService(HttpClient httpClient, string d
         }
 
         File.Move(tempPath, databasePath, overwrite: true);
+
+        // Reconcile the schema in case this app build is newer than the desktop that produced the export
+        // (CREATE TABLE IF NOT EXISTS + additive column checks); safe and cheap on an already-current DB.
+        await databaseInitializer.InitializeAsync(cancellationToken);
 
         return manifest;
     }

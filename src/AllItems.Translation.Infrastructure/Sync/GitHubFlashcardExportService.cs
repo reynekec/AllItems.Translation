@@ -7,9 +7,11 @@ using Octokit;
 namespace AllItems.Translation.Infrastructure.Sync;
 
 /// <summary>
-/// Publishes the local flashcard database to the public GitHub repo via the contents API. Checkpoints the
-/// SQLite WAL first (so the single .db file is complete), then creates-or-updates <c>sync/allitems.db</c> and
-/// a small <c>sync/manifest.json</c> on the default branch. The phone reads these back over the raw URL.
+/// Publishes the local flashcard database to the public GitHub repo via the Git Data API (blob -> tree ->
+/// commit -> ref update). Checkpoints the SQLite WAL first (so the single .db file is complete), then writes
+/// <c>sync/allitems.db</c> and <c>sync/manifest.json</c> in one atomic commit. The Git Data API accepts blobs
+/// far larger than the Contents API's ~1 MB limit, so a full vocabulary database exports fine, and both files
+/// land in a single commit rather than two. The phone reads these back over the raw URL.
 /// </summary>
 public sealed class GitHubFlashcardExportService(
     SqliteConnectionFactory connectionFactory,
@@ -17,6 +19,9 @@ public sealed class GitHubFlashcardExportService(
     IClock clock) : IFlashcardExportService
 {
     private static readonly JsonSerializerOptions ManifestJsonOptions = new() { WriteIndented = true };
+
+    /// <summary>Git mode for a normal, non-executable file.</summary>
+    private const string BlobFileMode = "100644";
 
     public bool IsConfigured => tokenStore.HasToken;
 
@@ -45,53 +50,52 @@ public sealed class GitHubFlashcardExportService(
             Credentials = new Octokit.Credentials(token)
         };
 
-        var commitMessage = $"Flashcard export {exportedUtc:yyyy-MM-dd HH:mm:ss}Z";
+        var owner = FlashcardSync.Owner;
+        var repo = FlashcardSync.Repo;
+        var reference = $"heads/{FlashcardSync.Branch}";
 
-        // The DB is binary: base64-encode ourselves and tell Octokit not to re-encode.
-        var databaseCommit = await CreateOrUpdateAsync(
-            client, FlashcardSync.DatabasePath, Convert.ToBase64String(databaseBytes), commitMessage,
-            convertContentToBase64: false, cancellationToken);
-
-        // The manifest is text; let Octokit base64-encode the raw JSON.
-        await CreateOrUpdateAsync(
-            client, FlashcardSync.ManifestPath, manifestJson, commitMessage,
-            convertContentToBase64: true, cancellationToken);
-
-        var commitUrl = $"https://github.com/{FlashcardSync.Owner}/{FlashcardSync.Repo}/commit/{databaseCommit.Commit.Sha}";
-        return new FlashcardExportResult(exportedUtc, databaseBytes.LongLength, commitUrl);
-    }
-
-    private static async Task<RepositoryContentChangeSet> CreateOrUpdateAsync(
-        GitHubClient client,
-        string path,
-        string content,
-        string message,
-        bool convertContentToBase64,
-        CancellationToken cancellationToken)
-    {
-        string? existingSha = null;
-        try
+        // 1. Upload both files as blobs (base64 for the binary DB, UTF-8 for the manifest text).
+        var databaseBlob = await client.Git.Blob.Create(owner, repo, new NewBlob
         {
-            var existing = await client.Repository.Content.GetAllContentsByRef(
-                FlashcardSync.Owner, FlashcardSync.Repo, path, FlashcardSync.Branch);
-            existingSha = existing.Count > 0 ? existing[0].Sha : null;
-        }
-        catch (NotFoundException)
+            Encoding = EncodingType.Base64,
+            Content = Convert.ToBase64String(databaseBytes)
+        });
+        var manifestBlob = await client.Git.Blob.Create(owner, repo, new NewBlob
         {
-            // First export - the file doesn't exist yet, so create it below.
-        }
+            Encoding = EncodingType.Utf8,
+            Content = manifestJson
+        });
 
         cancellationToken.ThrowIfCancellationRequested();
 
-        if (existingSha is null)
-        {
-            return await client.Repository.Content.CreateFile(
-                FlashcardSync.Owner, FlashcardSync.Repo, path,
-                new CreateFileRequest(message, content, FlashcardSync.Branch, convertContentToBase64));
-        }
+        // 2. Base a new tree on the branch's current commit so we don't drop the rest of the repo.
+        var branchReference = await client.Git.Reference.Get(owner, repo, reference);
+        var parentCommitSha = branchReference.Object.Sha;
+        var parentCommit = await client.Git.Commit.Get(owner, repo, parentCommitSha);
 
-        return await client.Repository.Content.UpdateFile(
-            FlashcardSync.Owner, FlashcardSync.Repo, path,
-            new UpdateFileRequest(message, content, existingSha, FlashcardSync.Branch, convertContentToBase64));
+        var newTree = new NewTree { BaseTree = parentCommit.Tree.Sha };
+        newTree.Tree.Add(new NewTreeItem
+        {
+            Path = FlashcardSync.DatabasePath,
+            Mode = BlobFileMode,
+            Type = TreeType.Blob,
+            Sha = databaseBlob.Sha
+        });
+        newTree.Tree.Add(new NewTreeItem
+        {
+            Path = FlashcardSync.ManifestPath,
+            Mode = BlobFileMode,
+            Type = TreeType.Blob,
+            Sha = manifestBlob.Sha
+        });
+        var createdTree = await client.Git.Tree.Create(owner, repo, newTree);
+
+        // 3. Commit the tree and move the branch to it - one atomic commit for both files.
+        var commitMessage = $"Flashcard export {exportedUtc:yyyy-MM-dd HH:mm:ss}Z";
+        var createdCommit = await client.Git.Commit.Create(owner, repo, new NewCommit(commitMessage, createdTree.Sha, parentCommitSha));
+        await client.Git.Reference.Update(owner, repo, reference, new ReferenceUpdate(createdCommit.Sha));
+
+        var commitUrl = $"https://github.com/{owner}/{repo}/commit/{createdCommit.Sha}";
+        return new FlashcardExportResult(exportedUtc, databaseBytes.LongLength, commitUrl);
     }
 }
