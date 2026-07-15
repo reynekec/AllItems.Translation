@@ -101,33 +101,45 @@ public partial class TrainingWindow : FluentWindow
             return;
         }
 
+        // When focus is in a text box, let the standard editing keys (arrows, Home, End,
+        // Page Up/Down) work normally inside the box rather than driving the scroll viewer.
+        var isTextBoxFocused = Keyboard.FocusedElement is System.Windows.Controls.TextBox;
+
         switch (e.Key)
         {
             case Key.Down:
+                if (isTextBoxFocused) break;
                 ContentScrollViewer.LineDown();
                 e.Handled = true;
                 break;
             case Key.Up:
+                if (isTextBoxFocused) break;
                 ContentScrollViewer.LineUp();
                 e.Handled = true;
                 break;
             case Key.PageDown:
+                if (isTextBoxFocused) break;
                 ContentScrollViewer.PageDown();
                 e.Handled = true;
                 break;
             case Key.PageUp:
+                if (isTextBoxFocused) break;
                 ContentScrollViewer.PageUp();
                 e.Handled = true;
                 break;
             case Key.Home:
+                if (isTextBoxFocused) break;
                 ContentScrollViewer.ScrollToHome();
                 e.Handled = true;
                 break;
             case Key.End:
+                if (isTextBoxFocused) break;
                 ContentScrollViewer.ScrollToEnd();
                 e.Handled = true;
                 break;
             case Key.Space:
+                if (isTextBoxFocused) break;
+
                 if ((Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
                 {
                     ContentScrollViewer.PageUp();
