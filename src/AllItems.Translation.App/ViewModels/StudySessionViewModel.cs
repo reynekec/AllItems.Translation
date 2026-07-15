@@ -346,8 +346,8 @@ public sealed partial class StudySessionViewModel : ObservableObject
         }
 
         IsAnswerShown = false;
-        ProgressText = $"{_currentIndex + 1} / {_cards.Count}";
-        ActiveProgressDetail = $"({ReviewedCount} / {AvailableCardCount})";
+        ProgressText = $"Card {_currentIndex + 1} of {_cards.Count}";
+        ActiveProgressDetail = $"Answered {ReviewedCount} of {AvailableCardCount} cards in this session";
     }
 
     private async Task RefreshAvailabilityAsync()
@@ -367,9 +367,9 @@ public sealed partial class StudySessionViewModel : ObservableObject
         RetrainMissedCount = missedCount;
         RetrainTroubleCount = troubleCount;
 
-        AvailableWordsText = $"{availableWordCount} word(s) available";
-        RetrainMissedAvailabilityText = $"{missedCount} card(s) ready";
-        RetrainTroubleAvailabilityText = $"{troubleCount} card(s) ready";
+        AvailableWordsText = $"{availableWordCount} word(s) available for a standard session";
+        RetrainMissedAvailabilityText = $"{missedCount} retrain card(s) from this session";
+        RetrainTroubleAvailabilityText = $"{troubleCount} trouble card(s) missed at least 3 times";
         RetrainMissedEmptyText = missedCount == 0 ? "No cards ready yet" : string.Empty;
         RetrainTroubleEmptyText = troubleCount == 0 ? "No cards ready yet" : string.Empty;
     }

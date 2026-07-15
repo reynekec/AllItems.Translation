@@ -38,14 +38,12 @@
         <ui:TitleBar Grid.Row="0" Height="32" MinHeight="32" Title="Study">
             <ui:TitleBar.TrailingContent>
                 <StackPanel Orientation="Horizontal" Margin="0,0,8,0" VerticalAlignment="Center">
-                    <ui:Button Width="46" Height="32" Appearance="Transparent" ToolTip="Retrain missed" Margin="0,0,8,0"
+                    <ui:Button Width="46" Height="32" Appearance="Transparent" ToolTip="Retrain cards you marked Again in this session" Margin="0,0,8,0"
                                Icon="{ui:SymbolIcon ArrowUndo24}" 
-                               Command="{Binding StartRetrainCurrentSessionCommand}"
-                               IsEnabled="{Binding StartRetrainCurrentSessionCommand.CanExecute, Mode=OneWay}" />
-                    <ui:Button Width="46" Height="32" Appearance="Transparent" ToolTip="Retrain trouble"
+                               Command="{Binding StartRetrainCurrentSessionCommand}" />
+                    <ui:Button Width="46" Height="32" Appearance="Transparent" ToolTip="Study trouble cards missed at least 3 times" 
                                Icon="{ui:SymbolIcon Warning24}"
-                               Command="{Binding StartLeechSessionCommand}"
-                               IsEnabled="{Binding StartLeechSessionCommand.CanExecute, Mode=OneWay}" />
+                               Command="{Binding StartLeechSessionCommand}" />
                 </StackPanel>
             </ui:TitleBar.TrailingContent>
         </ui:TitleBar>
@@ -160,9 +158,9 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="{Binding ProgressText}" Opacity="0.6" />
-                    <TextBlock Margin="8,0,0,0" Text="{Binding ActiveProgressDetail}" Opacity="0.6" />
+                <StackPanel Grid.Row="0" HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding ProgressText}" Opacity="0.6" HorizontalAlignment="Center" />
+                    <TextBlock Margin="0,4,0,0" Text="{Binding ActiveProgressDetail}" Opacity="0.6" HorizontalAlignment="Center" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
