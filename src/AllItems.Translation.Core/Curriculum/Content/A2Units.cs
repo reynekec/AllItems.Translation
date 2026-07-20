@@ -961,6 +961,90 @@ public static class A2Units
                     Teaches = new VocabularyTeaching("Kasse", "checkout", Article: "die", ExampleSentence: "Die Kasse ist leer.", Highlights: [])
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a2-u16-retrain-kurzsaetze",
+            Level = CefrLevel.A2,
+            SortOrder = 16,
+            Title = "Retrain: kurze Sätze",
+            Description = "Very short A2 practice sentences for retraining.",
+            Exercises =
+            [
+                new ClozeExercise
+                {
+                    Id = "a2-u16-retrain-kurzsaetze-e1",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Perfekt with haben.",
+                    TextBefore = "Ich habe ihn ",
+                    TextAfter = ".",
+                    CorrectAnswer = "gesehen"
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u16-retrain-kurzsaetze-e2",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Perfekt with sein.",
+                    TextBefore = "Wir sind nach Hause ",
+                    TextAfter = ".",
+                    CorrectAnswer = "gegangen"
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u16-retrain-kurzsaetze-e3",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Simple Präteritum form.",
+                    TextBefore = "Ich ",
+                    TextAfter = " müde.",
+                    CorrectAnswer = "war"
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u16-retrain-kurzsaetze-e4",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Dative article with Mann.",
+                    TextBefore = "Ich helfe ",
+                    TextAfter = " Mann.",
+                    CorrectAnswer = "dem"
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u16-retrain-kurzsaetze-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Separable verb in main clause.",
+                    TextBefore = "Ich stehe früh ",
+                    TextAfter = ".",
+                    CorrectAnswer = "auf"
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u16-retrain-kurzsaetze-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Comparative form.",
+                    TextBefore = "Heute ist es ",
+                    TextAfter = " als gestern.",
+                    CorrectAnswer = "kälter",
+                    AcceptedAnswers = ["kaelter"]
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u16-retrain-kurzsaetze-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Subordinate clause with weil.",
+                    TextBefore = "Ich bleibe zu Hause, weil ich ",
+                    TextAfter = ".",
+                    CorrectAnswer = "krank bin"
+                },
+                new ClozeExercise
+                {
+                    Id = "a2-u16-retrain-kurzsaetze-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Reflexive pronoun with ich.",
+                    TextBefore = "Ich freue ",
+                    TextAfter = ".",
+                    CorrectAnswer = "mich"
+                }
+            ]
         }
     ];
 }

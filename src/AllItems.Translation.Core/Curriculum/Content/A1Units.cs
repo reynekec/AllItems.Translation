@@ -1023,6 +1023,98 @@ public static class A1Units
                     CorrectAnswer = "Die Katze"
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "a1-u16-retrain-kurzsaetze",
+            Level = CefrLevel.A1,
+            SortOrder = 16,
+            Title = "Retrain: kurze Sätze",
+            Description = "Very short core A1 sentences for fast retraining.",
+            Exercises =
+            [
+                new ClozeExercise
+                {
+                    Id = "a1-u16-retrain-kurzsaetze-e1",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Simple present form.",
+                    TextBefore = "Ich ",
+                    TextAfter = " müde.",
+                    CorrectAnswer = "bin"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u16-retrain-kurzsaetze-e2",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Simple present form.",
+                    TextBefore = "Du ",
+                    TextAfter = " nett.",
+                    CorrectAnswer = "bist"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u16-retrain-kurzsaetze-e3",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Use the correct present form with er.",
+                    TextBefore = "Er ",
+                    TextAfter = " Zeit.",
+                    CorrectAnswer = "hat"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u16-retrain-kurzsaetze-e4",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Plural form in present tense.",
+                    TextBefore = "Wir ",
+                    TextAfter = " hier.",
+                    CorrectAnswer = "sind"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u16-retrain-kurzsaetze-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Regular present tense.",
+                    TextBefore = "Ich ",
+                    TextAfter = " in Berlin.",
+                    CorrectAnswer = "wohne"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u16-retrain-kurzsaetze-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Use the article with Mann.",
+                    TextBefore = "",
+                    TextAfter = " Mann ist alt.",
+                    CorrectAnswer = "Der"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u16-retrain-kurzsaetze-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Use a negation word.",
+                    TextBefore = "Ich habe ",
+                    TextAfter = " Auto.",
+                    CorrectAnswer = "kein"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u16-retrain-kurzsaetze-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Question word for a place.",
+                    TextBefore = "",
+                    TextAfter = " wohnst du?",
+                    CorrectAnswer = "Wo"
+                },
+                new ClozeExercise
+                {
+                    Id = "a1-u16-retrain-kurzsaetze-e9",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Accusative article for masculine noun.",
+                    TextBefore = "Ich sehe ",
+                    TextAfter = " Hund.",
+                    CorrectAnswer = "den"
+                }
+            ]
         }
     ];
 }

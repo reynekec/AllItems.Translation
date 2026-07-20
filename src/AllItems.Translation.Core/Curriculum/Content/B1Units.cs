@@ -871,6 +871,91 @@ public static class B1Units
                     CorrectAnswer = "Passwort"
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b1-u16-retrain-kurzsaetze",
+            Level = CefrLevel.B1,
+            SortOrder = 16,
+            Title = "Retrain: kurze Sätze",
+            Description = "Very short B1 retrain sentences.",
+            Exercises =
+            [
+                new ClozeExercise
+                {
+                    Id = "b1-u16-retrain-kurzsaetze-e1",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Hypothetical with würde.",
+                    TextBefore = "Ich ",
+                    TextAfter = " gern reisen.",
+                    CorrectAnswer = "würde",
+                    AcceptedAnswers = ["wuerde"]
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u16-retrain-kurzsaetze-e2",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Simple passive in present.",
+                    TextBefore = "Die Tür ",
+                    TextAfter = " geöffnet.",
+                    CorrectAnswer = "wird"
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u16-retrain-kurzsaetze-e3",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Relative pronoun for masculine nominative.",
+                    TextBefore = "Der Mann, ",
+                    TextAfter = " hier wohnt, ist nett.",
+                    CorrectAnswer = "der"
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u16-retrain-kurzsaetze-e4",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Genitive article for masculine noun.",
+                    TextBefore = "Das Auto ",
+                    TextAfter = " Mannes ist neu.",
+                    CorrectAnswer = "des"
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u16-retrain-kurzsaetze-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Two-way preposition with location.",
+                    TextBefore = "Das Buch liegt auf ",
+                    TextAfter = " Tisch.",
+                    CorrectAnswer = "dem"
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u16-retrain-kurzsaetze-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Indirect question word order.",
+                    TextBefore = "Ich weiß nicht, wo er ",
+                    TextAfter = ".",
+                    CorrectAnswer = "wohnt"
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u16-retrain-kurzsaetze-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Futur I with werden.",
+                    TextBefore = "Ich ",
+                    TextAfter = " morgen arbeiten.",
+                    CorrectAnswer = "werde"
+                },
+                new ClozeExercise
+                {
+                    Id = "b1-u16-retrain-kurzsaetze-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Subordinate clause with obwohl.",
+                    TextBefore = "Er kommt, obwohl er ",
+                    TextAfter = ".",
+                    CorrectAnswer = "müde ist",
+                    AcceptedAnswers = ["muede ist"]
+                }
+            ]
         }
     ];
 }

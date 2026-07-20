@@ -826,6 +826,90 @@ public static class B2Units
                     CorrectAnswer = "Genesung"
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "b2-u16-retrain-kurzsaetze",
+            Level = CefrLevel.B2,
+            SortOrder = 16,
+            Title = "Retrain: kurze Sätze",
+            Description = "Very short B2 retrain sentences.",
+            Exercises =
+            [
+                new ClozeExercise
+                {
+                    Id = "b2-u16-retrain-kurzsaetze-e1",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Konjunktiv I with sein.",
+                    TextBefore = "Er sagt, er ",
+                    TextAfter = " müde.",
+                    CorrectAnswer = "sei"
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u16-retrain-kurzsaetze-e2",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Passive with modal verb.",
+                    TextBefore = "Das muss heute ",
+                    TextAfter = " werden.",
+                    CorrectAnswer = "gemacht"
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u16-retrain-kurzsaetze-e3",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Past Konjunktiv II.",
+                    TextBefore = "Ich ",
+                    TextAfter = " früher gekommen.",
+                    CorrectAnswer = "wäre",
+                    AcceptedAnswers = ["waere"]
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u16-retrain-kurzsaetze-e4",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Nominalized verb.",
+                    TextBefore = "",
+                    TextAfter = " hilft beim Lernen.",
+                    CorrectAnswer = "Lesen"
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u16-retrain-kurzsaetze-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Formal connector.",
+                    TextBefore = "",
+                    TextAfter = " ist das Ergebnis klar.",
+                    CorrectAnswer = "Daher"
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u16-retrain-kurzsaetze-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Relative pronoun with neuter noun.",
+                    TextBefore = "Das ist alles, ",
+                    TextAfter = " ich weiß.",
+                    CorrectAnswer = "was"
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u16-retrain-kurzsaetze-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Polite formal opening.",
+                    TextBefore = "Sehr geehrte Damen und ",
+                    TextAfter = ",",
+                    CorrectAnswer = "Herren"
+                },
+                new ClozeExercise
+                {
+                    Id = "b2-u16-retrain-kurzsaetze-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Simple argument connector.",
+                    TextBefore = "Ich finde das gut, ",
+                    TextAfter = " es sinnvoll ist.",
+                    CorrectAnswer = "weil"
+                }
+            ]
         }
     ];
 }

@@ -733,6 +733,90 @@ public static class C1Units
                     CorrectAnswer = "Wehmut"
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c1-u16-retrain-kurzsaetze",
+            Level = CefrLevel.C1,
+            SortOrder = 16,
+            Title = "Retrain: kurze Sätze",
+            Description = "Very short C1 retrain sentences.",
+            Exercises =
+            [
+                new ClozeExercise
+                {
+                    Id = "c1-u16-retrain-kurzsaetze-e1",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Modal particle for emphasis.",
+                    TextBefore = "Das ist ",
+                    TextAfter = " klar.",
+                    CorrectAnswer = "doch"
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u16-retrain-kurzsaetze-e2",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Function verb phrase.",
+                    TextBefore = "Das kommt zur ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Anwendung"
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u16-retrain-kurzsaetze-e3",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Nominal style phrase.",
+                    TextBefore = "Die ",
+                    TextAfter = " der Daten dauert lang.",
+                    CorrectAnswer = "Auswertung"
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u16-retrain-kurzsaetze-e4",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Known idiom.",
+                    TextBefore = "Ich drücke dir die ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Daumen"
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u16-retrain-kurzsaetze-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Konjunktiv I in reporting.",
+                    TextBefore = "Der Bericht sagt, es ",
+                    TextAfter = " hilfreich.",
+                    CorrectAnswer = "sei"
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u16-retrain-kurzsaetze-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Formal connector.",
+                    TextBefore = "",
+                    TextAfter = " bleibt ein Risiko.",
+                    CorrectAnswer = "Dennoch"
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u16-retrain-kurzsaetze-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Word formation with prefix.",
+                    TextBefore = "Die ",
+                    TextAfter = " war überraschend.",
+                    CorrectAnswer = "Entwicklung"
+                },
+                new ClozeExercise
+                {
+                    Id = "c1-u16-retrain-kurzsaetze-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Register-appropriate formal wording.",
+                    TextBefore = "Ich bitte um ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Verständnis",
+                    AcceptedAnswers = ["Verstaendnis"]
+                }
+            ]
         }
     ];
 }

@@ -683,6 +683,98 @@ public static class C2Units
                     Teaches = new VocabularyTeaching("Anmut", "grace", Article: "die", ExampleSentence: "Sie tanzt mit großer Anmut.", Highlights: [new SentenceHighlight("großer", "Dative case adjective ending after the preposition 'mit', modifying feminine 'Anmut'")])
                 }
             ]
+        },
+        new CurriculumUnit
+        {
+            Id = "c2-u16-retrain-kurzsaetze",
+            Level = CefrLevel.C2,
+            SortOrder = 16,
+            Title = "Retrain: kurze Sätze",
+            Description = "Very short C2 retrain sentences.",
+            Exercises =
+            [
+                new ClozeExercise
+                {
+                    Id = "c2-u16-retrain-kurzsaetze-e1",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Identify rhetorical hyperbole.",
+                    TextBefore = "Das war reine ",
+                    TextAfter = ".",
+                    CorrectAnswer = "Hyperbel"
+                },
+                new ClozeExercise
+                {
+                    Id = "c2-u16-retrain-kurzsaetze-e2",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Nuanced synonym choice.",
+                    TextBefore = "Er ",
+                    TextAfter = " mich lange an.",
+                    CorrectAnswer = "starrte"
+                },
+                new ClozeExercise
+                {
+                    Id = "c2-u16-retrain-kurzsaetze-e3",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Legal register phrase.",
+                    TextBefore = "",
+                    TextAfter = " dieses Absatzes gilt Folgendes.",
+                    CorrectAnswer = "Unbeschadet"
+                },
+                new ClozeExercise
+                {
+                    Id = "c2-u16-retrain-kurzsaetze-e4",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Common proverb ending.",
+                    TextBefore = "Wer A sagt, muss auch ",
+                    TextAfter = " sagen.",
+                    CorrectAnswer = "B"
+                },
+                new ClozeExercise
+                {
+                    Id = "c2-u16-retrain-kurzsaetze-e5",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Archaic literary phrase.",
+                    TextBefore = "",
+                    TextAfter = " Nachts blieb alles still.",
+                    CorrectAnswer = "Des"
+                },
+                new ClozeExercise
+                {
+                    Id = "c2-u16-retrain-kurzsaetze-e6",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Modal particle for probability.",
+                    TextBefore = "Er wird ",
+                    TextAfter = " kommen.",
+                    CorrectAnswer = "wohl"
+                },
+                new ClozeExercise
+                {
+                    Id = "c2-u16-retrain-kurzsaetze-e7",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Genre register marker.",
+                    TextBefore = "Der Text wirkt sehr ",
+                    TextAfter = ".",
+                    CorrectAnswer = "sachlich"
+                },
+                new ClozeExercise
+                {
+                    Id = "c2-u16-retrain-kurzsaetze-e8",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Ambiguous wording term.",
+                    TextBefore = "Die Formulierung bleibt ",
+                    TextAfter = ".",
+                    CorrectAnswer = "mehrdeutig"
+                },
+                new ClozeExercise
+                {
+                    Id = "c2-u16-retrain-kurzsaetze-e9",
+                    Instruction = "Fill in the blank.",
+                    Explanation = "Interpretive literary tone.",
+                    TextBefore = "Das Bild wirkt ",
+                    TextAfter = ".",
+                    CorrectAnswer = "symbolisch"
+                }
+            ]
         }
     ];
 }
