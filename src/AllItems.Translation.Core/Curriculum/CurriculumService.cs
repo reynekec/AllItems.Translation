@@ -83,7 +83,7 @@ public sealed class CurriculumService(
         var states = await progressRepository.GetReviewStatesAsync(eligibleIds, cancellationToken);
         var now = clock.UtcNow;
 
-        var dueExercises = eligibleIds
+        var allDueExercises = eligibleIds
             .Select(id => new CurriculumRetrainExercise(
                 allExercises[id],
                 states.TryGetValue(id, out var state)
@@ -97,7 +97,9 @@ public sealed class CurriculumService(
             .ThenBy(item => item.Exercise.Id, StringComparer.Ordinal)
             .ToList();
 
-        return new CurriculumRetrainSession(dueExercises, dueExercises.Count, attemptedIds.Count);
+        var dueExercises = allDueExercises.Take(20).ToList();
+
+        return new CurriculumRetrainSession(dueExercises, allDueExercises.Count, attemptedIds.Count);
     }
 
     public async Task<GradingResult> SubmitAnswerAsync(Exercise exercise, ExerciseAnswer answer, CancellationToken cancellationToken = default)
