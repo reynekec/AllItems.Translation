@@ -29,3 +29,6 @@ service-account*.json
 ## OS
 .DS_Store
 Thumbs.db
+
+## Copilot local tracking
+.copilot-tracking/

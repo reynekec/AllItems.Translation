@@ -51,6 +51,12 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
     [ObservableProperty]
     private bool isRetrainButtonEnabled = true;
 
+    [ObservableProperty]
+    private TeachingAreaGuideViewModel? selectedGuide;
+
+    [ObservableProperty]
+    private bool isGuideOpen;
+
     public void Initialize() => _ = LoadLevelsAsync();
 
     private async Task LoadLevelsAsync()
@@ -120,6 +126,25 @@ public sealed partial class TrainingViewModel(ICurriculumService curriculumServi
         ActiveSessionProgressDetail = "Unit training";
         ShowCurrentExercise();
         Screen = TrainingScreen.Exercise;
+    }
+
+    [RelayCommand]
+    private void OpenGuide(UnitTileViewModel? unitTile)
+    {
+        if (unitTile?.Unit is null)
+        {
+            return;
+        }
+
+        SelectedGuide = new TeachingAreaGuideViewModel(unitTile.Unit);
+        IsGuideOpen = true;
+    }
+
+    [RelayCommand]
+    private void CloseGuide()
+    {
+        IsGuideOpen = false;
+        SelectedGuide = null;
     }
 
     [RelayCommand]

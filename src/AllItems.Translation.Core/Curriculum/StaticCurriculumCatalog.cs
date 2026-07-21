@@ -5,7 +5,11 @@ namespace AllItems.Translation.Core.Curriculum;
 /// <summary>Aggregates hand-authored curriculum content per level - the full A1-C2 progression.</summary>
 public sealed class StaticCurriculumCatalog : ICurriculumCatalog
 {
-    public IReadOnlyList<CurriculumUnit> GetUnits(CefrLevel level) => level switch
+    public IReadOnlyList<CurriculumUnit> GetUnits(CefrLevel level) => GetRawUnits(level)
+        .Select(TeachingAreaGuideCatalog.AttachGuide)
+        .ToList();
+
+    private static IReadOnlyList<CurriculumUnit> GetRawUnits(CefrLevel level) => level switch
     {
         CefrLevel.A1 => A1Units.All,
         CefrLevel.A2 => A2Units.All,

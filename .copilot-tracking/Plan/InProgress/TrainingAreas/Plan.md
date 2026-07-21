@@ -19,46 +19,46 @@ The training UI should bind the new icon and popup content through the existing 
 ## Phases
 
 ### Phase 1: Confirm and model the teaching-area explanation data
-- [ ] Review the existing curriculum content model in the core layer and identify the smallest extension to CurriculumUnit that can support rich explanatory content without changing exercise behavior.
-- [ ] Define a structured teaching-area explanation model for unit metadata, such as a record/class with fields for overview, purpose, learner outcome, and example items.
-- [ ] Decide whether examples should be a simple list of strings or a richer shape with German example plus English explanation.
-- [ ] Ensure the structure is easy to hand-author in the existing static unit files and does not force future persistence or database changes.
-- [ ] Keep the model English-only for now, but shape it so later localization is possible without a redesign.
+- [x] Review the existing curriculum content model in the core layer and identify the smallest extension to CurriculumUnit that can support rich explanatory content without changing exercise behavior.
+- [x] Define a structured teaching-area explanation model for unit metadata, such as a record/class with fields for overview, purpose, learner outcome, and example items.
+- [x] Decide whether examples should be a simple list of strings or a richer shape with German example plus English explanation.
+- [x] Ensure the structure is easy to hand-author in the existing static unit files and does not force future persistence or database changes.
+- [x] Keep the model English-only for now, but shape it so later localization is possible without a redesign.
 
 ### Phase 2: Author curated explanation content for all A1-C2 teaching areas
-- [ ] Inventory every existing CurriculumUnit across A1, A2, B1, B2, C1, and C2.
-- [ ] For each unit, write a plain-English explanation that answers: what this area teaches, why it matters, and what the learner should pay attention to.
-- [ ] Add at least two helpful examples per teaching area where practical, using short German examples paired with clear English interpretation.
-- [ ] Keep tone consistent across all levels, with beginner-friendly explanations for A1/A2 and progressively more precise explanations for higher CEFR levels.
-- [ ] Avoid overly academic grammar terminology unless it is immediately explained in plain English.
-- [ ] Cross-check each explanation against the actual exercises in the unit so the popup accurately previews what the learner will encounter.
-- [ ] Fill the new explanation metadata directly in the static content files under the curriculum content folder.
+- [x] Inventory every existing CurriculumUnit across A1, A2, B1, B2, C1, and C2.
+- [x] For each unit, write a plain-English explanation that answers: what this area teaches, why it matters, and what the learner should pay attention to.
+- [x] Add at least two helpful examples per teaching area where practical, using short German examples paired with clear English interpretation.
+- [x] Keep tone consistent across all levels, with beginner-friendly explanations for A1/A2 and progressively more precise explanations for higher CEFR levels.
+- [x] Avoid overly academic grammar terminology unless it is immediately explained in plain English.
+- [x] Cross-check each explanation against the actual exercises in the unit so the popup accurately previews what the learner will encounter.
+- [x] Fill the new explanation metadata directly in the static content files under the curriculum content folder.
 
 ### Phase 3: Extend the training view-model path
-- [ ] Update UnitTileViewModel so it exposes the new teaching-area explanation metadata needed by the UI.
-- [ ] Add a command path in TrainingViewModel to open the explanation popup for a selected unit without starting the unit.
-- [ ] Keep unit selection behavior unchanged so clicking the card still opens training immediately.
-- [ ] Ensure the popup command can be triggered independently from the icon button inside the unit card.
-- [ ] If needed, add a lightweight popup-specific view model to shape the displayed sections cleanly instead of binding raw content directly.
+- [x] Update UnitTileViewModel so it exposes the new teaching-area explanation metadata needed by the UI.
+- [x] Add a command path in TrainingViewModel to open the explanation popup for a selected unit without starting the unit.
+- [x] Keep unit selection behavior unchanged so clicking the card still opens training immediately.
+- [x] Ensure the popup command can be triggered independently from the icon button inside the unit card.
+- [x] If needed, add a lightweight popup-specific view model to shape the displayed sections cleanly instead of binding raw content directly.
 
 ### Phase 4: Add the info icon and popup UI in the training screen
-- [ ] Update the unit-card template in the training window so each teaching area shows an info icon beside the title, without making the card feel cramped.
-- [ ] Prevent the icon click from accidentally triggering the card’s existing open-unit action.
-- [ ] Introduce a training-specific popup/dialog UI component that matches the app’s current WPF UI style better than a basic message box.
-- [ ] Lay out the popup with a strong visual hierarchy: teaching area title, short summary, “Why this matters”, “What you will practice”, and examples.
-- [ ] Make the popup readable on the current dark theme, including spacing, text wrapping, section headings, and comfortable maximum width.
-- [ ] Ensure the popup is usable for both short A1 explanations and denser C1/C2 content without overflow problems.
-- [ ] Add scrolling behavior inside the popup only if necessary, preferring a layout that keeps the first screen highly legible.
+- [x] Update the unit-card template in the training window so each teaching area shows an info icon beside the title, without making the card feel cramped.
+- [x] Prevent the icon click from accidentally triggering the card’s existing open-unit action.
+- [x] Introduce a training-specific popup/dialog UI component that matches the app’s current WPF UI style better than a basic message box.
+- [x] Lay out the popup with a strong visual hierarchy: teaching area title, short summary, “Why this matters”, “What you will practice”, and examples.
+- [x] Make the popup readable on the current dark theme, including spacing, text wrapping, section headings, and comfortable maximum width.
+- [x] Ensure the popup is usable for both short A1 explanations and denser C1/C2 content without overflow problems.
+- [x] Add scrolling behavior inside the popup only if necessary, preferring a layout that keeps the first screen highly legible.
 
 ### Phase 5: Refine interaction and content presentation
-- [ ] Add tooltip/help text to the info icon so users understand it opens an explanation.
-- [ ] Verify keyboard accessibility and focus behavior for the icon and popup close action.
-- [ ] Ensure repeated opens/closes do not leave stale content when switching between units.
-- [ ] Review title-row layout on narrower window widths so long titles plus the info icon remain readable.
-- [ ] Tune wording and formatting so examples are visually distinct from explanatory paragraphs.
+- [x] Add tooltip/help text to the info icon so users understand it opens an explanation.
+- [x] Verify keyboard accessibility and focus behavior for the icon and popup close action.
+- [x] Ensure repeated opens/closes do not leave stale content when switching between units.
+- [x] Review title-row layout on narrower window widths so long titles plus the info icon remain readable.
+- [x] Tune wording and formatting so examples are visually distinct from explanatory paragraphs.
 
 ### Phase 6: Validate behavior and guard against regressions
-- [ ] Build the app and fix any compile or binding issues introduced by the new metadata and commands.
+- [x] Build the app and fix any compile or binding issues introduced by the new metadata and commands.
 - [ ] Manually validate the training flow for at least one unit in each of A1, A2, B1, B2, C1, and C2.
 - [ ] Verify that clicking the card still opens the unit and clicking the icon only opens the explanation popup.
 - [ ] Validate that the popup content corresponds to the selected teaching area and updates correctly between cards.

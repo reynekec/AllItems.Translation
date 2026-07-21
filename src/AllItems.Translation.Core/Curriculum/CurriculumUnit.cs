@@ -8,5 +8,6 @@ public sealed record CurriculumUnit
     public required int SortOrder { get; init; }
     public required string Title { get; init; }
     public required string Description { get; init; }
+    public TeachingAreaGuide? Guide { get; init; }
     public required IReadOnlyList<Exercise> Exercises { get; init; }
 }

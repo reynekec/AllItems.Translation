@@ -116,10 +116,11 @@
                                Text="Pick how you want to review this language pair right now." />
 
                     <ui:CardAction Margin="0,18,0,10"
-                                   Command="{Binding StartSessionCommand}">
+                                   Command="{Binding StartSessionCommand}"
+                                   Background="#2F6B5F" Foreground="White" BorderBrush="#3B8678" BorderThickness="1">
                         <StackPanel>
-                            <TextBlock Text="Start session" FontSize="18" FontWeight="SemiBold" />
-                            <TextBlock Margin="0,4,0,0" Opacity="0.72" TextWrapping="Wrap"
+                            <TextBlock Text="Start session" FontSize="18" FontWeight="SemiBold" Foreground="White" />
+                            <TextBlock Margin="0,4,0,0" Opacity="0.85" TextWrapping="Wrap" Foreground="White"
                                        Text="Standard spaced-repetition review using due cards first, then new cards from this language pair." />
                         </StackPanel>
                     </ui:CardAction>

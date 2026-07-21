@@ -102,7 +102,7 @@
       </StackPanel>
     </DataTemplate>
   </Window.Resources>
-  <Grid Margin="16">
+  <Grid x:Name="WindowLayoutRoot" Margin="16">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
@@ -159,7 +159,54 @@
               <DataTemplate>
                 <ui:CardAction Margin="0,0,0,10" Command="{Binding DataContext.OpenUnitCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}">
                   <StackPanel>
-                    <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="SemiBold"/>
+                    <Grid>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                      </Grid.ColumnDefinitions>
+                      <Button Grid.Column="0"
+                              Width="20"
+                              Height="20"
+                              Padding="0"
+                              Margin="0,0,10,0"
+                              BorderThickness="0"
+                              Background="Transparent"
+                              Cursor="Hand"
+                              ToolTip="What is this teaching area for?"
+                              Focusable="True"
+                              IsTabStop="True"
+                              VerticalAlignment="Center"
+                              Command="{Binding DataContext.OpenGuideCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                              CommandParameter="{Binding}">
+                        <Button.Template>
+                          <ControlTemplate TargetType="Button">
+                            <Border x:Name="Badge"
+                                    Width="18"
+                                    Height="18"
+                                    CornerRadius="9"
+                                    Background="Transparent"
+                                    BorderBrush="#8CFFFFFF"
+                                    BorderThickness="1.2">
+                              <TextBlock Text="i"
+                                         FontSize="10"
+                                         FontWeight="SemiBold"
+                                         FontStyle="Italic"
+                                         Margin="0,-1,0,0"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         Foreground="#E6FFFFFF"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                              <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Badge" Property="Background" Value="#26FFFFFF"/>
+                                <Setter TargetName="Badge" Property="BorderBrush" Value="#E6FFFFFF"/>
+                              </Trigger>
+                            </ControlTemplate.Triggers>
+                          </ControlTemplate>
+                        </Button.Template>
+                      </Button>
+                      <TextBlock Grid.Column="1" Text="{Binding Title}" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    </Grid>
                     <TextBlock Text="{Binding Description}" Opacity="0.7" Margin="0,4,0,4" TextWrapping="Wrap"/>
                     <TextBlock Text="{Binding ProgressText}" Opacity="0.6" FontSize="12"/>
                   </StackPanel>
@@ -217,7 +264,89 @@
             <ui:Button Content="Back to levels" Appearance="Primary" Margin="0,20,0,0" HorizontalAlignment="Center" Command="{Binding BackToLevelsCommand}"/>
           </StackPanel>
         </Grid>
+
       </Grid>
     </ScrollViewer>
+
+    <Border Grid.RowSpan="2"
+            Background="#B3000000"
+            Visibility="{Binding IsGuideOpen, Converter={StaticResource BooleanToVisibilityConverter}}"
+            Panel.ZIndex="10">
+      <Grid x:Name="GuideOverlayHost" Margin="24">
+        <Border x:Name="GuideDialog"
+                Background="#FF232323"
+                BorderBrush="#FF4A4A4A"
+                BorderThickness="1"
+                CornerRadius="14"
+                Width="{Binding ActualWidth, ElementName=GuideOverlayHost}"
+                MaxWidth="760"
+                MaxHeight="{Binding ActualHeight, ElementName=GuideOverlayHost}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Padding="24">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="0,0,0,16">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <StackPanel Grid.Column="0" Margin="0,0,16,0">
+                <TextBlock x:Name="GuideTitleText" Text="{Binding SelectedGuide.Title}" FontSize="24" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                <TextBlock Text="{Binding SelectedGuide.Summary}" Margin="0,8,0,0" Opacity="0.78" TextWrapping="Wrap"/>
+              </StackPanel>
+              <ui:Button Grid.Column="1"
+                         Width="34"
+                         Height="34"
+                         Appearance="Transparent"
+                         ToolTip="Close"
+                         Command="{Binding CloseGuideCommand}"
+                         Icon="{ui:SymbolIcon Dismiss24}"/>
+            </Grid>
+            <ScrollViewer x:Name="GuideContentScrollViewer" Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+              <StackPanel x:Name="GuideContentStack">
+                <Border Background="#FF2D2D2D" CornerRadius="10" Padding="16" Margin="0,0,0,14">
+                  <StackPanel>
+                    <TextBlock x:Name="GuideSectionHeading1" Text="What this area is about" FontSize="16" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding SelectedGuide.Overview}" Margin="0,8,0,0" TextWrapping="Wrap" Opacity="0.88"/>
+                  </StackPanel>
+                </Border>
+                <Border Background="#FF2D2D2D" CornerRadius="10" Padding="16" Margin="0,0,0,14">
+                  <StackPanel>
+                    <TextBlock x:Name="GuideSectionHeading2" Text="Why you are doing it" FontSize="16" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding SelectedGuide.WhyItMatters}" Margin="0,8,0,0" TextWrapping="Wrap" Opacity="0.88"/>
+                  </StackPanel>
+                </Border>
+                <Border Background="#FF2D2D2D" CornerRadius="10" Padding="16" Margin="0,0,0,14">
+                  <StackPanel>
+                    <TextBlock x:Name="GuideSectionHeading3" Text="What to look for while you practice" FontSize="16" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding SelectedGuide.WhatToPractice}" Margin="0,8,0,0" TextWrapping="Wrap" Opacity="0.88"/>
+                  </StackPanel>
+                </Border>
+                <StackPanel>
+                  <TextBlock x:Name="GuideExamplesHeading" Text="Examples" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                  <ItemsControl ItemsSource="{Binding SelectedGuide.Examples}">
+                    <ItemsControl.ItemTemplate>
+                      <DataTemplate>
+                        <Border Background="#FF2A2A2A" CornerRadius="10" Padding="16" Margin="0,0,0,10">
+                          <StackPanel>
+                            <TextBlock Text="{Binding German}" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding English}" Margin="0,6,0,0" TextWrapping="Wrap" Opacity="0.88"/>
+                            <TextBlock Text="{Binding Note}" Margin="0,8,0,0" TextWrapping="Wrap" Opacity="0.64" Visibility="{Binding HasNote, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                          </StackPanel>
+                        </Border>
+                      </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                  </ItemsControl>
+                </StackPanel>
+              </StackPanel>
+            </ScrollViewer>
+          </Grid>
+        </Border>
+      </Grid>
+    </Border>
   </Grid>
 </ui:FluentWindow>

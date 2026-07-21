@@ -9,11 +9,7 @@
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <!-- Title Bar -->
-    <ui:TitleBar Grid.Row="0" Height="32" MinHeight="32"  Title="AllItems.Translation">
-      <ui:TitleBar.TrailingContent>
-        <ui:Button Appearance="Transparent" ToolTip="Settings" Click="OnSettingsClick" Icon="{ui:SymbolIcon Settings24}"/>
-      </ui:TitleBar.TrailingContent>
-    </ui:TitleBar>
+    <ui:TitleBar Grid.Row="0" Height="32" MinHeight="32" Title="AllItems.Translation" />
     <!-- Main Content -->
     <Grid Grid.Row="1" Margin="0,16,0,0">
       <StackPanel VerticalAlignment="Center">
@@ -33,6 +29,16 @@
           <StackPanel>
             <TextBlock Text="Training" FontSize="18" FontWeight="SemiBold"/>
             <TextBlock Margin="0,4,0,0" Opacity="0.7" TextWrapping="Wrap" Text="More exercises - coming soon."/>
+          </StackPanel>
+        </ui:CardAction>
+        <ui:CardAction Margin="0,12,0,0" Click="OnSettingsClick"
+                       Background="#2F6B5F" Foreground="White" BorderBrush="#3B8678" BorderThickness="1">
+          <StackPanel>
+            <StackPanel Orientation="Horizontal">
+              <ui:SymbolIcon Symbol="Settings24" FontSize="18" Margin="0,0,8,0" Foreground="White" />
+              <TextBlock Text="Settings" FontSize="18" FontWeight="SemiBold" Foreground="White"/>
+            </StackPanel>
+            <TextBlock Margin="0,4,0,0" Opacity="0.8" TextWrapping="Wrap" Foreground="White" Text="Manage Google Cloud credentials and import vocabulary."/>
           </StackPanel>
         </ui:CardAction>
       </StackPanel>

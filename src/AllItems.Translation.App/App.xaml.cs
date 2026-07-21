@@ -16,10 +16,17 @@ namespace AllItems.Translation.App;
 
 public partial class App : System.Windows.Application
 {
+    private const string UiAutomationModeEnvironmentVariable = "ALLITEMS_TRANSLATION_UI_AUTOMATION";
     private IHost? _host;
     private WinForms.NotifyIcon? _notifyIcon;
     private bool _isExiting;
     private IStartupPreferenceStore? _startupPreferenceStore;
+
+    internal static bool IsUiAutomationModeEnabled =>
+        string.Equals(
+            Environment.GetEnvironmentVariable(UiAutomationModeEnvironmentVariable),
+            "1",
+            StringComparison.Ordinal);
 
     protected override async void OnStartup(StartupEventArgs e)
     {
@@ -110,7 +117,7 @@ public partial class App : System.Windows.Application
     {
         mainWindow.Closing += (_, e) =>
         {
-            if (_isExiting)
+            if (_isExiting || IsUiAutomationModeEnabled)
             {
                 return;
             }
@@ -122,6 +129,11 @@ public partial class App : System.Windows.Application
 
     private void InitializeNotifyIcon()
     {
+        if (IsUiAutomationModeEnabled)
+        {
+            return;
+        }
+
         var trayMenu = new WinForms.ContextMenuStrip();
         
         var runAtStartupItem = new WinForms.ToolStripMenuItem("Start on Windows startup", null, OnRunAtStartupToggled)

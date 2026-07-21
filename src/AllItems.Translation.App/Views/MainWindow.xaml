@@ -85,19 +85,32 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <ui:TitleBar Grid.Row="0" Title="AllItems.Translation">
-            <ui:TitleBar.TrailingContent>
-                <StackPanel Orientation="Horizontal">
-                    <ui:Button Appearance="Transparent" ToolTip="Settings" Click="OnOpenSettingsClick" Icon="{ui:SymbolIcon Settings24}" />
-                </StackPanel>
-            </ui:TitleBar.TrailingContent>
-        </ui:TitleBar>
+        <ui:TitleBar Grid.Row="0" Title="AllItems.Translation" />
 
-        <Grid Grid.Row="1" Margin="0,12,0,12">
+        <DockPanel Grid.Row="1" Margin="0,12,0,0" LastChildFill="False">
+            <Button x:Name="MainWindowSettingsButton"
+                    Style="{StaticResource AccentSettingsButtonStyle}"
+                    DockPanel.Dock="Right"
+                    Margin="12,0,0,0"
+                    VerticalAlignment="Center"
+                    AutomationProperties.AutomationId="MainWindowSettingsButton"
+                    AutomationProperties.Name="Settings"
+                    ToolTip="Settings"
+                    Click="OnOpenSettingsClick"
+                    >
+                <StackPanel Orientation="Horizontal">
+                    <ui:SymbolIcon Symbol="Settings24" FontSize="16" Margin="0,0,8,0" />
+                    <TextBlock Text="Settings" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </DockPanel>
+
+        <Grid Grid.Row="2" Margin="0,12,0,12">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="200" />
@@ -108,7 +121,7 @@
                       SelectedItem="{Binding SourceLanguage}" />
         </Grid>
 
-        <ui:InfoBar Grid.Row="2"
+        <ui:InfoBar Grid.Row="3"
                     Margin="0,0,0,12"
                     Title="Heads up"
                     Message="{Binding ErrorMessage}"
@@ -116,7 +129,7 @@
                     IsOpen="{Binding ErrorMessage, Converter={StaticResource NullOrEmptyToBoolConverter}}"
                     Visibility="{Binding ErrorMessage, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
 
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -144,6 +157,6 @@
             </Grid>
         </Grid>
 
-        <TextBlock Grid.Row="4" Margin="0,12,0,0" Opacity="0.6" Text="{Binding UsageCounterText}" HorizontalAlignment="Right" />
+        <TextBlock Grid.Row="5" Margin="0,12,0,0" Opacity="0.6" Text="{Binding UsageCounterText}" HorizontalAlignment="Right" />
     </Grid>
 </ui:FluentWindow>

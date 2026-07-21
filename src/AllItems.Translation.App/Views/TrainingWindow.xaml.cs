@@ -1,5 +1,4 @@
 using AllItems.Translation.App.ViewModels.Training;
-using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Input;
@@ -10,12 +9,15 @@ namespace AllItems.Translation.App.Views;
 public partial class TrainingWindow : FluentWindow
 {
     private const double MouseWheelScrollDelta = 48;
+    private const double CompactGuideBreakpoint = 760;
 
     public TrainingWindow(TrainingViewModel viewModel)
     {
         InitializeComponent();
         DataContext = viewModel;
         viewModel.PropertyChanged += OnViewModelPropertyChanged;
+        SizeChanged += OnWindowSizeChanged;
+        Loaded += (_, _) => UpdateGuideLayout();
         viewModel.Initialize();
     }
 
@@ -31,6 +33,43 @@ public partial class TrainingWindow : FluentWindow
         {
             TryFocusFirstExerciseTextBox(viewModel);
         }
+
+        if (e.PropertyName == nameof(TrainingViewModel.IsGuideOpen) && !viewModel.IsGuideOpen)
+        {
+            Keyboard.ClearFocus();
+        }
+
+        if (e.PropertyName == nameof(TrainingViewModel.IsGuideOpen))
+        {
+            UpdateGuideLayout();
+        }
+    }
+
+    private void OnWindowSizeChanged(object sender, SizeChangedEventArgs e) => UpdateGuideLayout();
+
+    private void UpdateGuideLayout()
+    {
+        if (GuideOverlayHost is null || GuideDialog is null || GuideTitleText is null ||
+            GuideSectionHeading1 is null || GuideSectionHeading2 is null || GuideSectionHeading3 is null ||
+            GuideExamplesHeading is null || GuideContentScrollViewer is null)
+        {
+            return;
+        }
+
+        var isCompact = ActualWidth <= CompactGuideBreakpoint;
+
+        GuideOverlayHost.Margin = isCompact ? new Thickness(12) : new Thickness(24);
+        GuideDialog.Padding = isCompact ? new Thickness(16) : new Thickness(24);
+        GuideDialog.CornerRadius = isCompact ? new CornerRadius(10) : new CornerRadius(14);
+        GuideDialog.MaxWidth = isCompact ? 560 : 760;
+
+        GuideTitleText.FontSize = isCompact ? 20 : 24;
+        GuideSectionHeading1.FontSize = isCompact ? 15 : 16;
+        GuideSectionHeading2.FontSize = isCompact ? 15 : 16;
+        GuideSectionHeading3.FontSize = isCompact ? 15 : 16;
+        GuideExamplesHeading.FontSize = isCompact ? 16 : 18;
+
+        GuideContentScrollViewer.Padding = isCompact ? new Thickness(0, 2, 0, 0) : new Thickness(0);
     }
 
     private void TryFocusFirstExerciseTextBox(TrainingViewModel viewModel)

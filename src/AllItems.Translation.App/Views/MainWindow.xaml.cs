@@ -33,7 +33,6 @@ public partial class MainWindow : FluentWindow
     private void OnOpenSettingsClick(object sender, RoutedEventArgs e)
     {
         var window = _services.GetRequiredService<CredentialSetupWindow>();
-        window.Owner = this;
         window.ShowDialog();
     }
 }

@@ -26,7 +26,6 @@ public partial class StartWindow : FluentWindow
     private void OnSettingsClick(object sender, RoutedEventArgs e)
     {
         var window = _services.GetRequiredService<CredentialSetupWindow>();
-        window.Owner = this;
         window.ShowDialog();
     }
 
