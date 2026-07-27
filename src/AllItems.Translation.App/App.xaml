@@ -26,9 +26,9 @@
             </Style>
 
             <Style x:Key="AccentSettingsButtonStyle" TargetType="Button">
-                <Setter Property="Background" Value="#2F6B5F" />
-                <Setter Property="Foreground" Value="White" />
-                <Setter Property="BorderBrush" Value="#2F6B5F" />
+                <Setter Property="Background" Value="{DynamicResource AccentFillColorDefaultBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource TextOnAccentFillColorPrimaryBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AccentFillColorSecondaryBrush}" />
                 <Setter Property="BorderThickness" Value="1" />
                 <Setter Property="Padding" Value="10,4" />
                 <Setter Property="Cursor" Value="Hand" />
@@ -46,12 +46,12 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="ButtonBorder" Property="Background" Value="#3B8678" />
-                                    <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="#3B8678" />
+                                    <Setter TargetName="ButtonBorder" Property="Background" Value="{DynamicResource AccentFillColorSecondaryBrush}" />
+                                    <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{DynamicResource AccentFillColorSecondaryBrush}" />
                                 </Trigger>
                                 <Trigger Property="IsPressed" Value="True">
-                                    <Setter TargetName="ButtonBorder" Property="Background" Value="#255349" />
-                                    <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="#255349" />
+                                    <Setter TargetName="ButtonBorder" Property="Background" Value="{DynamicResource AccentFillColorTertiaryBrush}" />
+                                    <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{DynamicResource AccentFillColorTertiaryBrush}" />
                                 </Trigger>
                                 <Trigger Property="IsEnabled" Value="False">
                                     <Setter TargetName="ButtonBorder" Property="Opacity" Value="0.55" />

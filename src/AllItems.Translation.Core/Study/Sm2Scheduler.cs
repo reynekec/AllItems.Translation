@@ -3,20 +3,18 @@ using AllItems.Translation.Core.Domain;
 namespace AllItems.Translation.Core.Study;
 
 /// <summary>
-/// Classic SM-2 spaced-repetition algorithm, adapted to a 3-button grading scale by mapping
-/// Again/Good/Easy onto SM-2's 0-5 quality score (2/4/5 respectively).
+/// Classic SM-2 spaced-repetition algorithm, driven directly by the self-assessed 0-5 quality score.
 /// </summary>
 public sealed class Sm2Scheduler : ISpacedRepetitionScheduler
 {
     public WordReviewState Schedule(WordReviewState current, ReviewGrade grade, DateTime nowUtc)
     {
-        var quality = grade switch
+        if (grade is < ReviewGrade.Blackout or > ReviewGrade.Easy)
         {
-            ReviewGrade.Again => 2,
-            ReviewGrade.Good => 4,
-            ReviewGrade.Easy => 5,
-            _ => throw new ArgumentOutOfRangeException(nameof(grade), grade, null)
-        };
+            throw new ArgumentOutOfRangeException(nameof(grade), grade, null);
+        }
+
+        var quality = (int)grade;
 
         var easinessFactor = Math.Max(
             1.3,

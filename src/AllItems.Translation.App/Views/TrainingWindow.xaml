@@ -94,7 +94,7 @@
                   </ui:TextBox.Style>
                 </ui:TextBox>
                 <TextBlock Grid.Column="2" Margin="8,0,0,0" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding IsCorrect, Converter={StaticResource SlotCorrectnessToTextConverter}}"/>
-                <TextBlock Grid.Column="3" Margin="8,0,0,0" VerticalAlignment="Center" FontWeight="Bold" Foreground="Green" Text="{Binding CorrectForm}" Visibility="{Binding ShowCorrectAnswer, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBlock Grid.Column="3" Margin="8,0,0,0" VerticalAlignment="Center" FontWeight="Bold" Foreground="{DynamicResource SystemFillColorSuccessBrush}" Text="{Binding CorrectForm}" Visibility="{Binding ShowCorrectAnswer, Converter={StaticResource BooleanToVisibilityConverter}}"/>
               </Grid>
             </DataTemplate>
           </ItemsControl.ItemTemplate>
@@ -185,7 +185,7 @@
                                     Height="18"
                                     CornerRadius="9"
                                     Background="Transparent"
-                                    BorderBrush="#8CFFFFFF"
+                                    BorderBrush="{DynamicResource ControlStrokeColorSecondaryBrush}"
                                     BorderThickness="1.2">
                               <TextBlock Text="i"
                                          FontSize="10"
@@ -194,12 +194,12 @@
                                          Margin="0,-1,0,0"
                                          HorizontalAlignment="Center"
                                          VerticalAlignment="Center"
-                                         Foreground="#E6FFFFFF"/>
+                                         Foreground="{DynamicResource TextFillColorPrimaryBrush}"/>
                             </Border>
                             <ControlTemplate.Triggers>
                               <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Badge" Property="Background" Value="#26FFFFFF"/>
-                                <Setter TargetName="Badge" Property="BorderBrush" Value="#E6FFFFFF"/>
+                                <Setter TargetName="Badge" Property="Background" Value="{DynamicResource ControlFillColorTertiaryBrush}"/>
+                                <Setter TargetName="Badge" Property="BorderBrush" Value="{DynamicResource ControlStrokeColorOnAccentSecondaryBrush}"/>
                               </Trigger>
                             </ControlTemplate.Triggers>
                           </ControlTemplate>
@@ -242,6 +242,10 @@
               <StackPanel Visibility="{Binding CurrentExercise.IsAnswered, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <TextBlock Text="Nice, that's right." FontWeight="SemiBold" Margin="0,0,0,4" Visibility="{Binding CurrentExercise.ShowCorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 <TextBlock Text="Not quite - here's why:" FontWeight="SemiBold" Margin="0,0,0,4" Visibility="{Binding CurrentExercise.ShowIncorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBlock FontWeight="SemiBold" Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}" Margin="0,0,0,8" Visibility="{Binding CurrentExercise.ShowIncorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}">
+                  <Run Text="Correct answer: "/>
+                  <Run Text="{Binding CurrentExercise.CorrectAnswerDisplay, Mode=OneWay}"/>
+                </TextBlock>
                 <TextBlock Text="{Binding CurrentExercise.Explanation}" TextWrapping="Wrap" Opacity="0.8" Margin="0,0,0,12"/>
                 <StackPanel Orientation="Horizontal">
                   <ui:Button Content="Try again" Appearance="Secondary" Margin="0,0,8,0" Command="{Binding TryAgainCommand}" Visibility="{Binding CurrentExercise.ShowIncorrectFeedback, Converter={StaticResource BooleanToVisibilityConverter}}"/>
@@ -269,13 +273,13 @@
     </ScrollViewer>
 
     <Border Grid.RowSpan="2"
-            Background="#B3000000"
+          Background="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}"
             Visibility="{Binding IsGuideOpen, Converter={StaticResource BooleanToVisibilityConverter}}"
             Panel.ZIndex="10">
       <Grid x:Name="GuideOverlayHost" Margin="24">
         <Border x:Name="GuideDialog"
-                Background="#FF232323"
-                BorderBrush="#FF4A4A4A"
+                Background="{DynamicResource LayerFillColorDefaultBrush}"
+                BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
                 BorderThickness="1"
                 CornerRadius="14"
                 Width="{Binding ActualWidth, ElementName=GuideOverlayHost}"
@@ -308,19 +312,19 @@
             </Grid>
             <ScrollViewer x:Name="GuideContentScrollViewer" Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
               <StackPanel x:Name="GuideContentStack">
-                <Border Background="#FF2D2D2D" CornerRadius="10" Padding="16" Margin="0,0,0,14">
+                <Border Background="{DynamicResource AccentAcrylicBackgroundFillColorDefaultBrush}" CornerRadius="10" Padding="16" Margin="0,0,0,14">
                   <StackPanel>
                     <TextBlock x:Name="GuideSectionHeading1" Text="What this area is about" FontSize="16" FontWeight="SemiBold"/>
                     <TextBlock Text="{Binding SelectedGuide.Overview}" Margin="0,8,0,0" TextWrapping="Wrap" Opacity="0.88"/>
                   </StackPanel>
                 </Border>
-                <Border Background="#FF2D2D2D" CornerRadius="10" Padding="16" Margin="0,0,0,14">
+                <Border Background="{DynamicResource ControlFillColorSecondaryBrush}" CornerRadius="10" Padding="16" Margin="0,0,0,14">
                   <StackPanel>
                     <TextBlock x:Name="GuideSectionHeading2" Text="Why you are doing it" FontSize="16" FontWeight="SemiBold"/>
                     <TextBlock Text="{Binding SelectedGuide.WhyItMatters}" Margin="0,8,0,0" TextWrapping="Wrap" Opacity="0.88"/>
                   </StackPanel>
                 </Border>
-                <Border Background="#FF2D2D2D" CornerRadius="10" Padding="16" Margin="0,0,0,14">
+                <Border Background="{DynamicResource ControlFillColorTertiaryBrush}" CornerRadius="10" Padding="16" Margin="0,0,0,14">
                   <StackPanel>
                     <TextBlock x:Name="GuideSectionHeading3" Text="What to look for while you practice" FontSize="16" FontWeight="SemiBold"/>
                     <TextBlock Text="{Binding SelectedGuide.WhatToPractice}" Margin="0,8,0,0" TextWrapping="Wrap" Opacity="0.88"/>
@@ -328,16 +332,30 @@
                 </Border>
                 <StackPanel>
                   <TextBlock x:Name="GuideExamplesHeading" Text="Examples" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10"/>
-                  <ItemsControl ItemsSource="{Binding SelectedGuide.Examples}">
+                  <ItemsControl ItemsSource="{Binding SelectedGuide.Examples}" AlternationCount="4">
                     <ItemsControl.ItemTemplate>
                       <DataTemplate>
-                        <Border Background="#FF2A2A2A" CornerRadius="10" Padding="16" Margin="0,0,0,10">
+                        <Border x:Name="ExampleCard" Background="{DynamicResource LayerOnAcrylicFillColorDefaultBrush}" CornerRadius="10" Padding="16" Margin="0,0,0,10">
                           <StackPanel>
                             <TextBlock Text="{Binding German}" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding English}" Margin="0,6,0,0" TextWrapping="Wrap" Opacity="0.88"/>
                             <TextBlock Text="{Binding Note}" Margin="0,8,0,0" TextWrapping="Wrap" Opacity="0.64" Visibility="{Binding HasNote, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                           </StackPanel>
                         </Border>
+                        <DataTemplate.Triggers>
+                          <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter TargetName="ExampleCard" Property="Background" Value="{DynamicResource LayerOnAcrylicFillColorSecondaryBrush}"/>
+                          </Trigger>
+                          <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter TargetName="ExampleCard" Property="Background" Value="{DynamicResource ControlFillColorSecondaryBrush}"/>
+                          </Trigger>
+                          <Trigger Property="ItemsControl.AlternationIndex" Value="2">
+                            <Setter TargetName="ExampleCard" Property="Background" Value="{DynamicResource CardBackgroundFillColorDefaultBrush}"/>
+                          </Trigger>
+                          <Trigger Property="ItemsControl.AlternationIndex" Value="3">
+                            <Setter TargetName="ExampleCard" Property="Background" Value="{DynamicResource SubtleFillColorSecondaryBrush}"/>
+                          </Trigger>
+                        </DataTemplate.Triggers>
                       </DataTemplate>
                     </ItemsControl.ItemTemplate>
                   </ItemsControl>

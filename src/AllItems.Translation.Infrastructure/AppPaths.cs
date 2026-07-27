@@ -13,10 +13,13 @@ public static class AppPaths
 
     public static string StudyPreferencesFilePath => Path.Combine(DataRoot, "settings", "study-preferences.json");
 
+    public static string ThemePreferencesFilePath => Path.Combine(DataRoot, "settings", "theme-preferences.json");
+
     public static void EnsureDirectoriesExist()
     {
         Directory.CreateDirectory(Path.GetDirectoryName(DatabaseFilePath)!);
         Directory.CreateDirectory(Path.GetDirectoryName(CredentialFilePath)!);
         Directory.CreateDirectory(Path.GetDirectoryName(StudyPreferencesFilePath)!);
+        Directory.CreateDirectory(Path.GetDirectoryName(ThemePreferencesFilePath)!);
     }
 }

@@ -24,6 +24,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IClock, SystemClock>();
         services.AddSingleton<ICredentialStore, FileCredentialStore>();
         services.AddSingleton<IStudyPreferenceStore, FileStudyPreferenceStore>();
+        services.AddSingleton<IThemePreferenceStore, FileThemePreferenceStore>();
 #pragma warning disable CA1416
         services.AddSingleton<IStartupPreferenceStore>(new FileStartupPreferenceStore());
 #pragma warning restore CA1416

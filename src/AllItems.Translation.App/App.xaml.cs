@@ -3,6 +3,7 @@ using System.Windows.Threading;
 using AllItems.Translation.App.ViewModels;
 using AllItems.Translation.App.ViewModels.Training;
 using AllItems.Translation.App.Views;
+using AllItems.Translation.App.Theming;
 using AllItems.Translation.Core.Abstractions;
 using AllItems.Translation.Infrastructure;
 using AllItems.Translation.Infrastructure.Persistence;
@@ -10,7 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Drawing = System.Drawing;
 using WinForms = System.Windows.Forms;
-using Wpf.Ui.Appearance;
 
 namespace AllItems.Translation.App;
 
@@ -53,12 +53,14 @@ public partial class App : System.Windows.Application
                     services.AddTransient<TrainingViewModel>();
                     services.AddTransient<TrainingWindow>();
                     services.AddTransient<StartWindow>();
+                    services.AddSingleton<IAppThemeController, AppThemeController>();
                 })
                 .Build();
 
             await _host.StartAsync();
 
-            ApplicationThemeManager.Apply(ApplicationTheme.Dark);
+            var appThemeController = _host.Services.GetRequiredService<IAppThemeController>();
+            appThemeController.Initialize();
 
             var databaseInitializer = _host.Services.GetRequiredService<DatabaseInitializer>();
             await databaseInitializer.InitializeAsync();

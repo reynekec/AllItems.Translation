@@ -59,7 +59,7 @@ public class Sm2SchedulerTests
         state = _scheduler.Schedule(state, ReviewGrade.Good, Now);
         state = _scheduler.Schedule(state, ReviewGrade.Good, Now);
 
-        var afterAgain = _scheduler.Schedule(state, ReviewGrade.Again, Now);
+        var afterAgain = _scheduler.Schedule(state, ReviewGrade.Familiar, Now);
 
         Assert.Equal(0, afterAgain.Repetitions);
         Assert.Equal(1, afterAgain.IntervalDays);
@@ -72,7 +72,7 @@ public class Sm2SchedulerTests
         var state = NewCard();
         for (var i = 0; i < 20; i++)
         {
-            state = _scheduler.Schedule(state, ReviewGrade.Again, Now);
+            state = _scheduler.Schedule(state, ReviewGrade.Familiar, Now);
         }
 
         Assert.True(state.EasinessFactor >= 1.3);
@@ -91,9 +91,9 @@ public class Sm2SchedulerTests
     public void Schedule_Again_IncrementsLapseCount()
     {
         var state = NewCard();
-        state = _scheduler.Schedule(state, ReviewGrade.Again, Now);
+        state = _scheduler.Schedule(state, ReviewGrade.Familiar, Now);
         state = _scheduler.Schedule(state, ReviewGrade.Good, Now);
-        state = _scheduler.Schedule(state, ReviewGrade.Again, Now);
+        state = _scheduler.Schedule(state, ReviewGrade.Familiar, Now);
 
         Assert.Equal(2, state.LapseCount);
     }
@@ -102,7 +102,7 @@ public class Sm2SchedulerTests
     public void Schedule_Good_DoesNotChangeLapseCount()
     {
         var state = NewCard();
-        state = _scheduler.Schedule(state, ReviewGrade.Again, Now);
+        state = _scheduler.Schedule(state, ReviewGrade.Familiar, Now);
         state = _scheduler.Schedule(state, ReviewGrade.Good, Now);
 
         Assert.Equal(1, state.LapseCount);

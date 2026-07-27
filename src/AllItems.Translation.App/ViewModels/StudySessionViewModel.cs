@@ -48,6 +48,8 @@ public sealed partial class StudySessionViewModel : ObservableObject
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsSetupVisible))]
+    [NotifyCanExecuteChangedFor(nameof(GradeCommand))]
+    [NotifyCanExecuteChangedFor(nameof(ShowAnswerCommand))]
     private bool isSessionActive;
 
     [ObservableProperty]
@@ -58,6 +60,7 @@ public sealed partial class StudySessionViewModel : ObservableObject
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(GradeCommand))]
+    [NotifyCanExecuteChangedFor(nameof(ShowAnswerCommand))]
     private bool isAnswerShown;
 
     [ObservableProperty]
@@ -119,6 +122,7 @@ public sealed partial class StudySessionViewModel : ObservableObject
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(GradeCommand))]
+    [NotifyCanExecuteChangedFor(nameof(ShowAnswerCommand))]
     [NotifyCanExecuteChangedFor(nameof(StartSessionCommand))]
     [NotifyCanExecuteChangedFor(nameof(StartLeechSessionCommand))]
     [NotifyCanExecuteChangedFor(nameof(StartRetrainCurrentSessionCommand))]
@@ -274,8 +278,10 @@ public sealed partial class StudySessionViewModel : ObservableObject
                 ? StartRetrainCurrentSessionAsync()
                 : StartSessionAsync();
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanShowAnswer))]
     private void ShowAnswer() => IsAnswerShown = true;
+
+    private bool CanShowAnswer() => IsSessionActive && !IsAnswerShown && !IsBusy;
 
     [RelayCommand(CanExecute = nameof(CanGrade))]
     private async Task GradeAsync(ReviewGrade grade)
@@ -286,7 +292,7 @@ public sealed partial class StudySessionViewModel : ObservableObject
             var currentCard = _cards[_currentIndex];
             await _studySessionService.RecordAnswerAsync(currentCard, grade);
 
-            if (grade == ReviewGrade.Again)
+            if (grade < ReviewGrade.Hard)
             {
                 await RefreshAvailabilityAsync();
             }
@@ -314,7 +320,7 @@ public sealed partial class StudySessionViewModel : ObservableObject
         }
     }
 
-    private bool CanGrade(ReviewGrade grade) => IsAnswerShown && !IsBusy;
+    private bool CanGrade(ReviewGrade grade) => IsSessionActive && IsAnswerShown && !IsBusy;
 
     private void ShowCurrentCard()
     {

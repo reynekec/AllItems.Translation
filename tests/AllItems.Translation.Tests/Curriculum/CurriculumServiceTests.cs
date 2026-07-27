@@ -31,7 +31,7 @@ public class CurriculumServiceTests
                 EasinessFactor = current.EasinessFactor,
                 IntervalDays = 1,
                 Repetitions = grade == ReviewGrade.Good ? current.Repetitions + 1 : 0,
-                LapseCount = grade == ReviewGrade.Again ? current.LapseCount + 1 : current.LapseCount,
+                LapseCount = grade == ReviewGrade.Familiar ? current.LapseCount + 1 : current.LapseCount,
                 DueDateUtc = now.Date.AddDays(1),
                 LastReviewedUtc = now
             });

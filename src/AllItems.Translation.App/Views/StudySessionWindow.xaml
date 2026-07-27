@@ -9,6 +9,23 @@
                  WindowStartupLocation="CenterScreen"
                  ExtendsContentIntoTitleBar="True"
                  WindowBackdropType="Mica">
+    <ui:FluentWindow.InputBindings>
+        <!-- Space / Enter reveal the answer; 0-5 grade the current card. CanExecute guards keep these inert outside an active card. -->
+        <KeyBinding Key="Space" Command="{Binding ShowAnswerCommand}" />
+        <KeyBinding Key="Enter" Command="{Binding ShowAnswerCommand}" />
+        <KeyBinding Key="D0" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Blackout}" />
+        <KeyBinding Key="NumPad0" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Blackout}" />
+        <KeyBinding Key="D1" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Incorrect}" />
+        <KeyBinding Key="NumPad1" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Incorrect}" />
+        <KeyBinding Key="D2" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Familiar}" />
+        <KeyBinding Key="NumPad2" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Familiar}" />
+        <KeyBinding Key="D3" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Hard}" />
+        <KeyBinding Key="NumPad3" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Hard}" />
+        <KeyBinding Key="D4" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Good}" />
+        <KeyBinding Key="NumPad4" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Good}" />
+        <KeyBinding Key="D5" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Easy}" />
+        <KeyBinding Key="NumPad5" Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Easy}" />
+    </ui:FluentWindow.InputBindings>
     <ui:FluentWindow.Resources>
         <ItemsPanelTemplate x:Key="SentenceWordsPanel">
             <WrapPanel HorizontalAlignment="Center" />
@@ -117,10 +134,13 @@
 
                     <ui:CardAction Margin="0,18,0,10"
                                    Command="{Binding StartSessionCommand}"
-                                   Background="#2F6B5F" Foreground="White" BorderBrush="#3B8678" BorderThickness="1">
+                                   Background="{DynamicResource AccentFillColorDefaultBrush}"
+                                   Foreground="{DynamicResource TextOnAccentFillColorPrimaryBrush}"
+                                   BorderBrush="{DynamicResource AccentFillColorSecondaryBrush}"
+                                   BorderThickness="1">
                         <StackPanel>
-                            <TextBlock Text="Start session" FontSize="18" FontWeight="SemiBold" Foreground="White" />
-                            <TextBlock Margin="0,4,0,0" Opacity="0.85" TextWrapping="Wrap" Foreground="White"
+                            <TextBlock Text="Start session" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource TextOnAccentFillColorPrimaryBrush}" />
+                            <TextBlock Margin="0,4,0,0" Opacity="0.85" TextWrapping="Wrap" Foreground="{DynamicResource TextOnAccentFillColorSecondaryBrush}"
                                        Text="Standard spaced-repetition review using due cards first, then new cards from this language pair." />
                         </StackPanel>
                     </ui:CardAction>
@@ -185,16 +205,35 @@
 
                 <Grid Grid.Row="2" Margin="0,20,0,0">
                     <ui:Button Content="Show Answer" Appearance="Primary" HorizontalAlignment="Center"
+                               ToolTip="Show answer (Space / Enter)"
                                Command="{Binding ShowAnswerCommand}"
                                Visibility="{Binding IsAnswerShown, Converter={StaticResource InverseBooleanToVisibilityConverter}}" />
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
                                 Visibility="{Binding IsAnswerShown, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <ui:Button Content="Again" Appearance="Danger" Margin="0,0,8,0"
-                                   Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Again}" />
-                        <ui:Button Content="Good" Appearance="Primary" Margin="0,0,8,0"
+                        <ui:Button Content="0" Width="52" Margin="0,0,6,0" HorizontalContentAlignment="Center"
+                                   ToolTip="Blackout — no recollection at all"
+                                   Background="#B01818" Foreground="White" BorderBrush="#B01818"
+                                   Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Blackout}" />
+                        <ui:Button Content="1" Width="52" Margin="0,0,6,0" HorizontalContentAlignment="Center"
+                                   ToolTip="Incorrect — but it felt familiar once revealed"
+                                   Background="#D13438" Foreground="White" BorderBrush="#D13438"
+                                   Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Incorrect}" />
+                        <ui:Button Content="2" Width="52" Margin="0,0,6,0" HorizontalContentAlignment="Center"
+                                   ToolTip="Incorrect — but the answer seemed easy to recall"
+                                   Background="#E8730C" Foreground="White" BorderBrush="#E8730C"
+                                   Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Familiar}" />
+                        <ui:Button Content="3" Width="52" Margin="0,0,6,0" HorizontalContentAlignment="Center"
+                                   ToolTip="Correct — but recalled with serious difficulty"
+                                   Background="#C79A00" Foreground="White" BorderBrush="#C79A00"
+                                   Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Hard}" />
+                        <ui:Button Content="4" Width="52" Margin="0,0,6,0" HorizontalContentAlignment="Center"
+                                   ToolTip="Correct — after some hesitation"
+                                   Background="#5B9A1E" Foreground="White" BorderBrush="#5B9A1E"
                                    Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Good}" />
-                        <ui:Button Content="Easy" Appearance="Success"
+                        <ui:Button Content="5" Width="52" HorizontalContentAlignment="Center"
+                                   ToolTip="Perfect — effortless recall"
+                                   Background="#107C10" Foreground="White" BorderBrush="#107C10"
                                    Command="{Binding GradeCommand}" CommandParameter="{x:Static study:ReviewGrade.Easy}" />
                     </StackPanel>
                 </Grid>

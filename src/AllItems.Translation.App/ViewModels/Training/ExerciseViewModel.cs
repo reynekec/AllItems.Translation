@@ -1,5 +1,6 @@
 using AllItems.Translation.Core.Curriculum;
 using CommunityToolkit.Mvvm.ComponentModel;
+using System.Linq;
 
 namespace AllItems.Translation.App.ViewModels.Training;
 
@@ -26,6 +27,17 @@ public abstract partial class ExerciseViewModel(Exercise exercise) : ObservableO
 
     public bool ShowCorrectFeedback => IsCorrect == true;
     public bool ShowIncorrectFeedback => IsCorrect == false;
+    public string CorrectAnswerDisplay => Exercise switch
+    {
+        ClozeExercise cloze => cloze.CorrectAnswer,
+        MultipleChoiceExercise multipleChoice
+            when multipleChoice.CorrectOptionIndex >= 0 && multipleChoice.CorrectOptionIndex < multipleChoice.Options.Count
+                => multipleChoice.Options[multipleChoice.CorrectOptionIndex],
+        SentenceOrderExercise sentenceOrder => string.Join(" ", sentenceOrder.CorrectOrder),
+        ConjugationDrillExercise conjugation
+            => string.Join(", ", conjugation.Slots.Select(slot => $"{slot.Label} {slot.CorrectForm}")),
+        _ => string.Empty
+    };
     public virtual bool RequiresExplicitCheck => true;
     public bool ShowCheckAnswerButton => RequiresExplicitCheck && !IsAnswered;
     public Func<Task>? SubmitAnswerAsync { get; set; }

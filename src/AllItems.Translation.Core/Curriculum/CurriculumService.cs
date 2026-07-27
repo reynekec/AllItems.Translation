@@ -121,7 +121,7 @@ public sealed class CurriculumService(
                 DueDateUtc = currentState.DueDateUtc,
                 LastReviewedUtc = currentState.LastReviewedUtc
             },
-            result.IsCorrect ? ReviewGrade.Good : ReviewGrade.Again,
+            result.IsCorrect ? ReviewGrade.Good : ReviewGrade.Familiar,
             clock.UtcNow);
 
         currentState.EasinessFactor = scheduledState.EasinessFactor;

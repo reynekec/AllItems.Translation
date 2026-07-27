@@ -2,12 +2,26 @@ using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
 using System.Linq;
 using System;
+using System.IO;
 
 namespace AllItems.Translation.UITests;
 
 public class NavigationTests : IDisposable
 {
     private readonly UITestHelpers _helpers = new();
+    private readonly string _themePreferencePath = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+        "AllItems.Translation",
+        "settings",
+        "theme-preferences.json");
+
+    public NavigationTests()
+    {
+        if (File.Exists(_themePreferencePath))
+        {
+            File.Delete(_themePreferencePath);
+        }
+    }
 
     public void Dispose()
     {
@@ -92,6 +106,23 @@ public class NavigationTests : IDisposable
 
         startWindow = _helpers.WaitForStartWindow();
         Assert.True(startWindow.IsOffscreen == false, "StartWindow should remain visible after dialog closes");
+    }
+
+    [Fact]
+    public void StartWindow_ThemeToggle_PersistsAcrossRelaunch()
+    {
+        var startWindow = _helpers.LaunchToStartWindow();
+        var toggle = _helpers.FindThemeToggle(startWindow);
+
+        _helpers.SetToggleState(toggle, isOn: true);
+        Assert.Equal("On", toggle.ToggleState.ToString());
+
+        _helpers.CloseApp();
+        _helpers.LaunchApp();
+
+        startWindow = _helpers.WaitForStartWindow();
+        toggle = _helpers.FindThemeToggle(startWindow);
+        Assert.Equal("On", toggle.ToggleState.ToString());
     }
 
 }
